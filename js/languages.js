@@ -239,7 +239,7 @@
 
     // Toggle menu
     function closeMenu(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
-    function openMenu(){ menu.classList.add('open'); btn.setAttribute('aria-expanded','true'); repositionMenuUp();}
+    function openMenu(){ menu.classList.add('open'); btn.setAttribute('aria-expanded','true'); reposition(); }
 
     btn.addEventListener('click', function(e){
       e.preventDefault();
@@ -279,12 +279,22 @@
     // Also close menu after a selection
     // removed auto-close on selection
 
-    // Keep menu aligned under the button if layout changes (header height, etc.)
+    // Keep menu centered on the button and open upward
     function reposition(){
       try{
         var b = btn.getBoundingClientRect();
-        menu.style.left = (b.left|0) + 'px';
-        menu.style.top  = (b.bottom + 4|0) + 'px';
+        var gap = 8;
+        var vw = window.innerWidth || document.documentElement.clientWidth || 0;
+        var menuWidth = menu.offsetWidth || menu.scrollWidth || 34;
+        var left = b.left + (b.width / 2) - (menuWidth / 2);
+        var minLeft = 6;
+        var maxLeft = Math.max(minLeft, vw - menuWidth - 6);
+        if(left < minLeft) left = minLeft;
+        if(left > maxLeft) left = maxLeft;
+        menu.style.left = Math.round(left) + 'px';
+        menu.style.right = '';
+        menu.style.top = '';
+        menu.style.bottom = Math.round((window.innerHeight - b.top) + gap) + 'px';
       }catch(_){}
     }
     window.addEventListener('resize', reposition, {passive:true});
@@ -360,12 +370,22 @@
 (function(){
   function positionFlagMenuUp(){
     var menu = document.getElementById('flag-menu');
-    if(!menu) return;
+    var sw = document.getElementById('flag-switcher');
+    if(!menu || !sw) return;
+    var b = sw.getBoundingClientRect();
+    var gap = 8;
+    var vw = window.innerWidth || document.documentElement.clientWidth || 0;
+    var menuWidth = menu.offsetWidth || menu.scrollWidth || 34;
+    var left = b.left + (b.width / 2) - (menuWidth / 2);
+    var minLeft = 6;
+    var maxLeft = Math.max(minLeft, vw - menuWidth - 6);
+    if(left < minLeft) left = minLeft;
+    if(left > maxLeft) left = maxLeft;
     menu.style.position = 'fixed';
-    menu.style.left = '16px';
+    menu.style.left = Math.round(left) + 'px';
     menu.style.top = '';
     menu.style.right = '';
-    menu.style.bottom = 'calc(16px + 38px + 8px)';
+    menu.style.bottom = Math.round((window.innerHeight - b.top) + gap) + 'px';
     menu.style.zIndex = '8002';
   }
   function bind(){
