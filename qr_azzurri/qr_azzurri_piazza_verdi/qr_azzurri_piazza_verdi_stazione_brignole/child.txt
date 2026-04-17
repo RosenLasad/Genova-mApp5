@@ -1,0 +1,15 @@
+id: stazione_brignole
+label: La "nuova" Stazione Brignole
+coords: 44.40656178307441, 8.945880164032085
+descrizione: La Stazione Brignole costruita nel 1905.
+
+# Media (usa i nomi file con estensione)
+oggi: qr_azzurri_piazza_verdi_stazione_brignole_oggi.mp4
+ieri: qr_azzurri_piazza_verdi_stazione_brignole_ieri_1.mp4
+ieri: qr_azzurri_piazza_verdi_stazione_brignole_ieri_2.mp4
+
+titolo_oggi: "OGGI - La Stazione Brignole"
+titoli_ieri: "1920 - La Stazione Brignole", "1880 - Stazione Brignole"
+
+# poster_oggi: <immagine.jpg>
+# poster_ieri: <immagine.jpg>
