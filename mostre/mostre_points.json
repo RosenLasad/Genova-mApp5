@@ -1,0 +1,219 @@
+[
+  {
+    "lat": 44.4102358992266,
+    "lng": 8.927201985104764,
+    "title": {
+      "it": "Acquario di Genova",
+      "en": "Acquario di Genova",
+      "es": "Acquario di Genova",
+      "fr": "Acquario di Genova",
+      "ar": "Acquario di Genova",
+      "ru": "Acquario di Genova",
+      "zh": "Acquario di Genova",
+      "lij": "Acquario di Genova"
+    },
+    "desc": {
+      "it": "Il percorso espositivo dell’Acquario è una lunga mostra sull’acqua e sulla biodiversità marina: vasche tematiche, ambienti ricostruiti e padiglioni dedicati a squali, cetacei, meduse e fauna polare accompagnano il visitatore attraverso ecosistemi di tutto il pianeta. È una vera esposizione permanente sulla vita negli oceani, con installazioni e pannelli pensati anche in chiave educativa.",
+      "en": "The Aquarium’s exhibition route is a long exhibition about water and marine biodiversity: themed tanks, reconstructed environments and pavilions dedicated to sharks, cetaceans, jellyfish and polar fauna guide visitors through ecosystems from all over the planet. It is a true permanent exhibition on life in the oceans, with installations and information panels also designed with an educational approach.",
+      "es": "El recorrido expositivo del Acuario es una larga muestra sobre el agua y la biodiversidad marina: tanques temáticos, ambientes reconstruidos y pabellones dedicados a tiburones, cetáceos, medusas y fauna polar acompañan al visitante a través de ecosistemas de todo el planeta. Es una verdadera exposición permanente sobre la vida en los océanos, con instalaciones y paneles informativos pensados también con una finalidad educativa.",
+      "fr": "Le parcours d’exposition de l’Aquarium est une longue exposition consacrée à l’eau et à la biodiversité marine : bassins thématiques, environnements reconstitués et pavillons dédiés aux requins, aux cétacés, aux méduses et à la faune polaire accompagnent le visiteur à travers des écosystèmes du monde entier. C’est une véritable exposition permanente sur la vie dans les océans, avec des installations et des panneaux explicatifs conçus également dans une optique pédagogique.",
+      "ar": "مسار العرض في الأكواريوم عبارة عن معرض طويل حول الماء والتنوع البيولوجي البحري؛ أحواض موضوعية، وبيئات مُعاد بناؤها، وأجنحة مخصّصة لأسماك القرش والحيتانيات وقناديل البحر والحياة القطبية ترافق الزائر عبر أنظمة بيئية من مختلف أنحاء الكوكب. إنه معرض دائم حقيقي عن الحياة في المحيطات، مع تجهيزات ولوحات معلوماتية مُصمَّمة أيضاً ببعد تعليمي.",
+      "ru": "Выставочный маршрут Аквариума представляет собой большую экспозицию, посвящённую воде и морскому биологическому разнообразию: тематические аквариумы, воссозданные природные среды и павильоны, посвящённые акулам, китообразным, медузам и полярной фауне, проводят посетителя через экосистемы всей планеты. Это настоящая постоянная экспозиция о жизни океанов с инсталляциями и информационными панелями, созданными также с образовательной целью.",
+      "zh": "水族馆的展览路线是一场围绕水和海洋生物多样性的长篇展览：主题水缸、重建的生态环境，以及专门展示鲨鱼、鲸类、水母和极地生物的展区，引导参观者穿越来自世界各地的生态系统。这是一座真正的海洋生命常设展览，配有装置和解说牌，同时兼顾科普与教育功能。",
+      "lij": "O percòrso espositivo do Aquarium l’é ‘na longa mostra in sce l’ea e a biodiversitæ marina: vasche tematiche, ambienti ricostruî e padigiùn dedicæ a squali, cetacei, meduse e bestie do polo acumpagnan o visitatô a traverso ecosistemi de tutto o mondo. L’é ‘na vera esposizion permanente in sce a vita inti oceani, con instalaçioin e pannelli pensæ anche pe-o lato educativo."
+    },
+    "addr": {
+      "it": "Ponte Spinola, 16, 16128 Genova",
+      "en": "Ponte Spinola, 16, 16128 Genova",
+      "es": "Ponte Spinola, 16, 16128 Genova",
+      "fr": "Ponte Spinola, 16, 16128 Genova",
+      "ar": "Ponte Spinola, 16, 16128 Genova",
+      "ru": "Ponte Spinola, 16, 16128 Genova",
+      "zh": "Ponte Spinola, 16, 16128 Genova",
+      "lij": "Ponte Spinola, 16, 16128 Genova"
+    },
+    "site": {
+      "it": "https://www.acquariodigenova.it/",
+      "en": "https://www.acquariodigenova.it/",
+      "es": "https://www.acquariodigenova.it/",
+      "fr": "https://www.acquariodigenova.it/",
+      "ar": "https://www.acquariodigenova.it/",
+      "ru": "https://www.acquariodigenova.it/",
+      "zh": "https://www.acquariodigenova.it/",
+      "lij": "https://www.acquariodigenova.it/"
+    },
+    "img": {
+      "it": "mostre/acquario.jpg",
+      "en": "mostre/acquario.jpg",
+      "es": "mostre/acquario.jpg",
+      "fr": "mostre/acquario.jpg",
+      "ar": "mostre/acquario.jpg",
+      "ru": "mostre/acquario.jpg",
+      "zh": "mostre/acquario.jpg",
+      "lij": "mostre/acquario.jpg"
+    }
+  },
+  {
+    "lat": 44.40863162904826,
+    "lng": 8.923458726229358,
+    "title": {
+      "it": "FantaCinema",
+      "en": "FantaCinema",
+      "es": "FantaCinema",
+      "fr": "FantaCinema",
+      "ar": "FantaCinema",
+      "ru": "FantaCinema",
+      "zh": "FantaCinema",
+      "lij": "FantaCinema"
+    },
+    "desc": {
+      "it": "FantaCinema è una mostra-museo dedicata al cinema fantastico: statue a grandezza naturale, cimeli originali, costumi, oggetti di scena, manifesti e installazioni raccontano la storia del genere, dall’immaginario classico ai blockbuster moderni. L’allestimento crea un percorso immersivo che sembra un set permanente affacciato sul Porto Antico.",
+      "en": "FantaCinema is an exhibition-museum dedicated to fantasy cinema: life-size statues, original props, costumes, set pieces, posters and installations tell the story of the genre, from classic imagery to modern blockbusters. The exhibition design creates an immersive route that feels like a permanent film set overlooking the Porto Antico.",
+      "es": "FantaCinema es una exposición-museo dedicada al cine fantástico: estatuas a tamaño real, objetos originales de rodaje, vestuario, elementos de decorado, carteles e instalaciones cuentan la historia del género, desde el imaginario clásico hasta los blockbusters modernos. El montaje crea un recorrido inmersivo que parece un plató permanente con vistas al Porto Antico.",
+      "fr": "FantaCinema est une exposition-musée consacrée au cinéma fantastique : statues grandeur nature, objets de tournage originaux, costumes, éléments de décor, affiches et installations racontent l’histoire du genre, de l’imaginaire classique aux blockbusters modernes. La scénographie crée un parcours immersif qui ressemble à un plateau de tournage permanent donnant sur le Porto Antico.",
+      "ar": "فانتا سينما عبارة عن معرض-متحف مكرَّس لسينما الفانتازيا؛ تماثيل بالحجم الطبيعي، مقتنيات وأغراض تصوير أصلية، أزياء، قطع ديكور، ملصقات وتركيبات فنية تروي تاريخ هذا النوع، من الخيال الكلاسيكي إلى أفلام البلوكباستر الحديثة. يخلق تصميم المعرض مسارًا غامرًا يشبه موقع تصوير دائمًا يطل على بورتو أنتيكو.",
+      "ru": "FantaCinema — это выставка-музей, посвящённая фантастическому кино: статуи в натуральную величину, оригинальные реквизит и костюмы, элементы декораций, афиши и инсталляции рассказывают историю жанра от классического воображаемого мира до современных блокбастеров. Экспозиция создаёт погружение и производит впечатление постоянной съёмочной площадки с видом на Порто Антико.",
+      "zh": "FantaCinema 是一座致力于奇幻电影的展览式博物馆：等身雕像、原版道具、服装、布景元素、海报和装置艺术共同讲述这一类型的历史，从经典幻想意象一直延伸到当代大片。展陈设计打造出一条沉浸式路线，仿佛置身于俯瞰旧港（Porto Antico）的常设片场。",
+      "lij": "FantaCinema l’é ‘na mostra-museo dedicâ au cinemâ fantastico: statue a grandezza naturale, cimeli originali, costumi, ogetti de scena, manifesti e instalaçioin conta a stöia do genere, da l’immaginario classico fin-a i blockbusters moderni. L’arestimento o crea ‘n percòrso immersivo che o pæ ‘n set permanente affacciòu in sciô Porto Antico."
+    },
+    "addr": {
+      "it": "Magazzini del Cotone, Porto Antico di Genova, 16124 Genova",
+      "en": "Magazzini del Cotone, Porto Antico di Genova, 16124 Genova",
+      "es": "Magazzini del Cotone, Porto Antico di Genova, 16124 Genova",
+      "fr": "Magazzini del Cotone, Porto Antico di Genova, 16124 Genova",
+      "ar": "Magazzini del Cotone, Porto Antico di Genova, 16124 Genova",
+      "ru": "Magazzini del Cotone, Porto Antico di Genova, 16124 Genova",
+      "zh": "Magazzini del Cotone, Porto Antico di Genova, 16124 Genova",
+      "lij": "Magazzini del Cotone, Porto Antico di Genova, 16124 Genova"
+    },
+    "site": {
+      "it": "https://www.museointernazionaledelcinema.it/",
+      "en": "https://www.museointernazionaledelcinema.it/",
+      "es": "https://www.museointernazionaledelcinema.it/",
+      "fr": "https://www.museointernazionaledelcinema.it/",
+      "ar": "https://www.museointernazionaledelcinema.it/",
+      "ru": "https://www.museointernazionaledelcinema.it/",
+      "zh": "https://www.museointernazionaledelcinema.it/",
+      "lij": "https://www.museointernazionaledelcinema.it/"
+    },
+    "img": {
+      "it": "mostre/fantacinema.jpg",
+      "en": "mostre/fantacinema.jpg",
+      "es": "mostre/fantacinema.jpg",
+      "fr": "mostre/fantacinema.jpg",
+      "ar": "mostre/fantacinema.jpg",
+      "ru": "mostre/fantacinema.jpg",
+      "zh": "mostre/fantacinema.jpg",
+      "lij": "mostre/fantacinema.jpg"
+    }
+  },
+  {
+    "lat": 44.41015857857352,
+    "lng": 8.926309918000012,
+    "title": {
+      "it": "La Città dei Bambini e dei Ragazzi",
+      "en": "La Città dei Bambini e dei Ragazzi",
+      "es": "La Città dei Bambini e dei Ragazzi",
+      "fr": "La Città dei Bambini e dei Ragazzi",
+      "ar": "La Città dei Bambini e dei Ragazzi",
+      "ru": "La Città dei Bambini e dei Ragazzi",
+      "zh": "La Città dei Bambini e dei Ragazzi",
+      "lij": "La Città dei Bambini e dei Ragazzi"
+    },
+    "desc": {
+      "it": "Qui la mostra è un percorso esperienziale dedicato ai cinque sensi: installazioni interattive, giochi e postazioni multimediali usano tatto, vista, udito, olfatto e gusto per far esplorare il corpo, l’ambiente e la tecnologia. È un allestimento permanente in stile edutainment, pensato per far imparare giocando, con spazi modulati per età diverse.",
+      "en": "Here the exhibition is an experiential route dedicated to the five senses: interactive installations, games and multimedia stations use touch, sight, hearing, smell and taste to explore the body, the environment and technology. It is a permanent edutainment-style setup, designed to help people learn through play, with spaces tailored to different age groups.",
+      "es": "Aquí la exposición es un recorrido experiencial dedicado a los cinco sentidos: instalaciones interactivas, juegos y puestos multimedia utilizan el tacto, la vista, el oído, el olfato y el gusto para explorar el cuerpo, el entorno y la tecnología. Es un montaje permanente de estilo edutainment, pensado para aprender jugando, con espacios adaptados a diferentes edades.",
+      "fr": "Ici, l’exposition est un parcours expérientiel dédié aux cinq sens : installations interactives, jeux et postes multimédias utilisent le toucher, la vue, l’ouïe, l’odorat et le goût pour faire explorer le corps, l’environnement et la technologie. Il s’agit d’un aménagement permanent de type edutainment, conçu pour apprendre en jouant, avec des espaces modulés selon les différentes tranches d’âge.",
+      "ar": "هنا يكون المعرض مسارًا تجريبيًا مكرَّسًا للحواس الخمس؛ تستخدم التركيبات التفاعلية والألعاب والمحطات متعددة الوسائط حاسة اللمس والبصر والسمع والشم والتذوّق لاستكشاف الجسم والبيئة والتقنية. إنّه تجهيز دائم بأسلوب ترفيهي–تعليمي، مُصمَّم ليتعلّم الزائر من خلال اللعب، مع فضاءات مهيّأة لفئات عمرية مختلفة.",
+      "ru": "Здесь «выставка» представляет собой опытный маршрут, посвящённый пяти чувствам: интерактивные инсталляции, игры и мультимедийные станции задействуют осязание, зрение, слух, обоняние и вкус, помогая изучать тело, окружающую среду и технологии. Это постоянная экспозиция в стиле edutainment, созданная для обучения через игру, с пространствами, адаптированными для разных возрастных групп.",
+      "zh": "在这里，“展览”是一条围绕五感打造的体验式路线：互动装置、游戏和多媒体站点通过触觉、视觉、听觉、嗅觉和味觉，引导人们探索身体、环境与科技。这是一处常设的寓教于乐式展陈空间，旨在通过游戏促进学习，并为不同年龄段设置了相应区域。",
+      "lij": "Chi a mostra a l’é ‘n percòrso esperienziale dedicòu a-i cinqe sensi: instalaçioin interattive, giochi e postazioni multimediali ûsan o tatto, a vista, l’ûdito, l’odô e o gusto pe fâ esplòâ o corpo, l’ambiente e a tecnologia. L’é ‘n allestimento permanente in stile edutainment, pensòu pe fâ imparâ zûgando, con spazi modulæ pe etæ diferente."
+    },
+    "addr": {
+      "it": "16126 Genova",
+      "en": "16126 Genova",
+      "es": "16126 Genova",
+      "fr": "16126 Genova",
+      "ar": "16126 Genova",
+      "ru": "16126 Genova",
+      "zh": "16126 Genova",
+      "lij": "16126 Genova"
+    },
+    "site": {
+      "it": "https://www.cittadeibambini.net/",
+      "en": "https://www.cittadeibambini.net/",
+      "es": "https://www.cittadeibambini.net/",
+      "fr": "https://www.cittadeibambini.net/",
+      "ar": "https://www.cittadeibambini.net/",
+      "ru": "https://www.cittadeibambini.net/",
+      "zh": "https://www.cittadeibambini.net/",
+      "lij": "https://www.cittadeibambini.net/"
+    },
+    "img": {
+      "it": "mostre/cittadeibambini.jpg",
+      "en": "mostre/cittadeibambini.jpg",
+      "es": "mostre/cittadeibambini.jpg",
+      "fr": "mostre/cittadeibambini.jpg",
+      "ar": "mostre/cittadeibambini.jpg",
+      "ru": "mostre/cittadeibambini.jpg",
+      "zh": "mostre/cittadeibambini.jpg",
+      "lij": "mostre/cittadeibambini.jpg"
+    }
+  },
+  {
+    "lat": 44.40749568089361,
+    "lng": 8.93288876543841,
+    "title": {
+      "it": "Palazzo Ducale",
+      "en": "Palazzo Ducale",
+      "es": "Palazzo Ducale",
+      "fr": "Palazzo Ducale",
+      "ar": "Palazzo Ducale",
+      "ru": "Palazzo Ducale",
+      "zh": "Palazzo Ducale",
+      "lij": "Palazzo Ducale"
+    },
+    "desc": {
+      "it": "Palazzo Ducale è il principale polo espositivo di Genova: nelle sue sale storiche ospita un programma continuo di grandi mostre temporanee di arte antica, moderna e contemporanea, fotografia e progetti speciali. Gli spazi del palazzo vengono allestiti di volta in volta come veri percorsi espositivi, con apparati multimediali, installazioni e attività collegate per scuole e pubblico.",
+      "en": "Palazzo Ducale is Genoa’s main exhibition centre: in its historic rooms it hosts a continuous programme of major temporary exhibitions of ancient, modern and contemporary art, photography and special projects. The palace spaces are set up each time as real exhibition routes, with multimedia equipment, installations and related activities for schools and the general public.",
+      "es": "Palazzo Ducale es el principal centro expositivo de Génova: en sus salas históricas acoge un programa continuo de grandes exposiciones temporales de arte antiguo, moderno y contemporáneo, fotografía y proyectos especiales. Los espacios del palacio se acondicionan cada vez como auténticos recorridos expositivos, con equipamiento multimedia, instalaciones y actividades complementarias para escuelas y público general.",
+      "fr": "Le Palazzo Ducale est le principal pôle d’exposition de Gênes : dans ses salles historiques, il accueille un programme continu de grandes expositions temporaires d’art ancien, moderne et contemporain, de photographie et de projets spéciaux. Les espaces du palais sont aménagés à chaque occasion comme de véritables parcours d’exposition, avec dispositifs multimédias, installations et activités associées pour les écoles et le grand public.",
+      "ar": "قصر دوكالي هو المركز الرئيسي للمعارض في جنوة؛ ففي قاعاته التاريخية يستضيف برنامجًا متواصلاً من المعارض المؤقتة الكبرى للفن القديم والحديث والمعاصر، إلى جانب التصوير الفوتوغرافي والمشاريع الخاصة. تُهيَّأ فضاءات القصر في كل مرة كمسارات عرض حقيقية، مع تجهيزات متعددة الوسائط وتركيبات فنية وأنشطة مرافقة مخصَّصة للمدارس والجمهور.",
+      "ru": "Палаццо Дукале — главный выставочный центр Генуи: в его исторических залах проходит непрерывная программа крупных временных выставок древнего, модернистского и современного искусства, а также фотопроектов и специальных программ. Пространства дворца каждый раз оформляются как полноценные выставочные маршруты с мультимедийным оборудованием, инсталляциями и сопутствующими мероприятиями для школ и широкой публики.",
+      "zh": "公爵宫（Palazzo Ducale）是热那亚最重要的展览中心：在其历史悠久的厅室中，全年举办古代艺术、现代与当代艺术、摄影以及特别项目等大型临时展览。宫殿的各个空间会根据展览不断重新布置，打造出真正的参观动线，并配有多媒体设备、装置艺术以及面向学校和公众的配套活动。",
+      "lij": "O Palazzo Ducale l’é o prinçipâ polo espositivo de Zêna: inte e so sale stòriche o l’ospita ‘n programma continuo de grande mostre temporanee d’arte antiga, moderna e contemporanea, de fotografía e de progetti speçiâ. I spazi do palasso vegnan arestî ogni vòtta comme veri percòrsi espositivi, con aparecci multimediali, instalaçioin e ativitæ collegæ pe-e scoe e pe-o pòbblico."
+    },
+    "addr": {
+      "it": "Piazza Giacomo Matteotti, 9, 16123 Genova",
+      "en": "Piazza Giacomo Matteotti, 9, 16123 Genova",
+      "es": "Piazza Giacomo Matteotti, 9, 16123 Genova",
+      "fr": "Piazza Giacomo Matteotti, 9, 16123 Genova",
+      "ar": "Piazza Giacomo Matteotti, 9, 16123 Genova",
+      "ru": "Piazza Giacomo Matteotti, 9, 16123 Genova",
+      "zh": "Piazza Giacomo Matteotti, 9, 16123 Genova",
+      "lij": "Piazza Giacomo Matteotti, 9, 16123 Genova"
+    },
+    "site": {
+      "it": "https://palazzoducale.genova.it/mostre/#in-corso",
+      "en": "https://palazzoducale.genova.it/mostre/#in-corso",
+      "es": "https://palazzoducale.genova.it/mostre/#in-corso",
+      "fr": "https://palazzoducale.genova.it/mostre/#in-corso",
+      "ar": "https://palazzoducale.genova.it/mostre/#in-corso",
+      "ru": "https://palazzoducale.genova.it/mostre/#in-corso",
+      "zh": "https://palazzoducale.genova.it/mostre/#in-corso",
+      "lij": "https://palazzoducale.genova.it/mostre/#in-corso"
+    },
+    "img": {
+      "it": "mostre/palazzo_ducale.jpg",
+      "en": "mostre/palazzo_ducale.jpg",
+      "es": "mostre/palazzo_ducale.jpg",
+      "fr": "mostre/palazzo_ducale.jpg",
+      "ar": "mostre/palazzo_ducale.jpg",
+      "ru": "mostre/palazzo_ducale.jpg",
+      "zh": "mostre/palazzo_ducale.jpg",
+      "lij": "mostre/palazzo_ducale.jpg"
+    }
+  }
+]
+
