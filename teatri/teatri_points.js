@@ -1,0 +1,364 @@
+(function(){
+  window.TEATRI_POINTS = [
+  {
+    "id": "teatro_carlo_felice",
+    "lat": 44.407973786500364,
+    "lng": 8.934774987616807,
+    "title": {
+      "it": "Opera Carlo Felice"
+    },
+    "descr": {
+      "it": "Opera Carlo Felice descrizione."
+    },
+    "addr": {
+      "it": "Passo Eugenio Montale, 4, 16121 Genova"
+    },
+    "site": {
+      "it": "https://operacarlofelicegenova.it/"
+    },
+    "img": {
+      "it": "teatri/carlo-felice.jpg"
+    }
+  },
+  {
+    "id": "teatro_modena",
+    "lat": 44.41081433121156,
+    "lng": 8.889914557596141,
+    "title": {
+      "it": "Teatro Gustavo Modena"
+    },
+    "descr": {
+      "it": "Teatro Nazionale di Genova – Teatro Gustavo Modena."
+    },
+    "addr": {
+      "it": "Piazza Gustavo Modena, 3, 16149 Genova"
+    },
+    "site": {
+      "it": "http://www.teatronazionalegenova.it/"
+    },
+    "img": {
+      "it": "teatri/modena.jpg"
+    }
+  },
+  {
+    "id": "teatro_duse",
+    "lat": 44.41131521802365,
+    "lng": 8.938608380203231,
+    "title": {
+      "it": "Teatro Eleonora Duse"
+    },
+    "descr": {
+      "it": "Teatro Nazionale di Genova – Teatro Eleonora Duse."
+    },
+    "addr": {
+      "it": "Via Nicolò Bacigalupo, 6, 16122 Genova"
+    },
+    "site": {
+      "it": "https://www.teatronazionalegenova.it/spettacolo_sala/duse/"
+    },
+    "img": {
+      "it": "teatri/duse.jpg"
+    }
+  },
+  {
+    "id": "teatro_ivochiesa",
+    "lat": 44.40464557390245,
+    "lng": 8.947948621262332,
+    "title": {
+      "it": "Teatro Ivo Chiesa"
+    },
+    "descr": {
+      "it": "Teatro Nazionale di Genova – Teatro Ivo Chiesa."
+    },
+    "addr": {
+      "it": "P.za Borgo Pila, 42, 16129 Genova"
+    },
+    "site": {
+      "it": "https://www.teatronazionalegenova.it/"
+    },
+    "img": {
+      "it": "teatri/ivochiesa.jpg"
+    }
+  },
+  {
+    "id": "teatro_politeama",
+    "lat": 44.41110372730849,
+    "lng": 8.938055888919815,
+    "title": {
+      "it": "Politeama Genovese"
+    },
+    "descr": {
+      "it": "Politeama Genovese."
+    },
+    "addr": {
+      "it": "Via Nicolò Bacigalupo, 2, 16122 Genova"
+    },
+    "site": {
+      "it": "http://www.politeamagenovese.it/"
+    },
+    "img": {
+      "it": "teatri/politeama.jpg"
+    }
+  },
+  {
+    "id": "teatro_tosse",
+    "lat": 44.40489150652857,
+    "lng": 8.931782899824,
+    "title": {
+      "it": "Teatro della Tosse"
+    },
+    "descr": {
+      "it": "Teatro della Tosse."
+    },
+    "addr": {
+      "it": "Piazza Renato Negri, 6, 16123 Genova"
+    },
+    "site": {
+      "it": "https://teatrodellatosse.it/teatri-di-santagostino/"
+    },
+    "img": {
+      "it": "teatri/tosse.jpg"
+    }
+  },
+  {
+    "id": "teatro_gioventu",
+    "lat": 44.40255532331202,
+    "lng": 8.94189032947445,
+    "title": {
+      "it": "Teatro della Gioventù"
+    },
+    "descr": {
+      "it": "Teatro della Gioventù."
+    },
+    "addr": {
+      "it": "Via Cesarea, 16, 16121 Genova"
+    },
+    "site": {
+      "it": "http://www.carlofelicegenova.it/"
+    },
+    "img": {
+      "it": "teatri/gioventu.jpg"
+    }
+  },
+  {
+    "id": "teatro_verdi",
+    "lat": 44.42630462266937,
+    "lng": 8.849995618392771,
+    "title": {
+      "it": "Teatro Verdi"
+    },
+    "descr": {
+      "it": "Teatro Verdi."
+    },
+    "addr": {
+      "it": "Piazza Alfredo Oriani, 7, 16154 Genova"
+    },
+    "site": {
+      "it": "http://verditeatro.it/"
+    },
+    "img": {
+      "it": "teatri/verdi.jpg"
+    }
+  },
+  {
+    "id": "teatro_govi",
+    "lat": 44.45810752564183,
+    "lng": 8.900895977745193,
+    "title": {
+      "it": "Teatro Rina e Gilberto Govi"
+    },
+    "descr": {
+      "it": "Teatro Rina e Gilberto Govi."
+    },
+    "addr": {
+      "it": "Via Pasquale Pastorino, 23, 16162 Genova"
+    },
+    "site": {
+      "it": "http://www.teatrogovi.it/"
+    },
+    "img": {
+      "it": "teatri/govi.jpg"
+    }
+  },
+  {
+    "id": "teatro_garage",
+    "lat": 44.40798612393905,
+    "lng": 8.958814263969579,
+    "title": {
+      "it": "Teatro Garage"
+    },
+    "descr": {
+      "it": "Teatro Garage."
+    },
+    "addr": {
+      "it": "Via Paggi, 43b, 16143 Genova"
+    },
+    "site": {
+      "it": "http://www.teatrogarage.it/"
+    },
+    "img": {
+      "it": "teatri/garage.jpg"
+    }
+  },
+  {
+    "id": "teatro_ortica",
+    "lat": 44.45252507578363,
+    "lng": 8.974920353977318,
+    "title": {
+      "it": "Teatro dell’Ortica"
+    },
+    "descr": {
+      "it": "Teatro dell’Ortica."
+    },
+    "addr": {
+      "it": "Via Salvador Allende, 48, 16138 Genova"
+    },
+    "site": {
+      "it": "http://www.teatrortica.it/"
+    },
+    "img": {
+      "it": "teatri/ortica.jpg"
+    }
+  },
+  {
+    "id": "teatro_akropolis",
+    "lat": 44.42376534764242,
+    "lng": 8.856501187242484,
+    "title": {
+      "it": "Teatro Akropolis"
+    },
+    "descr": {
+      "it": "Teatro Akropolis."
+    },
+    "addr": {
+      "it": "Via Mario Boeddu, 10, 16153 Genova"
+    },
+    "site": {
+      "it": "https://www.teatroakropolis.com/"
+    },
+    "img": {
+      "it": "teatri/akropolis.jpg"
+    }
+  },
+  {
+    "id": "teatro_ponente",
+    "lat": 44.42771111516573,
+    "lng": 8.74896627730396,
+    "title": {
+      "it": "Teatro del Ponente"
+    },
+    "descr": {
+      "it": "Teatro del Ponente."
+    },
+    "addr": {
+      "it": "Piazza Bernardo e Giovanni Odicini, 9, 16158 Genova"
+    },
+    "site": {
+      "it": "https://teatrodellatosse.it/teatro-del-ponente/"
+    },
+    "img": {
+      "it": "teatri/ponente.jpg"
+    }
+  },
+  {
+    "id": "teatro_lunaria",
+    "lat": 44.40836298537873,
+    "lng": 8.933058376373669,
+    "title": {
+      "it": "Lunaria Teatro"
+    },
+    "descr": {
+      "it": "Lunaria Teatro."
+    },
+    "addr": {
+      "it": "Piazza di S. Matteo, 18, 16123 Genova"
+    },
+    "site": {
+      "it": "http://lunariateatro.it/chi-siamo/"
+    },
+    "img": {
+      "it": "teatri/lunaria.jpg"
+    }
+  },
+  {
+    "id": "teatro_stradanuova",
+    "lat": 44.41099478739917,
+    "lng": 8.931845692432137,
+    "title": {
+      "it": "Stradanuova Teatro Centrale"
+    },
+    "descr": {
+      "it": "Stradanuova Teatro Centrale."
+    },
+    "addr": {
+      "it": "Vico Boccanegra, 16124 Genova"
+    },
+    "site": {
+      "it": "http://www.teatrostradanuova.it/"
+    },
+    "img": {
+      "it": "teatri/stradanuova.jpg"
+    }
+  },
+  {
+    "id": "teatro_arca",
+    "lat": 44.41797942174347,
+    "lng": 8.951637703213258,
+    "title": {
+      "it": "Teatro dell'Arca"
+    },
+    "descr": {
+      "it": "Teatro dell'Arca."
+    },
+    "addr": {
+      "it": "Via Clavarezza, 16/25, 16139 Genova"
+    },
+    "site": {
+      "it": "http://www.teatronecessariogenova.org/"
+    },
+    "img": {
+      "it": "teatri/arca.jpg"
+    }
+  },
+  {
+    "id": "teatro_tiqu",
+    "lat": 44.407973786500364,
+    "lng": 8.934774987616807,
+    "title": {
+      "it": "Tiqu"
+    },
+    "descr": {
+      "it": "Tiqu."
+    },
+    "addr": {
+      "it": "Piazza Cambiaso, 1, 16123 Genova"
+    },
+    "site": {
+      "it": "http://www.tedxgenova.com/"
+    },
+    "img": {
+      "it": "teatri/tiqu.jpg"
+    }
+  },
+  {
+    "id": "teatro_instabile",
+    "lat": 44.39782246355774,
+    "lng": 8.949309910654563,
+    "title": {
+      "it": "Teatro Instabile"
+    },
+    "descr": {
+      "it": "Teatro Instabile - La Quinta Praticabile."
+    },
+    "addr": {
+      "it": "Via Antonio Cecchi, 19/R, 16129 Genova"
+    },
+    "site": {
+      "it": "https://www.laquintapraticabile.com/"
+    },
+    "img": {
+      "it": "teatri/instabile.jpg"
+    }
+  }
+];
+})();

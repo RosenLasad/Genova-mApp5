@@ -1,0 +1,137 @@
+(function(){
+  window.SPORT_POINTS = [
+  {
+    "id": "stadio-luigi-ferraris",
+    "name": "Stadio Luigi Ferraris",
+    "lat": 44.41638798550401,
+    "lng": 8.952578188867573,
+    "addr": "Via Giovanni de Prà, 1, 16139 Genova",
+    "url": "https://it.wikipedia.org/wiki/Stadio_Luigi_Ferraris",
+    "img": "sport/stadioferraris.jpg",
+    "desc": {
+      "it": "Lo Stadio Luigi Ferraris, noto anche come Marassi, è uno degli impianti calcistici più antichi d'Italia, inaugurato ufficialmente il 22 gennaio 1911. Situato a Genova, fu intitolato a Luigi Ferraris, capitano del Genoa caduto nella Prima Guerra Mondiale, nel gennaio 1933. Oggi ospita sia le partite casalinghe del Genoa (Gradinata Nord) sia quelle della Sampdoria (Gradinata Sud).",
+      "en": "Luigi Ferraris Stadium, also known as Marassi, is one of the oldest football grounds in Italy and was officially inaugurated on 22 January 1911. Located in Genoa, it was dedicated in January 1933 to Luigi Ferraris, a Genoa captain who fell in the First World War. Today it hosts the home matches of both Genoa (North Stand) and Sampdoria (South Stand).",
+      "es": "El Estadio Luigi Ferraris, conocido también como Marassi, es uno de los recintos futbolísticos más antiguos de Italia y fue inaugurado oficialmente el 22 de enero de 1911. Situado en Génova, fue dedicado en enero de 1933 a Luigi Ferraris, capitán del Genoa caído en la Primera Guerra Mundial. Hoy alberga los partidos como local tanto del Genoa (Gradinata Nord) como de la Sampdoria (Gradinata Sud).",
+      "fr": "Le stade Luigi-Ferraris, également connu sous le nom de Marassi, est l’un des plus anciens stades de football d’Italie et a été officiellement inauguré le 22 janvier 1911. Situé à Gênes, il a été dédié en janvier 1933 à Luigi Ferraris, capitaine du Genoa tombé pendant la Première Guerre mondiale. Aujourd’hui, il accueille les matches à domicile du Genoa (Gradinata Nord) et de la Sampdoria (Gradinata Sud).",
+      "ar": "ملعب لويجي فيراريس، المعروف أيضًا باسم ماراسي، يُعد واحدًا من أقدم الملاعب الكروية في إيطاليا، وقد افتُتح رسميًا في 22 يناير 1911. يقع في جنوى، وتمت تسميته على اسم لويجي فيراريس، قائد نادي جنوى الذي سقط في الحرب العالمية الأولى، وذلك في يناير 1933. يستضيف الملعب اليوم مباريات جنوى على المدرج الشمالي، ومباريات سامبدوريا على المدرج الجنوبي.",
+      "ru": "Стадион «Луиджи Феррарис», более известный как «Марасси», является одним из старейших футбольных стадионов Италии; его официальное открытие состоялось 22 января 1911 года. Он расположен в Генуе и был посвящён Луиджи Феррарису, капитану «Дженоа», погибшему в Первой мировой войне; соответствующее решение было принято в январе 1933 года. Сегодня арена принимает домашние матчи как «Дженоа» (сектор Gradinata Nord), так и «Сампдории» (Gradinata Sud).",
+      "zh": "路易吉·费拉里斯球场（也被称为马拉西球场）是意大利最古老的足球场之一，并于1911年1月22日正式落成。球场位于热那亚，并在1933年1月以在第一次世界大战中阵亡的热那亚队长路易吉·费拉里斯命名。如今，这里同时承办热那亚队（北看台）和桑普多利亚队（南看台）的主场比赛。",
+      "lij": "O Stadio Luigi Ferraris, conosciûo comme Marassi, l’é uno di campi de calcio ciù antighi d’Italia, inauguròu uficialmente o 22 zanâ 1911. Se trêuva a Zena e in sciô zanâ 1933 o l’é stæto dedicòu a Luigi Ferraris, capitán do Genoa cadûo inta Primma Guæra Mondiâ. Ancöu o l’ospita e partî in casa do Genoa (Gradinata Nord) e quelle da Sampdoria (Gradinata Sud)."
+    }
+  },
+  {
+    "id": "arena-albaro",
+    "name": "Arena Albaro Village",
+    "lat": 44.39600151708256,
+    "lng": 8.968565071791078,
+    "addr": "Piazza Henry Dunant, 4, 16146 Genova",
+    "url": "http://www.arenaalbarovillage.it/",
+    "img": "sport/arena-albaro.jpg",
+    "desc": {
+      "it": "L'Arena Albaro Village a Genova è un grande villaggio sportivo e ricreativo nel quartiere di Albaro, con piscine (inclusa una olimpionica), campi da padel e tennis, calcetto, centro fitness, ludoteca per bambini, aree gioco, ristoranti e negozi, ospitando eventi e attività tutto l'anno, ed è aperto dalle 7 alle 24.",
+      "en": "Arena Albaro Village in Genoa is a large sports and leisure complex in the Albaro district, with swimming pools (including an Olympic-size one), padel and tennis courts, five-a-side football, a fitness centre, a children’s playroom, play areas, restaurants and shops. It hosts events and activities all year round and is open from 7 a.m. to midnight.",
+      "es": "Arena Albaro Village, en Génova, es un gran complejo deportivo y de ocio en el barrio de Albaro, con piscinas (incluida una olímpica), pistas de pádel y de tenis, fútbol sala, centro de fitness, ludoteca infantil, zonas de juego, restaurantes y tiendas. Acoge eventos y actividades durante todo el año y abre de 7 a 24 horas.",
+      "fr": "Arena Albaro Village, à Gênes, est un grand village sportif et de loisirs situé dans le quartier d’Albaro, avec des piscines (dont une olympique), des terrains de padel et de tennis, du football à cinq, un centre de fitness, une ludothèque pour enfants, des aires de jeux, des restaurants et des boutiques. Il accueille des événements et des activités toute l’année et est ouvert de 7 h à minuit.",
+      "ar": "تُعدّ Arena Albaro Village في جنوة مجمّعًا رياضيًا وترفيهيًا كبيرًا في حي ألبارو، يضم مسابح (منها حوض أولمبي)، وملابس بادل وتنس، وملاعب كرة قدم خماسية، ومركزًا للياقة البدنية، ومرکزًا ترفيهيًا للأطفال، ومناطق للّعب، إضافة إلى مطاعم ومتاجر. يستضيف فعاليات وأنشطة على مدار العام، ويفتح أبوابه من السابعة صباحًا حتى منتصف الليل.",
+      "ru": "Arena Albaro Village в Генуе — это крупный спортивно-развлекательный комплекс в районе Альбаро с бассейнами (включая олимпийский), площадками для паделя и тенниса, мини-футболом, фитнес-центром, детской игровой зоной, playground-ами, а также ресторанами и магазинами. Здесь круглый год проходят мероприятия и активности, а работает комплекс с 7:00 до 24:00.",
+      "zh": "热那亚的 Arena Albaro Village 是位于阿尔巴罗区的大型体育与休闲综合体，内有多座泳池（其中一座为奥林匹克规格）、壁板球和网球场、五人制足球场、健身中心、儿童活动室、游乐区以及餐厅和商店。全年举办各类活动与赛事，开放时间为早上7点至午夜12点。",
+      "lij": "L’Arena Albaro Village a Zêna l’é ‘n grande vilaggio sportivo e de sciûsso inte quartié d’Albaro, con piscine (anche ‘na olimpionica), campi de padel e tennis, calcio a 5, centro fitness, ludoteca pe-i figgeu, aree gioco, ristoranti e boteghe. Gh’ospita eventi e ativitæ tutto l’ànno ed l’é aberto da-e 7 a mezanötte."
+    }
+  },
+  {
+    "id": "asd-doria",
+    "name": "ASD S.G. Andrea Doria",
+    "lat": 44.39947993667987,
+    "lng": 8.93998590331808,
+    "addr": "Viale Aspromonte, 2, 16128 Genova",
+    "url": "https://www.sgandreadoria.it/",
+    "img": "sport/asd-doria.jpg",
+    "desc": {
+      "it": "La SG Andrea Doria (Società Ginnastica Andrea Doria) è una storica polisportiva di Genova, fondata nel 1895, con sede in Viale Aspromonte 2, che offre numerosi sport come ginnastica, nuoto, tennis, arti marziali (judo, kendo, karate, aikido) e pallanuoto, con una grande tradizione sportiva genovese.",
+      "en": "SG Andrea Doria (Società Ginnastica Andrea Doria) is a historic multi-sport club in Genoa, founded in 1895 and based at Viale Aspromonte 2. It offers numerous sports such as gymnastics, swimming, tennis, martial arts (judo, kendo, karate, aikido) and water polo, and has a long-standing sporting tradition in the city.",
+      "es": "La SG Andrea Doria (Società Ginnastica Andrea Doria) es un histórico club polideportivo de Génova, fundado en 1895 y con sede en Viale Aspromonte 2. Ofrece numerosas disciplinas como gimnasia, natación, tenis, artes marciales (judo, kendo, kárate, aikido) y waterpolo, con una gran tradición deportiva genovesa.",
+      "fr": "La SG Andrea Doria (Società Ginnastica Andrea Doria) est un club omnisports historique de Gênes, fondé en 1895 et situé Viale Aspromonte 2. Il propose de nombreuses disciplines comme la gymnastique, la natation, le tennis, les arts martiaux (judo, kendo, karaté, aikido) et le water-polo, et s’inscrit dans une grande tradition sportive génoise.",
+      "ar": "تُعد SG Andrea Doria (جمعية الجمباز أندريا دوريا) ناديًا رياضيًا عريقًا متعدد الأنشطة في جنوة، تأسس عام 1895 ويقع مقره في فيالي أسبرومونتي 2. يقدّم العديد من الرياضات مثل الجمباز، السباحة، التنس، وفنون القتال (الجودو، الكيندو، الكاراتيه، الأيكيدو) إضافة إلى كرة الماء، ويتمتّع بتاريخ عريق في الرياضة الجَنَوية.",
+      "ru": "SG Andrea Doria (Società Ginnastica Andrea Doria) — это исторический многопрофильный спортивный клуб Генуи, основанный в 1895 году и расположенный по адресу Viale Aspromonte 2. Клуб предлагает множество видов спорта, таких как гимнастика, плавание, теннис, боевые искусства (дзюдо, кэндо, каратэ, айкидо) и водное поло, и обладает богатой спортивной традицией в городе.",
+      "zh": "SG Andrea Doria（Società Ginnastica Andrea Doria）是热那亚一家具悠久历史的综合性体育俱乐部，成立于 1895 年，位于 Viale Aspromonte 2。俱乐部开展多种运动项目，如体操、游泳、网球、武术（柔道、剑道、空手道、合气道）以及水球，在热那亚拥有深厚的体育传统。",
+      "lij": "A SG Andrea Doria (Societæ Ginnastica Andrea Doria) l’é ‘na stöica societæ polisportiva de Zêna, fondata into 1895, con a seu sede in Viale Aspromonte 2, che l’ofeçe tanti sport comme ginnastica, nuoto, tennis, arti marçiâ (judo, kendo, karate, aikido) e pallanuoto, con ‘na grande tradixon sportiva zeneize."
+    }
+  },
+  {
+    "id": "cus-genova",
+    "name": "Cus Genova",
+    "lat": 44.401842664213476,
+    "lng": 8.964729820354425,
+    "addr": "Via Monte Zovetto, 21 a, 16146 Genova",
+    "url": "http://www.cusgenova.it/",
+    "img": "sport/cus-genova.jpg",
+    "desc": {
+      "it": "Il CUS Genova (Centro Universitario Sportivo) è una polisportiva universitaria che offre una vasta gamma di attività sportive e fitness per studenti e non, con corsi (fitness, nuoto, sport di squadra come basket, pallavolo, calcio, rugby, e attività all'aperto come vela, trekking, golf, e-bike) e impianti sportivi (palestre, campi, spiaggia, campo da golf).",
+      "en": "CUS Genova (Centro Universitario Sportivo) is a university multi-sport club that offers a wide range of sports and fitness activities for students and non-students. It provides courses (fitness, swimming, team sports such as basketball, volleyball, football, rugby, and outdoor activities such as sailing, trekking, golf and e-biking) and sports facilities (gyms, pitches, a beach area and a golf course).",
+      "es": "El CUS Genova (Centro Universitario Sportivo) es un club polideportivo universitario que ofrece una amplia gama de actividades deportivas y de fitness para estudiantes y no estudiantes, con cursos (fitness, natación, deportes de equipo como baloncesto, voleibol, fútbol, rugby, y actividades al aire libre como vela, senderismo, golf y e-bike) e instalaciones deportivas (gimnasios, campos, playa y campo de golf).",
+      "fr": "Le CUS Genova (Centro Universitario Sportivo) est un club omnisports universitaire qui propose un large éventail d’activités sportives et de fitness pour les étudiants et le grand public, avec des cours (fitness, natation, sports collectifs comme le basket, le volley, le football, le rugby, et des activités de plein air comme la voile, la randonnée, le golf et le VAE) ainsi que des installations sportives (salles de sport, terrains, plage et parcours de golf).",
+      "ar": "يُعد CUS Genova (المركز الجامعي الرياضي) ناديًا جامعياً متعدّد الرياضات يقدّم مجموعة واسعة من أنشطة الرياضة واللياقة للطلاب وغير الطلاب، مع دورات (لياقة بدنية، سباحة، رياضات جماعية مثل كرة السلة، الكرة الطائرة، كرة القدم، الركبي، وأنشطة في الهواء الطلق مثل الإبحار، رياضة المشي الجبلي، الغولف والدراجات الكهربائية) بالإضافة إلى منشآت رياضية (صالات رياضية، ملاعب، شاطئ وملعب غولف).",
+      "ru": "CUS Genova (Centro Universitario Sportivo) — университетский многопрофильный спортивный клуб, который предлагает широкий спектр спортивных и фитнес-занятий для студентов и всех желающих. Здесь есть курсы (фитнес, плавание, командные виды спорта, такие как баскетбол, волейбол, футбол, регби, а также занятия на открытом воздухе: парусный спорт, треккинг, гольф, электровелосипеды) и спортивная инфраструктура (тренажёрные и спортивные залы, площадки, пляж и поле для гольфа).",
+      "zh": "CUS Genova（Centro Universitario Sportivo）是一家大学综合体育中心，为学生及非学生提供种类丰富的体育与健身活动，包括各类课程（健身、游泳、团队运动如篮球、排球、足球、橄榄球，以及户外活动如帆船、徒步、高尔夫和电动自行车）和多种体育设施（健身房、球场、沙滩和高尔夫球场）。",
+      "lij": "O CUS Genova (Centro Universitario Sportivo) l’é ‘na polisportiva universitaria che l’ofeçe ‘na granda gamma de ativitæ sportive e de fitness pe studenti e no, con corsi (fitness, nuoto, sport de squaddra comme basket, pallavolo, calcio, rugby e ativitæ all’aperto comme vela, trekking, golf e e-bike) e inpianti sportivi (palestra, campi, spiaggia e campo da golf)."
+    }
+  },
+  {
+    "id": "sporting-club",
+    "name": "Sporting Club Genova",
+    "lat": 44.39133749040535,
+    "lng": 8.965254956899917,
+    "addr": "Via Tre Pini, 81, 16133 Genova",
+    "url": "https://sportingclubgenova.com/stabilimento-balneare/",
+    "img": "sport/sporting-club.jpg",
+    "desc": {
+      "it": "Lo Sporting Club Genova è un'associazione sportiva e ricreativa situata in Via Tre Pini 81 (zona Borgoratti) che offre numerosi servizi come tennis (campi in terra rossa e sintetica, scuola), padel, piscina (corsi, fitness), palestra (attrezzature, corsi, sauna), e attività sociali/ricreative (biliardo, eventi, Wi-Fi).",
+      "en": "Sporting Club Genova is a sports and leisure association located in Via Tre Pini 81 (Borgoratti area) that offers numerous services such as tennis (clay and synthetic courts, tennis school), padel, swimming pool (courses and fitness), gym (equipment, classes, sauna), and social/recreational activities (billiards, events, Wi-Fi).",
+      "es": "El Sporting Club Genova es una asociación deportiva y recreativa situada en Via Tre Pini 81 (zona Borgoratti) que ofrece numerosos servicios como tenis (pistas de tierra batida y sintéticas, escuela), pádel, piscina (cursos, fitness), gimnasio (equipamiento, clases, sauna) y actividades sociales y recreativas (billar, eventos, Wi-Fi).",
+      "fr": "Le Sporting Club Genova est une association sportive et de loisirs située Via Tre Pini 81 (quartier Borgoratti), qui propose de nombreux services tels que le tennis (terrains en terre battue et synthétiques, école de tennis), le padel, une piscine (cours, fitness), une salle de sport (équipements, cours, sauna) ainsi que des activités sociales et récréatives (billard, événements, Wi-Fi).",
+      "ar": "يُعد Sporting Club Genova جمعية رياضية وترفيهية تقع في Via Tre Pini 81 (منطقة بورغوراتي)، وتقدّم العديد من الخدمات مثل التنس (ملاعب ترابية وصناعية، مدرسة تنس)، البادل، المسبح (دورات، لياقة بدنية)، صالة الرياضة (معدات، حصص تدريبية، ساونا)، إضافة إلى أنشطة اجتماعية وترفيهية (بلياردو، فعاليات، واي فاي).",
+      "ru": "Sporting Club Genova — это спортивно-досуговое объединение, расположенное по адресу Via Tre Pini 81 (район Боргорати), которое предлагает множество услуг: теннис (корты с грунтовым и синтетическим покрытием, теннисная школа), падел, бассейн (занятия, фитнес), тренажёрный зал (оборудование, групповые занятия, сауна), а также социальные и развлекательные активности (бильярд, мероприятия, Wi-Fi).",
+      "zh": "Sporting Club Genova 是一家位于 Via Tre Pini 81（Borgoratti 区）的体育与休闲俱乐部，提供多种服务，包括网球（红土和合成球场及网球学校）、壁板球、游泳池（课程与水中健身）、健身房（器械、团体课程、桑拿）以及社交和休闲活动（台球、活动、Wi-Fi）。",
+      "lij": "O Sporting Club Genova l’é ‘n’associaçion sportiva e de sciûsso situa in Via Tre Pini 81 (zona Borgoratti) che l’ofeçe tanti serviççi comme tennis (campi in tæra rossa e sintetica, scöa), padel, piscina (corsi, fitness), palestra (atrezzi, corsi, sauna) e ativitæ sociali/ricreative (biliardo, eventi, Wi-Fi)."
+    }
+  },
+  {
+    "id": "vita-genova",
+    "name": "Vita Genova",
+    "lat": 44.39853312708899,
+    "lng": 8.954769182599298,
+    "addr": "Via G.B. Edoardo Riboli, 20, 16145 Genova",
+    "url": "https://www.vitagenova.it/",
+    "img": "sport/vita-genova.jpg",
+    "desc": {
+      "it": "Vita Genova è un centro polisportivo multidisciplinare a Genova, non una definizione generica della città, che offre oltre 3.000 mq di spazi per fitness, corsi (sportivi e riabilitativi) e benessere per tutte le età, con personale qualificato e attrezzature moderne, inclusa una piscina, palestra e aree dedicate, ponendo grande attenzione all'accessibilità e alla ricerca scientifica applicata allo sport.",
+      "en": "Vita Genova is a multidisciplinary sports centre in Genoa, not a generic description of the city’s lifestyle. It offers over 3,000 m² of space for fitness, classes (sports and rehabilitation) and wellbeing for all ages, with qualified staff and modern equipment, including a swimming pool, gym and dedicated areas, with strong attention to accessibility and to scientific research applied to sport.",
+      "es": "Vita Genova es un centro polideportivo multidisciplinar en Génova, no una descripción genérica del estilo de vida de la ciudad. Ofrece más de 3.000 m² de espacios para fitness, cursos (deportivos y de rehabilitación) y bienestar para todas las edades, con personal cualificado y equipamiento moderno, incluida una piscina, un gimnasio y áreas dedicadas, prestando especial atención a la accesibilidad y a la investigación científica aplicada al deporte.",
+      "fr": "Vita Genova est un centre omnisports pluridisciplinaire à Gênes, et non une description générale de la ville. Il propose plus de 3 000 m² d’espaces dédiés au fitness, aux cours (sportifs et de rééducation) et au bien-être pour tous les âges, avec un personnel qualifié et des équipements modernes, notamment une piscine, une salle de sport et des zones dédiées, en accordant une grande attention à l’accessibilité et à la recherche scientifique appliquée au sport.",
+      "ar": "Vita Genova هو مركز رياضي متعدّد التخصّصات في مدينة جنوة، وليس وصفًا عامًا لطبيعة الحياة في المدينة. يوفّر أكثر من 3000 متر مربع من المساحات المخصّصة للياقة البدنية، والدورات (الرياضية وإعادة التأهيل) وبرامج العافية لجميع الأعمار، مع طاقم مؤهّل وتجهيزات حديثة، بما في ذلك مسبح، وصالة رياضية، ومناطق مخصّصة، مع اهتمام كبير بقضايا الوصول لذوي الاحتياجات المختلفة وبالبحث العلمي المطبَّق على الرياضة.",
+      "ru": "Vita Genova — это многопрофильный спортивный центр в Генуе, а не общее описание «жизнь в Генуе». Он располагает более чем 3 000 м² пространства для фитнеса, занятий (спортивных и реабилитационных) и программ по оздоровлению для людей любого возраста. Здесь работают квалифицированные специалисты, используется современное оборудование, есть бассейн, тренажёрный зал и специализированные зоны, при этом большое внимание уделяется доступности и научным исследованиям, применяемым в спорте.",
+      "zh": "Vita Genova 是位于热那亚的一家多学科综合体育中心，并不是对“热那亚生活方式”的泛泛描述。中心拥有超过 3000 平方米的空间，用于健身、各类课程（运动与康复）以及适合各个年龄层的身心健康活动，配备专业团队与现代化设备，包括泳池、健身房及专门功能区，并高度重视无障碍环境以及面向运动实践的科学研究。",
+      "lij": "Vita Genova l’é ‘n centro polisportivo multidisciplinare a Zêna, no ‘na definiçion generica da citæ, che l’ofeçe ciù de 3.000 mætri quadro de spazi pe-o fitness, corsi (sportivi e de riabilitaçion) e benessere pe tutte e etæ, con personale calificòu e atrezzature moderne, con ‘na piscina, ‘na palestra e aree dedicæ, con grande atension all’accessibilitæ e a-a riçerca scientifica aplicâ a-o sport."
+    }
+  },
+  {
+    "id": "impianto-sportivo-sciorba",
+    "name": "Impianto Sportivo Sciorba",
+    "lat": 44.44431235708138,
+    "lng": 8.968636428645858,
+    "addr": "Via Gelasio Adamoli, 57, 16141 Genova",
+    "url": "http://www.piscinesciorba.com/",
+    "img": "sport/sciorba.jpg",
+    "desc": {
+      "it": "La Sciorba è un grande complesso sportivo polifunzionale situato nel quartiere di Molassana, a Genova. Comprende piscine coperte e scoperte, lo Sciorba Stadium (secondo impianto calcistico della città dopo Marassi), un campo di atletica, palestre per arrampicata e fitness, un parco acquatico estivo e spazi dedicati a eventi e a diverse discipline sportive.",
+      "en": "Sciorba is a large multi-purpose sports complex located in the Molassana district of Genoa. It includes indoor and outdoor swimming pools, the Sciorba Stadium (the city’s second football ground after Marassi), an athletics track, climbing and fitness gyms, a summer water park and areas devoted to events and various sports disciplines.",
+      "es": "Sciorba es un gran complejo deportivo polifuncional situado en el barrio de Molassana, en Génova. Incluye piscinas cubiertas y al aire libre, el Sciorba Stadium (el segundo campo de fútbol de la ciudad después de Marassi), una pista de atletismo, gimnasios de escalada y fitness, un parque acuático de verano y espacios dedicados a eventos y a distintas disciplinas deportivas.",
+      "fr": "La Sciorba est un vaste complexe sportif polyvalent situé dans le quartier de Molassana, à Gênes. Il comprend des piscines couvertes et découvertes, le Sciorba Stadium (deuxième stade de football de la ville après Marassi), une piste d’athlétisme, des salles d’escalade et de fitness, un parc aquatique estival ainsi que des espaces dédiés aux événements et à différentes disciplines sportives.",
+      "ar": "«شوربا» هو مجمّع رياضي كبير ومتعدد الاستخدامات يقع في حي مولاسانا بمدينة جنوى. يضم مسابح مغطاة ومكشوفة، وملعب شوربا (ثاني ملعب كروي في المدينة بعد ماراسي)، ومضمارًا لألعاب القوى، وقاعات مخصَّصة لتسلّق الجدران واللياقة البدنية، إضافة إلى منتزه مائي صيفي ومساحات مخصّصة للفعاليات ولمختلف الأنشطة الرياضية.",
+      "ru": "Спортивный комплекс Sciorba — это крупный многофункциональный центр, расположенный в районе Молассана в Генуе. Здесь есть крытые и открытые бассейны, стадион Sciorba (второй футбольный стадион города после «Марасси»), легкоатлетическая дорожка, залы для скалолазания и фитнеса, летний аквапарк и площадки для проведения мероприятий и занятий различными видами спорта.",
+      "zh": "斯乔尔巴体育中心是位于热那亚莫拉萨纳区的大型综合性体育设施。这里拥有室内和室外泳池、斯乔尔巴球场（仅次于马拉西球场的城市第二大足球场）、田径跑道、攀岩和健身馆、夏季水上乐园，以及用于各类活动和多种体育项目的专用区域。",
+      "lij": "A Sciorba l’é in gran complesso sportivo polifonçionâ into quartê de Molassana, a Zena. Gh’é pisine coperte e scoperte, o Sciorba Stadium (segondo campo de calcio da çittæ dòppo Marassi), in campo de atletica, palestre pe arrampicâ e pe o fitness, in parco acquàtico d’estæ e spàssi riservæ a eventî e a tante discipline sportive."
+    }
+  }
+];
+})();
