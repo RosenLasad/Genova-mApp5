@@ -295,10 +295,32 @@
   }
 
   var tries = 0;
-  (function tick(){
-    if(mount()) return;
-    if(++tries < 20) setTimeout(tick, 150);
-  })();
+  var maxTries = 120; // ~18s total: più robusto su mobile/reti lente
+  function bootMount(){
+    if(mount()) return true;
+    if(++tries < maxTries){
+      setTimeout(bootMount, 150);
+    }
+    return false;
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      tries = 0;
+      bootMount();
+    }, { once:true });
+  }
+
+  bootMount();
+
+  // Safety net: se alcuni script rallentano il parsing su mobile,
+  // riprova anche al load completo finché il bottone non esiste.
+  window.addEventListener('load', function(){
+    if(!document.getElementById('flag-switcher')){
+      tries = 0;
+      bootMount();
+    }
+  }, { once:true });
 })();
 
 // --- extracted from inline part 122 ---
@@ -311,6 +333,8 @@
       btn.style.left = '16px';
       btn.style.bottom = '16px';
       btn.style.top = '';
+      btn.style.right = '';
+      btn.style.zIndex = '8001';
     }catch(_){}
   }
   function init(){
@@ -340,8 +364,9 @@
     menu.style.position = 'fixed';
     menu.style.left = '16px';
     menu.style.top = '';
+    menu.style.right = '';
     menu.style.bottom = 'calc(16px + 38px + 8px)';
-    menu.style.zIndex = '2000';
+    menu.style.zIndex = '8002';
   }
   function bind(){
     positionFlagMenuUp();
