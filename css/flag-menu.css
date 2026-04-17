@@ -5,7 +5,7 @@
   left: 1rem !important;
   top: auto !important;
   bottom: calc(1rem + 38px + 8px) !important; /* sopra il bottone (38px) + gap 8px */
-  z-index: 2000 !important;
+  z-index: 8002 !important;
 
   display: none;               /* default chiuso */
   flex-direction: column;
