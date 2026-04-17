@@ -1,15 +1,17 @@
-/* Flag menu — colonna in basso a sinistra, apre verso l'alto (sopra al bottone bandiera) */
+/* Flag menu — colonna centrata rispetto al bottone, apre verso l'alto */
 
 #flag-menu{
   position: fixed !important;
   left: 1rem !important;
   top: auto !important;
-  bottom: calc(1rem + 38px + 8px) !important; /* sopra il bottone (38px) + gap 8px */
+  bottom: calc(1rem + 38px + 8px) !important; /* fallback: il JS rifinisce la posizione */
   z-index: 8002 !important;
 
   display: none;               /* default chiuso */
   flex-direction: column;
+  align-items: center !important;
   gap: 6px;
+  width: max-content;
 
   /* container trasparente (solo bandiere visibili) */
   background: transparent !important;
@@ -26,7 +28,7 @@
 #flag-menu .mh-flags{
   display: flex !important;
   flex-direction: column !important;
-  align-items: flex-start !important;
+  align-items: center !important;
   gap: 6px !important;
 }
 
