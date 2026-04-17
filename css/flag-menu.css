@@ -2,12 +2,11 @@
 
 #flag-menu{
   position: fixed !important;
-  left: 1rem !important;
   top: auto !important;
-  bottom: calc(1rem + 38px + 8px) !important; /* fallback: il JS rifinisce la posizione */
+  right: auto !important;
   z-index: 8002 !important;
 
-  display: none;               /* default chiuso */
+  display: none; /* default chiuso */
   flex-direction: column;
   align-items: center !important;
   gap: 6px;
@@ -78,10 +77,10 @@
     0 0 0 7px rgba(34,211,238,0.28) !important;
 }
 
-/* mobile: un pelo più vicino ai bordi */
+/* mobile: nessuna posizione forzata qui;
+   left/bottom li calcola languages.js */
 @media (max-width: 480px){
   #flag-menu{
-    left: 6px !important;
-    bottom: calc(10px + 38px + 8px) !important;
+    gap: 6px;
   }
 }
