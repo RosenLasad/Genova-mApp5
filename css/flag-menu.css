@@ -1,0 +1,85 @@
+/* Flag menu — colonna in basso a sinistra, apre verso l'alto (sopra al bottone bandiera) */
+
+#flag-menu{
+  position: fixed !important;
+  left: 1rem !important;
+  top: auto !important;
+  bottom: calc(1rem + 38px + 8px) !important; /* sopra il bottone (38px) + gap 8px */
+  z-index: 2000 !important;
+
+  display: none;               /* default chiuso */
+  flex-direction: column;
+  gap: 6px;
+
+  /* container trasparente (solo bandiere visibili) */
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+#flag-menu.open{
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#flag-menu .mh-flags{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 6px !important;
+}
+
+#flag-menu .mh-flags .flag{
+  margin: 0 !important;
+}
+
+/* singola bandiera */
+#flag-menu .flag{
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 24px;
+  padding: 0;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: #0b1222;
+  cursor: pointer;
+  position: relative; /* serve per gli highlight */
+}
+
+#flag-menu .flag svg{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* hover leggero */
+#flag-menu .flag:hover{
+  outline: 2px solid rgba(255,255,255,0.25);
+  outline-offset: 2px;
+}
+
+/* selezionata: ring + glow */
+#flag-menu .flag.selected{
+  background: rgba(34,211,238,0.18) !important;
+  box-shadow:
+    0 0 0 3px #22d3ee,
+    0 0 0 6px rgba(34,211,238,0.22) !important;
+  border-color: rgba(255,255,255,0.35) !important;
+}
+
+#flag-menu .flag.selected:hover{
+  background: rgba(34,211,238,0.26) !important;
+  box-shadow:
+    0 0 0 4px #22d3ee,
+    0 0 0 7px rgba(34,211,238,0.28) !important;
+}
+
+/* mobile: un pelo più vicino ai bordi */
+@media (max-width: 480px){
+  #flag-menu{
+    left: 6px !important;
+    bottom: calc(10px + 38px + 8px) !important;
+  }
+}

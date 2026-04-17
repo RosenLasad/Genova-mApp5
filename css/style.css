@@ -1,0 +1,5214 @@
+/* Extracted from original index.html */
+
+/* --- Attribution bottom-right under joystick --- */
+.leaflet-control-attribution{
+  font-size: 11px;
+  line-height: 1.2;
+  opacity: .78;
+  background: rgba(255,255,255,.6);
+  backdrop-filter: blur(2px);
+  border: 0;
+  padding: 2px 6px;
+  box-shadow: none;
+  transition: opacity .2s;
+}
+.leaflet-control-attribution:hover{ opacity: 1; }
+/* Align in the TOP-LEFT area */
+.leaflet-top.leaflet-left .leaflet-control-attribution{
+  margin-left: 1px;
+  margin-top: 16px;
+}
+
+
+
+
+/* ===== Genova mApp responsive scale ===== */
+html{ -webkit-text-size-adjust:100%; }
+:root{
+  --ui-scale: clamp(0.78, 100vw / 430, 1);
+  --base-font: clamp(13px, 1.9vw, 16px);
+  --control-size: calc(36px * var(--ui-scale));
+  --icon-size:    calc(28px * var(--ui-scale));
+  --popup-font:   calc(var(--base-font) * 0.95);
+  --menu-font:    var(--base-font);
+  --spacing:      calc(8px * var(--ui-scale));
+}
+@media (max-height:480px) and (orientation:landscape){
+  :root{ --ui-scale: clamp(0.70, 100vw / 700, 0.92); }
+}
+
+/* Modalità ULTRA COMPATTA per telefoni molto stretti o con zoom 125–150% */
+@media (max-width: 400px){
+  :root{
+    /* Riduciamo leggermente tutto l’UI */
+    --ui-scale: clamp(0.64, 100vw / 520, 0.86);
+
+    /* Font un filo più piccoli ma ancora leggibili */
+    --base-font: clamp(12px, 3vw, 15px);
+    --menu-font: var(--base-font);
+    --popup-font: calc(var(--base-font) * 0.9);
+
+    /* Spaziature un po’ più strette */
+    --spacing: calc(7px * var(--ui-scale));
+  }
+}
+
+@media (max-width: 400px){
+.menu-home .mh-label{
+    font-size: 0.9rem;
+  }
+}
+
+/* Ancora più compatto se lo schermo è stretto e orizzontale */
+@media (max-width: 400px) and (orientation:landscape){
+  :root{
+    --ui-scale: clamp(0.58, 100vw / 700, 0.8);
+  }
+}
+
+
+/* Leaflet controls */
+.leaflet-control a,
+.leaflet-bar a{
+  width:var(--control-size);
+  height:var(--control-size);
+  line-height:var(--control-size);
+  font-size:calc(18px * var(--ui-scale));
+}
+
+/* Joystick sizing (if present) */
+.joystick, .joystick button{
+  width:calc(56px * var(--ui-scale));
+  height:calc(56px * var(--ui-scale));
+}
+
+
+/* Popup and panels */
+.leaflet-popup-content-wrapper{ font-size:var(--popup-font); }
+.leaflet-popup-content{ max-width:min(82vw,340px); }
+.leaflet-popup-tip{ transform:scale(var(--ui-scale)); }
+
+
+/* Menus, toolbar, HELP / guida rapida */
+.toolbar, .menu, .menu *{ font-size:var(--menu-font); }
+.toolbar .btn, .legend .btn{
+  min-height:calc(40px * var(--ui-scale));
+  padding:calc(6px * var(--ui-scale)) calc(10px * var(--ui-scale));
+}
+.legend .panel-body, .menu .panel-body{
+  max-height:min(70vh,520px);
+  overflow:auto;
+}
+
+/* Prefer dynamic viewport height when supported */
+@supports (height: 100dvh){
+  .map-container, #map, .leaflet-container{ height:100dvh; }
+}
+/* ===== End responsive scale ===== */
+
+:root {
+  --bg:#0f172a;
+  --card:#111827EE;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+  --accent:#22d3ee;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+html, body {
+  height:100%;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+}
+
+#app {
+  display:grid;
+  grid-template-rows:auto 1fr;
+  height:100%;
+}
+
+/* HEADER */
+header {
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items:center;
+  column-gap:.75rem;
+  padding:.75rem 1rem;
+  border-bottom:1px solid #1f2937;
+  background:#0b1222;
+  position:sticky;
+  top:0;
+  z-index:5000;
+}
+
+/* toolbar groups (left / center / right) */
+header .toolbar-left{
+  justify-self:start;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  min-width:0;
+}
+header .toolbar-center{
+  justify-self:center;
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  min-width:0;
+}
+header .toolbar-right{
+  justify-self:end;
+  display:flex;
+  align-items:center;
+  gap:.3rem;
+  flex-wrap:nowrap;
+  min-width:0;
+}
+
+
+header h1 {
+  font-size:1.05rem;
+  margin:0;
+  font-weight:700;
+  letter-spacing:.2px;
+  line-height:1.2;
+}
+
+header .pill {
+  font-size:.75rem;
+  color:var(--bg);
+  background:linear-gradient(90deg,var(--accent),#38bdf8);
+  padding:.25rem .5rem;
+  border-radius:999px;
+  font-weight:700;
+  line-height:1.2;
+}
+
+
+
+/* MAPPA */
+#map {
+  height:100%;
+  min-height:420px;
+  width:100%;
+  background:#0b1222;
+}
+
+/* STATUS BANNER */
+.status {
+  position:fixed;
+  left:50%;
+  top:.75rem;
+  transform:translateX(-50%);
+  background:#7c2d12;
+  color:#fff;
+  border:1px solid #b45309;
+  border-radius:10px;
+  padding:.5rem .75rem;
+  font-size:.85rem;
+  z-index:2000;
+  display:none;
+}
+
+/* PANEL LATERALE */
+.panel {
+  position:fixed;
+  inset:auto 0 0 auto;
+  right:1rem;
+  bottom:1rem;
+  width:min(460px,92vw);
+  max-height:82vh;
+  background:var(--card);
+  backdrop-filter:blur(8px);
+  border:1px solid #1f2937;
+  border-radius:16px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+  overflow:hidden;
+  display:none;
+  z-index:1200;
+}
+
+.panel.open {
+  display:grid;
+  grid-template-rows:auto auto 1fr auto;
+}
+
+.panel header {
+  border:none;
+  background:transparent;
+  padding:.75rem 1rem;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+}
+
+.panel h2 {
+  margin:0;
+  font-size:1.05rem;
+  font-weight:700;
+  color:var(--text);
+}
+
+/* BADGE / LABEL */
+.badge {
+  font-size:.72rem;
+  padding:.15rem .5rem;
+  border-radius:999px;
+  border:1px solid #1f2937;
+  font-weight:600;
+}
+
+.badge.premium {
+  background:#f59e0b;
+  color:#111827;
+  font-weight:600;
+}
+
+.meta {
+  font-size:.8rem;
+  color:var(--muted);
+}
+
+/* MEDIA WRAPPER (immagine/video/iframe nella scheda) */
+.media {
+  position:relative;
+  display:block;
+  aspect-ratio:16/10;
+  background:#0b1222;
+  overflow:hidden;
+}
+.media img,
+.media video {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.media iframe {
+  width:100%;
+  height:100%;
+  display:block;
+  border:0;
+}
+
+/* Pulsanti Oggi/Ieri/SFX sotto il video */
+.swap {
+  margin: .5rem auto 0;
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+}
+
+
+.pager {
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:.5rem;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  z-index:5;
+}
+
+/* BOTTONI BASE */
+.btn {
+  appearance:none;
+  border:1px solid #1f2937;
+  background:#0b1222;
+  color:var(--text);
+  padding:.5rem .65rem;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+  line-height:1;
+  font-size:.85rem;
+}
+.btn.active {
+  outline:2px solid var(--accent);
+}
+
+
+/* QR panel: bottone Condividi (icona azzurra) */
+#btn-share-qr.btn-share-qr{
+  background:#19b2e6;
+  border-color: rgba(255,255,255,0.35);
+  color:#ffffff;
+  width:40px;
+  height:34px;
+  padding:0;
+  border-radius:9999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+#btn-share-qr.btn-share-qr:hover{ filter: brightness(1.07); }
+#btn-share-qr.btn-share-qr:focus-visible{
+  outline:2px solid rgba(56,189,248,0.75);
+  outline-offset:2px;
+}
+#btn-share-qr .qr-share-ico{
+  width:18px;
+  height:18px;
+  display:block;
+}
+/* CONTENUTO DEL PANEL */
+.content {
+  padding:.75rem 1rem;
+  font-size:.92rem;
+  line-height:1.35;
+}
+
+.footer {
+  display:flex;
+  gap:.5rem;
+  justify-content:space-between;
+  align-items:center;
+  padding:.6rem 1rem;
+  border-top:1px solid #1f2937;
+}
+
+.small {
+  font-size:.8rem;
+  color:var(--muted);
+}
+
+
+/* PAYWALL OVERLAY */
+.paywall {
+  position:absolute;
+  inset:0;
+  background: transparent;
+  backdrop-filter:blur(2px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
+}
+.paywall .card {
+  background:#0b1222;
+  border:1px solid #1f2937;
+  border-radius:14px;
+  padding:1rem;
+  max-width:86%;
+  text-align:center;
+}
+.paywall h3 {
+  margin:.2rem 0 .5rem 0;
+  font-size:1rem;
+  color:var(--text);
+  font-weight:700;
+  line-height:1.2;
+}
+.paywall p {
+  margin:.25rem 0;
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.3;
+}
+
+/* LINK BASE */
+a {
+  color:var(--accent);
+}
+
+/* DROPDOWN GENERICO */
+.dropdown {
+  position:relative;
+}
+.dropdown-menu {
+  position:absolute;
+  right:0;
+  top:120%;
+  background:var(--card);
+  border:1px solid #1f2937;
+  border-radius:12px;
+  padding:.5rem;
+  display:none;
+  z-index:1400;
+  min-width:220px;
+}
+.dropdown.open .dropdown-menu {
+  display:block;
+}
+.dropdown-menu label input {
+  accent-color:#22d3ee;
+}
+
+/* CHIP */
+.chip {
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+  font-size:.78rem;
+  border:1px solid #1f2937;
+  border-radius:999px;
+  padding:.15rem .5rem;
+  color:var(--text);
+}
+.chip .dot {
+  width:.55rem;
+  height:.55rem;
+  border-radius:999px;
+  display:inline-block;
+}
+.dot.blue { background:#2563eb; }
+.dot.orange { background:#f97316; }
+
+/* RESPONSIVE PANEL SU SCHERMI PICCOLI */
+@media (max-width:480px){
+  .panel{
+    right:.75rem;
+    left:.75rem;
+    width:auto;
+    bottom:70px !important; /* alza il pannello dal bordo inferiore */
+  }
+}
+
+
+/* MARKER SULLA MAPPA */
+.blue-dot {
+  background:#1e90ff;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  border:2px solid #fff;
+  box-shadow:0 0 0 1px rgba(0,0,0,0.25);
+}
+.cluster-azzurro {
+  background:#1e90ff;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  border:2px solid #fff;
+  box-shadow:0 0 0 1px rgba(0,0,0,0.25);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  font-size:10px;
+  font-weight:600;
+}
+.blue-dot-dark {
+  background:#2563eb;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  border:3px solid #fff;
+  box-shadow:0 0 0 1px rgba(0,0,0,0.25);
+}
+.gps-dot {
+  background:#22c55e;
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  border:2px solid #ffffff;
+  box-shadow:0 0 0 2px rgba(0,0,0,0.25);
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* bottone moneta nella toolbar */
+#btn-sub {
+  background: #aaa;           /* argento base */
+  color: #000;
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 9999px;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: none;
+  outline: none;
+}
+#btn-sub[data-state="gold"] {
+  background: #ffcc00;        /* oro */
+}
+#btn-sub img,
+#btn-sub svg {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+/* menù a tendina dell’abbonamento */
+.sub-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 15px);       /* sotto la moneta */
+  background: var(--card, #1f2937);
+  color: #fff;
+  border: 1px solid rgba(0,0,0,0.6);
+  border-radius: 12px;
+  min-width: 180px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.45);
+  padding: 6px 0;
+  z-index: 9999;
+  display: none;
+}
+.sub-dropdown.open {
+  display: block;
+}
+.sub-row {
+  display: flex;
+  width: 100%;
+  background: none;
+  border: 0;
+  color: inherit;
+  text-align: left;
+  padding: .6rem .9rem;
+  font-size: .9rem;
+  line-height: 1.3;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .5rem;
+  cursor: pointer;
+}
+.sub-row[disabled] {
+  opacity: .55;
+  cursor: default;
+}
+.sub-row:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: -2px;
+  background: transparent;
+}
+.sub-row:hover:not([disabled]) {
+  background: transparent;
+}
+
+/* modale riusabile */
+.sub-modal {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sub-modal.hidden {
+  display: none;
+}
+.sub-modal-inner {
+  background: var(--card, #111827);
+  color: #fff;
+  border-radius: 16px;
+  width: min(90vw, 360px);
+  max-width: 90vw;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.75);
+  padding: 1rem 1rem 1.25rem;
+}
+.sub-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: .5rem;
+  margin-bottom: .75rem;
+}
+.sub-modal-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.sub-modal-close {
+  background: none;
+  border: 0;
+  color: inherit;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.sub-modal-body {
+  font-size: .9rem;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#tb-search{position:relative;width:clamp(150px,34vw,320px);max-width:320px}
+#tb-search-input{width:100%;height:34px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:var(--text);padding:.35rem 2rem .35rem .85rem;font-size:.9rem;outline:none}
+#tb-search-input:focus{border-color:rgba(250,204,21,.6);box-shadow:0 0 0 3px rgba(250,204,21,.15)}
+#tb-search-clear{position:absolute;right:.4rem;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:999px;border:0;background:rgba(255,255,255,.1);color:var(--text);cursor:pointer;display:none;align-items:center;justify-content:center;line-height:1}
+#tb-search.hasText #tb-search-clear{display:flex}
+#tb-search-dd{position:absolute;left:0;right:0;top:calc(100% + .35rem);background:rgba(11,18,34,.98);border:1px solid rgba(255,255,255,.12);border-radius:.75rem;box-shadow:0 12px 30px rgba(0,0,0,.45);overflow:hidden;z-index:7000}
+#tb-search-dd[hidden]{display:none}
+/* items dropdown */
+.tb-search-item{
+  width:100%;
+  text-align:left;
+  padding:.55rem .75rem .55rem .65rem; /* leggermente meno a sinistra per far posto al bordo */
+  border:0;
+  border-left:4px solid rgba(255,255,255,.08);
+  box-sizing:border-box;
+  background:transparent;
+  color:var(--text);
+  cursor:pointer;
+}
+
+/* FIX: qui nel tuo file manca il punto davanti a tb-search-item.active */
+.tb-search-item:hover,
+.tb-search-item.active{
+  background:rgba(255,255,255,.08);
+}
+
+/* colori per categoria (data-cat) */
+.tb-search-item[data-cat="QR"]{ border-left-color:#1e3a8a; }
+
+.tb-search-item[data-cat="Forte"]{ border-left-color:#f97316; }
+.tb-search-item[data-cat="Museo"]{ border-left-color:#a78bfa; }
+.tb-search-item[data-cat="Autobus"]{ border-left-color:#14b8a6; }
+.tb-search-item[data-cat="Stazione"]{ border-left-color:#f59e0b; }
+.tb-search-item[data-cat="Metro"]{ border-left-color:#ef4444; }
+.tb-search-item[data-cat="Impianto"]{ border-left-color:#b67a69; }
+
+.tb-search-item[data-cat="Parco"]{ border-left-color:#22c55e; }
+.tb-search-item[data-cat="Piazza"]{ border-left-color:#06b6d4; }
+
+.tb-search-item[data-cat="Locale"]{ border-left-color:#ec4899; }
+.tb-search-item[data-cat="Mare"]{ border-left-color:#3b82f6; }
+.tb-search-item[data-cat="Aeroporto"]{ border-left-color:#16a34a; }
+
+.tb-search-item[data-cat="Chiesa"]{ border-left-color:#6366f1; }
+.tb-search-item[data-cat="Palazzo"]{ border-left-color:#065f46; }
+
+.tb-search-item[data-cat="Sport"]{ border-left-color:#84cc16; }
+.tb-search-item[data-cat="Cinema"]{ border-left-color:#a855f7; }
+.tb-search-item[data-cat="Teatro"]{ border-left-color:#fb7185; }
+.tb-search-item[data-cat="Mostra"]{ border-left-color:#fbbf24; }
+.tb-search-title{display:block;font-weight:700;font-size:.95rem;line-height:1.2}
+.tb-search-sub{display:block;font-size:.78rem;opacity:.78;margin-top:.08rem}
+@media(max-width:420px){#tb-search{width:clamp(130px,46vw,240px)}}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Default: bottone nascosto (desktop/tablet) */
+#tb-search-btn{ display:none; }
+
+@media (max-width: 768px){
+  /* La toolbar non deve più “reggere” l’input al centro */
+  header{ position: relative; } /* ancora per il pannello assoluto */
+
+  /* Mostra il bottone lente */
+  #tb-search-btn{
+    display:inline-flex;
+    width:40px;
+    height:40px;
+    padding:0;
+    border-radius:9999px;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,0.65);
+    background:rgba(255,255,255,0.06);
+    color: var(--text);
+    cursor:pointer;
+  }
+  #tb-search-btn svg{ width:22px; height:22px; display:block; }
+
+  /* Di base, su mobile la barra non sta in toolbar (quindi non accavalla) */
+  header:not(.tb-search-open) #tb-search{ display:none !important; }
+
+  /* Quando “aperta”: la mostriamo sotto la toolbar, a tutta larghezza */
+  header.tb-search-open #tb-search{
+    display:block !important;
+    position:absolute !important;
+    left: 8px;
+    right: 8px;
+    top: calc(100% + 8px);
+    width:auto !important;
+    max-width:none !important;
+    z-index: 8000; /* sopra la mappa e sopra i bottoni */
+  }
+
+  /* L’input dentro: un filo più alto su mobile */
+  header.tb-search-open #tb-search-input{
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+@media (max-width: 768px){
+  /* Input search: forza stile scuro (mobile che fa il furbo) */
+  header.tb-search-open #tb-search-input{
+    -webkit-appearance: none !important;
+    appearance: none !important;
+
+    background: rgba(11,18,34,.92) !important;
+    color: #e5e7eb !important;
+    -webkit-text-fill-color: #e5e7eb !important; /* iOS a volte ignora "color" */
+    caret-color: #e5e7eb !important;
+
+    border: 1px solid rgba(255,255,255,.14) !important;
+  }
+
+  /* Placeholder “Cerca…” leggibile */
+  header.tb-search-open #tb-search-input::placeholder{
+    color: rgba(229,231,235,.70) !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Documentari: nascondi il bottone "Chiudi" nel popup */
+  .doc-pop .doc-close{ display:none !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Modale Guida: overlay vero (non trasparente) */
+  #guide-modal.sub-modal{
+    background: rgba(0,0,0,.55);
+  }
+
+  /* Finestra grande */
+  #guide-modal .sub-modal-inner{
+    width: min(920px, calc(100vw - 24px));
+    height: min(86vh, 820px);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Header “app-like” */
+  #guide-modal .sub-modal-header{
+    margin: 0;
+    padding: .9rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+
+  /* Corpo scrollabile con iframe */
+  #guide-modal .sub-modal-body{
+    padding: 0;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  #guide-frame{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    background: #fff; /* così l’HTML guida non “lampeggia” su scuro */
+  }
+
+  /* Mobile: adattato allo schermo reale + safe-area (notch) */
+@media (max-width: 520px){
+  /* invece di centrare, lo facciamo "partire" dall’alto ma con margine sicuro */
+  #guide-modal.sub-modal{
+    align-items: flex-start;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 8px);
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 8px);
+  }
+
+  #guide-modal .sub-modal-inner{
+    width: calc(100vw - 16px);
+    margin: 0 auto;
+    border-radius: 16px;
+
+    /* fallback */
+    height: calc(100vh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 16px);
+  }
+
+  /* usa l’altezza dinamica “vera” quando supportata */
+  @supports (height: 100dvh){
+    #guide-modal .sub-modal-inner{
+      height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 16px);
+    }
+  }
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Pannello */
+  #eventsPanel{
+  position:fixed;
+  right:60px;
+left:auto;
+  top:0;
+  height:100%;
+  width:360px;
+  max-width:86vw;
+  z-index:949;
+  background:rgba(2,6,23,0.92);
+  color:#e5e7eb;
+  border-left:1px solid rgba(255,255,255,0.14);
+border-right:none;
+  transform: translateX(calc(100% + 60px));
+  transition: transform .18s ease;
+  pointer-events:auto;
+  display:flex;
+  flex-direction:column;
+
+  /* spazio per non sovrapporsi all'attribuzione */
+  padding-top: calc(env(safe-area-inset-top, 0px) + 84px);
+}
+
+#eventsPanel.is-open{ transform: translateX(0); }
+
+
+
+  #eventsPanelHeader{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 12px 12px 10px 12px;
+    border-bottom:1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(6px);
+  }
+  #eventsPanelHeader h3{
+    margin:0;
+    font-size: 0.95rem;
+    letter-spacing: .2px;
+  }
+  #eventsPanelClose{
+    background: transparent;
+    color:#e5e7eb;
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius: 10px;
+    padding: 6px 10px;
+    cursor:pointer;
+  }
+
+  #eventsPanelBody{
+    padding: 10px 12px 14px 12px;
+    overflow:auto;
+  }
+
+  .ev-card{
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius: 14px;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    background: rgba(15,23,42,0.35);
+  }
+  .ev-title-row{
+    display:flex;
+    gap:8px;
+    align-items:baseline;
+    justify-content:space-between;
+    margin-bottom: 6px;
+  }
+  .ev-title{
+    font-weight: 800;
+    font-size: 0.95rem;
+  }
+  .ev-where{
+    font-size: 0.82rem;
+    opacity: .9;
+    white-space: nowrap;
+  }
+  .ev-line{
+    margin: 4px 0;
+    font-size: 0.86rem;
+    opacity: .95;
+  }
+  .ev-label{
+    font-weight: 700;
+    opacity: .95;
+  }
+  .ev-link{
+    color:#93c5fd;
+    text-decoration: none;
+  }
+  .ev-link:hover{ text-decoration: underline; }
+
+  /* Su schermi piccoli: stringi un filo */
+  @media (max-width: 420px){
+    #eventsPanel{ width: 320px; }
+  }
+
+
+/* Quando "Eventi" sta in toolbar (a destra), annulla la posizione fissa lato mappa */
+header .toolbar-right #eventsBtn{
+  position: static;
+  top: auto; left: auto; right: auto; bottom: auto;
+  transform: none;
+  z-index: auto;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+background: #b83314;      /* verde */
+  color: #ffffff;
+
+  border-radius: 9999px;
+  box-shadow: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+header .toolbar-right #eventsBtn svg{
+  width: 32px;
+  height: 32px;
+}
+
+/* Dropdown in toolbar-right: ancorali a destra per non uscire fuori schermo */
+header .toolbar-right .sub-dropdown,
+header .toolbar-right .settings-dropdown{
+  left: auto !important;
+  right: 0 !important;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#btn-gps{
+    width:36px !important;
+    height:36px !important;
+    padding:0 !important;
+    border-radius:9999px !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    border:1px solid rgba(255,255,255,0.65);
+    outline-offset:0;
+  }
+  #btn-gps svg{
+    display:block;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.leaflet-marker-icon.qr-azzurro-icon{image-rendering:auto}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* --- JOYSTICK: always visible, compact (~54px dia, ~25% smaller) --- */
+
+.joystick.active .thumb {
+  transition: none;
+}
+/* Cardinal points (N,E,S,O) */
+.joystick .cardinal {
+  position: absolute;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(0,0,0,0.55);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+  pointer-events: none;
+}
+.joystick .N { top: 3px; left: 50%; transform: translate(-50%, 0); }
+.joystick .S { bottom: 3px; left: 50%; transform: translate(-50%, 0); }
+.joystick .E { right: 4px; top: 50%; transform: translate(0, -50%); }
+.joystick .O { left: 4px; top: 50%; transform: translate(0, -50%); }
+
+/* Hide on very small screens if needed (optional) */
+/* @media (max-width: 360px) {  } */
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.opere-accordion .acc-section{border-radius:.35rem;background:var(--card);box-shadow:0 1px 2px rgba(0,0,0,0.12);margin:.25rem 0;border:1px solid rgba(255,255,255,0.06)}.opere-accordion .acc-head{display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding:.4rem .5rem;cursor:pointer;user-select:none}.opere-accordion .acc-title{font-weight:700;font-size:.85rem;color:var(--text);display:flex;align-items:center;gap:.4rem}.opere-accordion .acc-badge{font-size:.7rem;background: transparent;color:var(--text);border-radius:.4rem;padding:.05rem .35rem;font-weight:700}.opere-accordion .acc-chevron{transition:transform .12s ease;color:var(--text);opacity:.85}.opere-accordion .acc-section[aria-expanded="true"] .acc-chevron{transform:rotate(90deg)}.opere-accordion .acc-body{overflow:hidden;max-height:0;transition:max-height .18s ease;padding:0 .5rem}.opere-accordion .acc-section[aria-expanded="true"] .acc-body{max-height:520px;padding:.3rem .5rem .5rem}#opere-menu .acc-body label{color:var(--text);text-shadow:none;font-size:.85rem;font-weight:600}#opere-menu .acc-body .chip{color:var(--text);border-color:rgba(255,255,255,0.2)}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#opere-menu .doc-list{display:flex;flex-direction:column;gap:.2rem;margin:.2rem 0 .1rem}#opere-menu .doc-row{display:flex;align-items:center;gap:.5rem;width:100%;background:transparent;border:0;padding:.25rem .2rem;border-radius:.35rem;color:var(--text);font-size:.85rem;text-align:left;cursor:pointer}#opere-menu .doc-row:hover{background:rgba(255,255,255,0.06)}#opere-menu .doc-row .chip{color:var(--text)}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#opere-menu .doc-row{align-items:center}#opere-menu .doc-row input[type="checkbox"]{width:16px;height:16px;accent-color:#22d3ee}#opere-menu .doc-row .chip{display:inline-flex;align-items:center;gap:.4rem}#opere-menu .doc-row .chip .dot.orange{width:8px;height:8px;display:inline-block;border-radius:999px;background:#f97316}#opere-menu .doc-row .name{cursor:pointer}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.leaflet-popup-content .doc-popup{max-width:240px}.leaflet-popup-content .doc-title{font-weight:800;margin-bottom:.3rem}.leaflet-popup-content .doc-thumb{display:block;margin:.25rem 0 .35rem;border-radius:.35rem;overflow:hidden}.leaflet-popup-content .doc-thumb img{display:block;width:100%;height:auto}.leaflet-popup-content .doc-info{font-size:.85rem;line-height:1.25rem;opacity:.9}#opere-menu .doc-row{align-items:center}#opere-menu .doc-row input[type="checkbox"]{width:16px;height:16px;accent-color:#22d3ee}#opere-menu .doc-row .chip{display:inline-flex;align-items:center;gap:.4rem}#opere-menu .doc-row .chip .dot.orange{width:8px;height:8px;display:inline-block;border-radius:999px;background:#f97316}#opere-menu .doc-row .name{cursor:pointer}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#opere-menu #chk-doc-all{width:16px;height:16px;accent-color:#111}#opere-menu #chk-doc-all:indeterminate{accent-color:#111}#opere-menu #chk-doc-all + .chip{font-weight:700 !important}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#opere-menu .doc-list .doc-row{display:flex;align-items:center;gap:.5rem;padding:.2rem .2rem;border-radius:.35rem}#opere-menu .doc-list .doc-row:hover{background:rgba(255,255,255,0.06)}#opere-menu .doc-list .doc-row .chip{font-weight:700}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#opere-menu .doc-list .doc-row .chip{font-size:.85rem}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Documentari: nascondi i bottoni lingua video (restano nel codice, pronti per il futuro) */
+  .doc-pop .doc-lang{ display:none !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Base grafica delle nuvolette (help + info) */
+  .legend{
+    background:#111827ee;
+    color:#f9fafb;
+    border:1px solid #1f2937;
+    border-radius:12px;
+    padding:1rem 1rem 2.5rem 1rem;
+    max-width:260px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.4);
+    display:none;
+  }
+
+.legend p{
+  margin: 0 0 .4rem 0;
+  text-align: justify;
+  text-align-last: left; /* ultima riga non “tirata” */
+}
+
+
+  .legend.open{
+    display:block;
+  }
+
+  .legend h3{
+    margin:0 0 .5rem 0;
+    font-size:1rem;
+  }
+
+  .legend .help-close{
+    position:absolute;
+    right:.5rem;
+    bottom:.5rem;
+    z-index:2;
+    appearance:none;
+    border:1px solid #1f2937;
+    background:#0b1222;
+    color:#e5e7eb;
+    padding:.35rem .65rem;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:.8rem;
+  }
+
+  /* Bottone tondo ❓ in basso a sinistra */
+  #help-fab{
+    position: fixed;
+    left: calc(1rem + 38px + 8px);
+    bottom: 1rem;
+    z-index: 1500;
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    background:#111827;
+    color:#e5e7eb;
+    border:1px solid #1f2937;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight: 800;
+    cursor:pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  }
+
+  #help-fab:hover{
+    filter: brightness(1.1);
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Posizionamento base delle nuvolette (prima che gli script le riposizionino) */
+  #help-legend,
+  #info-legend{
+    position: fixed;
+    left: 1rem;
+    bottom: 4.2rem;
+    z-index: 1500;
+    font-size: var(--menu-font);
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#panel .media .pager,#panel .media .pager #prev,#panel .media .pager #next,#panel .media .pager #counter{display:none !important}#panel .media{position:relative}#panel .media .qr-hot-btn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:9999px;display:none;align-items:center;justify-content:center;background: transparent;color:#fff;border:1px solid rgba(255,255,255,0.3);box-shadow:0 2px 10px rgba(0,0,0,0.35);cursor:pointer;z-index:10}#panel .media .qr-hot-left{left:8px}#panel .media .qr-hot-right{right:8px}#panel .media .qr-hot-btn:focus{outline:2px solid #60a5fa;outline-offset:2px}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.qr-parent-popup{max-width:260px}.qr-parent-popup img{display:block;width:100%;height:auto;border-radius:8px;margin-bottom:.5rem}.qr-parent-popup h4{margin:0 0 .25rem;font-size:1rem}.qr-parent-popup p{margin:0;font-size:.9rem;line-height:1.3}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.mh-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}.mh-actions .mh-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .65rem;border-radius:10px}.mh-actions .mh-btn .mh-ico-btn{display:inline-block;width:18px;height:18px;line-height:0}.menu-home{position:fixed;top:0;left:0;z-index:1600;pointer-events:auto;background:transparent;}.menu-home.hidden{display:none}.mh-stack{pointer-events:auto;display:flex;flex-direction:column;align-items:center;gap:.6rem}.mh-title{justify-self:center;align-self:center;font-family:'Merriweather',Georgia,'Times New Roman',serif;font-weight:700;font-size:clamp(22px,2.3vw + 12px,34px);line-height:1.1;color:#fff;background:#2563eb;padding:.35rem .9rem;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.25);letter-spacing:.2px;user-select:none}.mh-title .art-A{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-style:italic;color:#f59e0b;font-size:1.08em}.mh-grid{display:grid;gap:.6rem;width:100%}.mh-item{display:flex;align-items:center;gap:.6rem;width:100%;padding:.65rem .75rem;border-radius:12px;border:1px solid rgba(0,0,0,0.15);color:#fff;font-weight:800;letter-spacing:.2px}.mh-ico{display:inline-grid;place-items:center}.mh-label{font-size:1.05rem}.mh-green{background:#16a34a}.mh-red{background:#9c1d1d}.mh-yellow{background:#f59e0b;color:#111827}.mh-azure{background:#19b2e6}.mh-orange{background:#f97316}.mh-blue{background:#2563eb}.mh-item.active{box-shadow:0 0 0 3px rgba(255,255,255,0.18),0 8px 20px rgba(0,0,0,0.35);transform:translateY(-1px);filter:saturate(1.05) brightness(1.05)}.mh-bubble{position:absolute;top:calc(100% + .6rem);left:0;width:100%;pointer-events:auto;width:100%;max-height:56vh;background: transparent;color:#e5e7eb;border:1px solid #1f2937;border-radius:16px;box-shadow:0 15px 40px rgba(0,0,0,0.35);overflow:auto}.mh-bubble.hidden{display:none}.mh-bubble-inner{padding:.85rem .95rem 1rem}.mh-bubble h3{margin:0 0 .5rem;font-size:clamp(18px,1.6vw + 12px,22px);font-weight:800;position:sticky;top:0;z-index:1;padding:.6rem .2rem .5rem;background:inherit;border-top-left-radius:14px;border-top-right-radius:14px}.mh-bubble p{margin:0 0 .55rem;line-height:1.35}.mh-bubble ul{margin:0;padding-left:1.1rem}.mh-bubble li{margin:.4rem 0}.mh-bubble strong{font-weight:800}
+/* Bubble "Info e contatti" nel menu Home - versione bianca */
+.menu-home .mh-bubble[data-bubble="info"]{
+  background:#c8c8c8;          /* sfondo bianco */
+  color:#111827;               /* testo scuro */
+  border:1px solid #d1d5db;    /* grigio chiaro, non troppo pesante */
+}
+
+/* Titolo del bubble info */
+.menu-home .mh-bubble[data-bubble="info"] h3{
+  background:transparent;
+  color:#111827;
+}
+
+/* Link dentro al bubble info */
+.menu-home .mh-bubble[data-bubble="info"] a{
+  color:#1d4ed8;               /* blu leggibile su bianco */
+}
+
+.mh-bubble.theme-red{background:#9c1d1d;border-color:#621313;color:#fff}.mh-bubble.theme-azure{background:#00bfff;border-color:#075985;color:#fff}.mh-bubble.theme-yellow{background:#f59e0b;border-color:#92400e;color:#111827}.mh-bubble.theme-orange{background:#f97316;border-color:#9a3412;color:#111827}.mh-bubble.theme-blue{background:#2563eb;border-color:#1e3a8a;color:#fff}.mh-bubble.theme-yellow h3, .mh-bubble.theme-orange h3 { color:#111827; }
+.mh-bubble.theme-gray{background:#f9fafb;color:#111827;border: 1px solid #d1d5db;}
+.mh-close{
+  position:absolute;
+  top:-25px;              /* un filo più su, staccata dal titolo */
+  left:50%;               /* centrata orizzontalmente */
+  right:auto;             /* disattiva l’ancoraggio a destra */
+  transform:translateX(-50%);  /* centra rispetto al 50% */
+  width:26px;
+  height:26px;
+  border-radius:9999px;
+  background:#0d2e52;
+  border:1px solid #111827;
+  display:inline-grid;
+  place-items:center;
+  color:#ffffff;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,0.35);
+  z-index:10;
+}
+
+.mh-close span{
+  font-size:17px;
+  line-height:1;
+}
+.mh-close:hover,
+.mh-close:focus{
+  outline:none;
+  filter:brightness(0.95);
+}
+.title-btn{all:unset;cursor:pointer}.title-btn.active{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}.mh-body{position:relative;width:min(420px,92vw);display:flex;flex-direction:column;align-items:center;gap:.6rem}#flag-ribbon{position:fixed;left:12px;top:67px;z-index:1300;display:flex;align-items:center;gap:6px;pointer-events:none}#flag-ribbon .fr-flag{width:clamp(27px,3vw,30px);height:clamp(18px,2vw,20px);border-radius:3px;border:1px solid rgba(0,0,0,0.25);box-shadow:0 1px 3px rgba(0,0,0,0.2);overflow:hidden;display:block}#flag-ribbon .fr-flag.selected{outline:2px solid #f59e0b;outline-offset:2px}#flag-ribbon svg{display:block;width:100%;height:100%}
+.mh-gray{
+  background:#c8c8c8;      /* icona bianca */
+  color:#111827;           /* icona/testo scuri */
+}
+
+.mh-gray .mh-label{
+  color:#111827;           /* testo "Info e contatti" nero/scuro */
+}
+
+/* Toolbar: sfondo al titolo "Genova mApp" */
+header #title-btn.title-btn{
+  background: #3399CC;
+  color: #fff;
+  padding: .50rem .80rem;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  font: inherit;
+}
+
+/* Toolbar: colora solo la "A" di mApp nel bottone in alto a sinistra */
+#title-btn .art-A{
+  color:#f97316 !important; /* arancione (stesso che usi altrove) */
+}
+
+header #title-btn.title-btn:hover{
+  filter: brightness(1.08);
+}
+
+/* opzionale: stessa arrotondatura anche quando è "active" */
+header #title-btn.title-btn.active{
+  border-radius: 30px;
+}
+
+/* Sposta leggermente a destra il bottone "Genova mApp" (responsivo) */
+header #title-btn{
+  margin-left: clamp(0px, 1.2vw, 12px);
+}
+
+
+
+/* gmapp dropdown */
+.menu-home .mh-stack{align-items:flex-start;}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Vertical layout for the flag ribbon: keep first flag position, stack others below */
+  #flag-ribbon{
+    display: flex !important;
+    flex-direction: column !important;   /* vertical */
+    align-items: flex-start !important;  /* left-aligned */
+    gap: 6px !important;
+  }
+  /* Optional minor tweak: ensure flags don't stretch */
+  #flag-ribbon .fr-flag{ flex: 0 0 auto; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#btn-gps + #btn-scan{margin-left:.5rem}#btn-scan{flex:0 0 auto;position:relative;z-index:3}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#btn-qr-removed,#btn-opere,#legend .btn,#btn-scan{font-weight:700 !important;text-align:center !important;padding:.4rem .8rem !important}#legend{display:inline-flex;align-items:center;gap:.5rem}#btn-gps + #btn-scan{margin-left:.25rem}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#btn-scan,#btn-gps{display:inline-flex !important;align-items:center !important;justify-content:center !important;line-height:1 !important}#btn-scan svg,#btn-gps svg,#btn-sub svg{display:block !important}header .btn{vertical-align:middle !important}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#btn-scan{width:36px;height:36px;border-radius:9999px;padding:0;display:inline-flex;align-items:center;justify-content:center;background:transparent !important;border:1px solid transparent !important;color:#fff !important}#btn-scan:hover,#btn-scan:focus-visible{background: transparent;outline:2px solid rgba(255,255,255,0.25);outline-offset:2px}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#qr-scan{position:fixed;inset:0;z-index:5000;display:none;background: transparent;backdrop-filter:blur(2px)}#qr-scan.open{display:grid;place-items:center}#qr-scan .card{width:min(520px,92vw);background:#0b1222;color:#e5e7eb;border:1px solid #1f2937;border-radius:12px;box-shadow:0 12px 36px rgba(0,0,0,0.45);overflow:hidden}#qr-scan header{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;column-gap:.75rem;padding:.6rem .8rem;border-bottom:1px solid #1f2937}#qr-scan h3{margin:0;font-size:1rem}#qr-scan .body{padding:.6rem .8rem .8rem}#qr-video{width:100%;aspect-ratio:3/4;background:#000;display:block;border-radius:.5rem}#qr-actions{display:flex;gap:.5rem;justify-content:flex-end;margin-top:.6rem}#qr-actions .btn{padding:.4rem .7rem;border-radius:.5rem}#qr-fallback{display:none;font-size:.9rem;opacity:.9;margin-top:.5rem}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Ensure tower SVG icons align nicely like the old set */
+#btn-opere .mh-ico svg, .mh-ico svg{ display:block; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+header .toolbar-buttons{
+    display:flex;
+    align-items:center;
+    gap:.3rem;
+  }
+  header .toolbar-buttons > *{
+    margin:0 !important;
+    flex:0 0 auto;
+  }
+
+  header .toolbar-buttons > button.btn,
+  header .toolbar-buttons > #btn-qr-removed,
+  header .toolbar-buttons > .sub-wrapper > .btn-sub,
+  header .toolbar-left .sub-wrapper > .btn-sub,
+  header .toolbar-buttons > #btn-storia{
+    width:40px;
+    height:40px;
+    padding:0 !important;
+    border-radius:9999px !important;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .toolbar-icon{
+    width:32px;
+    height:32px;
+    display:block;
+  }
+
+  #btn-qr-removed svg,
+  #btn-qr-removed img,
+  #fav-notes-btn svg,
+  #fav-notes-btn img{
+    width:32px;
+    height:32px;
+    display:block;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Storia toolbar: stesso stile "tondo" degli altri bottoni */
+  header #btn-opere{
+    width:40px;
+    height:40px;
+    padding:0;
+    border-radius:9999px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  /* L’icona dentro, centrata e senza margini strani */
+  header #btn-opere .toolbar-icon{
+    display:block;
+    margin:0;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* QR toolbar: azzurro */
+  header .toolbar-buttons #btn-qr-removed{
+    background:#105a93 !important;        /* azzurro */
+    color:#ffffff !important;             /* testo/icona scuri per contrasto */
+    border:1px solid rgba(248,250,252,0.35) !important;
+  }
+  header .toolbar-buttons #btn-qr-removed.active{
+    box-shadow:0 0 0 2px rgba(56,189,248,0.7);
+  }
+
+
+
+  /* Taccuino: verde */
+  #fav-notes-btn{
+    background:#d46400 !important;        /* verde medio */
+    color:#ecfdf5 !important;             /* icona chiara */
+    border:1px solid rgba(34,197,94,0.85) !important;
+  }
+  #fav-notes-btn:hover{
+    background:#22c55e !important;        /* leggero highlight al passaggio */
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+@media (max-width: 390px){
+
+  /* Header un po' più compatto */
+  header{
+    padding: .45rem .6rem;
+  }
+
+  /* Titolo "Genova mApp" più piccolo */
+  header h1{
+    font-size: 0.6rem;
+  }
+
+  header .title-btn{
+    font-size: 0.6rem;
+    padding: 0.10rem 0.40rem;
+  }
+
+  /* Bottoni tondi della toolbar in alto (Mura, Percorsi, Abbonati, Storia, ecc.) */
+  header .toolbar-buttons > button.btn,
+  header .toolbar-buttons > #btn-qr-removed,
+  header .toolbar-buttons > .sub-wrapper > .btn-sub,
+  header .toolbar-left .sub-wrapper > .btn-sub,
+  header .toolbar-buttons > #btn-storia{
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Icone dentro i bottoni (SVG / IMG) più piccole */
+  header .toolbar-buttons .toolbar-icon,
+  header .toolbar-buttons svg,
+  header .toolbar-buttons img{
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Menu a tendina della toolbar (Mura, Percorsi, QR, ecc.) un filo più compatti */
+  header .dropdown-menu{
+    font-size: 0.75rem;
+  }
+
+  header .dropdown-menu label{
+    font-size: 0.75rem !important;
+  }
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+@media (max-width: 380px){
+
+  /* Bubble generale un po' più compatto */
+  .mh-bubble{
+    font-size: 0.82rem;          /* circa -20% */
+    padding: 0.35rem 0.6rem;
+  }
+
+  .mh-bubble-inner{
+    padding: 0.45rem 0.55rem;
+  }
+
+  /* Titoli più piccoli */
+  .mh-bubble-inner h3,
+  .mh-bubble-inner h2{
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  /* Testo dei paragrafi e liste */
+  .mh-bubble-inner p,
+  .mh-bubble-inner li{
+    font-size: 0.84rem;
+    line-height: 1.35;
+  }
+
+  .mh-bubble-inner ul{
+    padding-left: 1rem;
+    margin: 0.3rem 0;
+  }
+
+  /* Bottoni dentro i bubble (es. sQoRci, Storia, Intrattenimento, Info) */
+  .mh-bubble-inner button,
+  .mh-bubble-inner .btn{
+    font-size: 0.82rem;
+    padding: 0.25rem 0.5rem;
+    min-height: 30px;
+  }
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+@media (max-width: 400px){
+
+  /* Joystick al 50% rispetto alla versione grande */
+  .joystick{
+    width: 36px;
+    height: 36px;
+    bottom: 14px;  /* un filo più vicino al bordo */
+    right: 10px;
+  }
+
+  .joystick .thumb{
+    width: 18px;
+    height: 18px;
+  }
+
+  .joystick .cardinal{
+    font-size: 8px;
+  }
+
+  
+  /* testo un po’ più piccolo dentro i bottoni */
+  .leaflet-control-zoom a{
+    font-size: 14px !important;
+  }
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#btn-opere .mh-ico svg{width:22px;height:22px;display:block}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.menu-home .mh-body{
+  width:min(82vw, 340px) !important;
+}
+.menu-home .mh-bubble{width:100% !important}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Rimuove il nastro storico di bandiere fissato a sinistra */
+  #flag-ribbon{ display:none !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#quick-toggles .qt-btn{position:relative;transition:transform .12s ease,box-shadow .12s ease,filter .12s ease,background-color .12s ease}#quick-toggles .qt-btn[aria-pressed="true"]{box-shadow:0 0 0 3px rgba(34,211,238,0.85),0 0 0 6px rgba(34,211,238,0.22),0 6px 16px rgba(0,0,0,0.45);transform:translateY(-1px) scale(1.06);filter:saturate(1.15) brightness(1.05);background: transparent;border-color:rgba(255,255,255,0.35)}#quick-toggles .qt-btn[aria-pressed="true"]::after{content:"ON";position:absolute;top:-6px;right:-6px;font-size:10px;font-weight:800;background:#22d3ee;color:#0f172a;padding:2px 6px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,0.35);pointer-events:none}#quick-toggles .qt-btn:focus-visible{outline:2px solid #60a5fa;outline-offset:2px}
+
+
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#quick-toggles .qt-metro[aria-pressed="true"]{background:#ef4444 !important;color:#0f172a !important}
+#quick-toggles .qt-bus[aria-pressed="true"]{background:#14b8a6 !important;color:#ffffff !important}
+#quick-toggles .qt-train[aria-pressed="true"]{background:#f59e0b !important;color:#0f172a !important}
+#quick-toggles .qt-museum[aria-pressed="true"]{background:#a78bfa !important;color:#0f172a !important}
+#quick-toggles .qt-funi[aria-pressed="true"]{background:#b67a69 !important;color:#0f172a !important}
+#quick-toggles .qt-mare[aria-pressed="true"]{background:#3b82f6 !important;color:#0f172a !important}
+#quick-toggles .qt-aereo[aria-pressed="true"]{background:#22c55e !important;color:#0f172a !important}
+#quick-toggles .qt-parchi[aria-pressed="true"]{background:#22c55e !important;color:#0f172a !important}
+#quick-toggles .qt-locali[aria-pressed="true"]{background:#ec4899 !important;color:#0f172a !important}
+#quick-toggles .qt-btn[aria-pressed="true"]:hover,
+#quick-toggles .qt-btn[aria-pressed="true"]:focus-visible{filter:brightness(.96) !important}
+#quick-toggles .qt-bus[aria-pressed="true"] svg .glyph{fill:#ffffff !important}
+#quick-toggles .qt-museum[aria-pressed="true"] svg .glyph{fill:#0f172a !important}
+#quick-toggles .qt-metro[aria-pressed="true"] svg .glyph{fill:#0f172a !important}
+#quick-toggles .qt-train[aria-pressed="true"] svg .glyph{fill:#0f172a !important}
+#quick-toggles .qt-funi[aria-pressed="true"] svg .glyph{fill:#0f172a !important}
+#quick-toggles .qt-parchi[aria-pressed="true"] svg .glyph{fill:#0f172a !important}
+#quick-toggles .qt-locali[aria-pressed="true"] svg .glyph{fill:#0f172a !important}
+#quick-toggles .qt-btn[aria-pressed="true"]{
+  box-shadow:inset 0 2px 6px rgba(0,0,0,0.18),
+             0 1px 2px rgba(0,0,0,0.12) !important;
+  border-color:rgba(0,0,0,0.35) !important;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Marker Locali: pallino rosa in stile "night life" */
+  .leaflet-marker-icon.locali-marker{
+    background: transparent;
+    border: none;
+  }
+  .locali-marker .loc-dot{
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    background: radial-gradient(circle at 30% 20%, #f9a8d4, #db2777);
+    border: 2px solid #111827;
+    box-shadow:
+      0 0 0 1px rgba(15,23,42,0.55),
+      0 2px 6px rgba(0,0,0,0.55);
+  }
+
+  /* Popup Locali */
+  .locali-popup .mh-popup-header{
+    padding-bottom: .25rem;
+    margin-bottom: .4rem;
+    border-bottom: 4px solid #db2777;
+  }
+  .locali-popup .mh-popup-title{
+    display: block;
+    font-weight: 800;
+    font-size: 1.05rem;
+  }
+  .locali-popup .mh-popup-body{
+    padding-right: 1.1rem;
+    padding-left: .25rem;
+  }
+  .locali-popup .mh-popup-desc{
+    margin: .25rem 0 .4rem 0;
+  }
+
+  .locali-popup .mh-popup-addr-label{
+    font-size: .78rem;
+    font-weight: 600;
+    opacity: .85;
+    display: block;
+    margin-top: .25rem;
+  }
+  .locali-popup .mh-popup-addr{
+    margin: 0 0 .25rem 0;
+    font-size: .85rem;
+  }
+
+  .locali-popup .mh-popup-link{
+    margin-top: .15rem;
+    font-size: .85rem;
+  }
+  .locali-popup .mh-popup-link a{
+    color: #f472b6;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  /* Immagine nel popup */
+  .locali-popup .mh-popup-img{
+    margin: .25rem 0 .35rem 0;
+    border-radius: .5rem;
+    overflow: hidden;
+    max-height: 180px;
+  }
+  .locali-popup .mh-popup-img img{
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+.parks-popup .mh-popup-header{
+  padding-bottom: .25rem;
+  margin-bottom: .4rem;
+  border-bottom: 4px solid #16a34a;
+}
+.parks-popup .mh-popup-img{
+  margin: .25rem 0 .35rem 0;
+  border-radius: .5rem;
+  overflow: hidden;
+  max-height: 180px;
+}
+.parks-popup .mh-popup-img img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:cover;
+}
+.parks-popup .mh-popup-addr-label{
+  font-size: .78rem;
+  font-weight: 600;
+  opacity: .85;
+  display:block;
+  margin-top: .25rem;
+}
+
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.menu-home .mh-header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0.02rem;
+    margin-bottom:0.45rem;
+  }
+
+  .menu-home .mh-welcome{
+    font-size:1.1rem;
+    font-weight:500;
+    letter-spacing:0.08rem;
+    text-transform:uppercase;
+    color:#b20000;                 /* il tuo rosso */
+    
+    display:inline-block;          /* così lo sfondo segue il testo */
+    padding:0.08rem 0.55rem;       /* spazio interno */
+    border-radius:999px;           /* pillola */
+    background:#ffffff;            /* sfondo bianco pieno */
+    box-shadow:0 2px 6px rgba(0,0,0,0.35);  /* ombra per staccarla dallo sfondo scuro */
+    transform: translateY(0.40rem);
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.mh-bubble.theme-red .mh-actions .mh-btn{
+  font-size: 0.8em !important;
+  padding: .36rem .48rem !important;
+  border-radius: 8px !important;
+  gap: .35rem !important;
+}
+.mh-bubble.theme-red .mh-actions .mh-btn .mh-ico-btn{
+  width: 15px !important;
+  height: 15px !important;
+}
+.mh-bubble.theme-red .mh-actions .mh-btn span:last-child{
+  white-space: normal !important;
+  line-height: 1.15 !important;
+}
+
+/* Storia: barra orizzontale di chip */
+.mh-bubble.theme-red .mh-actions{
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: .35rem;
+}
+
+/* Bottoni "chip" per Storia */
+.mh-bubble.theme-red .mh-actions .mh-btn{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: .35rem .6rem !important;
+  border-radius: 999px !important;   /* effetto pillola */
+  font-size: .78em !important;
+  min-width: 82px;
+}
+
+/* Iconcina un po’ più protagonista */
+.mh-bubble.theme-red .mh-actions .mh-btn .mh-ico-btn{
+  width: 22px !important;
+  height: 22px !important;
+  margin-bottom: .12rem;
+}
+
+/* Testo in due righe max, centrato */
+.mh-bubble.theme-red .mh-actions .mh-btn span:last-child{
+  white-space: normal !important;
+  text-align: center;
+  line-height: 1.15 !important;
+}
+
+/* Icone dei bottoni "Storia" nel menu Home */
+.mh-bubble.theme-red .mh-actions .mh-btn{
+  color:#f9fafb;              /* testo e icona bianchi */
+}
+
+/* Quadrato di base delle icone (Forti, Musei, ecc.) */
+.mh-bubble.theme-red .mh-actions .mh-btn svg .sq{
+  fill:none;                   /* niente riempimento pieno nero */
+  stroke:currentColor;         /* bordo del colore del testo (bianco) */
+  stroke-width:1.6;
+}
+
+/* Parte "disegnata" dell’icona */
+.mh-bubble.theme-red .mh-actions .mh-btn svg .glyph{
+  fill:currentColor;           /* riempimento bianco */
+}
+
+  /* Percorsi: giallo */
+  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="percorsi"]{
+    background-color: #facc15 !important;   /* giallo percorsi */
+  }
+
+  /* Acquedotti: verde acqua */
+  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="acquedotti"]{
+    background-color: #26a69a !important;   /* verde acqua */
+  }
+
+  /* Documentari: arancione */
+  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="documentari"]{
+    background-color: #f97316 !important;   /* arancione */
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* MURA: rosso scuro, distinto dal rosso del bubble */
+  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="mura"]{
+    background-color: #7f1d1d !important;  /* rosso scuro */
+  }
+
+  /* FORTI: seppia abbastanza scuro per tenere testo/icona bianchi */
+  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="forti"]{
+    background-color: #a16207 !important;  /* seppia caldo */
+  }
+
+  /* MUSEI: viola deciso */
+  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="musei"]{
+    background-color: #6d28d9 !important;  /* viola */
+  }
+
+  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="qr"]{
+    background-color: #1e90ff !important;    /* azzurro QR */
+  }
+
+  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="chiese"]{
+    background-color: #a0a0a0 !important;    /* grigio Chiese */
+  }
+
+  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="palazzi"]{
+    background-color: #0a5c0a !important;    /* verde Palazzi (esempio) */
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Layout chip anche per il bubble blu (Come muoversi) */
+  .mh-bubble.theme-blue .mh-actions{
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: .35rem;
+  }
+
+  .mh-bubble.theme-blue .mh-actions .mh-btn{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: .35rem .6rem !important;
+    border-radius: 999px !important;
+    font-size: .78em !important;
+    min-width: 82px;
+    color:#f9fafb;   /* testo + icone bianchi */
+  }
+
+  .mh-bubble.theme-blue .mh-actions .mh-btn .mh-ico-btn{
+    width: 22px !important;
+    height: 22px !important;
+    margin-bottom: .12rem;
+  }
+
+  .mh-bubble.theme-blue .mh-actions .mh-btn span:last-child{
+    white-space: normal !important;
+    text-align: center;
+    line-height: 1.15 !important;
+  }
+
+  /* Icone dentro i bottoni: usa currentColor */
+  .mh-bubble.theme-blue .mh-actions .mh-btn svg .sq{
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.6;
+  }
+  .mh-bubble.theme-blue .mh-actions .mh-btn svg .glyph{
+    fill:currentColor;
+  }
+
+  /* Colori personalizzati per ogni mezzo (modificabili quando ti pare) */
+  .mh-bubble.theme-blue .mh-actions .mh-btn[data-shortcut="bus"]{
+    background-color: #32c6a6 !important;   /* arancione autobus */
+  }
+  .mh-bubble.theme-blue .mh-actions .mh-btn[data-shortcut="treni"]{
+    background-color: #e0ad21 !important;   /* blu treni */
+  }
+  .mh-bubble.theme-blue .mh-actions .mh-btn[data-shortcut="metro"]{
+    background-color: #9b111e !important;   /* rosso metro */
+  }
+  .mh-bubble.theme-blue .mh-actions .mh-btn[data-shortcut="funi"]{
+    background-color: #b67a69  !important;   /* verde/teal funicolari */
+  }
+
+  .mh-bubble.theme-blue .mh-actions .mh-btn[data-shortcut="mare"]{
+    background-color: #3b82f6 !important;   /* blu mare, come il toggle */
+  }
+  .mh-bubble.theme-blue .mh-actions .mh-btn[data-shortcut="aereo"]{
+    background-color: #22c55e !important;   /* verde aereo, come il toggle */
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Layout chip per il bubble giallo (Intrattenimento) */
+  .mh-bubble.theme-yellow .mh-actions{
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: .35rem;
+  }
+
+  .mh-bubble.theme-yellow .mh-actions .mh-btn{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: .35rem .6rem !important;
+    border-radius: 999px !important;
+    font-size: .78em !important;
+    min-width: 82px;
+    color:#f9fafb;   /* testo + icone bianchi */
+  }
+
+  .mh-bubble.theme-yellow .mh-actions .mh-btn .mh-ico-btn{
+    width: 22px !important;
+    height: 22px !important;
+    margin-bottom: .12rem;
+  }
+
+  .mh-bubble.theme-yellow .mh-actions .mh-btn span:last-child{
+    white-space: normal !important;
+    text-align: center;
+    line-height: 1.15 !important;
+  }
+
+  /* Icone: usa currentColor, come negli altri bubble */
+  .mh-bubble.theme-yellow .mh-actions .mh-btn svg .sq{
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.6;
+  }
+  .mh-bubble.theme-yellow .mh-actions .mh-btn svg .glyph{
+    fill:currentColor;
+  }
+
+  /* Colori personalizzati (modificabili quando vuoi) */
+  .mh-bubble.theme-yellow .mh-actions .mh-btn[data-shortcut="locali"]{
+    background-color: #db2777 !important;   /* rosa Locali */
+  }
+  .mh-bubble.theme-yellow .mh-actions .mh-btn[data-shortcut="parchi"]{
+    background-color: #16a34a !important;   /* verde Parchi e piazze */
+  }
+  .mh-bubble.theme-yellow .mh-actions .mh-btn[data-shortcut="sport"]{
+    background-color: #808000 !important;   /* viola Sport */
+  }
+
+  .mh-bubble.theme-yellow .mh-actions .mh-btn[data-shortcut="cinema"]{
+    background-color: #a855f7 !important;   /* viola Cinema */
+  }
+  .mh-bubble.theme-yellow .mh-actions .mh-btn[data-shortcut="teatri"]{
+    background-color: #ef4444 !important;   /* rosso Teatri */
+  }
+  .mh-bubble.theme-yellow .mh-actions .mh-btn[data-shortcut="mostre"]{
+    background-color: #06b6d4 !important;   /* azzurro Mostre */
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.menu-home .mh-bubble .mh-actions .mh-btn.mh-chip-on{
+    border: 2px solid rgba(255,255,255,0.95) !important;
+    box-shadow:
+      0 0 0 1px rgba(0,0,0,0.5),
+      0 0 10px rgba(0,0,0,0.7) !important;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.mh-popup { max-width: 260px; }
+.mh-popup-title { display:block; font-weight:700; margin-bottom:.25rem; }
+.mh-popup-desc { margin:.25rem 0; font-size:.95em; line-height:1.25; text-align:justify; }
+.mh-popup-addr, .mh-popup-link { margin:.2rem 0; font-size:.9em; }
+.mh-popup a { text-decoration: underline; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#quick-toggles .qt-forti[aria-pressed="true"]{background:#d6c7a1 !important;color:#0f172a !important;border-color:rgba(0,0,0,0.35) !important;box-shadow:inset 0 2px 6px rgba(0,0,0,0.18),0 1px 2px rgba(0,0,0,0.12) !important}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#quick-toggles{position:absolute !important;top:50px !important;right:12px !important;bottom:auto !important;transform:none !important}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#fav-menu{
+    position: fixed;
+    left: calc(1rem + 38px + 8px + 38px + 8px);
+    bottom: calc(1rem + 44px + 8px);
+    width: min(320px, 92vw);
+    max-height: 58vh;
+    overflow: auto;
+    background: #0b1222;
+    color: #e5e7eb;
+    border:1px solid #1f2937;
+    border-radius: 12px;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.45);
+    z-index: 1600;
+    display: none;
+  }
+  #fav-menu.open{ display:block; }
+  #fav-menu header{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:.6rem .8rem; border-bottom:1px solid #1f2937;
+  }
+  #fav-menu h3{ margin:0; font-size:1rem; }
+  #fav-menu .body{ padding:.4rem .6rem .6rem; }
+  .fav-acc-section{ border:1px solid rgba(255,255,255,0.08); border-radius:.5rem; margin:.4rem 0; background:#111827; }
+  .fav-acc-head{ display:flex; align-items:center; justify-content:space-between; gap:.5rem; padding:.5rem .6rem; cursor:pointer; user-select:none; }
+  .fav-acc-title{ font-weight:800; font-size:.95rem; }
+  .fav-acc-chevron{ transition: transform .12s ease; opacity:.85; }
+  .fav-acc-section[aria-expanded="true"] .fav-acc-chevron{ transform: rotate(90deg); }
+  .fav-acc-body{ overflow:hidden; max-height:0; transition:max-height .18s ease; padding:0 .6rem; }
+  .fav-acc-section[aria-expanded="true"] .fav-acc-body{ max-height: 520px; padding:.2rem .6rem .6rem; }
+  .fav-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.25rem; }
+  .fav-item{ display:flex; align-items:center; gap:.5rem; padding:.35rem .3rem; border-radius:.35rem; }
+  .fav-item:hover{ background: transparent; }
+  .fav-name{ flex:1; font-size:.92rem; }
+  .fav-empty{ opacity:.7; font-size:.9rem; padding:.35rem; }
+  #fav-menu #fav-search{
+  padding-right: 2.1rem;                 /* spazio per l’icona a destra */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .65rem center;
+  background-size: 1.05rem 1.05rem;
+}
+
+#fav-menu #fav-search::placeholder{
+  color: rgba(148,163,184,0.85);
+}
+
+
+  #fav-close{ appearance:none; background:transparent; color:#e5e7eb; border:1px solid #1f2937; border-radius:10px; padding:.35rem .6rem; cursor:pointer; }
+  #fav-close:hover{ background: transparent; }
+  @supports(padding: max(0px)) {
+#fav-menu{ left: calc(max(1rem, env(safe-area-inset-left)) + 38px + 8px + 38px + 8px); bottom: calc(max(1rem, env(safe-area-inset-bottom)) + 44px + 8px); }
+  }
+  @media (max-width: 420px){
+    #fav-menu{ left: calc(max(1rem, env(safe-area-inset-left)) + 38px + 8px); }
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* più righe visibili: meno “aria” tra i preferiti */
+  #fav-menu .fav-list{
+    gap: .12rem !important;              /* era .25rem */
+  }
+  #fav-menu .fav-item{
+    padding: .18rem .25rem !important;   /* era ~.30-.35rem verticali */
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#fav-menu .fav-subtitle{
+    margin: .4rem 0 .15rem;
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    opacity: .8;
+  }
+
+/* Sottosezioni interne (Autobus, Treni, ecc.) */
+#fav-menu .fav-subtitle{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.35rem 0 0.15rem;
+  font-weight: 600;
+}
+
+/* Freccina che ruota quando si apre/chiude */
+#fav-menu .fav-subtitle::after{
+  content: '▾';
+  font-size: 0.75rem;
+  margin-left: 0.35rem;
+  transform: rotate(-90deg);
+  transition: transform 0.15s ease;
+}
+
+#fav-menu .fav-subtitle[aria-expanded="true"]::after{
+  transform: rotate(0deg);
+}
+
+/* Liste interne scrollabili */
+#fav-menu .fav-list{
+  max-height: 9rem;      /* regola a gusto */
+  overflow-y: auto;
+  margin: 0 0 0.5rem;
+  padding-left: 1rem;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#fav-menu{
+    --fav-transport: #1e3a8a; /* blu */
+    --fav-past:      #ff0000; /* rosso */
+    --fav-places:    #fbbf24; /* giallo */
+  }
+
+  #fav-menu .fav-acc-section[data-key="cat-transport"] .fav-acc-head{
+    background: rgba(30,58,138,.18);
+    border-left: 4px solid var(--fav-transport);
+    border-radius: .55rem;
+    padding-left: .55rem;
+  }
+  #fav-menu .fav-acc-section[data-key="cat-past"] .fav-acc-head{
+    background: rgba(255,0,0,.18);
+    border-left: 4px solid var(--fav-past);
+    border-radius: .55rem;
+    padding-left: .55rem;
+  }
+  #fav-menu .fav-acc-section[data-key="cat-places"] .fav-acc-head{
+    background: rgba(251,191,36,.18);
+    border-left: 4px solid var(--fav-places);
+    border-radius: .55rem;
+    padding-left: .55rem;
+  }
+
+  /* Sottotitoli dentro ogni categoria */
+  #fav-menu .fav-acc-section[data-key="cat-transport"] .fav-subtitle{
+    background: rgba(30,58,138,.10);
+    border-radius: .45rem;
+    padding: .22rem .35rem;
+  }
+  #fav-menu .fav-acc-section[data-key="cat-past"] .fav-subtitle{
+    background: rgba(255,0,0,.10);
+    border-radius: .45rem;
+    padding: .22rem .35rem;
+  }
+  #fav-menu .fav-acc-section[data-key="cat-places"] .fav-subtitle{
+    background: rgba(251,191,36,.10);
+    border-radius: .45rem;
+    padding: .22rem .35rem;
+  }
+
+  /* --- Sfondo colorato anche dietro le liste (elenchi) --- */
+  #fav-menu{
+    /* stessi colori, ma in RGB per usarli in rgba() */
+    --fav-transport-rgb: 30,58,138;   /* = #1e3a8a */
+    --fav-past-rgb:      255,0,0;     /* = #ff0000 */
+    --fav-places-rgb:    251,191,36;  /* = #fbbf24 */
+  }
+
+  /* Base: rendi la lista “a pillola” (vale per tutte) */
+  #fav-menu .fav-list{
+    border-radius: .45rem;
+    padding: .25rem .35rem .3rem 1rem; /* mantiene l'indent ma dà “box” */
+  }
+
+  /* Per categoria: stesso colore dei sottotitoli */
+  #fav-menu .fav-acc-section[data-key="cat-transport"] .fav-list{
+    background: rgba(var(--fav-transport-rgb), .08);
+    border-left: 4px solid rgba(var(--fav-transport-rgb), .28);
+  }
+
+  #fav-menu .fav-acc-section[data-key="cat-past"] .fav-list{
+    background: rgba(var(--fav-past-rgb), .08);
+    border-left: 4px solid rgba(var(--fav-past-rgb), .28);
+  }
+
+  #fav-menu .fav-acc-section[data-key="cat-places"] .fav-list{
+    background: rgba(var(--fav-places-rgb), .10);
+    border-left: 4px solid rgba(var(--fav-places-rgb), .30);
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.fav-star-icon{
+    pointer-events: auto !important;
+    cursor: pointer;
+
+    font-weight: 900;
+    color: #facc15; /* gold */
+    text-shadow: 0 0 2px rgba(0,0,0,0.7), 0 1px 0 rgba(0,0,0,0.45);
+    filter: drop-shadow(0 0 1px rgba(0,0,0,0.35));
+  }
+
+  /* Visual feedback inside the menu list (lascia pure questo se ti serve) */
+  #fav-menu .fav-item.is-selected .fav-name::after{
+    content: " ★";
+    margin-left: .25rem;
+    font-weight: 900;
+    color: #facc15;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Ensure the dropdown is always scrollable and never clipped */
+  #fav-menu{
+    max-height: 72vh !important;
+    overflow: hidden !important; /* scrolling happens in .body */
+    touch-action: auto !important;
+  }
+  #fav-menu .body{
+    max-height: calc(72vh - 52px) !important; /* fallback: header ~52px */
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+  }
+  /* Let the inner accordion bodies expand fully; the outer .body provides the scroll */
+  .fav-acc-body{
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  /* Slightly tighter spacing to fit more items */
+  .fav-item{ padding: .3rem .25rem !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Restore collapsible behavior for accordion bodies */
+  #fav-menu .fav-acc-body{
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height .18s ease;
+  }
+  #fav-menu .fav-acc-section[aria-expanded="true"] .fav-acc-body{
+    /* large enough to reveal content; outer .body handles scroll */
+    max-height: 56vh !important;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#fav-menu .body{
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  #fav-menu .fav-acc-body{
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height .18s ease;
+  }
+  #fav-menu .fav-acc-section[aria-expanded="true"] .fav-acc-body{
+    max-height: none !important;   /* allow full height */
+    overflow: visible !important;  /* content not clipped */
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Always-visible star button in list (grey -> gold when active) */
+  #fav-menu .fav-item{ align-items: center; gap: .45rem; }
+  #fav-menu .fav-item .fav-star-btn{
+    width: 22px; height: 22px;
+    border-radius: 9999px;
+    display: grid; place-items: center;
+    font-size: 14px; font-weight: 900;
+    line-height: 1;
+    color: #9ca3af;               /* grey when OFF */
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+  #fav-menu .fav-item .fav-star-btn:hover{ filter: brightness(1.08); }
+  #fav-menu .fav-item .fav-star-btn.on,
+  #fav-menu .fav-item .fav-star-btn[aria-pressed="true"]{
+    color: #facc15;               /* gold when ON */
+    text-shadow: 0 0 2px rgba(0,0,0,0.7), 0 1px 0 rgba(0,0,0,0.45);
+  }
+  /* Remove the old star appended via ::after when selected */
+  #fav-menu .fav-item.is-selected .fav-name::after{ content: none !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Larger touch target for the star button */
+  #fav-menu .fav-item .fav-star-btn{
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 18px !important;
+  }
+  /* Slightly increase gap to keep spacing pleasant */
+  #fav-menu .fav-item{ gap: .2rem; }
+  /* Better focus ring & mobile tap feedback */
+  #fav-menu .fav-item .fav-star-btn:focus{
+    outline: 2px solid rgba(250,204,21,0.55);
+    outline-offset: 2px;
+  }
+  @media (pointer: coarse){
+    #fav-menu .fav-item .fav-star-btn{ -webkit-tap-highlight-color: rgba(250,204,21,0.25); }
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Route “preferiti del percorso”: pallino colorato (non ★) */
+.leaflet-pane .route-fav-dot-icon{
+  pointer-events: auto !important;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.route-fav-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--dot, #ef4444);
+  border: 2px solid #111827;
+  box-shadow:
+    0 0 0 1px rgba(15,23,42,0.55),
+    0 2px 6px rgba(0,0,0,0.35);
+  display: block;
+  opacity: .9;
+}
+
+  .leaflet-pane .fav-star-icon{
+    font-size: 26px !important;
+    line-height: 26px !important;
+    width: 26px; height: 26px;
+    text-align: center;
+    pointer-events: auto !important;
+    cursor: pointer;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#fav-menu #fav-menu .toolbar button{font:inherit;font-size:.9rem;line-height:1;padding:.35rem .55rem;border-radius:.5rem;border:1px solid rgba(0,0,0,0.15);background:#fafafa;cursor:pointer}#fav-menu .toolbar button:hover{filter:brightness(0.97)}#fav-menu .toolbar button:active{transform:translateY(1px)}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#fav-menu .toolbar{display:flex;align-items:center;justify-content:flex-end;gap:.5rem;padding:.35rem .5rem .25rem;border-bottom:1px solid rgba(0,0,0,0.08);position:sticky;top:0;background:inherit !important;backdrop-filter:blur(4px);z-index:2;background-color:var(--card) !important;border-bottom:1px solid rgba(255,255,255,0.08) !important}#fav-menu .toolbar button{background:rgba(255,255,255,0.06) !important;color:#e5e7eb !important;border:1px solid rgba(255,255,255,0.14) !important;box-shadow:0 1px 0 rgba(0,0,0,0.25) inset}#fav-menu .toolbar button:hover{background:rgba(255,255,255,0.10) !important}#fav-menu .toolbar button:active{transform:translateY(1px);background:rgba(255,255,255,0.08) !important}#fav-menu .toolbar button:focus{outline:2px solid rgba(250,204,21,0.6) !important;outline-offset:2px}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Subtle gold border for Storia when any sublayer (Mura/Acquedotti/Documentari) is active */
+#btn-opere { position: relative; }
+#btn-opere.storia-active {
+  border: 2px solid #f59e0b !important;
+  border-radius: 12px !important;
+  box-shadow: inset 0 0 0 2px rgba(245, 158, 11, 0.22) !important;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+header #routes{
+    display:none !important;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.leaflet-right .leaflet-control-zoom{margin-right:22px !important}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#qr-scan #qr-scan header{display:flex;align-items:center;gap:.5rem}#qr-scan header h3{flex:1}#qr-switch{order:2}#qr-close{order:3}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#qr-frame{position:absolute;pointer-events:none;display:none;box-sizing:border-box}#qr-frame .corner{position:absolute;width:28px;height:28px;border:3px solid rgba(255,255,255,0.95);border-radius:6px;box-shadow:0 0 6px rgba(0,0,0,0.35)}#qr-frame .tl{top:8px;left:8px;border-right:none;border-bottom:none}#qr-frame .tr{top:8px;right:8px;border-left:none;border-bottom:none}#qr-frame .bl{bottom:8px;left:8px;border-right:none;border-top:none}#qr-frame .br{bottom:8px;right:8px;border-left:none;border-top:none}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Slightly wider help popup, responsive on small screens */
+#help-legend{
+  width: min( 92vw, 360px) !important;
+  max-width:  92vw !important;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#help-legend .help-linklike{
+  background:none;border:none;padding:0;margin:0;
+  font:inherit; color:var(--accent); text-decoration:underline;
+  cursor:pointer;
+}
+#help-legend .help-linklike:focus-visible{ outline:2px solid #60a5fa; outline-offset:2px; border-radius:4px; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#help-legend{
+  right: auto !important;
+  bottom: auto !important;
+}
+
+#help-legend p{
+  margin: 0 0 .4rem 0;
+  text-align: justify;
+  text-align-last: left;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+@media (max-width:480px){#toolbar-right{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;row-gap:.4rem}header{flex-wrap:wrap}header .btn,#btn-gps,#btn-scan,#btn-sub{min-width:36px;min-height:36px}}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.mura-popup .leaflet-popup-content { margin: 10px 12px; }
+  .mura-popup .leaflet-popup-content-wrapper { border-radius: 16px; }
+  .mura-popup .mura-media img {
+    width: 100%;
+    height: 176px;    /* similar visual proportion to mini index */
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Bottone Impostazioni (grigio, ingranaggio bianco) */
+  #btn-settings{
+    background: #6b7280;      /* grigio */
+    color: #ffffff;           /* l’SVG usa currentColor, quindi diventa bianco */
+    border: none;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 9999px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: none;
+    outline: none;
+margin-left: 0;
+margin-right: 0;
+  }
+
+  #btn-settings:hover{
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+    transition: all .15s ease;
+  }
+
+  #btn-settings svg{
+    display: block;
+  }
+
+  /* Se hai la toolbar compatta su schermi piccoli, allinea dimensioni */
+  @media (max-width: 390px){
+    #btn-settings{ width:32px; height:32px; }
+    #btn-settings svg{ width:24px; height:24px; }
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.settings-wrapper{
+  display:inline-block;
+  vertical-align:middle;
+  position: relative;   /* <-- AGGIUNGI QUESTO */
+}
+  .settings-dropdown{
+    display:none;
+    position:absolute;
+    top: calc(100% + 8px);
+    left:auto;
+    right:0;
+    transform: none;   /* <-- evita traslazioni che lo sparano fuori */
+    min-width: 180px;
+    background: rgba(15, 23, 42, .98);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 12px;
+    padding: 6px;
+    z-index: 10000;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  }
+  .settings-wrapper.open .settings-dropdown{ display:block; }
+  .settings-row{
+    width:100%;
+    text-align:left;
+    background: transparent;
+    color: inherit;
+    border: 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .settings-row:hover{ background: rgba(255,255,255,.12); }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.contact-hidden{ display:none !important; }
+
+  /* Pannello "Contattaci" (modal) */
+  #contact-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 11000;
+  }
+  #contactPanel{
+    position: fixed;
+    left: 50%;
+    top: calc(env(safe-area-inset-top, 0px) + 72px);
+    transform: translateX(-50%);
+    width: min(420px, 92vw);
+    max-height: calc(100vh - 110px);
+    overflow: auto;
+    z-index: 11001;
+    background: rgba(2,6,23,.95);
+    color: #e5e7eb;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.45);
+  }
+  #contactPanelHeader{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 10px;
+    padding: 12px 14px 10px 14px;
+    border-bottom: 1px solid rgba(255,255,255,.10);
+  }
+  #contactPanelHeader h3{
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: .01em;
+  }
+  #contactPanelClose{
+    background: transparent;
+    color: inherit;
+    border: 0;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+  }
+  #contactPanelClose:hover{
+    background: rgba(255,255,255,.10);
+  }
+  #contactPanelBody{
+    padding: 12px 14px 14px 14px;
+  }
+
+  #contactPanel .c-field{ margin-bottom: 10px; }
+  #contactPanel label{
+    display:block;
+    font-size: .85rem;
+    opacity: .95;
+    margin-bottom: 6px;
+  }
+  #contactPanel input[type="text"],
+  #contactPanel input[type="email"],
+  #contactPanel input[type="tel"],
+  #contactPanel textarea{
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(255,255,255,.06);
+    color: #e5e7eb;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 12px;
+    padding: 10px 10px;
+    outline: none;
+  }
+  #contactPanel textarea{ min-height: 120px; resize: vertical; }
+  #contactPanel input:focus,
+  #contactPanel textarea:focus{
+    border-color: rgba(56,189,248,.7);
+    box-shadow: 0 0 0 3px rgba(56,189,248,.25);
+  }
+  #contactPanel .c-actions{
+    display:flex;
+    gap: 10px;
+    align-items:center;
+    justify-content:flex-end;
+    margin-top: 12px;
+  }
+  #contactPanel .c-submit{
+    background: #22c55e;
+    color: #052e16;
+    border: 0;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  #contactPanel .c-submit:hover{ filter: brightness(1.05); }
+  #contactPanel .c-note{
+    font-size: .78rem;
+    opacity: .85;
+    margin: 10px 0 0 0;
+  }
+  #contactPanel .c-success{
+    background: rgba(34,197,94,.18);
+    border: 1px solid rgba(34,197,94,.35);
+    color: #dcfce7;
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    display:none;
+  }
+  #contactPanel.show-success .c-success{ display:block; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Popup percorsi multilingua */
+.route-pop .leaflet-popup-content-wrapper{
+  background:#fff;
+  color:#111;
+  border-radius:.5rem;
+  box-shadow:0 12px 24px rgba(0,0,0,0.5);
+  border:1px solid rgba(0,0,0,0.15);
+  padding-top:0; /* togliamo padding sopra, lo gestiamo noi */
+  position:relative;
+  overflow:hidden;
+}
+.route-pop .leaflet-popup-tip{
+  background:#fff;
+  border:1px solid rgba(0,0,0,0.15);
+}
+
+/* Riduce lo spazio “standard Leaflet” attorno al contenuto */
+.route-pop .leaflet-popup-content{
+  margin: 5px 7px  !important;
+}
+
+/* barra colore in alto */
+.route-popup-colorbar{
+  width:100%;
+  height:4px;
+  flex-shrink:0;
+  background:#e53935; /* fallback */
+  border-bottom:1px solid rgba(0,0,0,0.15);
+}
+/* Contenuto interno del popup */
+.route-popup{
+  font-family: inherit;
+  font-size: .86rem;          /* un filo più leggibile */
+  line-height: 1.45;
+  color:#111;
+  max-width:220px;
+  padding: .42rem .55rem .55rem .55rem;  /* più stretto */
+}
+.route-popup .route-title{
+  font-weight:600;
+  font-size:.9rem;
+  margin-bottom:.25rem;
+  color:#111;
+}
+.route-popup .route-section-label{
+  font-size:.7rem;
+  font-weight:500;
+  color:#444;
+  margin-bottom:.4rem;
+}
+.route-popup .route-duration{
+  font-size:.7rem;
+  font-weight:500;
+  color:#222;
+  margin-bottom:.4rem;
+}
+.route-popup .route-desc{
+  font-size: .95rem;          /* descrizione più grande */
+  color:#222;
+  text-align:justify;
+}
+
+
+
+/* ★ nei popup dei percorsi */
+.route-popup .route-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.5rem;
+}
+
+.route-popup .route-fav-btn{
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  font-size:1.05rem;
+  line-height:1;
+  padding:.1rem .25rem;
+  opacity:.75;
+}
+
+/* ★ grigia quando OFF */
+.route-popup .route-fav-btn{
+  color: #9ca3af; /* grigio */
+}
+
+/* ★ gialla quando ON */
+.route-popup .route-fav-btn.on,
+.route-popup .route-fav-btn[aria-pressed="true"]{
+  color: #facc15; /* giallo */
+  text-shadow: 0 0 2px rgba(0,0,0,0.7), 0 1px 0 rgba(0,0,0,0.45);
+  opacity: 1;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#routes-menu .acc-head {
+  margin-top: .5rem;
+}
+#routes-menu .acc-chevron {
+  display: none !important;
+}
+#routes-menu .acc-body {
+  display: block !important;
+  overflow: visible !important;
+  max-height: none !important;
+  padding: .3rem .5rem .5rem !important;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Force the Home bubble to allow inner scrolling content */
+.mh-bubble{ overflow:visible !important; max-height:none !important; }
+.mh-bubble.hidden{ display:none !important; }
+
+/* Make the search panel and list truly scrollable */
+.mh-bubble #qr-shortcuts-panel{ display:flex; flex-direction:column; min-height:0 !important; }
+.mh-bubble .qr-shortcuts{ display:flex; flex-direction:column; gap:.25rem; min-height:0 !important; }
+.mh-bubble #qr-groups-wrap{ position:relative !important; }
+.mh-bubble #qr-groups{
+  display:grid;
+  gap:.35rem;
+  overflow-y:auto !important;
+  -webkit-overflow-scrolling:touch;
+  max-height: 220px !important;
+  min-height:0 !important;
+  padding-right:.25rem;
+  scrollbar-gutter: stable both-edges;
+}
+
+/* Ensure arrows are visible and above content */
+.mh-bubble #qr-arrow-up,
+.mh-bubble #qr-arrow-down{
+  position:absolute !important;
+  right:.1rem !important;
+  padding:.15rem !important;
+  border-radius:8px !important;
+  border:1px solid rgba(0,0,0,0.12) !important;
+  background:#fff !important;
+  opacity:.95 !important;
+  z-index:9999 !important;
+  display:block !important;
+  width:28px !important;
+  height:28px !important;
+  line-height:1 !important;
+  font-size:14px !important;
+}
+
+.mh-bubble #qr-arrow-up{ top:.2rem !important; }
+.mh-bubble #qr-arrow-down{ bottom:.2rem !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.forti-popup .mh-popup-desc{
+  max-height: 140px;
+  overflow-y: auto;
+  padding-right: 0.35rem;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Hover/active tactile feedback */
+#routes-btn:hover { filter: brightness(0.94); }
+#routes-btn:active { transform: translateY(1px); }
+
+/* Accessible focus */
+#routes-btn:focus-visible {
+  outline: 3px solid rgba(59,130,246,0.45);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(250,204,21,0.45);
+}
+
+/* Comfortable mobile target */
+#routes-btn { min-height:36px; min-width:36px; padding:.45rem; aspect-ratio:1 / 1; display:inline-flex; align-items:center; justify-content:center; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.leaflet-bottom.leaflet-right{
+  margin-bottom: calc(90px + env(safe-area-inset-bottom));
+  margin-right: 12px;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#map-qr-fab { background: #0f172a !important; color: #fff !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+
+/* LEGEND + TOOLBAR BUTTONS COLORI */
+#legend #legend-btn.btn {
+  background: #3498db;
+  color: #fff;
+  font-weight: 600;
+}
+
+
+
+/* Hover comune pulsanti toolbar */
+#legend .btn:hover,
+#btn-scan:hover,
+#btn-gps:hover,
+
+
+#legend .btn:last-child,
+#btn-scan:last-child,
+#btn-gps:last-child,
+#btn-sub:last-child,
+#btn-storia:last-child {
+  margin-right: 0;
+}
+
+/* QR: riabilita icona QR nella toolbar */
+.qr-icon,
+[data-role="qr"] {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+}
+.toolbar .btn[data-role="qr"],
+.toolbar .btn.qr-icon {
+  display: inline-flex !important;
+}
+
+/* QR: colore puntino/dot scuro */
+#qr-menu .chip .dot {
+  background: #1e3a8a;
+}
+
+/* QR: triangolino stile play */
+#qr-menu .chip .dot {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 10px solid #1e3a8a;
+  border-radius: 0;
+  background: transparent;
+  display: inline-block;
+  margin-right: .25rem;
+}
+
+/* Indicatore triangolo standalone */
+.qr-triangle {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 14px solid #1e3a8a;
+  filter: drop-shadow(0 0 1px rgba(0,0,0,0.35));
+}
+
+/* --- PATCH 2: remove focus ring for subscription button in all states --- */
+#btn-sub,
+#btn-sub:focus,
+#btn-sub:focus-visible,
+#btn-sub.active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* --- PATCH: titolo Genova mApp in grassetto --- */
+header .title,
+header h1,
+#title {
+  font-weight: 700 !important;
+}
+
+/* --- PATCH: lettera "A" artistica in 'mApp' (header) --- */
+header h1 .art-A {
+  font-family: "Papyrus", "Copperplate", "Brush Script MT", "Snell Roundhand", "Bradley Hand", cursive;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  display: inline-block;
+  transform: translateY(0.5px) rotate(-1deg);
+  text-shadow: 0 0.5px 0 rgba(0,0,0,0.35);
+}
+
+/* --- OVERRIDE: Joystick in basso a destra e più grande --- */
+
+/* --- OVERRIDE: sposta il joystick più in alto di 20px --- */
+
+/* --- PATCH: Doc popup inline player --- */
+.leaflet-popup-content .doc-thumb{ position:relative; display:block; margin:.25rem 0 .35rem; border-radius:.35rem; overflow:hidden; }
+.leaflet-popup-content .doc-thumb::after{
+  content:'▶'; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  font-size:1.8rem; line-height:1; background:linear-gradient(transparent, rgba(0,0,0,0.35));
+  color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.6);
+}
+.leaflet-popup-content .doc-yt-embed{ width:100%; aspect-ratio:16/9; border:0; border-radius:.35rem; display:block; }
+
+/* --- PATCH v2: doc-thumb as button, no external nav --- */
+.leaflet-popup-content .doc-thumb{ 
+  position:relative; display:block; width:100%; margin:.25rem 0 .35rem; 
+  border-radius:.35rem; overflow:hidden; background:none; border:0; padding:0; cursor:pointer;
+}
+.leaflet-popup-content .doc-thumb img{ display:block; width:100%; height:auto; }
+.leaflet-popup-content .doc-thumb::after{
+  content:'▶'; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  font-size:1.8rem; line-height:1; background:linear-gradient(transparent, rgba(0,0,0,0.35));
+  color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.6);
+}
+.leaflet-popup-content .doc-yt-embed{ width:100%; aspect-ratio:16/9; border:0; border-radius:.35rem; display:block; }
+
+/* --- PATCH: Nuvola Doc stile card con player inline + paywall 10s --- */
+.leaflet-popup.doc-pop .leaflet-popup-content-wrapper{
+  background:#0f172a; /* slate-900 */
+  color:#e5e7eb;      /* text-gray-200 */
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
+  border:1px solid rgba(255,255,255,0.08);
+}
+.leaflet-popup.doc-pop .leaflet-popup-content{ margin:12px 12px 10px 12px; }
+.leaflet-popup.doc-pop .leaflet-popup-tip{ background:#0f172a; border:1px solid rgba(255,255,255,0.08); box-shadow:0 6px 20px rgba(0,0,0,0.25); }
+.doc-card{ width: 320px; max-width: 86vw; }
+.doc-card__head{ display:flex; align-items:center; gap:.5rem; margin-bottom:.4rem; }
+.doc-card__title{ font-weight:800; font-size:1rem; }
+.doc-card__badge{ font-size:.75rem; padding:.15rem .45rem; border-radius:999px; background:#1f2937; border:1px solid rgba(255,255,255,0.12); }
+.doc-card__meta{ display:none !important; }
+.doc-card__media{ margin:.25rem 0 .5rem; }
+.doc-thumb{ 
+  position:relative; display:block; width:100%; border-radius:.5rem; overflow:hidden; background:#111; border:0; padding:0; cursor:pointer;
+}
+.doc-thumb img{ display:block; width:100%; height:auto; }
+.doc-thumb::after{
+  content:'▶'; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  font-size:1.8rem; line-height:1; background:linear-gradient(transparent, rgba(0,0,0,0.35));
+  color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.6);
+}
+.doc-yt-embed{ width:100%; aspect-ratio:16/9; border:0; border-radius:.5rem; display:block; background:#000; }
+.doc-card__desc{ font-size:.9rem; opacity:.95; }
+.doc-card__foot{ display:flex; justify-content:flex-end; margin-top:.6rem; }
+.doc-btn{ font-size:.8rem; padding:.35rem .6rem; border-radius:.5rem; background:transparent; border:1px solid rgba(255,255,255,0.2); color:#e5e7eb; cursor:pointer; }
+.doc-btn:hover{ background: transparent; }
+.doc-paywall{
+  margin-top:.35rem; border:1px dashed rgba(255,255,255,0.2); border-radius:.5rem; padding:.5rem .6rem; font-size:.85rem;
+  display:flex; align-items:center; justify-content:space-between; gap:.5rem; background: transparent;
+}
+.doc-paywall .doc-pay-msg{ opacity:.9; }
+.doc-paywall .doc-btn{ border-color:#fbbf24; color:#fde68a; }
+
+.doc-lang{ display:flex; gap:.35rem; flex-wrap:wrap; margin:.25rem 0 .45rem; }
+.doc-lang-btn{
+  font-size:.72rem;
+  padding:.2rem .45rem;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.22);
+  background:transparent;
+  color:#e5e7eb;
+  cursor:pointer;
+  opacity:.9;
+}
+.doc-lang-btn:hover{ opacity:1; }
+
+
+/* === OVERRIDE (2025-10-06): place flag switcher bottom-left, swap with help === */
+#flag-switcher{
+  left: 1rem !important;
+  bottom: 1rem !important;
+  top: auto !important;
+}
+
+/* === OVERRIDE (2025-10-06): make flag menu open UP above the switcher === */
+#flag-menu{
+  position: fixed !important;
+  left: 1rem !important;
+  top: auto !important;
+  bottom: calc(1rem + 38px + 8px) !important; /* above the 38px button, 8px gap */
+  z-index: 2000 !important;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.joystick{
+  position:fixed;
+  bottom: 20px;
+  right: 16px;
+  width: 72px; height: 72px;
+  border-radius: 9999px;
+  background: transparent;
+  border: 1px solid rgba(31,41,55,0.8);
+  display: flex; align-items: center; justify-content: center;
+  touch-action: none;
+  user-select: none;
+  backdrop-filter: blur(4px);
+  z-index: 401;
+}
+.joystick .thumb{
+  width: 36px; height: 36px;
+  border-radius: 9999px;
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.25);
+  will-change: transform;
+  transform: translate(0,0);
+  transition: transform 80ms ease-out;
+}
+.joystick.active .thumb{
+  transition: none;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+@media (max-width: 400px){
+
+  /* Zoom + / − più piccoli sui display stretti */
+  .leaflet-control-zoom a{
+    width: 26px !important;
+    height: 26px !important;
+    line-height: 26px !important;
+    font-size: 16px !important;
+    padding: 0 !important;
+  }
+
+  /* Posizione ANCORATA alla mappa, indipendente dal joystick */
+  .leaflet-bottom.leaflet-right .leaflet-control-zoom{
+    margin-bottom: 22px !important;  /* distanza dal bordo inferiore */
+    margin-right: 4px !important;    /* vince su ui-right-anchor */
+  }
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Forti: consistent sepia icon for button and markers */
+#quick-toggles .qt-forti svg .sq { fill: #d6c7a1 !important; }
+#quick-toggles .qt-forti svg .glyph { fill: #0f172a !important; }
+
+#quick-toggles .qt-forti { background: transparent !important; border-color: rgba(0,0,0,0.08) !important; }
+
+/* Pressed state keeps same palette for clarity */
+#quick-toggles .qt-forti[aria-pressed="true"] svg .sq { fill: #d6c7a1 !important; filter: brightness(0.98); }
+#quick-toggles .qt-forti[aria-pressed="true"] svg .glyph { fill: #0f172a !important; }
+
+/* Leaflet DivIcon for Forti */
+.forti-marker svg .sq { fill: #d6c7a1 !important; stroke: #0f172a !important; stroke-width: 1.2 !important; }
+.forti-marker svg .glyph { fill: #0f172a !important; }
+/* Slight drop-shadow to match other POIs */
+.forti-marker svg { filter: drop-shadow(0 0.6px 0.6px rgba(0,0,0,0.2)); }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Bottone "Chiese": icona bianca su sfondo grigio */
+#quick-toggles .qt-chiese svg .sq {
+  fill: #4b5563 !important; /* grigio 700 */
+}
+#quick-toggles .qt-chiese svg .glyph {
+  fill: #f9fafb !important; /* quasi bianco */
+}
+
+/* Manteniamo il look generale dei quick toggles:
+   lo sfondo ON lo decide già la palette globale */
+#quick-toggles .qt-chiese {
+  background: transparent !important;
+  border-color: rgba(0,0,0,0.08) !important;
+}
+
+/* Premiuto: leggero scurimento del “cuscino” */
+#quick-toggles .qt-chiese[aria-pressed="true"] svg .sq {
+  fill: #374151 !important; /* grigio 800 */
+}
+#quick-toggles .qt-chiese[aria-pressed="true"] svg .glyph {
+  fill: #f9fafb !important;
+}
+
+/* Marker sulla mappa con stessa icona / palette */
+.chiese-marker svg .sq {
+  fill: #4b5563 !important;
+  stroke: #0f172a !important;
+  stroke-width: 1.1 !important;
+}
+.chiese-marker svg .glyph {
+  fill: #f9fafb !important;
+}
+.chiese-marker svg {
+  filter: drop-shadow(0 0.6px 0.6px rgba(0,0,0,0.25));
+}
+
+/* “buchi” nell’icona: stesso colore del quadrato */
+#quick-toggles .qt-chiese svg .cut { fill: #4b5563 !important; }
+#quick-toggles .qt-chiese[aria-pressed="true"] svg .cut { fill: #374151 !important; }
+
+/* marker: stessi “buchi” del quadrato */
+.chiese-marker svg .cut { fill: #4b5563 !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Acquedotti: quadrato verde acqua, icona scura */
+  #quick-toggles .qt-acq-all svg .sq {
+    fill: #14b8a6 !important;
+  }
+  #quick-toggles .qt-acq-all svg .glyph {
+    fill: #0f172a !important;
+  }
+
+  /* QR: quadrato azzurro, icona BIANCA */
+  #quick-toggles .qt-qr svg .sq {
+    fill: #0ea5e9 !important;
+  }
+  #quick-toggles .qt-qr svg .glyph {
+    fill: #f9fafb !important;   /* ← da nero a quasi bianco */
+  }
+
+  /* Percorsi: quadrato giallo, icona scura */
+  #quick-toggles .qt-percorsi-all svg .sq {
+    fill: #f59e0b !important;
+  }
+  #quick-toggles .qt-percorsi-all svg .glyph {
+    fill: #0f172a !important;
+  }
+
+  /* Mura: quadrato rosso, icona BIANCA */
+  #quick-toggles .qt-mura-all svg .sq {
+    fill: #ef4444 !important;
+  }
+  #quick-toggles .qt-mura-all svg .glyph {
+    fill: #f9fafb !important;   /* ← anche qui, bianca */
+  }
+/* Riduci il quadrato interno: così il colore resta “dentro”
+     e si vede il bordo + il cuscinetto ON come negli altri toggle */
+  #quick-toggles .qt-acq-all svg .sq,
+  #quick-toggles .qt-qr svg .sq,
+  #quick-toggles .qt-percorsi-all svg .sq,
+  #quick-toggles .qt-mura-all svg .sq {
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: scale(0.95);
+  }
+
+
+
+  /* Bottoni: di base trasparenti, lasciamo che lo sfondo ON lo gestisca
+     la regola globale #quick-toggles .qt-btn[aria-pressed="true"] */
+  #quick-toggles .qt-acq-all,
+  #quick-toggles .qt-qr,
+  #quick-toggles .qt-percorsi-all,
+  #quick-toggles .qt-mura-all {
+    background: transparent !important;
+    border-color: rgba(0,0,0,0.10) !important;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Bottone "Palazzi": bianco su verde scuro */
+#quick-toggles .qt-palazzi svg .sq {
+  fill: #065f46 !important; /* verde scuro */
+}
+#quick-toggles .qt-palazzi svg .glyph {
+  fill: #f9fafb !important; /* quasi bianco */
+}
+
+#quick-toggles .qt-palazzi {
+  background: transparent !important;
+  border-color: rgba(0,0,0,0.08) !important;
+}
+
+#quick-toggles .qt-palazzi[aria-pressed="true"] svg .sq {
+  fill: #064e3b !important; /* un filo più scuro on/active */
+}
+
+/* Marker sulla mappa con stessa palette */
+.palazzi-marker svg .sq {
+  fill: #065f46 !important;
+  stroke: #022c22 !important;
+  stroke-width: 1.1 !important;
+}
+.palazzi-marker svg .glyph {
+  fill: #f9fafb !important;
+}
+.palazzi-marker svg {
+  filter: drop-shadow(0 0.6px 0.6px rgba(0,0,0,0.25));
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Corpo popup Palazzi con padding extra laterale */
+  .palazzi-popup .mh-popup-body {
+    padding-right: 1.2rem;
+    padding-left: 0.25rem;
+  }
+
+  /* Riga verde scuro sotto il titolo */
+  .palazzi-popup .mh-popup-header {
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.4rem;
+    border-bottom: 4px solid #065f46;
+  }
+
+  .palazzi-popup .mh-popup-title {
+    display: block;
+    font-weight: 800;
+    font-size: 1.05rem;
+  }
+
+.mh-popup-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Solo PALAZZI: descrizione scrollabile */
+.palazzi-popup .mh-popup-desc{
+  max-height: 120px;     /* alza/abbassa a gusto */
+  overflow-y: auto;
+  padding-right: 6px;    /* evita testo sotto la scrollbar */
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+:root{
+  --joy-bg:#ffffff;
+  --joy-blue:#2563eb; /* blue-600 */
+  --joy-blue-border:#1e40af; /* blue-800 */
+}
+
+/* Background of the joystick base */
+.joystick{
+  background: rgba(255,255,255,0.95) !important;
+  border-color: rgba(17,24,39,0.2) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Thumb = lever: smaller and blue */
+.joystick .thumb{
+  width: 28px !important; height: 28px !important;
+  background: var(--joy-blue) !important;
+  border: 1px solid var(--joy-blue-border) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#bottom-bar{
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1600;
+  pointer-events: none; /* bar doesn't block map except buttons */
+}
+#bottom-bar > *{ pointer-events: auto; }
+
+/* Normalize FAB QR and Home to 36x36 round buttons */
+#bottom-bar .fab-btn{
+  width: 36px; height: 36px;
+  border-radius: 9999px;
+  display: inline-flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+/* QR inherits its own look; just ensure sizing */
+#bottom-bar #btn-scan.fab-btn svg{ width: 20px; height: 20px; display:block; }
+
+/* Home: dark blue background, white house icon */
+#btn-home{
+  background: #0f172a; /* slate-900 like */
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+#btn-home svg{ width: 20px; height: 20px; display:block; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* When QR FAB is inside the bottom bar, drop absolute centering */
+#bottom-bar #map-qr-fab{
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  width: 36px !important; height: 36px !important;
+}
+#bottom-bar #map-qr-fab svg{ width: 20px; height: 20px; display:block; }
+#bottom-bar #map-qr-fab{ box-shadow: 0 2px 8px rgba(0,0,0,0.18) !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* GPS in barra in basso: 36x36 tondo, icona 20x20 */
+#bottom-bar #btn-gps{
+  position: static !important;
+  width: 36px !important; height: 36px !important;
+  border-radius: 9999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+#bottom-bar #btn-gps svg{ width: 20px !important; height: 20px !important; display:block !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Colore di base del bottone GPS nella barra in basso */
+  #bottom-bar #btn-gps{
+    background: #22c55e !important;         /* verde GPS */
+    color: #0f172a !important;              /* icona chiara su sfondo verde */
+    border: 1px solid rgba(15,23,42,0.45) !important;
+  }
+
+  /* Stato attivo: GPS acceso (class "active" da setGpsOn) */
+  #bottom-bar #btn-gps.active{
+    background: #16a34a !important;         /* verde leggermente più scuro */
+    box-shadow: 0 0 0 2px rgba(34,197,94,0.55);
+  }
+
+  /* Piccolo feedback al tocco */
+  #bottom-bar #btn-gps:active{
+    transform: translateY(1px);
+    filter: brightness(0.97);
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Bottone Info nella barra in basso */
+  #bottom-bar #btn-info{
+    position: static !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 9999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    background: #0f172a !important;   /* stesso sfondo scuro del resto */
+    color: #ffffff !important;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  }
+
+  #bottom-bar #btn-info svg{
+    width: 20px !important;
+    height: 20px !important;
+    display: block !important;
+  }
+
+  /* Icona "i" leggibile: cerchio vuoto e segno chiaro */
+  #bottom-bar #btn-info svg circle,
+  #bottom-bar #btn-info svg line{
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+  }
+
+  #bottom-bar #btn-info svg circle.info-dot{
+    fill: currentColor;
+    stroke: none;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Help in barra: 36x36 tondo, prima posizione */
+#bottom-bar #help-fab{
+  position: static !important;
+  width: 36px !important; height: 36px !important;
+  border-radius: 9999px !important;
+  display: inline-flex !important; align-items:center !important; justify-content:center !important;
+  margin: 0 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18) !important;
+}
+
+/* Dropdown: portalo in un layer overlay alto e posizionalo sopra la barra */
+#help-legend{
+  position: fixed !important;
+  z-index: 5000 !important;
+  left: 50% !important;
+  bottom: calc(60px + env(safe-area-inset-bottom)) !important; /* sopra la barra */
+  transform: translateX(-50%) !important;
+  max-width: min(92vw, 520px);
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#bottom-bar{
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px; z-index: 7000;
+  pointer-events: none;
+}
+#bottom-bar > *{ pointer-events: auto; }
+.fab-btn{ width:36px;height:36px;border-radius:9999px;display:inline-flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 8px rgba(0,0,0,0.18); }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+@media (max-width: 410px){
+
+    /* Scala globale un po' più compatta */
+    :root{
+      --ui-scale: clamp(0.64, 100vw / 520, 0.82);
+      --base-font: clamp(12px, 3.2vw, 14px);
+    }
+
+    /* Toolbar più compatta */
+    #bottom-bar{
+      bottom: 8px;
+      gap: 6px;
+    }
+
+    #bottom-bar .fab-btn,
+    #bottom-bar #help-fab,
+    #bottom-bar #map-qr-fab,
+    #bottom-bar #btn-gps,
+    #bottom-bar #btn-info,
+    #bottom-bar #btn-home{
+      width: 32px !important;
+      height: 32px !important;
+    }
+
+    #bottom-bar .fab-btn svg,
+    #bottom-bar #help-fab svg,
+    #bottom-bar #map-qr-fab svg,
+    #bottom-bar #btn-gps svg,
+    #bottom-bar #btn-info svg,
+    #bottom-bar #btn-home svg{
+      width: 18px !important;
+      height: 18px !important;
+    }
+
+    /* Menu Home più leggero sui telefoni stretti */
+    .menu-home{
+      padding-top: 120px !important; /* invece dei 150px */
+    }
+
+    .menu-home .mh-header{
+      gap: 0.16rem;
+    }
+
+    .menu-home .mh-welcome{
+      font-size: 0.9rem;
+      padding: 0.04rem 0.42rem;
+    }
+
+    .menu-home .mh-title{
+      font-size: 1.35rem;
+    }
+
+    .menu-home .mh-grid{
+      row-gap: 0.45rem !important;
+    }
+
+    .menu-home .mh-item{
+      padding: 0.45rem 0.6rem;
+    }
+
+    .menu-home .mh-item .mh-label{
+      font-size: 0.9rem;
+    }
+
+    .mh-bubble{
+      font-size: 0.92rem;
+    }
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#btn-gps{
+  width:36px;height:36px;border-radius:9999px;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#0f172a;color:#fff;border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 2px 8px rgba(0,0,0,0.18);
+}
+#btn-gps svg{ width:20px;height:20px;display:block; }
+#btn-gps[aria-busy="true"]{ opacity: .7; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Info: rosso */
+  #bottom-bar #btn-info{
+    background: #ef4444 !important;  /* red-500 */
+    color: #ffffff !important;
+    border: 1px solid rgba(127,29,29,0.7) !important;
+  }
+
+  /* Help "?" : giallo/oro */
+  #bottom-bar #help-fab{
+    background: #facc15 !important;  /* amber-400 */
+    color: #1f2937 !important;       /* testo scuro per contrasto */
+    border: 1px solid rgba(180,83,9,0.7) !important;
+  }
+
+  /* Scan QR: azzurro/blu */
+  #bottom-bar #btn-scan{
+    background: #0000ff !important;  /* sky-500 */
+    color: #ffffff !important;
+    border: 1px solid rgba(7,89,133,0.8) !important;
+  }
+
+  /* Home: viola */
+  #bottom-bar #btn-home{
+    background: #8b5cf6 !important;  /* violet-500 */
+    color: #ffffff !important;
+    border: 1px solid rgba(76,29,149,0.8) !important;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#fav-menu{
+  position: fixed !important;
+  z-index: 6500 !important;
+  display: none;
+  max-height: 60vh; overflow:auto;
+  background: rgba(17,24,39,0.92);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+  padding: 8px;
+}
+#fav-menu.open{ display: block !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Bottone taccuino accanto alla stella */
+  #fav-notes-btn{
+    width:36px;
+    height:36px;
+    border-radius:9999px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:#0f172a;
+    color:#e5e7eb;
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 2px 8px rgba(0,0,0,0.18);
+    cursor:pointer;
+    margin:0 4px;
+  }
+  #fav-notes-btn svg{
+    width:18px;
+    height:18px;
+    display:block;
+  }
+  #fav-notes-btn:focus-visible{
+    outline:2px solid #60a5fa;
+    outline-offset:2px;
+  }
+
+  /* Pannellino elenco preferiti attivi */
+  #fav-notes-panel{
+    position:fixed;
+    z-index:1600;
+    min-width:240px;
+    max-width:320px;
+    max-height:55vh;
+    overflow:auto;
+    background:#020617;
+    color:#e5e7eb;
+    border-radius:12px;
+    border:1px solid #1f2937;
+    box-shadow:0 12px 36px rgba(0,0,0,0.45);
+    display:none;
+  }
+  #fav-notes-panel.open{ display:block; }
+
+  #fav-notes-panel header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:.5rem .75rem;
+    border-bottom:1px solid #1f2937;
+  }
+  #fav-notes-panel h3{
+    margin:0;
+    font-size:.95rem;
+  }
+  #fav-notes-panel .body{
+    padding:.4rem .75rem .6rem;
+  }
+
+  #fav-notes-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:.25rem;
+  }
+  .fav-notes-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.35rem;
+  padding:.28rem .2rem;
+  border-radius:.35rem;
+  cursor:pointer;
+}
+.fav-notes-item:hover{
+  background:#0b1222;
+}
+
+/* colonna sinistra: etichetta + nome */
+.fav-notes-main{
+  display:flex;
+  flex-direction:column;
+  gap:.05rem;
+  min-width:0;
+}
+
+.fav-notes-label{
+  font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  opacity:.75;
+}
+
+.fav-notes-name{
+  font-size:.9rem;
+  word-break:break-word;
+}
+
+/* bottone "x" a destra */
+.fav-notes-remove{
+  appearance:none;
+  border:none;
+  background:transparent;
+  color:#9ca3af;
+  font-size:.9rem;
+  line-height:1;
+  padding:.1rem .25rem;
+  border-radius:999px;
+  cursor:pointer;
+  flex-shrink:0;
+}
+.fav-notes-remove:hover{
+  background:#111827;
+  color:#fca5a5;
+}
+
+  .fav-notes-empty{
+    font-size:.88rem;
+    opacity:.75;
+  }
+
+  #fav-notes-close{
+    appearance:none;
+    border:none;
+    background:transparent;
+    color:#e5e7eb;
+    cursor:pointer;
+    border-radius:999px;
+    padding:.2rem .45rem;
+    font-size:1rem;
+    line-height:1;
+  }
+  #fav-notes-close:hover{
+    background:#111827;
+  }
+
+  #fav-notes-panel .fav-notes-actions{
+    display:flex;
+    align-items:center;
+    gap:.4rem;
+  }
+
+  #fav-notes-clear{
+    appearance:none;
+    border:none;
+    border-radius:999px;
+    padding:.25rem .7rem;
+    font-size:.75rem;
+    line-height:1;
+    background:#1f2937;
+    color:#e5e7eb;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  #fav-notes-clear:hover{
+    background:#374151;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.sr-only{
+  position:absolute !important; width:1px !important; height:1px !important;
+  padding:0 !important; margin:-1px !important; overflow:hidden !important;
+  clip:rect(0,0,0,0) !important; white-space:nowrap !important; border:0 !important;
+}
+#quick-toggles .qt-item.qt-cat.qt-pill{
+  width:45px; height:45px; padding:0;
+  display:grid; place-items:center;
+  border-radius:12px;
+  background:#1e40af;
+  color:#fff;
+  border:1px solid rgba(0,0,0,0.18);
+  box-shadow:0 1px 2px rgba(0,0,0,0.20);
+  transition:transform .06s ease, background-color .12s ease;
+}
+#quick-toggles .qt-item.qt-cat.qt-pill:hover{ background:#1b3a99; }
+#quick-toggles .qt-item.qt-cat.qt-pill:active{ background:#172f7c; transform:translateY(1px); }
+#quick-toggles .qt-item.qt-cat.qt-pill .qt-icon svg, .qt-icon img{ display:block; width:32px; height:32px; color:#fff; }
+
+.qt-cat-panel{
+  position: absolute;
+  right: calc(45px + 8px);
+  top: 0;
+  transform: translateY(calc(var(--qt-cat-offset, 0px) - 50%));
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  background: transparent;
+  color:#fff;
+  border: 0;
+  border-radius: 12px;
+  box-shadow: none;
+  z-index: 1200;
+}
+.qt-cat-panel[hidden]{ display:none !important; }
+
+.qt-cat-panel .qt-cat-items{ display:flex; flex-direction:column; gap:3px; }
+
+.qt-cat-panel .qt-btn{
+  min-width:44px; min-height:44px;
+  border:1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.10);
+  color:#fff; border-radius:10px; cursor:pointer;
+}
+.qt-cat-panel .qt-btn.is-active{
+  background: rgba(255,255,255,0.20);
+  border-color: rgba(255,255,255,0.45);
+}
+
+
+/* Trasporti: un solo riquadro blu come gli altri pannelli */
+#qt-cat-trasporti .qt-cat-items{
+  background:#1E3A8A;
+  color:#fff;
+  margin:0;
+  padding:3px;
+  border-radius:12px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.25);
+}
+#qt-cat-trasporti .qt-cat-items .qt-btn{
+  border:1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.10);
+  color:#fff;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+@media (max-width: 768px){
+  /* Pannello QR come bottom sheet ma con margini laterali */
+  #panel{
+    position: fixed;
+    left: .75rem;
+    right: .75rem;
+    bottom: 0.75rem;         /* se ti piace più alto: 70px */
+    top: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 60vh;
+    margin: 0 auto;
+    border-radius: 16px;
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.45);
+    background: #0b1120;     /* stesso colore di prima */
+    transform: translateY(110%);
+    transition: transform .22s ease-out;
+    z-index: 1600;
+  }
+
+  #panel.open{
+    transform: translateY(0);
+  }
+
+  #panel .media{
+    max-height: 34vh;
+    overflow: hidden;
+  }
+
+  #panel .content{
+    max-height: 22vh;
+    overflow-y: auto;
+  }
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+@media (max-width: 768px){
+  /* Bottoni della toolbar in alto */
+  #legend .btn,
+  #btn-scan,
+  #btn-gps,
+  #btn-sub,
+  #btn-storia{
+    min-height: 40px;
+    padding: 0.35rem 0.6rem;
+    font-size: calc(var(--menu-font) * 0.95);
+  }
+
+  /* Righe selezionabili nei menu tipo Storia */
+  #storia-menu .st-row{
+    min-height: 38px;
+    padding: 0.25rem 0.4rem;
+  }
+
+  /* Zoom di Leaflet un filo più “ditabile” */
+  .leaflet-control-zoom a{
+    min-width: 36px;
+    min-height: 36px;
+  }
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+@media (max-width: 768px){
+  /* Moneta: niente padding “da bottone testuale”, resta tonda e centrata */
+  #btn-sub{
+    padding: 0 !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    line-height: 0 !important;         /* evita micro-shift da baseline su alcuni mobile */
+    box-sizing: border-box !important;
+    display: grid !important;
+    place-items: center !important;
+  }
+
+  #btn-sub img,
+  #btn-sub svg{
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+  }
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Trasforma il vecchio Home in un vero pannello a tendina (stile Preferiti) */
+  #menu-home.menu-home{
+    padding-top: 0 !important;         /* annulla i vecchi offset da overlay */
+    background: transparent !important; /* niente “sfondo overlay” */
+  }
+
+  /* assicurati che .hidden vinca */
+  #menu-home.menu-home.hidden{ display:none; }
+
+  /* La “scatola” scura tipo Preferiti */
+  #menu-home.menu-home .mh-body{
+    background: #0b1222;
+    color: #e5e7eb;
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.45);
+    padding: .6rem;
+    max-height: 70vh;
+    overflow: auto;
+  }
+
+  /* Da lista a griglia di icone */
+  #menu-home.menu-home .mh-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .5rem;
+  }
+  @media (min-width: 480px){
+    #menu-home.menu-home .mh-grid{
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  /* Bottoni: tile (icona sopra, testo sotto) */
+  #menu-home.menu-home .mh-item{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: .35rem;
+    padding: .55rem .45rem;
+    width: 100%;
+  }
+  #menu-home.menu-home .mh-label{
+    font-size: .78rem;
+    line-height: 1.1;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Genova mApp dropdown: trasformiamo i tile in righe compatte (stile Preferiti) */
+  #menu-home.menu-home .gm-row{
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: .6rem;
+    padding: .5rem .6rem;
+    min-height: 44px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  #menu-home.menu-home .gm-row:hover{ background: rgba(255,255,255,0.09); }
+  #menu-home.menu-home .gm-row-left{
+    display:flex;
+    align-items:center;
+    gap:.55rem;
+    min-width: 0;
+  }
+  #menu-home.menu-home .gm-row .mh-ico{ width:18px; height:18px; }
+  #menu-home.menu-home .gm-row .mh-ico svg{ width:18px; height:18px; }
+  #menu-home.menu-home .gm-row .gm-row-label{
+    font-size: .9rem;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #menu-home.menu-home .gm-chevron{
+    opacity: .8;
+    font-size: .95rem;
+    transition: transform .16s ease;
+  }
+  #menu-home.menu-home .gm-row.active .gm-chevron{ transform: rotate(180deg); }
+
+  /* Bubble quando viene “spostato” sotto alla riga: full width */
+  #menu-home.menu-home #mh-bubble{
+    grid-column: 1 / -1;
+    margin-top: .35rem;
+  }
+
+/* Colori definitivi delle voci Home (righe nel pannello Genova mApp) */
+#menu-home.menu-home .mh-item.gm-row.mh-azure[data-key="sqorci"]{
+  background:#19b2e6 !important;                 /* azzurro */
+  border:1px solid rgba(255,255,255,0.18) !important;
+  color:#ffffff !important;
+}
+#menu-home.menu-home .mh-item.gm-row.mh-yellow[data-key="preferiti"]{
+  background:#f59e0b !important;                 /* giallo/oro */
+  border:1px solid rgba(0,0,0,0.18) !important;
+  color:#ffffff !important;
+}
+#menu-home.menu-home .mh-item.gm-row.mh-red[data-key="storia"]{
+  background:#9c1d1d !important;                 /* rosso */
+  border:1px solid rgba(0,0,0,0.18) !important;
+  color:#ffffff !important;
+}
+#menu-home.menu-home .mh-item.gm-row.mh-gray[data-key="info"]{
+  background:#808080 !important;                 /* grigio chiaro */
+  border:1px solid rgba(0,0,0,0.18) !important;
+  color:#111827 !important;
+}
+/* Testo coerente (label + chevron) */
+#menu-home.menu-home .mh-item.gm-row.mh-gray[data-key="info"] .mh-label,
+#menu-home.menu-home .mh-item.gm-row.mh-gray[data-key="info"] .gm-row-label,
+#menu-home.menu-home .mh-item.gm-row.mh-gray[data-key="info"] .gm-chevron{
+  color:#111827 !important;
+}
+/* Micro feedback hover senza cambiare palette */
+#menu-home.menu-home .mh-item.gm-row.mh-azure:hover,
+#menu-home.menu-home .mh-item.gm-row.mh-yellow:hover,
+#menu-home.menu-home .mh-item.gm-row.mh-red:hover,
+#menu-home.menu-home .mh-item.gm-row.mh-gray:hover{
+  filter: brightness(1.05);
+}/* ...ma la label era forzata a nero da .mh-gray .mh-label: sovrascriviamo qui */
+#menu-home.menu-home .mh-item.gm-row.mh-gray[data-key="info"] .mh-label,
+#menu-home.menu-home .mh-item.gm-row.mh-gray[data-key="info"] .gm-row-label{
+  color: #ffffff !important;
+}
+
+
+/* Forza testo bianco sulla voce Preferiti (uniforme alle altre voci Home) */
+#menu-home.menu-home .mh-item.gm-row.mh-yellow[data-key="preferiti"]{
+  color: #ffffff !important;
+}
+#menu-home.menu-home .mh-item.gm-row.mh-yellow[data-key="preferiti"] .mh-label,
+#menu-home.menu-home .mh-item.gm-row.mh-yellow[data-key="preferiti"] .gm-row-label{
+  color: #ffffff !important;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Tema sfondo "menu" (contenuto espanso) per le voci Home.
+     Serve a evitare che, dopo aver aperto Info, tutto rimanga bianco. */
+  #mh-bubble[data-key="sqorci"] .mh-bubble-inner{
+    background: linear-gradient(90deg, rgba(25,178,230,.24), rgba(11,18,34,1) 68%) !important;
+    color: #e5e7eb !important;
+  }
+  #mh-bubble[data-key="preferiti"] .mh-bubble-inner{
+    background: linear-gradient(90deg, rgba(245,158,11,.22), rgba(11,18,34,1) 68%) !important;
+    color: #e5e7eb !important;
+  }
+  #mh-bubble[data-key="storia"] .mh-bubble-inner{
+    background: linear-gradient(90deg, rgba(156,29,29,.25), rgba(11,18,34,1) 68%) !important;
+    color: #e5e7eb !important;
+  }
+  #mh-bubble[data-key="info"] .mh-bubble-inner{
+background: linear-gradient(90deg, rgba(128,128,128,.94), rgba(11,18,34,1) 68%);
+    color: #e5e7eb !important;
+  }
+
+  /* Piccolo margine interno coerente, senza cambiare l'estetica finale */
+  #mh-bubble .mh-bubble-inner{
+    border-radius: 12px;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Quando Preferiti è dentro al pannello Home: niente "menu volante", diventa un contenuto inline */
+#fav-menu.docked-home{
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  display: block !important;
+  max-height: none !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* (Opzionale) nasconde il titolo dentro al menu dockato, lasciando solo la search */
+#fav-menu.docked-home > header h3{
+  display:none !important;
+}
+
+/* Rifinitura minima: lascia respirare l'accordion */
+#fav-menu.docked-home .fav-acc-section{
+  margin: .25rem 0;
+  border-radius: 10px;
+}
+
+#fav-menu.docked-home .fav-acc-head{
+  padding: .45rem .6rem;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+#fav-menu.docked-home .fav-acc-body{
+  padding: .35rem .55rem .5rem;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Preferiti dentro Home: meno “aria” a sinistra, un filo di respiro a destra */
+  #mh-bubble[data-key="preferiti"] .mh-bubble-inner{
+    padding: .45rem .95rem .6rem .45rem !important; /* top right bottom left */
+  }
+  @media (max-width: 420px){
+    #mh-bubble[data-key="preferiti"] .mh-bubble-inner{
+      padding: .40rem .80rem .55rem .40rem !important;
+    }
+  }
+
+  /* Il menu preferiti dockato deve occupare tutta la larghezza disponibile */
+  #fav-menu.docked-home{
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* QR in cima alla colonna destra */
+  #quick-toggles > #btn-qr-removed{ margin-bottom: 6px; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* QR button (right column): rotondo + blu scuro */
+#quick-toggles .qt-btn.qt-qr{
+  border-radius:999px !important;
+  background:#0b2a5b !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+  width:44px;
+  height:44px;
+  padding:0 !important;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+#quick-toggles .qt-btn.qt-qr .qt-icon{ margin:0 !important; }
+#quick-toggles .qt-btn.qt-qr svg{ width:22px; height:22px; }
+/* rendi l'icona leggibile sul blu scuro */
+#quick-toggles .qt-qr svg .sq{ fill:transparent !important; }
+#quick-toggles .qt-qr svg .glyph{ fill:#f9fafb !important; }
+#quick-toggles .qt-btn.qt-qr:hover{ filter:brightness(1.08); }
+#quick-toggles .qt-btn.qt-qr:active{ transform:scale(0.98); }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* QR button in right column: round + dark blue */
+  #quick-toggles .qt-pill-qr{
+    width:45px !important;
+    height:45px !important;
+    padding:0 !important;
+    border-radius:999px !important;
+    background:#0b2a5b !important;
+    border:1px solid rgba(0,0,0,0.22) !important;
+    box-shadow:0 1px 2px rgba(0,0,0,0.22) !important;
+    display:grid !important;
+    place-items:center !important;
+  }
+  #quick-toggles .qt-pill-qr:hover{
+    background:#0a254f !important;
+  }
+  #quick-toggles .qt-pill-qr.is-active{
+    background:#123a7a !important;
+    border-color: rgba(255,255,255,0.35) !important;
+    box-shadow: 0 0 0 3px rgba(25,178,230,0.30), 0 6px 16px rgba(0,0,0,0.35) !important;
+  }
+  #quick-toggles .qt-pill-qr.is-active:hover{
+    background:#10356e !important;
+  }
+  #quick-toggles .qt-pill-qr .qt-icon{
+    display:grid;
+    place-items:center;
+  }
+  #quick-toggles .qt-pill-qr img{
+    width:26px !important;
+    height:26px !important;
+    filter: brightness(0) invert(1);
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Percorsi dropdown styling (light touch, mirrors opere-accordion) */
+#routes-menu { min-width: 260px; max-width: 320px; }
+#routes-menu .routes-accordion .acc-section{
+  border-radius:.35rem; background: var(--card);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+  margin:.25rem 0; border:1px solid rgba(255,255,255,0.06);
+}
+#routes-menu .acc-head{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:.5rem; padding:.4rem .5rem; cursor:pointer; user-select:none;
+}
+#routes-menu .acc-title{
+  display:flex; align-items:center; gap:.5rem;
+  font-weight:700; color:var(--text);
+}
+#routes-menu .acc-chevron{
+  transition:transform .12s ease; color:var(--text); opacity:.85;
+}
+#routes-menu .acc-section[aria-expanded="true"] .acc-chevron{
+  transform:rotate(90deg);
+}
+#routes-menu .acc-body{
+  overflow:hidden; max-height:0;
+  transition:max-height .18s ease;
+  padding:0 .5rem;
+}
+#routes-menu .acc-section[aria-expanded="true"] .acc-body{
+  max-height:520px; padding:.3rem .5rem .5rem;
+}
+#routes-menu .doc-row{
+  display:flex; align-items:center; gap:.5rem;
+  padding:.2rem .2rem; border-radius:.35rem; cursor:pointer;
+}
+#routes-menu .doc-row .label{
+  flex:1;
+}
+#routes-menu .doc-row.route-master,
+#routes-menu .doc-row[data-route-id]{
+  cursor:pointer;
+}
+#routes-menu .doc-row.route-master input,
+#routes-menu .doc-row[data-route-id] input{
+  cursor: default;
+}
+#routes-menu .doc-row:hover{
+  background: transparent;
+}
+#routes-menu .chip{
+  background: transparent; color:var(--text);
+  border-radius:.35rem; padding:.1rem .35rem; font-size:.78rem;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.qr-castello-blue .tri,.qr-circonv-blue .tri{width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:14px solid #1e3a8a;filter:drop-shadow(0 0 1px rgba(0,0,0,0.45))}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.train-popup .mh-popup-body {
+    padding-right: 1.2rem;
+    padding-left: 0.25rem;
+  }
+  .train-popup .mh-popup-desc {
+    margin-top: 0.35rem;
+    margin-bottom: 0.35rem;
+  }
+  .train-popup .mh-popup-header {
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.4rem;
+    border-bottom: 4px solid #f59e0b; /* stesso arancio del toggle treni */
+  }
+  .train-popup .mh-popup-title {
+    display: block;
+    font-weight: 800;
+    font-size: 1.05rem;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.metro-popup .mh-popup-header{
+    padding-bottom:.25rem;
+    margin-bottom:.4rem;
+    border-bottom:4px solid #ef4444; /* stesso rosso del toggle metro */
+  }
+  .metro-popup .mh-popup-title{
+    display:block;
+    font-weight:800;
+    font-size:1.05rem;
+  }
+  .metro-popup .mh-popup-body{
+    padding-right:1.1rem;
+    padding-left:.25rem;
+  }
+  .metro-popup .mh-popup-desc{
+    margin:.25rem 0 .4rem 0;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.bus-popup .mh-popup-header{
+    padding-bottom:.25rem;
+    margin-bottom:.4rem;
+    border-bottom:4px solid #14b8a6; /* stesso verde acqua del toggle bus */
+  }
+  .bus-popup .mh-popup-title{
+    display:block;
+    font-weight:800;
+    font-size:1.05rem;
+  }
+  .bus-popup .mh-popup-body{
+    padding-right:1.1rem;
+    padding-left:.25rem;
+  }
+  .bus-popup .mh-popup-desc{
+    margin:.25rem 0 .4rem 0;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Aumenta il respiro laterale del contenuto nei popup CHIESE */
+  .chiese-popup .mh-popup-body {
+    padding-right: 1.2rem;
+    padding-left: 0.25rem;
+  }
+
+  /* Un filo più di margine sopra/sotto la descrizione */
+  .chiese-popup .mh-popup-desc {
+    margin-top: 0.35rem;
+    margin-bottom: 0.35rem;
+  }
+
+  /* Header dei popup CHIESE con riga grigia sotto il titolo */
+  .chiese-popup .mh-popup-header {
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.4rem;
+    border-bottom: 4px solid #4b5563; /* stesso grigio del toggle chiese */
+  }
+
+  .chiese-popup .mh-popup-title {
+    display: block;
+    font-weight: 800;
+    font-size: 1.05rem;
+  }
+
+.chiese-popup .mh-popup-desc{
+  max-height: 120px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Corpo popup Cinema con padding extra laterale */
+  .cinema-popup .mh-popup-body {
+    padding-right: 1.2rem;
+    padding-left: 0.25rem;
+  }
+
+  /* Un filo di respiro alla descrizione */
+  .cinema-popup .mh-popup-desc {
+    margin-top: 0.35rem;
+    margin-bottom: 0.35rem;
+  }
+
+  /* Header con riga colorata in tinta Cinema */
+  .cinema-popup .mh-popup-header {
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.4rem;
+    border-bottom: 4px solid #a855f7; /* stesso viola del toggle Cinema */
+  }
+
+  .cinema-popup .mh-popup-title {
+    display: block;
+    font-weight: 800;
+    font-size: 1.05rem;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.teatri-popup .mh-popup-body {
+    padding-right: 1.2rem;
+    padding-left: 0.25rem;
+  }
+
+  .teatri-popup .mh-popup-desc {
+    margin-top: 0.35rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .teatri-popup .mh-popup-header {
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.4rem;
+    border-bottom: 4px solid #ef4444; /* rosso teatro */
+  }
+
+  .teatri-popup .mh-popup-title {
+    display: block;
+    font-weight: 800;
+    font-size: 1.05rem;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Bottone "Sport": icona bianca su sfondo verde */
+#quick-toggles .qt-sport svg .sq {
+  fill: #808000 !important; /* verde “sportivo” */
+}
+#quick-toggles .qt-sport svg .glyph {
+  fill: #f9fafb !important; /* quasi bianco */
+}
+
+#quick-toggles .qt-sport {
+  background: transparent !important;
+  border-color: rgba(0,0,0,0.10) !important;
+}
+
+#quick-toggles .qt-sport[aria-pressed="true"] svg .sq {
+  fill: #5c5c0a !important; /* verde più scuro quando attivo */
+}
+
+/* Marker sulla mappa */
+.sport-marker svg .sq {
+  fill: #808000 !important;
+  stroke: #312e81 !important;
+  stroke-width: 1.1 !important;
+}
+.sport-marker svg .glyph {
+  fill: #f9fafb !important;
+}
+.sport-marker svg {
+  filter: drop-shadow(0 0.6px 0.6px rgba(0,0,0,0.25));
+}
+
+/* Marker MARE sulla mappa */
+.mare-marker svg .sq {
+  fill: #3b82f6 !important;      /* blu mare */
+  stroke: #1d4ed8 !important;
+  stroke-width: 1.1 !important;
+}
+
+.mare-marker svg .glyph {
+  fill: #f9fafb !important;      /* icona chiara */
+}
+
+.mare-marker svg {
+  filter: drop-shadow(0 0.6px 0.6px rgba(0,0,0,0.25));
+}
+
+
+/* Marker AEREO sulla mappa */
+.aereo-marker svg .sq {
+  fill: #22c55e !important;      /* verde, coerente col toggle */
+  stroke: #166534 !important;
+  stroke-width: 1.1 !important;
+}
+
+.aereo-marker svg .glyph {
+  fill: #f9fafb !important;
+}
+
+.aereo-marker svg {
+  filter: drop-shadow(0 0.6px 0.6px rgba(0,0,0,0.25));
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Corpo popup Sport con padding laterale */
+  .sport-popup .mh-popup-body {
+    padding-right: 1.2rem;
+    padding-left: 0.25rem;
+  }
+
+  /* Riga verde sotto il titolo */
+  .sport-popup .mh-popup-header {
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.4rem;
+    border-bottom: 4px solid #808000;
+  }
+
+  .sport-popup .mh-popup-title {
+    display: block;
+    font-weight: 800;
+    font-size: 1.05rem;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Bottone "Cinema": icona bianca su sfondo viola/magenta */
+  #quick-toggles .qt-cinema svg .sq {
+    fill: #a855f7 !important;
+  }
+  #quick-toggles .qt-cinema svg .glyph {
+    fill: #00cfff  !important; /* quasi bianco */
+  }
+
+  #quick-toggles .qt-cinema {
+    background: transparent !important;
+    border-color: rgba(0,0,0,0.10) !important;
+  }
+
+  #quick-toggles .qt-cinema[aria-pressed="true"] svg .sq {
+    fill: #7e22ce !important; /* un po' più scuro quando ON */
+  }
+
+  /* Marker "Cinema" sulla mappa */
+  .cinema-marker svg .sq {
+    fill: #a855f7 !important;
+    stroke: #4c1d95 !important;
+    stroke-width: 1.1 !important;
+  }
+
+  .cinema-marker svg .glyph {
+    fill: #00cfff !important;
+  }
+
+  .cinema-marker svg {
+    filter: drop-shadow(0 0.6px 0.6px rgba(0,0,0,0.25));
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Bottone "Teatri": rosso teatro, icona bianca */
+  #quick-toggles .qt-teatri svg .sq {
+    fill: #ef4444 !important;        /* rosso "sipario" */
+  }
+  #quick-toggles .qt-teatri svg .glyph {
+    fill: #cca6ad !important;        /* bianco sporco */
+    stroke: #800000 !important;
+  }
+
+  #quick-toggles .qt-teatri {
+    background: transparent !important;
+    border-color: rgba(0,0,0,0.10) !important;
+  }
+
+  #quick-toggles .qt-teatri[aria-pressed="true"] svg .sq {
+    fill: #b91c1c !important;        /* più scuro quando ON */
+  }
+
+  /* Marker "Teatri" sulla mappa */
+  .teatri-marker svg .sq {
+    fill: #cca6ad !important;
+    stroke: #800000 !important;
+    stroke-width: 1.1 !important;
+  }
+
+  .teatri-marker svg .glyph {
+    fill: #cca6ad !important;
+    stroke: #800000 !important;
+  }
+
+  .teatri-marker svg {
+    filter: drop-shadow(0 0.6px 0.6px rgba(0,0,0,0.25));
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.mostre-popup .mh-popup-body {
+    padding-right: 1.2rem;
+    padding-left: 0.25rem;
+  }
+
+  .mostre-popup .mh-popup-desc {
+    margin-top: 0.35rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .mostre-popup .mh-popup-header {
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.4rem;
+    border-bottom: 4px solid #06b6d4; /* azzurro mostre */
+  }
+
+  .mostre-popup .mh-popup-title {
+    display: block;
+    font-weight: 800;
+    font-size: 1.05rem;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Bottone "Mostre": azzurro, icona bianca */
+  #quick-toggles .qt-mostre svg .sq {
+    fill: #06b6d4 !important;  /* azzurro “mostra” */
+  }
+  #quick-toggles .qt-mostre svg .glyph {
+    fill: #173e47 !important;  /* bianco sporco */
+  }
+
+  #quick-toggles .qt-mostre {
+    background: transparent !important;
+    border-color: rgba(0,0,0,0.10) !important;
+  }
+
+  #quick-toggles .qt-mostre[aria-pressed="true"] svg .sq {
+    fill: #0e7490 !important;  /* azzurro più scuro quando ON */
+  }
+
+  /* Marker "Mostre" sulla mappa */
+  .mostre-marker svg .sq {
+    fill: #06b6d4 !important;
+    stroke: #0f766e !important;
+    stroke-width: 1.1 !important;
+  }
+
+  .mostre-marker svg .glyph {
+    fill: #173e47 !important;
+  }
+
+  .mostre-marker svg {
+    filter: drop-shadow(0 0.6px 0.6px rgba(0,0,0,0.25));
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Icone base per Mare (colonna Trasporti + quick-toggles) */
+.qt-mare svg .sq{
+  fill:#3b82f6 !important;    /* blu mare */
+}
+.qt-mare svg .glyph{
+  fill:#0f172a !important;    /* icona scura */
+}
+
+/* Icone base per Aereo (colonna Trasporti + quick-toggles) */
+.qt-aereo svg .sq{
+  fill:#22c55e !important;    /* verde aereoporto */
+}
+.qt-aereo svg .glyph{
+  fill:#0f172a !important;    /* icona scura */
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Vertical language rail on the left edge (near the top) */
+  #flag-rail{
+    position: fixed;
+    left: 10px;
+    top: 12px;                  /* default; JS will refine to map top + 12px */
+    z-index: 1500;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: var(--card);
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+  }
+  #flag-rail .flag{
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 24px;
+    padding: 0;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: #0b1222;
+    cursor: pointer;
+  }
+  #flag-rail .flag svg{ width: 100%; height: 100%; display:block; }
+  #flag-rail .flag.selected{
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  @media (max-width: 480px){
+    #flag-rail{ left: 6px; gap: 6px; padding: 6px; }
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.menu-home .mh-flags{display:none !important}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#flag-rail{ display:none !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Floating button showing the active flag */
+  #flag-switcher{
+    position: fixed;
+    left: 10px;
+    top: 12px;
+    z-index: 1500;
+    width: 40px; height: 40px;
+    border-radius: 9999px;
+    background: var(--card);
+    border: 1px solid #1f2937;
+    display: grid; place-items: center;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+    cursor: pointer;
+  }
+  #flag-switcher:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  #flag-switcher .flag-ico{
+    width: 28px; height: 20px; display:block;
+  }
+
+  /* Dropdown menu with all flags */
+  #flag-menu{
+    position: fixed;
+    left: 10px;
+    top: 56px;  /* below the button */
+    z-index: 1500;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    background: var(--card);
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+  }
+  #flag-menu.open{ display:flex; }
+
+  #flag-menu .flag{
+    display: grid; place-items: center;
+    width: 34px; height: 24px;
+    padding: 0;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: #0b1222;
+    cursor: pointer;
+  }
+  #flag-menu .flag svg{ width:100%; height:100%; display:block; }
+  #flag-menu .flag.selected{
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 480px){
+    #flag-switcher{ left: 6px; top: 10px; }
+    #flag-menu{ left: 6px; top: 52px; gap: 6px; padding: 6px; }
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+header #flag-switcher.in-header{position:static !important;width:36px;height:36px;margin-left:.5rem}#flag-menu{z-index:2000 !important}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Force perfect centering for the flag button in the header */
+  header #flag-switcher.in-header{
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 0 !important;     /* avoid baseline shift */
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  header #flag-switcher.in-header .flag-ico{
+    width: 28px; height: 20px;
+    display: block;
+  }
+  header #flag-switcher.in-header .flag-ico svg{
+    display: block;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Transparent dropdown: only flags visible */
+  #flag-menu{
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    gap: 6px !important;   /* keep a tidy spacing between flags */
+  }
+  /* Optional: subtle hover ring only on flags (not on container) */
+  #flag-menu .flag:hover{
+    outline: 2px solid rgba(255,255,255,0.25);
+    outline-offset: 2px;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Vertical layout without forcing the menu open */
+  /* Keep default: #flag-menu { display: none } and #flag-menu.open { display:flex } */
+  #flag-menu.open{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  #flag-menu .mh-flags{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+  #flag-menu .mh-flags .flag{ margin: 0 !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Stronger highlight for selected flag: thick ring + soft fill */
+  #flag-menu .flag{
+    position: relative;
+  }
+  #flag-menu .flag.selected{
+    background: rgba(34,211,238,0.18) !important;              /* soft accent fill */
+    box-shadow:
+      0 0 0 3px #22d3ee,                                       /* thicker accent ring */
+      0 0 0 6px rgba(34,211,238,0.22) !important;               /* outer glow */
+    border-color: rgba(255,255,255,0.35) !important;
+  }
+  /* Optional: a bit stronger on hover while selected */
+  #flag-menu .flag.selected:hover{
+    background: rgba(34,211,238,0.26) !important;
+    box-shadow:
+      0 0 0 4px #22d3ee,
+      0 0 0 7px rgba(34,211,238,0.28) !important;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* On-map floating switcher (to the right of the ? help button) */
+  #flag-switcher{
+    position: fixed !important;
+    z-index: 1600 !important;
+    width: 38px; height: 38px;
+    border-radius: 9999px;
+    background: var(--card);
+    border: 1px solid #1f2937;
+    display: inline-flex; align-items: center; justify-content: center;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+    cursor: pointer;
+    line-height: 0; padding: 0;
+  }
+  #flag-switcher .flag-ico{ width: 28px; height: 20px; display:block; }
+  #flag-switcher .flag-ico svg{ display:block; }
+
+  /* Dropdown menu: vertical, opens upward */
+  #flag-menu{
+    position: fixed !important;
+    z-index: 1600 !important;
+    display: none;                 /* default closed */
+    flex-direction: column;
+    gap: 6px;
+    background: transparent;       /* keep it transparent as requested */
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  #flag-menu.open{ display: flex; }
+
+  #flag-menu .mh-flags{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+  #flag-menu .flag{
+    display: grid; place-items: center;
+    width: 34px; height: 24px;
+    padding: 0;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: #0b1222;
+    cursor: pointer;
+  }
+  #flag-menu .flag svg{ width:100%; height:100%; display:block; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Contenitore sottotitolo: check + etichetta */
+  #fav-menu .fav-subtitle{
+    display:flex;
+    align-items:center;
+    gap:0.4rem;
+    cursor:pointer;
+  }
+
+  /* Quadratino a sinistra: SEMPRE bianco, come i checkbox della Storia */
+  #fav-menu .fav-subtitle-chip{
+    width:16px;
+    height:16px;
+    flex:0 0 auto;
+    border-radius:4px;
+    border:1px solid rgba(148,163,184,0.95);  /* grigio chiaro, ben visibile sul fondo scuro */
+    background:#f9fafb;                        /* bianco sempre, anche da “spento” */
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    line-height:1;
+    cursor:pointer;
+    padding:0;
+  }
+
+  /* Spunta interna (visibile solo se ON) */
+  #fav-menu .fav-subtitle-chip::before{
+    content:"✓";
+    opacity:0;
+    transform:scale(0.8);
+    color:#020617;                             /* segno scuro sul bianco */
+  }
+
+  /* Stato ON: stesso bianco, ma bordo evidenziato */
+  #fav-menu .fav-subtitle-chip.is-on{
+    background:#f9fafb;
+    border-color:#fbbf24;                      /* piccolo accento tipo “attivo” */
+  }
+
+  #fav-menu .fav-subtitle-chip.is-on::before{
+    opacity:1;
+  }
+
+  /* Testo del sottotitolo */
+  #fav-menu .fav-subtitle-label{
+    flex:1 1 auto;
+  }
+
+  /* Caso senza toggle corrispondente */
+  #fav-menu .fav-subtitle-chip.is-disabled{
+    opacity:0.35;
+    cursor:default;
+  }
+
+
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Ensure absolute children (joystick, fab) position relative to the map root */
+  #map{ position: relative !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Floating QR button anchored to the map container */
+  
+
+  #map-qr-fab:hover{ filter: brightness(1.08); }
+  #map-qr-fab:focus{ outline: 2px solid rgba(96,165,250,0.9); outline-offset: 2px; }
+  #map-qr-fab svg{ display:block; width:18px; height:18px; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Ensure Leaflet popups are the absolute top overlay when open */
+  .leaflet-pane.leaflet-popup-pane{ z-index: 2001 !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}#routes-btn.icon-only{display:inline-flex;align-items:center;justify-content:center;padding:0 !important;width:36px;height:36px;border-radius:10px}#routes-btn .icon-route{width:20px;height:20px;display:block}#routes-btn .icon-route *{vector-effect:non-scaling-stroke}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Yellow interior with dark icon for contrast */
+  #routes-btn{
+    background: #3b82f6 !important;   /* blue */
+    color:#facc15 !important;         /* dark slate text/icon */
+    border-color: #facc15 !important;
+  }
+  #routes-btn:hover{ filter: brightness(0.95); }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Enable interaction and visibility for the QR dropdown when toggled */
+  #qr-menu.shown { 
+    display: block !important; 
+    pointer-events: auto !important; 
+  }
+  #qr-menu.shown * { 
+    pointer-events: auto !important; 
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Nasconde solo la chip "QR" del master nel menu Percorsi */
+  #routes-menu #chk-qr-all + .chip { display: none !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Centra solo la riga del master QR, quando supportato */
+  #routes-menu label.doc-line:has(#chk-qr-all) { justify-content: center; }
+
+  /* Fallback: se JS aggiunge la classe, centriamo comunque */
+  #routes-menu label.doc-line.qr-master-row { justify-content: center; }
+
+  /* Nascondi il checkbox visivamente ma resta accessibile */
+  #routes-menu #chk-qr-all {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+  }
+
+  /* Trasforma il testo in una "pill" cliccabile */
+  #routes-menu #chk-qr-all ~ .label {
+    display: inline-block;
+    padding: .35rem .7rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255,255,255,0.35);
+    background: transparent;
+    line-height: 1;
+    user-select: none;
+    transition: background-color .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease;
+  }
+
+  /* Hover/focus della pill (stato OFF) */
+  #routes-menu label.doc-line:hover #chk-qr-all ~ .label {
+    border-color: rgba(255,255,255,0.55);
+  }
+  #routes-menu #chk-qr-all:focus-visible ~ .label {
+    outline: 2px solid #93c5fd;
+    outline-offset: 2px;
+  }
+
+  /* Stato ON: sfondo azzurro */
+  #routes-menu #chk-qr-all:checked ~ .label {
+    background: #29b6f6; /* azzurro QR già usato nel progetto */
+    color: #0b1222;       /* testo scuro per contrasto */
+    border-color: rgba(0,0,0,0.2);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.18) inset;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Centra l'intera riga del master QR dentro il menu Percorsi */
+  #routes-menu .doc-row:has(#chk-qr-all) {
+    display: grid;
+    place-items: center;
+  }
+  /* Fallback senza :has(): usa una classe JS sull'outer row */
+  #routes-menu .doc-row.qr-master-row-outer {
+    display: grid;
+    place-items: center;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Consolidamento QR (toolbar/menu) - non modifica il design attuale */
+  /* Toolbar QR button visibility and layout */
+  .toolbar .btn[data-role="qr"], .toolbar .btn.qr-icon {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* QR menu chips and small UI bits scoped */
+  #qr-menu .chip { display:inline-flex; align-items:center; gap:.35rem; }
+  #qr-menu .chip .dot {
+    width: 0; height: 0;
+    border-left: 6px solid transparent;
+    border-right:6px solid transparent;
+    border-top: 10px solid #1e3a8a;
+    border-radius: 0;
+    background: transparent;
+    filter: drop-shadow(0 0 1px rgba(0,0,0,0.35));
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#btn-storia{
+  background:#dc2626;      /* rosso, vedi palette sotto */
+  color:#ffffff;           /* icona bianca */
+  border: 2px solid #f59e0b !important;
+  border-radius: 12px !important;
+  box-shadow: inset 0 0 0 2px rgba(245, 158, 11, 0.22) !important;
+  width:36px;              /* stesso ingombro degli altri */
+  height:36px;
+  border-radius:8px;       /* quadrato “morbido” come Percorsi; usa 0 per quadrato duro */
+  display:grid; place-items:center; line-height:1; cursor:pointer;
+  box-shadow:none; outline:none; margin-right:.5rem;
+}
+#btn-storia:hover{ filter:brightness(1.05); transform:none; }   /* niente “saltello” verticale */
+#btn-storia[aria-expanded="true"]{ outline:2px solid rgba(255,255,255,0.55); outline-offset:0; }
+
+  #storia-menu{
+    position:absolute; z-index:5000; background:#0b1222; color:#fff;
+    border:1px solid rgba(255,255,255,0.18); border-radius:12px; padding:.5rem;
+    box-shadow:0 6px 18px rgba(0,0,0,0.35); min-width:240px; display:none;
+  }
+  #storia-menu.open{ display:block; }
+
+  /* Quando il menu Storia viene "dockato" dentro al pannello Home (accordion), deve comportarsi da contenuto statico */
+  #storia-menu.docked{
+    position: static !important;
+    display: block !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-top: .35rem;
+  }
+
+  #storia-menu .st-section{ margin:.25rem 0; }
+  #storia-menu .st-header{
+    display:flex; align-items:center; gap:.5rem; padding:.4rem .5rem; border-radius:8px;
+    cursor:pointer; user-select:none;
+  }
+  #storia-menu .st-header:hover{ background: transparent; }
+  #storia-menu .st-title{ font-weight:600; opacity:.95; padding:0; }
+  #storia-menu .st-chevron{ margin-left:auto; transition:transform .12s ease; }
+  #storia-menu .st-section.open .st-chevron{ transform:rotate(90deg); }
+  #storia-menu .st-panel{ display:none; padding:0 .25rem .25rem .25rem; }
+  #storia-menu .st-section.open .st-panel{ display:block; }
+  #storia-menu .st-row{
+    display:flex; align-items:center; gap:.5rem; padding:.35rem .5rem; border-radius:8px; cursor:pointer;
+  }
+  #storia-menu .st-row:hover{ background: transparent; }
+  #storia-menu .st-row input{ pointer-events:none; }
+  #storia-menu .st-label{ flex:1; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Force size inside bottom bar */
+  #bottom-bar #btn-gps svg{ width:20px !important; height:20px !important; display:block !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* <style>
+  /* Rimuove il pulsante/icona "Storia" dalla toolbar (Fase A: il menu vive nel pannello Home). */
+  #old-storia-btn,
+  .toolbar .btn-storia,
+  .toolbar [data-tool="storia"],
+  .toolbar button[title="Storia"]{
+    display:none !important;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Striscia “sotto la toolbar”, ma sopra la mappa */
+#sponsor-strip{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: var(--header-h);     /* esattamente sotto l’header */
+  height: 15px;             /* come vuoi tu */
+  z-index: 900;             /* < header(1000) e < menu(1400) => si fa coprire */
+  background: rgba(0,0,0,0.18);
+  backdrop-filter: blur(2px);
+  overflow: hidden;
+  pointer-events: auto;     /* per poter cliccare gli sponsor */
+}
+
+/* “finestra” */
+#sponsor-strip .sponsor-viewport{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* durata e aspetto pista sponsor che scorre */
+#sponsor-strip .sponsor-track{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  will-change: transform;
+  animation: sponsor-marquee 220s linear infinite; /* lento e “tranquillo” */
+  padding-left: 0; /* entra da destra */
+}
+
+/* animazione */
+@keyframes sponsor-marquee{
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* perché hai duplicato la sequenza */
+}
+
+/* stile pillole (simile al tuo esempio) */
+#sponsor-strip .sp{
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 0 6px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #0b1222;
+  background: rgba(255,255,255,0.85);
+}
+#sponsor-strip .sp .ico{ font-size: 11px; line-height: 1; }
+#sponsor-strip .sep{
+  font-size: 11px;
+  opacity: .55;
+  padding: 0 2px;
+  color: #e5e7eb;
+}
+
+/* accessibilità: se uno non vuole animazioni, non gliele imponiamo */
+@media (prefers-reduced-motion: reduce){
+  #sponsor-strip .sponsor-track{ animation: none; transform: none; padding-left: 0; }
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Nascondi esplicitamente il vecchio bottone Storia in toolbar */
+  #btn-opere { display: none !important; pointer-events:none !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#storia-menu .st-row{ font-size:.8rem; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Sottolineatura colorata (usa --c) solo per le voci dentro gli elenchi */
+  #storia-menu .st-items .st-row .st-label{
+    position: relative;
+    padding-left: 0;         /* non serve più lo spazio del pallino */
+    padding-bottom: .18rem;  /* spazio per la linea */
+  }
+
+  /* disattiva il vecchio pallino */
+  #storia-menu .st-items .st-row .st-label::before{
+    content: none;
+  }
+
+  /* linea sottolineata (colore personalizzato) */
+  #storia-menu .st-items .st-row .st-label::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;               /* underline “larga” (tutto il testo/colonna) */
+    bottom: 0;
+    height: 2px;
+    background: var(--c, #999);
+    border-radius: 999px;
+    opacity: .85;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Consolidated: category pills and panels */
+#quick-toggles{ overflow: visible !important; }
+
+/* Pill colors */
+#qt-cat-trasporti-btn.qt-cat-trasporti{ background:#1E3A8A; color:#fff; }
+#qt-cat-passato-btn.qt-cat-passato{ background:#C62828 !important; color:#fff !important; }
+#qt-cat-luoghi-btn.qt-cat-luoghi{ background:#F9A825 !important; color:#1a1a1a !important; }
+
+/* Outer panel shells transparent (single-box look) */
+#qt-cat-trasporti, #qt-cat-passato, #qt-cat-luoghi{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Inner boxes */
+#qt-cat-trasporti .qt-cat-items{
+  background:#1E3A8A; color:#fff;
+  margin:0; padding:8px; border-radius:12px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.25);
+}
+#qt-cat-passato .qt-cat-items{
+  background:#C62828; color:#fff;
+  margin:0; padding:3px; border-radius:12px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.25);
+
+/* Colore dedicato per "Percorsi (tutti)" in Passato */
+#qt-cat-passato .qt-cat-items .qt-btn.qt-percorsi-all{
+  background-color: #facc15;   /* giallo percorsi */
+  color: #1f2937;              /* testo/icona scuro */
+  border-color: #facc15;
+}
+
+/* stato attivo: leggermente più scuro + alone */
+#qt-cat-passato .qt-cat-items .qt-btn.qt-percorsi-all[aria-pressed="true"]{
+  filter: brightness(0.92);
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.18);
+}
+
+
+}
+#qt-cat-luoghi .qt-cat-items{
+  background:#F9A825; color:#1a1a1a;
+  margin:0; padding:3px; border-radius:12px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.25);
+}
+
+/* Toggle buttons inside panels */
+#qt-cat-trasporti .qt-cat-items .qt-btn,
+#qt-cat-passato   .qt-cat-items .qt-btn{
+  border:1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.10);
+  color:#fff;
+}
+#qt-cat-luoghi .qt-cat-items .qt-btn{
+  border:1px solid rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.10);
+  color:#1a1a1a;
+}
+
+/* Ensure panels can be hidden via [hidden] */
+.qt-cat-panel[hidden]{ display:none !important; }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* QR toggle in Passato: white icon on azzurro background */
+    #qt-cat-passato .qt-cat-items .qt-qr{
+      background: #4FC3F7; /* azzurro */
+      color: #fff;
+    }
+    #qt-cat-passato .qt-cat-items .qt-qr[aria-pressed="true"]{
+      background: #03A9F4;
+    }
+    #qt-cat-passato .qt-cat-items .qt-qr .qt-icon svg{
+      width:28px; height:28px;
+    }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* PERCORSI (tutti) → giallo */
+  
+  #qt-cat-passato .qt-cat-items .qt-btn.qt-percorsi-all[aria-pressed="true"]{
+    filter: brightness(0.92);
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.18);
+  }
+
+  /* DOCUMENTARI (tutti) → arancione */
+  #qt-cat-passato .qt-cat-items .qt-btn.qt-doc-all{
+    background-color: #f97316 !important;  /* arancione doc */
+    border-color: #f97316 !important;
+    color: #f9fafb;                         /* testo/icona chiaro */
+  }
+  #qt-cat-passato .qt-cat-items .qt-btn.qt-doc-all[aria-pressed="true"]{
+    filter: brightness(0.9);
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.2);
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+#qt-cat-passato .qt-cat-items .qt-mura-all{
+  background: #E53935; /* rosso vivo */
+  color: #fff;
+}
+#qt-cat-passato .qt-cat-items .qt-mura-all[aria-pressed="true"]{
+  background: #C62828; /* rosso più scuro in active */
+}
+#qt-cat-passato .qt-cat-items .qt-mura-all .qt-icon svg{
+  width:28px; height:28px;
+}
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+/* Acquedotti (tutti) nel pannello Passato */
+  #qt-cat-passato .qt-cat-items .qt-acq-all{
+    background:#26A69A;   /* verde-acqua */
+    color:#fff;
+  }
+  #qt-cat-passato .qt-cat-items .qt-acq-all[aria-pressed="true"]{
+    background:#00796B;   /* più scuro quando attivo */
+  }
+  #qt-cat-passato .qt-cat-items .qt-acq-all .qt-icon svg{
+    width:28px;
+    height:28px;
+  }
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.funi-popup .mh-popup-header{
+    padding-bottom:.25rem;
+    margin-bottom:.4rem;
+    border-bottom:4px solid #b67a69;
+  }
+  .funi-popup .mh-popup-title{
+    display:block;
+    font-weight:800;
+    font-size:1.05rem;
+  }
+  .funi-popup .mh-popup-body{
+    padding-right:1.1rem;
+    padding-left:.25rem;
+  }
+  .funi-popup .mh-popup-desc{
+    margin:.25rem 0 .4rem 0;
+  }
+
+
+/* ===== extracted from index.html <style> blocks (in order) ===== */
+
+.metro-popup .mh-popup-desc,
+  .train-popup .mh-popup-desc,
+  .bus-popup .mh-popup-desc{
+    font-size: 1.15rem;
+    line-height: 1.25;
+    font-weight: 350;
+  }

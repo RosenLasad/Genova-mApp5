@@ -1,0 +1,280 @@
+/* ==== part024.css ==== */
+.mh-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}.mh-actions .mh-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .65rem;border-radius:10px}.mh-actions .mh-btn .mh-ico-btn{display:inline-block;width:18px;height:18px;line-height:0}.menu-home{position:fixed;top:0;left:0;z-index:1600;pointer-events:auto;background:transparent;}.menu-home.hidden{display:none}.mh-stack{pointer-events:auto;display:flex;flex-direction:column;align-items:center;gap:.6rem}.mh-title{justify-self:center;align-self:center;font-family:'Merriweather',Georgia,'Times New Roman',serif;font-weight:700;font-size:clamp(22px,2.3vw + 12px,34px);line-height:1.1;color:#fff;background:#2563eb;padding:.35rem .9rem;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.25);letter-spacing:.2px;user-select:none}.mh-title .art-A{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-style:italic;color:#f59e0b;font-size:1.08em}.mh-grid{display:grid;gap:.6rem;width:100%}.mh-item{display:flex;align-items:center;gap:.6rem;width:100%;padding:.65rem .75rem;border-radius:12px;border:1px solid rgba(0,0,0,0.15);color:#fff;font-weight:800;letter-spacing:.2px}.mh-ico{display:inline-grid;place-items:center}.mh-label{font-size:1.05rem}.mh-green{background:#16a34a}.mh-red{background:#9c1d1d}.mh-yellow{background:#f59e0b;color:#111827}.mh-azure{background:#19b2e6}.mh-orange{background:#f97316}.mh-blue{background:#2563eb}.mh-item.active{box-shadow:0 0 0 3px rgba(255,255,255,0.18),0 8px 20px rgba(0,0,0,0.35);transform:translateY(-1px);filter:saturate(1.05) brightness(1.05)}.mh-bubble{position:absolute;top:calc(100% + .6rem);left:0;width:100%;pointer-events:auto;width:100%;max-height:56vh;background: transparent;color:#e5e7eb;border:1px solid #1f2937;border-radius:16px;box-shadow:0 15px 40px rgba(0,0,0,0.35);overflow:auto}.mh-bubble.hidden{display:none}.mh-bubble-inner{padding:.85rem .95rem 1rem}.mh-bubble h3{margin:0 0 .5rem;font-size:clamp(18px,1.6vw + 12px,22px);font-weight:800;position:sticky;top:0;z-index:1;padding:.6rem .2rem .5rem;background:inherit;border-top-left-radius:14px;border-top-right-radius:14px}.mh-bubble p{margin:0 0 .55rem;line-height:1.35}.mh-bubble ul{margin:0;padding-left:1.1rem}.mh-bubble li{margin:.4rem 0}.mh-bubble strong{font-weight:800}
+/* Bubble "Info e contatti" nel menu Home - versione bianca */
+.menu-home .mh-bubble[data-bubble="info"]{
+  background:#c8c8c8;          /* sfondo bianco */
+  color:#111827;               /* testo scuro */
+  border:1px solid #d1d5db;    /* grigio chiaro, non troppo pesante */
+}
+
+/* Titolo del bubble info */
+.menu-home .mh-bubble[data-bubble="info"] h3{
+  background:transparent;
+  color:#111827;
+}
+
+/* Link dentro al bubble info */
+.menu-home .mh-bubble[data-bubble="info"] a{
+  color:#1d4ed8;               /* blu leggibile su bianco */
+}
+
+.mh-bubble.theme-red{background:#9c1d1d;border-color:#621313;color:#fff}.mh-bubble.theme-azure{background:#00bfff;border-color:#075985;color:#fff}.mh-bubble.theme-yellow{background:#f59e0b;border-color:#92400e;color:#111827}.mh-bubble.theme-orange{background:#f97316;border-color:#9a3412;color:#111827}.mh-bubble.theme-blue{background:#2563eb;border-color:#1e3a8a;color:#fff}.mh-bubble.theme-yellow h3, .mh-bubble.theme-orange h3 { color:#111827; }
+.mh-bubble.theme-gray{background:#f9fafb;color:#111827;border: 1px solid #d1d5db;}
+.mh-close{
+  position:absolute;
+  top:-25px;              /* un filo più su, staccata dal titolo */
+  left:50%;               /* centrata orizzontalmente */
+  right:auto;             /* disattiva l’ancoraggio a destra */
+  transform:translateX(-50%);  /* centra rispetto al 50% */
+  width:26px;
+  height:26px;
+  border-radius:9999px;
+  background:#0d2e52;
+  border:1px solid #111827;
+  display:inline-grid;
+  place-items:center;
+  color:#ffffff;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,0.35);
+  z-index:10;
+}
+
+.mh-close span{
+  font-size:17px;
+  line-height:1;
+}
+.mh-close:hover,
+.mh-close:focus{
+  outline:none;
+  filter:brightness(0.95);
+}
+.title-btn{all:unset;cursor:pointer}.title-btn.active{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}.mh-body{position:relative;width:min(420px,92vw);display:flex;flex-direction:column;align-items:center;gap:.6rem}#flag-ribbon{position:fixed;left:12px;top:67px;z-index:1300;display:flex;align-items:center;gap:6px;pointer-events:none}#flag-ribbon .fr-flag{width:clamp(27px,3vw,30px);height:clamp(18px,2vw,20px);border-radius:3px;border:1px solid rgba(0,0,0,0.25);box-shadow:0 1px 3px rgba(0,0,0,0.2);overflow:hidden;display:block}#flag-ribbon .fr-flag.selected{outline:2px solid #f59e0b;outline-offset:2px}#flag-ribbon svg{display:block;width:100%;height:100%}
+.mh-gray{
+  background:#c8c8c8;      /* icona bianca */
+  color:#111827;           /* icona/testo scuri */
+}
+
+.mh-gray .mh-label{
+  color:#111827;           /* testo "Info e contatti" nero/scuro */
+}
+
+/* Toolbar: sfondo al titolo "Genova mApp" */
+header #title-btn.title-btn{
+  background: #3399CC;
+  color: #fff;
+  padding: .50rem .80rem;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  font: inherit;
+}
+
+/* Toolbar: colora solo la "A" di mApp nel bottone in alto a sinistra */
+#title-btn .art-A{
+  color:#f97316 !important; /* arancione (stesso che usi altrove) */
+}
+
+header #title-btn.title-btn:hover{
+  filter: brightness(1.08);
+}
+
+/* opzionale: stessa arrotondatura anche quando è "active" */
+header #title-btn.title-btn.active{
+  border-radius: 30px;
+}
+
+/* Sposta leggermente a destra il bottone "Genova mApp" (responsivo) */
+header #title-btn{
+  margin-left: clamp(0px, 1.2vw, 12px);
+}
+
+
+
+/* gmapp dropdown */
+.menu-home .mh-stack{align-items:flex-start;}
+
+
+
+
+/* ==== part045.css ==== */
+.menu-home{place-items:start center !important;align-items:start !important;justify-items:center !important}.menu-home .mh-stack{align-items:stretch !important}.menu-home .mh-grid{row-gap:.6rem !important}
+
+/* ==== part046.css ==== */
+
+:root{
+  /* Dinamico: minimo 80px, massimo 150px, in mezzo scala con l’altezza */
+  --mh-offset-top: clamp(80px, 15vh, 150px);
+}
+.menu-home{
+  padding-top: var(--mh-offset-top) !important;
+}
+
+/* ==== part116.css ==== */
+
+  /* Trasforma il vecchio Home in un vero pannello a tendina (stile Preferiti) */
+  #menu-home.menu-home{
+    padding-top: 0 !important;         /* annulla i vecchi offset da overlay */
+    background: transparent !important; /* niente “sfondo overlay” */
+  }
+
+  /* assicurati che .hidden vinca */
+  #menu-home.menu-home.hidden{ display:none; }
+
+  /* La “scatola” scura tipo Preferiti */
+  #menu-home.menu-home .mh-body{
+    background: #0b1222;
+    color: #e5e7eb;
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.45);
+    padding: .6rem;
+    max-height: 70vh;
+    overflow: auto;
+  }
+
+  /* Da lista a griglia di icone */
+  #menu-home.menu-home .mh-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .5rem;
+  }
+  @media (min-width: 480px){
+    #menu-home.menu-home .mh-grid{
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  /* Bottoni: tile (icona sopra, testo sotto) */
+  #menu-home.menu-home .mh-item{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: .35rem;
+    padding: .55rem .45rem;
+    width: 100%;
+  }
+  #menu-home.menu-home .mh-label{
+    font-size: .78rem;
+    line-height: 1.1;
+  }
+
+
+/* ==== part117.css ==== */
+
+  /* Genova mApp dropdown: trasformiamo i tile in righe compatte (stile Preferiti) */
+  #menu-home.menu-home .gm-row{
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: .6rem;
+    padding: .5rem .6rem;
+    min-height: 44px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  #menu-home.menu-home .gm-row:hover{ background: rgba(255,255,255,0.09); }
+  #menu-home.menu-home .gm-row-left{
+    display:flex;
+    align-items:center;
+    gap:.55rem;
+    min-width: 0;
+  }
+  #menu-home.menu-home .gm-row .mh-ico{ width:18px; height:18px; }
+  #menu-home.menu-home .gm-row .mh-ico svg{ width:18px; height:18px; }
+  #menu-home.menu-home .gm-row .gm-row-label{
+    font-size: .9rem;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #menu-home.menu-home .gm-chevron{
+    opacity: .8;
+    font-size: .95rem;
+    transition: transform .16s ease;
+  }
+  #menu-home.menu-home .gm-row.active .gm-chevron{ transform: rotate(180deg); }
+
+  /* Bubble quando viene “spostato” sotto alla riga: full width */
+  #menu-home.menu-home #mh-bubble{
+    grid-column: 1 / -1;
+    margin-top: .35rem;
+  }
+
+/* Colori definitivi delle voci Home (righe nel pannello Genova mApp) */
+#menu-home.menu-home .mh-item.gm-row.mh-azure[data-key="sqorci"]{
+  background:#19b2e6 !important;                 /* azzurro */
+  border:1px solid rgba(255,255,255,0.18) !important;
+  color:#ffffff !important;
+}
+#menu-home.menu-home .mh-item.gm-row.mh-yellow[data-key="preferiti"]{
+  background:#f59e0b !important;                 /* giallo/oro */
+  border:1px solid rgba(0,0,0,0.18) !important;
+  color:#ffffff !important;
+}
+#menu-home.menu-home .mh-item.gm-row.mh-red[data-key="storia"]{
+  background:#9c1d1d !important;                 /* rosso */
+  border:1px solid rgba(0,0,0,0.18) !important;
+  color:#ffffff !important;
+}
+#menu-home.menu-home .mh-item.gm-row.mh-gray[data-key="info"]{
+  background:#808080 !important;                 /* grigio chiaro */
+  border:1px solid rgba(0,0,0,0.18) !important;
+  color:#111827 !important;
+}
+/* Testo coerente (label + chevron) */
+#menu-home.menu-home .mh-item.gm-row.mh-gray[data-key="info"] .mh-label,
+#menu-home.menu-home .mh-item.gm-row.mh-gray[data-key="info"] .gm-row-label,
+#menu-home.menu-home .mh-item.gm-row.mh-gray[data-key="info"] .gm-chevron{
+  color:#111827 !important;
+}
+/* Micro feedback hover senza cambiare palette */
+#menu-home.menu-home .mh-item.gm-row.mh-azure:hover,
+#menu-home.menu-home .mh-item.gm-row.mh-yellow:hover,
+#menu-home.menu-home .mh-item.gm-row.mh-red:hover,
+#menu-home.menu-home .mh-item.gm-row.mh-gray:hover{
+  filter: brightness(1.05);
+}/* ...ma la label era forzata a nero da .mh-gray .mh-label: sovrascriviamo qui */
+#menu-home.menu-home .mh-item.gm-row.mh-gray[data-key="info"] .mh-label,
+#menu-home.menu-home .mh-item.gm-row.mh-gray[data-key="info"] .gm-row-label{
+  color: #ffffff !important;
+}
+
+
+/* Forza testo bianco sulla voce Preferiti (uniforme alle altre voci Home) */
+#menu-home.menu-home .mh-item.gm-row.mh-yellow[data-key="preferiti"]{
+  color: #ffffff !important;
+}
+#menu-home.menu-home .mh-item.gm-row.mh-yellow[data-key="preferiti"] .mh-label,
+#menu-home.menu-home .mh-item.gm-row.mh-yellow[data-key="preferiti"] .gm-row-label{
+  color: #ffffff !important;
+}
+
+/* PATCH MENU HOME: bubble accordion chiuso di default */
+.menu-home .mh-bubble {
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-top: .4rem;
+  overflow: hidden !important;
+  max-height: 0;
+  transition: max-height .22s ease;
+}
+.menu-home .mh-bubble.hidden {
+  display: block !important;
+  max-height: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-width: 0 !important;
+  margin-top: 0 !important;
+  box-shadow: none !important;
+}
+
+

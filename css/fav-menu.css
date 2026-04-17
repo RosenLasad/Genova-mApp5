@@ -1,0 +1,346 @@
+/* ==== part057.css ==== */
+
+#fav-menu{
+    position: fixed;
+    left: calc(1rem + 38px + 8px + 38px + 8px);
+    bottom: calc(1rem + 44px + 8px);
+    width: min(320px, 92vw);
+    max-height: 58vh;
+    overflow: auto;
+    background: #0b1222;
+    color: #e5e7eb;
+    border:1px solid #1f2937;
+    border-radius: 12px;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.45);
+    z-index: 1600;
+    display: none;
+  }
+  #fav-menu.open{ display:block; }
+  #fav-menu header{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:.6rem .8rem; border-bottom:1px solid #1f2937;
+  }
+  #fav-menu h3{ margin:0; font-size:1rem; }
+  #fav-menu .body{ padding:.4rem .6rem .6rem; }
+  .fav-acc-section{ border:1px solid rgba(255,255,255,0.08); border-radius:.5rem; margin:.4rem 0; background:#111827; }
+  .fav-acc-head{ display:flex; align-items:center; justify-content:space-between; gap:.5rem; padding:.5rem .6rem; cursor:pointer; user-select:none; }
+  .fav-acc-title{ font-weight:800; font-size:.95rem; }
+  .fav-acc-chevron{ transition: transform .12s ease; opacity:.85; }
+  .fav-acc-section[aria-expanded="true"] .fav-acc-chevron{ transform: rotate(90deg); }
+  .fav-acc-body{ overflow:hidden; max-height:0; transition:max-height .18s ease; padding:0 .6rem; }
+  .fav-acc-section[aria-expanded="true"] .fav-acc-body{ max-height: 520px; padding:.2rem .6rem .6rem; }
+  .fav-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.25rem; }
+  .fav-item{ display:flex; align-items:center; gap:.5rem; padding:.35rem .3rem; border-radius:.35rem; }
+  .fav-item:hover{ background: transparent; }
+  .fav-name{ flex:1; font-size:.92rem; }
+  .fav-empty{ opacity:.7; font-size:.9rem; padding:.35rem; }
+  #fav-menu #fav-search{
+  padding-right: 2.1rem;                 /* spazio per l’icona a destra */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .65rem center;
+  background-size: 1.05rem 1.05rem;
+}
+
+#fav-menu #fav-search::placeholder{
+  color: rgba(148,163,184,0.85);
+}
+
+
+  #fav-close{ appearance:none; background:transparent; color:#e5e7eb; border:1px solid #1f2937; border-radius:10px; padding:.35rem .6rem; cursor:pointer; }
+  #fav-close:hover{ background: transparent; }
+  @supports(padding: max(0px)) {
+#fav-menu{ left: calc(max(1rem, env(safe-area-inset-left)) + 38px + 8px + 38px + 8px); bottom: calc(max(1rem, env(safe-area-inset-bottom)) + 44px + 8px); }
+  }
+  @media (max-width: 420px){
+    #fav-menu{ left: calc(max(1rem, env(safe-area-inset-left)) + 38px + 8px); }
+  }
+
+/* ==== part058.css ==== */
+
+  /* più righe visibili: meno “aria” tra i preferiti */
+  #fav-menu .fav-list{
+    gap: .12rem !important;              /* era .25rem */
+  }
+  #fav-menu .fav-item{
+    padding: .18rem .25rem !important;   /* era ~.30-.35rem verticali */
+  }
+
+
+/* ==== part059.css ==== */
+
+  #fav-menu .fav-subtitle{
+    margin: .4rem 0 .15rem;
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    opacity: .8;
+  }
+
+/* Sottosezioni interne (Autobus, Treni, ecc.) */
+#fav-menu .fav-subtitle{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.35rem 0 0.15rem;
+  font-weight: 600;
+}
+
+/* Freccina che ruota quando si apre/chiude */
+#fav-menu .fav-subtitle::after{
+  content: '▾';
+  font-size: 0.75rem;
+  margin-left: 0.35rem;
+  transform: rotate(-90deg);
+  transition: transform 0.15s ease;
+}
+
+#fav-menu .fav-subtitle[aria-expanded="true"]::after{
+  transform: rotate(0deg);
+}
+
+/* Liste interne scrollabili */
+#fav-menu .fav-list{
+  max-height: 9rem;      /* regola a gusto */
+  overflow-y: auto;
+  margin: 0 0 0.5rem;
+  padding-left: 1rem;
+}
+
+
+
+/* ==== part060.css ==== */
+
+  #fav-menu{
+    --fav-transport: #1e3a8a; /* blu */
+    --fav-past:      #ff0000; /* rosso */
+    --fav-places:    #fbbf24; /* giallo */
+  }
+
+  #fav-menu .fav-acc-section[data-key="cat-transport"] .fav-acc-head{
+    background: rgba(30,58,138,.18);
+    border-left: 4px solid var(--fav-transport);
+    border-radius: .55rem;
+    padding-left: .55rem;
+  }
+  #fav-menu .fav-acc-section[data-key="cat-past"] .fav-acc-head{
+    background: rgba(255,0,0,.18);
+    border-left: 4px solid var(--fav-past);
+    border-radius: .55rem;
+    padding-left: .55rem;
+  }
+  #fav-menu .fav-acc-section[data-key="cat-places"] .fav-acc-head{
+    background: rgba(251,191,36,.18);
+    border-left: 4px solid var(--fav-places);
+    border-radius: .55rem;
+    padding-left: .55rem;
+  }
+
+  /* Sottotitoli dentro ogni categoria */
+  #fav-menu .fav-acc-section[data-key="cat-transport"] .fav-subtitle{
+    background: rgba(30,58,138,.10);
+    border-radius: .45rem;
+    padding: .22rem .35rem;
+  }
+  #fav-menu .fav-acc-section[data-key="cat-past"] .fav-subtitle{
+    background: rgba(255,0,0,.10);
+    border-radius: .45rem;
+    padding: .22rem .35rem;
+  }
+  #fav-menu .fav-acc-section[data-key="cat-places"] .fav-subtitle{
+    background: rgba(251,191,36,.10);
+    border-radius: .45rem;
+    padding: .22rem .35rem;
+  }
+
+  /* --- Sfondo colorato anche dietro le liste (elenchi) --- */
+  #fav-menu{
+    /* stessi colori, ma in RGB per usarli in rgba() */
+    --fav-transport-rgb: 30,58,138;   /* = #1e3a8a */
+    --fav-past-rgb:      255,0,0;     /* = #ff0000 */
+    --fav-places-rgb:    251,191,36;  /* = #fbbf24 */
+  }
+
+  /* Base: rendi la lista “a pillola” (vale per tutte) */
+  #fav-menu .fav-list{
+    border-radius: .45rem;
+    padding: .25rem .35rem .3rem 1rem; /* mantiene l'indent ma dà “box” */
+  }
+
+  /* Per categoria: stesso colore dei sottotitoli */
+  #fav-menu .fav-acc-section[data-key="cat-transport"] .fav-list{
+    background: rgba(var(--fav-transport-rgb), .08);
+    border-left: 4px solid rgba(var(--fav-transport-rgb), .28);
+  }
+
+  #fav-menu .fav-acc-section[data-key="cat-past"] .fav-list{
+    background: rgba(var(--fav-past-rgb), .08);
+    border-left: 4px solid rgba(var(--fav-past-rgb), .28);
+  }
+
+  #fav-menu .fav-acc-section[data-key="cat-places"] .fav-list{
+    background: rgba(var(--fav-places-rgb), .10);
+    border-left: 4px solid rgba(var(--fav-places-rgb), .30);
+  }
+
+
+
+
+/* ==== part061.css ==== */
+
+  .fav-star-icon{
+    pointer-events: auto !important;
+    cursor: pointer;
+
+    font-weight: 900;
+    color: #facc15; /* gold */
+    text-shadow: 0 0 2px rgba(0,0,0,0.7), 0 1px 0 rgba(0,0,0,0.45);
+    filter: drop-shadow(0 0 1px rgba(0,0,0,0.35));
+  }
+
+  /* Visual feedback inside the menu list (lascia pure questo se ti serve) */
+  #fav-menu .fav-item.is-selected .fav-name::after{
+    content: " ★";
+    margin-left: .25rem;
+    font-weight: 900;
+    color: #facc15;
+  }
+
+
+/* ==== part062.css ==== */
+
+  /* Ensure the dropdown is always scrollable and never clipped */
+  #fav-menu{
+    max-height: 72vh !important;
+    overflow: hidden !important; /* scrolling happens in .body */
+    touch-action: auto !important;
+  }
+  #fav-menu .body{
+    max-height: calc(72vh - 52px) !important; /* fallback: header ~52px */
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+  }
+  /* Let the inner accordion bodies expand fully; the outer .body provides the scroll */
+  .fav-acc-body{
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  /* Slightly tighter spacing to fit more items */
+  .fav-item{ padding: .3rem .25rem !important; }
+
+
+/* ==== part063.css ==== */
+
+  /* Restore collapsible behavior for accordion bodies */
+  #fav-menu .fav-acc-body{
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height .18s ease;
+  }
+  #fav-menu .fav-acc-section[aria-expanded="true"] .fav-acc-body{
+    /* large enough to reveal content; outer .body handles scroll */
+    max-height: 56vh !important;
+  }
+
+
+/* ==== part064.css ==== */
+
+  #fav-menu .body{
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  #fav-menu .fav-acc-body{
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height .18s ease;
+  }
+  #fav-menu .fav-acc-section[aria-expanded="true"] .fav-acc-body{
+    max-height: none !important;   /* allow full height */
+    overflow: visible !important;  /* content not clipped */
+  }
+
+
+/* ==== part065.css ==== */
+
+  /* Always-visible star button in list (grey -> gold when active) */
+  #fav-menu .fav-item{ align-items: center; gap: .45rem; }
+  #fav-menu .fav-item .fav-star-btn{
+    width: 22px; height: 22px;
+    border-radius: 9999px;
+    display: grid; place-items: center;
+    font-size: 14px; font-weight: 900;
+    line-height: 1;
+    color: #9ca3af;               /* grey when OFF */
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+  #fav-menu .fav-item .fav-star-btn:hover{ filter: brightness(1.08); }
+  #fav-menu .fav-item .fav-star-btn.on,
+  #fav-menu .fav-item .fav-star-btn[aria-pressed="true"]{
+    color: #facc15;               /* gold when ON */
+    text-shadow: 0 0 2px rgba(0,0,0,0.7), 0 1px 0 rgba(0,0,0,0.45);
+  }
+  /* Remove the old star appended via ::after when selected */
+  #fav-menu .fav-item.is-selected .fav-name::after{ content: none !important; }
+
+/* ==== part149.css ==== */
+
+  /* Contenitore sottotitolo: check + etichetta */
+  #fav-menu .fav-subtitle{
+    display:flex;
+    align-items:center;
+    gap:0.4rem;
+    cursor:pointer;
+  }
+
+  /* Quadratino a sinistra: SEMPRE bianco, come i checkbox della Storia */
+  #fav-menu .fav-subtitle-chip{
+    width:16px;
+    height:16px;
+    flex:0 0 auto;
+    border-radius:4px;
+    border:1px solid rgba(148,163,184,0.95);  /* grigio chiaro, ben visibile sul fondo scuro */
+    background:#f9fafb;                        /* bianco sempre, anche da “spento” */
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    line-height:1;
+    cursor:pointer;
+    padding:0;
+  }
+
+  /* Spunta interna (visibile solo se ON) */
+  #fav-menu .fav-subtitle-chip::before{
+    content:"✓";
+    opacity:0;
+    transform:scale(0.8);
+    color:#020617;                             /* segno scuro sul bianco */
+  }
+
+  /* Stato ON: stesso bianco, ma bordo evidenziato */
+  #fav-menu .fav-subtitle-chip.is-on{
+    background:#f9fafb;
+    border-color:#fbbf24;                      /* piccolo accento tipo “attivo” */
+  }
+
+  #fav-menu .fav-subtitle-chip.is-on::before{
+    opacity:1;
+  }
+
+  /* Testo del sottotitolo */
+  #fav-menu .fav-subtitle-label{
+    flex:1 1 auto;
+  }
+
+  /* Caso senza toggle corrispondente */
+  #fav-menu .fav-subtitle-chip.is-disabled{
+    opacity:0.35;
+    cursor:default;
+  }
+
+

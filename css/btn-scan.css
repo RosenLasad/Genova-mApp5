@@ -1,0 +1,37 @@
+/* Scan QR — usa SOLO il FAB moderno */
+#btn-scan{ display:none !important; } /* toolbar: sempre nascosto */
+
+/* stile del FAB (quello che vuoi tenere) */
+#bottom-bar #map-qr-fab{
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 9999px !important;
+  padding: 0 !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: #181638 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(7,89,133,0.8) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+#bottom-bar #map-qr-fab svg{
+  width: 20px !important;
+  height: 20px !important;
+  display: block !important;
+}
+
+#bottom-bar #map-qr-fab:hover{ filter: brightness(1.06); }
+#bottom-bar #map-qr-fab:focus-visible{
+  outline: 2px solid rgba(255,255,255,0.25);
+  outline-offset: 2px;
+}
+
+#bottom-bar #map-qr-fab{
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}

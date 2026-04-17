@@ -1,0 +1,38 @@
+/* Flag switcher (bottone lingue) — autorevole: bottom-left */
+
+#flag-switcher{
+  position: fixed !important;
+
+  /* bottom-left + safe-area */
+  left: max(10px, env(safe-area-inset-left)) !important;
+  bottom: max(10px, env(safe-area-inset-bottom)) !important;
+  top: auto !important;
+
+  z-index: 1500 !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+
+  background: var(--card);
+  border: 1px solid #1f2937;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+  cursor: pointer;
+}
+
+#flag-switcher:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+#flag-switcher .flag-ico{
+  width: 28px;
+  height: 20px;
+  display: block;
+}
+
+/* Ribbon legacy: sempre OFF */
+#flag-ribbon{ display:none !important; }
+
+#flag-rail{ display:none !important; }
