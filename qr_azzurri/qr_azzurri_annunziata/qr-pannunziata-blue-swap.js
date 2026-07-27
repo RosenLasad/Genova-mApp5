@@ -25,7 +25,7 @@
         label: "Via Balbi su P.Principe",
         lat: 44.416262467299575, 
         lng: 8.923766672014212,
-        descr: "Via Balbi su P.Principe.",
+        descr: "Via Balbi fu costruita tra il 1602 e il 1620, su iniziativa della nobile famiglia Balbi, ed è una famosa strada barocca del XVII secolo a Genova. Collega Piazza della Nunziata a Piazza Acquaverde, vicino alla stazione di Genova Principe, ed è celebre per i suoi magnifici palazzi nobiliari, molti dei quali fanno parte dei Palazzi dei Rolli.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_annunziata/via_balbi_1_oggi.mp4",
           ieri: [
@@ -38,7 +38,7 @@
         label: "Via Balbi da Piazza Durazzo",
         lat: 44.415377869010264, 
         lng: 8.925446300561987,
-        descr: "Via Balbi da Piazza Durazzo.",
+        descr: "Piazza Durazzo è un piccolo e caratteristico spazio urbano del centro storico di Genova, situato nei pressi di via Balbi e del quartiere di Prè. Prende il nome dalla storica e influente famiglia Durazzo, che nel corso dei secoli possedette importanti palazzi e proprietà in quest’area della città.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_annunziata/via_balbi_2_oggi.mp4",
           ieri: [
