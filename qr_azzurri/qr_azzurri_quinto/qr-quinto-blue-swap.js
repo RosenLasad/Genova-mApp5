@@ -9,7 +9,7 @@
     children: [
       {
         id: "quinto_via_gianelli",
-        label: "Via V maggio dal ponte",
+        label: "Via Gianelli",
         lat: 44.384762866492395,
         lng: 9.017676660678617,
         descr: "Via Gianelli verso ponente.",
