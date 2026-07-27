@@ -24,14 +24,14 @@
         }
       },
       {
-        "id":"san_marco","label":"San Marco al Molo","lat":44.407861182464906,"lng":8.925929425416395,"descr":"San Marco al Molo oggi.",
+        "id":"san_marco","label":"San Marco al Molo","lat":44.407861182464906,"lng":8.925929425416395,"descr":"La Chiesa di San Marco al Molo è un antico edificio religioso di Genova situato in via del Molo, a ridosso del Porto Antico. Fondata nel XII secolo in stile romanico per assistere spiritualmente i lavoratori portuali e i marinai, la chiesa si trova oggi curiosamente incorporata tra gli edifici residenziali del quartiere.",
         "media":{
           "oggi":"qr_azzurri/qr_azzurri_molo/qr_azzurri_molo_san_marco/qr_azzurri_molo_san_marco_oggi.mp4",
           "ieri":["qr_azzurri/qr_azzurri_molo/qr_azzurri_molo_san_marco/qr_azzurri_molo_san_marco_ieri_1.mp4"]
         }
       },
       {
-        "id":"siberia","label":"Porta Siberia","lat":44.408279620719604,"lng":8.923917198032887,"descr":"Porta Siberia di fronte.",
+        "id":"siberia","label":"Porta Siberia","lat":44.408279620719604,"lng":8.923917198032887,"descr":"La Porta del Molo, comunemente ed erroneamente nota come Porta Siberia, è un’imponente fortezza rinascimentale situata all’estremità dello storico sestiere del Molo. Progettata dal celebre architetto perugino Galeazzo Alessi e costruita tra il 1551 e il 1553 da Antonio Roderio da Carona, rappresenta l’unica porta ancora esistente della cinta muraria cinquecentesca della città.",
         "media":{
           "oggi":"qr_azzurri/qr_azzurri_molo/qr_azzurri_molo_siberia/qr_azzurri_molo_siberia_oggi.mp4",
           "ieri":[
