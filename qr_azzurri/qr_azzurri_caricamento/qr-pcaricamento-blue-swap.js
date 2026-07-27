@@ -12,7 +12,7 @@
         label: "Portici in piazza di Caricamento",
         lat: 44.409562128125145, 
         lng: 8.929221677476946,
-        descr: "Portici in piazza di Caricamento.",
+        descr: "I portici di Piazza Caricamento, noti come Sottoripa, sono i porticati pubblici più antichi d’Italia e risalgono al XII secolo: furono costruiti tra il 1125 e il 1133. Un tempo lambiti direttamente dal mare, proteggevano le botteghe e i magazzini delle merci sbarcate nel porto antico.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_caricamento/caricamento_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_caricamento/caricamento_ieri_1.mp4"]
@@ -23,7 +23,7 @@
         label: "Piazza Raibetta",
         lat: 44.40856824714509,
         lng: 8.9290060963642,
-        descr: "Piazza Raibetta.",
+        descr: "Piazza della Raibetta è una storica piazza del centro antico di Genova, situata nei pressi di Palazzo San Giorgio e di via San Lorenzo. Il suo nome deriva dall’arabo e ricorda l’antico mercato di legumi che vi si teneva nel Medioevo.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_caricamento/raibetta_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_caricamento/raibetta_ieri_1.mp4",
@@ -36,7 +36,7 @@
         label: "Piazza Caricamento su S.Giorgio",
         lat: 44.40981197861113,
         lng: 8.928760914112388,
-        descr: "Piazza Caricamento su San Giorgio.",
+        descr: "Piazza Caricamento è un nodo storico e urbano di Genova situato tra il Porto Antico e i celebri portici di Sottoripa. Realizzata nell’Ottocento su un’area precedentemente occupata dal mare, assunse il nome di Caricamento nel 1854, quando divenne il terminale ferroviario per il carico e lo scarico delle merci portuali. Sulla piazza si affaccia il monumentale Palazzo San Giorgio, storico edificio del XIII secolo.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_caricamento/caricsangiorgio_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_caricamento/caricsangiorgio_ieri_1.mp4",
@@ -48,7 +48,7 @@
         label: "Portici dal sottopassaggio",
         lat: 44.41120114359175,
         lng:  8.928395998250107,
-        descr: "Portici dal sottopassaggio.",
+        descr: "I portici di Piazza Caricamento, storicamente noti come Sottoripa, sono i portici pubblici più antichi d’Italia. Risalgono al XII secolo, nacquero a ridosso del mare e sono caratterizzati da basse volte medievali che ospitano botteghe storiche.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_caricamento/caric_portici_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_caricamento/caric_portici_ieri_1.mp4"]
