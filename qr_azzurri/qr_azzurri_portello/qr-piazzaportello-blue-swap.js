@@ -18,7 +18,7 @@
         label: "Via Roma",
         lat: 44.4087646666711, 
         lng: 8.935116111153581,
-        descr: "Inizio di Via Roma",
+        descr: "Via Roma è una delle strade più eleganti e monumentali di Genova, realizzata negli anni Settanta dell’Ottocento per collegare Piazza Corvetto a Piazza De Ferrari. Caratterizzata da sontuosi palazzi ottocenteschi in stile eclettico, ospita boutique di alta moda e botteghe storiche ed è affiancata dalla suggestiva Galleria Mazzini.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_portello/viaroma_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_portello/viaroma_ieri_1.mp4"]
