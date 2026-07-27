@@ -986,6 +986,30 @@ try{
   });
 }catch(_){}
 
+// Chiese e Palazzi sono già disponibili come dati locali quando il sistema
+// Preferiti viene inizializzato. Indicizzarli qui evita che le stelline
+// dipendano dal successivo ridisegno degli elenchi (che non avviene quando il
+// pannello è incorporato in "Vai, vedi, fai").
+try{
+  (Array.isArray(window.CHIESE_POINTS) ? window.CHIESE_POINTS : []).forEach(function(p){
+    var n = (p.name || p.title || '').toString().trim();
+    if(!n) return;
+    var k = norm(n);
+    var ll = getLatLng(p);
+    if(k && ll) indexChiese[k] = ll;
+  });
+}catch(_){}
+
+try{
+  (Array.isArray(window.PALAZZI_POINTS) ? window.PALAZZI_POINTS : []).forEach(function(p){
+    var n = (p.name || p.title || '').toString().trim();
+    if(!n) return;
+    var k = norm(n);
+    var ll = getLatLng(p);
+    if(k && ll) indexPalazzi[k] = ll;
+  });
+}catch(_){}
+
 
     function keyFor(label, name){ return (label||'') + '|' + norm(name); }
 
@@ -1160,6 +1184,7 @@ function escHtml(s){
             li.classList.toggle('is-selected', !!on);
             btn.classList.toggle('on', !!on);
             btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+            syncPopupFavoriteButton(label, name, !!on);
           });
           btn._favBound = true;
         }
@@ -1210,6 +1235,7 @@ function escHtml(s){
             li.classList.toggle('is-selected', !!on);
             btn.classList.toggle('on', !!on);
             btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+            syncPopupFavoriteButton(label, name, !!on);
           });
           btn._favBound = true;
         }
@@ -1285,6 +1311,9 @@ function escHtml(s){
             var btn = li.querySelector('.fav-star-btn');
             if(btn){ btn.classList.remove('on'); btn.setAttribute('aria-pressed','false'); }
           });
+          document.querySelectorAll('.fav-popup-star-btn').forEach(function(btn){
+            setPopupFavoriteButtonState(btn, false);
+          });
         });
         btnClear._bound = true;
       }
@@ -1300,6 +1329,243 @@ function escHtml(s){
       var menu = document.getElementById('fav-menu');
       if(menu && menu.classList.contains('open')) enhanceAll();
     }, true);
+
+// =========================
+// ★ PREFERITO DIRETTAMENTE DAL POPUP DEL LUOGO
+// =========================
+var POPUP_FAVORITE_LABELS = [
+  'Forte', 'Museo', 'Autobus', 'Stazione', 'Metro', 'Impianto',
+  'Parco', 'Piazza', 'Locale', 'Mare', 'Aeroporto', 'Chiesa',
+  'Palazzo', 'Sport', 'Cinema', 'Teatro', 'Mostra'
+];
+
+var POPUP_LIST_LABELS = {
+  'fav-list-forti': 'Forte',
+  'fav-list-musei': 'Museo',
+  'fav-list-bus': 'Autobus',
+  'fav-list-train': 'Stazione',
+  'fav-list-metro': 'Metro',
+  'fav-list-funi': 'Impianto',
+  'fav-list-locali': 'Locale',
+  'fav-list-mare': 'Mare',
+  'fav-list-aereo': 'Aeroporto',
+  'fav-list-chiese': 'Chiesa',
+  'fav-list-palazzi': 'Palazzo',
+  'fav-list-sport': 'Sport',
+  'fav-list-cinema': 'Cinema',
+  'fav-list-teatri': 'Teatro',
+  'fav-list-mostre': 'Mostra'
+};
+
+function popupFavoriteLanguage(){
+  var value = 'it';
+  try{ value = localStorage.getItem('lang') || document.documentElement.getAttribute('lang') || 'it'; }catch(_){}
+  value = String(value || 'it').toLowerCase().split(/[-_]/)[0];
+  return value;
+}
+
+function popupFavoriteText(on){
+  var labels = {
+    it:  { add:'Aggiungi ai preferiti', remove:'Rimuovi dai preferiti' },
+    en:  { add:'Add to favourites', remove:'Remove from favourites' },
+    es:  { add:'Añadir a favoritos', remove:'Quitar de favoritos' },
+    fr:  { add:'Ajouter aux favoris', remove:'Retirer des favoris' },
+    ar:  { add:'إضافة إلى المفضلة', remove:'إزالة من المفضلة' },
+    ru:  { add:'Добавить в избранное', remove:'Удалить из избранного' },
+    zh:  { add:'添加到收藏', remove:'从收藏中移除' },
+    lij: { add:'Azonzi a-i preferîi', remove:'Scancella da-i preferîi' }
+  };
+  var text = labels[popupFavoriteLanguage()] || labels.it;
+  return on ? text.remove : text.add;
+}
+
+function setPopupFavoriteButtonState(btn, on){
+  if(!btn) return;
+  btn.classList.toggle('on', !!on);
+  btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  btn.setAttribute('aria-label', popupFavoriteText(!!on));
+  btn.setAttribute('title', popupFavoriteText(!!on));
+}
+
+function syncPopupFavoriteButton(label, name, on){
+  var nameNorm = norm(name);
+  document.querySelectorAll('.fav-popup-star-btn').forEach(function(btn){
+    if(btn.getAttribute('data-fav-label') !== label) return;
+    if(norm(btn.getAttribute('data-fav-name')) !== nameNorm) return;
+    setPopupFavoriteButtonState(btn, !!on);
+  });
+}
+
+function favoriteRowLabel(li){
+  var list = li && li.closest ? li.closest('ul.fav-list') : null;
+  if(!list) return '';
+  if(list.id === 'fav-list-parchi-piazze'){
+    return li.getAttribute('data-src') === 'piazza' ? 'Piazza' : 'Parco';
+  }
+  return POPUP_LIST_LABELS[list.id] || '';
+}
+
+function syncFavoriteListRow(label, name, on){
+  var nameNorm = norm(name);
+  document.querySelectorAll('#fav-menu .fav-item').forEach(function(li){
+    if(favoriteRowLabel(li) !== label) return;
+    var nameEl = li.querySelector('.fav-name') || li;
+    if(norm(nameEl.textContent || '') !== nameNorm) return;
+    li.classList.toggle('is-selected', !!on);
+    var btn = li.querySelector('.fav-star-btn');
+    if(btn){
+      btn.classList.toggle('on', !!on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    }
+  });
+}
+
+function originalFavoriteName(label, nameNorm){
+  var result = '';
+  document.querySelectorAll('#fav-menu .fav-item').forEach(function(li){
+    if(result || favoriteRowLabel(li) !== label) return;
+    var nameEl = li.querySelector('.fav-name') || li;
+    var text = String(nameEl.textContent || '').trim();
+    if(norm(text) === nameNorm) result = text;
+  });
+  return result || nameNorm;
+}
+
+function popupLatLngMatches(a, b){
+  if(!a || !b) return false;
+  try{ return L.latLng(a[0], a[1]).distanceTo(L.latLng(b.lat, b.lng)) < 12; }catch(_){}
+  return Math.abs(Number(a[0]) - Number(b.lat)) < 0.00001 &&
+         Math.abs(Number(a[1]) - Number(b.lng)) < 0.00001;
+}
+
+function popupSourceTitle(popup, popupElement){
+  try{
+    var source = popup && popup._source;
+    var title = source && source.options && source.options.title;
+    if(title) return String(title).trim();
+    var data = source && (source._mhData || source._data || source.data);
+    var dataTitle = data && (data.name || data.title || data.nome || data.label);
+    if(dataTitle && typeof dataTitle === 'string') return dataTitle.trim();
+  }catch(_){}
+  try{
+    var titleElement = popupElement && popupElement.querySelector(
+      '.mh-popup-title, .doc-title, [data-popup-title]'
+    );
+    if(titleElement && titleElement.textContent) return titleElement.textContent.trim();
+  }catch(_){}
+  return '';
+}
+
+function favoriteForPopup(popup, popupElement){
+  if(!popup || typeof popup.getLatLng !== 'function') return null;
+  var popupLatLng = popup.getLatLng();
+  if(!popupLatLng) return null;
+  var sourceTitle = popupSourceTitle(popup, popupElement);
+  var sourceNorm = norm(sourceTitle);
+
+  // Il titolo del marker è il collegamento più preciso quando è disponibile.
+  if(sourceNorm){
+    for(var i = 0; i < POPUP_FAVORITE_LABELS.length; i++){
+      var titleLabel = POPUP_FAVORITE_LABELS[i];
+      var titleIndex = getIndexByLabel(titleLabel);
+      if(titleIndex && titleIndex[sourceNorm] && popupLatLngMatches(titleIndex[sourceNorm], popupLatLng)){
+        return { label:titleLabel, name:originalFavoriteName(titleLabel, sourceNorm) || sourceTitle };
+      }
+    }
+  }
+
+  // Alcuni marker non espongono il nome: in quel caso usiamo le coordinate.
+  for(var j = 0; j < POPUP_FAVORITE_LABELS.length; j++){
+    var label = POPUP_FAVORITE_LABELS[j];
+    var index = getIndexByLabel(label);
+    if(!index) continue;
+    var keys = Object.keys(index);
+    for(var k = 0; k < keys.length; k++){
+      var nameNorm = keys[k];
+      if(popupLatLngMatches(index[nameNorm], popupLatLng)){
+        return { label:label, name:originalFavoriteName(label, nameNorm) };
+      }
+    }
+  }
+  return null;
+}
+
+function decorateFavoritePopup(popup){
+  var popupElement = null;
+  try{ popupElement = popup.getElement ? popup.getElement() : popup._container; }catch(_){}
+  if(!popupElement) return;
+  var favorite = favoriteForPopup(popup, popupElement);
+  if(!favorite) return;
+  var wrapper = popupElement.querySelector('.leaflet-popup-content-wrapper');
+  if(!wrapper) return;
+
+  var oldRow = wrapper.querySelector('.fav-popup-star-row');
+  if(oldRow) oldRow.remove();
+
+  var row = document.createElement('div');
+  row.className = 'fav-popup-star-row';
+  var btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'fav-popup-star-btn';
+  btn.textContent = '★';
+  btn.setAttribute('data-fav-label', favorite.label);
+  btn.setAttribute('data-fav-name', favorite.name);
+  setPopupFavoriteButtonState(btn, isFav(favorite.label, favorite.name));
+
+  btn.addEventListener('click', function(ev){
+    ev.preventDefault();
+    ev.stopPropagation();
+    if(ev.stopImmediatePropagation) ev.stopImmediatePropagation();
+    var index = getIndexByLabel(favorite.label);
+    if(!index) return;
+    var on = toggleStar(index, favorite.name, favorite.label);
+    if(on === null) return;
+    setPopupFavoriteButtonState(btn, !!on);
+    syncFavoriteListRow(favorite.label, favorite.name, !!on);
+  });
+
+  row.appendChild(btn);
+  wrapper.style.position = 'relative';
+  wrapper.appendChild(row);
+  try{ L.DomEvent.disableClickPropagation(row); }catch(_){}
+}
+
+function bindPopupFavoriteButton(){
+  if(!map || map.__favPopupButtonBound) return;
+  map.__favPopupButtonBound = true;
+  map.on('popupopen', function(event){
+    var popup = event && event.popup;
+    if(!popup) return;
+    window.setTimeout(function(){ decorateFavoritePopup(popup); }, 0);
+    // Alcune categorie riscrivono il popup subito dopo l'apertura.
+    window.setTimeout(function(){ decorateFavoritePopup(popup); }, 80);
+  });
+
+  // Seconda rete di sicurezza: intercetta i popup creati o riscritti senza
+  // intervenire sul loro contenuto e senza alterarne lo scorrimento.
+  try{
+    var mapContainer = map.getContainer && map.getContainer();
+    if(mapContainer && window.MutationObserver){
+      var observer = new MutationObserver(function(mutations){
+        var popupChanged = mutations.some(function(mutation){
+          if(!mutation.addedNodes || !mutation.addedNodes.length) return false;
+          return Array.prototype.some.call(mutation.addedNodes, function(node){
+            if(!node || node.nodeType !== 1) return false;
+            return (node.matches && node.matches('.leaflet-popup, .leaflet-popup-content-wrapper')) ||
+                   (node.querySelector && node.querySelector('.leaflet-popup'));
+          });
+        });
+        if(!popupChanged) return;
+        var activePopup = map._popup;
+        if(activePopup) window.setTimeout(function(){ decorateFavoritePopup(activePopup); }, 0);
+      });
+      observer.observe(mapContainer, { childList:true, subtree:true });
+      map.__favPopupObserver = observer;
+    }
+  }catch(_){}
+}
+
+bindPopupFavoriteButton();
 
 // =========================
 // ROUTE ★ (preferiti del percorso)
@@ -3041,4 +3307,3 @@ root.querySelectorAll('.fav-subtitle[data-i18n-fav]').forEach(function(el){
     if(e.key === 'lang') scheduleRestore();
   });
 })();
-
