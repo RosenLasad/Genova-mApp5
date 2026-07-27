@@ -12,7 +12,7 @@
         label: "Piazza Corvetto da Via XII ottobre",
         lat: 44.40942825849114, 
         lng: 8.938753373722692,
-        descr: "Piazza Corvetto da Via XII ottobre.",
+        descr: "Piazza Corvetto è uno dei nodi viari e urbanistici più eleganti di Genova, situato a ridosso del centro ottocentesco. Arrivando da Via XII Ottobre, la piazza si apre come un ampio e maestoso snodo circolare, arricchito da aiuole curate e dominato al centro dal grande monumento equestre dedicato a Vittorio Emanuele II.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_corvetto/corvetto_ottobre_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_corvetto/corvetto_ottobre_ieri_1.mp4", "qr_azzurri/qr_azzurri_corvetto/corvetto_ottobre_ieri_2.mp4", "qr_azzurri/qr_azzurri_corvetto/corvetto_ottobre_ieri_3.mp4"]
@@ -23,7 +23,7 @@
         label: "Piazza Corvetto da Via Piaggio",
         lat: 44.41052707395092,  
         lng: 8.937909962344625,
-        descr: "Piazza Corvetto da Via Piaggio.",
+        descr: "Piazza Corvetto vista da Via Piaggio, scendendo dalla circonvallazione a monte, offre un suggestivo affaccio dall’alto prima di immettersi nel centro cittadino. La prospettiva mette in risalto il dislivello di Genova e l’integrazione tra aree verdi e viabilità ottocentesca.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_corvetto/corvetto_piaggio_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_corvetto/corvetto_piaggio_ieri_1.mp4", "qr_azzurri/qr_azzurri_corvetto/corvetto_piaggio_ieri_2.mp4"]
