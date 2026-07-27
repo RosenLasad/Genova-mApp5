@@ -1,0 +1,82 @@
+/*
+ * Pannelli dei punti QR:
+ * centrati in basso, con spazio riservato ai comandi della mappa.
+ * La variabile --qr-panel-bottom viene aggiornata da qr-panel-layout.js
+ * in base all'altezza reale della barra inferiore.
+ */
+#panel.qr-point-panel {
+  position: fixed !important;
+  inset: auto auto var(--qr-panel-bottom, 76px) 50% !important;
+  right: auto !important;
+  left: 50% !important;
+  bottom: var(--qr-panel-bottom, 76px) !important;
+  width: min(560px, calc(100vw - 64px)) !important;
+  max-width: none !important;
+  max-height: min(68dvh, calc(100dvh - var(--qr-panel-bottom, 76px) - 72px)) !important;
+  margin: 0 !important;
+  transform: translateX(-50%) !important;
+  grid-template-rows: auto minmax(0, auto) auto minmax(0, 1fr) !important;
+  z-index: 7100 !important;
+}
+
+#panel.qr-point-panel.open {
+  transform: translateX(-50%) !important;
+}
+
+#panel.qr-point-panel .media {
+  width: 100% !important;
+  max-height: min(36dvh, 310px) !important;
+  margin-inline: auto !important;
+  justify-self: stretch;
+  overflow: hidden;
+}
+
+#panel.qr-point-panel #media-video-today,
+#panel.qr-point-panel #media-video {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  object-position: center center !important;
+}
+
+#panel.qr-point-panel .content {
+  min-height: 0;
+  max-height: min(22dvh, 180px) !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+  #panel.qr-point-panel {
+    width: calc(100vw - 48px) !important;
+    max-height: min(66dvh, calc(100dvh - var(--qr-panel-bottom, 70px) - 58px)) !important;
+    border-radius: 16px;
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.45);
+  }
+
+  #panel.qr-point-panel .media {
+    max-height: 32dvh !important;
+  }
+
+  #panel.qr-point-panel .content {
+    max-height: 20dvh !important;
+  }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  #panel.qr-point-panel {
+    width: min(620px, calc(100vw - 72px)) !important;
+    max-height: calc(100dvh - var(--qr-panel-bottom, 62px) - 42px) !important;
+  }
+
+  #panel.qr-point-panel .media {
+    max-height: 28dvh !important;
+  }
+
+  #panel.qr-point-panel .content {
+    max-height: 17dvh !important;
+  }
+}
