@@ -19,6 +19,9 @@
 <link rel="stylesheet" href="css/flag-switcher.css">
 
 <link rel="stylesheet" href="css/inline.bundle.css">
+<link rel="stylesheet" href="css/taccuino.css">
+<link rel="stylesheet" href="css/qr-panel-layout.css">
+<link rel="stylesheet" href="css/ui-layout-v2.css?v=20260728-9">
 <script src="js/languages.js"></script>
 <script src="js/inline.js?from=2&to=2"></script>
 
@@ -91,7 +94,7 @@
 <div id="gm-welcome-overlay" class="gm-welcome-overlay" hidden>
   <div class="gm-welcome-panel" role="dialog" aria-modal="true" aria-labelledby="gm-welcome-title">
     <div class="gm-welcome-header">
-      <div id="gm-welcome-title" class="gm-welcome-title">Benvenuto su Genova mApp (TEST version)</div>
+      <div id="gm-welcome-title" class="gm-welcome-title">Benvenuto su Genova mApp (test version)</div>
       <div class="gm-welcome-sub">Con cosa vuoi cominciare?</div>
     </div>
     <div class="gm-welcome-actions">
@@ -389,9 +392,9 @@
 </svg>
 </button>
 
-<button aria-label="Apri elenco preferiti attivi" id="fav-notes-btn" title="Percorso preferiti">
+<button aria-label="Apri Taccuino preferiti e percorsi" id="fav-notes-btn" title="Taccuino / percorsi">
 <img alt="" class="toolbar-icon" src="toolbar/notes.svg"/>
-<span class="sr-only">Elenco dei preferiti attivi</span>
+<span class="sr-only">Taccuino preferiti e percorsi</span>
 </button>
 
 <div class="sub-wrapper" style="position:relative;">
@@ -1094,6 +1097,7 @@
 <script src="js/inline.js?from=85&to=85"></script>
 <script src="trasporti/metro_stations.js"></script>
 <script src="js/inline.js?from=86&to=86"></script>
+<script src="trasporti/metro_line.js"></script>
 <script src="trasporti/bus_stations.js"></script>
 
 <script src="js/inline.js?from=87&to=87"></script>
@@ -1334,6 +1338,7 @@
 <script src="locali/locali_points.js"></script>
 <script src="funi/funi_points.js"></script>
 <script src="js/favorites.js"></script>
+<script src="js/taccuino.js"></script>
 
 <!-- === QR SCAN: hide toolbar button & add FAB aligned to joystick === -->
 
@@ -1514,6 +1519,9 @@
 
 <script src="js/inline.js?from=264&to=264"></script>
 
+<script src="qr_azzurri/qr-descr-i18n-completamento.js"></script>
+<script src="js/qr-panel-layout.js"></script>
 <script src="welcome/welcome.js"></script>
+<script src="js/ui-layout-v2.js?v=20260728-9"></script>
 </body>
 </html>
