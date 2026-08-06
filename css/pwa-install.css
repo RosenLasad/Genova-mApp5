@@ -1,0 +1,192 @@
+/* Genova mApp: pulsante e pannello di installazione PWA. */
+
+#app > header #pwa-install-button{
+  position:static !important;
+  display:grid !important;
+  place-items:center !important;
+  width:40px !important;
+  height:40px !important;
+  min-width:40px !important;
+  min-height:40px !important;
+  margin:0 !important;
+  padding:0 !important;
+  color:#bbf7d0 !important;
+  background:linear-gradient(180deg,rgba(17,47,55,.97),rgba(10,31,39,.97)) !important;
+  border:1px solid rgba(134,239,172,.58) !important;
+  border-radius:9999px !important;
+  box-shadow:0 4px 14px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.08) !important;
+  cursor:pointer;
+  transition:background-color .16s ease, border-color .16s ease, box-shadow .16s ease, transform .16s ease;
+}
+
+#app > header #pwa-install-button[hidden]{ display:none !important; }
+
+#app > header #pwa-install-button:hover,
+#app > header #pwa-install-button:focus-visible{
+  color:#dcfce7 !important;
+  background:linear-gradient(180deg,rgba(24,70,75,.99),rgba(12,43,51,.99)) !important;
+  border-color:rgba(187,247,208,.88) !important;
+  box-shadow:0 6px 18px rgba(0,0,0,.38), 0 0 0 2px rgba(74,222,128,.15) !important;
+}
+
+#app > header #pwa-install-button:focus-visible{
+  outline:2px solid rgba(134,239,172,.78) !important;
+  outline-offset:2px !important;
+}
+
+#app > header #pwa-install-button:active{
+  transform:translateY(1px) scale(.97);
+}
+
+#app > header #pwa-install-button svg{
+  display:block !important;
+  width:22px !important;
+  height:22px !important;
+  pointer-events:none;
+}
+
+#pwa-install-modal{
+  position:fixed;
+  inset:0;
+  z-index:15000;
+  display:grid;
+  place-items:center;
+  padding:18px;
+  background:rgba(3,8,18,.68);
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(5px);
+}
+
+#pwa-install-modal[hidden]{ display:none !important; }
+html.pwa-install-open{ overflow:hidden !important; }
+
+.pwa-install-dialog{
+  width:min(430px,calc(100vw - 32px));
+  max-height:calc(100dvh - 36px);
+  overflow:auto;
+  box-sizing:border-box;
+  padding:24px;
+  color:#e5edf5;
+  background:
+    radial-gradient(circle at 85% 0,rgba(34,197,94,.12),transparent 38%),
+    linear-gradient(155deg,#152235,#0b1222 68%);
+  border:1px solid rgba(203,213,225,.34);
+  border-radius:18px;
+  box-shadow:0 24px 65px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.07);
+  text-align:left;
+}
+
+.pwa-install-dialog[dir="rtl"]{ text-align:right; }
+
+.pwa-install-mark{
+  display:grid;
+  place-items:center;
+  width:48px;
+  height:48px;
+  margin:0 auto 14px;
+  color:#bbf7d0;
+  background:rgba(20,83,45,.38);
+  border:1px solid rgba(134,239,172,.46);
+  border-radius:14px;
+}
+
+.pwa-install-mark svg{ width:27px; height:27px; }
+
+.pwa-install-dialog h2{
+  margin:0 0 12px;
+  color:#f8fafc;
+  font-family:Arial,"Helvetica Neue",sans-serif;
+  font-size:1.28rem;
+  line-height:1.25;
+  text-align:center;
+}
+
+.pwa-install-dialog p{
+  margin:0;
+  color:#d6dee8;
+  font-family:Arial,"Helvetica Neue",sans-serif;
+  font-size:.94rem;
+  line-height:1.55;
+}
+
+.pwa-install-account{
+  margin-top:13px !important;
+  padding:11px 12px;
+  color:#cbd5e1 !important;
+  background:rgba(255,255,255,.055);
+  border-left:3px solid rgba(134,239,172,.65);
+  border-radius:8px;
+  font-size:.84rem !important;
+}
+
+.pwa-install-dialog[dir="rtl"] .pwa-install-account{
+  border-right:3px solid rgba(134,239,172,.65);
+  border-left:0;
+}
+
+.pwa-install-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:9px;
+  margin-top:20px;
+}
+
+.pwa-install-actions button{
+  min-height:40px;
+  padding:8px 15px;
+  border-radius:10px;
+  font-family:Arial,"Helvetica Neue",sans-serif;
+  font-size:.9rem;
+  font-weight:700;
+  cursor:pointer;
+}
+
+#pwa-install-cancel{
+  color:#e2e8f0;
+  background:rgba(71,85,105,.38);
+  border:1px solid rgba(203,213,225,.32);
+}
+
+#pwa-install-confirm{
+  color:#052e16;
+  background:linear-gradient(180deg,#86efac,#4ade80);
+  border:1px solid #bbf7d0;
+  box-shadow:0 4px 12px rgba(22,163,74,.25);
+}
+
+.pwa-install-actions button:hover{ filter:brightness(1.07); }
+.pwa-install-actions button:focus-visible{ outline:2px solid #f8fafc; outline-offset:2px; }
+
+@media (max-width:768px){
+  #app > header #pwa-install-button{
+    width:38px !important;
+    height:38px !important;
+    min-width:38px !important;
+    min-height:38px !important;
+  }
+}
+
+@media (max-width:480px){
+  #pwa-install-modal{ padding:12px; }
+  .pwa-install-dialog{
+    width:min(410px,calc(100vw - 20px));
+    max-height:calc(100dvh - 24px);
+    padding:20px 18px;
+    border-radius:16px;
+  }
+  .pwa-install-actions{ justify-content:stretch; }
+  .pwa-install-actions button{ flex:1 1 0; padding-inline:10px; }
+}
+
+@media (max-width:360px){
+  #app > header #pwa-install-button{
+    width:34px !important;
+    height:34px !important;
+    min-width:34px !important;
+    min-height:34px !important;
+  }
+  #app > header #pwa-install-button svg{
+    width:20px !important;
+    height:20px !important;
+  }
+}
