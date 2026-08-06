@@ -97,7 +97,7 @@
   opacity:1 !important;
 }
 
-#app > header .toolbar-right > :not(#tb-search):not(#tb-search-btn):not(#ui-taccuino-button){
+#app > header .toolbar-right > :not(#tb-search):not(#tb-search-btn):not(#ui-taccuino-button):not(#pwa-install-button){
   display:none !important;
 }
 
