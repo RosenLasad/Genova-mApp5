@@ -65,9 +65,17 @@
     }else if(icon.getAttribute('src') !== 'toolbar/taccuino/taccuino-04-moderno.png'){
       icon.setAttribute('src', 'toolbar/taccuino/taccuino-04-moderno.png');
     }
-    move(button, right);
+    var searchButton = document.getElementById('tb-search-btn');
+    var installButton = document.getElementById('pwa-install-button');
     var search = document.getElementById('tb-search');
-    move(search, right);
+    var ordered = [searchButton, button, installButton, search].filter(Boolean);
+    var current = Array.prototype.filter.call(right.children, function(child){
+      return ordered.indexOf(child) !== -1;
+    });
+    var orderIsCorrect = current.length === ordered.length && ordered.every(function(node, index){
+      return current[index] === node;
+    });
+    if(!orderIsCorrect) ordered.forEach(function(node){ right.appendChild(node); });
     var label = original.getAttribute('aria-label') || original.getAttribute('title') || 'Taccuino';
     button.setAttribute('aria-label', label);
     button.setAttribute('title', original.getAttribute('title') || label);
