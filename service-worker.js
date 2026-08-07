@@ -1,5 +1,5 @@
 // service-worker.js
-const CACHE_NAME = "genova-mapp-2026-03-29";
+const CACHE_NAME = "genova-mapp-2026-08-07-sync-premium-2";
 const OFFLINE_URL = "/";
 
 self.addEventListener("install", event => {
@@ -48,6 +48,10 @@ self.addEventListener("fetch", event => {
 
   // Ignora domini esterni (tile mappe, font, ecc.)
   if (url.origin !== self.location.origin) return;
+
+  // Login, sessioni e future API utente non devono mai entrare nella cache PWA.
+  if (url.pathname.startsWith("/.netlify/identity/") ||
+      url.pathname.startsWith("/.netlify/functions/")) return;
 
   // NON cacheare i video (sennò ti riempi la cache e poi piangi)
   if (url.pathname.match(/\.(mp4|webm|mov)$/i)) return;
