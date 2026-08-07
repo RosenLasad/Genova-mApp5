@@ -28,12 +28,19 @@
 
     var heading = header.querySelector('h1');
     var flagButton = document.getElementById('flag-switcher');
+    var authButton = document.getElementById('auth-login-button');
     var subscription = document.querySelector('.sub-wrapper');
     var searchButton = document.getElementById('tb-search-btn');
     var search = document.getElementById('tb-search');
 
-    move(flagButton, left);
-    move(subscription, left);
+    var leftOrdered = [flagButton, authButton, subscription].filter(Boolean);
+    var leftCurrent = Array.prototype.filter.call(left.children, function(child){
+      return leftOrdered.indexOf(child) !== -1;
+    });
+    var leftOrderIsCorrect = leftCurrent.length === leftOrdered.length && leftOrdered.every(function(node,index){
+      return leftCurrent[index] === node;
+    });
+    if(!leftOrderIsCorrect) leftOrdered.forEach(function(node){ left.appendChild(node); });
     move(heading, center);
     move(searchButton, right);
 
