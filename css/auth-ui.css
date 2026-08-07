@@ -199,8 +199,28 @@ html.auth-account-open{ overflow:hidden !important; }
 
 #auth-account-logout{ grid-column:1 / -1;color:#fee2e2;background:linear-gradient(180deg,#8b3a43,#682630);border-color:#fca5a5; }
 
-/* Il widget gestisce i campi sensibili; resta sopra al nostro pannello Account. */
-.netlify-identity-widget{ z-index:16000 !important; }
+/* Il widget CDN è un iframe con ID (non una classe). Deve stare sopra alla
+   mappa, ai marker e ai nostri pannelli; lo sfondo vero è disegnato al suo interno. */
+#netlify-identity-widget{
+  position:fixed !important;
+  inset:0 !important;
+  width:100vw !important;
+  height:100dvh !important;
+  z-index:20000 !important;
+  isolation:isolate !important;
+}
+#netlify-identity-widget[style*="display: block"]{
+  opacity:1 !important;
+  visibility:visible !important;
+  pointer-events:auto !important;
+}
+#netlify-identity-widget[style*="display: none"]{pointer-events:none !important;}
+
+#auth-account-modal:not([hidden]),
+#auth-account-modal:not([hidden]) .auth-account-dialog{
+  opacity:1 !important;
+  visibility:visible !important;
+}
 
 @media (max-width:768px){
   #app > header #auth-login-button{
@@ -219,4 +239,3 @@ html.auth-account-open{ overflow:hidden !important; }
   }
   #app > header #auth-login-button svg{ width:20px !important;height:20px !important; }
 }
-
