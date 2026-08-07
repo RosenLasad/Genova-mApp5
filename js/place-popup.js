@@ -368,8 +368,152 @@
   function markPopup(popup){
     window.setTimeout(function(){
       var el = popup && (popup.getElement ? popup.getElement() : popup._container);
-      if(el) el.classList.add('gm-place-popup-wrap');
+      if(el){
+        el.classList.add('gm-place-popup-wrap');
+        try{ if(popup.update) popup.update(); }catch(_){}
+      }
     },0);
+  }
+
+  function visibleRect(selector){
+    var element = document.querySelector(selector);
+    if(!element) return null;
+    var style = window.getComputedStyle ? window.getComputedStyle(element) : null;
+    if(style && (style.display === 'none' || style.visibility === 'hidden')) return null;
+    var rect = element.getBoundingClientRect();
+    return rect.width > 0 && rect.height > 0 ? rect : null;
+  }
+
+  function safePopupArea(mapRef, popupRect){
+    var container = mapRef && mapRef.getContainer ? mapRef.getContainer() : document.getElementById('map');
+    if(!container) return null;
+    var mapRect = container.getBoundingClientRect();
+    var compact = window.innerWidth <= 600;
+    var edge = compact ? 18 : 26;
+    var safe = {
+      left: mapRect.left + edge,
+      top: mapRect.top + edge,
+      right: mapRect.right - edge,
+      bottom: mapRect.bottom - edge
+    };
+
+    // Toolbar e sponsor occupano realmente la parte alta della mappa.
+    var header = visibleRect('#app > header');
+    var sponsor = visibleRect('#sponsor-strip');
+    if(header) safe.top = Math.max(safe.top, header.bottom + (compact ? 10 : 14));
+    if(sponsor) safe.top = Math.max(safe.top, sponsor.bottom + (compact ? 12 : 16));
+
+    // La barra inferiore deve restare completamente separata dal popup.
+    var bottomBar = visibleRect('#bottom-bar');
+    if(bottomBar) safe.bottom = Math.min(safe.bottom, bottomBar.top - (compact ? 12 : 16));
+
+    // Riserva lateralmente lo spazio dei filtri e dei controlli solo quando
+    // si trovano alla stessa altezza del popup.
+    var rightPanels = [visibleRect('#quick-toggles'), visibleRect('#ui-map-controls')];
+    for(var i=0;i<rightPanels.length;i++){
+      var panel = rightPanels[i];
+      if(!panel || !popupRect) continue;
+      var sameBand = popupRect.bottom > panel.top - 12 && popupRect.top < panel.bottom + 12;
+      if(sameBand && panel.left > mapRect.left + mapRect.width / 2){
+        safe.right = Math.min(safe.right, panel.left - (compact ? 10 : 14));
+      }
+    }
+
+    // Evita una zona sicura impossibile negli schermi estremamente piccoli.
+    if(safe.right - safe.left < 210){
+      safe.left = mapRect.left + 12;
+      safe.right = mapRect.right - 12;
+    }
+    if(safe.bottom - safe.top < 210){
+      safe.top = mapRect.top + 12;
+      safe.bottom = mapRect.bottom - 12;
+    }
+    return safe;
+  }
+
+  function panPopupIntoSafeArea(popup, animate){
+    if(!popup) return;
+    var mapRef = (popup._source && popup._source._map) || popup._map || window.map || window.__map || window.MAP;
+    var popupElement = popup.getElement ? popup.getElement() : popup._container;
+    if(!mapRef || !popupElement || typeof mapRef.panBy !== 'function') return;
+
+    var rect = popupElement.getBoundingClientRect();
+    var safe = safePopupArea(mapRef, rect);
+    if(!safe) return;
+
+    // L'area scorrevole non deve mai essere più alta dello spazio realmente
+    // libero tra sponsor e comandi inferiori.
+    var content = popupElement.querySelector('.gm-place-popup');
+    if(content){
+      var availableHeight = Math.max(220, Math.floor(safe.bottom - safe.top - 18));
+      content.style.maxHeight = Math.min(510, availableHeight) + 'px';
+      rect = popupElement.getBoundingClientRect();
+      safe = safePopupArea(mapRef, rect) || safe;
+    }
+
+    var dx = 0, dy = 0;
+    if(rect.left < safe.left) dx = rect.left - safe.left;
+    else if(rect.right > safe.right) dx = rect.right - safe.right;
+    if(rect.top < safe.top) dy = rect.top - safe.top;
+    else if(rect.bottom > safe.bottom) dy = rect.bottom - safe.bottom;
+
+    if(Math.abs(dx) < 2 && Math.abs(dy) < 2) return;
+    var reduced = false;
+    try{ reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(_){}
+    try{ if(typeof mapRef.stop === 'function') mapRef.stop(); }catch(_){}
+    if(animate === false && mapRef.getCenter && mapRef.getZoom && mapRef.project && mapRef.unproject && mapRef.setView){
+      var zoom = mapRef.getZoom();
+      var centerPoint = mapRef.project(mapRef.getCenter(), zoom);
+      centerPoint.x += Math.round(dx);
+      centerPoint.y += Math.round(dy);
+      mapRef.setView(mapRef.unproject(centerPoint, zoom), zoom, {animate:false});
+      return;
+    }
+    mapRef.panBy([Math.round(dx), Math.round(dy)], {
+      animate: animate !== false && !reduced,
+      duration: .24,
+      easeLinearity: .35
+    });
+  }
+
+  function scheduleSafePan(popup, animate){
+    if(!popup) return;
+    if(popup.__gmSafePanTimer) window.clearTimeout(popup.__gmSafePanTimer);
+    if(popup.__gmSafePanSettleTimer) window.clearTimeout(popup.__gmSafePanSettleTimer);
+    function run(forceInstant){
+      var mapRef = (popup._source && popup._source._map) || popup._map || window.map || window.__map || window.MAP;
+      var current = mapRef && mapRef._popup ? mapRef._popup : popup;
+      if(current && (current.getElement ? current.getElement() : current._container)){
+        panPopupIntoSafeArea(current, forceInstant ? false : animate);
+      }
+    }
+    // Leaflet esegue prima il proprio auto-pan. Il secondo controllo assorbe
+    // anche dispositivi/browser in cui quell'animazione termina più tardi.
+    popup.__gmSafePanTimer = window.setTimeout(function(){
+      popup.__gmSafePanTimer = 0;
+      run(false);
+    },320);
+    popup.__gmSafePanSettleTimer = window.setTimeout(function(){
+      popup.__gmSafePanSettleTimer = 0;
+      run(true);
+    },760);
+  }
+
+  function scrollPopupForInfo(popup, panel, open){
+    var popupElement = popup && (popup.getElement ? popup.getElement() : popup._container);
+    var content = popupElement && popupElement.querySelector('.gm-place-popup');
+    if(!content) return;
+    var reduced = false;
+    try{ reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(_){}
+    var top = 0;
+    if(open){
+      // Scorre soltanto quanto serve per mostrare per intero la descrizione.
+      top = Math.max(0, panel.offsetTop + panel.offsetHeight - content.clientHeight + 12);
+      top = Math.min(top, Math.max(0, content.scrollHeight - content.clientHeight));
+    }
+    try{
+      content.scrollTo({top:top, behavior:reduced ? 'auto' : 'smooth'});
+    }catch(_){ content.scrollTop = top; }
   }
 
   function toggleInfo(button, event, popup){
@@ -378,7 +522,10 @@
       event.stopPropagation();
     }
     var id = button.getAttribute('aria-controls');
-    var panel = id ? document.getElementById(id) : null;
+    var popupContent = button.closest ? button.closest('.gm-place-popup') : null;
+    var panel = popupContent && popupContent.querySelector
+      ? popupContent.querySelector('.gm-place-info-panel')
+      : (id ? document.getElementById(id) : null);
     if(!panel) return;
     var open = button.getAttribute('aria-expanded') !== 'true';
     button.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -386,10 +533,14 @@
     var label = button.getAttribute(open ? 'data-close-label' : 'data-open-label') || '';
     button.setAttribute('aria-label', label);
     button.setAttribute('title', label);
+    window.requestAnimationFrame(function(){
+      scrollPopupForInfo(popup, panel, open);
+      scheduleSafePan(popup, true);
+    });
   }
 
   function wireInfoButton(popup){
-    window.setTimeout(function(){
+    function bind(){
       var popupElement = popup && (popup.getElement ? popup.getElement() : popup._container);
       var button = popupElement && popupElement.querySelector('.gm-place-info-btn');
       if(!button || button.__gmInfoBound) return;
@@ -398,6 +549,23 @@
         if(Date.now() - (button.__gmInfoHandledAt || 0) < 500) return;
         toggleInfo(button, event, popup);
       });
+    }
+    window.setTimeout(bind,0);
+    window.setTimeout(bind,60);
+    window.setTimeout(bind,220);
+  }
+
+  function wireMediaSafePan(popup){
+    window.setTimeout(function(){
+      var popupElement = popup && (popup.getElement ? popup.getElement() : popup._container);
+      var image = popupElement && popupElement.querySelector('.gm-place-media img');
+      if(!image || image.__gmSafePanBound) return;
+      image.__gmSafePanBound = true;
+      function settle(){
+        window.setTimeout(function(){ panPopupIntoSafeArea(popup, false); },80);
+      }
+      if(image.complete) settle();
+      else image.addEventListener('load', settle, {once:true});
     },0);
   }
 
@@ -411,13 +579,48 @@
     if(!model.name) return false;
     source._gmPlaceType = type;
     source._gmPlaceModel = model;
-    popup.setContent(render(model));
     if(popup.options){
+      var mapRef = source._map || popup._map || window.map || window.__map || window.MAP;
+      var mapElement = mapRef && mapRef.getContainer ? mapRef.getContainer() : document.getElementById('map');
+      var mapRect = mapElement && mapElement.getBoundingClientRect();
+      var headerRect = visibleRect('#app > header');
+      var sponsorRect = visibleRect('#sponsor-strip');
+      var bottomRect = visibleRect('#bottom-bar');
+      var quickRect = visibleRect('#quick-toggles');
+      var compact = window.innerWidth <= 600;
+      var edge = compact ? 18 : 26;
+      var topPad = edge;
+      var rightPad = edge;
+      var bottomPad = edge;
+      if(mapRect){
+        if(headerRect) topPad = Math.max(topPad, headerRect.bottom - mapRect.top + 10);
+        if(sponsorRect) topPad = Math.max(topPad, sponsorRect.bottom - mapRect.top + 14);
+        if(bottomRect) bottomPad = Math.max(bottomPad, mapRect.bottom - bottomRect.top + 14);
+        if(quickRect) rightPad = Math.max(rightPad, mapRect.right - quickRect.left + 12);
+      }
+      popup.options.autoPan = true;
+      if(window.L && typeof window.L.point === 'function'){
+        popup.options.autoPanPaddingTopLeft = window.L.point(edge, topPad);
+        popup.options.autoPanPaddingBottomRight = window.L.point(rightPad, bottomPad);
+      }
       popup.options.maxWidth = 370;
       popup.options.minWidth = 250;
     }
+    popup.setContent(render(model));
+    try{ if(popup.update) popup.update(); }catch(_){}
+    window.setTimeout(function(){
+      if(popup.options) popup.options.autoPan = false;
+    },520);
     markPopup(popup);
     wireInfoButton(popup);
+    wireMediaSafePan(popup);
+    scheduleSafePan(popup, true);
+    window.setTimeout(function(){
+      var popupElement = popup && (popup.getElement ? popup.getElement() : popup._container);
+      var content = popupElement && popupElement.querySelector('.gm-place-popup');
+      if(content) content.scrollTop = 0;
+      try{ if(popup.update) popup.update(); }catch(_){}
+    },540);
     return true;
   }
 
