@@ -1,0 +1,283 @@
+{
+  "bus|Via Degola, Sampierdarena": {
+    "summary": "Fermata della rete urbana AMT, utile per gli spostamenti tra Sampierdarena e il centro.",
+    "history": "Via Degola si trova nel cuore di Sampierdarena, storico centro autonomo inglobato nella Grande Genova nel 1926. La zona conserva un carattere popolare e commerciale ed è vicina a importanti collegamenti ferroviari e stradali."
+  },
+  "bus|Via Fanti d'Italia": {
+    "summary": "Fermata urbana vicina alla stazione di Genova Piazza Principe e al terminal degli autobus.",
+    "history": "Via Fanti d'Italia è uno dei principali punti di interscambio del centro cittadino. Da qui si raggiungono rapidamente la stazione Principe, la metropolitana, il porto e numerose linee di autobus urbani ed extraurbani."
+  },
+  "bus|Piazza Caricamento": {
+    "summary": "Fermata centrale per Porto Antico, Acquario, Sottoripa e centro storico.",
+    "history": "Piazza Caricamento nacque nell'Ottocento dall'interramento di uno specchio acqueo destinato alle attività portuali. Oggi è un importante nodo pedonale e di trasporto davanti a Palazzo San Giorgio e al Porto Antico."
+  },
+  "bus|Piazza Verdi": {
+    "summary": "Capolinea e nodo urbano davanti alla stazione ferroviaria di Genova Brignole.",
+    "history": "Piazza Verdi costituisce il principale interscambio del levante del centro cittadino. La presenza della stazione Brignole collega autobus, treni, metropolitana e percorsi pedonali verso il centro."
+  },
+  "bus|Piazza della Vittoria": {
+    "summary": "Fermata urbana vicina a Via XX Settembre, Brignole e al quartiere della Foce.",
+    "history": "Piazza della Vittoria è una delle grandi piazze monumentali realizzate a Genova nel Novecento. È riconoscibile per l'Arco della Vittoria e per le scenografiche aiuole che raffigurano le caravelle di Colombo."
+  },
+
+  "metro|Brin": {
+    "summary": "Capolinea occidentale della metropolitana, con collegamenti verso Certosa e la Val Polcevera.",
+    "history": "La stazione Brin è il capolinea nord-occidentale della metropolitana di Genova. Il tratto sopraelevato offre una particolare vista sul quartiere di Certosa e rappresenta un accesso rapido alla Val Polcevera."
+  },
+  "metro|Dinegro": {
+    "summary": "Stazione della metropolitana utile per San Teodoro, terminal traghetti e zona portuale.",
+    "history": "La stazione Dinegro serve il quartiere di San Teodoro e l'area occidentale del porto. Il nome ricorda la vicina villa della storica famiglia Di Negro, oggi inserita nel tessuto urbano."
+  },
+  "metro|Principe": {
+    "summary": "Interscambio con la stazione ferroviaria di Piazza Principe, autobus e servizi portuali.",
+    "history": "La stazione metropolitana di Principe è direttamente collegata a uno dei due principali scali ferroviari genovesi. È un nodo strategico per raggiungere il centro storico, il porto e i quartieri occidentali."
+  },
+  "metro|Darsena": {
+    "summary": "Stazione per Darsena, Galata Museo del Mare, università e Porto Antico.",
+    "history": "Darsena serve l'antica area portuale dove per secoli si costruirono e ricoverarono le imbarcazioni. Oggi collega la metropolitana al Galata Museo del Mare, al porto e alle sedi universitarie."
+  },
+  "metro|San Giorgio": {
+    "summary": "Stazione centrale per Porto Antico, Acquario, Palazzo San Giorgio e Sottoripa.",
+    "history": "San Giorgio è una delle stazioni più utilizzate dai visitatori del centro storico e del Porto Antico. Si trova accanto al medievale Palazzo San Giorgio e agli antichi portici di Sottoripa."
+  },
+  "metro|Sarzano/Sant'Agostino": {
+    "summary": "Stazione per Sarzano, Museo di Sant'Agostino, Molo e facoltà di Architettura.",
+    "history": "La stazione si apre nel cuore del colle di Sarzano, uno dei nuclei più antichi di Genova. Le sue uscite permettono di raggiungere il Museo di Sant'Agostino, il Molo e la collina di Castello."
+  },
+  "metro|De Ferrari": {
+    "summary": "Stazione nel cuore di Genova, presso Palazzo Ducale, Carlo Felice e Via XX Settembre.",
+    "history": "De Ferrari è la stazione centrale della metropolitana e si affaccia sulla piazza simbolo della città. Da qui si raggiungono Palazzo Ducale, il Teatro Carlo Felice e le principali vie commerciali."
+  },
+  "metro|Brignole": {
+    "summary": "Capolinea orientale con interscambio ferroviario e collegamenti verso centro e levante.",
+    "history": "Brignole è il capolinea orientale della metropolitana e uno dei maggiori nodi di trasporto genovesi. Il collegamento con la stazione ferroviaria facilita gli spostamenti lungo la costa e nelle riviere."
+  },
+
+  "train|Brignole": {
+    "summary": "Stazione principale per treni regionali e nazionali, con interscambio metro e autobus.",
+    "history": "Genova Brignole fu inaugurata nella forma attuale all'inizio del Novecento. Il suo edificio monumentale serve il centro orientale ed è uno dei due principali scali ferroviari della città."
+  },
+  "train|P.Principe": {
+    "summary": "Stazione principale per treni regionali, nazionali e internazionali, collegata alla metro.",
+    "history": "Genova Piazza Principe è la più antica grande stazione ferroviaria della città, aperta nell'Ottocento. Sorge vicino al Palazzo del Principe e costituisce una porta d'accesso al centro storico e al porto."
+  },
+  "train|Sampierdarena": {
+    "summary": "Importante nodo ferroviario per le linee costiere e i collegamenti della Val Polcevera.",
+    "history": "Sampierdarena è uno dei nodi ferroviari più importanti di Genova, dove convergono linee costiere e dell'entroterra. La stazione serve un quartiere densamente abitato e dalla forte tradizione industriale."
+  },
+  "train|Via di Francia": {
+    "summary": "Fermata ferroviaria vicina al quartiere di San Benigno, al porto e al centro direzionale.",
+    "history": "La fermata di Via di Francia è stata realizzata per servire la zona di San Benigno e il moderno centro direzionale. È vicina al porto passeggeri e alle trasformazioni urbane dell'area occidentale centrale."
+  },
+  "train|Nervi": {
+    "summary": "Stazione sul levante genovese, comoda per passeggiata Anita Garibaldi, parchi e musei.",
+    "history": "La stazione di Nervi si trova a pochi passi dalla celebre passeggiata sul mare Anita Garibaldi. È un accesso privilegiato ai Parchi di Nervi, ai musei e all'antico borgo marinaro."
+  },
+  "train|Pegli": {
+    "summary": "Stazione del ponente, vicina al lungomare, a Villa Pallavicini e al Museo Navale.",
+    "history": "La stazione di Pegli serve uno storico borgo marinaro del ponente genovese. Da qui si raggiungono il lungomare, il Museo Navale e il parco romantico di Villa Durazzo Pallavicini."
+  },
+  "train|Voltri": {
+    "summary": "Stazione del ponente estremo con servizi regionali verso il centro e la Riviera di Ponente.",
+    "history": "Voltri è il quartiere più occidentale di Genova e conserva l'identità di un antico centro marinaro. La stazione collega la città con la Riviera di Ponente e serve un vasto territorio costiero e collinare."
+  },
+  "train|Cornigliano": {
+    "summary": "Stazione urbana per Cornigliano, collegata alle linee regionali del ponente genovese.",
+    "history": "Cornigliano fu un centro di ville nobiliari prima della grande trasformazione industriale del Novecento. La stazione testimonia il ruolo centrale della ferrovia nello sviluppo del ponente genovese."
+  },
+  "train|Sestri Ponente - Aeroporto": {
+    "summary": "Stazione per Sestri Ponente e collegamenti verso l'aeroporto Cristoforo Colombo.",
+    "history": "La stazione serve il popoloso quartiere di Sestri Ponente, storicamente legato ai cantieri navali e all'industria. È il punto ferroviario di riferimento per raggiungere l'aeroporto cittadino con i collegamenti disponibili."
+  },
+  "train|Acquasanta": {
+    "summary": "Piccola stazione della linea Genova-Acqui Terme, utile per il borgo e il santuario.",
+    "history": "Acquasanta è conosciuta per il suo santuario e per le antiche sorgenti termali. La stazione si trova sulla linea che attraversa le valli interne collegando Genova al Piemonte."
+  },
+  "train|Bolzaneto": {
+    "summary": "Stazione della Val Polcevera con servizi regionali verso il centro e l'entroterra.",
+    "history": "Bolzaneto è uno dei principali centri urbani della Val Polcevera. La ferrovia ha favorito la crescita commerciale e industriale del quartiere, mantenendo un collegamento rapido con il centro di Genova."
+  },
+  "train|Borzoli": {
+    "summary": "Fermata ferroviaria sulle alture del ponente, lungo la linea Genova-Acqui Terme.",
+    "history": "Borzoli si trova sulle alture tra Sestri Ponente e la Val Polcevera. La piccola stazione serve un territorio collinare attraversato dalla storica linea ferroviaria verso Ovada e Acqui Terme."
+  },
+  "train|Costa di Sestri Ponente": {
+    "summary": "Fermata collinare della linea Genova-Acqui Terme, al servizio delle alture di Sestri.",
+    "history": "Costa di Sestri Ponente è una fermata immersa nel paesaggio collinare sopra il quartiere. Il percorso ferroviario offre scorci insoliti sul ponente genovese e sulle sue vallate."
+  },
+  "train|Granara": {
+    "summary": "Piccola fermata ferroviaria sulle alture occidentali, lungo la linea per Acqui Terme.",
+    "history": "Granara è una delle piccole fermate della linea appenninica che sale dal ponente genovese. Serve un'area collinare poco urbanizzata e racconta il rapporto tra ferrovia e territorio montuoso."
+  },
+  "train|Pontedecimo": {
+    "summary": "Stazione dell'alta Val Polcevera per servizi regionali verso Genova e l'entroterra.",
+    "history": "Pontedecimo si sviluppò come luogo di passaggio tra la costa e i valichi appenninici. La stazione conserva un ruolo importante per i collegamenti dell'alta Val Polcevera con il centro cittadino."
+  },
+  "train|Pra'": {
+    "summary": "Stazione del ponente vicina alla Fascia di Rispetto, al canale di calma e al lungomare.",
+    "history": "Pra' è un antico borgo del ponente noto per la tradizione marinara e per il basilico genovese. La stazione consente di raggiungere la Fascia di Rispetto, grande spazio pubblico affacciato sul mare."
+  },
+  "train|Quarto dei Mille": {
+    "summary": "Stazione del levante per Quarto, il lungomare e il monumento alla spedizione dei Mille.",
+    "history": "Quarto dei Mille deve il suo nome alla spedizione guidata da Giuseppe Garibaldi, partita da questo tratto di costa nel 1860. La stazione serve il quartiere residenziale e le vicine spiagge."
+  },
+  "train|Quinto al Mare": {
+    "summary": "Stazione del levante vicina al borgo, alle spiagge e al lungomare di Via Gianelli.",
+    "history": "Quinto al Mare conserva l'aspetto di un borgo ligure integrato nella città. La ferrovia permette di raggiungere rapidamente il suo lungomare, le spiagge e i percorsi verso Nervi."
+  },
+  "train|Rivarolo": {
+    "summary": "Stazione urbana della Val Polcevera con collegamenti regionali frequenti verso il centro.",
+    "history": "Rivarolo fu un importante centro autonomo prima dell'unione con Genova. La stazione serve oggi uno dei quartieri più popolosi della Val Polcevera e un'area storicamente industriale."
+  },
+  "train|San Biagio": {
+    "summary": "Fermata metropolitana ferroviaria dell'alta Val Polcevera, con parcheggio di interscambio.",
+    "history": "San Biagio è una fermata relativamente recente, pensata per migliorare la mobilità dell'alta Val Polcevera. Il vicino parcheggio favorisce l'interscambio tra automobile e treno."
+  },
+  "train|Sturla": {
+    "summary": "Stazione del levante per Sturla, Vernazzola, ospedale Gaslini e zone costiere.",
+    "history": "Sturla è un quartiere del levante nato attorno a borghi marinari e corsi d'acqua. La stazione serve le vicine spiagge, Vernazzola e l'area dell'ospedale pediatrico Gaslini."
+  },
+  "train|Vesima": {
+    "summary": "Piccola fermata costiera all'estremo ponente, vicina alla spiaggia di Vesima.",
+    "history": "Vesima è una delle località più occidentali del comune di Genova. La piccola fermata, attiva solo per alcuni servizi, permette di raggiungere una spiaggia incastonata tra ferrovia, colline e mare."
+  },
+
+  "funi|Ascensore d'Albertis-Montegalletto (bassa)": {
+    "summary": "Accesso inferiore all'ascensore orizzontale e verticale tra Via Balbi e Castello d'Albertis.",
+    "history": "L'impianto di Montegalletto combina un percorso orizzontale in galleria con una salita verticale, soluzione unica e spettacolare. L'accesso basso si trova vicino a Via Balbi e alla stazione Principe."
+  },
+  "funi|Ascensore d'Albertis-Montegalletto (alta)": {
+    "summary": "Accesso superiore per Castello d'Albertis e le alture di Montegalletto.",
+    "history": "L'uscita superiore conduce accanto al Castello d'Albertis, sede del Museo delle Culture del Mondo. L'impianto moderno deriva da un ascensore pubblico inaugurato nel 1929."
+  },
+  "funi|Ascensore Castelletto Ponente": {
+    "summary": "Ascensore pubblico tra Galleria Garibaldi e il quartiere di Castelletto.",
+    "history": "L'ascensore di Castelletto Ponente supera rapidamente il dislivello tra il centro e le alture. È uno degli impianti che raccontano l'ingegnosa mobilità verticale sviluppata a Genova."
+  },
+  "funi|Ascensore Castelletto Levante (alta)": {
+    "summary": "Accesso superiore presso Spianata Castelletto, celebre belvedere sul centro storico.",
+    "history": "L'ascensore di Castelletto Levante è noto anche grazie ai versi del poeta Giorgio Caproni. L'uscita alta si apre sulla Spianata Castelletto, uno dei panorami più celebri di Genova."
+  },
+  "funi|Ascensore Castelletto Levante (bassa)": {
+    "summary": "Accesso inferiore da Piazza Portello per raggiungere Spianata Castelletto.",
+    "history": "L'accesso basso è inserito in un elegante passaggio vicino a Piazza Portello. In pochi istanti l'ascensore collega il centro ottocentesco al belvedere di Castelletto."
+  },
+  "funi|Ascensore Magenta-Crocco": {
+    "summary": "Ascensore pubblico tra Corso Magenta e Via Antonio Crocco, nel quartiere di Castelletto.",
+    "history": "L'ascensore Magenta-Crocco serve le ripide alture residenziali di Castelletto. Fa parte della rete di impianti pubblici costruita per superare i forti dislivelli della città."
+  },
+  "funi|Ascensore piazza Manin - via Contardo": {
+    "summary": "Collegamento verticale tra Piazza Manin e Via Contardo, sulle alture del centro.",
+    "history": "Questo ascensore facilita il collegamento tra Piazza Manin e le strade poste a quota superiore. È un esempio recente della continuità della tradizione genovese degli ascensori pubblici."
+  },
+  "funi|Ascensore Ponte Monumentale": {
+    "summary": "Ascensore pubblico tra Via XX Settembre e Corso Podestà, presso il Ponte Monumentale.",
+    "history": "L'impianto sfrutta il grande dislivello del Ponte Monumentale, costruito alla fine dell'Ottocento. Collega la principale via commerciale con le zone alte di Carignano e dell'Acquasola."
+  },
+  "funi|Ascensore via Mura degli Angeli": {
+    "summary": "Collegamento verticale al servizio delle alture di San Teodoro e delle Mura degli Angeli.",
+    "history": "L'ascensore serve una zona collinare di San Teodoro caratterizzata da ripide strade e antiche fortificazioni. Riduce un dislivello che a piedi richiederebbe percorsi lunghi e numerose scale."
+  },
+  "funi|Ascensore via Montello": {
+    "summary": "Ascensore pubblico tra Via Montello e le sovrastanti aree residenziali di Marassi.",
+    "history": "L'impianto di Via Montello migliora l'accessibilità di un quartiere costruito su forti pendenze. Come altri ascensori genovesi, funziona come un vero mezzo di trasporto pubblico urbano."
+  },
+  "funi|Ascensore Villa Scassi": {
+    "summary": "Ascensore pubblico tra Via Cantore e l'area dell'ospedale Villa Scassi.",
+    "history": "L'ascensore di Villa Scassi collega la parte bassa di Sampierdarena con l'ospedale e il parco soprastante. È particolarmente importante per l'accessibilità sanitaria e quotidiana del quartiere."
+  },
+  "funi|Ascensore via Bari": {
+    "summary": "Ascensore pubblico per le alture di San Teodoro e il quartiere di Via Bari.",
+    "history": "L'ascensore di Via Bari serve una delle aree residenziali costruite sul ripido versante sopra il porto. Consente di evitare lunghi percorsi stradali tra quote molto diverse."
+  },
+  "funi|Ascensore inclinato di Quezzi": {
+    "summary": "Ascensore inclinato al servizio del quartiere collinare di Quezzi.",
+    "history": "L'ascensore inclinato di Quezzi segue il pendio anziché muoversi verticalmente. È stato progettato per rendere più accessibili le abitazioni distribuite lungo una collina particolarmente ripida."
+  },
+  "funi|Funicolare Sant'Anna (alta)": {
+    "summary": "Stazione superiore della funicolare presso Corso Magenta e il quartiere di Castelletto.",
+    "history": "La funicolare Sant'Anna, inaugurata nel 1891, è la più antica di Genova. La stazione alta conserva il fascino di un piccolo impianto storico immerso nel quartiere di Castelletto."
+  },
+  "funi|Funicolare Sant'Anna (bassa)": {
+    "summary": "Stazione inferiore della funicolare in Piazza Portello, nel centro cittadino.",
+    "history": "Dalla stazione di Piazza Portello la funicolare sale verso Corso Magenta lungo un breve tracciato. Nata con funzionamento ad acqua, fu successivamente trasformata in impianto elettrico."
+  },
+  "funi|Cremagliera Principe/Granarolo - Principe": {
+    "summary": "Capolinea inferiore della cremagliera, vicino alla stazione di Genova Piazza Principe.",
+    "history": "La ferrovia a cremagliera Principe-Granarolo fu inaugurata nel 1901. Dal capolinea basso sale sulle alture con un caratteristico tracciato panoramico."
+  },
+  "funi|Cremagliera Principe/Granarolo - Centurione": {
+    "summary": "Fermata della cremagliera al servizio della zona di Via Centurione.",
+    "history": "Centurione è una delle fermate intermedie della storica cremagliera di Granarolo. Il piccolo impianto si integra tra case, muri e ripidi percorsi collinari."
+  },
+  "funi|Cremagliera Principe/Granarolo - Bari": {
+    "summary": "Fermata intermedia della cremagliera presso le alture di Via Bari.",
+    "history": "La fermata Bari serve il quartiere collinare sopra San Teodoro. Il passaggio delle vetture lungo il ripido binario è uno degli elementi più caratteristici del paesaggio urbano locale."
+  },
+  "funi|Cremagliera Principe/Granarolo - Cambiaso": {
+    "summary": "Fermata della cremagliera per la zona collinare di Via Cambiaso.",
+    "history": "Cambiaso è una piccola fermata a richiesta della linea Principe-Granarolo. La cremagliera offre agli abitanti un collegamento diretto attraverso un territorio difficile da servire con mezzi ordinari."
+  },
+  "funi|Cremagliera Principe/Granarolo - Salita Granarolo": {
+    "summary": "Fermata intermedia lungo la salita verso il borgo di Granarolo.",
+    "history": "La fermata si inserisce lungo l'antica salita che conduce a Granarolo. Il tracciato attraversa un ambiente fatto di crêuze, giardini e vedute sul porto."
+  },
+  "funi|Cremagliera Principe/Granarolo - Chiassaiuola": {
+    "summary": "Fermata della cremagliera nel tratto superiore verso Granarolo.",
+    "history": "Chiassaiuola è una delle minute fermate che rendono la cremagliera simile a un servizio di quartiere. Il nome richiama la rete di piccoli passaggi e percorsi delle alture genovesi."
+  },
+  "funi|Cremagliera Principe/Granarolo - Granarolo": {
+    "summary": "Capolinea superiore della cremagliera nel borgo panoramico di Granarolo.",
+    "history": "Granarolo è il capolinea alto della ferrovia a cremagliera. Il borgo conserva un'atmosfera appartata e offre ampie vedute sulla città, sul porto e sul mare."
+  },
+  "funi|Funicolare Zecca/Righi - Zecca": {
+    "summary": "Capolinea inferiore della funicolare, vicino a Largo Zecca e al centro storico.",
+    "history": "La funicolare Zecca-Righi collega dal 1895 il centro alle alture. Il capolinea di Zecca è facilmente raggiungibile da Via Garibaldi, Via Cairoli e dal centro storico."
+  },
+  "funi|Funicolare Zecca/Righi - Carbonara": {
+    "summary": "Fermata intermedia della funicolare nel quartiere di Castelletto.",
+    "history": "Carbonara è la prima fermata dopo la partenza da Zecca. Il percorso entra rapidamente nel tessuto collinare, alternando gallerie e scorci tra gli edifici."
+  },
+  "funi|Funicolare Zecca/Righi - San Nicola": {
+    "summary": "Fermata intermedia con collegamenti verso Castelletto e Corso Firenze.",
+    "history": "San Nicola è una delle principali fermate intermedie della funicolare. Serve la circonvallazione a monte, elegante sistema viario ottocentesco costruito sulle alture."
+  },
+  "funi|Funicolare Zecca/Righi - Madonnetta": {
+    "summary": "Fermata della funicolare vicina al Santuario della Madonnetta.",
+    "history": "La fermata prende il nome dal vicino Santuario della Madonnetta, fondato alla fine del Seicento. Dalla zona si aprono suggestive vedute sui tetti del centro storico e sul porto."
+  },
+  "funi|Funicolare Zecca/Righi - Preve": {
+    "summary": "Fermata intermedia a richiesta sulle alture tra Madonnetta e San Simone.",
+    "history": "Preve è una piccola fermata inserita nel versante collinare. Testimonia la funzione quotidiana della funicolare, pensata non solo per i visitatori ma soprattutto per i residenti."
+  },
+  "funi|Funicolare Zecca/Righi - San Simone": {
+    "summary": "Fermata superiore della funicolare al servizio dell'area residenziale di Righi.",
+    "history": "San Simone si trova nel tratto alto della linea, dove il paesaggio diventa più aperto e verde. Da qui partono percorsi verso le mura e le alture cittadine."
+  },
+  "funi|Funicolare Zecca/Righi - Righi": {
+    "summary": "Capolinea panoramico per Righi, parco delle Mura e sentieri dei forti.",
+    "history": "Righi è il capolinea superiore e uno dei balconi panoramici più accessibili della città. È il punto di partenza per passeggiate nel Parco delle Mura e verso il sistema dei forti genovesi."
+  },
+
+  "sea|Terminal Traghetti": {
+    "summary": "Terminal per traghetti verso Sardegna, Sicilia, Corsica e altre destinazioni mediterranee.",
+    "history": "Il Terminal Traghetti fa parte del grande porto passeggeri di Genova, uno dei principali del Mediterraneo. Collega la città a numerose isole e porti con servizi per viaggiatori, automobili e merci."
+  },
+  "sea|Terminal Crociere": {
+    "summary": "Terminal crocieristico della Stazione Marittima, vicino a Principe e al centro storico.",
+    "history": "Il Terminal Crociere occupa l'area della storica Stazione Marittima di Ponte dei Mille. Genova è da lungo tempo un importante porto di partenza e di scalo per le rotte crocieristiche del Mediterraneo."
+  },
+  "sea|Battelli Golfo Paradiso": {
+    "summary": "Battelli turistici dal Porto Antico verso Camogli, San Fruttuoso, Portofino e il Golfo Paradiso.",
+    "history": "I battelli permettono di osservare dal mare la costa del levante ligure e i suoi borghi. Alcune località, come l'abbazia di San Fruttuoso, sono raggiungibili nel modo più suggestivo proprio via mare."
+  },
+  "sea|Navebus": {
+    "summary": "Servizio marittimo urbano AMT tra Porto Antico e Pegli, utilizzabile con i titoli previsti.",
+    "history": "Il Navebus collega via mare il centro di Genova con Pegli, offrendo un'alternativa panoramica al trasporto terrestre. Durante il viaggio si osservano il porto, la Lanterna e il profilo della città."
+  },
+
+  "airport|Aeroporto Cristoforo Colombo": {
+    "summary": "Aeroporto cittadino con voli nazionali e internazionali e collegamenti verso il centro.",
+    "history": "L'aeroporto di Genova è costruito su una penisola artificiale affacciata sul mare. Intitolato a Cristoforo Colombo, offre durante decollo e atterraggio una prospettiva insolita sul porto e sulla città."
+  }
+}
