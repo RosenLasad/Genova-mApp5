@@ -1456,12 +1456,41 @@ function popupSourceTitle(popup, popupElement){
   return '';
 }
 
+function popupTransportFavorite(popup, popupElement){
+  try{
+    var source = popup && popup._source;
+    var iconElement = source && source._icon;
+    var className = iconElement && iconElement.className
+      ? String(iconElement.className)
+      : '';
+    var label = '';
+    if(/(?:^|\s)mare-marker(?:\s|$)/.test(className)) label = 'Mare';
+    else if(/(?:^|\s)aereo-marker(?:\s|$)/.test(className)) label = 'Aeroporto';
+    if(!label) return null;
+
+    var name = popupSourceTitle(popup, popupElement);
+    var latlng = popup.getLatLng && popup.getLatLng();
+    var index = getIndexByLabel(label);
+    var nameNorm = norm(name);
+    if(!nameNorm || !latlng || !index) return null;
+
+    // Questi marker nascono in moduli locali e non sempre espongono gli array
+    // globali usati per costruire gli indici Preferiti.
+    index[nameNorm] = [Number(latlng.lat), Number(latlng.lng)];
+    return { label:label, name:name };
+  }catch(_){
+    return null;
+  }
+}
+
 function favoriteForPopup(popup, popupElement){
   if(!popup || typeof popup.getLatLng !== 'function') return null;
   var popupLatLng = popup.getLatLng();
   if(!popupLatLng) return null;
   var sourceTitle = popupSourceTitle(popup, popupElement);
   var sourceNorm = norm(sourceTitle);
+  var transportFavorite = popupTransportFavorite(popup, popupElement);
+  if(transportFavorite) return transportFavorite;
 
   // Il titolo del marker è il collegamento più preciso quando è disponibile.
   if(sourceNorm){
