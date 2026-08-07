@@ -153,7 +153,10 @@
     identity.on('open',patchNamePlaceholder);
     /* Il widget CDN può essersi già inizializzato: in ogni caso recupera
        subito l'eventuale sessione esistente senza dipendere dall'evento init. */
-    try{identity.init({locale:WIDGET_LOCALES[lang()]||'it',logo:false,namePlaceholder:copy().name});}catch(_e){}
+    /* Lo script CDN inizializza automaticamente il widget. Una seconda init
+       creerebbe due iframe sovrapposti e, su alcuni browser, uno resterebbe
+       dietro alla mappa. Qui aggiorniamo soltanto la lingua. */
+    syncWidgetLanguage();
     try{currentUser=typeof identity.currentUser==='function'?identity.currentUser():null;}catch(_e){currentUser=null;}
     updateButton();renderModal();
     announceAuth();
