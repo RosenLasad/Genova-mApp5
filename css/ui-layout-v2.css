@@ -643,7 +643,7 @@ html body #ui-map-controls #ui-zoom-anchor .leaflet-control-zoom > a > span{
 
 @media (max-width:360px){
   :root{
-    --ui-map-joystick-size:54px;
+    --ui-map-joystick-size:60px;
   }
 
   #app > header{
@@ -707,4 +707,44 @@ html body #ui-map-controls #ui-zoom-anchor .leaflet-control-zoom > a > span{
     right:64px;
   }
 
+}
+
+/* Joystick e Zoom: dimensioni fisse su qualsiasi larghezza. */
+:root{
+  --ui-map-joystick-size:72px;
+}
+
+#ui-map-controls .joystick{
+  width:72px !important;
+  height:72px !important;
+  min-width:72px !important;
+  min-height:72px !important;
+}
+
+#ui-map-controls .joystick .thumb{
+  width:28px !important;
+  height:28px !important;
+}
+
+#ui-map-controls .joystick .cardinal{
+  font-size:10px !important;
+}
+
+#ui-zoom-anchor{
+  width:72px !important;
+  bottom:77px !important;
+}
+
+#ui-zoom-anchor .leaflet-control-zoom{
+  width:30px !important;
+  transform:none !important;
+}
+
+#ui-zoom-anchor .leaflet-control-zoom a{
+  width:30px !important;
+  height:30px !important;
+  min-width:30px !important;
+  min-height:30px !important;
+  font-size:20px !important;
+  line-height:1 !important;
 }
