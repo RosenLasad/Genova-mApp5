@@ -12,7 +12,7 @@
 <link href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" rel="stylesheet"/>
 
 <link rel="stylesheet" href="css/menu-home.css">
-<link rel="stylesheet" href="css/quick-toggles.css">
+<link rel="stylesheet" href="css/quick-toggles.css?v=20260808-1">
 <link rel="stylesheet" href="css/flag-menu.css">
 <link rel="stylesheet" href="css/fav-menu.css">
 <link rel="stylesheet" href="css/btn-scan.css">
@@ -449,6 +449,14 @@
 </div>
 <div id="map">
 <div aria-label="Filtri rapidi (anteprima)" class="quick-toggles" id="quick-toggles" role="group">
+<button aria-label="Nascondi le stelle dei Preferiti" aria-pressed="true" class="qt-item qt-cat qt-pill qt-pill-favorites" id="qt-fav-stars-toggle" title="Nascondi le stelle dei Preferiti" type="button">
+<span aria-hidden="true" class="qt-icon">
+<svg height="32" viewbox="0 0 24 24" width="32">
+<path d="M12 2.8l2.76 5.59 6.17.9-4.47 4.35 1.06 6.15L12 16.89l-5.52 2.9 1.06-6.15-4.47-4.35 6.17-.9L12 2.8z"></path>
+</svg>
+</span>
+<span class="sr-only">Stelle dei Preferiti</span>
+</button>
 <!-- CATEGORIA: TRASPORTI (pillola) -->
 <button aria-controls="qt-cat-trasporti" aria-expanded="false" aria-label="Trasporti" class="qt-item qt-cat qt-pill" id="qt-cat-trasporti-btn" title="Trasporti" type="button">
 <span aria-hidden="true" class="qt-icon"><img alt="" draggable="false" height="32" src="Colonna/ico-trasporti.svg" width="32"/></span>
@@ -1351,7 +1359,7 @@
 <script src="js/inline.js?from=132&to=132"></script>
 <script src="locali/locali_points.js"></script>
 <script src="funi/funi_points.js"></script>
-<script src="js/favorites.js?v=20260807-1"></script>
+<script src="js/favorites.js?v=20260808-2"></script>
 <script src="js/taccuino.js?v=20260808-1"></script>
 
 <!-- === QR SCAN: hide toolbar button & add FAB aligned to joystick === -->
