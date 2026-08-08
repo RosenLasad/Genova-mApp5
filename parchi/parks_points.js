@@ -20,6 +20,26 @@
     { name: "Parchi di Nervi",                  lat: 44.381022332924736, lng: 9.043357645937826, img: "parchi/parchi-nervi.jpg",          address: "16167 Genova" },
     { name: "Villa Gruber",                     lat: 44.41411316246836,  lng: 8.940327068382715, img: "parchi/parchi-gruber.jpg",         address: "Corso Solferino, 25, 16122 Genova" },
     { name: "Giardini di Villa Imperiale",      lat: 44.40844542735982,  lng: 8.961081118042278, img: "parchi/parchi-imperiale.jpg",      address: "Via S. Fruttuoso, 100, 16143 Genova" },
-    { name: "Parco di Villa Durazzo Bombrini",  lat: 44.41540395606667,  lng: 8.874915399664594, img: "parchi/parchi-bombrini.jpg",       address: "Via Lodovico Antonio Muratori, 5, 16152 Genova" }
+    { name: "Parco di Villa Durazzo Bombrini",  lat: 44.41540395606667,  lng: 8.874915399664594, img: "parchi/parchi-bombrini.jpg",       address: "Via Lodovico Antonio Muratori, 5, 16152 Genova" },
+    { name: "Parco di Villa Durazzo Pallavicini", lat: 44.4293, lng: 8.8166, img: "parchi/parchi-villa-durazzo-pallavicini.jpg", address: "Via Ignazio Pallavicini 13, 16156 Genova (Pegli)" },
+    { name: "Parco di Villa Duchessa di Galliera", lat: 44.4319, lng: 8.7551, img: "parchi/parchi-duchessa-di-galliera.webp", address: "Via San Nazaro 20, 16158 Genova (Voltri)" },
+    { name: "Parco di Villa Rossi Martini", lat: 44.4258, lng: 8.8475, img: "parchi/parchi-villa-rossi-martini.jpg", address: "Piazza Poch 2, 16154 Genova (Sestri Ponente)" },
+    { name: "Parco del Castello D'Albertis", lat: 44.4178, lng: 8.9248, img: "parchi/parchi-castello-dalbertis.jpg", address: "Corso Dogali 18, 16136 Genova (Castelletto)" },
+    { name: "Parco di Villa Centurione Doria", lat: 44.4287, lng: 8.8142, img: "parchi/parchi-villa-centurione-doria.jpeg", address: "Piazza Cristoforo Bonavino 6, 16156 Genova (Pegli)" },
+    { name: "Parco di Villa Imperiale Scassi", lat: 44.4144, lng: 8.8924, img: "parchi/parchi-villa-imperiale-scassi.jpeg", address: "Largo Gozzano 3, 16149 Genova (Sampierdarena)" },
+    { name: "Orto Botanico dell'Università di Genova", lat: 44.4158, lng: 8.9272, img: "parchi/parchi-orto-botanico-universita.jpg", address: "Corso Dogali 1M, 16136 Genova (Carmine)" },
+    { name: "Parco delle Mura e del Peralto", lat: 44.4369, lng: 8.9292, img: "parchi/parchi-mura-peralto.jpg", address: "Via delle Baracche / Via del Peralto, 16136 Genova (Righi)" },
+    { name: "Parco di Villa Rosazza", lat: 44.4149, lng: 8.9088, img: "parchi/parchi-villa-rosazza.webp", address: "Piazza San Teodoro 5, 16126 Genova (Dinegro)" },
+    { name: "Bosco dei Frati Minori", lat: 44.4116, lng: 8.9658, img: "parchi/parchi-bosco-frati-minori.jpg", address: "Salita Nuova del Monte 15, 16143 Genova (San Fruttuoso)" },
+    { name: "Giardini di Villa Bruzzone", lat: 44.4289, lng: 8.7512, img: "parchi/parchi-villa-bruzzone.jpg", address: "Via dell'Olmo 2, 16158 Genova (Voltri)" },
+    { name: "Parco comunale di Villa Sauli Pallavicino", lat: 44.4278, lng: 8.7891, img: "parchi/parchi-villa-sauli-pallavicino.jpeg", address: "Via Ernesto Celesia 2, 16157 Genova (Pra')" },
+    { name: "Giardino Botanico Clelia Durazzo Grimaldi", lat: 44.4301, lng: 8.8155, img: "parchi/parchi-clelia-durazzo-grimaldi.jpeg", address: "Via Ignazio Pallavicini 13, 16156 Genova (Pegli)" },
+    { name: "Giardini di Villa Banfi", lat: 44.4312, lng: 8.8211, img: "parchi/parchi-villa-banfi.jpg", address: "Via Fulvio Renoldi 3, 16156 Genova (Pegli)" },
+    { name: "Bosco del Monte Gazzo", lat: 44.4445, lng: 8.8422, img: "parchi/parchi-monte-gazzo.jpg", address: "Via Monte Gazzo, 16154 Genova (Sestri Ponente)" },
+    { name: "Parco di Villa Gallino", lat: 44.5015, lng: 8.9042, img: "parchi/parchi-villa-gallino.jpg", address: "Via Poli 3, 16164 Genova (Pontedecimo)" },
+    { name: "Parco del Castellaccio", lat: 44.4239, lng: 8.9305, img: "parchi/parchi-castellaccio.jpg", address: "Via delle Baracche, 16136 Genova (Righi)" },
+    { name: "Giardini di Palazzo Reale", lat: 44.4149, lng: 8.9262, img: "parchi/parchi-palazzo-reale.jpg", address: "Via Balbi 10, 16126 Genova (Centro)" },
+    { name: "Parco di Villa Luxoro", lat: 44.37989771496351, lng: 9.054555216576254, img: "parchi/parchi-villa-luxoro.jpeg", address: "Via Capolungo 25, 16167 Genova (Nervi)" },
+    { name: "Bosco e Parco Naturale del Monte Fasce", lat: 44.4215, lng: 9.0192, img: "parchi/parchi-monte-fasce.jpeg", address: "Via Apparizione / Monte Fasce, 16133 Genova" }
   ];
 })();
