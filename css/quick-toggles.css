@@ -96,3 +96,65 @@
 #qt-passato-percorsi-master{
   display: none !important;
 }
+
+/* Visibilita delle stelle Preferiti: sempre sopra il pulsante QR. */
+#quick-toggles .qt-pill-favorites{
+  order: -20;
+  width:45px !important;
+  height:45px !important;
+  min-width:45px !important;
+  min-height:45px !important;
+  padding:0 !important;
+  border-radius:9999px !important;
+  background:#0b2c63 !important;
+  border:1px solid rgba(255,255,255,.22) !important;
+  display:grid !important;
+  place-items:center !important;
+  box-shadow:0 4px 12px rgba(0,0,0,.28);
+}
+
+#quick-toggles .qt-pill-qr{
+  order: -10;
+}
+
+#quick-toggles .qt-pill-favorites .qt-icon,
+#quick-toggles .qt-pill-favorites svg{
+  display:block !important;
+  width:26px !important;
+  height:26px !important;
+}
+
+#quick-toggles .qt-pill-favorites svg{
+  color:#cbd5e1 !important;
+  fill:currentColor !important;
+  transition:color .16s ease, filter .16s ease;
+}
+
+#quick-toggles .qt-pill-favorites[aria-pressed="true"] svg{
+  color:#facc15 !important;
+  filter:drop-shadow(0 1px 3px rgba(250,204,21,.4)) !important;
+}
+
+#quick-toggles .qt-pill-favorites:hover{
+  background:#0a254f !important;
+}
+
+#quick-toggles .qt-pill-favorites:focus-visible{
+  outline:2px solid #fff;
+  outline-offset:2px;
+}
+
+@media (max-width:420px){
+  #quick-toggles .qt-pill-favorites{
+    width:38px !important;
+    height:38px !important;
+    min-width:38px !important;
+    min-height:38px !important;
+  }
+
+  #quick-toggles .qt-pill-favorites .qt-icon,
+  #quick-toggles .qt-pill-favorites svg{
+    width:23px !important;
+    height:23px !important;
+  }
+}
