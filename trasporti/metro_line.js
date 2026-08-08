@@ -94,7 +94,7 @@
     metroLineLayer = L.layerGroup([
       L.polyline(METRO_LINE_COORDS, {
         color: "#0f172a",
-        weight: 9,
+        weight: 3,
         opacity: 0.76,
         lineCap: "round",
         lineJoin: "round",
@@ -102,7 +102,7 @@
       }),
       L.polyline(METRO_LINE_COORDS, {
         color: "#ef4444",
-        weight: 5,
+        weight: 2.2,
         opacity: 0.98,
         lineCap: "round",
         lineJoin: "round",
