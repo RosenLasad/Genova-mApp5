@@ -814,7 +814,75 @@ data.forEach(function(loc){
     }catch(_){}
     var pane = 'pane-fav-stars';
     var FAV_STARS = window.FAV_STARS || (window.FAV_STARS = L.layerGroup());
-    if(!map.hasLayer(FAV_STARS)){ FAV_STARS.addTo(map); }
+    var FAV_STARS_VISIBILITY_KEY = 'genova_favstars_visible_v1';
+    var FAV_STARS_LABELS = {
+      it: { show:'Mostra le stelle dei Preferiti', hide:'Nascondi le stelle dei Preferiti' },
+      en: { show:'Show favourite stars', hide:'Hide favourite stars' },
+      es: { show:'Mostrar las estrellas de Favoritos', hide:'Ocultar las estrellas de Favoritos' },
+      fr: { show:'Afficher les étoiles des favoris', hide:'Masquer les étoiles des favoris' },
+      ar: { show:'إظهار نجوم المفضلة', hide:'إخفاء نجوم المفضلة' },
+      ru: { show:'Показать звёзды избранного', hide:'Скрыть звёзды избранного' },
+      zh: { show:'显示收藏地点星标', hide:'隐藏收藏地点星标' },
+      lij:{ show:'Mostra e stelle di Preferii', hide:'Ascundi e stelle di Preferii' }
+    };
+
+    function favStarsLang(){
+      var value = 'it';
+      try{ value = localStorage.getItem('lang') || document.documentElement.getAttribute('lang') || 'it'; }catch(_e){}
+      value = String(value || 'it').toLowerCase().split(/[-_]/)[0];
+      return FAV_STARS_LABELS[value] ? value : 'it';
+    }
+
+    function readFavStarsVisible(){
+      try{ return localStorage.getItem(FAV_STARS_VISIBILITY_KEY) !== '0'; }catch(_e){ return true; }
+    }
+
+    function favStarsAreVisible(){
+      try{ return !!map.hasLayer(FAV_STARS); }catch(_e){ return false; }
+    }
+
+    function syncFavStarsButton(){
+      var button = document.getElementById('qt-fav-stars-toggle');
+      if(!button) return;
+      var visible = favStarsAreVisible();
+      var labels = FAV_STARS_LABELS[favStarsLang()] || FAV_STARS_LABELS.it;
+      var actionLabel = visible ? labels.hide : labels.show;
+      button.setAttribute('aria-pressed', visible ? 'true' : 'false');
+      button.setAttribute('aria-label', actionLabel);
+      button.setAttribute('title', actionLabel);
+      var screenReader = button.querySelector('.sr-only');
+      if(screenReader) screenReader.textContent = actionLabel;
+    }
+
+    function setFavStarsVisible(visible, persist){
+      visible = !!visible;
+      try{
+        if(visible && !map.hasLayer(FAV_STARS)) FAV_STARS.addTo(map);
+        else if(!visible && map.hasLayer(FAV_STARS)) map.removeLayer(FAV_STARS);
+      }catch(_e){}
+      if(persist !== false){
+        try{ localStorage.setItem(FAV_STARS_VISIBILITY_KEY, visible ? '1' : '0'); }catch(_e){}
+      }
+      syncFavStarsButton();
+    }
+
+    window.__setFavStarsVisible = function(visible){ setFavStarsVisible(visible, true); };
+    window.__favStarsAreVisible = favStarsAreVisible;
+
+    setFavStarsVisible(readFavStarsVisible(), false);
+
+    var favStarsButton = document.getElementById('qt-fav-stars-toggle');
+    if(favStarsButton && !favStarsButton.__favStarsBound){
+      favStarsButton.__favStarsBound = true;
+      favStarsButton.addEventListener('click', function(event){
+        try{ event.preventDefault(); event.stopPropagation(); }catch(_e){}
+        setFavStarsVisible(!favStarsAreVisible(), true);
+      });
+    }
+
+    document.addEventListener('app:set-lang', syncFavStarsButton);
+    window.addEventListener('i18n:changed', syncFavStarsButton);
+    syncFavStarsButton();
     var byKey = {}; // "Label|nameNorm" -> star marker
 
     function ensureFavCategoryOn(label){
