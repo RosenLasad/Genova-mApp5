@@ -1024,7 +1024,13 @@
       else if(action === 'saveRouteAsNew') saveCurrentRoute(true);
       else if(action === 'toggleCurrentMap') toggleCurrentRouteMap();
       else if(action === 'copyRoute') copyRoute();
-      else if(action === 'goFavorites') switchTab('favorites');
+      else if(action === 'goFavorites'){
+        // Conserva anche le modifiche ai campi del percorso prima di lasciare
+        // la pagina per scegliere una nuova tappa dai Preferiti.
+        syncRouteInputs();
+        saveDraft();
+        switchTab('favorites');
+      }
       else if(action === 'stepUp') moveStep(index, -1);
       else if(action === 'stepDown') moveStep(index, 1);
       else if(action === 'stepGps') centerStep(index);
@@ -1112,6 +1118,21 @@
         state.route.steps.push(Object.assign({}, favorite, { time: '', note: note }));
       }
       saveDraft();
+
+      // Se il percorso in modifica era gia stato salvato, aggiorna subito
+      // anche la sua copia definitiva. In precedenza la nuova tappa restava
+      // soltanto nella bozza e veniva persa riaprendo il percorso.
+      if(state.route.id){
+        var currentList = routes();
+        var currentPosition = currentList.findIndex(function(route){
+          return route && route.id === state.route.id;
+        });
+        if(currentPosition >= 0){
+          currentList[currentPosition] = JSON.parse(JSON.stringify(state.route));
+          saveRoutes(currentList);
+        }
+      }
+
       setStatus(existing ? t('updatedOk') : t('addedOk'));
       renderFavoriteDetail();
       return;
@@ -1143,6 +1164,15 @@
   }
 
   function openRoute(id){
+    // Non ricaricare dal salvataggio una versione precedente dello stesso
+    // percorso: la bozza in memoria puo contenere tappe appena aggiunte.
+    if(state.route && state.route.id && state.route.id === id){
+      state.route = normalizeRoute(state.route);
+      saveDraft();
+      navigate('routeDetail');
+      setStatus('');
+      return;
+    }
     var found = routes().find(function(route){ return route && route.id === id; });
     if(!found) return;
     state.route = normalizeRoute(JSON.parse(JSON.stringify(found)));
