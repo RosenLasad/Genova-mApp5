@@ -194,6 +194,7 @@ window.FORTI_DATA = [
   "lng": 8.936239933916276,
 "img": "forti/forte-fratellomaggiore.jpg",
   "addr": "Monte di San Michele (o Dei Due Fratelli), 16162 Genova",
+  "site": "https://it.wikipedia.org/wiki/Forte_Fratello_Maggiore",
   "desc": {
     "it": "Il Forte Fratello Maggiore era un'opera fortificata, oggi non più esistente; era una delle due fortificazioni costruite negli anni venti dell’Ottocento sulle cime del monte popolarmente chiamato “Due Fratelli”.",
     "en": "Fort Fratello Maggiore was a fortified work, no longer existing today; it was one of two fortifications built in the 1820s on the peaks of the mountain popularly known as “Due Fratelli”.",
