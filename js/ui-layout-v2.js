@@ -33,7 +33,10 @@
     var searchButton = document.getElementById('tb-search-btn');
     var search = document.getElementById('tb-search');
 
-    var leftOrdered = [flagButton, authButton, subscription].filter(Boolean);
+    /* Il selettore Lingue resta indipendente, nell'angolo inferiore sinistro. */
+    if(flagButton) move(flagButton, document.body);
+
+    var leftOrdered = [authButton, subscription].filter(Boolean);
     var leftCurrent = Array.prototype.filter.call(left.children, function(child){
       return leftOrdered.indexOf(child) !== -1;
     });
@@ -152,8 +155,9 @@
     var width = menu.offsetWidth || 42;
     var left = Math.max(6, Math.min(window.innerWidth - width - 6, rect.left + (rect.width - width) / 2));
     menu.style.setProperty('left', Math.round(left) + 'px', 'important');
-    menu.style.setProperty('top', Math.round(rect.bottom + 6) + 'px', 'important');
-    menu.style.setProperty('bottom', 'auto', 'important');
+    var gap = 8;
+    menu.style.setProperty('top', 'auto', 'important');
+    menu.style.setProperty('bottom', Math.round(window.innerHeight - rect.top + gap) + 'px', 'important');
   }
 
   function wireFlagMenu(){

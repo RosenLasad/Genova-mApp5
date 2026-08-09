@@ -112,29 +112,35 @@
 }
 
 /* Il selettore delle lingue non è più ancorato all'angolo inferiore. */
-#app > header #flag-switcher{
-  position:static !important;
-  inset:auto !important;
-  margin:0 !important;
-  z-index:auto !important;
+body > #flag-switcher{
+  position:fixed !important;
+  left:max(12px, env(safe-area-inset-left)) !important;
+  right:auto !important;
+  top:auto !important;
+  bottom:max(12px, env(safe-area-inset-bottom)) !important;
+  z-index:8001 !important;
   display:grid !important;
   place-items:center !important;
+  width:40px !important;
+  height:40px !important;
+  min-width:40px !important;
+  min-height:40px !important;
+  margin:0 !important;
   padding:0 !important;
   line-height:0 !important;
   box-sizing:border-box !important;
 }
 
-#app > header #flag-switcher .flag-ico{
+body > #flag-switcher .flag-ico{
   display:grid !important;
   place-items:center !important;
   width:28px !important;
   height:20px !important;
   margin:0 !important;
   padding:0 !important;
-  transform:translateX(-1px);
 }
 
-#app > header #flag-switcher .flag-ico svg{
+body > #flag-switcher .flag-ico svg{
   display:block !important;
   width:100% !important;
   height:100% !important;
@@ -162,9 +168,9 @@
   position:static !important;
   display:grid !important;
   place-items:center !important;
-  width:40px !important;
+  width:36px !important;
   height:40px !important;
-  min-width:40px !important;
+  min-width:36px !important;
   min-height:40px !important;
   margin:0 !important;
   padding:0 !important;
@@ -185,8 +191,7 @@
 
 /* Il menu delle lingue viene posizionato via JS sotto il pulsante. */
 #flag-menu{
-  top:0;
-  bottom:auto !important;
+  top:auto !important;
 }
 
 /* Eventi resta disponibile nei file ma non compare nella nuova interfaccia. */
@@ -608,13 +613,12 @@ html body #ui-map-controls #ui-zoom-anchor .leaflet-control-zoom > a > span{
     font-size:.88rem !important;
   }
 
-  #app > header #flag-switcher,
   #app > header #tb-search-btn,
   #app > header #btn-sub,
   #app > header #ui-taccuino-button{
-    width:38px !important;
+    width:34px !important;
     height:38px !important;
-    min-width:38px !important;
+    min-width:34px !important;
     min-height:38px !important;
   }
 
@@ -656,13 +660,12 @@ html body #ui-map-controls #ui-zoom-anchor .leaflet-control-zoom > a > span{
     gap:4px !important;
   }
 
-  #app > header #flag-switcher,
   #app > header #tb-search-btn,
   #app > header #btn-sub,
   #app > header #ui-taccuino-button{
-    width:34px !important;
+    width:30px !important;
     height:34px !important;
-    min-width:34px !important;
+    min-width:30px !important;
     min-height:34px !important;
   }
 

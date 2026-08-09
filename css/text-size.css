@@ -1,0 +1,69 @@
+/* Dimensione dei testi scelta dall'utente nel menu Impostazioni. */
+.settings-text-size{
+  margin:5px 4px 3px;
+  padding:9px 8px 8px;
+  border-top:1px solid rgba(255,255,255,.14);
+}
+
+.settings-text-size-label{
+  margin:0 0 8px;
+  color:#e2e8f0;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.25;
+}
+
+.settings-text-size-options{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:5px;
+}
+
+.settings-text-size-options button{
+  min-width:0;
+  min-height:34px;
+  padding:6px 7px;
+  border:1px solid rgba(203,213,225,.25);
+  border-radius:8px;
+  color:#e2e8f0;
+  background:rgba(255,255,255,.06);
+  font:700 11px/1.15 Arial,"Helvetica Neue",sans-serif;
+  cursor:pointer;
+}
+
+.settings-text-size-options button:hover,
+.settings-text-size-options button:focus-visible{
+  border-color:rgba(147,197,253,.72);
+  background:rgba(59,130,246,.18);
+}
+
+.settings-text-size-options button[aria-pressed="true"]{
+  color:#eff6ff;
+  border-color:#60a5fa;
+  background:#245a91;
+  box-shadow:0 0 0 2px rgba(96,165,250,.16);
+}
+
+#bottom-bar .settings-dropdown{
+  width:min(310px,calc(100vw - 24px));
+}
+
+html[dir="rtl"] .settings-text-size-label{ text-align:right; }
+
+@media (max-width:480px){
+  #bottom-bar .settings-dropdown{
+    position:fixed !important;
+    left:50% !important;
+    right:auto !important;
+    bottom:calc(62px + env(safe-area-inset-bottom)) !important;
+    width:calc(100vw - 24px);
+    transform:translateX(-50%) !important;
+  }
+}
+
+@media (max-width:380px){
+  .settings-text-size-options button{
+    padding-inline:4px;
+    font-size:10px;
+  }
+}

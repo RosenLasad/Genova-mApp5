@@ -21,7 +21,8 @@
 <link rel="stylesheet" href="css/inline.bundle.css">
 <link rel="stylesheet" href="css/taccuino.css">
 <link rel="stylesheet" href="css/qr-panel-layout.css">
-<link rel="stylesheet" href="css/ui-layout-v2.css?v=20260808-2">
+<link rel="stylesheet" href="css/ui-layout-v2.css?v=20260809-1">
+<link rel="stylesheet" href="css/text-size.css?v=20260809-1">
 <link rel="stylesheet" href="css/pwa-install.css?v=20260807-1">
 <link rel="stylesheet" href="css/auth-ui.css?v=20260807-2">
 <link rel="stylesheet" href="css/account-sync.css?v=20260807-2">
@@ -436,6 +437,14 @@
       
   <button class="settings-row" type="button" id="welcome-open-btn" role="menuitem">Benvenuto</button>
   <button class="settings-row" type="button" data-action="contact" data-settings-i18n="contact" role="menuitem">Contattaci</button>
+  <div class="settings-text-size" role="group" aria-labelledby="settings-text-size-label">
+    <div class="settings-text-size-label" id="settings-text-size-label">Dimensione testo</div>
+    <div class="settings-text-size-options">
+      <button type="button" data-text-size="small" aria-pressed="false">Piccolo</button>
+      <button type="button" data-text-size="medium" aria-pressed="true">Medio</button>
+      <button type="button" data-text-size="large" aria-pressed="false">Grande</button>
+    </div>
+  </div>
     </div>
   </div>
 
@@ -1547,6 +1556,7 @@
 <script src="js/auth-ui.js?v=20260807-3"></script>
 <script src="js/account-sync.js?v=20260807-1"></script>
 <script src="js/subscription-v2.js?v=20260807-1"></script>
-<script src="js/ui-layout-v2.js?v=20260807-2"></script>
+<script src="js/text-size.js?v=20260809-1"></script>
+<script src="js/ui-layout-v2.js?v=20260809-1"></script>
 </body>
 </html>
