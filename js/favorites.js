@@ -779,7 +779,29 @@ data.forEach(function(loc){
 
   // localStorage helpers
   function loadFavs(){
-    try{ return JSON.parse(localStorage.getItem(LS_KEY) || '{}') || {}; }catch(_){ return {}; }
+    try{
+      var favs = JSON.parse(localStorage.getItem(LS_KEY) || '{}') || {};
+      var oldChurch = 'Chiesa|chiesa del gesù,di s.ambrogio e s.andrea';
+      var newChurch = 'Chiesa|chiesa del gesù, di sant’ambrogio e sant’andrea';
+      var changed = false;
+      if(favs[oldChurch]){
+        favs[newChurch] = true;
+        delete favs[oldChurch];
+        changed = true;
+      }
+      var renamedTheaters = {
+        'Teatro|tiqu': 'Teatro|tiqu – teatro internazionale di quartiere',
+        'Teatro|teatro instabile': 'Teatro|la quinta praticabile – teatro instabile'
+      };
+      Object.keys(renamedTheaters).forEach(function(oldKey){
+        if(!favs[oldKey]) return;
+        favs[renamedTheaters[oldKey]] = true;
+        delete favs[oldKey];
+        changed = true;
+      });
+      if(changed) localStorage.setItem(LS_KEY, JSON.stringify(favs));
+      return favs;
+    }catch(_){ return {}; }
   }
   function saveFavs(obj){
     try{ localStorage.setItem(LS_KEY, JSON.stringify(obj||{})); }catch(_){}
@@ -1744,7 +1766,7 @@ window.ROUTE_FAVS['cs-strada-doge'] = [
   {"label":"Museo","name":"Palazzo Reale di Genova"},
   {"label":"Museo","name":"Castello D'Albertis Museo delle Culture del Mondo"},
 
-  {"label":"Chiesa","name":"Chiesa del Gesù,di S.Ambrogio e S.Andrea"},
+  {"label":"Chiesa","name":"Chiesa del Gesù, di Sant’Ambrogio e Sant’Andrea"},
   {"label":"Chiesa","name":"San Matteo"},
   {"label":"Chiesa","name":"Santa Maria delle Vigne"},
   {"label":"Chiesa","name":"San Filippo Neri"},

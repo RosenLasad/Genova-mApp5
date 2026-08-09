@@ -174,23 +174,23 @@
     "img":   { "it": "teatri/arca.jpg" }
   }
 ,
-{
+  {
     "id": "teatro_tiqu",
-    "lat": 44.407973786500364,
-    "lng":  8.934774987616807,
-    "title": { "it": "Tiqu" },
-    "descr": { "it": "Tiqu." },
+    "lat": 44.410267746627824,
+    "lng":  8.931859037488582,
+    "title": { "it": "TIQU – Teatro Internazionale di Quartiere" },
+    "descr": { "it": "TIQU – Teatro Internazionale di Quartiere." },
     "addr":  { "it": "Piazza Cambiaso, 1, 16123 Genova" },
     "site":  { "it": "http://www.tedxgenova.com/" },
     "img":   { "it": "teatri/tiqu.jpg" }
   }
 ,
-{
+  {
     "id": "teatro_instabile",
     "lat": 44.39782246355774,
     "lng":  8.949309910654563,
-    "title": { "it": "Teatro Instabile" },
-    "descr": { "it": "Teatro Instabile - La Quinta Praticabile." },
+    "title": { "it": "La Quinta Praticabile – Teatro Instabile" },
+    "descr": { "it": "La Quinta Praticabile – Teatro Instabile." },
     "addr":  { "it": "Via Antonio Cecchi, 19/R, 16129 Genova" },
     "site":  { "it": "https://www.laquintapraticabile.com/" },
     "img":   { "it": "teatri/instabile.jpg" }

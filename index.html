@@ -30,12 +30,13 @@
 <link rel="stylesheet" href="css/train-line.css?v=20260808-1">
 <script src="js/transport-place-texts.js?v=20260807-1"></script>
 <script src="js/cinema-place-texts.js?v=20260808-1"></script>
-<script src="js/theater-place-texts.js?v=20260808-1"></script>
+<script src="js/theater-place-texts.js?v=20260810-1"></script>
 <script src="js/park-place-texts.js?v=20260808-2"></script>
 <script src="js/park-place-texts-extra.js?v=20260808-2"></script>
 <script src="js/place-popup.js?v=20260808-60"></script>
 <script src="js/languages.js"></script>
-<script src="js/inline.js?from=2&to=2"></script>
+<script src="js/inline.js?v=20260809-3"></script>
+<script>window.__GENOVA_INLINE_RUN(2,2);</script>
 
 <!-- PATCH: Legend as icon (help) -->
 
@@ -52,11 +53,11 @@
 <!-- (Opzionale) Dati per i Forti -->
 <script id="forti-data-20250929" src="forti/points_forti.js"></script>
 <script id="musei-data-20250929" src="musei/points_musei.js"></script>
-<script src="chiese/chiese_point.js"></script>
+<script src="chiese/chiese_point.js?v=20260810-1"></script>
 <script src="palazzi/palazzi_points.js"></script>
 <script src="sport/sport_points.js"></script>
 <script src="cinema/cinema_points.js"></script>
-<script src="teatri/teatri_points.js"></script>
+<script src="teatri/teatri_points.js?v=20260810-1"></script>
 <script src="mostre/mostre_points.js"></script>
 <script src="js/points-offline-bridge.js"></script>
 
@@ -67,8 +68,8 @@
 <!-- Forti OFF state: keep only the inner square colored | 2025-09-30 -->
 <!-- Forti sand/beige palette + black borders | 2025-09-30 -->
 <!-- Forti: 'sabbia chiara calda' + glyph sabbia + bordi neri | 2025-09-30 -->
-<script src="js/inline.js?from=3&to=3"></script>
-<script src="js/inline.js?from=4&to=4"></script>
+<script>window.__GENOVA_INLINE_RUN(3,3);</script>
+<script>window.__GENOVA_INLINE_RUN(4,4);</script>
 
 <!-- Acquedotti data (Romano) -->
 <script src="acquedotti/acquedotto_romano.js"></script>
@@ -81,45 +82,26 @@
 <!-- PATCH 2025-10-07: toolbar wrap & touch targets on very small screens (≤ 480px) -->
 
 <!-- Mura Barbarossa external texts loader -->
-<script src="js/inline.js?from=5&to=5"></script>
-<script src="mura_data/wall_nodes.js"></script>
+<script>window.__GENOVA_INLINE_RUN(5,5);</script>
+<script>window.__GENOVA_INLINE_RUN(6,6);</script>
+<script>window.__GENOVA_INLINE_RUN(7,7);</script>
 
-<script src="js/inline.js?from=6&to=6"></script>
-<script src="js/inline.js?from=7&to=7"></script>
+<script>window.__GENOVA_INLINE_RUN(8,8);</script>
 
-<script src="js/inline.js?from=8&to=8"></script>
+<script>window.__GENOVA_INLINE_RUN(9,9);</script>
 
-<script src="js/inline.js?from=9&to=9"></script>
-
-<script src="js/inline.js?from=10&to=10"></script>
-<script src="js/inline.js?from=11&to=11"></script>
-<script src="js/inline.js?from=12&to=12"></script>
+<script>window.__GENOVA_INLINE_RUN(11,11);</script>
+<script>window.__GENOVA_INLINE_RUN(12,12);</script>
 <script src="js/info-contacts.js"></script>
-<script src="js/inline.js?from=14&to=14"></script>
-<script src="js/inline.js?from=15&to=15"></script>
-<script src="js/inline.js?from=19&to=19"></script>
+<script>window.__GENOVA_INLINE_RUN(14,14);</script>
+<script>window.__GENOVA_INLINE_RUN(15,15);</script>
+<script>window.__GENOVA_INLINE_RUN(19,19);</script>
 
-<link rel="stylesheet" href="welcome/welcome.css">
+<link rel="stylesheet" href="new-home/new-home.css?v=20260810-2">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
 </head>
 <body>
-
-<!-- Welcome overlay (onboarding) -->
-<div id="gm-welcome-overlay" class="gm-welcome-overlay" hidden>
-  <div class="gm-welcome-panel" role="dialog" aria-modal="true" aria-labelledby="gm-welcome-title">
-    <div class="gm-welcome-header">
-      <div id="gm-welcome-title" class="gm-welcome-title">Benvenuto su Genova mApp (test version)</div>
-      <div class="gm-welcome-sub">Con cosa vuoi cominciare?</div>
-    </div>
-    <div class="gm-welcome-actions">
-      <button type="button" class="gm-welcome-btn is-azure" data-action="sqorci">Com'era Genova</button>
-      <button type="button" class="gm-welcome-btn is-blue" data-action="trasporti">Trasporti</button>
-      <button type="button" class="gm-welcome-btn is-red" data-action="patrimonio">Luoghi storici</button>
-      <button type="button" class="gm-welcome-btn is-gold" data-action="intrattenimento">Relax e intrattenimento</button>
-      <button type="button" class="gm-welcome-btn is-brown" data-action="percorsi">Scopri e approfondisci</button>
-      <button type="button" class="gm-welcome-btn is-gray" data-action="close">Mappa libera</button>
-    </div>
-  </div>
-</div>
+<script>window.__GENOVA_INLINE_RUN(10,10);</script>
 
 <div id="app">
 <header>
@@ -980,185 +962,172 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script src="js/guide.js">
-</script><script src="js/inline.js?from=21&to=21"></script>
+</script><script>window.__GENOVA_INLINE_RUN(21,21);</script>
 <script src="mura_data/wall_lines.js"></script>
-<script src="mura_data/wall_nodes.js"></script>
-<script src="js/inline.js?from=22&to=22"></script>
-<script src="js/inline.js?from=23&to=23"></script>
-<script src="js/inline.js?from=24&to=24"></script>
+<script>window.__GENOVA_INLINE_RUN(22,22);</script>
+<script>window.__GENOVA_INLINE_RUN(23,23);</script>
+<script>window.__GENOVA_INLINE_RUN(24,24);</script>
 
-<script src="js/inline.js?from=25&to=25"></script>
+<script>window.__GENOVA_INLINE_RUN(25,25);</script>
 
-<script src="js/inline.js?from=26&to=26"></script>
-<script src="js/inline.js?from=27&to=27"></script>
+<script>window.__GENOVA_INLINE_RUN(26,26);</script>
+<script>window.__GENOVA_INLINE_RUN(27,27);</script>
 
-<script src="js/inline.js?from=28&to=28"></script>
+<script>window.__GENOVA_INLINE_RUN(28,28);</script>
 
-<script src="js/inline.js?from=29&to=29"></script>
+<script>window.__GENOVA_INLINE_RUN(29,29);</script>
 
-<script src="js/inline.js?from=30&to=30"></script>
-<script src="js/inline.js?from=31&to=31"></script>
-<script src="js/inline.js?from=32&to=32"></script>
-<script src="js/inline.js?from=33&to=33"></script>
-<script src="js/inline.js?from=34&to=34"></script>
-<script src="js/inline.js?from=35&to=35"></script>
-<script src="js/inline.js?from=36&to=36"></script>
-<script src="js/inline.js?from=37&to=37"></script>
-<script src="js/inline.js?from=38&to=38"></script>
-<script src="js/inline.js?from=39&to=39"></script>
-<script src="js/inline.js?from=40&to=40"></script>
-<script src="js/inline.js?from=41&to=41"></script>
-<script src="js/inline.js?from=42&to=42"></script>
+<script>window.__GENOVA_INLINE_RUN(30,30);</script>
+<script>window.__GENOVA_INLINE_RUN(31,31);</script>
+<script>window.__GENOVA_INLINE_RUN(32,32);</script>
+<script>window.__GENOVA_INLINE_RUN(33,33);</script>
+<script>window.__GENOVA_INLINE_RUN(34,34);</script>
+<script>window.__GENOVA_INLINE_RUN(35,35);</script>
+<script>window.__GENOVA_INLINE_RUN(36,36);</script>
+<script>window.__GENOVA_INLINE_RUN(37,37);</script>
+<script>window.__GENOVA_INLINE_RUN(38,38);</script>
+<script>window.__GENOVA_INLINE_RUN(39,39);</script>
+<script>window.__GENOVA_INLINE_RUN(40,40);</script>
+<script>window.__GENOVA_INLINE_RUN(41,41);</script>
+<script>window.__GENOVA_INLINE_RUN(42,42);</script>
 <script src="qr_azzurri/qr_azzurri_villa_del_principe/qr-vdp-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_villa_del_principe/qr-villa-del-principe-descr-i18n.js"></script>
 
-<script src="js/inline.js?from=43&to=43"></script>
-<script src="js/inline.js?from=44&to=44"></script>
+<script>window.__GENOVA_INLINE_RUN(43,43);</script>
+<script>window.__GENOVA_INLINE_RUN(44,44);</script>
 <script src="qr_azzurri/qr_azzurri_via_settembre/qr-viasettembre-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_via_settembre/qr-via-settembre-descr-i18n.js"></script>
 
-<script src="js/inline.js?from=45&to=45"></script>
+<script>window.__GENOVA_INLINE_RUN(45,45);</script>
 <script src="qr_azzurri/qr_azzurri_sampierdarena/qr-sampierdarena-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_sampierdarena/qr-sampierdarena-descr-i18n.js"></script>
 
-<script src="js/inline.js?from=46&to=46"></script>
+<script>window.__GENOVA_INLINE_RUN(46,46);</script>
 <script src="qr_azzurri/qr_azzurri_portello/qr-piazzaportello-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_portello/qr-portello-descr-i18n.js"></script>
 
-<script src="js/inline.js?from=47&to=47"></script>
+<script>window.__GENOVA_INLINE_RUN(47,47);</script>
 <script src="qr_azzurri/qr_azzurri_piazza_de_ferrari/qr-ferrari-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_piazza_de_ferrari/qr-piazza-de-ferrari-descr-i18n.js"></script>
 
-<script src="js/inline.js?from=48&to=48"></script>
+<script>window.__GENOVA_INLINE_RUN(48,48);</script>
 
-<script src="js/inline.js?from=49&to=49"></script>
+<script>window.__GENOVA_INLINE_RUN(49,49);</script>
 
 <script src="qr_azzurri/qr_descr_i18n.js"></script>
-<script src="js/inline.js?from=50&to=50"></script>
+<script>window.__GENOVA_INLINE_RUN(50,50);</script>
 
-<script src="js/inline.js?from=51&to=51"></script>
-<script src="js/inline.js?from=52&to=52"></script>
+<script>window.__GENOVA_INLINE_RUN(51,51);</script>
+<script>window.__GENOVA_INLINE_RUN(52,52);</script>
 
 <script src="punti_doc/doc_desc_i18n.js"></script>
 <script src="punti_doc/doc_video_i18n.js"></script>
 <script src="js/documentari.js"></script>
-<script src="js/inline.js?from=57&to=57"></script>
-<script src="js/inline.js?from=61&to=61"></script>
-<script src="js/inline.js?from=62&to=62"></script>
-<script src="js/inline.js?from=63&to=63"></script>
+<script>window.__GENOVA_INLINE_RUN(57,57);</script>
+<script>window.__GENOVA_INLINE_RUN(61,61);</script>
+<script>window.__GENOVA_INLINE_RUN(62,62);</script>
+<script>window.__GENOVA_INLINE_RUN(63,63);</script>
 <!-- QUARTIERI HTTP LOADER (no picker) -->
 <!-- CASTELLO & CIRCONVALLAZIONE: triangoli blu -->
 <script src="qr_azzurri/qr_azzurri_castello/qr-castello-blue-swap.js"></script>
-<script src="qr_azzurri/qr_azzurri_castello/qr-castello-descr-i18n.js"></script>
-
-<script src="js/inline.js?from=64&to=64"></script>
+<script>window.__GENOVA_INLINE_RUN(64,64);</script>
 <script src="qr_azzurri/qr_azzurri_circonvallazione_a_mare/qr-circonvallazione-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_circonvallazione_a_mare/qr-circonvallazione-a-mare-descr-i18n.js"></script>
 
-<script src="js/inline.js?from=65&to=65"></script>
+<script>window.__GENOVA_INLINE_RUN(65,65);</script>
 <script src="qr_azzurri/qr_azzurri_annunziata/qr-pannunziata-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_annunziata/qr-annunziata-descr-i18n.js"></script>
 
-<script src="js/inline.js?from=66&to=66"></script>
+<script>window.__GENOVA_INLINE_RUN(66,66);</script>
 <script src="qr_azzurri/qr_azzurri_darsena/qr-darsena-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_darsena/qr-darsena-descr-i18n.js"></script>
 
-<script src="js/inline.js?from=67&to=67"></script>
+<script>window.__GENOVA_INLINE_RUN(67,67);</script>
 <script src="qr_azzurri/qr_azzurri_caricamento/qr-pcaricamento-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_caricamento/qr-caricamento-descr-i18n.js"></script>
 
-<script src="js/inline.js?from=68&to=68"></script>
+<script>window.__GENOVA_INLINE_RUN(68,68);</script>
 
 <script src="qr_azzurri/qr_azzurri_quarto/qr-quarto-blue-swap.js"></script>
-<script src="qr_azzurri/qr_azzurri_quarto/qr-quarto-descr-i18n.js"></script>
-<script src="js/inline.js?from=69&to=69"></script>
+<script>window.__GENOVA_INLINE_RUN(69,69);</script>
 
 <script src="qr_azzurri/qr_azzurri_quinto/qr-quinto-blue-swap.js"></script>
-<script src="qr_azzurri/qr_azzurri_quinto/qr-quinto-descr-i18n.js"></script>
-<script src="js/inline.js?from=70&to=70"></script>
+<script>window.__GENOVA_INLINE_RUN(70,70);</script>
 
 <script src="qr_azzurri/qr_azzurri_corvetto/qr-pcorvetto-blue-swap.js"></script>
-<script src="qr_azzurri/qr_azzurri_corvetto/qr-pcorvetto-descr-i18n.js"></script>
-
-<script src="js/inline.js?from=71&to=71"></script>
+<script>window.__GENOVA_INLINE_RUN(71,71);</script>
 
 <script src="qr_azzurri/qr_azzurri_albaro/qr-albaro-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_albaro/qr-albaro-descr-i18n.js"></script>
-<script src="js/inline.js?from=72&to=72"></script>
+<script>window.__GENOVA_INLINE_RUN(72,72);</script>
 
 <script src="qr_azzurri/qr_azzurri_marassi/qr-marassi-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_marassi/qr-marassi-descr-i18n.js"></script>
-<script src="js/inline.js?from=73&to=73"></script>
+<script>window.__GENOVA_INLINE_RUN(73,73);</script>
 
-<script src="qr_azzurri/qr_azzurri_foce/qr-foce-blue-swap.js"></script>
-<script src="qr_azzurri/qr_azzurri_foce/qr-foce-descr-i18n.js"></script>
-
-<script src="js/inline.js?from=74&to=74"></script>
+<script>window.__GENOVA_INLINE_RUN(74,74);</script>
 
 <script src="qr_azzurri/qr_azzurri_sturla/qr-sturla-blue-swap.js"></script>
-<script src="qr_azzurri/qr_azzurri_sturla/qr-sturla-descr-i18n.js"></script>
-
-
-<script src="js/inline.js?from=75&to=75"></script>
+<script>window.__GENOVA_INLINE_RUN(75,75);</script>
 
 <script src="qr_azzurri/qr_azzurri_piazza_della_vittoria/qr-piazza_della_vittoria-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_piazza_della_vittoria/qr-piazza-della-vittoria-descr-i18n.js"></script>
 
-<script src="js/inline.js?from=76&to=76"></script>
+<script>window.__GENOVA_INLINE_RUN(76,76);</script>
 <script src="qr_azzurri/qr_azzurri_piazza_principe/qr-piazza_principe-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_piazza_principe/qr-piazza-principe-descr-i18n.js"></script>
 
-<script src="js/inline.js?from=77&to=77"></script>
+<script>window.__GENOVA_INLINE_RUN(77,77);</script>
 
 <script src="qr_azzurri/qr_azzurri_seno_di_giano/qr-seno_di_giano-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_seno_di_giano/qr-seno-di-giano-descr-i18n.js"></script>
-<script src="js/inline.js?from=78&to=78"></script>
+<script>window.__GENOVA_INLINE_RUN(78,78);</script>
 
-<script src="js/inline.js?from=79&to=79"></script>
+<script>window.__GENOVA_INLINE_RUN(79,79);</script>
 <!-- PATCH: Regola generale - ordina sempre i video "Ieri" (_ieri_1, _ieri_2, ...) -->
-<script src="js/inline.js?from=80&to=80"></script>
+<script>window.__GENOVA_INLINE_RUN(80,80);</script>
 <script src="js/home-panel.js"></script>
 
-<div aria-labelledby="qr-scan-title" aria-modal="true" id="qr-scan" role="dialog"><div class="card"><header><h3 id="qr-scan-title">Scanner QR</h3><button class="btn" id="qr-switch" title="Cambia fotocamera">Cambia camera</button><button aria-label="Chiudi scanner" class="btn" id="qr-close">Chiudi</button></header><div class="body"><video id="qr-video" muted="true" playsinline="true"></video><canvas id="qr-canvas" style="display:none"></canvas><div class="hint" id="qr-fallback">Il tuo browser non supporta lo scanner live. Usa la fotocamera e apri il link del QR.</div><div id="qr-actions"><button class="btn" id="qr-cancel">Annulla</button></div></div></div></div><script src="js/inline.js?from=83&to=83"></script>
+<div aria-labelledby="qr-scan-title" aria-modal="true" id="qr-scan" role="dialog"><div class="card"><header><h3 id="qr-scan-title">Scanner QR</h3><button class="btn" id="qr-switch" title="Cambia fotocamera">Cambia camera</button><button aria-label="Chiudi scanner" class="btn" id="qr-close">Chiudi</button></header><div class="body"><video id="qr-video" muted="true" playsinline="true"></video><canvas id="qr-canvas" style="display:none"></canvas><div class="hint" id="qr-fallback">Il tuo browser non supporta lo scanner live. Usa la fotocamera e apri il link del QR.</div><div id="qr-actions"><button class="btn" id="qr-cancel">Annulla</button></div></div></div></div><script>window.__GENOVA_INLINE_RUN(83,83);</script>
 
-<script src="js/inline.js?from=84&to=84"></script>
+<script>window.__GENOVA_INLINE_RUN(84,84);</script>
 
-<script src="js/inline.js?from=85&to=85"></script>
+<script>window.__GENOVA_INLINE_RUN(85,85);</script>
 <script src="trasporti/metro_stations.js"></script>
-<script src="js/inline.js?from=86&to=86"></script>
+<script>window.__GENOVA_INLINE_RUN(86,86);</script>
 <script src="trasporti/metro_line.js?v=20260808-2"></script>
 <script src="trasporti/bus_stations.js"></script>
 
-<script src="js/inline.js?from=87&to=87"></script>
+<script>window.__GENOVA_INLINE_RUN(87,87);</script>
 
 <script src="trasporti/funi_stations.js"></script>
-<script src="js/inline.js?from=88&to=88"></script>
+<script>window.__GENOVA_INLINE_RUN(88,88);</script>
 
 <script src="parchi/parks_points.js?v=20260808-3"></script>
-<script src="js/inline.js?from=89&to=89"></script>
+<script>window.__GENOVA_INLINE_RUN(89,89);</script>
 <script src="treni/train_stations.js"></script>
-<script src="js/inline.js?from=90&to=90"></script>
+<script>window.__GENOVA_INLINE_RUN(90,90);</script>
 <script src="treni/train_line_data.js?v=20260808-2"></script>
 <script src="trasporti/train_line.js?v=20260808-1"></script>
-<script src="js/inline.js?from=91&to=91"></script>
-<script src="js/inline.js?from=92&to=92"></script>
-<script src="js/inline.js?from=93&to=93"></script>
-<script src="js/inline.js?from=94&to=94"></script>
-<script src="js/inline.js?from=95&to=95"></script>
-<script src="js/inline.js?from=96&to=96"></script>
-<script src="js/inline.js?from=97&to=97"></script>
+<script>window.__GENOVA_INLINE_RUN(91,91);</script>
+<script>window.__GENOVA_INLINE_RUN(92,92);</script>
+<script>window.__GENOVA_INLINE_RUN(93,93);</script>
+<script>window.__GENOVA_INLINE_RUN(94,94);</script>
+<script>window.__GENOVA_INLINE_RUN(95,95);</script>
+<script>window.__GENOVA_INLINE_RUN(96,96);</script>
+<script>window.__GENOVA_INLINE_RUN(97,97);</script>
 
-<script src="js/inline.js?from=98&to=98"></script>
-<script src="js/inline.js?from=99&to=99"></script>
-<script src="js/inline.js?from=100&to=100"></script>
-<script src="js/inline.js?from=101&to=101"></script>
-<script src="js/inline.js?from=102&to=102"></script>
-<script src="js/inline.js?from=103&to=103"></script>
-<script src="js/inline.js?from=104&to=104"></script>
-<script src="js/inline.js?from=105&to=105"></script>
-<script src="js/inline.js?from=107&to=107"></script>
-<script src="js/inline.js?from=108&to=108"></script>
-<script src="menu_home/menu_home.i18n.js"></script><script src="menu_home/mh.flags.js"></script><template id="tpl-mh-flags">
+<script>window.__GENOVA_INLINE_RUN(98,98);</script>
+<script>window.__GENOVA_INLINE_RUN(99,99);</script>
+<script>window.__GENOVA_INLINE_RUN(100,100);</script>
+<script>window.__GENOVA_INLINE_RUN(101,101);</script>
+<script>window.__GENOVA_INLINE_RUN(102,102);</script>
+<script>window.__GENOVA_INLINE_RUN(103,103);</script>
+<script>window.__GENOVA_INLINE_RUN(104,104);</script>
+<script>window.__GENOVA_INLINE_RUN(105,105);</script>
+<script>window.__GENOVA_INLINE_RUN(107,107);</script>
+<script>window.__GENOVA_INLINE_RUN(108,108);</script>
+<script src="menu_home/mh.flags.js"></script><template id="tpl-mh-flags">
 <div class="mh-flags" id="mh-flags">
 <button aria-pressed="false" class="flag" data-lang="lij" title="Ligure">
 <svg viewbox="0 0 3 2" xmlns="http://www.w3.org/2000/svg">
@@ -1243,20 +1212,20 @@
 </div>
 </template><!-- ===== REBUILD: Info & Contatti (self-contained, multi-lang) ===== -->
 <script src="info/info_popup_texts.js"></script>
-<script src="js/inline.js?from=113&to=113"></script>
+<script>window.__GENOVA_INLINE_RUN(113,113);</script>
 <!-- storia i18n overlay (title only) -->
-<script src="js/inline.js?from=114&to=114"></script>
+<script>window.__GENOVA_INLINE_RUN(114,114);</script>
 
 <!-- scorci i18n overlay (title only) v2: tolerant selector for sQoRci -->
-<script src="js/inline.js?from=115&to=115"></script>
-<script src="js/inline.js?from=116&to=116"></script>
+<script>window.__GENOVA_INLINE_RUN(115,115);</script>
+<script>window.__GENOVA_INLINE_RUN(116,116);</script>
 <!-- Forti quick-toggle + layer (sempre visibile) | 2025-09-29 v3 -->
-<script src="js/inline.js?from=117&to=117"></script>
+<script>window.__GENOVA_INLINE_RUN(117,117);</script>
 
 
 
-<script src="js/inline.js?from=126&to=126"></script>
-<script src="js/inline.js?from=127&to=127"></script>
+<script>window.__GENOVA_INLINE_RUN(126,126);</script>
+<script>window.__GENOVA_INLINE_RUN(127,127);</script>
 <aside aria-hidden="true" id="fav-menu">
 <header>
 <h3>Vai, vedi, fai</h3>
@@ -1365,15 +1334,15 @@
 </div>
 </aside>
 
-<script src="js/inline.js?from=132&to=132"></script>
+<script>window.__GENOVA_INLINE_RUN(132,132);</script>
 <script src="locali/locali_points.js"></script>
 <script src="funi/funi_points.js"></script>
-<script src="js/favorites.js?v=20260808-2"></script>
+<script src="js/favorites.js?v=20260810-2"></script>
 <script src="js/taccuino.js?v=20260808-1"></script>
 
 <!-- === QR SCAN: hide toolbar button & add FAB aligned to joystick === -->
 
-<script src="js/inline.js?from=154&to=154"></script>
+<script>window.__GENOVA_INLINE_RUN(154,154);</script>
 <!-- === Preferiti: i18n labels per lingua selezionata === -->
 <!-- === Preferiti: i18n labels (FIX - target spans .fav-acc-title by data-key) === -->
 <!-- === Preferiti: i18n per titolo/chiudi/pulisci === -->
@@ -1387,13 +1356,13 @@
 
 <!-- === Routes icon-only + yellow interior === -->
 
-<script src="js/inline.js?from=158&to=158"></script>
-<script src="js/inline.js?from=159&to=159"></script>
+<script>window.__GENOVA_INLINE_RUN(158,158);</script>
+<script>window.__GENOVA_INLINE_RUN(159,159);</script>
 <script src="help/help_i18n.js"></script>
-<script src="js/inline.js?from=160&to=160"></script>
-<script src="js/inline.js?from=163&to=163"></script>
+<script>window.__GENOVA_INLINE_RUN(160,160);</script>
+<script>window.__GENOVA_INLINE_RUN(163,163);</script>
 <!-- 🌐 Live-translate hook v2 for Mura popups: force close+open to rebuild in new language -->
-<script src="js/inline.js?from=166&to=166"></script>
+<script>window.__GENOVA_INLINE_RUN(166,166);</script>
 <!-- QR dropdown enablement | 2025-10-21 -->
 <script src="percorsi/routes_catalog.js"></script>
 <script src="percorsi/route_cs_giornata_marinaio.js"></script>
@@ -1402,19 +1371,19 @@
 <script src="percorsi/route_dm_strada_balilla.js"></script>
 <script src="percorsi/route_fm_percorso_poeti.js"></script>
 <script src="percorsi/route_fm_strada_borghese.js"></script>
-<script src="js/inline.js?from=167&to=167"></script>
-<script src="js/inline.js?from=168&to=168"></script>
+<script>window.__GENOVA_INLINE_RUN(167,167);</script>
+<script>window.__GENOVA_INLINE_RUN(168,168);</script>
 <script src="percorsi/i18n_percorsi.js"></script>
-<script src="js/inline.js?from=169&to=169"></script>
+<script>window.__GENOVA_INLINE_RUN(169,169);</script>
 <script src="percorsi/i18n_popup.js"></script>
-<script src="js/inline.js?from=170&to=170"></script>
-<script src="js/inline.js?from=171&to=171"></script>
-<script src="js/inline.js?from=172&to=172"></script>
-<script src="js/inline.js?from=173&to=173"></script>
-<script src="js/inline.js?from=174&to=174"></script>
-<script src="js/inline.js?from=176&to=176"></script>
-<script src="js/inline.js?from=177&to=177"></script>
-<script src="js/inline.js?from=178&to=178"></script>
+<script>window.__GENOVA_INLINE_RUN(170,170);</script>
+<script>window.__GENOVA_INLINE_RUN(171,171);</script>
+<script>window.__GENOVA_INLINE_RUN(172,172);</script>
+<script>window.__GENOVA_INLINE_RUN(173,173);</script>
+<script>window.__GENOVA_INLINE_RUN(174,174);</script>
+<script>window.__GENOVA_INLINE_RUN(176,176);</script>
+<script>window.__GENOVA_INLINE_RUN(177,177);</script>
+<script>window.__GENOVA_INLINE_RUN(178,178);</script>
 <script src="qr_azzurri/qr_azzurri_piazza_verdi/qr-piazza-verdi-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_piazza_verdi/qr-piazza-verdi-descr-i18n.js"></script>
 
@@ -1427,131 +1396,129 @@
 <script src="qr_azzurri/qr_azzurri_san-benigno/qr-san-benigno-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_san-benigno/qr-san-benigno-descr-i18n.js"></script>
 
-<script src="js/inline.js?from=179&to=179"></script>
-<script src="js/inline.js?from=180&to=180"></script>
+<script>window.__GENOVA_INLINE_RUN(179,179);</script>
+<script>window.__GENOVA_INLINE_RUN(180,180);</script>
 
-<script src="js/inline.js?from=181&to=181"></script>
+<script>window.__GENOVA_INLINE_RUN(181,181);</script>
 
-<script src="js/inline.js?from=182&to=182"></script>
-<script src="js/inline.js?from=183&to=183"></script>
-<script src="js/inline.js?from=184&to=184"></script>
-<script src="js/inline.js?from=185&to=185"></script>
-<script src="js/inline.js?from=186&to=186"></script>
-<script src="js/inline.js?from=187&to=187"></script>
-<script src="js/inline.js?from=188&to=188"></script>
+<script>window.__GENOVA_INLINE_RUN(182,182);</script>
+<script>window.__GENOVA_INLINE_RUN(183,183);</script>
+<script>window.__GENOVA_INLINE_RUN(184,184);</script>
+<script>window.__GENOVA_INLINE_RUN(185,185);</script>
+<script>window.__GENOVA_INLINE_RUN(186,186);</script>
+<script>window.__GENOVA_INLINE_RUN(187,187);</script>
+<script>window.__GENOVA_INLINE_RUN(188,188);</script>
 
-<script src="js/inline.js?from=189&to=189"></script>
-<script src="js/inline.js?from=190&to=190"></script>
+<script>window.__GENOVA_INLINE_RUN(189,189);</script>
+<script>window.__GENOVA_INLINE_RUN(190,190);</script>
 
-<script src="js/inline.js?from=191&to=191"></script>
-<script src="js/inline.js?from=192&to=192"></script>
-<script src="js/inline.js?from=193&to=193"></script>
-<script src="js/inline.js?from=194&to=194"></script>
-<script src="js/inline.js?from=195&to=195"></script>
-<script src="js/inline.js?from=196&to=196"></script>
+<script>window.__GENOVA_INLINE_RUN(191,191);</script>
+<script>window.__GENOVA_INLINE_RUN(192,192);</script>
+<script>window.__GENOVA_INLINE_RUN(193,193);</script>
+<script>window.__GENOVA_INLINE_RUN(194,194);</script>
+<script>window.__GENOVA_INLINE_RUN(195,195);</script>
+<script>window.__GENOVA_INLINE_RUN(196,196);</script>
 <!-- GPS icon replace (2025-11-07) -->
-<script src="js/inline.js?from=197&to=197"></script>
-<script src="js/inline.js?from=198&to=198"></script>
-<script src="js/inline.js?from=200&to=200"></script>
-<script src="js/inline.js?from=201&to=201"></script>
-<script src="js/inline.js?from=202&to=202"></script>
-<script src="js/inline.js?from=203&to=203"></script>
-<script src="js/inline.js?from=204&to=204"></script>
-<script src="js/inline.js?from=205&to=205"></script>
+<script>window.__GENOVA_INLINE_RUN(197,197);</script>
+<script>window.__GENOVA_INLINE_RUN(198,198);</script>
+<script>window.__GENOVA_INLINE_RUN(200,200);</script>
+<script>window.__GENOVA_INLINE_RUN(201,201);</script>
+<script>window.__GENOVA_INLINE_RUN(202,202);</script>
+<script>window.__GENOVA_INLINE_RUN(203,203);</script>
+<script>window.__GENOVA_INLINE_RUN(204,204);</script>
+<script>window.__GENOVA_INLINE_RUN(205,205);</script>
 
-<script src="js/inline.js?from=206&to=206"></script>
-<script src="js/inline.js?from=208&to=208"></script>
+<script>window.__GENOVA_INLINE_RUN(206,206);</script>
+<script>window.__GENOVA_INLINE_RUN(208,208);</script>
 <script src="js/joystick.js"></script>
-<script src="js/inline.js?from=210&to=210"></script>
-<script src="js/inline.js?from=211&to=211"></script>
+<script>window.__GENOVA_INLINE_RUN(210,210);</script>
+<script>window.__GENOVA_INLINE_RUN(211,211);</script>
 <!-- Mini-pannello verticale per TRASPORTI -->
-<script src="js/inline.js?from=212&to=212"></script>
+<script>window.__GENOVA_INLINE_RUN(212,212);</script>
 
-<script src="js/inline.js?from=213&to=213"></script>
-<script src="js/inline.js?from=214&to=214"></script>
-<script src="js/inline.js?from=215&to=215"></script>
-<script src="js/inline.js?from=216&to=216"></script>
-<script src="js/inline.js?from=218&to=218"></script>
-<script src="js/inline.js?from=219&to=219"></script>
+<script>window.__GENOVA_INLINE_RUN(213,213);</script>
+<script>window.__GENOVA_INLINE_RUN(214,214);</script>
+<script>window.__GENOVA_INLINE_RUN(215,215);</script>
+<script>window.__GENOVA_INLINE_RUN(216,216);</script>
+<script>window.__GENOVA_INLINE_RUN(218,218);</script>
+<script>window.__GENOVA_INLINE_RUN(219,219);</script>
 
 <script src="Eventi/events-data.js?v=20251228"></script>
 
-<script src="js/inline.js?from=220&to=220"></script>
+<script>window.__GENOVA_INLINE_RUN(220,220);</script>
 
 <script src="sponsor/sponsors.js"></script>
 
-<script src="js/inline.js?from=221&to=221"></script>
+<script>window.__GENOVA_INLINE_RUN(221,221);</script>
 
-<script src="js/inline.js?from=222&to=222"></script>
+<script>window.__GENOVA_INLINE_RUN(222,222);</script>
 
-<script src="js/inline.js?from=224&to=224"></script>
-<script src="js/inline.js?from=225&to=225"></script>
-<script src="js/inline.js?from=226&to=226"></script>
+<script>window.__GENOVA_INLINE_RUN(224,224);</script>
+<script>window.__GENOVA_INLINE_RUN(225,225);</script>
+<script>window.__GENOVA_INLINE_RUN(226,226);</script>
 
 
 <!-- QUARTIERI HTTP LOADER (no picker) -->
 
-<script src="js/inline.js?from=230&to=230"></script>
+<script>window.__GENOVA_INLINE_RUN(230,230);</script>
 <!-- PATCH: startup map view from 8.7 (with URL override) -->
-<script src="js/inline.js?from=231&to=231"></script>
+<script>window.__GENOVA_INLINE_RUN(231,231);</script>
 
 
 <!-- QUARTIERI HTTP LOADER (no picker) -->
 
 <script src="qr_azzurri/qr_azzurri_voltri/qr-voltri-blue-swap.js"></script>
-<script src="qr_azzurri/qr_azzurri_voltri/qr-voltri-descr-i18n.js"></script>
-
-
-<script src="js/inline.js?from=235&to=235"></script>
+<script>window.__GENOVA_INLINE_RUN(235,235);</script>
 
 <script src="qr_azzurri/qr_azzurri_molo/qr-molo-blue-swap.js"></script>
 <script src="qr_azzurri/qr_azzurri_molo/qr-molo-descr-i18n.js"></script>
 
-<script src="js/inline.js?from=236&to=236"></script>
+<script>window.__GENOVA_INLINE_RUN(236,236);</script>
 
-<script src="js/inline.js?from=237&to=237"></script>
-<script src="js/inline.js?from=238&to=238"></script>
-<script src="js/inline.js?from=239&to=239"></script>
-<script src="js/inline.js?from=240&to=240"></script>
-<script src="js/inline.js?from=241&to=241"></script>
-<script src="js/inline.js?from=242&to=242"></script>
-<script src="js/inline.js?from=243&to=243"></script>
-<script src="js/inline.js?from=244&to=244"></script>
-<script src="js/inline.js?from=245&to=245"></script>
-<script src="js/inline.js?from=246&to=246"></script>
-<script src="js/inline.js?from=247&to=247"></script>
-<script src="js/inline.js?from=248&to=248"></script>
+<script>window.__GENOVA_INLINE_RUN(237,237);</script>
+<script>window.__GENOVA_INLINE_RUN(238,238);</script>
+<script>window.__GENOVA_INLINE_RUN(239,239);</script>
+<script>window.__GENOVA_INLINE_RUN(240,240);</script>
+<script>window.__GENOVA_INLINE_RUN(241,241);</script>
+<script>window.__GENOVA_INLINE_RUN(242,242);</script>
+<script>window.__GENOVA_INLINE_RUN(243,243);</script>
+<script>window.__GENOVA_INLINE_RUN(244,244);</script>
+<script>window.__GENOVA_INLINE_RUN(245,245);</script>
+<script>window.__GENOVA_INLINE_RUN(246,246);</script>
+<script>window.__GENOVA_INLINE_RUN(247,247);</script>
+<script>window.__GENOVA_INLINE_RUN(248,248);</script>
 
-<script src="js/inline.js?from=249&to=249"></script>
+<script>window.__GENOVA_INLINE_RUN(249,249);</script>
 
-<script src="js/inline.js?from=250&to=250"></script>
+<script>window.__GENOVA_INLINE_RUN(250,250);</script>
 
-<script src="js/inline.js?from=251&to=251"></script>
+<script>window.__GENOVA_INLINE_RUN(251,251);</script>
 
-<script src="js/inline.js?from=252&to=252"></script>
+<script>window.__GENOVA_INLINE_RUN(252,252);</script>
 
-<script src="js/inline.js?from=253&to=253"></script>
+<script>window.__GENOVA_INLINE_RUN(253,253);</script>
 
-<script src="js/inline.js?from=254&to=254"></script>
-<script src="js/inline.js?from=255&to=255"></script>
-<script src="js/inline.js?from=256&to=256"></script>
-<script src="js/inline.js?from=257&to=257"></script>
-<script src="js/inline.js?from=258&to=258"></script>
-<script src="js/inline.js?from=259&to=259"></script>
+<script>window.__GENOVA_INLINE_RUN(254,254);</script>
+<script>window.__GENOVA_INLINE_RUN(255,255);</script>
+<script>window.__GENOVA_INLINE_RUN(256,256);</script>
+<script>window.__GENOVA_INLINE_RUN(257,257);</script>
+<script>window.__GENOVA_INLINE_RUN(258,258);</script>
+<script>window.__GENOVA_INLINE_RUN(259,259);</script>
 
-<script src="js/inline.js?from=260&to=260"></script>
+<script>window.__GENOVA_INLINE_RUN(260,260);</script>
 
-<script src="js/inline.js?from=261&to=261"></script>
+<script>window.__GENOVA_INLINE_RUN(261,261);</script>
 
-<script src="js/inline.js?from=262&to=262"></script>
+<script>window.__GENOVA_INLINE_RUN(262,262);</script>
 
-<script src="js/inline.js?from=263&to=263"></script>
+<script>window.__GENOVA_INLINE_RUN(263,263);</script>
 
-<script src="js/inline.js?from=264&to=264"></script>
+<script>window.__GENOVA_INLINE_RUN(264,264);</script>
 
 <script src="qr_azzurri/qr-descr-i18n-completamento.js"></script>
 <script src="js/qr-panel-layout.js"></script>
-<script src="welcome/welcome.js"></script>
+<script src="new-home/place-areas.js?v=20260810-1"></script>
+<script src="new-home/new-home.js?v=20260810-4"></script>
 <script src="js/pwa-install.js?v=20260807-1"></script>
 <script src="js/auth-ui.js?v=20260807-3"></script>
 <script src="js/account-sync.js?v=20260807-1"></script>

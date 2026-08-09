@@ -1085,7 +1085,7 @@
   },
   {
     "id": "san-gesu",
-    "name": "Chiesa del Gesù,di S.Ambrogio e S.Andrea",
+    "name": "Chiesa del Gesù, di Sant’Ambrogio e Sant’Andrea",
     "lat": 44.40676048731028,
     "lng": 8.933034122335144,
     "addr": "Via di Porta Soprana, 2, 16121 Genova",

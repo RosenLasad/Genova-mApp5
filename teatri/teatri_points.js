@@ -322,13 +322,13 @@
   },
   {
     "id": "teatro_tiqu",
-    "lat": 44.407973786500364,
-    "lng": 8.934774987616807,
+    "lat": 44.410267746627824,
+    "lng": 8.931859037488582,
     "title": {
-      "it": "Tiqu"
+      "it": "TIQU – Teatro Internazionale di Quartiere"
     },
     "descr": {
-      "it": "Tiqu."
+      "it": "TIQU – Teatro Internazionale di Quartiere."
     },
     "addr": {
       "it": "Piazza Cambiaso, 1, 16123 Genova"
@@ -345,10 +345,10 @@
     "lat": 44.39782246355774,
     "lng": 8.949309910654563,
     "title": {
-      "it": "Teatro Instabile"
+      "it": "La Quinta Praticabile – Teatro Instabile"
     },
     "descr": {
-      "it": "Teatro Instabile - La Quinta Praticabile."
+      "it": "La Quinta Praticabile – Teatro Instabile."
     },
     "addr": {
       "it": "Via Antonio Cecchi, 19/R, 16129 Genova"

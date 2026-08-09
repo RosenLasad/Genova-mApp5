@@ -1,5 +1,5 @@
 // service-worker.js
-const CACHE_NAME = "genova-mapp-2026-08-07-sync-premium-2";
+const CACHE_NAME = "genova-mapp-2026-08-10-new-home-areas-1";
 const OFFLINE_URL = "/";
 
 self.addEventListener("install", event => {
