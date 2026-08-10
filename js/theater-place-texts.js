@@ -90,7 +90,7 @@
       lij: "O se treuva inti spazi sotterranei do Palazzo Rosso, in Via Garibaldi, e o l’è nasciuo comme auditorium primma de diventâ teatro. L’ambiente moderno sotto o livello da stradda o contrasta co-i palassi do Cinqueçento. Ancheu o l’è un di prinçipæ ponti de riferimento zeneixi pe-a stand-up comedy e o l’attira soprattutto un pubblico zovano."
     }},
 
-    "Tiqu": { description: {
+    "TIQU – Teatro Internazionale di Quartiere": { description: {
       it: "Situato nel Palazzo delle Vigne, nel centro storico, TIQU è un progetto culturale nato dalla collaborazione tra diverse realtà associative locali. Si propone come teatro di prossimità, inserito nel tessuto multiculturale della città vecchia e orientato all’inclusione sociale. Ospita teatro indipendente, workshop, spettacoli di marionette, incontri e residenze artistiche internazionali.",
       en: "Located in Palazzo delle Vigne in the historic centre, TIQU is a cultural project created through cooperation among several local associations. Conceived as a neighbourhood theatre within the multicultural fabric of the old city, it promotes social inclusion. It hosts independent theatre, workshops, puppet shows, meetings and international artistic residencies.",
       es: "Situado en Palazzo delle Vigne, en el centro histórico, TIQU es un proyecto cultural nacido de la colaboración entre distintas asociaciones locales. Se concibe como un teatro de proximidad integrado en el tejido multicultural de la ciudad antigua y orientado a la inclusión social. Acoge teatro independiente, talleres, marionetas, encuentros y residencias artísticas internacionales.",
@@ -178,7 +178,7 @@
       lij: "Progettou da Marcello Piacentini in Via Cesarea, dòppo a guæra o Teatro della Gioventù o l’è stæto deuviou anche comme cinema e dòppo abbandonou pe tanti anni. Inte l’emergença sanitaria do 2020 o l’à ospitou un di prinçipæ centri vaccinali da çitæ. Ancheu o l’è gestio da l’Opera Carlo Felice e o l’ospita l’Accademia pe cantanti lirichi e ativitæ pe-i zoveni."
     }},
 
-    "Teatro Instabile": { description: {
+    "La Quinta Praticabile – Teatro Instabile": { description: {
       it: "Situato alla Foce, il Teatro Instabile ospita le attività della scuola di recitazione La Quinta Praticabile, presente a Genova da oltre trent’anni. Pur essendo uno spazio raccolto, utilizza impianti moderni per permettere agli allievi di sperimentare con suono, luci e proiezioni multimediali. Funziona come centro di formazione per attori e doppiatori e ospita saggi e produzioni indipendenti.",
       en: "Located in the Foce district, Teatro Instabile hosts the activities of La Quinta Praticabile acting school, active in Genoa for over thirty years. Despite its intimate size, it uses modern equipment so students can experiment with sound, lighting and multimedia projection. It is a training centre for actors and voice performers and hosts student showcases and independent productions.",
       es: "Situado en la Foce, el Teatro Instabile acoge las actividades de la escuela de interpretación La Quinta Praticabile, presente en Génova desde hace más de treinta años. Aunque es un espacio íntimo, utiliza equipos modernos para experimentar con sonido, luces y proyecciones multimedia. Funciona como centro de formación para actores y dobladores y presenta muestras y producciones independientes.",

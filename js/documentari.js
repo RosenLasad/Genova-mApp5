@@ -625,7 +625,10 @@ DOCS.forEach(function(d){
     loadManifest().then(function(files){
       // Normalizza: se il manifest Ã¨ {files:[...]}
       if(files && files.files) files = files.files;
-      if(!Array.isArray(files) || !files.length) files = DEFAULT_FILES.slice();
+      // Un manifest valido ma vuoto significa che non ci sono ancora punti
+      // documentario. I file predefiniti sono usati solo come fallback quando
+      // il manifest non restituisce un elenco.
+      if(!Array.isArray(files)) files = DEFAULT_FILES.slice();
       return Promise.all(files.map(fetchDocFile));
     }).then(function(arr){
       DOCS = arr.filter(Boolean);
@@ -1701,4 +1704,3 @@ applyDocColor('storia-doc-seno-di-giano');
   }
   ready(function(){ wait(60); });
 })();
-

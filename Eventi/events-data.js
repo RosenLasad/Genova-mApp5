@@ -2,9 +2,9 @@
 window.EVENTS = [
   
   {
-    title: " Documentario 'Storie di Genova'",
-    where: "Cinema Sivori",
-    when: "25 giugno 2026, ore 21",
+    title: "Documentario storico su Genova",
+    where: "al cinema",
+    when: "febbraio 2026",
     desc: "I disegni e le fotografie originali del passato di Genova che prendono vita in un documentario innovativo.",
     address: "",
     linkText: "www.sdac.it",
