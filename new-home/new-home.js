@@ -270,11 +270,11 @@
           '<span>'+escapeHtml(place.name)+'</span><span aria-hidden="true">›</span></button></li>';
       }).join('');
       return '<section class="gm-new-home-qr-group gm-new-home-area-group'+(group.fallback?' is-fallback':'')+'" data-area-group-panel="'+groupIndex+'">'+
-        '<button type="button" class="gm-new-home-qr-group-toggle gm-new-home-area-toggle" aria-expanded="false">'+
+        '<button type="button" class="gm-new-home-qr-group-toggle gm-new-home-area-toggle" aria-expanded="true">'+
           '<span><strong>'+escapeHtml(group.name)+'</strong><small>'+group.places.length+' '+(group.places.length === 1 ? 'luogo' : 'luoghi')+'</small></span>'+ 
           '<span class="gm-new-home-qr-chevron" aria-hidden="true">⌄</span>'+ 
         '</button>'+ 
-        '<ul class="gm-new-home-qr-points gm-new-home-area-places" hidden>'+items+'</ul>'+ 
+        '<ul class="gm-new-home-qr-points gm-new-home-area-places">'+items+'</ul>'+ 
       '</section>';
     }).join('');
 
@@ -282,7 +282,7 @@
       '<div class="gm-new-home-detail-head"><h3>'+escapeHtml(category.title)+'</h3><p>'+escapeHtml(category.note)+'</p></div>'+ 
       '<div class="gm-new-home-qr-tools gm-new-home-area-tools">'+
         '<label class="gm-new-home-qr-search"><span class="sr-only">Cerca un luogo</span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></svg><input type="search" class="gm-new-home-area-filter" placeholder="Cerca un luogo o un quartiere"></label>'+ 
-        '<button type="button" class="gm-new-home-qr-expand gm-new-home-area-expand" aria-pressed="false">Espandi tutti</button>'+ 
+        '<button type="button" class="gm-new-home-qr-expand gm-new-home-area-expand" aria-pressed="true">Chiudi tutti</button>'+ 
       '</div>'+ 
       '<p class="gm-new-home-qr-summary gm-new-home-area-summary" aria-live="polite">'+groups.length+' aree · '+total+' luoghi</p>'+ 
       '<div class="gm-new-home-qr-groups gm-new-home-area-groups">'+groupMarkup+'</div>'+ 
@@ -341,12 +341,12 @@
           visiblePlaces += matchedHere;
           if(query) setGroupOpen(panel, true);
         }
-        if(!query) setGroupOpen(panel, false);
+        if(!query) setGroupOpen(panel, true);
       });
       noResults.hidden = visiblePlaces !== 0;
       summary.textContent = visibleGroups+' '+(visibleGroups === 1 ? 'area' : 'aree')+' · '+visiblePlaces+' '+(visiblePlaces === 1 ? 'luogo' : 'luoghi');
-      expandButton.setAttribute('aria-pressed', 'false');
-      expandButton.textContent = 'Espandi tutti';
+      expandButton.setAttribute('aria-pressed', visiblePlaces ? 'true' : 'false');
+      expandButton.textContent = visiblePlaces ? 'Chiudi tutti' : 'Espandi tutti';
     });
 
     scroll.querySelectorAll('.gm-new-home-area-place').forEach(function(button){
@@ -461,11 +461,11 @@
           '<span>'+escapeHtml(point.name)+'</span><span aria-hidden="true">›</span></button></li>';
       }).join('');
       return '<section class="gm-new-home-qr-group" data-qr-group-panel="'+groupIndex+'">'+
-        '<button type="button" class="gm-new-home-qr-group-toggle" aria-expanded="false">'+
+        '<button type="button" class="gm-new-home-qr-group-toggle" aria-expanded="true">'+
           '<span><strong>'+escapeHtml(group.name)+'</strong><small>'+group.points.length+' '+(group.points.length === 1 ? 'punto' : 'punti')+'</small></span>'+ 
           '<span class="gm-new-home-qr-chevron" aria-hidden="true">⌄</span>'+ 
         '</button>'+ 
-        '<ul class="gm-new-home-qr-points" hidden>'+points+'</ul>'+ 
+        '<ul class="gm-new-home-qr-points">'+points+'</ul>'+ 
       '</section>';
     }).join('');
 
@@ -473,7 +473,7 @@
       '<div class="gm-new-home-detail-head"><h3>Punti QR</h3><p>Esplora '+total+' punti organizzati in '+groups.length+' zone e quartieri di Genova.</p></div>'+ 
       '<div class="gm-new-home-qr-tools">'+
         '<label class="gm-new-home-qr-search"><span class="sr-only">Cerca un punto QR</span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></svg><input type="search" id="gm-new-home-qr-filter" placeholder="Cerca un punto QR o un quartiere"></label>'+ 
-        '<button type="button" class="gm-new-home-qr-expand" id="gm-new-home-qr-expand" aria-pressed="false">Espandi tutti</button>'+ 
+        '<button type="button" class="gm-new-home-qr-expand" id="gm-new-home-qr-expand" aria-pressed="true">Chiudi tutti</button>'+ 
       '</div>'+ 
       '<p class="gm-new-home-qr-summary" aria-live="polite">'+groups.length+' zone · '+total+' punti QR</p>'+ 
       '<div class="gm-new-home-qr-groups">'+groupMarkup+'</div>'+ 
@@ -532,12 +532,12 @@
           visiblePoints += matchedHere;
           if(query) setGroupOpen(panel, true);
         }
-        if(!query) setGroupOpen(panel, false);
+        if(!query) setGroupOpen(panel, true);
       });
       noResults.hidden = visiblePoints !== 0;
       summary.textContent = visibleGroups+' '+(visibleGroups === 1 ? 'zona' : 'zone')+' · '+visiblePoints+' punti QR';
-      expandButton.setAttribute('aria-pressed', 'false');
-      expandButton.textContent = 'Espandi tutti';
+      expandButton.setAttribute('aria-pressed', visiblePoints ? 'true' : 'false');
+      expandButton.textContent = visiblePoints ? 'Chiudi tutti' : 'Espandi tutti';
     });
 
     scroll.querySelectorAll('.gm-new-home-qr-point').forEach(function(button){
