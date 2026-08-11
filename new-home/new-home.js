@@ -112,6 +112,8 @@
   var currentSection = null;
   var currentCategory = null;
   var currentAqueduct = null;
+  var historyGuardActive = false;
+  var closingHistoryGuard = false;
 
   function escapeHtml(value){
     return String(value == null ? '' : value).replace(/[&<>"']/g, function(ch){
@@ -180,11 +182,11 @@
     backButton.hidden = true;
     var cards = SECTIONS.map(function(section){
       return ''+
-        '<article class="gm-new-home-card'+(section.wide?' is-wide':'')+'" data-theme="'+section.theme+'">'+
+        '<article class="gm-new-home-card'+(section.wide?' is-wide':'')+'" data-theme="'+section.theme+'" data-section="'+section.key+'" role="button" tabindex="0" aria-label="'+escapeHtml(section.title)+': Scopri">'+
         '  <span class="gm-new-home-icon">'+icon(section.theme)+'</span>'+
         '  <h3>'+escapeHtml(section.title)+'</h3>'+
         '  <p>'+escapeHtml(section.description)+'</p>'+
-        '  <button type="button" class="gm-new-home-discover" data-section="'+section.key+'">Scopri</button>'+
+        '  <span class="gm-new-home-discover" aria-hidden="true">Scopri</span>'+
         '</article>';
     }).join('');
     scroll.innerHTML = ''+
@@ -194,9 +196,15 @@
       '</div>'+
       '<div class="gm-new-home-grid">'+cards+'</div>';
     scroll.querySelectorAll('[data-section]').forEach(function(button){
-      button.addEventListener('click', function(){
+      function activate(){
         var section = SECTIONS.find(function(item){ return item.key === button.getAttribute('data-section'); });
         if(section) renderSection(section);
+      }
+      button.addEventListener('click', activate);
+      button.addEventListener('keydown', function(event){
+        if(event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        activate();
       });
     });
     scroll.scrollTop = 0;
@@ -998,20 +1006,55 @@
     if(button) button.setAttribute('aria-expanded','false');
   }
 
+  function pushHistoryGuard(){
+    if(historyGuardActive || !window.history || typeof window.history.pushState !== 'function') return;
+    try{
+      window.history.pushState({gmNewHomeGuard:true}, '');
+      historyGuardActive = true;
+    }catch(_){ historyGuardActive = false; }
+  }
+
+  function hideNewHome(){
+    overlay.hidden = true;
+    document.documentElement.classList.remove('gm-new-home-open');
+    var opener = document.getElementById('welcome-open-btn');
+    if(opener) setTimeout(function(){ try{ opener.focus(); }catch(_){} }, 0);
+  }
+
+  function handleHistoryBack(){
+    if(closingHistoryGuard){
+      closingHistoryGuard = false;
+      historyGuardActive = false;
+      return;
+    }
+    if(!historyGuardActive || !overlay || overlay.hidden) return;
+    historyGuardActive = false;
+    if(currentView !== 'home'){
+      goBack();
+      pushHistoryGuard();
+    }else{
+      hideNewHome();
+    }
+  }
+
   function open(){
     closeSettings();
     updatePosition();
     renderHome();
     overlay.hidden = false;
     document.documentElement.classList.add('gm-new-home-open');
+    pushHistoryGuard();
     setTimeout(function(){ try{ closeButton.focus(); }catch(_){} }, 0);
   }
 
   function close(){
-    overlay.hidden = true;
-    document.documentElement.classList.remove('gm-new-home-open');
-    var opener = document.getElementById('welcome-open-btn');
-    if(opener) setTimeout(function(){ try{ opener.focus(); }catch(_){} }, 0);
+    hideNewHome();
+    if(historyGuardActive && window.history && typeof window.history.back === 'function'){
+      historyGuardActive = false;
+      closingHistoryGuard = true;
+      window.history.back();
+      setTimeout(function(){ closingHistoryGuard = false; }, 500);
+    }
   }
 
   function boot(){
@@ -1036,6 +1079,7 @@
       }
     });
     window.addEventListener('resize', updatePosition, {passive:true});
+    window.addEventListener('popstate', handleHistoryBack);
   }
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, {once:true});

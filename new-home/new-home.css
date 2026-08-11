@@ -173,6 +173,8 @@ html.gm-new-home-open body{ overflow: hidden; }
   border-radius: 16px;
   box-shadow: 0 10px 26px rgba(19, 34, 50, .2), 0 1px 0 rgba(255,255,255,.16) inset;
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 .gm-new-home-card::before{
   content: "";
@@ -253,6 +255,7 @@ html.gm-new-home-open body{ overflow: hidden; }
 .gm-new-home-discover::after{ content: "→"; font-size: 1rem; }
 .gm-new-home-discover:hover{ background: #fff; }
 .gm-new-home-card:focus-within{ outline: 3px solid color-mix(in srgb, var(--card-accent) 68%, #fff); outline-offset: 2px; }
+.gm-new-home-card:focus-visible{ outline: 3px solid color-mix(in srgb, var(--card-accent) 68%, #fff); outline-offset: 2px; }
 
 .gm-new-home-detail{ max-width: 800px; margin: 0 auto; }
 .gm-new-home-overlay:not([data-view="home"]) .gm-new-home-detail{ max-width:none; }
