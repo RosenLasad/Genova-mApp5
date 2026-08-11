@@ -1817,6 +1817,7 @@ header .toolbar-right .settings-dropdown{
 .mh-popup { max-width: 260px; }
 .mh-popup-title { display:block; font-weight:700; margin-bottom:.25rem; }
 .mh-popup-desc { margin:.25rem 0; font-size:.95em; line-height:1.25; text-align:justify; }
+.mh-popup-access { margin:.35rem 0 .25rem; padding:.35rem .5rem; border-radius:6px; background:#fff3cd; color:#664d03; font-size:.9em; font-weight:700; }
 .mh-popup-addr, .mh-popup-link { margin:.2rem 0; font-size:.9em; }
 .mh-popup a { text-decoration: underline; }
 

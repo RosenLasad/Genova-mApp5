@@ -8,8 +8,8 @@
       {
         "type": "Feature",
         "properties": {
-          "name": "Mura Romane – Tracciato principale",
-          "period": "III–I sec. a.C.",
+          "name": "Mura Pre-Romane – Tracciato principale",
+          "period": "544–458 a.C.",
           "stroke-width": 3
         },
         "geometry": {

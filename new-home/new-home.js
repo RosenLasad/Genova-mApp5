@@ -57,9 +57,9 @@
       key:'routes', theme:'routes', wide:true, title:'Mura, acquedotti e percorsi',
       description:'Tracciati storici e itinerari consigliati per esplorare Genova passo dopo passo.',
       categories:[
-        {title:'Mura storiche', note:'Le cinte murarie attraverso i secoli'},
-        {title:'Acquedotti', note:'Acquedotto romano e acquedotto storico'},
-        {title:'Percorsi consigliati', note:'Itinerari tematici nella città'}
+        {title:'Mura storiche', note:'Le cinte murarie attraverso i secoli', type:'history-walls'},
+        {title:'Acquedotti', note:'Acquedotto romano e acquedotto storico', type:'history-aqueducts'},
+        {title:'Percorsi consigliati', note:'Itinerari tematici nella città', type:'recommended-routes'}
       ]
     },
     {
@@ -110,11 +110,25 @@
   var overlay, scroll, title, eyebrow, backButton, closeButton;
   var currentView = 'home';
   var currentSection = null;
+  var currentCategory = null;
+  var currentAqueduct = null;
 
   function escapeHtml(value){
     return String(value == null ? '' : value).replace(/[&<>"']/g, function(ch){
       return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
     });
+  }
+
+  function currentLanguage(){
+    var value = 'it';
+    try{ value = localStorage.getItem('lang') || document.documentElement.lang || 'it'; }
+    catch(_){ value = document.documentElement.lang || 'it'; }
+    value = String(value).toLowerCase().split('-')[0];
+    return ['it','en','es','fr','ar','ru','zh','lij'].indexOf(value) >= 0 ? value : 'it';
+  }
+
+  function translated(value, language){
+    return value && typeof value === 'object' ? (value[language] || value.it || value.en || '') : (value || '');
   }
 
   function createShell(){
@@ -145,9 +159,22 @@
     overlay.addEventListener('click', function(event){ if(event.target === overlay) close(); });
   }
 
+  function applyTheme(section){
+    if(!overlay) return;
+    overlay.setAttribute('data-theme', section && section.theme ? section.theme : 'home');
+  }
+
+  function applyView(view){
+    if(overlay) overlay.setAttribute('data-view', view || 'home');
+  }
+
   function renderHome(){
     currentView = 'home';
     currentSection = null;
+    currentAqueduct = null;
+    overlay.setAttribute('dir', 'ltr');
+    applyTheme(null);
+    applyView(currentView);
     title.textContent = 'Benvenuto';
     eyebrow.textContent = 'Genova mApp';
     backButton.hidden = true;
@@ -178,6 +205,10 @@
   function renderSection(section){
     currentView = 'section';
     currentSection = section;
+    currentAqueduct = null;
+    overlay.setAttribute('dir', 'ltr');
+    applyTheme(section);
+    applyView(currentView);
     title.textContent = section.title;
     eyebrow.textContent = 'Esplora';
     backButton.hidden = false;
@@ -441,6 +472,8 @@
   function renderQrCategory(section, category){
     currentView = 'qr-category';
     currentSection = section;
+    applyTheme(section);
+    applyView(currentView);
     title.textContent = category.title;
     eyebrow.textContent = section.title;
     backButton.hidden = false;
@@ -564,11 +597,352 @@
     }, 40);
   }
 
-  function openCategory(section, category){
-    if(category.action){ runExistingAction(category.action); return; }
-    if(category.type === 'qr'){ renderQrCategory(section, category); return; }
+  var HISTORY_LAYERS = {
+    'history-walls': [
+      {
+        control:'chk-wall-romane', wallKey:'mura-romane', name:'Mura Pre-Romane', note:'544–458 a.C.', color:'#db2777',
+        description:'Le mura preromane di Genova proteggevano il primo nucleo fortificato sorto sulla collina di Castello, dominante l’antico approdo del Mandraccio. L’oppidum occupava pochi ettari ed era abitato dai Liguri Genuates, in contatto commerciale con Etruschi, Greci e Fenici. Le difese sfruttavano le ripide scarpate naturali ed erano integrate da muri a secco, terrapieni e palizzate lignee. All’interno si trovavano abitazioni, magazzini e spazi legati agli scambi marittimi, fondamentali per lo sviluppo economico del sito. Oggi la cinta non è visibile in superficie: i resti archeologici sono sepolti sotto le successive stratificazioni urbane, ma la morfologia della collina conserva ancora il carattere dell’antica acropoli.'
+      },
+      {
+        control:'chk-wall-carolinge', wallKey:'mura-carolinge', name:'Mura Carolinge', note:'848–889 d.C.', color:'#0d9488',
+        description:'Le mura carolingie rappresentano la prima vera cinta difensiva medievale di Genova, costruita tra l’848 e l’889 per proteggere la città dalle incursioni saracene e piratesche. Il perimetro, lungo circa un chilometro e mezzo, racchiudeva una superficie di appena venti-ventidue ettari, comprendendo Castello, Sarzano, San Lorenzo e il fronte costiero, ma escludendo zone come Sant’Andrea e San Siro. La cinta era controllata da quattro porte principali e da torri poste nei punti più vulnerabili. Oggi gran parte delle strutture è scomparsa o inglobata negli edifici successivi, ma alcuni resti sono ancora riconoscibili in via Tommaso Reggio e nel complesso di Santa Maria di Castello.'
+      },
+      {
+        control:'chk-wall-barbarossa', wallKey:'mura-barbarossa', name:'Mura del Barbarossa', note:'1155–1159', color:'#76B6FF',
+        description:'L’evoluzione monumentale inizia tra il 1155 e il 1159 con l’edificazione delle Mura del Barbarossa, erette per contrastare le mire espansionistiche dell’imperatore Federico I di Svevia. Questa opera, finanziata e realizzata in tempi record dall’intera cittadinanza, estese il perimetro urbano da 22 a 55 ettari per uno sviluppo di 2,4 chilometri. Il tracciato tagliava l’attuale Piazza De Ferrari e l’Acquasola fino a Castelletto. Di questa fase restano come testimonianze verticali le due imponenti porte gemelle, a est Porta Soprana e a ovest Porta dei Vacca, oltre ai tratti superstiti in Passo delle Murette e a ridosso di Campopisano. Nel Settecento le torri di Porta Soprana vennero riconvertite in carceri e dotate di ghigliottina.'
+      },
+      {
+        control:'chk-wall-porto', wallKey:'mura-porto', name:'Mura del Molo', note:'1276–1287', color:'#1e40af',
+        description:'Le Mura del Molo furono realizzate tra il 1276 e il 1287 per proteggere il porto, ormai centro vitale della potenza commerciale genovese. La nuova fortificazione unì il promontorio del Molo a una piccola isola rocciosa, creando una barriera contro le mareggiate e gli attacchi navali. Il sistema comprendeva la Torre dei Greci, le Mura della Malapaga e diversi accessi controllati, tra cui la primitiva Porta del Molo. L’area racchiudeva magazzini, botteghe e attività legate alla navigazione e alla cantieristica. Oggi il tracciato è ancora leggibile nel Porto Antico, soprattutto lungo via del Molo, dove strutture medievali sono state inglobate nelle fortificazioni successive.'
+      },
+      {
+        control:'chk-wall-repubblica', wallKey:'mura-repubblica', name:'Mura della Repubblica', note:'1346–1358', color:'#f95800',
+        description:'Le Mura della Repubblica furono costruite tra il 1346 e il 1358 per adeguare le difese alla forte crescita economica, commerciale e demografica di Genova. La nuova cinta ampliò notevolmente la città protetta, inglobando nuovi borghi, aree agricole e punti strategici tra Carignano, Acquasola, Castelletto, Fassolo e San Tommaso, fino al fronte portuale. Il sistema comprendeva porte monumentali, tra cui Porta degli Archi e Porta di San Tommaso, oltre ad accessi marittimi già esistenti. Oggi la cinta è conservata solo in parte: alcuni tratti sopravvivono sulle alture, mentre Porta degli Archi fu smontata e ricostruita nel 1896 per consentire l’apertura di via XX Settembre.'
+      },
+      {
+        control:'chk-wall-rinascimento', wallKey:'mura-rinascimento', name:'Mura del Rinascimento', note:'1536–1553', color:'#6b21a8',
+        description:'Le Mura del Cinquecento nacquero per adattare Genova alla nuova guerra d’artiglieria, che aveva reso vulnerabili le precedenti fortificazioni medievali. Tra il 1536 e il 1553 le difese furono trasformate con cortine più basse e spesse, bastioni angolati e strutture capaci di resistere ai colpi di cannone. Il sistema interessò Carignano, Castelletto, San Benigno e soprattutto il fronte portuale, protetto da una nuova cinta continua. Tra gli accessi più importanti figuravano Porta della Lanterna, Porta degli Archi e Porta del Molo. Oggi restano tratti significativi, come le Mura di Santa Chiara e la Porta del Molo, mentre il forte Castelletto fu progressivamente demolito nei secoli successivi.'
+      },
+      {
+        control:'chk-wall-nuove', wallKey:'mura-nuove', name:'Mura Nuove', note:'1626–1639', color:'#dc2626',
+        description:'Le Mura Nuove furono costruite tra il 1626 e il 1639 dopo l’attacco sabaudo del 1625, con l’obiettivo di proteggere non solo la città ma l’intero anfiteatro collinare alle sue spalle. La nuova cinta raggiungeva quasi venti chilometri di sviluppo e correva lungo i crinali tra Val Polcevera e Val Bisagno, passando per San Benigno, Granarolo, Begato, Monte Peralto, San Bernardino e Zerbino. Il sistema comprendeva porte fortificate, bastioni e opere che avrebbero poi dato origine ai grandi forti collinari. Oggi lunghi tratti delle Mura Nuove sono ancora ben conservati e percorribili nel Parco Urbano delle Mura, costituendo uno dei più importanti patrimoni storici e paesaggistici di Genova.'
+      }
+    ],
+    'history-aqueducts': [
+      {
+        control:'chk-acq-romano', aqueductKey:'romano', name:'Acquedotto Romano', note:'III secolo a.C.', color:'#8b5cf6',
+        names:{it:'Acquedotto Romano',en:'Roman Aqueduct',es:'Acueducto Romano',fr:'Aqueduc romain',ar:'القناة الرومانية',ru:'Римский акведук',zh:'罗马输水渠',lij:'Acquedotto Roman'},
+        notes:{it:'III secolo a.C.',en:'3rd century BC',es:'siglo III a. C.',fr:'IIIe siècle av. J.-C.',ar:'القرن الثالث قبل الميلاد',ru:'III век до н. э.',zh:'公元前3世纪',lij:'III secolo a.C.'},
+        description:{
+          it:'L’Acquedotto Romano rappresenta la più antica infrastruttura idrica conosciuta di Genova. Il sistema captava le acque del Bisagno e le conduceva verso la città sfruttando una pendenza costante e opere in muratura. I resti meglio documentati risalgono al I secolo d.C. e comprendono tratti di canale e piccoli ponti-canale, come quelli conservati a Staglieno, via delle Ginestre e via Menini. Gran parte del percorso originario è oggi scomparsa o inglobata nell’espansione urbana, ma i frammenti superstiti costituiscono una rara testimonianza dell’ingegneria idraulica romana e delle origini dell’approvvigionamento idrico genovese.',
+          en:'The Roman Aqueduct represents the oldest known water-supply infrastructure in Genoa. The system collected water from the Bisagno and carried it towards the city by maintaining a constant gradient and using masonry structures. The best documented remains date back to the 1st century AD and include sections of channel and small channel bridges, such as those preserved at Staglieno, Via delle Ginestre and Via Menini. Much of the original route has now disappeared or been incorporated into later urban development, but the surviving fragments remain a rare testimony to Roman hydraulic engineering and to the origins of Genoa’s water-supply system.',
+          es:'El Acueducto Romano representa la infraestructura hidráulica más antigua conocida de Génova. El sistema captaba las aguas del Bisagno y las conducía hacia la ciudad aprovechando una pendiente constante y mediante estructuras de mampostería. Los restos mejor documentados se remontan al siglo I d.C. e incluyen tramos de canal y pequeños puentes-canal, como los conservados en Staglieno, Via delle Ginestre y Via Menini. Gran parte del trazado original ha desaparecido o ha quedado integrada en el posterior desarrollo urbano, pero los fragmentos supervivientes constituyen un raro testimonio de la ingeniería hidráulica romana y de los orígenes del abastecimiento de agua de Génova.',
+          fr:'L’Aqueduc romain constitue la plus ancienne infrastructure hydraulique connue de Gênes. Le système captait les eaux du Bisagno et les acheminait vers la ville en maintenant une pente constante grâce à des ouvrages en maçonnerie. Les vestiges les mieux documentés remontent au Ier siècle apr. J.-C. et comprennent des portions de canal ainsi que de petits ponts-canaux, comme ceux conservés à Staglieno, Via delle Ginestre et Via Menini. Une grande partie du tracé d’origine a aujourd’hui disparu ou a été intégrée au développement urbain, mais les fragments subsistants constituent un rare témoignage de l’ingénierie hydraulique romaine et des origines de l’approvisionnement en eau de Gênes.',
+          ar:'تمثل القناة الرومانية أقدم بنية تحتية معروفة لإمداد جنوة بالمياه. كان النظام يجمع مياه نهر Bisagno وينقلها نحو المدينة مستفيداً من انحدار ثابت ومن منشآت مبنية بالحجارة. وتعود أفضل البقايا الموثقة إلى القرن الأول الميلادي، وتشمل أجزاء من القناة وجسوراً صغيرة حاملة للمياه، مثل تلك المحفوظة في Staglieno وVia delle Ginestre وVia Menini. وقد اختفى اليوم جزء كبير من المسار الأصلي أو اندمج في التوسع العمراني اللاحق، إلا أن الأجزاء الباقية تمثل شاهداً نادراً على الهندسة المائية الرومانية وعلى بدايات نظام إمداد جنوة بالمياه.',
+          ru:'Римский акведук является древнейшей известной системой водоснабжения Генуи. Он забирал воду из Бизаньо и направлял её к городу, используя постоянный уклон и каменные гидротехнические сооружения. Наиболее хорошо документированные остатки относятся к I веку н. э. и включают участки канала и небольшие мосты-водоводы, сохранившиеся в Стальено, на Via delle Ginestre и Via Menini. Значительная часть первоначального маршрута сегодня исчезла или была поглощена последующей городской застройкой, однако сохранившиеся фрагменты представляют собой редкое свидетельство римской гидротехники и ранней истории водоснабжения Генуи.',
+          zh:'罗马输水渠是目前已知热那亚最古老的供水基础设施。它从Bisagno河取水，利用持续而缓慢的坡度以及石砌工程，将水输送到城市。现有文献记录最完整的遗迹可追溯至公元1世纪，包括部分输水渠道和小型水渠桥，例如Staglieno、Via delle Ginestre和Via Menini保存的遗迹。如今，原有路线的大部分已经消失，或被后来的城市建设所覆盖和吸收，但幸存的建筑片段仍是罗马水利工程以及热那亚早期城市供水历史的珍贵见证。',
+          lij:'L’Acquedotto Roman o rappresenta a ciù antiga infrastruttua idrica conosciûa de Zena. O sistema o piggiava l’ægua do Bisagno e o-a portava verso a çittæ sfruttando unna pendenza costante e euvie de muratua. I resti megio documentæ remontan a-o primmo secolo d.C. e comprendan tratti de canâ e piccoli ponti-canâ, comme quelli conservæ a Stagén, in Via delle Ginestre e Via Menini. Gran parte do percorso originâ ancheu a l’é sparîa ò inglobâ inte successive trasformaçioin urbane, ma i frammenti sopravvisciui son unna rara testimoniança de l’ingegneria idraulica romana e de l’origine de l’approvvigionamento d’ægua de Zena.'
+        }
+      },
+      {
+        control:'chk-acq-storico', aqueductKey:'storico', name:'Acquedotto Storico', note:'XVII secolo', color:'#16a34a',
+        names:{it:'Acquedotto Storico',en:'Historic Aqueduct',es:'Acueducto Histórico',fr:'Aqueduc historique',ar:'القناة التاريخية',ru:'Исторический акведук',zh:'历史输水渠',lij:'Acquedotto Storico'},
+        notes:{it:'XVII secolo',en:'17th century',es:'siglo XVII',fr:'XVIIe siècle',ar:'القرن السابع عشر',ru:'XVII век',zh:'17世纪',lij:'XVII secolo'},
+        description:{
+          it:'L’Acquedotto Storico di Genova è il risultato di secoli di ampliamenti e trasformazioni del sistema idrico proveniente dalla Val Bisagno. Sviluppato soprattutto tra Medioevo e Seicento, raggiunse complessivamente circa 40 chilometri, alternando canali a cielo aperto, ponti-canale, arcate, gallerie, prese e opere sotterranee. Nei secoli successivi venne aggiornato con straordinarie opere ingegneristiche, come il ponte-sifone del Geirato del 1777, lungo oltre 600 metri e sostenuto da 22 arcate, e quello del Veilino, avviato nel 1837 su progetto di Carlo Barabino, lungo circa 450 metri. Dopo aver rifornito per secoli città e porto, oggi l’acquedotto conserva un eccezionale valore storico, architettonico e paesaggistico: circa 28 chilometri di percorso pedonale sono stati restaurati e riaperti nel 2026.',
+          en:'Genoa’s Historic Aqueduct is the result of centuries of expansions and transformations of the water-supply system originating in the Val Bisagno. Developed mainly between the Middle Ages and the seventeenth century, it eventually reached a total length of about 40 kilometres, combining open channels, channel bridges, arches, tunnels, water intakes and underground structures. In later centuries it was modernised with remarkable engineering works, including the Geirato siphon bridge of 1777, more than 600 metres long and supported by 22 arches, and the Veilino siphon bridge, begun in 1837 to a design by Carlo Barabino and approximately 450 metres long. After supplying the city and harbour for centuries, the aqueduct today has exceptional historical, architectural and landscape value: about 28 kilometres of pedestrian route were restored and reopened in 2026.',
+          es:'El Acueducto Histórico de Génova es el resultado de siglos de ampliaciones y transformaciones del sistema hidráulico procedente de la Val Bisagno. Desarrollado principalmente entre la Edad Media y el siglo XVII, llegó a alcanzar una longitud total de unos 40 kilómetros, combinando canales a cielo abierto, puentes-canal, arcos, túneles, tomas de agua y estructuras subterráneas. En los siglos posteriores fue modernizado mediante extraordinarias obras de ingeniería, como el puente-sifón del Geirato de 1777, de más de 600 metros de longitud y sostenido por 22 arcos, y el del Veilino, iniciado en 1837 según un proyecto de Carlo Barabino y de unos 450 metros de longitud. Tras abastecer durante siglos a la ciudad y al puerto, hoy el acueducto posee un excepcional valor histórico, arquitectónico y paisajístico: aproximadamente 28 kilómetros de recorrido peatonal fueron restaurados y reabiertos en 2026.',
+          fr:'L’Aqueduc historique de Gênes est le résultat de plusieurs siècles d’agrandissements et de transformations du système hydraulique provenant de la Val Bisagno. Développé principalement entre le Moyen Âge et le XVIIe siècle, il atteignit une longueur totale d’environ 40 kilomètres, alternant canaux à ciel ouvert, ponts-canaux, arches, galeries, prises d’eau et ouvrages souterrains. Au cours des siècles suivants, il fut modernisé grâce à d’extraordinaires réalisations d’ingénierie, comme le pont-siphon du Geirato de 1777, long de plus de 600 mètres et soutenu par 22 arches, et celui du Veilino, commencé en 1837 selon un projet de Carlo Barabino et long d’environ 450 mètres. Après avoir alimenté pendant des siècles la ville et le port, l’aqueduc possède aujourd’hui une valeur historique, architecturale et paysagère exceptionnelle : environ 28 kilomètres de parcours piétonnier ont été restaurés et rouverts en 2026.',
+          ar:'تمثل القناة التاريخية في جنوة نتيجة قرون من التوسعات والتحولات التي شهدها نظام المياه القادم من Val Bisagno. وقد تطورت بصورة خاصة بين العصور الوسطى والقرن السابع عشر، حتى بلغ طولها الإجمالي نحو 40 كيلومتراً، وتنوعت منشآتها بين القنوات المفتوحة والجسور الحاملة للمياه والأقواس والأنفاق ومآخذ المياه والمنشآت تحت الأرض. وفي القرون اللاحقة جرى تحديثها من خلال أعمال هندسية استثنائية، من بينها جسر السيفون فوق Geirato الذي يعود إلى 1777، ويزيد طوله على 600 متر وتحمله 22 قنطرة، وجسر Veilino الذي بدأ بناؤه سنة 1837 وفق تصميم Carlo Barabino ويبلغ طوله نحو 450 متراً. وبعد أن زودت المدينة والميناء بالمياه لقرون، تتمتع القناة اليوم بقيمة تاريخية ومعمارية ومنظرية استثنائية، وقد جرى ترميم وإعادة فتح نحو 28 كيلومتراً من المسارات المخصصة للمشاة في عام 2026.',
+          ru:'Исторический акведук Генуи является результатом многовековых расширений и преобразований системы водоснабжения, берущей начало в Валь-Бизаньо. Особенно активно он развивался в Средние века и в XVII столетии, достигнув общей протяжённости около 40 километров. Система включала открытые каналы, мосты-водоводы, аркады, тоннели, водозаборы и подземные сооружения. В последующие века акведук модернизировали с помощью выдающихся инженерных сооружений, среди которых мост-сифон Джейрато 1777 года, длиной более 600 метров и с 22 арками, а также мост-сифон Вейлино, строительство которого началось в 1837 году по проекту Карло Барабино; его длина составляет около 450 метров. После многовекового снабжения города и порта водой акведук сегодня представляет исключительную историческую, архитектурную и ландшафтную ценность: около 28 километров пешеходного маршрута были восстановлены и вновь открыты в 2026 году.',
+          zh:'热那亚历史输水渠是Val Bisagno供水系统经过数百年扩建和改造形成的结果。它主要在中世纪至17世纪期间不断发展，最终总长度达到约40公里，包括露天渠道、水渠桥、拱券、隧道、取水设施和地下工程。在之后几个世纪中，系统又通过多项杰出的工程技术得到升级，其中包括建于1777年的Geirato虹吸桥，长度超过600米，由22座拱券支撑；以及1837年开始按照Carlo Barabino设计建造的Veilino虹吸桥，长度约450米。在数百年间为城市和港口供水之后，如今这套输水系统具有极高的历史、建筑和景观价值。2026年，约28公里的步行路线经过修复后重新开放。',
+          lij:'L’Acquedotto Storico de Zena o l’é o risultato de secoli d’ampliamenti e trasformaçioin do sistema idrico che o vegniva da-a Val Bisagno. Sviluppou sorviatutto tra o Medioevo e o Seiçento, o l’é arrivou complessivamente a çirca 40 chilometri, alternando canæ a çê averto, ponti-canâ, arcæ, gallerie, preize d’ægua e euvie sotterranee. Inti secoli successivi o l’é stæto modernizou con grande euvie d’ingegneria, comme o ponte-sifon do Geirato do 1777, longo ciù de 600 metri e sostenûo da 22 arcæ, e quello do Veilino, comensou into 1837 in sciô progetto de Carlo Barabino e longo çirca 450 metri. Dòppo aveî portou l’ægua pe secoli a-a çittæ e a-o porto, ancheu l’acquedotto o conserva un ecceçionale valô storico, architettonico e paesaggistico: çirca 28 chilometri de percorso pedonale son stæti restauræ e riaverti into 2026.'
+        }
+      }
+    ]
+  };
+
+  var AQUEDUCT_DETAIL_UI = {
+    eyebrow:{it:'Acquedotti',en:'Aqueducts',es:'Acueductos',fr:'Aqueducs',ar:'القنوات المائية',ru:'Акведуки',zh:'输水渠',lij:'Acquedotti'},
+    show:{it:'Mostra l’acquedotto sulla mappa',en:'Show the aqueduct on the map',es:'Mostrar el acueducto en el mapa',fr:'Afficher l’aqueduc sur la carte',ar:'عرض القناة على الخريطة',ru:'Показать акведук на карте',zh:'在地图上显示输水渠',lij:'Fanni vedde l’acquedotto in sciâ mappa'},
+    points:{it:'Punti d’interesse',en:'Points of interest',es:'Puntos de interés',fr:'Points d’intérêt',ar:'نقاط الاهتمام',ru:'Достопримечательности',zh:'兴趣点',lij:'Ponti d’interesse'},
+    point:{it:'punto',en:'point',es:'punto',fr:'point',ar:'نقطة',ru:'точка',zh:'个点',lij:'ponto'},
+    pointsCount:{it:'punti',en:'points',es:'puntos',fr:'points',ar:'نقاط',ru:'точек',zh:'个点',lij:'ponti'},
+    pointType:{it:'Punto dell’acquedotto',en:'Aqueduct point',es:'Punto del acueducto',fr:'Point de l’aqueduc',ar:'نقطة من القناة',ru:'Точка акведука',zh:'输水渠点位',lij:'Ponto de l’acquedotto'},
+    empty:{it:'Non sono ancora presenti punti d’interesse per questo acquedotto.',en:'No points of interest are currently available for this aqueduct.',es:'Todavía no hay puntos de interés para este acueducto.',fr:'Aucun point d’intérêt n’est encore disponible pour cet aqueduc.',ar:'لا توجد بعد نقاط اهتمام لهذه القناة.',ru:'Для этого акведука пока нет достопримечательностей.',zh:'该输水渠目前还没有兴趣点。',lij:'No gh’é ancon ponti d’interesse pe sto acquedotto.'}
+  };
+
+  function getRouteGroups(){
+    var catalog = window.PERCORSI || {};
+    return Object.keys(catalog).map(function(groupName){
+      return {
+        name:groupName,
+        items:(catalog[groupName] || []).map(function(route){
+          return {
+            control:'route:'+route.id,
+            name:route.name || route.id,
+            note:'Percorso sulla mappa',
+            color:route.color || '#566b54'
+          };
+        })
+      };
+    }).filter(function(group){ return group.items.length; });
+  }
+
+  function findLayerControl(key){
+    if(key.indexOf('route:') === 0){
+      var routeId = key.slice(6);
+      var row = document.querySelector('#routes-menu .doc-row[data-route-id="'+routeId+'"]');
+      return row ? row.querySelector('input.route-chk') : null;
+    }
+    return document.getElementById(key);
+  }
+
+  function syncHistoryToggles(){
+    if(!scroll) return;
+    var toggles = Array.prototype.slice.call(scroll.querySelectorAll('.gm-new-home-layer-toggle[data-control]'));
+    toggles.forEach(function(toggle){
+      var original = findLayerControl(toggle.getAttribute('data-control'));
+      toggle.checked = !!(original && original.checked);
+    });
+    var master = scroll.querySelector('.gm-new-home-layer-master');
+    if(master && toggles.length){
+      var active = toggles.filter(function(toggle){ return toggle.checked; }).length;
+      master.checked = active === toggles.length;
+      master.indeterminate = active > 0 && active < toggles.length;
+      var status = scroll.querySelector('.gm-new-home-layer-status');
+      if(status) status.textContent = active+' '+(active === 1 ? 'tracciato attivo' : 'tracciati attivi');
+    }
+  }
+
+  function toggleOriginalControl(key, enabled){
+    var original = findLayerControl(key);
+    if(!original || original.checked === enabled) return;
+    original.click();
+  }
+
+  function layerRow(item, index){
+    var toggleId = 'gm-new-home-layer-'+String(index).replace(/[^a-z0-9_-]/gi, '-');
+    var copy = item.wallKey
+      ? '<button type="button" class="gm-new-home-layer-copy gm-new-home-wall-open" data-wall="'+escapeHtml(item.wallKey)+'"><strong>'+escapeHtml(item.name)+'</strong><small>'+escapeHtml(item.note || '')+'</small><span class="gm-new-home-wall-arrow" aria-hidden="true">›</span></button>'
+      : item.aqueductKey
+      ? '<button type="button" class="gm-new-home-layer-copy gm-new-home-aqueduct-open" data-aqueduct="'+escapeHtml(item.aqueductKey)+'"><strong>'+escapeHtml(item.name)+'</strong><small>'+escapeHtml(item.note || '')+'</small><span class="gm-new-home-wall-arrow" aria-hidden="true">›</span></button>'
+      : '<label class="gm-new-home-layer-copy" for="'+toggleId+'"><strong>'+escapeHtml(item.name)+'</strong><small>'+escapeHtml(item.note || '')+'</small></label>';
+    return '<div class="gm-new-home-layer-row">'+
+      '<span class="gm-new-home-layer-dot" style="--layer-color:'+escapeHtml(item.color)+'" aria-hidden="true"></span>'+
+      copy+
+      '<input id="'+toggleId+'" class="gm-new-home-layer-toggle" type="checkbox" role="switch" data-control="'+escapeHtml(item.control)+'" aria-label="Mostra '+escapeHtml(item.name)+'">'+
+      '<label class="gm-new-home-switch" for="'+toggleId+'" aria-hidden="true"></label>'+
+    '</div>';
+  }
+
+  function getWallNodes(wallKey){
+    try{
+      if(typeof WALL_NODES !== 'undefined' && WALL_NODES && Array.isArray(WALL_NODES[wallKey])) return WALL_NODES[wallKey];
+    }catch(_){}
+    return [];
+  }
+
+  function openWallPoint(wall, node){
+    toggleOriginalControl(wall.control, true);
+    close();
+    setTimeout(function(){
+      var appMap = window.map || window.__map;
+      if(!appMap || !node || !Array.isArray(node.coords)) return;
+      try{ appMap.setView(node.coords, Math.max(Number(appMap.getZoom && appMap.getZoom()) || 15, 17), {animate:true}); }catch(_){}
+      setTimeout(function(){
+        try{
+          var found = null;
+          if(typeof appMap.eachLayer === 'function'){
+            appMap.eachLayer(function(layer){
+              if(found || !layer || typeof layer.getLatLng !== 'function') return;
+              var ll = layer.getLatLng();
+              var samePoint = Math.abs(ll.lat-node.coords[0]) < 0.0000002 && Math.abs(ll.lng-node.coords[1]) < 0.0000002;
+              var hasPopup = typeof layer.getPopup === 'function' && !!layer.getPopup();
+              if(samePoint && hasPopup) found = layer;
+            });
+          }
+          if(found && typeof found.openPopup === 'function'){
+            found.openPopup();
+            if(typeof found.bringToFront === 'function') found.bringToFront();
+          }
+        }catch(_){}
+      }, 420);
+    }, 80);
+  }
+
+  function renderWallDetail(section, category, wall){
+    currentView = 'wall-detail';
+    currentSection = section;
+    currentCategory = category;
+    applyTheme(section);
+    applyView(currentView);
+    title.textContent = wall.name;
+    eyebrow.textContent = 'Mura storiche';
+    backButton.hidden = false;
+    var nodes = getWallNodes(wall.wallKey);
+    var points = nodes.map(function(node, index){
+      return '<li><button type="button" class="gm-new-home-wall-point" data-wall-point="'+index+'">'+
+        '<span><strong>'+escapeHtml(node.name)+'</strong><small>'+escapeHtml(node.type || 'Punto d’interesse')+'</small></span><span aria-hidden="true">›</span>'+
+      '</button></li>';
+    }).join('');
+    scroll.innerHTML = '<article class="gm-new-home-wall-detail" style="--wall-color:'+escapeHtml(wall.color)+'">'+
+      '<header class="gm-new-home-wall-hero"><span class="gm-new-home-wall-period">'+escapeHtml(wall.note)+'</span><h3>'+escapeHtml(wall.name)+'</h3><p>'+escapeHtml(wall.description)+'</p></header>'+ 
+      '<div class="gm-new-home-wall-actions"><button type="button" class="gm-new-home-wall-show">Mostra la cinta sulla mappa</button></div>'+ 
+      '<section class="gm-new-home-wall-points"><div class="gm-new-home-wall-points-head"><h4>Punti d’interesse</h4><span>'+nodes.length+' '+(nodes.length === 1 ? 'punto' : 'punti')+'</span></div>'+ 
+        (nodes.length ? '<ul>'+points+'</ul>' : '<div class="gm-new-home-empty">Non sono ancora presenti punti d’interesse per questa cinta.</div>')+
+      '</section></article>';
+    scroll.querySelector('.gm-new-home-wall-show').addEventListener('click', function(){
+      toggleOriginalControl(wall.control, true);
+      close();
+    });
+    scroll.querySelectorAll('[data-wall-point]').forEach(function(button){
+      button.addEventListener('click', function(){
+        var node = nodes[Number(button.getAttribute('data-wall-point'))];
+        if(node) openWallPoint(wall, node);
+      });
+    });
+    scroll.scrollTop = 0;
+  }
+
+  function getAqueductPoints(aqueduct){
+    var points = aqueduct.aqueductKey === 'storico'
+      ? window.ACQUEDOTTO_STORICO_POIS
+      : window.ACQUEDOTTO_ROMANO_POIS;
+    return Array.isArray(points) ? points : [];
+  }
+
+  function openAqueductPoint(aqueduct, point){
+    toggleOriginalControl(aqueduct.control, true);
+    close();
+    setTimeout(function(){
+      var api = aqueduct.aqueductKey === 'storico'
+        ? window.GenovaHistoricAqueductPOI
+        : window.GenovaAqueductPOI;
+      if(api && typeof api.open === 'function' && api.open(point.id, {zoom:17})) return;
+      var appMap = window.map || window.__map;
+      if(!appMap || !Array.isArray(point.coords)) return;
+      try{ appMap.setView(point.coords, 17, {animate:true}); }catch(_){}
+    }, 80);
+  }
+
+  function renderAqueductDetail(section, category, aqueduct){
+    currentView = 'aqueduct-detail';
+    currentSection = section;
+    currentCategory = category;
+    currentAqueduct = aqueduct;
+    applyTheme(section);
+    applyView(currentView);
+    var language = currentLanguage();
+    var ui = function(key){ return translated(AQUEDUCT_DETAIL_UI[key], language); };
+    var displayName = translated(aqueduct.names, language);
+    title.textContent = displayName;
+    eyebrow.textContent = ui('eyebrow');
+    backButton.hidden = false;
+    overlay.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
+    var points = getAqueductPoints(aqueduct);
+    var pointRows = points.map(function(point, index){
+      return '<li><button type="button" class="gm-new-home-wall-point" data-aqueduct-point="'+index+'">'+
+        '<span><strong>'+escapeHtml(point.name)+'</strong><small>'+escapeHtml(translated(point.subtitle, language) || ui('pointType'))+'</small></span><span aria-hidden="true">›</span>'+
+      '</button></li>';
+    }).join('');
+    var countLabel = points.length === 1 ? ui('point') : ui('pointsCount');
+    scroll.innerHTML = '<article class="gm-new-home-wall-detail gm-new-home-aqueduct-detail" style="--wall-color:'+escapeHtml(aqueduct.color)+'">'+
+      '<header class="gm-new-home-wall-hero"><span class="gm-new-home-wall-period">'+escapeHtml(translated(aqueduct.notes, language) || aqueduct.note)+'</span><h3>'+escapeHtml(displayName)+'</h3><p>'+escapeHtml(translated(aqueduct.description, language))+'</p></header>'+ 
+      '<div class="gm-new-home-wall-actions"><button type="button" class="gm-new-home-wall-show">'+escapeHtml(ui('show'))+'</button></div>'+ 
+      '<section class="gm-new-home-wall-points"><div class="gm-new-home-wall-points-head"><h4>'+escapeHtml(ui('points'))+'</h4><span>'+points.length+' '+escapeHtml(countLabel)+'</span></div>'+ 
+        (points.length ? '<ul>'+pointRows+'</ul>' : '<div class="gm-new-home-empty">'+escapeHtml(ui('empty'))+'</div>')+
+      '</section></article>';
+    scroll.querySelector('.gm-new-home-wall-show').addEventListener('click', function(){
+      toggleOriginalControl(aqueduct.control, true);
+      close();
+    });
+    scroll.querySelectorAll('[data-aqueduct-point]').forEach(function(button){
+      button.addEventListener('click', function(){
+        var point = points[Number(button.getAttribute('data-aqueduct-point'))];
+        if(point) openAqueductPoint(aqueduct, point);
+      });
+    });
+    scroll.scrollTop = 0;
+  }
+
+  function renderHistoryCategory(section, category){
     currentView = 'category';
     currentSection = section;
+    currentCategory = category;
+    currentAqueduct = null;
+    overlay.setAttribute('dir', 'ltr');
+    applyTheme(section);
+    applyView(currentView);
+    title.textContent = category.title;
+    eyebrow.textContent = section.title;
+    backButton.hidden = false;
+
+    var groups = category.type === 'recommended-routes'
+      ? getRouteGroups()
+      : [{name:'', items:HISTORY_LAYERS[category.type] || []}];
+    var items = groups.reduce(function(all, group){ return all.concat(group.items); }, []);
+    var lists = groups.map(function(group){
+      return '<section class="gm-new-home-layer-group">'+
+        (group.name ? '<h4>'+escapeHtml(group.name)+'</h4>' : '')+
+        '<div class="gm-new-home-layer-list">'+group.items.map(function(item, index){ return layerRow(item, group.name+'-'+index+'-'+item.control); }).join('')+'</div>'+ 
+      '</section>';
+    }).join('');
+
+    scroll.innerHTML = '<div class="gm-new-home-detail gm-new-home-layer-detail">'+
+      '<div class="gm-new-home-detail-head"><h3>'+escapeHtml(category.title)+'</h3><p>'+escapeHtml(category.note)+'</p></div>'+ 
+      '<div class="gm-new-home-layer-toolbar">'+
+        '<label class="gm-new-home-layer-master-row"><span><strong>Mostra tutti</strong><small class="gm-new-home-layer-status">0 tracciati attivi</small></span><input class="gm-new-home-layer-master" type="checkbox" role="switch"><span class="gm-new-home-switch" aria-hidden="true"></span></label>'+
+      '</div>'+lists+
+      '<button type="button" class="gm-new-home-map-view">Chiudi e guarda la mappa</button>'+ 
+    '</div>';
+
+    scroll.querySelectorAll('.gm-new-home-layer-toggle').forEach(function(toggle){
+      toggle.addEventListener('change', function(){
+        toggleOriginalControl(toggle.getAttribute('data-control'), toggle.checked);
+        setTimeout(syncHistoryToggles, 0);
+      });
+    });
+    if(category.type === 'history-walls'){
+      scroll.querySelectorAll('.gm-new-home-wall-open').forEach(function(button){
+        button.addEventListener('click', function(){
+          var wallKey = button.getAttribute('data-wall');
+          var wall = items.find(function(item){ return item.wallKey === wallKey; });
+          if(wall) renderWallDetail(section, category, wall);
+        });
+      });
+    }
+    if(category.type === 'history-aqueducts'){
+      scroll.querySelectorAll('.gm-new-home-aqueduct-open').forEach(function(button){
+        button.addEventListener('click', function(){
+          var aqueductKey = button.getAttribute('data-aqueduct');
+          var aqueduct = items.find(function(item){ return item.aqueductKey === aqueductKey; });
+          if(aqueduct) renderAqueductDetail(section, category, aqueduct);
+        });
+      });
+    }
+    var master = scroll.querySelector('.gm-new-home-layer-master');
+    master.addEventListener('change', function(){
+      var enabled = master.checked;
+      items.forEach(function(item){ toggleOriginalControl(item.control, enabled); });
+      setTimeout(syncHistoryToggles, 0);
+    });
+    scroll.querySelector('.gm-new-home-map-view').addEventListener('click', close);
+    syncHistoryToggles();
+    scroll.scrollTop = 0;
+  }
+
+  function openCategory(section, category){
+    applyTheme(section);
+    if(category.action){ runExistingAction(category.action); return; }
+    if(category.type === 'qr'){ renderQrCategory(section, category); return; }
+    if(category.type === 'history-walls' || category.type === 'history-aqueducts' || category.type === 'recommended-routes'){
+      renderHistoryCategory(section, category);
+      return;
+    }
+    currentView = 'category';
+    currentSection = section;
+    applyView(currentView);
     title.textContent = category.title;
     eyebrow.textContent = section.title;
     backButton.hidden = false;
@@ -600,7 +974,9 @@
   }
 
   function goBack(){
-    if((currentView === 'category' || currentView === 'qr-category') && currentSection){ renderSection(currentSection); }
+    if(currentView === 'wall-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
+    else if(currentView === 'aqueduct-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
+    else if((currentView === 'category' || currentView === 'qr-category') && currentSection){ renderSection(currentSection); }
     else renderHome();
   }
 
@@ -654,6 +1030,11 @@
       if(currentView !== 'home') goBack();
       else close();
     }, true);
+    document.addEventListener('app:set-lang', function(){
+      if(currentView === 'aqueduct-detail' && currentSection && currentCategory && currentAqueduct){
+        setTimeout(function(){ renderAqueductDetail(currentSection, currentCategory, currentAqueduct); }, 0);
+      }
+    });
     window.addEventListener('resize', updatePosition, {passive:true});
   }
 

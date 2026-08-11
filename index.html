@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="css/btn-scan.css">
 <link rel="stylesheet" href="css/flag-switcher.css">
 
-<link rel="stylesheet" href="css/inline.bundle.css">
+<link rel="stylesheet" href="css/inline.bundle.css?v=20260811-1">
 <link rel="stylesheet" href="css/taccuino.css">
 <link rel="stylesheet" href="css/qr-panel-layout.css">
 <link rel="stylesheet" href="css/ui-layout-v2.css?v=20260809-1">
@@ -27,6 +27,8 @@
 <link rel="stylesheet" href="css/auth-ui.css?v=20260807-2">
 <link rel="stylesheet" href="css/account-sync.css?v=20260807-2">
 <link rel="stylesheet" href="css/place-popup.css?v=20260808-8">
+<link rel="stylesheet" href="css/wall-popup.css?v=20260811-7"> 
+<link rel="stylesheet" href="css/aqueduct-popup.css?v=20260811-2">
 <link rel="stylesheet" href="css/train-line.css?v=20260808-1">
 <script src="js/transport-place-texts.js?v=20260807-1"></script>
 <script src="js/cinema-place-texts.js?v=20260808-1"></script>
@@ -34,8 +36,9 @@
 <script src="js/park-place-texts.js?v=20260808-2"></script>
 <script src="js/park-place-texts-extra.js?v=20260808-2"></script>
 <script src="js/place-popup.js?v=20260808-60"></script>
+<script src="js/wall-popup.js?v=20260811-7"></script>
 <script src="js/languages.js"></script>
-<script src="js/inline.js?v=20260809-3"></script>
+<script src="js/inline.js?v=20260811-4"></script>
 <script>window.__GENOVA_INLINE_RUN(2,2);</script>
 
 <!-- PATCH: Legend as icon (help) -->
@@ -53,6 +56,7 @@
 <!-- (Opzionale) Dati per i Forti -->
 <script id="forti-data-20250929" src="forti/points_forti.js"></script>
 <script id="musei-data-20250929" src="musei/points_musei.js"></script>
+<script src="musei/points_musei_new.js?v=20260811-1"></script>
 <script src="chiese/chiese_point.js?v=20260810-1"></script>
 <script src="palazzi/palazzi_points.js"></script>
 <script src="sport/sport_points.js"></script>
@@ -62,6 +66,7 @@
 <script src="js/points-offline-bridge.js"></script>
 
 <script id="musei-popup-202511" src="musei/museum_special_popups.js"></script>
+<script src="musei/museum_new_popups.js?v=20260811-1"></script>
 <script src="mura_data/wall_nodes.js"></script>
 <!-- Forti toggle visual fixes (inactive transparent, lighter glyph) | 2025-09-29b -->
 <!-- Forti marker = castle glyph (SVG) to match toggle | 2025-09-30 -->
@@ -97,7 +102,7 @@
 <script>window.__GENOVA_INLINE_RUN(15,15);</script>
 <script>window.__GENOVA_INLINE_RUN(19,19);</script>
 
-<link rel="stylesheet" href="new-home/new-home.css?v=20260810-2">
+<link rel="stylesheet" href="new-home/new-home.css?v=20260811-10">
 <link rel="icon" type="image/png" href="icons/icon-192.png">
 </head>
 <body>
@@ -135,7 +140,7 @@
 </label>
 <label style="display:flex;align-items:center; gap:.5rem; font-size:.9rem; margin:.2rem 0 .2rem 0">
 <input id="chk-wall-romane" type="checkbox"/>
-<span class="chip"><span class="dot" style="background:#db2777"></span>Mura Romane (V sec.)</span>
+<span class="chip"><span class="dot" style="background:#db2777"></span>Mura Pre-Romane (544–458 a.C.)</span>
 </label>
 <label style="display:flex;align-items:center; gap:.5rem; font-size:.9rem; margin:.2rem 0 .2rem 0">
 <input id="chk-wall-carolinge" type="checkbox"/>
@@ -960,6 +965,7 @@
 </div>
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/map-instance.js?v=20260811-1"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script src="js/guide.js">
 </script><script>window.__GENOVA_INLINE_RUN(21,21);</script>
@@ -982,6 +988,9 @@
 <script>window.__GENOVA_INLINE_RUN(32,32);</script>
 <script>window.__GENOVA_INLINE_RUN(33,33);</script>
 <script>window.__GENOVA_INLINE_RUN(34,34);</script>
+<script src="acquedotti/acquedotto-romano-poi.js?v=20260811-2"></script>
+<script src="acquedotti/acquedotto-storico-poi-data.js?v=20260811-1"></script>
+<script src="acquedotti/acquedotto-storico-poi.js?v=20260811-3"></script>
 <script>window.__GENOVA_INLINE_RUN(35,35);</script>
 <script>window.__GENOVA_INLINE_RUN(36,36);</script>
 <script>window.__GENOVA_INLINE_RUN(37,37);</script>
@@ -1517,8 +1526,8 @@
 
 <script src="qr_azzurri/qr-descr-i18n-completamento.js"></script>
 <script src="js/qr-panel-layout.js"></script>
-<script src="new-home/place-areas.js?v=20260810-1"></script>
-<script src="new-home/new-home.js?v=20260810-6"></script>
+<script src="new-home/place-areas.js?v=20260811-1"></script>
+<script src="new-home/new-home.js?v=20260811-9"></script>
 <script src="js/pwa-install.js?v=20260807-1"></script>
 <script src="js/auth-ui.js?v=20260807-3"></script>
 <script src="js/account-sync.js?v=20260807-1"></script>

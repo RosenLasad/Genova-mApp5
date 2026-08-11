@@ -1,0 +1,108 @@
+/* Punti d'interesse dell'Acquedotto Romano. */
+.leaflet-popup.gm-aqueduct-popup-wrap .leaflet-popup-content-wrapper {
+  border: 2px solid #6750a4;
+}
+
+.leaflet-popup.gm-aqueduct-popup-wrap .leaflet-popup-tip {
+  border: 1px solid rgba(103, 80, 164, .55);
+}
+
+.gm-aqueduct-popup {
+  --gm-place-color: #6750a4;
+}
+
+.gm-aqueduct-popup .gm-place-header {
+  background: linear-gradient(135deg, #17122a 0%, #30235a 100%);
+}
+
+.gm-aqueduct-popup .gm-place-subtitle {
+  margin: -1px 0 0;
+  color: rgba(255, 255, 255, .82);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.gm-aqueduct-popup .gm-place-description {
+  margin: 0 0 10px;
+  color: #273449;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.gm-aqueduct-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 10px;
+  padding: 5px 8px;
+  border: 1px solid color-mix(in srgb, #6750a4 34%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, #6750a4 10%, #fff 90%);
+  color: #493875;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.gm-aqueduct-status::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #6750a4;
+  content: "";
+}
+
+.gm-aqueduct-popup .gm-place-media-fallback {
+  background:
+    radial-gradient(circle at 77% 23%, rgba(255,255,255,.28) 0 9%, transparent 10%),
+    linear-gradient(145deg, #30235a 0%, #6750a4 55%, #73a7b8 100%);
+}
+
+.gm-aqueduct-popup .gm-place-media-symbol {
+  font-size: 26px;
+  letter-spacing: .08em;
+}
+
+.gm-aqueduct-marker {
+  filter: drop-shadow(0 2px 3px rgba(15, 23, 42, .34));
+}
+
+.leaflet-popup.gm-aqueduct-historic-popup-wrap .leaflet-popup-content-wrapper {
+  border-color: #16a34a;
+}
+
+.leaflet-popup.gm-aqueduct-historic-popup-wrap .leaflet-popup-tip {
+  border-color: rgba(22, 163, 74, .55);
+}
+
+.gm-aqueduct-popup--historic {
+  --gm-place-color: #16a34a;
+}
+
+.gm-aqueduct-popup--historic .gm-place-header {
+  background: linear-gradient(135deg, #0c2416 0%, #14532d 100%);
+}
+
+.gm-aqueduct-popup--historic .gm-aqueduct-status {
+  border-color: color-mix(in srgb, #16a34a 34%, transparent);
+  background: color-mix(in srgb, #16a34a 10%, #fff 90%);
+  color: #166534;
+}
+
+.gm-aqueduct-popup--historic .gm-aqueduct-status::before {
+  background: #16a34a;
+}
+
+.gm-aqueduct-popup--historic .gm-place-media-fallback {
+  background:
+    radial-gradient(circle at 77% 23%, rgba(255,255,255,.28) 0 9%, transparent 10%),
+    linear-gradient(145deg, #0c2416 0%, #15803d 56%, #7da477 100%);
+}
+
+@media (max-width: 560px) {
+  .gm-aqueduct-popup .gm-place-description { font-size: 14px; }
+}

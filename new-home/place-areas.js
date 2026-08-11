@@ -18,15 +18,15 @@
       {name:'Serra Riccò', places:['Castello di San Cipriano']}
     ],
     'fav-list-musei': [
-      {name:'Centro storico', places:["Museo di Sant'Agostino",'Casa di Colombo','Palazzo Rosso','Palazzo Bianco','Palazzo Tursi','Palazzo Spinola','Museo del Risorgimento','Museo del Tesoro di San Lorenzo','Museo Diocesano',"Museo dell'Accademia Ligustica di Belle Arti",'Via del Campo 29/rosso','Museo della Storia del Genoa']},
+      {name:'Centro storico', places:["Museo di Sant'Agostino",'Casa di Colombo','Palazzo Rosso','Palazzo Bianco','Palazzo Tursi','Palazzo Spinola','Museo del Risorgimento','Museo del Tesoro di San Lorenzo','Museo Diocesano',"Museo dell'Accademia Ligustica di Belle Arti",'Via del Campo 29/rosso','Museo della Storia del Genoa','Genoa Port Center']},
       {name:'Pré, Darsena e Balbi', places:['Galata Museo del Mare',"MEI Museo Nazionale dell'Emigrazione Italiana",'Palazzo Reale di Genova']},
       {name:'Principe e San Teodoro', places:['Villa del Principe']},
-      {name:'Castelletto', places:["Castello D'Albertis Museo delle Culture del Mondo"]},
+      {name:'Castelletto', places:["Castello D'Albertis Museo delle Culture del Mondo",'Museo Ebraico di Genova']},
       {name:'Portoria e Acquasola', places:["Museo d'Arte Orientale E. Chiossone",'Museo dei Beni Culturali Cappuccini',"Museo Biblioteca dell'Attore"]},
       {name:'Foce', places:['Museo di Storia Naturale Giacomo Doria']},
       {name:'San Benigno e Sampierdarena', places:['Complesso Monumentale della Lanterna']},
       {name:'Nervi', places:['Raccolte Frugone','Wolfsoniana',"GAM Galleria d'Arte Moderna",'Villa Giannettino Luxoro']},
-      {name:'Pegli', places:['Museo di Archeologia Ligure']},
+      {name:'Pegli', places:['Museo di Archeologia Ligure','Museo Navale di Pegli – Villa Doria Centurione']},
       {name:'Certosa', places:['MUCE - Museo Certosa di Genova']},
       {name:'San Martino', places:['Museo di Chimica']},
       {name:'Carignano', places:["Museo d'Arte Contemporanea di Villa Croce"]},
