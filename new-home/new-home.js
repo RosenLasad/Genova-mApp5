@@ -112,8 +112,8 @@
   var currentSection = null;
   var currentCategory = null;
   var currentAqueduct = null;
-  var historyGuardActive = false;
-  var closingHistoryGuard = false;
+  var historyDepth = 0;
+  var closingHistoryNavigation = false;
 
   function escapeHtml(value){
     return String(value == null ? '' : value).replace(/[&<>"']/g, function(ch){
@@ -157,7 +157,7 @@
     closeButton = overlay.querySelector('#gm-new-home-close');
 
     closeButton.addEventListener('click', close);
-    backButton.addEventListener('click', goBack);
+    backButton.addEventListener('click', requestNewHomeBack);
     overlay.addEventListener('click', function(event){ if(event.target === overlay) close(); });
   }
 
@@ -198,7 +198,10 @@
     scroll.querySelectorAll('[data-section]').forEach(function(button){
       function activate(){
         var section = SECTIONS.find(function(item){ return item.key === button.getAttribute('data-section'); });
-        if(section) renderSection(section);
+        if(section){
+          renderSection(section);
+          pushNewHomeLevel();
+        }
       }
       button.addEventListener('click', activate);
       button.addEventListener('keydown', function(event){
@@ -235,7 +238,11 @@
     scroll.querySelectorAll('[data-category]').forEach(function(button){
       button.addEventListener('click', function(){
         var category = section.categories[Number(button.getAttribute('data-category'))];
-        if(category) openCategory(section, category);
+        if(category){
+          var previousView = currentView;
+          openCategory(section, category);
+          if(!overlay.hidden && currentView !== previousView) pushNewHomeLevel();
+        }
       });
     });
     scroll.scrollTop = 0;
@@ -916,7 +923,7 @@
         button.addEventListener('click', function(){
           var wallKey = button.getAttribute('data-wall');
           var wall = items.find(function(item){ return item.wallKey === wallKey; });
-          if(wall) renderWallDetail(section, category, wall);
+          if(wall){ renderWallDetail(section, category, wall); pushNewHomeLevel(); }
         });
       });
     }
@@ -925,7 +932,7 @@
         button.addEventListener('click', function(){
           var aqueductKey = button.getAttribute('data-aqueduct');
           var aqueduct = items.find(function(item){ return item.aqueductKey === aqueductKey; });
-          if(aqueduct) renderAqueductDetail(section, category, aqueduct);
+          if(aqueduct){ renderAqueductDetail(section, category, aqueduct); pushNewHomeLevel(); }
         });
       });
     }
@@ -1006,12 +1013,16 @@
     if(button) button.setAttribute('aria-expanded','false');
   }
 
-  function pushHistoryGuard(){
-    if(historyGuardActive || !window.history || typeof window.history.pushState !== 'function') return;
+  function pushNewHomeLevel(){
+    if(!window.history || typeof window.history.pushState !== 'function') return false;
     try{
-      window.history.pushState({gmNewHomeGuard:true}, '');
-      historyGuardActive = true;
-    }catch(_){ historyGuardActive = false; }
+      historyDepth += 1;
+      window.history.pushState({gmNewHome:true, depth:historyDepth}, '');
+      return true;
+    }catch(_){
+      historyDepth = Math.max(0, historyDepth - 1);
+      return false;
+    }
   }
 
   function hideNewHome(){
@@ -1021,20 +1032,29 @@
     if(opener) setTimeout(function(){ try{ opener.focus(); }catch(_){} }, 0);
   }
 
-  function handleHistoryBack(){
-    if(closingHistoryGuard){
-      closingHistoryGuard = false;
-      historyGuardActive = false;
+  function requestNewHomeBack(){
+    if(historyDepth > 1 && window.history && typeof window.history.back === 'function'){
+      window.history.back();
       return;
     }
-    if(!historyGuardActive || !overlay || overlay.hidden) return;
-    historyGuardActive = false;
-    if(currentView !== 'home'){
-      goBack();
-      pushHistoryGuard();
-    }else{
-      hideNewHome();
+    if(currentView !== 'home') goBack();
+    else close();
+  }
+
+  function handleHistoryBack(){
+    if(closingHistoryNavigation){
+      closingHistoryNavigation = false;
+      historyDepth = 0;
+      return;
     }
+    if(!overlay || overlay.hidden || historyDepth <= 0) return;
+    if(historyDepth > 1){
+      historyDepth -= 1;
+      goBack();
+      return;
+    }
+    historyDepth = 0;
+    hideNewHome();
   }
 
   function open(){
@@ -1043,17 +1063,19 @@
     renderHome();
     overlay.hidden = false;
     document.documentElement.classList.add('gm-new-home-open');
-    pushHistoryGuard();
+    historyDepth = 0;
+    pushNewHomeLevel();
     setTimeout(function(){ try{ closeButton.focus(); }catch(_){} }, 0);
   }
 
   function close(){
     hideNewHome();
-    if(historyGuardActive && window.history && typeof window.history.back === 'function'){
-      historyGuardActive = false;
-      closingHistoryGuard = true;
-      window.history.back();
-      setTimeout(function(){ closingHistoryGuard = false; }, 500);
+    if(historyDepth > 0 && window.history && typeof window.history.go === 'function'){
+      var levelsToRemove = historyDepth;
+      historyDepth = 0;
+      closingHistoryNavigation = true;
+      window.history.go(-levelsToRemove);
+      setTimeout(function(){ closingHistoryNavigation = false; }, 700);
     }
   }
 
@@ -1070,8 +1092,7 @@
     }
     document.addEventListener('keydown', function(event){
       if(event.key !== 'Escape' || overlay.hidden) return;
-      if(currentView !== 'home') goBack();
-      else close();
+      requestNewHomeBack();
     }, true);
     document.addEventListener('app:set-lang', function(){
       if(currentView === 'aqueduct-detail' && currentSection && currentCategory && currentAqueduct){
