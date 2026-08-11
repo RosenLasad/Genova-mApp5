@@ -24,10 +24,10 @@
       key:'heritage', theme:'heritage', wide:true, title:'Patrimonio storico',
       description:'Forti, musei, chiese e palazzi raccontano la storia e l’identità di Genova.',
       categories:[
-        {title:'Forti', note:'Fortificazioni e sistemi difensivi', listId:'fav-list-forti', grouped:true},
-        {title:'Musei', note:'Arte, storia, scienza e collezioni', listId:'fav-list-musei', grouped:true},
-        {title:'Chiese', note:'Edifici religiosi e opere d’arte', listId:'fav-list-chiese', grouped:true},
-        {title:'Palazzi', note:'Dimore storiche e Palazzi dei Rolli', listId:'fav-list-palazzi', grouped:true}
+        {title:'Forti', note:'Fortificazioni e sistemi difensivi', listId:'fav-list-forti', grouped:true, image:'images/voci/patrimonio-forti.png', imagePosition:'center 48%'},
+        {title:'Musei', note:'Arte, storia, scienza e collezioni', listId:'fav-list-musei', grouped:true, image:'images/voci/patrimonio-musei.png', imagePosition:'center 52%'},
+        {title:'Chiese', note:'Edifici religiosi e opere d’arte', listId:'fav-list-chiese', grouped:true, image:'images/voci/patrimonio-chiese.png', imagePosition:'center 48%'},
+        {title:'Palazzi', note:'Dimore storiche e Palazzi dei Rolli', listId:'fav-list-palazzi', grouped:true, image:'images/voci/patrimonio-palazzi.png', imagePosition:'center 50%'}
       ]
     },
     {
@@ -66,10 +66,10 @@
       key:'food', theme:'food', title:'Mangiare e dormire',
       description:'Locali, ristoranti, take-away e strutture per il soggiorno.',
       categories:[
-        {title:'Locali', note:'Bar, pub e luoghi di ritrovo', listId:'fav-list-locali'},
-        {title:'Ristoranti', note:'Cucina genovese e altre proposte'},
-        {title:'Take-away', note:'Soluzioni rapide e da asporto'},
-        {title:'Alberghi e B&B', note:'Dove dormire a Genova'}
+        {title:'Locali', note:'Bar, pub e luoghi di ritrovo', listId:'fav-list-locali', grouped:true},
+        {title:'Ristoranti', note:'Cucina genovese e altre proposte', listId:'fav-list-ristoranti', grouped:true},
+        {title:'Take-away', note:'Soluzioni rapide e da asporto', listId:'fav-list-take-away', grouped:true},
+        {title:'Alberghi e B&B', note:'Dove dormire a Genova', listId:'fav-list-alloggi', grouped:true}
       ]
     },
     {
@@ -236,8 +236,15 @@
       '  <div class="gm-new-home-category-grid">'+categories+'</div>'+
       '</div>';
     scroll.querySelectorAll('[data-category]').forEach(function(button){
+      var categoryIndex = Number(button.getAttribute('data-category'));
+      var categoryStyle = section.categories[categoryIndex];
+      if(categoryStyle && categoryStyle.image){
+        button.classList.add('has-image');
+        button.style.setProperty('--gm-category-image', 'url("'+String(categoryStyle.image).replace(/"/g, '%22')+'")');
+        button.style.setProperty('--gm-category-position', categoryStyle.imagePosition || 'center');
+      }
       button.addEventListener('click', function(){
-        var category = section.categories[Number(button.getAttribute('data-category'))];
+        var category = section.categories[categoryIndex];
         if(category){
           var previousView = currentView;
           openCategory(section, category);

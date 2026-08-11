@@ -111,6 +111,26 @@
       {name:'Albaro e San Martino', places:['Arena Albaro Village','Cus Genova','Sporting Club Genova','Vita Genova']},
       {name:'Carignano', places:['ASD S.G. Andrea Doria']},
       {name:'Molassana e Val Bisagno', places:['Impianto Sportivo Sciorba']}
+    ],
+    'fav-list-locali': [
+      {name:'Centro storico e Molo', places:['Bar 2 colpi']},
+      {name:'Pré e Darsena', places:['Count Basie Jazz Club']},
+      {name:'Portoria e Centro', places:['Tao Disco Club']},
+      {name:'San Benigno e Sampierdarena', places:['Music for Peace']},
+      {name:'Carmine', places:['Together Bar']}
+    ],
+    'fav-list-ristoranti': [
+      {name:'Molo', places:['Trattoria delle Grazie']},
+      {name:'Portoria e Centro', places:['Ristorante Trattoria da Maria']},
+      {name:'Pré e Darsena', places:['Trattoria da Mario']}
+    ],
+    'fav-list-take-away': [
+      {name:'Molo e Canneto', places:['Tapullo Street Genova',"Roast 'n Roll"]},
+      {name:'San Lorenzo e Scurreria', places:['Tasche Piene']}
+    ],
+    'fav-list-alloggi': [
+      {name:'Centro storico e Molo', places:['B&B La Piazzetta Rooms',"B&B Dell'Acquario"]},
+      {name:'Principe', places:['Hotel Continental']}
     ]
   };
 })();

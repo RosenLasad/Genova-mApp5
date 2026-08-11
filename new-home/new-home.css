@@ -313,6 +313,51 @@ html.gm-new-home-open body{ overflow: hidden; }
 .gm-new-home-category small{ color:#667386; line-height:1.35; }
 .gm-new-home-category-arrow{ color:var(--gm-theme); font-size:1.3rem; font-weight:900; }
 
+/* Card fotografiche delle singole voci: prima applicazione a Patrimonio storico. */
+.gm-new-home-category.has-image{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  color:#fff;
+  background-color:var(--gm-theme);
+  background-image:
+    linear-gradient(90deg,
+      color-mix(in srgb, var(--gm-theme) 68%, transparent) 0%,
+      color-mix(in srgb, var(--gm-theme) 48%, transparent) 52%,
+      rgba(8,12,18,.22) 100%),
+    var(--gm-category-image);
+  background-size:cover,cover;
+  background-position:center,var(--gm-category-position,center);
+  background-repeat:no-repeat;
+  border-color:color-mix(in srgb, var(--gm-theme-accent) 76%, #fff);
+  box-shadow:0 7px 18px rgba(20,20,28,.2);
+}
+.gm-new-home-category.has-image:hover{
+  color:#fff;
+  background-color:var(--gm-theme);
+  background-image:
+    linear-gradient(90deg,
+      color-mix(in srgb, var(--gm-theme) 61%, #10131a) 0%,
+      color-mix(in srgb, var(--gm-theme) 49%, rgba(8,12,18,.66)) 48%,
+      rgba(8,12,18,.27) 100%),
+    var(--gm-category-image);
+  background-size:cover,cover;
+  background-position:center,var(--gm-category-position,center);
+  border-color:#fff;
+}
+.gm-new-home-category.has-image strong{
+  color:#fff;
+  text-shadow:0 1px 3px rgba(0,0,0,.7);
+}
+.gm-new-home-category.has-image small{
+  color:rgba(255,255,255,.9);
+  text-shadow:0 1px 3px rgba(0,0,0,.75);
+}
+.gm-new-home-category.has-image .gm-new-home-category-arrow{
+  color:#fff;
+  text-shadow:0 1px 4px rgba(0,0,0,.72);
+}
+
 .gm-new-home-place-list{ display:grid; gap:8px; margin:0; padding:0; list-style:none; }
 .gm-new-home-place{
   width:100%;
