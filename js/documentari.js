@@ -1100,17 +1100,10 @@ DOCS.forEach(function(d){
     btn.setAttribute('title', 'Documentari');
     btn.setAttribute('aria-label', 'Documentari');
 
-    // icona: schermo + triangolino "play"
     btn.innerHTML =
-      '<span class="qt-icon">'+
-      '  <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" '+
-      '       fill="none" stroke="currentColor" stroke-width="2" '+
-      '       stroke-linecap="round" stroke-linejoin="round">'+
-      '    <rect x="3" y="4" width="18" height="14" rx="2" ry="2"></rect>'+
-      '    <polygon points="10,9 15,12 10,15"></polygon>'+
-      '  </svg>'+
-      '</span>'+
-      '<span class="sr-only">Mostra tutti i documentari</span>';
+      '<img alt="" aria-hidden="true" class="qt-past-icon" src="icons/passato/minidoc.svg">'+
+      '<span class="qt-past-label">MiniDoc</span>'+
+      '<span class="sr-only">MiniDoc</span>';
 
     btn.addEventListener('click', function(ev){
       ev.preventDefault();
