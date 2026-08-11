@@ -290,7 +290,9 @@
   var LIST_LABELS = {
     'fav-list-forti': 'Forte', 'fav-list-musei': 'Museo', 'fav-list-bus': 'Autobus',
     'fav-list-train': 'Stazione', 'fav-list-metro': 'Metro', 'fav-list-funi': 'Impianto',
-    'fav-list-locali': 'Locale', 'fav-list-mare': 'Mare', 'fav-list-aereo': 'Aeroporto',
+    'fav-list-locali': 'Locale', 'fav-list-ristoranti': 'Ristorante',
+    'fav-list-take-away': 'Take-away', 'fav-list-alloggi': 'Alloggio',
+    'fav-list-mare': 'Mare', 'fav-list-aereo': 'Aeroporto',
     'fav-list-chiese': 'Chiesa', 'fav-list-palazzi': 'Palazzo', 'fav-list-sport': 'Sport',
     'fav-list-cinema': 'Cinema', 'fav-list-teatri': 'Teatro', 'fav-list-mostre': 'Mostra'
   };
@@ -301,19 +303,20 @@
   };
 
   var CATEGORY_NAMES = {
-    it: { Forte:'Forte', Museo:'Museo', Autobus:'Autobus', Stazione:'Stazione', Metro:'Metro', Impianto:'Impianto', Locale:'Locale', Mare:'Mare', Aeroporto:'Aeroporto', Chiesa:'Chiesa', Palazzo:'Palazzo', Sport:'Sport', Cinema:'Cinema', Teatro:'Teatro', Mostra:'Mostra', Parco:'Parco', Piazza:'Piazza' },
-    en: { Forte:'Fort', Museo:'Museum', Autobus:'Bus', Stazione:'Station', Metro:'Metro', Impianto:'Transport facility', Locale:'Venue', Mare:'Seaside', Aeroporto:'Airport', Chiesa:'Church', Palazzo:'Palace', Sport:'Sport', Cinema:'Cinema', Teatro:'Theatre', Mostra:'Exhibition', Parco:'Park', Piazza:'Square' },
-    es: { Forte:'Fuerte', Museo:'Museo', Autobus:'Autobús', Stazione:'Estación', Metro:'Metro', Impianto:'Transporte', Locale:'Local', Mare:'Mar', Aeroporto:'Aeropuerto', Chiesa:'Iglesia', Palazzo:'Palacio', Sport:'Deporte', Cinema:'Cine', Teatro:'Teatro', Mostra:'Exposición', Parco:'Parque', Piazza:'Plaza' },
-    fr: { Forte:'Fort', Museo:'Musée', Autobus:'Bus', Stazione:'Gare', Metro:'Métro', Impianto:'Transport', Locale:'Établissement', Mare:'Mer', Aeroporto:'Aéroport', Chiesa:'Église', Palazzo:'Palais', Sport:'Sport', Cinema:'Cinéma', Teatro:'Théâtre', Mostra:'Exposition', Parco:'Parc', Piazza:'Place' },
-    ar: { Forte:'حصن', Museo:'متحف', Autobus:'حافلة', Stazione:'محطة', Metro:'مترو', Impianto:'وسيلة نقل', Locale:'مكان ترفيهي', Mare:'البحر', Aeroporto:'مطار', Chiesa:'كنيسة', Palazzo:'قصر', Sport:'رياضة', Cinema:'سينما', Teatro:'مسرح', Mostra:'معرض', Parco:'حديقة', Piazza:'ساحة' },
-    ru: { Forte:'Форт', Museo:'Музей', Autobus:'Автобус', Stazione:'Станция', Metro:'Метро', Impianto:'Транспорт', Locale:'Заведение', Mare:'Море', Aeroporto:'Аэропорт', Chiesa:'Церковь', Palazzo:'Дворец', Sport:'Спорт', Cinema:'Кинотеатр', Teatro:'Театр', Mostra:'Выставка', Parco:'Парк', Piazza:'Площадь' },
-    zh: { Forte:'堡垒', Museo:'博物馆', Autobus:'公交车', Stazione:'车站', Metro:'地铁', Impianto:'交通设施', Locale:'休闲场所', Mare:'海滨', Aeroporto:'机场', Chiesa:'教堂', Palazzo:'宫殿', Sport:'体育', Cinema:'电影院', Teatro:'剧院', Mostra:'展览', Parco:'公园', Piazza:'广场' },
-    lij: { Forte:'Fòrte', Museo:'Muxêo', Autobus:'Autobùs', Stazione:'Staçion', Metro:'Metropolitana', Impianto:'Impianto', Locale:'Locale', Mare:'Mâ', Aeroporto:'Aeroporto', Chiesa:'Gexa', Palazzo:'Palaçio', Sport:'Spòrt', Cinema:'Çinema', Teatro:'Teatro', Mostra:'Mostra', Parco:'Parco', Piazza:'Ciassa' }
+    it: { Forte:'Forte', Museo:'Museo', Autobus:'Autobus', Stazione:'Stazione', Metro:'Metro', Impianto:'Impianto', Locale:'Locale', Ristorante:'Ristorante', 'Take-away':'Take-away', Alloggio:'Albergo e B&B', Mare:'Mare', Aeroporto:'Aeroporto', Chiesa:'Chiesa', Palazzo:'Palazzo', Sport:'Sport', Cinema:'Cinema', Teatro:'Teatro', Mostra:'Mostra', Parco:'Parco', Piazza:'Piazza' },
+    en: { Forte:'Fort', Museo:'Museum', Autobus:'Bus', Stazione:'Station', Metro:'Metro', Impianto:'Transport facility', Locale:'Venue', Ristorante:'Restaurant', 'Take-away':'Takeaway', Alloggio:'Hotel & B&B', Mare:'Seaside', Aeroporto:'Airport', Chiesa:'Church', Palazzo:'Palace', Sport:'Sport', Cinema:'Cinema', Teatro:'Theatre', Mostra:'Exhibition', Parco:'Park', Piazza:'Square' },
+    es: { Forte:'Fuerte', Museo:'Museo', Autobus:'Autobús', Stazione:'Estación', Metro:'Metro', Impianto:'Transporte', Locale:'Local', Ristorante:'Restaurante', 'Take-away':'Comida para llevar', Alloggio:'Hotel y B&B', Mare:'Mar', Aeroporto:'Aeropuerto', Chiesa:'Iglesia', Palazzo:'Palacio', Sport:'Deporte', Cinema:'Cine', Teatro:'Teatro', Mostra:'Exposición', Parco:'Parque', Piazza:'Plaza' },
+    fr: { Forte:'Fort', Museo:'Musée', Autobus:'Bus', Stazione:'Gare', Metro:'Métro', Impianto:'Transport', Locale:'Établissement', Ristorante:'Restaurant', 'Take-away':'À emporter', Alloggio:'Hôtel et B&B', Mare:'Mer', Aeroporto:'Aéroport', Chiesa:'Église', Palazzo:'Palais', Sport:'Sport', Cinema:'Cinéma', Teatro:'Théâtre', Mostra:'Exposition', Parco:'Parc', Piazza:'Place' },
+    ar: { Forte:'حصن', Museo:'متحف', Autobus:'حافلة', Stazione:'محطة', Metro:'مترو', Impianto:'وسيلة نقل', Locale:'مكان ترفيهي', Ristorante:'مطعم', 'Take-away':'طعام للسفر', Alloggio:'فندق ومبيت وإفطار', Mare:'البحر', Aeroporto:'مطار', Chiesa:'كنيسة', Palazzo:'قصر', Sport:'رياضة', Cinema:'سينما', Teatro:'مسرح', Mostra:'معرض', Parco:'حديقة', Piazza:'ساحة' },
+    ru: { Forte:'Форт', Museo:'Музей', Autobus:'Автобус', Stazione:'Станция', Metro:'Метро', Impianto:'Транспорт', Locale:'Заведение', Ristorante:'Ресторан', 'Take-away':'Еда навынос', Alloggio:'Отель и B&B', Mare:'Море', Aeroporto:'Аэропорт', Chiesa:'Церковь', Palazzo:'Дворец', Sport:'Спорт', Cinema:'Кинотеатр', Teatro:'Театр', Mostra:'Выставка', Parco:'Парк', Piazza:'Площадь' },
+    zh: { Forte:'堡垒', Museo:'博物馆', Autobus:'公交车', Stazione:'车站', Metro:'地铁', Impianto:'交通设施', Locale:'休闲场所', Ristorante:'餐厅', 'Take-away':'外卖', Alloggio:'酒店与民宿', Mare:'海滨', Aeroporto:'机场', Chiesa:'教堂', Palazzo:'宫殿', Sport:'体育', Cinema:'电影院', Teatro:'剧院', Mostra:'展览', Parco:'公园', Piazza:'广场' },
+    lij: { Forte:'Fòrte', Museo:'Muxêo', Autobus:'Autobùs', Stazione:'Staçion', Metro:'Metropolitana', Impianto:'Impianto', Locale:'Locale', Ristorante:'Ristorante', 'Take-away':'Take-away', Alloggio:'Albergo e B&B', Mare:'Mâ', Aeroporto:'Aeroporto', Chiesa:'Gexa', Palazzo:'Palaçio', Sport:'Spòrt', Cinema:'Çinema', Teatro:'Teatro', Mostra:'Mostra', Parco:'Parco', Piazza:'Ciassa' }
   };
 
   var CATEGORY_COLORS = {
     'Forte': '#7f628f', 'Museo': '#b77728', 'Autobus': '#407d99', 'Stazione': '#476f9d',
-    'Metro': '#725c9e', 'Impianto': '#4f8454', 'Locale': '#a35d68', 'Mare': '#37838c',
+    'Metro': '#725c9e', 'Impianto': '#4f8454', 'Locale': '#a35d68', 'Ristorante': '#247766',
+    'Take-away': '#b45f32', 'Alloggio': '#315f7d', 'Mare': '#37838c',
     'Aeroporto': '#6686a1', 'Chiesa': '#9e5b52', 'Palazzo': '#a18435', 'Sport': '#52835d',
     'Cinema': '#9b5c83', 'Teatro': '#a56b36', 'Mostra': '#718548', 'Parco': '#4d8067',
     'Piazza': '#9c7e31'
@@ -479,6 +482,9 @@
     addDataToIndex(index, 'Parco', window.PARKS_POINTS);
     addDataToIndex(index, 'Piazza', window.PIAZZE_POINTS);
     addDataToIndex(index, 'Locale', window.LOCALI_POINTS || window.LOCALI);
+    addDataToIndex(index, 'Ristorante', window.LOCALI_POINTS || window.LOCALI);
+    addDataToIndex(index, 'Take-away', window.LOCALI_POINTS || window.LOCALI);
+    addDataToIndex(index, 'Alloggio', window.LOCALI_POINTS || window.LOCALI);
     addDataToIndex(index, 'Mare', window.MARE_POINTS);
     addDataToIndex(index, 'Aeroporto', window.AEREO_POINTS);
     addDataToIndex(index, 'Chiesa', window.CHIESE_POINTS || window.CHIESE_DATA || window.CHIESE);
@@ -496,6 +502,9 @@
     copyExposedIndex(index, 'Parco', window.__FAV_INDEX_PARCHI);
     copyExposedIndex(index, 'Piazza', window.__FAV_INDEX_PIAZZE);
     copyExposedIndex(index, 'Locale', window.__FAV_INDEX_LOCALI);
+    copyExposedIndex(index, 'Ristorante', window.__FAV_INDEX_LOCALI);
+    copyExposedIndex(index, 'Take-away', window.__FAV_INDEX_LOCALI);
+    copyExposedIndex(index, 'Alloggio', window.__FAV_INDEX_LOCALI);
     copyExposedIndex(index, 'Mare', window.__FAV_INDEX_MARE);
     copyExposedIndex(index, 'Aeroporto', window.__FAV_INDEX_AEREO);
     copyExposedIndex(index, 'Chiesa', window.__FAV_INDEX_CHIESE);

@@ -13,6 +13,8 @@
     'fav-list-parchi-piazze':'__PP__',
     'fav-list-locali':'Locale',
     'fav-list-ristoranti':'Ristorante',
+    'fav-list-take-away':'Take-away',
+    'fav-list-alloggi':'Albergo e B&B',
     'fav-list-mare':'Mare',
     'fav-list-aereo':'Aeroporto',
     'fav-list-chiese':'Chiesa',

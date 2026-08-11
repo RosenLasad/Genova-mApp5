@@ -144,19 +144,19 @@
       website:'https://www.amt.genova.it/amt/trasporto-multimodale/ascensori/'
     },
     fort: {
-      kind:'heritage', iconClass:'forti-marker', color:'#d6c7a1', mark:'F',
+      kind:'heritage', iconClass:'forti-marker', color:'#8f4038', mark:'F',
       label:{it:'Forte',en:'Fort',es:'Fuerte',fr:'Fort',ar:'\u062d\u0635\u0646',ru:'\u0424\u043e\u0440\u0442',zh:'\u8981\u585e',lij:'Forte'}
     },
     museum: {
-      kind:'heritage', iconClass:'museum-ico', color:'#a78bfa', mark:'M',
+      kind:'heritage', iconClass:'museum-ico', color:'#a65b43', mark:'M',
       label:{it:'Museo',en:'Museum',es:'Museo',fr:'Mus\u00e9e',ar:'\u0645\u062a\u062d\u0641',ru:'\u041c\u0443\u0437\u0435\u0439',zh:'\u535a\u7269\u9986',lij:'Muxeo'}
     },
     church: {
-      kind:'heritage', iconClass:'chiese-marker', color:'#4b5563', mark:'+',
+      kind:'heritage', iconClass:'chiese-marker', color:'#7d5263', mark:'+',
       label:{it:'Chiesa',en:'Church',es:'Iglesia',fr:'\u00c9glise',ar:'\u0643\u0646\u064a\u0633\u0629',ru:'\u0426\u0435\u0440\u043a\u043e\u0432\u044c',zh:'\u6559\u5802',lij:'Gexa'}
     },
     palace: {
-      kind:'heritage', iconClass:'palazzi-marker', color:'#065f46', mark:'P',
+      kind:'heritage', iconClass:'palazzi-marker', color:'#b57945', mark:'P',
       label:{it:'Palazzo',en:'Palace',es:'Palacio',fr:'Palais',ar:'\u0642\u0635\u0631',ru:'\u0414\u0432\u043e\u0440\u0435\u0446',zh:'\u5bab\u6bbf',lij:'Palasso'}
     },
     park: {
@@ -194,6 +194,19 @@
       service:{it:'Collegamenti aerei',en:'Air connections',es:'Conexiones aéreas',fr:'Liaisons aériennes',ar:'رحلات جوية',ru:'Авиасообщение',zh:'航空连接',lij:'Collegamenti pe ægo'},
       website:'https://www.airport.genova.it/'
     }
+  };
+
+  var RESTAURANT_LABEL = {
+    it:'Ristorante', en:'Restaurant', es:'Restaurante', fr:'Restaurant',
+    ar:'مطعم', ru:'Ресторан', zh:'餐厅', lij:'Ristorante'
+  };
+  var TAKE_AWAY_LABEL = {
+    it:'Take-away', en:'Takeaway', es:'Comida para llevar', fr:'À emporter',
+    ar:'طعام للسفر', ru:'Еда навынос', zh:'外卖', lij:'Take-away'
+  };
+  var ACCOMMODATION_LABEL = {
+    it:'Albergo e B&B', en:'Hotel & B&B', es:'Hotel y B&B', fr:'Hôtel et B&B',
+    ar:'فندق ومبيت وإفطار', ru:'Отель и B&B', zh:'酒店与民宿', lij:'Albergo e B&B'
   };
 
   function currentLang(){
@@ -401,6 +414,16 @@
     if(point && (point.name || point.title)) name = pick(point.name || point.title, lang).replace(/\bAereoporto\b/gi, 'Aeroporto');
     if(cfg.kind === 'heritage' || cfg.kind === 'entertainment'){
       var entertainmentExtra = cfg.kind === 'entertainment' ? entertainmentOverride(type, name) : {};
+      var venueKind = type === 'venue' ? String(point.kind || 'locale').toLowerCase() : '';
+      var venueColor = venueKind === 'ristorante' ? '#247766'
+        : venueKind === 'take-away' ? '#b45f32'
+        : venueKind === 'alloggio' ? '#315f7d' : cfg.color;
+      var venueMark = venueKind === 'ristorante' ? 'R'
+        : venueKind === 'take-away' ? 'T'
+        : venueKind === 'alloggio' ? 'H' : cfg.mark;
+      var venueLabel = venueKind === 'ristorante' ? RESTAURANT_LABEL
+        : venueKind === 'take-away' ? TAKE_AWAY_LABEL
+        : venueKind === 'alloggio' ? ACCOMMODATION_LABEL : cfg.label;
       var pointDescription = entertainmentExtra.description || point.desc || point.descr || point.description || '';
       var simpleDescription = '';
       if(pointDescription && typeof pointDescription === 'object'){
@@ -413,9 +436,9 @@
       return {
         type:type,
         kind:cfg.kind,
-        color:cfg.color,
-        mark:cfg.mark,
-        category:pick(cfg.label, lang),
+        color:venueColor,
+        mark:venueMark,
+        category:pick(venueLabel, lang),
         name:name,
         image:pick(point.img || point.image || point.photo, lang) || snapshot.image || '',
         summary:simpleDescription,
