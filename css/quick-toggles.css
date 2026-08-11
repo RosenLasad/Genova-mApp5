@@ -158,3 +158,428 @@
     height:23px !important;
   }
 }
+
+/* Mangiare e dormire: categoria autonoma e quattro filtri coerenti con i popup. */
+#quick-toggles #qt-cat-food-btn{
+  background:#247766 !important;
+  color:#fff !important;
+  border-color:rgba(255,255,255,.28) !important;
+}
+
+#quick-toggles #qt-cat-food-btn .qt-icon,
+#quick-toggles #qt-cat-food-btn svg{
+  width:29px !important;
+  height:29px !important;
+  display:block !important;
+}
+
+#quick-toggles #qt-cat-food{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  padding:0 !important;
+}
+
+#quick-toggles #qt-cat-food .qt-cat-items{
+  margin:0 !important;
+  padding:3px !important;
+  border-radius:12px !important;
+  background:#247766 !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.25) !important;
+}
+
+#quick-toggles #qt-cat-food .qt-btn{
+  width:172px !important;
+  min-width:172px !important;
+  height:46px !important;
+  min-height:46px !important;
+  justify-content:flex-start !important;
+  gap:9px !important;
+  padding:3px 12px 3px 4px !important;
+  border:1px solid rgba(255,255,255,.25) !important;
+  color:#fff !important;
+  border-radius:13px !important;
+}
+
+#quick-toggles #qt-cat-food .qt-locali{ background:#db2777 !important; }
+#quick-toggles #qt-cat-food .qt-ristoranti{ background:#247766 !important; }
+#quick-toggles #qt-cat-food .qt-take-away{ background:#b45f32 !important; }
+#quick-toggles #qt-cat-food .qt-alloggi{ background:#315f7d !important; }
+
+#quick-toggles #qt-cat-food .qt-btn .sq{
+  fill:rgba(255,255,255,.12) !important;
+  stroke:rgba(255,255,255,.38) !important;
+}
+
+#quick-toggles #qt-cat-food .qt-btn .glyph{
+  fill:#fff;
+  color:#fff;
+}
+
+#quick-toggles #qt-cat-food .qt-ristoranti .glyph,
+#quick-toggles #qt-cat-food .qt-take-away .glyph,
+#quick-toggles #qt-cat-food .qt-alloggi .glyph{
+  fill:none !important;
+  stroke:#fff !important;
+}
+
+#quick-toggles #qt-cat-food .qt-btn[aria-pressed="true"]{
+  filter:brightness(1.16) saturate(1.12) !important;
+  box-shadow:0 0 0 2px #fff, 0 4px 10px rgba(0,0,0,.3) !important;
+}
+
+#quick-toggles #qt-cat-food .qt-food-icon{
+  width:38px !important;
+  height:38px !important;
+  flex:0 0 38px;
+  display:block;
+}
+
+#quick-toggles #qt-cat-food .qt-food-label{
+  min-width:0;
+  color:#fff;
+  font:700 13px/1.12 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  text-align:left;
+  white-space:normal;
+}
+
+.leaflet-marker-icon.locali-marker .food-marker-icon{
+  display:block;
+  width:30px;
+  height:30px;
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.3));
+}
+
+@media (max-width:420px){
+  #quick-toggles #qt-cat-food .qt-btn{
+    width:154px !important;
+    min-width:154px !important;
+    height:42px !important;
+    min-height:42px !important;
+    gap:7px !important;
+  }
+  #quick-toggles #qt-cat-food .qt-food-icon{
+    width:34px !important;
+    height:34px !important;
+    flex-basis:34px;
+  }
+  #quick-toggles #qt-cat-food .qt-food-label{ font-size:12px; }
+}
+
+/* I marker riprendono il colore della rispettiva sottocategoria. */
+.locali-marker.locali-marker-ristorante .loc-dot{
+  background:radial-gradient(circle at 30% 20%, #78c6ae, #247766) !important;
+}
+.locali-marker.locali-marker-take-away .loc-dot{
+  background:radial-gradient(circle at 30% 20%, #e4a27d, #b45f32) !important;
+}
+.locali-marker.locali-marker-alloggio .loc-dot{
+  background:radial-gradient(circle at 30% 20%, #7fa8c2, #315f7d) !important;
+}
+
+/* Come muoversi: pulsanti descrittivi e marker con la stessa icona. */
+#quick-toggles #qt-cat-trasporti-btn{
+  background:#1e3a8a !important;
+  color:#fff !important;
+}
+#quick-toggles #qt-cat-trasporti-btn .qt-transport-main-icon img{
+  width:29px !important;
+  height:29px !important;
+}
+#quick-toggles #qt-cat-trasporti{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  padding:0 !important;
+}
+#quick-toggles #qt-cat-trasporti .qt-cat-items{
+  margin:0 !important;
+  padding:3px !important;
+  border-radius:12px !important;
+  background:#1e3a8a !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.25) !important;
+}
+#quick-toggles #qt-cat-trasporti .qt-btn{
+  width:184px !important;
+  min-width:184px !important;
+  height:46px !important;
+  min-height:46px !important;
+  justify-content:flex-start !important;
+  gap:9px !important;
+  padding:3px 12px 3px 4px !important;
+  border:1px solid rgba(255,255,255,.25) !important;
+  border-radius:13px !important;
+  color:#fff !important;
+}
+#quick-toggles #qt-cat-trasporti .qt-bus{ background:#167d91 !important; }
+#quick-toggles #qt-cat-trasporti .qt-train{ background:#3f648e !important; }
+#quick-toggles #qt-cat-trasporti .qt-metro{ background:#d0444b !important; }
+#quick-toggles #qt-cat-trasporti .qt-funi{ background:#7a667e !important; }
+#quick-toggles #qt-cat-trasporti .qt-mare{ background:#187eae !important; }
+#quick-toggles #qt-cat-trasporti .qt-aereo{ background:#4e73b8 !important; }
+#quick-toggles #qt-cat-trasporti .qt-transport-icon{
+  display:block;
+  width:38px !important;
+  height:38px !important;
+  flex:0 0 38px;
+}
+#quick-toggles #qt-cat-trasporti .qt-transport-label{
+  min-width:0;
+  color:#fff;
+  font:700 13px/1.12 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  text-align:left;
+  white-space:normal;
+}
+#quick-toggles #qt-cat-trasporti .qt-btn[aria-pressed="true"]{
+  filter:brightness(1.16) saturate(1.1) !important;
+  box-shadow:0 0 0 2px #fff,0 4px 10px rgba(0,0,0,.3) !important;
+}
+.leaflet-marker-icon.bus-ico,
+.leaflet-marker-icon.train-ico,
+.leaflet-marker-icon.metro-ico,
+.leaflet-marker-icon.funi-ico,
+.leaflet-marker-icon.mare-marker,
+.leaflet-marker-icon.aereo-marker{
+  background:transparent !important;
+  border:0 !important;
+}
+.transport-map-marker{
+  width:30px;
+  height:30px;
+  box-sizing:border-box;
+  display:grid;
+  place-items:center;
+  border:2px solid #fff;
+  border-radius:50%;
+  box-shadow:0 0 0 1.5px #142536,0 2px 4px rgba(0,0,0,.32);
+}
+.transport-map-marker img{ width:21px; height:21px; display:block; }
+.transport-marker-bus{ background:#167d91; }
+.transport-marker-train{ background:#3f648e; }
+.transport-marker-metro{ background:#d0444b; }
+.transport-marker-funi{ background:#7a667e; }
+.transport-marker-sea{ background:#187eae; }
+.transport-marker-air{ background:#4e73b8; }
+@media (max-width:420px){
+  #quick-toggles #qt-cat-trasporti .qt-btn{
+    width:164px !important;
+    min-width:164px !important;
+    height:42px !important;
+    min-height:42px !important;
+    gap:7px !important;
+  }
+  #quick-toggles #qt-cat-trasporti .qt-transport-icon{
+    width:34px !important;
+    height:34px !important;
+    flex-basis:34px;
+  }
+  #quick-toggles #qt-cat-trasporti .qt-transport-label{ font-size:12px; }
+}
+
+/* Intrattenimento: famiglia calda coordinata tra filtri e marker. */
+#quick-toggles #qt-cat-luoghi-btn{
+  background:#d99a16 !important;
+  color:#fff !important;
+  border-color:rgba(255,255,255,.28) !important;
+}
+#quick-toggles #qt-cat-luoghi-btn .qt-entertainment-main-icon img{
+  display:block !important;
+  width:29px !important;
+  height:29px !important;
+}
+#quick-toggles #qt-cat-luoghi{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  padding:0 !important;
+}
+#quick-toggles #qt-cat-luoghi .qt-cat-items{
+  margin:0 !important;
+  padding:3px !important;
+  border-radius:12px !important;
+  background:#d99a16 !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.25) !important;
+}
+#quick-toggles #qt-cat-luoghi .qt-btn{
+  width:172px !important;
+  min-width:172px !important;
+  height:46px !important;
+  min-height:46px !important;
+  justify-content:flex-start !important;
+  gap:9px !important;
+  padding:3px 12px 3px 4px !important;
+  border:1px solid rgba(255,255,255,.25) !important;
+  border-radius:13px !important;
+  color:#fff !important;
+}
+#quick-toggles #qt-cat-luoghi .qt-btn > svg{ display:none !important; }
+#quick-toggles #qt-cat-luoghi .qt-parchi{ background:#8a9a32 !important; }
+#quick-toggles #qt-cat-luoghi .qt-sport{ background:#c9791a !important; }
+#quick-toggles #qt-cat-luoghi .qt-cinema{ background:#a97716 !important; }
+#quick-toggles #qt-cat-luoghi .qt-teatri{ background:#b85c2b !important; }
+#quick-toggles #qt-cat-luoghi .qt-mostre{ background:#d7a21b !important; }
+#quick-toggles #qt-cat-luoghi .qt-entertainment-icon{
+  display:block;
+  width:38px !important;
+  height:38px !important;
+  flex:0 0 38px;
+}
+#quick-toggles #qt-cat-luoghi .qt-entertainment-label{
+  min-width:0;
+  color:#fff;
+  font:700 13px/1.12 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  text-align:left;
+  white-space:normal;
+}
+#quick-toggles #qt-cat-luoghi .qt-btn[aria-pressed="true"]{
+  filter:brightness(1.16) saturate(1.1) !important;
+  box-shadow:0 0 0 2px #fff,0 4px 10px rgba(0,0,0,.3) !important;
+}
+.leaflet-marker-icon.parks-ico,
+.leaflet-marker-icon.sport-marker,
+.leaflet-marker-icon.cinema-marker,
+.leaflet-marker-icon.teatri-marker,
+.leaflet-marker-icon.mostre-marker{
+  background:transparent !important;
+  border:0 !important;
+}
+.entertainment-map-marker{
+  width:30px;
+  height:30px;
+  box-sizing:border-box;
+  display:grid;
+  place-items:center;
+  border:2px solid #fff;
+  border-radius:50%;
+  box-shadow:0 0 0 1.5px #30220f,0 2px 4px rgba(0,0,0,.32);
+}
+.entertainment-map-marker img{ width:21px; height:21px; display:block; }
+.entertainment-marker-parks{ background:#8a9a32; }
+.entertainment-marker-sport{ background:#c9791a; }
+.entertainment-marker-cinema{ background:#a97716; }
+.entertainment-marker-theater{ background:#b85c2b; }
+.entertainment-marker-exhibitions{ background:#d7a21b; }
+@media (max-width:420px){
+  #quick-toggles #qt-cat-luoghi .qt-btn{
+    width:154px !important;
+    min-width:154px !important;
+    height:42px !important;
+    min-height:42px !important;
+    gap:7px !important;
+  }
+  #quick-toggles #qt-cat-luoghi .qt-entertainment-icon{
+    width:34px !important;
+    height:34px !important;
+    flex-basis:34px;
+  }
+  #quick-toggles #qt-cat-luoghi .qt-entertainment-label{ font-size:12px; }
+}
+
+/* Passato: Patrimonio storico, tracciati storici e MiniDoc. */
+#quick-toggles #qt-cat-passato-btn{
+  background:#6f3545 !important;
+  color:#fff !important;
+  border-color:rgba(255,255,255,.28) !important;
+}
+#quick-toggles #qt-cat-passato-btn .qt-past-main-icon img{
+  display:block !important;
+  width:29px !important;
+  height:29px !important;
+}
+#quick-toggles #qt-cat-passato{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  padding:0 !important;
+}
+#quick-toggles #qt-cat-passato .qt-cat-items{
+  margin:0 !important;
+  padding:3px !important;
+  border-radius:12px !important;
+  background:#6f3545 !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.25) !important;
+}
+#quick-toggles #qt-cat-passato .qt-btn{
+  width:172px !important;
+  min-width:172px !important;
+  height:46px !important;
+  min-height:46px !important;
+  justify-content:flex-start !important;
+  gap:9px !important;
+  padding:3px 12px 3px 4px !important;
+  border:1px solid rgba(255,255,255,.25) !important;
+  border-radius:13px !important;
+  color:#fff !important;
+}
+#quick-toggles #qt-cat-passato .qt-btn > svg,
+#quick-toggles #qt-cat-passato .qt-btn > .qt-icon{ display:none !important; }
+#quick-toggles #qt-cat-passato .qt-forti{ background:#8f4038 !important; }
+#quick-toggles #qt-cat-passato .qt-museum{ background:#a65b43 !important; }
+#quick-toggles #qt-cat-passato .qt-chiese{ background:#7d5263 !important; }
+#quick-toggles #qt-cat-passato .qt-palazzi{ background:#b57945 !important; }
+#quick-toggles #qt-cat-passato .qt-mura-all{ background:#626b4d !important; }
+#quick-toggles #qt-cat-passato .qt-acq-all{ background:#397b8c !important; }
+#quick-toggles #qt-cat-passato .qt-percorsi-all{ background:#8b6a3f !important; }
+#quick-toggles #qt-cat-passato .qt-doc-all{ background:#6d518d !important; }
+#quick-toggles #qt-cat-passato .qt-mura-all{ order:5 !important; }
+#quick-toggles #qt-cat-passato .qt-acq-all{ order:6 !important; }
+#quick-toggles #qt-cat-passato .qt-percorsi-all{ order:7 !important; }
+#quick-toggles #qt-cat-passato .qt-doc-all{ order:8 !important; }
+#quick-toggles #qt-cat-passato .qt-past-icon{
+  display:block !important;
+  width:38px !important;
+  height:38px !important;
+  flex:0 0 38px;
+}
+#quick-toggles #qt-cat-passato .qt-past-label{
+  min-width:0;
+  color:#fff;
+  font:700 13px/1.12 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  text-align:left;
+  white-space:normal;
+}
+#quick-toggles #qt-cat-passato .qt-btn[aria-pressed="true"]{
+  filter:brightness(1.16) saturate(1.1) !important;
+  box-shadow:0 0 0 2px #fff,0 4px 10px rgba(0,0,0,.3) !important;
+}
+#map .leaflet-marker-icon.forti-marker,
+#map .leaflet-marker-icon.museum-ico,
+#map .leaflet-marker-icon.chiese-marker,
+#map .leaflet-marker-icon.palazzi-marker,
+#map .leaflet-marker-icon.doc-ico{
+  width:30px !important;
+  height:30px !important;
+  background:transparent !important;
+  border:0 !important;
+}
+.past-map-marker{
+  width:30px;
+  height:30px;
+  box-sizing:border-box;
+  display:grid;
+  place-items:center;
+  border:2px solid #fff;
+  border-radius:50%;
+  box-shadow:0 0 0 1.5px #30201d,0 2px 4px rgba(0,0,0,.32);
+}
+.past-map-marker img{ width:21px; height:21px; display:block; }
+.past-marker-forts{ background:#8f4038; }
+.past-marker-museums{ background:#a65b43; }
+.past-marker-churches{ background:#7d5263; }
+.past-marker-palaces{ background:#b57945; }
+.past-marker-minidoc{ background:#6d518d; }
+@media (max-width:420px){
+  #quick-toggles #qt-cat-passato .qt-btn{
+    width:154px !important;
+    min-width:154px !important;
+    height:42px !important;
+    min-height:42px !important;
+    gap:7px !important;
+  }
+  #quick-toggles #qt-cat-passato .qt-past-icon{
+    width:34px !important;
+    height:34px !important;
+    flex-basis:34px;
+  }
+  #quick-toggles #qt-cat-passato .qt-past-label{ font-size:12px; }
+}

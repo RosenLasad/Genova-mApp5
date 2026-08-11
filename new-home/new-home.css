@@ -406,7 +406,7 @@ html.gm-new-home-open body{ overflow: hidden; }
 }
 .gm-new-home-qr-group-toggle{
   width:100%;
-  min-height:62px;
+  min-height:54px;
   display:grid;
   grid-template-columns:minmax(0,1fr) auto;
   align-items:center;
@@ -419,8 +419,27 @@ html.gm-new-home-open body{ overflow: hidden; }
   cursor:pointer;
 }
 .gm-new-home-qr-group-toggle:hover{ background:color-mix(in srgb, var(--gm-theme-pale) 38%, #fff); }
-.gm-new-home-qr-group-toggle strong{ display:block; font-size:.98rem; }
-.gm-new-home-qr-group-toggle small{ display:block; margin-top:2px; color:#6c7988; }
+.gm-new-home-qr-group-toggle > span:first-child{
+  min-width:0;
+  display:flex;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:4px 9px;
+}
+.gm-new-home-qr-group-toggle strong{ display:inline; font-size:.98rem; }
+.gm-new-home-qr-group-toggle small{
+  display:inline-flex;
+  align-items:center;
+  margin:0;
+  padding:2px 7px;
+  color:#667687;
+  background:color-mix(in srgb, var(--gm-theme-pale) 58%, #fff);
+  border-radius:999px;
+  font-size:.72rem;
+  font-weight:750;
+  line-height:1.35;
+  white-space:nowrap;
+}
 .gm-new-home-qr-chevron{
   width:30px;
   height:30px;

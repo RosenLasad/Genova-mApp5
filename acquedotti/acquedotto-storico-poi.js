@@ -99,7 +99,7 @@
       var marker=L.circleMarker(point.coords,{radius:7,weight:2,color:'#fff',fillColor:'#16a34a',fillOpacity:.96,opacity:1,className:'gm-aqueduct-marker gm-aqueduct-marker--historic',pane:'markerPane'});
       marker.__gmHistoricAqueductPoint=point;
       marker.bindTooltip(point.name,{direction:'top',offset:[0,-7]});
-      marker.bindPopup(function(){return popupHTML(point);},{className:'gm-place-popup-wrap gm-aqueduct-popup-wrap gm-aqueduct-historic-popup-wrap',maxWidth:340,minWidth:260,autoPan:true,autoPanPaddingTopLeft:[42,112],autoPanPaddingBottomRight:[42,116],keepInView:true});
+      marker.bindPopup(function(){return popupHTML(point);},{className:'gm-place-popup-wrap gm-aqueduct-popup-wrap gm-aqueduct-historic-popup-wrap',maxWidth:340,minWidth:260,autoPan:true,autoPanPaddingTopLeft:[42,112],autoPanPaddingBottomRight:[42,116],keepInView:false});
       marker.addTo(layer); markerById[point.id]=marker;
     });
     var control=document.getElementById('chk-acq-storico');

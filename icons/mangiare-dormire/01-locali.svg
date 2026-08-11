@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Locali</title>
+  <rect x="4" y="4" width="56" height="56" rx="17" fill="#db2777"/>
+  <rect x="5.5" y="5.5" width="53" height="53" rx="15.5" fill="none" stroke="#ffffff" stroke-opacity=".32" stroke-width="3"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.4">
+    <path d="M17 19h30L32 35 17 19Z"/>
+    <path d="M32 35v12M24 48h16"/>
+    <path d="M39 19l5-6"/>
+    <circle cx="44.5" cy="12.5" r="3" fill="#fff" stroke="none"/>
+  </g>
+</svg>

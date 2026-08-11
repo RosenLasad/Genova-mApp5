@@ -216,7 +216,7 @@
       marker.bindTooltip(point.name,{direction:'top',offset:[0,-7]});
       marker.bindPopup(function(){ return popupHTML(point); },{
         className:'gm-place-popup-wrap gm-aqueduct-popup-wrap',maxWidth:340,minWidth:260,autoPan:true,
-        autoPanPaddingTopLeft:[42,112],autoPanPaddingBottomRight:[42,116],keepInView:true
+        autoPanPaddingTopLeft:[42,112],autoPanPaddingBottomRight:[42,116],keepInView:false
       });
       marker.addTo(layer);
       markerById[point.id]=marker;

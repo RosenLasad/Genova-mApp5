@@ -12,7 +12,7 @@
 <link href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" rel="stylesheet"/>
 
 <link rel="stylesheet" href="css/menu-home.css">
-<link rel="stylesheet" href="css/quick-toggles.css?v=20260808-1">
+<link rel="stylesheet" href="css/quick-toggles.css?v=20260812-6">
 <link rel="stylesheet" href="css/flag-menu.css">
 <link rel="stylesheet" href="css/fav-menu.css">
 <link rel="stylesheet" href="css/btn-scan.css">
@@ -31,14 +31,17 @@
 <link rel="stylesheet" href="css/aqueduct-popup.css?v=20260811-2">
 <link rel="stylesheet" href="css/train-line.css?v=20260808-1">
 <script src="js/transport-place-texts.js?v=20260807-1"></script>
+<script src="js/transport-toggle-labels.js?v=20260812-1"></script>
+<script src="js/entertainment-toggle-labels.js?v=20260812-1"></script>
+<script src="js/past-toggle-labels.js?v=20260812-1"></script>
 <script src="js/cinema-place-texts.js?v=20260808-1"></script>
 <script src="js/theater-place-texts.js?v=20260810-1"></script>
 <script src="js/park-place-texts.js?v=20260808-2"></script>
 <script src="js/park-place-texts-extra.js?v=20260808-2"></script>
-<script src="js/place-popup.js?v=20260808-60"></script>
+<script src="js/place-popup.js?v=20260812-63"></script>
 <script src="js/wall-popup.js?v=20260811-7"></script>
 <script src="js/languages.js"></script>
-<script src="js/inline.js?v=20260811-4"></script>
+<script src="js/inline.js?v=20260812-10"></script>
 <script>window.__GENOVA_INLINE_RUN(2,2);</script>
 
 <!-- PATCH: Legend as icon (help) -->
@@ -102,7 +105,7 @@
 <script>window.__GENOVA_INLINE_RUN(15,15);</script>
 <script>window.__GENOVA_INLINE_RUN(19,19);</script>
 
-<link rel="stylesheet" href="new-home/new-home.css?v=20260811-11">
+<link rel="stylesheet" href="new-home/new-home.css?v=20260811-12">
 <link rel="icon" type="image/png" href="icons/icon-192.png">
 </head>
 <body>
@@ -455,105 +458,37 @@
 </button>
 <!-- CATEGORIA: TRASPORTI (pillola) -->
 <button aria-controls="qt-cat-trasporti" aria-expanded="false" aria-label="Trasporti" class="qt-item qt-cat qt-pill" id="qt-cat-trasporti-btn" title="Trasporti" type="button">
-<span aria-hidden="true" class="qt-icon"><img alt="" draggable="false" height="32" src="Colonna/ico-trasporti.svg" width="32"/></span>
+<span aria-hidden="true" class="qt-icon qt-transport-main-icon"><img alt="" draggable="false" height="32" src="icons/come-muoversi/categoria.svg" width="32"/></span>
 <span class="sr-only">Trasporti</span>
 </button>
 <button aria-controls="qt-cat-passato" aria-expanded="false" class="qt-item qt-cat qt-pill qt-cat-passato" id="qt-cat-passato-btn" title="Passato" type="button">
-<span aria-hidden="true" class="qt-icon"><img alt="" draggable="false" height="32" src="Colonna/ico-passato.svg" width="32"/></span>
+<span aria-hidden="true" class="qt-icon qt-past-main-icon"><img alt="" draggable="false" height="32" src="icons/passato/categoria.svg" width="32"/></span>
 <span class="sr-only">Passato</span>
 </button>
 <button aria-controls="qt-cat-luoghi" aria-expanded="false" class="qt-item qt-cat qt-pill qt-cat-luoghi" id="qt-cat-luoghi-btn" title="Luoghi" type="button">
-<span aria-hidden="true" class="qt-icon" style="color:#fff"><img alt="" draggable="false" height="32" src="Colonna/ico-luoghi.svg" width="32"/></span>
+<span aria-hidden="true" class="qt-icon qt-entertainment-main-icon"><img alt="" draggable="false" height="32" src="icons/intrattenimento/categoria.svg" width="32"/></span>
 <span class="sr-only">Luoghi</span>
 </button>
+<button aria-controls="qt-cat-food" aria-expanded="false" aria-label="Mangiare e dormire" class="qt-item qt-cat qt-pill qt-cat-food" id="qt-cat-food-btn" title="Mangiare e dormire" type="button">
+<span aria-hidden="true" class="qt-icon">
+<svg height="32" viewbox="0 0 32 32" width="32">
+<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.1">
+<path d="M7 5v8M4.5 5v5.3A2.7 2.7 0 0 0 7 13a2.7 2.7 0 0 0 2.5-2.7V5M7 13v14"></path>
+<path d="M14 5v22M14 5c3.7 2.1 5.2 5.6 5.2 9.5H14"></path>
+<path d="M20.5 19.5h7v5.8h-7zM18.8 25.3h10.4M22 19.5v-2.2h3.8v2.2"></path>
+</g>
+</svg>
+</span>
+<span class="sr-only">Mangiare e dormire</span>
+</button>
 <div aria-label="Trasporti" class="qt-cat-panel" hidden="" id="qt-cat-trasporti" role="group">
-<div class="qt-cat-items" role="toolbar"><button aria-label="Stazioni autobus" class="qt-btn qt-bus" title="Stazioni autobus" type="button">
-<svg aria-hidden="true" height="25" viewbox="0 0 24 24" width="25">
-<rect class="sq" height="20" rx="6" width="20" x="2" y="2"></rect>
-<g class="glyph" transform="translate(4,5)">
-<text fill="#fff" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-size="11" font-weight="800" letter-spacing=".2px" text-anchor="middle" x="8" y="11">BUS</text>
-</g>
-</svg>
-</button><button aria-label="Stazioni ferroviarie" class="qt-btn qt-train" title="Stazioni ferroviarie" type="button">
-<svg aria-hidden="true" height="25" viewbox="0 0 24 24" width="25">
-<rect class="sq" height="20" rx="6" width="20" x="2" y="2"></rect>
-<g class="glyph" transform="translate(4,5)">
-<!-- cowcatcher -->
-<polygon points="1,9 0,8 0,10"></polygon>
-<!-- chassis -->
-<rect height="3" rx="1.2" width="12" x="1" y="8"></rect>
-<!-- boiler -->
-<rect height="3" rx="1.2" width="7" x="3" y="5"></rect>
-<!-- cab -->
-<rect height="4.2" rx="0.6" width="4" x="10" y="3.8"></rect>
-<!-- smokestack -->
-<rect height="1.8" width="1.4" x="4" y="3.2"></rect>
-<rect height="1.2" rx="0.4" width="2.2" x="3.6" y="2.2"></rect>
-<!-- wheels -->
-<circle cx="4" cy="11.5" r="1.2"></circle>
-<circle cx="9" cy="11.5" r="1.2"></circle>
-<!-- smoke puffs -->
-<g class="smoke">
-<circle cx="4.8" cy="1.2" r="0.9"></circle>
-<circle cx="3.9" cy="0.1" r="0.7"></circle>
-<circle cx="3.1" cy="-0.8" r="0.5"></circle>
-</g>
-</g>
-</svg>
-</button><button aria-label="Metropolitana" class="qt-btn qt-metro" title="Metropolitana" type="button">
-<svg aria-hidden="true" height="25" viewbox="0 0 24 24" width="25">
-<rect class="sq" height="20" rx="6" width="20" x="2" y="2"></rect>
-<g class="glyph" transform="translate(4,5)">
-<!-- Bold letter M -->
-<text font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="8" y="11">M</text>
-</g>
-</svg>
-</button><button aria-label="Ascensori / Cremagliere / Funicolari" class="qt-btn qt-funi" title="Ascensori / Cremagliere / Funicolari" type="button">
-<svg aria-hidden="true" height="25" viewbox="0 0 24 24" width="25">
-<rect class="sq" height="20" rx="6" width="20" x="2" y="2"></rect>
-<g class="glyph" transform="translate(0,0)">
-<!-- Rail (rotated) with gear teeth -->
-<g transform="rotate(-20 12 12)">
-<rect height="1.6" rx="0.8" width="14" x="5" y="12"></rect>
-<rect height="3" width="1.2" x="7" y="10.8"></rect>
-<rect height="3" width="1.2" x="11" y="10.8"></rect>
-<rect height="3" width="1.2" x="15" y="10.8"></rect>
-</g>
-<!-- Car cabin (rotated) -->
-<g transform="rotate(-20 12 12)">
-<rect height="4.2" rx="0.7" width="7" x="10" y="7.6"></rect>
-<rect height="1.4" rx="0.3" width="2.0" x="11.1" y="8.3"></rect>
-<rect height="1.4" rx="0.3" width="2.0" x="13.7" y="8.3"></rect>
-</g>
-</g>
-</svg>
-</button>
-<!-- Nuovo: Trasporti per mare -->
-<button aria-label="Collegamenti via mare" class="qt-btn qt-mare" title="Traghetti e battelli" type="button">
-<svg aria-hidden="true" height="25" viewbox="0 0 24 24" width="25">
-<rect class="sq" height="20" rx="6" width="20" x="2" y="2"></rect>
-<g class="glyph" transform="translate(4,5)">
-<!-- Scafo -->
-<path d="M1 7 L3 7 L5 3 L9 3 L11 7 L13 7 L11 10 H3 Z" fill="currentColor"></path>
-<!-- Onde -->
-<path d="M1 11
-                   C2 10.5 2.5 10.5 3.5 11
-                   C4.5 11.5 5 11.5 6 11
-                   C7 10.5 7.5 10.5 8.5 11
-                   C9.5 11.5 10 11.5 11 11" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="0.8"></path>
-</g>
-</svg>
-</button>
-<!-- Nuovo: Trasporti aerei -->
-<button aria-label="Collegamenti aerei" class="qt-btn qt-aereo" title="Collegamenti aerei" type="button">
-<svg aria-hidden="true" height="25" viewbox="0 0 24 24" width="25">
-<rect class="sq" height="20" rx="6" width="20" x="2" y="2"></rect>
-<g class="glyph" transform="translate(4,4)">
-<!-- Silhouette di aereo stilizzato -->
-<path d="M15.30,0.70 L13.07,1.18 L10.15,4.04 L8.77,3.73 L8.50,2.45 L7.18,3.30 L1.66,1.81 L0.91,2.66 L7.65,6.59 L4.20,10.57 L0.70,10.52 L3.20,11.96 L5.53,15.30 L5.43,11.80 L9.46,8.35 L13.39,15.14 L14.19,14.34 L12.75,8.98 L13.55,7.50 L12.27,7.23 L11.96,5.85 L14.82,2.93 Z" fill="currentColor"></path>
-</g>
-</svg>
-</button>
+<div class="qt-cat-items" role="toolbar">
+<button aria-label="Autobus" class="qt-btn qt-bus" title="Autobus" type="button"><img alt="" aria-hidden="true" class="qt-transport-icon" src="icons/come-muoversi/autobus.svg"/><span class="qt-transport-label">Autobus</span></button>
+<button aria-label="Treni" class="qt-btn qt-train" title="Treni" type="button"><img alt="" aria-hidden="true" class="qt-transport-icon" src="icons/come-muoversi/treni.svg"/><span class="qt-transport-label">Treni</span></button>
+<button aria-label="Metropolitana" class="qt-btn qt-metro" title="Metropolitana" type="button"><img alt="" aria-hidden="true" class="qt-transport-icon" src="icons/come-muoversi/metropolitana.svg"/><span class="qt-transport-label">Metropolitana</span></button>
+<button aria-label="Funicolari, ascensori e cremagliere" class="qt-btn qt-funi" title="Funicolari, ascensori e cremagliere" type="button"><img alt="" aria-hidden="true" class="qt-transport-icon" src="icons/come-muoversi/impianti-verticali.svg"/><span class="qt-transport-label">Impianti verticali</span></button>
+<button aria-label="Navi e battelli" class="qt-btn qt-mare" title="Navi e battelli" type="button"><img alt="" aria-hidden="true" class="qt-transport-icon" src="icons/come-muoversi/navi-battelli.svg"/><span class="qt-transport-label">Navi e battelli</span></button>
+<button aria-label="Aereo" class="qt-btn qt-aereo" title="Aereo" type="button"><img alt="" aria-hidden="true" class="qt-transport-icon" src="icons/come-muoversi/aereo.svg"/><span class="qt-transport-label">Aereo</span></button>
 </div>
 </div>
 <div aria-label="Passato" class="qt-cat-panel" hidden="" id="qt-cat-passato" role="group">
@@ -587,6 +522,7 @@
 </g>
 
 </svg>
+<img alt="" aria-hidden="true" class="qt-past-icon" src="icons/passato/forti.svg"/><span class="qt-past-label">Forti</span>
 </button><button aria-label="Musei" class="qt-btn qt-museum" title="Musei" type="button">
 <svg aria-hidden="true" height="20" viewbox="0 0 24 24" width="20">
 <rect class="sq" height="20" rx="6" width="20" x="2" y="2"></rect>
@@ -598,6 +534,7 @@
 <rect height="1.5" rx="0.5" width="14" x="1" y="12"></rect>
 </g>
 </svg>
+<img alt="" aria-hidden="true" class="qt-past-icon" src="icons/passato/musei.svg"/><span class="qt-past-label">Musei</span>
 </button>
 <button aria-label="Chiese" class="qt-btn qt-chiese" title="Chiese" type="button">
 <svg aria-hidden="true" height="20" viewbox="0 0 24 24" width="20">
@@ -626,6 +563,7 @@
 </g>
 
 </svg>
+<img alt="" aria-hidden="true" class="qt-past-icon" src="icons/passato/chiese.svg"/><span class="qt-past-label">Chiese</span>
 </button>
 <button aria-label="Palazzi" class="qt-btn qt-palazzi" title="Palazzi" type="button">
 <svg aria-hidden="true" height="20" viewbox="0 0 24 24" width="20">
@@ -634,6 +572,7 @@
 <path d="M1 1.6H15V3H1ZM2 3H14V15H2ZM3 4H3.9V6.2H3ZM4.5 4H5.4V6.2H4.5ZM6 4H6.9V6.2H6ZM7.5 4H8.4V6.2H7.5ZM9 4H9.9V6.2H9ZM10.5 4H11.4V6.2H10.5ZM12 4H12.9V6.2H12ZM2.5 6.9H13.5V7.7H2.5ZM2.5 8.4H13.5V9.2H2.5ZM2.8 15V10.6A1.7 1.7 0 0 1 6.2 10.6V15ZM6.3 15V10.6A1.7 1.7 0 0 1 9.7 10.6V15ZM9.8 15V10.6A1.7 1.7 0 0 1 13.2 10.6V15Z" fill-rule="evenodd"></path>
 </g>
 </svg>
+<img alt="" aria-hidden="true" class="qt-past-icon" src="icons/passato/palazzi.svg"/><span class="qt-past-label">Palazzi</span>
 </button>
 <button aria-label="Acquedotti (tutti)" class="qt-btn qt-acq-all" title="Acquedotti (tutti)" type="button">
 <span aria-hidden="true" class="qt-icon">
@@ -649,6 +588,7 @@
 </g>
 </svg>
 </span>
+<img alt="" aria-hidden="true" class="qt-past-icon" src="icons/passato/acquedotti.svg"/><span class="qt-past-label">Acquedotti</span>
 </button>
 <!-- PERCORSI (tutti) -->
 <button aria-pressed="false" class="qt-btn qt-percorsi-all" id="qt-passato-percorsi-master" title="Mostra/Nascondi tutti i percorsi" type="button">
@@ -665,6 +605,7 @@
 </g>
 </svg>
 </span>
+<img alt="" aria-hidden="true" class="qt-past-icon" src="icons/passato/percorsi.svg"/><span class="qt-past-label">Percorsi</span>
 <span class="sr-only">Mostra/Nascondi tutti i percorsi</span>
 </button>
 <button aria-pressed="false" class="qt-btn qt-mura-all" title="Mostra tutte le Mura" type="button">
@@ -681,28 +622,20 @@
 </g>
 </svg>
 </span>
+<img alt="" aria-hidden="true" class="qt-past-icon" src="icons/passato/mura.svg"/><span class="qt-past-label">Mura</span>
 <span class="sr-only">Mostra tutte le Mura</span>
 </button>
 </div>
 </div>
-<div aria-label="Luoghi" class="qt-cat-panel" hidden="" id="qt-cat-luoghi" role="group">
-<div class="qt-cat-items" role="toolbar"><button aria-label="Locali" class="qt-btn qt-locali" title="Locali" type="button">
-<svg aria-hidden="true" height="25" viewbox="0 0 24 24" width="25">
-<rect class="sq" height="20" rx="6" width="20" x="2" y="2"></rect>
-<g class="glyph" transform="translate(4,5)">
-<!-- martini glass -->
-<polygon points="2,3 14,3 8,7.5"></polygon>
-<rect height="4.5" rx="0.6" width="1.2" x="7.4" y="7.5"></rect>
-<rect height="0.9" rx="0.45" width="5" x="5.5" y="12.2"></rect>
-</g>
-</svg>
-</button><button aria-label="Parchi / Piazze" class="qt-btn qt-parchi" title="Parchi / Piazze" type="button">
+<div aria-label="Intrattenimento" class="qt-cat-panel" hidden="" id="qt-cat-luoghi" role="group">
+<div class="qt-cat-items" role="toolbar"><button aria-label="Parchi e piazze" class="qt-btn qt-parchi" title="Parchi e piazze" type="button">
 <svg aria-hidden="true" height="25" viewbox="0 0 24 24" width="25">
 <rect class="sq" height="20" rx="6" width="20" x="2" y="2"></rect>
 <g class="glyph" transform="translate(4,4)">
 <path d="M8 1.4 L5.8 5.4 H10.2 Z M8 3.7 L4.9 8.1 H11.1 Z M8 6.1 L3.9 11.3 H12.1 Z M7.2 11.3 H8.8 V14.5 H7.2 Z"></path>
 </g>
 </svg>
+<img alt="" aria-hidden="true" class="qt-entertainment-icon" src="icons/intrattenimento/parchi-piazze.svg"/><span class="qt-entertainment-label">Parchi e piazze</span>
 </button>
 <button aria-label="Sport" class="qt-btn qt-sport" title="Sport" type="button">
 <svg aria-hidden="true" height="25" viewbox="0 0 24 24" width="25">
@@ -716,6 +649,7 @@
 <rect height="5.6" rx="0.2" width="1.1" x="14.3" y="5.2"></rect>
 </g>
 </svg>
+<img alt="" aria-hidden="true" class="qt-entertainment-icon" src="icons/intrattenimento/sport.svg"/><span class="qt-entertainment-label">Sport</span>
 </button>
 <!-- Cinema -->
 <button aria-label="Cinema" class="qt-btn qt-cinema" title="Cinema" type="button">
@@ -733,6 +667,7 @@
 <rect height="2" width="2.2" x="10.9" y="4.2"></rect>
 </g>
 </svg>
+<img alt="" aria-hidden="true" class="qt-entertainment-icon" src="icons/intrattenimento/cinema.svg"/><span class="qt-entertainment-label">Cinema</span>
 </button>
 <!-- Teatri -->
 <button aria-label="Teatri" class="qt-btn qt-teatri" title="Teatri" type="button">
@@ -749,6 +684,7 @@
 <path d="M5.4 4.9c.8-.5 1.7-.7 2.6-.7s1.8.2 2.6.7c.7.4 1.1 1 1.1 1.7 0 2-1.6 3.7-3.7 3.7s-3.7-1.7-3.7-3.7c0-.7.3-1.3 1.1-1.7Z"></path>
 </g>
 </svg>
+<img alt="" aria-hidden="true" class="qt-entertainment-icon" src="icons/intrattenimento/teatri.svg"/><span class="qt-entertainment-label">Teatri</span>
 </button>
 <!-- Mostre -->
 <button aria-label="Mostre" class="qt-btn qt-mostre" title="Mostre" type="button">
@@ -762,6 +698,27 @@
 <circle cx="3.9" cy="5.5" r="1.4"></circle>
 </g>
 </svg>
+<img alt="" aria-hidden="true" class="qt-entertainment-icon" src="icons/intrattenimento/mostre.svg"/><span class="qt-entertainment-label">Mostre</span>
+</button>
+</div>
+</div>
+<div aria-label="Mangiare e dormire" class="qt-cat-panel qt-cat-food-panel" hidden="" id="qt-cat-food" role="group">
+<div class="qt-cat-items" role="toolbar">
+<button aria-label="Locali" aria-pressed="false" class="qt-btn qt-locali" title="Locali" type="button">
+<img alt="" aria-hidden="true" class="qt-food-icon" src="icons/mangiare-dormire/01-locali.svg"/>
+<span class="qt-food-label">Locali</span>
+</button>
+<button aria-label="Ristoranti" aria-pressed="false" class="qt-btn qt-ristoranti" title="Ristoranti" type="button">
+<img alt="" aria-hidden="true" class="qt-food-icon" src="icons/mangiare-dormire/02-ristoranti.svg"/>
+<span class="qt-food-label">Ristoranti</span>
+</button>
+<button aria-label="Take-away" aria-pressed="false" class="qt-btn qt-take-away" title="Take-away" type="button">
+<img alt="" aria-hidden="true" class="qt-food-icon" src="icons/mangiare-dormire/03-take-away.svg"/>
+<span class="qt-food-label">Take-away</span>
+</button>
+<button aria-label="Alberghi e B&amp;B" aria-pressed="false" class="qt-btn qt-alloggi" title="Alberghi e B&amp;B" type="button">
+<img alt="" aria-hidden="true" class="qt-food-icon" src="icons/mangiare-dormire/04-alloggi.svg"/>
+<span class="qt-food-label">Alberghi e B&amp;B</span>
 </button>
 </div>
 </div>
@@ -988,9 +945,9 @@
 <script>window.__GENOVA_INLINE_RUN(32,32);</script>
 <script>window.__GENOVA_INLINE_RUN(33,33);</script>
 <script>window.__GENOVA_INLINE_RUN(34,34);</script>
-<script src="acquedotti/acquedotto-romano-poi.js?v=20260811-2"></script>
+<script src="acquedotti/acquedotto-romano-poi.js?v=20260811-3"></script>
 <script src="acquedotti/acquedotto-storico-poi-data.js?v=20260811-1"></script>
-<script src="acquedotti/acquedotto-storico-poi.js?v=20260811-3"></script>
+<script src="acquedotti/acquedotto-storico-poi.js?v=20260811-4"></script>
 <script>window.__GENOVA_INLINE_RUN(35,35);</script>
 <script>window.__GENOVA_INLINE_RUN(36,36);</script>
 <script>window.__GENOVA_INLINE_RUN(37,37);</script>
@@ -1031,7 +988,7 @@
 
 <script src="punti_doc/doc_desc_i18n.js"></script>
 <script src="punti_doc/doc_video_i18n.js"></script>
-<script src="js/documentari.js"></script>
+<script src="js/documentari.js?v=20260812-2"></script>
 <script>window.__GENOVA_INLINE_RUN(57,57);</script>
 <script>window.__GENOVA_INLINE_RUN(61,61);</script>
 <script>window.__GENOVA_INLINE_RUN(62,62);</script>
@@ -1310,6 +1267,18 @@
 <ul class="fav-list" id="fav-list-locali">
 <li class="fav-empty">Nessun locale disponibile</li>
 </ul>
+<h4 class="fav-subtitle" data-layer-toggle="ristoranti">Ristoranti</h4>
+<ul class="fav-list" id="fav-list-ristoranti">
+<li class="fav-empty">Nessun ristorante disponibile</li>
+</ul>
+<h4 class="fav-subtitle" data-layer-toggle="take-away">Take-away</h4>
+<ul class="fav-list" id="fav-list-take-away">
+<li class="fav-empty">Nessun take-away disponibile</li>
+</ul>
+<h4 class="fav-subtitle" data-layer-toggle="alloggi">Alberghi e B&amp;B</h4>
+<ul class="fav-list" id="fav-list-alloggi">
+<li class="fav-empty">Nessun alloggio disponibile</li>
+</ul>
 <h4 class="fav-subtitle" data-i18n-fav="sport" data-layer-toggle="sport">Sport</h4>
 <ul class="fav-list" id="fav-list-sport">
 <li class="fav-empty">Nessun evento sportivo disponibile</li>
@@ -1344,10 +1313,11 @@
 </aside>
 
 <script>window.__GENOVA_INLINE_RUN(132,132);</script>
-<script src="locali/locali_points.js"></script>
+<script src="locali/locali_points.js?v=20260811-3"></script>
+<script src="locali/locali-translations.js?v=20260811-1"></script>
 <script src="funi/funi_points.js"></script>
-<script src="js/favorites.js?v=20260810-2"></script>
-<script src="js/taccuino.js?v=20260808-1"></script>
+<script src="js/favorites.js?v=20260812-5"></script>
+<script src="js/taccuino.js?v=20260811-3"></script>
 
 <!-- === QR SCAN: hide toolbar button & add FAB aligned to joystick === -->
 
@@ -1520,14 +1490,14 @@
 
 <script>window.__GENOVA_INLINE_RUN(262,262);</script>
 
-<script>window.__GENOVA_INLINE_RUN(263,263);</script>
+<script src="js/toolbar-search.js?v=20260811-2"></script>
 
 <script>window.__GENOVA_INLINE_RUN(264,264);</script>
 
 <script src="qr_azzurri/qr-descr-i18n-completamento.js"></script>
 <script src="js/qr-panel-layout.js"></script>
-<script src="new-home/place-areas.js?v=20260811-1"></script>
-<script src="new-home/new-home.js?v=20260811-11"></script>
+<script src="new-home/place-areas.js?v=20260811-3"></script>
+<script src="new-home/new-home.js?v=20260811-13"></script>
 <script src="js/pwa-install.js?v=20260807-1"></script>
 <script src="js/auth-ui.js?v=20260807-3"></script>
 <script src="js/account-sync.js?v=20260807-1"></script>

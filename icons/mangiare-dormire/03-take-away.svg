@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Take-away</title>
+  <rect x="4" y="4" width="56" height="56" rx="17" fill="#b45f32"/>
+  <rect x="5.5" y="5.5" width="53" height="53" rx="15.5" fill="none" stroke="#ffffff" stroke-opacity=".32" stroke-width="3"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2">
+    <path d="M19 24h26l-2.5 25h-21L19 24Z"/>
+    <path d="M24 24c0-6 3-10 8-10s8 4 8 10"/>
+    <path d="M26 32h12M27.5 39h9"/>
+    <path d="M16 28h-5M16 35H9M16 42h-4" stroke-opacity=".78"/>
+  </g>
+</svg>

@@ -510,17 +510,20 @@ data.forEach(function(item){
 
 
 
-      // Riempimento lista "Locali"
-  function fillLocali(){
-    const list = document.getElementById('fav-list-locali');
+      // Riempimento separato di "Locali" e "Ristoranti".
+  function fillFoodList(listId, wantedKind, emptyText){
+    const list = document.getElementById(listId);
     if (!list) return;
 
     const data = Array.isArray(window.LOCALI_POINTS)
-      ? window.LOCALI_POINTS
+      ? window.LOCALI_POINTS.filter(function(item){
+          var kind = String(item && item.kind || 'locale').toLowerCase();
+          return kind === wantedKind;
+        })
       : [];
 
     if (!data.length) {
-      list.innerHTML = '<li class="fav-empty">Nessun locale disponibile</li>';
+      list.innerHTML = '<li class="fav-empty">'+emptyText+'</li>';
       return;
     }
 
@@ -544,11 +547,18 @@ data.forEach(function(loc){
 }
 
 
-  // Aspetta che il DOM sia pronto prima di riempire la lista Locali
+  function fillFoodLists(){
+    fillFoodList('fav-list-locali', 'locale', 'Nessun locale disponibile');
+    fillFoodList('fav-list-ristoranti', 'ristorante', 'Nessun ristorante disponibile');
+    fillFoodList('fav-list-take-away', 'take-away', 'Nessun take-away disponibile');
+    fillFoodList('fav-list-alloggi', 'alloggio', 'Nessun alloggio disponibile');
+  }
+
+  // Aspetta che il DOM sia pronto prima di riempire gli elenchi.
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', fillLocali);
+    document.addEventListener('DOMContentLoaded', fillFoodLists);
   } else {
-    fillLocali();
+    fillFoodLists();
   }
 
 
@@ -919,6 +929,9 @@ data.forEach(function(loc){
     'Parco': '.qt-parchi',
     'Piazza': '.qt-parchi',      // parchi/piazze sono nello stesso toggle
     'Locale': '.qt-locali',
+    'Ristorante': '.qt-ristoranti',
+    'Take-away': '.qt-take-away',
+    'Alloggio': '.qt-alloggi',
     'Mare': '.qt-mare',
     'Aeroporto': '.qt-aereo',
     'Chiesa': '.qt-chiese',
@@ -1171,6 +1184,9 @@ function makeRouteDot(lat, lng, label, nameNorm, rid){
     case 'Parco':     return indexParks;
     case 'Piazza':    return indexPiazze;
     case 'Locale':    return indexLocali;
+    case 'Ristorante':return indexLocali;
+    case 'Take-away': return indexLocali;
+    case 'Alloggio':  return indexLocali;
     case 'Mare':      return indexMare;
     case 'Aeroporto': return indexAereo;
     case 'Chiesa':    return indexChiese;
@@ -1365,6 +1381,9 @@ function escHtml(s){
   enhanceList('fav-list-funi',    indexFuni,    'Impianto');
   enhanceParchiPiazze();
   enhanceList('fav-list-locali',  indexLocali,  'Locale');
+  enhanceList('fav-list-ristoranti', indexLocali, 'Ristorante');
+  enhanceList('fav-list-take-away', indexLocali, 'Take-away');
+  enhanceList('fav-list-alloggi', indexLocali, 'Alloggio');
   enhanceList('fav-list-mare',    indexMare,    'Mare');
   enhanceList('fav-list-aereo',   indexAereo,   'Aeroporto');
   enhanceList('fav-list-chiese',  indexChiese,  'Chiesa');
@@ -1425,7 +1444,7 @@ function escHtml(s){
 // =========================
 var POPUP_FAVORITE_LABELS = [
   'Forte', 'Museo', 'Autobus', 'Stazione', 'Metro', 'Impianto',
-  'Parco', 'Piazza', 'Locale', 'Mare', 'Aeroporto', 'Chiesa',
+  'Parco', 'Piazza', 'Locale', 'Ristorante', 'Take-away', 'Alloggio', 'Mare', 'Aeroporto', 'Chiesa',
   'Palazzo', 'Sport', 'Cinema', 'Teatro', 'Mostra'
 ];
 
@@ -1437,6 +1456,9 @@ var POPUP_LIST_LABELS = {
   'fav-list-metro': 'Metro',
   'fav-list-funi': 'Impianto',
   'fav-list-locali': 'Locale',
+  'fav-list-ristoranti': 'Ristorante',
+  'fav-list-take-away': 'Take-away',
+  'fav-list-alloggi': 'Alloggio',
   'fav-list-mare': 'Mare',
   'fav-list-aereo': 'Aeroporto',
   'fav-list-chiese': 'Chiesa',
@@ -3236,6 +3258,9 @@ root.querySelectorAll('.fav-subtitle[data-i18n-fav]').forEach(function(el){
     palazzi:'.qt-palazzi',
     parchi: '.qt-parchi',
     locali: '.qt-locali',
+    ristoranti: '.qt-ristoranti',
+    'take-away': '.qt-take-away',
+    alloggi: '.qt-alloggi',
     sport:  '.qt-sport',
     cinema: '.qt-cinema',
     teatri: '.qt-teatri',

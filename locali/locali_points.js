@@ -1,5 +1,6 @@
 window.LOCALI_POINTS = [
   {
+    kind: "locale",
     lat: 44.40648563507419,
     lng: 8.931391054413217,
     name: "Bar 2 colpi",
@@ -36,6 +37,7 @@ window.LOCALI_POINTS = [
     img: "locali/bar2colpi.jpg"
   },
 {
+    kind: "locale",
     lat: 44.41586463972654, 
     lng: 8.925213852118159,
     name: "Count Basie Jazz Club",
@@ -73,6 +75,7 @@ window.LOCALI_POINTS = [
   },
 
 {
+    kind: "locale",
     lat: 44.40472878384615, 
     lng: 8.935249640868633,
     name: "Tao Disco Club",
@@ -109,6 +112,7 @@ window.LOCALI_POINTS = [
     img: "locali/disco-tao.jpg"
   },
 {
+    kind: "locale",
     lat: 44.408657712692616, 
     lng: 8.903043937995855,
     name: "Music for Peace",
@@ -146,6 +150,7 @@ window.LOCALI_POINTS = [
   },
 
   {
+    kind: "ristorante",
     lat: 44.40666653397306,
     lng: 8.928458760031193,
     name: "Trattoria delle Grazie",
@@ -182,6 +187,7 @@ window.LOCALI_POINTS = [
     img: "locali/trattoria_dellegrazie.jpg"
   },
   {
+    kind: "ristorante",
     lat: 44.40968948477892,
     lng: 8.935288689202926,
     name: "Ristorante Trattoria da Maria",
@@ -218,6 +224,7 @@ window.LOCALI_POINTS = [
     img: "locali/trattoria_maria.jpg"
   },
   {
+    kind: "locale",
     lat: 44.41493631696576,
     lng: 8.92999457569054,
     name: "Together Bar",
@@ -252,5 +259,93 @@ window.LOCALI_POINTS = [
       lij: "https://caffe-ristorante-bar.it/genova/together-bar/"
     },
     img: "locali/together_bar.jpg"
+  },
+  {
+    kind: "ristorante",
+    lat: 44.41596406183766,
+    lng: 8.921886451767765,
+    name: "Trattoria da Mario",
+    desc: {
+      it: "Immersa nei vicoli del centro storico di Genova, la Trattoria Da Mario vi aspetta per farvi gustare ottimi piatti della tipica cucina genovese e ligure. Le nostre specialità consistono in piatti a base di pesce (spaghetti allo scoglio, risotto alla pescatora) e fritture miste di pesce freschissimo, ma potete anche trovare un ampio assortimento di specialità a base di carne."
+    },
+    addr: {
+      it: "Salita di S. Paolo, 28, 16126 Genova GE"
+    },
+    site: {
+      it: "https://www.paginebianche.it/scheda/trattoriadamario-genova"
+    },
+    img: "locali/images/ristoranti/trattoria-da-mario.jpg"
+  },
+  {
+    kind: "take-away",
+    lat: 44.4082,
+    lng: 8.9312,
+    name: "Tasche Piene",
+    desc: {
+      it: "Un incrocio perfetto tra street food e gastronomia ligure di quartiere. Serve piatti caldi tradizionali o in formato \"tasca\" (pane farcito croccante fuori e morbido dentro) a pochi passi dalla Cattedrale."
+    },
+    addr: { it: "Via di Scurreria, 42, 16123 Genova GE" },
+    site: { it: "https://taschepiene.it/" },
+    img: "locali/images/take-away/tasche-piene.jpg"
+  },
+  {
+    kind: "take-away",
+    lat: 44.4069,
+    lng: 8.9324,
+    name: "Tapullo Street Genova",
+    desc: {
+      it: "Un piccolo angolo che propone \"cibo che parla dialetto\" ligure. Ottimo street food basato sulla cucina tradizionale della regione, con materie prime del territorio."
+    },
+    addr: { it: "Via di Canneto Il Lungo, 136/138/117 R, 16123 Genova GE" },
+    site: { it: "https://www.instagram.com/tapullostreet/" },
+    img: "locali/images/take-away/tapullo-street.jpg"
+  },
+  {
+    kind: "take-away",
+    lat: 44.4068,
+    lng: 8.9326,
+    name: "Roast 'n Roll",
+    desc: {
+      it: "Famosissimo tra i vicoli per gli amanti della carne, prepara squisiti panini farciti espressi, tra cui spicca quello al roast beef con salse artigianali."
+    },
+    addr: { it: "Via di Canneto Il Lungo, 140r, 16123 Genova GE" },
+    site: { it: "https://www.instagram.com/roast_n_roll_/" },
+    img: "locali/images/take-away/roast-n-roll.jpg"
+  },
+  {
+    kind: "alloggio",
+    lat: 44.4088,
+    lng: 8.9329,
+    name: "B&B La Piazzetta Rooms",
+    desc: {
+      it: "Struttura di lusso ospitata in un affascinante edificio del XVI secolo nel centro storico di Genova, con ampie camere eleganti."
+    },
+    addr: { it: "Piazza di S. Matteo, 19, 16123 Genova GE" },
+    site: { it: "https://lapiazzettarooms.com/" },
+    img: "locali/images/alloggi/la-piazzetta-rooms.jpg"
+  },
+  {
+    kind: "alloggio",
+    lat: 44.4079,
+    lng: 8.9295,
+    name: "B&B Dell'Acquario",
+    desc: {
+      it: "Situato in posizione strategica vicino al Porto Antico e all'Acquario, offre sistemazioni familiari essenziali dotate di comodo angolo cottura autogestito."
+    },
+    addr: { it: "Vico Cimella, 6 rosso, 16128 Genova GE" },
+    site: { it: "https://www.bbacquario.com/" },
+    img: "locali/images/alloggi/bb-dell-acquario.jpg"
+  },
+  {
+    kind: "alloggio",
+    lat: 44.4168,
+    lng: 8.9218,
+    name: "Hotel Continental",
+    desc: {
+      it: "Hotel raffinato a 4 stelle ospitato in un edificio in stile Liberty del XIX secolo, situato proprio di fronte alla stazione ferroviaria di Piazza Principe."
+    },
+    addr: { it: "Via Arsenale di Terra, 1, 16126 Genova GE" },
+    site: { it: "https://hotelcontinentalgenova.it/" },
+    img: "locali/images/alloggi/hotel-continental.jpg"
   }
 ];

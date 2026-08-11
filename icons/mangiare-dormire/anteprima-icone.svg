@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="390" viewBox="0 0 1120 390" role="img" aria-labelledby="title desc">
+  <title id="title">Anteprima icone Mangiare e dormire</title>
+  <desc id="desc">Quattro proposte per Locali, Ristoranti, Take-away e Alberghi e B&amp;B, mostrate come pulsante e marker.</desc>
+  <defs>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#091522" flood-opacity=".2"/></filter>
+    <style>
+      .card{fill:#f7f4ed;stroke:#d8d1c3;stroke-width:2}.num{font:700 20px system-ui,sans-serif;fill:#fff}.name{font:700 24px system-ui,sans-serif;fill:#142536}.note{font:500 15px system-ui,sans-serif;fill:#587083}.icon{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:4}.markerRing{fill:#fff;stroke:#142536;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1120" height="390" rx="28" fill="#e9eef1"/>
+  <text x="48" y="47" font-family="system-ui,sans-serif" font-size="26" font-weight="750" fill="#102333">Mangiare e dormire · anteprima icone</text>
+  <text x="48" y="73" font-family="system-ui,sans-serif" font-size="15" fill="#587083">Il simbolo resta identico nel pulsante e nel marker sulla mappa.</text>
+
+  <g transform="translate(35 96)">
+    <rect class="card" width="245" height="255" rx="22" filter="url(#shadow)"/>
+    <circle cx="32" cy="32" r="18" fill="#db2777"/><text class="num" x="32" y="39" text-anchor="middle">1</text>
+    <g transform="translate(67 27)"><rect width="112" height="112" rx="32" fill="#db2777"/><rect x="3" y="3" width="106" height="106" rx="29" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="3"/><g class="icon" transform="translate(24 22)"><path d="M0 8h64L32 42 0 8Z"/><path d="M32 42v25M17 68h30"/><path d="M48 8l10-13"/><circle cx="59" cy="-6" r="6" fill="#fff" stroke="none"/></g></g>
+    <circle class="markerRing" cx="178" cy="127" r="28"/><circle cx="178" cy="127" r="23" fill="#db2777"/><g class="icon" stroke-width="3" transform="translate(162 114) scale(.5)"><path d="M0 8h64L32 42 0 8Z"/><path d="M32 42v25M17 68h30"/></g>
+    <text class="name" x="122.5" y="188" text-anchor="middle">Locali</text><text class="note" x="122.5" y="216" text-anchor="middle">bicchiere da cocktail</text>
+  </g>
+
+  <g transform="translate(305 96)">
+    <rect class="card" width="245" height="255" rx="22" filter="url(#shadow)"/>
+    <circle cx="32" cy="32" r="18" fill="#247766"/><text class="num" x="32" y="39" text-anchor="middle">2</text>
+    <g transform="translate(67 27)"><rect width="112" height="112" rx="32" fill="#247766"/><rect x="3" y="3" width="106" height="106" rx="29" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="3"/><g class="icon" transform="translate(21 20)"><circle cx="35" cy="35" r="18"/><circle cx="35" cy="35" r="10" stroke-opacity=".7"/><path d="M6 4v27M0 4v18c0 5 3 9 6 9s6-4 6-9V4M6 31v40M65 4v67M65 4c7 6 9 15 9 27h-9"/></g></g>
+    <circle class="markerRing" cx="178" cy="127" r="28"/><circle cx="178" cy="127" r="23" fill="#247766"/><g class="icon" stroke-width="3" transform="translate(164 113) scale(.4)"><circle cx="35" cy="35" r="18"/><path d="M6 4v27M0 4v18c0 5 3 9 6 9s6-4 6-9V4M6 31v40M65 4v67"/></g>
+    <text class="name" x="122.5" y="188" text-anchor="middle">Ristoranti</text><text class="note" x="122.5" y="216" text-anchor="middle">piatto e posate</text>
+  </g>
+
+  <g transform="translate(575 96)">
+    <rect class="card" width="245" height="255" rx="22" filter="url(#shadow)"/>
+    <circle cx="32" cy="32" r="18" fill="#b45f32"/><text class="num" x="32" y="39" text-anchor="middle">3</text>
+    <g transform="translate(67 27)"><rect width="112" height="112" rx="32" fill="#b45f32"/><rect x="3" y="3" width="106" height="106" rx="29" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="3"/><g class="icon" transform="translate(22 17)"><path d="M13 23h46l-5 49H18L13 23Z"/><path d="M22 23C22 11 27 4 36 4s14 7 14 19"/><path d="M25 39h22M28 52h16"/><path d="M8 31H0M8 44H-3M8 57H1" stroke-opacity=".78"/></g></g>
+    <circle class="markerRing" cx="178" cy="127" r="28"/><circle cx="178" cy="127" r="23" fill="#b45f32"/><g class="icon" stroke-width="3" transform="translate(164 111) scale(.42)"><path d="M13 23h46l-5 49H18L13 23Z"/><path d="M22 23C22 11 27 4 36 4s14 7 14 19"/></g>
+    <text class="name" x="122.5" y="188" text-anchor="middle">Take-away</text><text class="note" x="122.5" y="216" text-anchor="middle">sacchetto da asporto</text>
+  </g>
+
+  <g transform="translate(845 96)">
+    <rect class="card" width="245" height="255" rx="22" filter="url(#shadow)"/>
+    <circle cx="32" cy="32" r="18" fill="#315f7d"/><text class="num" x="32" y="39" text-anchor="middle">4</text>
+    <g transform="translate(67 27)"><rect width="112" height="112" rx="32" fill="#315f7d"/><rect x="3" y="3" width="106" height="106" rx="29" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="3"/><g class="icon" transform="translate(16 21)"><path d="M0 59V7M80 59V29H0v30M0 45h80M13 29V15h26c8 0 14 6 14 14M9 59v9M71 59v9"/><circle cx="19" cy="22" r="6" fill="#fff" stroke="none"/></g></g>
+    <circle class="markerRing" cx="178" cy="127" r="28"/><circle cx="178" cy="127" r="23" fill="#315f7d"/><g class="icon" stroke-width="3" transform="translate(163 115) scale(.38)"><path d="M0 59V7M80 59V29H0v30M0 45h80M13 29V15h26c8 0 14 6 14 14"/></g>
+    <text class="name" x="122.5" y="188" text-anchor="middle">Alberghi e B&amp;B</text><text class="note" x="122.5" y="216" text-anchor="middle">letto</text>
+  </g>
+</svg>
