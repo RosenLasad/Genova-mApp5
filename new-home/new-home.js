@@ -24,60 +24,60 @@
       key:'heritage', theme:'heritage', wide:true, title:'Patrimonio storico',
       description:'Forti, musei, chiese e palazzi raccontano la storia e l’identità di Genova.',
       categories:[
-        {title:'Forti', note:'Fortificazioni e sistemi difensivi', listId:'fav-list-forti', grouped:true, image:'images/voci/patrimonio-forti.png', imagePosition:'center 48%'},
-        {title:'Musei', note:'Arte, storia, scienza e collezioni', listId:'fav-list-musei', grouped:true, image:'images/voci/patrimonio-musei.png', imagePosition:'center 52%'},
-        {title:'Chiese', note:'Edifici religiosi e opere d’arte', listId:'fav-list-chiese', grouped:true, image:'images/voci/patrimonio-chiese.png', imagePosition:'center 48%'},
-        {title:'Palazzi', note:'Dimore storiche e Palazzi dei Rolli', listId:'fav-list-palazzi', grouped:true, image:'images/voci/patrimonio-palazzi.png', imagePosition:'center 50%'}
+        {title:'Forti', note:'Fortificazioni e sistemi difensivi', listId:'fav-list-forti', grouped:true, mapIcon:'icons/passato/forti.svg', mapToggle:'.qt-forti'},
+        {title:'Musei', note:'Arte, storia, scienza e collezioni', listId:'fav-list-musei', grouped:true, mapIcon:'icons/passato/musei.svg', mapToggle:'.qt-museum'},
+        {title:'Chiese', note:'Edifici religiosi e opere d’arte', listId:'fav-list-chiese', grouped:true, mapIcon:'icons/passato/chiese.svg', mapToggle:'.qt-chiese'},
+        {title:'Palazzi', note:'Dimore storiche e Palazzi dei Rolli', listId:'fav-list-palazzi', grouped:true, mapIcon:'icons/passato/palazzi.svg', mapToggle:'.qt-palazzi'}
       ]
     },
     {
       key:'entertainment', theme:'fun', title:'Intrattenimento',
       description:'Cultura, spettacolo, verde e attività per vivere la città nel tempo libero.',
       categories:[
-        {title:'Mostre', note:'Esposizioni e spazi culturali', listId:'fav-list-mostre', grouped:true},
-        {title:'Teatri', note:'Teatri storici e contemporanei', listId:'fav-list-teatri', grouped:true},
-        {title:'Cinema', note:'Sale cinematografiche della città', listId:'fav-list-cinema', grouped:true},
-        {title:'Parchi e piazze', note:'Aree verdi e luoghi d’incontro', listId:'fav-list-parchi-piazze', grouped:true},
-        {title:'Sport', note:'Impianti e attività sportive', listId:'fav-list-sport', grouped:true}
+        {title:'Mostre', note:'Esposizioni e spazi culturali', listId:'fav-list-mostre', grouped:true, mapIcon:'icons/intrattenimento/mostre.svg', mapToggle:'.qt-mostre'},
+        {title:'Teatri', note:'Teatri storici e contemporanei', listId:'fav-list-teatri', grouped:true, mapIcon:'icons/intrattenimento/teatri.svg', mapToggle:'.qt-teatri'},
+        {title:'Cinema', note:'Sale cinematografiche della città', listId:'fav-list-cinema', grouped:true, mapIcon:'icons/intrattenimento/cinema.svg', mapToggle:'.qt-cinema'},
+        {title:'Parchi e piazze', note:'Aree verdi e luoghi d’incontro', listId:'fav-list-parchi-piazze', grouped:true, mapIcon:'icons/intrattenimento/parchi-piazze.svg', mapToggle:'.qt-parchi'},
+        {title:'Sport', note:'Impianti e attività sportive', listId:'fav-list-sport', grouped:true, mapIcon:'icons/intrattenimento/sport.svg', mapToggle:'.qt-sport'}
       ]
     },
     {
       key:'transport', theme:'move', title:'Come muoversi',
       description:'Trasporti pubblici e collegamenti per spostarsi a Genova e sul territorio.',
       categories:[
-        {title:'Bus', note:'Fermate e rete urbana AMT', listId:'fav-list-bus'},
-        {title:'Metropolitana', note:'Stazioni della metropolitana', listId:'fav-list-metro'},
-        {title:'Treni', note:'Stazioni ferroviarie', listId:'fav-list-train'},
-        {title:'Funicolari e ascensori', note:'Impianti verticali e cremagliere', listId:'fav-list-funi'},
-        {title:'Navi e battelli', note:'Navebus e collegamenti marittimi', listId:'fav-list-mare'},
-        {title:'Aereo', note:'Aeroporto e collegamenti', listId:'fav-list-aereo'}
+        {title:'Bus', note:'Fermate e rete urbana AMT', listId:'fav-list-bus', mapIcon:'icons/come-muoversi/autobus.svg', mapToggle:'.qt-bus'},
+        {title:'Metropolitana', note:'Stazioni della metropolitana', listId:'fav-list-metro', mapIcon:'icons/come-muoversi/metropolitana.svg', mapToggle:'.qt-metro'},
+        {title:'Treni', note:'Stazioni ferroviarie', listId:'fav-list-train', mapIcon:'icons/come-muoversi/treni.svg', mapToggle:'.qt-train'},
+        {title:'Funicolari e ascensori', note:'Impianti verticali e cremagliere', listId:'fav-list-funi', mapIcon:'icons/come-muoversi/impianti-verticali.svg', mapToggle:'.qt-funi'},
+        {title:'Navi e battelli', note:'Navebus e collegamenti marittimi', listId:'fav-list-mare', mapIcon:'icons/come-muoversi/navi-battelli.svg', mapToggle:'.qt-mare'},
+        {title:'Aereo', note:'Aeroporto e collegamenti', listId:'fav-list-aereo', mapIcon:'icons/come-muoversi/aereo.svg', mapToggle:'.qt-aereo'}
       ]
     },
     {
       key:'routes', theme:'routes', wide:true, title:'Mura, acquedotti e percorsi',
       description:'Tracciati storici e itinerari consigliati per esplorare Genova passo dopo passo.',
       categories:[
-        {title:'Mura storiche', note:'Le cinte murarie attraverso i secoli', type:'history-walls'},
-        {title:'Acquedotti', note:'Acquedotto romano e acquedotto storico', type:'history-aqueducts'},
-        {title:'Percorsi consigliati', note:'Itinerari tematici nella città', type:'recommended-routes'}
+        {title:'Mura storiche', note:'Le cinte murarie attraverso i secoli', type:'history-walls', mapIcon:'icons/passato/mura.svg', mapToggle:'.qt-mura-all'},
+        {title:'Acquedotti', note:'Acquedotto romano e acquedotto storico', type:'history-aqueducts', mapIcon:'icons/passato/acquedotti.svg', mapToggle:'.qt-acq-all'},
+        {title:'Percorsi consigliati', note:'Itinerari tematici nella città', type:'recommended-routes', mapIcon:'icons/passato/percorsi.svg', mapToggle:'.qt-percorsi-all'}
       ]
     },
     {
       key:'food', theme:'food', title:'Mangiare e dormire',
       description:'Locali, ristoranti, take-away e strutture per il soggiorno.',
       categories:[
-        {title:'Locali', note:'Bar, pub e luoghi di ritrovo', listId:'fav-list-locali', grouped:true},
-        {title:'Ristoranti', note:'Cucina genovese e altre proposte', listId:'fav-list-ristoranti', grouped:true},
-        {title:'Take-away', note:'Soluzioni rapide e da asporto', listId:'fav-list-take-away', grouped:true},
-        {title:'Alberghi e B&B', note:'Dove dormire a Genova', listId:'fav-list-alloggi', grouped:true}
+        {title:'Locali', note:'Bar, pub e luoghi di ritrovo', listId:'fav-list-locali', grouped:true, mapIcon:'icons/mangiare-dormire/01-locali.svg', mapToggle:'.qt-locali'},
+        {title:'Ristoranti', note:'Cucina genovese e altre proposte', listId:'fav-list-ristoranti', grouped:true, mapIcon:'icons/mangiare-dormire/02-ristoranti.svg', mapToggle:'.qt-ristoranti'},
+        {title:'Take-away', note:'Soluzioni rapide e da asporto', listId:'fav-list-take-away', grouped:true, mapIcon:'icons/mangiare-dormire/03-take-away.svg', mapToggle:'.qt-take-away'},
+        {title:'Alberghi e B&B', note:'Dove dormire a Genova', listId:'fav-list-alloggi', grouped:true, mapIcon:'icons/mangiare-dormire/04-alloggi.svg', mapToggle:'.qt-alloggi'}
       ]
     },
     {
       key:'media', theme:'media', title:'Multimedia',
       description:'Punti QR, documentari, audioguide e contenuti video dedicati alla città.',
       categories:[
-        {title:'Punti QR', note:'Guarda com’erano i luoghi di Genova', type:'qr'},
-        {title:'MiniDoc', note:'Brevi documentari dedicati a quartieri e luoghi', type:'minidoc'},
+        {title:'Punti QR', note:'Guarda com’erano i luoghi di Genova', type:'qr', mapIcon:'toolbar/qr.svg', mapToggle:'#btn-qr-removed'},
+        {title:'MiniDoc', note:'Brevi documentari dedicati a quartieri e luoghi', type:'minidoc', mapIcon:'icons/passato/minidoc.svg', mapToggle:'.qt-doc-all'},
         {title:'Audioguide', note:'Ascolta storie e approfondimenti'},
         {title:'Videoguide', note:'Percorsi raccontati attraverso le immagini'}
       ]
@@ -224,6 +224,21 @@
     eyebrow.textContent = 'Esplora';
     backButton.hidden = false;
     var categories = section.categories.map(function(category, index){
+      if(category.mapIcon && category.mapToggle){
+        var sourceToggle = document.querySelector('#quick-toggles '+category.mapToggle);
+        var active = isMapToggleActive(sourceToggle);
+        var mapActionLabel = (active ? 'Nascondi ' : 'Mostra ')+category.title.toLowerCase()+' sulla mappa';
+        return ''+
+          '<div class="gm-new-home-category has-map-icon'+(active?' is-map-active':'')+'">'+
+          '  <button type="button" class="gm-new-home-category-map" data-map-category="'+index+'" aria-pressed="'+(active?'true':'false')+'" title="'+escapeHtml(mapActionLabel)+'" aria-label="'+escapeHtml(mapActionLabel)+'">'+
+          '    <img src="'+escapeHtml(category.mapIcon)+'" alt="" aria-hidden="true">'+
+          '  </button>'+
+          '  <button type="button" class="gm-new-home-category-open" data-category="'+index+'">'+
+          '    <span><strong>'+escapeHtml(category.title)+'</strong><small>'+escapeHtml(category.note)+'</small></span>'+
+          '    <span class="gm-new-home-category-arrow" aria-hidden="true">›</span>'+
+          '  </button>'+
+          '</div>';
+      }
       return ''+
         '<button type="button" class="gm-new-home-category" data-category="'+index+'">'+
         '  <span><strong>'+escapeHtml(category.title)+'</strong><small>'+escapeHtml(category.note)+'</small></span>'+
@@ -237,12 +252,6 @@
       '</div>';
     scroll.querySelectorAll('[data-category]').forEach(function(button){
       var categoryIndex = Number(button.getAttribute('data-category'));
-      var categoryStyle = section.categories[categoryIndex];
-      if(categoryStyle && categoryStyle.image){
-        button.classList.add('has-image');
-        button.style.setProperty('--gm-category-image', 'url("'+String(categoryStyle.image).replace(/"/g, '%22')+'")');
-        button.style.setProperty('--gm-category-position', categoryStyle.imagePosition || 'center');
-      }
       button.addEventListener('click', function(){
         var category = section.categories[categoryIndex];
         if(category){
@@ -252,7 +261,39 @@
         }
       });
     });
+    scroll.querySelectorAll('[data-map-category]').forEach(function(button){
+      button.addEventListener('click', function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        var category = section.categories[Number(button.getAttribute('data-map-category'))];
+        if(!category || !category.mapToggle) return;
+        var sourceToggle = document.querySelector('#quick-toggles '+category.mapToggle);
+        if(!sourceToggle) return;
+        sourceToggle.click();
+        setTimeout(function(){ syncMapCategoryButton(button, category); }, 80);
+        setTimeout(function(){ syncMapCategoryButton(button, category); }, 260);
+      });
+    });
     scroll.scrollTop = 0;
+  }
+
+  function isMapToggleActive(sourceToggle){
+    if(!sourceToggle) return false;
+    return sourceToggle.getAttribute('aria-pressed') === 'true' ||
+      sourceToggle.classList.contains('is-active') ||
+      sourceToggle.classList.contains('active');
+  }
+
+  function syncMapCategoryButton(button, category){
+    if(!button || !category || !category.mapToggle) return;
+    var sourceToggle = document.querySelector('#quick-toggles '+category.mapToggle);
+    var active = isMapToggleActive(sourceToggle);
+    button.setAttribute('aria-pressed', active ? 'true' : 'false');
+    var mapActionLabel = (active ? 'Nascondi ' : 'Mostra ')+category.title.toLowerCase()+' sulla mappa';
+    button.setAttribute('title', mapActionLabel);
+    button.setAttribute('aria-label', mapActionLabel);
+    var card = button.closest('.gm-new-home-category');
+    if(card) card.classList.toggle('is-map-active', active);
   }
 
   function getExistingPlaces(listId){

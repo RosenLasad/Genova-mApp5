@@ -48,10 +48,19 @@
       {name:'Sampierdarena e Promontorio', places:['San Bartolomeo Apostolo al Promontorio','Santa Maria delle Grazie - la Nuova']}
     ],
     'fav-list-palazzi': [
-      {name:'Maddalena e Strada Nuova', places:['Palazzo Ambrogio De Nigro','Palazzo Cipriano Pallavicini','Palazzo della Meridiana','Palazzo Tobia Pallavicino','Palazzo Nicolosio Lomellino','Palazzo Andrea Pitto','Palazzo Interiano Pallavicino']},
-      {name:'Portoria, Fontane Marose e Santa Caterina', places:['Palazzo Doria Spinola','Palazzo Della Rovere','Palazzo Giorgio Spinola','Palazzo Agostino Ayrolo','Palazzo Tommaso Spinola']},
+      {name:'Maddalena e Strada Nuova', places:['Palazzo Ambrogio De Nigro','Palazzo Cipriano Pallavicini','Palazzo della Meridiana','Palazzo Tobia Pallavicino','Palazzo Nicolosio Lomellino','Palazzo Andrea Pitto','Palazzo Interiano Pallavicino','Palazzo Franco Lercari – Lercari Parodi','Palazzo Angelo Giovanni Spinola']},
+      {name:'Portoria, Fontane Marose e Santa Caterina', places:['Palazzo Doria Spinola','Palazzo Della Rovere','Palazzo Giorgio Spinola','Palazzo Agostino Ayrolo','Palazzo Tommaso Spinola','Palazzo Pantaleo Spinola','Palazzo Agostino Pallavicini']},
       {name:'Pré e Balbi', places:['Palazzo Balbi Senarega','Palazzo Francesco Maria Balbi Piovera',"Palazzo Marc'Aurelio Rebuffo"]},
-      {name:'Molo e De Ferrari', places:['Palazzo San Giorgio','Palazzo della Borsa','Palazzo Ducale']}
+      {name:'Molo, Banchi e De Ferrari', places:['Palazzo San Giorgio','Palazzo della Borsa','Palazzo Ducale','Palazzo Emanuele Filiberto Di Negro']},
+      {name:'San Teodoro e Dinegro', places:['Villa Di Negro Rosazza dello Scoglietto']},
+      {name:'Castelletto', places:['Villa Gruber De Mari']},
+      {name:'San Fruttuoso', places:['Villa Imperiale Cattaneo – San Fruttuoso','Villa Migone – San Fruttuoso']},
+      {name:'Sampierdarena', places:['Villa Imperiale Scassi – Sampierdarena']},
+      {name:'Cornigliano', places:['Villa Durazzo Bombrini – Cornigliano','Villa Spinola Canepa – Cornigliano','Villa Domenico Serra – Cornigliano','Villa Gentile Bickley – Cornigliano']},
+      {name:'Multedo e Pegli', places:['Villa Lomellini Rostan – Multedo / Pegli']},
+      {name:'Pra’', places:["Villa Ratto – Pra'","Villa Lomellini Doria-Podestà – Pra'","Villa Sauli Podestà – Pra'"]},
+      {name:'Voltri', places:['Villa Brignole Sale Duchessa di Galliera – Voltri']},
+      {name:'Albaro', places:['Villa Saluzzo Bombrini “Il Paradiso” – Albaro','Villa Giustiniani Cambiaso – Albaro','Villa Sauli Bombrini Doria – Albaro','Villa Saluzzo Mongiardino – Albaro','Villa Bagnarello – oggi Villa Barabino – Albaro']}
     ],
     'fav-list-mostre': [
       {name:'Porto Antico e Molo', places:['Acquario di Genova','FantaCinema','La Città dei Bambini e dei Ragazzi']},

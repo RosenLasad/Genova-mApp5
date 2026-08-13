@@ -349,7 +349,7 @@
   box-sizing:border-box;
   display:grid;
   place-items:center;
-  border:2px solid #fff;
+  border:2px solid #38bdf8;
   border-radius:50%;
   box-shadow:0 0 0 1.5px #142536,0 2px 4px rgba(0,0,0,.32);
 }
@@ -449,7 +449,7 @@
   box-sizing:border-box;
   display:grid;
   place-items:center;
-  border:2px solid #fff;
+  border:2px solid #fbbf24;
   border-radius:50%;
   box-shadow:0 0 0 1.5px #30220f,0 2px 4px rgba(0,0,0,.32);
 }
@@ -558,7 +558,7 @@
   box-sizing:border-box;
   display:grid;
   place-items:center;
-  border:2px solid #fff;
+  border:2px solid #d25b52;
   border-radius:50%;
   box-shadow:0 0 0 1.5px #30201d,0 2px 4px rgba(0,0,0,.32);
 }
@@ -568,6 +568,7 @@
 .past-marker-churches{ background:#7d5263; }
 .past-marker-palaces{ background:#b57945; }
 .past-marker-minidoc{ background:#6d518d; }
+.past-marker-minidoc{ border-color:#a78bfa; }
 @media (max-width:420px){
   #quick-toggles #qt-cat-passato .qt-btn{
     width:154px !important;
