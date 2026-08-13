@@ -22,6 +22,7 @@
   var SECTIONS = [
     {
       key:'heritage', theme:'heritage', wide:true, title:'Patrimonio storico',
+      sideButton:'#qt-cat-passato-btn', sideLabel:'Apri Passato sulla mappa',
       description:'Forti, musei, chiese e palazzi raccontano la storia e l’identità di Genova.',
       categories:[
         {title:'Forti', note:'Fortificazioni e sistemi difensivi', listId:'fav-list-forti', grouped:true, mapIcon:'icons/passato/forti.svg', mapToggle:'.qt-forti'},
@@ -32,6 +33,7 @@
     },
     {
       key:'entertainment', theme:'fun', title:'Intrattenimento',
+      sideButton:'#qt-cat-luoghi-btn', sideLabel:'Apri Intrattenimento sulla mappa',
       description:'Cultura, spettacolo, verde e attività per vivere la città nel tempo libero.',
       categories:[
         {title:'Mostre', note:'Esposizioni e spazi culturali', listId:'fav-list-mostre', grouped:true, mapIcon:'icons/intrattenimento/mostre.svg', mapToggle:'.qt-mostre'},
@@ -43,6 +45,7 @@
     },
     {
       key:'transport', theme:'move', title:'Come muoversi',
+      sideButton:'#qt-cat-trasporti-btn', sideLabel:'Apri Trasporti sulla mappa',
       description:'Trasporti pubblici e collegamenti per spostarsi a Genova e sul territorio.',
       categories:[
         {title:'Bus', note:'Fermate e rete urbana AMT', listId:'fav-list-bus', mapIcon:'icons/come-muoversi/autobus.svg', mapToggle:'.qt-bus'},
@@ -55,6 +58,7 @@
     },
     {
       key:'routes', theme:'routes', wide:true, title:'Mura, acquedotti e percorsi',
+      sideButton:'#qt-cat-passato-btn', sideLabel:'Apri Passato sulla mappa',
       description:'Tracciati storici e itinerari consigliati per esplorare Genova passo dopo passo.',
       categories:[
         {title:'Mura storiche', note:'Le cinte murarie attraverso i secoli', type:'history-walls', mapIcon:'icons/passato/mura.svg', mapToggle:'.qt-mura-all'},
@@ -64,6 +68,7 @@
     },
     {
       key:'food', theme:'food', title:'Mangiare e dormire',
+      sideButton:'#qt-cat-food-btn', sideLabel:'Apri Mangiare e dormire sulla mappa',
       description:'Locali, ristoranti, take-away e strutture per il soggiorno.',
       categories:[
         {title:'Locali', note:'Bar, pub e luoghi di ritrovo', listId:'fav-list-locali', grouped:true, mapIcon:'icons/mangiare-dormire/01-locali.svg', mapToggle:'.qt-locali'},
@@ -181,9 +186,12 @@
     eyebrow.textContent = 'Genova mApp';
     backButton.hidden = true;
     var cards = SECTIONS.map(function(section){
+      var shortcut = section.sideButton
+        ? '<button type="button" class="gm-new-home-icon gm-new-home-side-shortcut" data-side-section="'+section.key+'" aria-label="'+escapeHtml(section.sideLabel || section.title)+'" title="'+escapeHtml(section.sideLabel || section.title)+'"></button>'
+        : '<span class="gm-new-home-icon">'+icon(section.theme)+'</span>';
       return ''+
         '<article class="gm-new-home-card'+(section.wide?' is-wide':'')+'" data-theme="'+section.theme+'" data-section="'+section.key+'" role="button" tabindex="0" aria-label="'+escapeHtml(section.title)+': Scopri">'+
-        '  <span class="gm-new-home-icon">'+icon(section.theme)+'</span>'+
+        shortcut+
         '  <h3>'+escapeHtml(section.title)+'</h3>'+
         '  <p>'+escapeHtml(section.description)+'</p>'+
         '  <span class="gm-new-home-discover" aria-hidden="true">Scopri</span>'+
@@ -203,11 +211,28 @@
           pushNewHomeLevel();
         }
       }
-      button.addEventListener('click', activate);
+      button.addEventListener('click', function(event){
+        if(event.target.closest('.gm-new-home-side-shortcut')) return;
+        activate();
+      });
       button.addEventListener('keydown', function(event){
+        if(event.target.closest('.gm-new-home-side-shortcut')) return;
         if(event.key !== 'Enter' && event.key !== ' ') return;
         event.preventDefault();
         activate();
+      });
+    });
+    scroll.querySelectorAll('[data-side-section]').forEach(function(shortcut){
+      var section = SECTIONS.find(function(item){ return item.key === shortcut.getAttribute('data-side-section'); });
+      var sourceButton = section && section.sideButton ? document.querySelector(section.sideButton) : null;
+      var sourceIcon = sourceButton && sourceButton.querySelector('.qt-icon');
+      shortcut.innerHTML = sourceIcon ? sourceIcon.innerHTML : icon(section ? section.theme : 'guide');
+      shortcut.addEventListener('click', function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        if(!sourceButton) return;
+        close();
+        setTimeout(function(){ sourceButton.click(); }, 60);
       });
     });
     scroll.scrollTop = 0;
