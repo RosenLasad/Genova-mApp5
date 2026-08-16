@@ -203,6 +203,20 @@
     delete activeRoutes[routeId];
   }
 
+  function focusRouteStart(routeId){
+    if(!activeRoutes[routeId]) addRoute(routeId);
+    var entry = activeRoutes[routeId];
+    var marker = entry && entry.startMarker;
+    if(!marker || !window.map || typeof marker.getLatLng !== 'function') return false;
+    try{
+      var point = marker.getLatLng();
+      var zoom = Math.max(window.map.getZoom ? window.map.getZoom() : 16, 16);
+      window.map.setView(point, zoom, { animate:true });
+      window.setTimeout(function(){ try{ marker.openPopup(); }catch(_e){} }, 180);
+      return true;
+    }catch(_e){ return false; }
+  }
+
   // forza l'aggiornamento dei popup (per cambio lingua live)
   function refreshRoutePopups(){
   for (var rid in activeRoutes){
@@ -355,6 +369,7 @@ if (rid === 'fm-strada-borghese') {
   window.__routesFallback = {
     addRoute:addRoute,
     removeRoute:removeRoute,
+    focusStart:focusRouteStart,
     refreshRoutePopups:refreshRoutePopups
   };
   window.refreshRoutePopups = refreshRoutePopups;

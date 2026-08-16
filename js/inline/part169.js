@@ -66,13 +66,11 @@
                       : "(descrizione mancante)";
 
     var barColor = routeColor || "#e53935";
-
-var hasFavs = window.ROUTE_FAVS && window.ROUTE_FAVS[routeId] && window.ROUTE_FAVS[routeId].length;
-var isOn = window.__routeFavShown && window.__routeFavShown[routeId];
-var favBtn = hasFavs
-  ? `<button class="route-fav-btn ${isOn ? 'on' : ''}" data-route-id="${routeId}" aria-pressed="${isOn ? 'true' : 'false'}" title="Preferiti del percorso">★</button>`
-  : '';
-
+    var hasFavs = window.ROUTE_FAVS && window.ROUTE_FAVS[routeId] && window.ROUTE_FAVS[routeId].length;
+    var isOn = window.__routeFavShown && window.__routeFavShown[routeId];
+    var favBtn = hasFavs
+      ? `<button class="route-fav-btn ${isOn ? 'on' : ''}" data-route-id="${routeId}" aria-pressed="${isOn ? 'true' : 'false'}" title="Preferiti del percorso">★</button>`
+      : '';
 
     return `
       <div class="route-popup-wrapper">
