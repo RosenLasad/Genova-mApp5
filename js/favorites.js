@@ -1635,6 +1635,22 @@ function decorateFavoritePopup(popup){
   var popupElement = null;
   try{ popupElement = popup.getElement ? popup.getElement() : popup._container; }catch(_){}
   if(!popupElement) return;
+
+  // I popup Inizio/Fine dei Percorsi hanno una stella specifica in alto,
+  // che mostra o nasconde i punti del tracciato. Non aggiungere anche la
+  // stella generica del Taccuino in basso, neppure quando le coordinate
+  // coincidono con quelle di un normale luogo preferibile.
+  var isRoutePopup = !!popupElement.querySelector('.route-popup-wrapper');
+  try{
+    isRoutePopup = isRoutePopup ||
+      !!(popup.options && /\broute-pop\b/.test(String(popup.options.className || '')));
+  }catch(_){}
+  if(isRoutePopup){
+    var routeOldRow = popupElement.querySelector('.fav-popup-star-row');
+    if(routeOldRow) routeOldRow.remove();
+    return;
+  }
+
   var favorite = favoriteForPopup(popup, popupElement);
   if(!favorite) return;
   var wrapper = popupElement.querySelector('.leaflet-popup-content-wrapper');

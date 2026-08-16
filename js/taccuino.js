@@ -392,7 +392,10 @@
     return Array.isArray(list) ? list : [];
   }
 
-  function saveRoutes(list){ writeJSON(ROUTES_KEY, Array.isArray(list) ? list : []); }
+  function saveRoutes(list){
+    writeJSON(ROUTES_KEY, Array.isArray(list) ? list : []);
+    try{ window.dispatchEvent(new CustomEvent('taccuino:routes-changed')); }catch(_e){}
+  }
 
   function notes(){
     var list = readJSON(NOTES_KEY, []);
@@ -1333,6 +1336,7 @@
     window.__TACCUINO_LAYER = null;
     state.mapVisible = false;
     state.mapRouteId = null;
+    try{ window.dispatchEvent(new CustomEvent('taccuino:route-map-changed', { detail: { id: null } })); }catch(_e){}
     if(showMessage !== false) setStatus(t('mapHidden'));
     if(state.view === 'routes') renderRoutes();
     else if(state.view === 'routeDetail') renderRouteDetail();
@@ -1391,6 +1395,7 @@
     window.__TACCUINO_LAYER = group;
     state.mapVisible = true;
     state.mapRouteId = mapRouteId(route);
+    try{ window.dispatchEvent(new CustomEvent('taccuino:route-map-changed', { detail: { id: state.mapRouteId } })); }catch(_e){}
     try{
       if(coordinates.length > 1) map.fitBounds(coordinates.map(function(item){ return [item[0], item[1]]; }), { padding: [40, 40] });
       else map.setView([coordinates[0][0], coordinates[0][1]], Math.max(map.getZoom ? map.getZoom() : 17, 17), { animate: true });
@@ -1498,6 +1503,53 @@
     if(screenReader) screenReader.textContent = t('open') + ' ' + t('title');
     openButton.addEventListener('click', togglePanel, true);
   }
+
+  /* API minima per il menu Percorsi laterale: usa gli stessi dati e lo stesso
+     layer del Taccuino, senza creare copie dei percorsi personali. */
+  function focusPersonalRouteStart(){
+    var map = window.map || window.__map;
+    var group = window.__TACCUINO_LAYER;
+    if(!map || !group || typeof group.getLayers !== 'function') return false;
+    var marker = group.getLayers().find(function(layer){
+      return layer && typeof layer.getPopup === 'function' && layer.getPopup();
+    });
+    if(!marker || typeof marker.getLatLng !== 'function') return false;
+    var point = marker.getLatLng();
+    try{
+      var zoom = Math.max(map.getZoom ? map.getZoom() : 16, 16);
+      map.setView(point, zoom, { animate:true });
+      window.setTimeout(function(){ try{ marker.openPopup(); }catch(_e){} }, 180);
+    }catch(_e){ return false; }
+    return true;
+  }
+
+  window.GenovaTaccuinoRoutes = {
+    list: function(){
+      return routes().map(function(route){
+        return normalizeRoute(JSON.parse(JSON.stringify(route)));
+      });
+    },
+    activeId: function(){ return state.mapVisible ? state.mapRouteId : null; },
+    toggle: function(id){
+      id = String(id || '');
+      var route = routes().find(function(item){ return item && String(item.id) === id; });
+      if(!route) return false;
+      if(state.mapVisible && state.mapRouteId === mapRouteId(route)) hideRouteFromMap(false);
+      else showRouteOnMap(route, { closeAfter: false });
+      return true;
+    },
+    focusStart: function(id){
+      id = String(id || '');
+      var route = routes().find(function(item){ return item && String(item.id) === id; });
+      if(!route) return false;
+      if(!(state.mapVisible && state.mapRouteId === mapRouteId(route))){
+        showRouteOnMap(route, { closeAfter: false });
+      }
+      window.setTimeout(focusPersonalRouteStart, 40);
+      return true;
+    },
+    hide: function(){ hideRouteFromMap(false); }
+  };
 
   function boot(){
     bindButton();
