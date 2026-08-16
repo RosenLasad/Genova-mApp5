@@ -93,10 +93,6 @@
   }
 }
 
-#qt-passato-percorsi-master{
-  display: none !important;
-}
-
 /* Visibilita delle stelle Preferiti: sempre sopra il pulsante QR. */
 #quick-toggles .qt-pill-favorites{
   order: -20;
@@ -583,4 +579,187 @@
     flex-basis:34px;
   }
   #quick-toggles #qt-cat-passato .qt-past-label{ font-size:12px; }
+}
+
+/* Percorsi: categoria autonoma con itinerari consigliati e personali. */
+#quick-toggles #qt-cat-routes-btn{
+  background:#8b6a3f !important;
+  color:#fff !important;
+  border-color:rgba(255,255,255,.28) !important;
+}
+#quick-toggles #qt-cat-routes-btn .qt-routes-main-icon,
+#quick-toggles #qt-cat-routes-btn .qt-routes-main-icon img{
+  display:block !important;
+  width:29px !important;
+  height:29px !important;
+}
+#quick-toggles #qt-cat-routes-btn[data-routes-active="true"]{
+  box-shadow:0 0 0 2px rgba(255,255,255,.92),0 4px 11px rgba(0,0,0,.3) !important;
+  filter:brightness(1.12) saturate(1.08);
+}
+#quick-toggles #qt-cat-routes{
+  position:absolute !important;
+  top:var(--qt-routes-top,80px) !important;
+  right:calc(45px + 8px) !important;
+  transform:none !important;
+  width:286px !important;
+  max-width:min(286px,calc(100vw - 72px)) !important;
+  max-height:var(--qt-routes-max-height,min(70vh,520px)) !important;
+  overflow:hidden !important;
+  padding:4px !important;
+  border:1px solid rgba(255,255,255,.28) !important;
+  border-radius:14px !important;
+  background:#745735 !important;
+  box-shadow:0 10px 28px rgba(0,0,0,.32) !important;
+}
+#quick-toggles #qt-cat-routes .qt-routes-content{
+  display:block;
+  max-height:calc(var(--qt-routes-max-height,min(70vh,520px)) - 8px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  touch-action:pan-y;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+  box-sizing:border-box;
+  padding:0 5px 8px 1px;
+  scroll-padding-bottom:8px;
+}
+#quick-toggles #qt-cat-routes .qt-routes-section + .qt-routes-section{
+  margin-top:5px;
+}
+#quick-toggles #qt-cat-routes .qt-routes-section{
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:11px;
+  background:rgba(18,25,37,.24);
+}
+#quick-toggles #qt-cat-routes .qt-routes-section-head{
+  width:100%;
+  min-height:37px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  padding:7px 10px;
+  border:0;
+  color:#fff;
+  background:rgba(15,23,42,.24);
+  font:800 12px/1.15 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  text-align:left;
+  cursor:pointer;
+}
+#quick-toggles #qt-cat-routes .qt-routes-section-head span:last-child{
+  font-size:16px;
+  transition:transform .16s ease;
+}
+#quick-toggles #qt-cat-routes .qt-routes-section.is-collapsed .qt-routes-section-head span:last-child{
+  transform:rotate(-90deg);
+}
+#quick-toggles #qt-cat-routes .qt-routes-section.is-collapsed .qt-routes-list{
+  display:none;
+}
+#quick-toggles #qt-cat-routes .qt-routes-list{
+  display:grid;
+  gap:3px;
+  padding:4px 4px 7px;
+  max-height:none;
+  overflow:visible;
+}
+#quick-toggles #qt-cat-routes .qt-route-row{
+  min-height:47px;
+  display:grid;
+  grid-template-columns:7px minmax(0,1fr) 38px;
+  align-items:center;
+  gap:7px;
+  padding:4px 6px 4px 5px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:9px;
+  background:rgba(255,255,255,.94);
+  color:#172033;
+}
+#quick-toggles #qt-cat-routes .qt-route-color{
+  width:5px;
+  height:31px;
+  border-radius:999px;
+  background:var(--route-color,#d09646);
+  box-shadow:0 0 0 1px rgba(15,23,42,.15);
+}
+#quick-toggles #qt-cat-routes .qt-route-name{
+  min-width:0;
+  display:-webkit-box;
+  width:100%;
+  padding:0;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  overflow:hidden;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  line-clamp:2;
+  color:#172033;
+  font:750 12.5px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  text-align:left;
+  overflow-wrap:anywhere;
+}
+#quick-toggles #qt-cat-routes .qt-route-name:hover{
+  color:#6f4d27;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:2px;
+}
+#quick-toggles #qt-cat-routes .qt-route-switch{
+  width:36px;
+  height:22px;
+  position:relative;
+  padding:0;
+  border:1px solid rgba(15,23,42,.28);
+  border-radius:999px;
+  background:#cbd5e1;
+  cursor:pointer;
+  box-shadow:inset 0 1px 2px rgba(15,23,42,.18);
+}
+#quick-toggles #qt-cat-routes .qt-route-switch::after{
+  content:"";
+  position:absolute;
+  left:2px;
+  top:2px;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 1px 3px rgba(15,23,42,.34);
+  transition:transform .16s ease;
+}
+#quick-toggles #qt-cat-routes .qt-route-switch[aria-checked="true"]{
+  background:var(--route-color,#d09646);
+}
+#quick-toggles #qt-cat-routes .qt-route-switch[aria-checked="true"]::after{
+  transform:translateX(14px);
+}
+#quick-toggles #qt-cat-routes .qt-route-switch:focus-visible,
+#quick-toggles #qt-cat-routes .qt-route-name:focus-visible,
+#quick-toggles #qt-cat-routes .qt-routes-section-head:focus-visible{
+  outline:2px solid #fff;
+  outline-offset:1px;
+}
+#quick-toggles #qt-cat-routes .qt-routes-empty{
+  margin:0;
+  padding:10px;
+  border-radius:8px;
+  background:rgba(255,255,255,.92);
+  color:#475569;
+  font:650 12px/1.35 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  text-align:left;
+}
+@media (max-width:420px){
+  #quick-toggles #qt-cat-routes{
+    width:250px !important;
+    max-width:calc(100vw - 62px) !important;
+    max-height:var(--qt-routes-max-height,min(68vh,460px)) !important;
+  }
+  #quick-toggles #qt-cat-routes .qt-routes-content{
+    max-height:calc(var(--qt-routes-max-height,min(68vh,460px)) - 8px);
+  }
+  #quick-toggles #qt-cat-routes .qt-route-row{ min-height:44px; }
+  #quick-toggles #qt-cat-routes .qt-route-name{ font-size:12px; }
 }
