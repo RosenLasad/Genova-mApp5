@@ -2,10 +2,10 @@
 window.EVENTS = [
   
   {
-    title: "Documentario storico su Genova",
-    where: "al cinema",
-    when: "febbraio 2026",
-    desc: "I disegni e le fotografie originali del passato di Genova che prendono vita in un documentario innovativo.",
+    title: "Documentario 'Storie di Genova'",
+    where: "Al cinema Corallo",
+    when: "16 settembre 2026",
+    desc: "I disegni e le fotografie originali del passato di Genova che prendono vita nel documentario innovativo realizzato da Alessandro Bellagamba.",
     address: "",
     linkText: "www.sdac.it",
     linkHref: "https://www.sdac.it"
