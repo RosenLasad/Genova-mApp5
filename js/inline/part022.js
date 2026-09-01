@@ -1424,18 +1424,33 @@ map.fitBounds(comuneBounds, { padding:[0,0] });
         var z = map.getBoundsZoom(comuneBounds, true);
         map.setMinZoom(9);
 
-        // Base map: OSM standard con etichette
-        tiles = L.tileLayer('https://api.maptiler.com/maps/openstreetmap/{z}/{x}/{y}.png?key=' + window.MAPTILER_KEY + '&language=it', {
-  tileSize: 512,
-  zoomOffset: -1,
-  maxZoom: 20,
-  attribution: '© OpenStreetMap contributors • MapTiler'
-}).addTo(map);
+        // Base map personalizzata MapTiler. La vecchia mappa raster resta come riserva.
+        var rasterFallbackUrl = 'https://api.maptiler.com/maps/openstreetmap/{z}/{x}/{y}.png?key=' + window.MAPTILER_KEY + '&language=it';
+        if (L.maptiler && typeof L.maptiler.maptilerLayer === 'function') {
+          tiles = L.maptiler.maptilerLayer({
+            apiKey: window.MAPTILER_KEY,
+            style: window.GENOVA_BASEMAP_STYLE_ID,
+            language: 'it'
+          }).addTo(map);
+          window.__GENOVA_BASEMAP_MODE = 'vector-custom';
+        } else {
+          tiles = L.tileLayer(rasterFallbackUrl, {
+            tileSize: 512,
+            zoomOffset: -1,
+            maxZoom: 20,
+            attribution: '© OpenStreetMap contributors • MapTiler'
+          }).addTo(map);
+          window.__GENOVA_BASEMAP_MODE = 'raster-fallback';
+        }
+        window.__GENOVA_BASEMAP_LAYER = tiles;
 map.attributionControl.setPosition('topleft');
 map.attributionControl.setPrefix(false);
 
 
-        tiles.on('tileerror', function(){ showStatus('Impossibile caricare alcune tessere della mappa. Controlla la connessione internet.'); });
+        if (tiles && typeof tiles.on === 'function') {
+          tiles.on('tileerror', function(){ showStatus('Impossibile caricare alcune tessere della mappa. Controlla la connessione internet.'); });
+          tiles.on('error', function(){ showStatus('Impossibile caricare la mappa. Controlla la connessione internet.'); });
+        }
         // Layer groups per legenda
         groupBlue = L.layerGroup(); /* keep off-map by default */
         groupOrange = L.layerGroup().addTo(map);
