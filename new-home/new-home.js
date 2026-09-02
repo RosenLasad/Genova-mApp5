@@ -113,10 +113,12 @@
   ];
 
   var overlay, scroll, title, eyebrow, backButton, closeButton;
+  var lastOpener = null;
   var currentView = 'home';
   var currentSection = null;
   var currentCategory = null;
   var currentAqueduct = null;
+  var currentRoute = null;
   var historyDepth = 0;
   var closingHistoryNavigation = false;
 
@@ -179,6 +181,7 @@
     currentView = 'home';
     currentSection = null;
     currentAqueduct = null;
+    currentRoute = null;
     overlay.setAttribute('dir', 'ltr');
     applyTheme(null);
     applyView(currentView);
@@ -766,10 +769,13 @@
       return {
         name:groupName,
         items:(catalog[groupName] || []).map(function(route){
+          var points = window.ROUTE_FAVS && Array.isArray(window.ROUTE_FAVS[route.id]) ? window.ROUTE_FAVS[route.id] : [];
           return {
             control:'route:'+route.id,
+            routeKey:route.id,
+            groupName:groupName,
             name:route.name || route.id,
-            note:'Percorso sulla mappa',
+            note:points.length ? points.length+' '+(points.length === 1 ? 'punto' : 'punti') : 'Nessun punto collegato',
             color:route.color || '#566b54'
           };
         })
@@ -815,6 +821,8 @@
       ? '<button type="button" class="gm-new-home-layer-copy gm-new-home-wall-open" data-wall="'+escapeHtml(item.wallKey)+'"><strong>'+escapeHtml(item.name)+'</strong><small>'+escapeHtml(item.note || '')+'</small><span class="gm-new-home-wall-arrow" aria-hidden="true">›</span></button>'
       : item.aqueductKey
       ? '<button type="button" class="gm-new-home-layer-copy gm-new-home-aqueduct-open" data-aqueduct="'+escapeHtml(item.aqueductKey)+'"><strong>'+escapeHtml(item.name)+'</strong><small>'+escapeHtml(item.note || '')+'</small><span class="gm-new-home-wall-arrow" aria-hidden="true">›</span></button>'
+      : item.routeKey
+      ? '<button type="button" class="gm-new-home-layer-copy gm-new-home-route-open" data-route="'+escapeHtml(item.routeKey)+'"><strong>'+escapeHtml(item.name)+'</strong><small>'+escapeHtml(item.note || '')+'</small><span class="gm-new-home-wall-arrow" aria-hidden="true">›</span></button>'
       : '<label class="gm-new-home-layer-copy" for="'+toggleId+'"><strong>'+escapeHtml(item.name)+'</strong><small>'+escapeHtml(item.note || '')+'</small></label>';
     return '<div class="gm-new-home-layer-row">'+
       '<span class="gm-new-home-layer-dot" style="--layer-color:'+escapeHtml(item.color)+'" aria-hidden="true"></span>'+
@@ -954,11 +962,120 @@
     scroll.scrollTop = 0;
   }
 
+  var ROUTE_DETAIL_UI = {
+    eyebrow:{it:'Percorsi consigliati',en:'Recommended routes',es:'Rutas recomendadas',fr:'Parcours conseillés',ar:'المسارات المقترحة',ru:'Рекомендуемые маршруты',zh:'推荐路线',lij:'Percorsi consegiæ'},
+    show:{it:'Mostra il percorso sulla mappa',en:'Show the route on the map',es:'Mostrar la ruta en el mapa',fr:'Afficher le parcours sur la carte',ar:'عرض المسار على الخريطة',ru:'Показать маршрут на карте',zh:'在地图上显示路线',lij:'Fanni vedde o percorso in sciâ mappa'},
+    points:{it:'Punti del percorso',en:'Route points',es:'Puntos de la ruta',fr:'Points du parcours',ar:'نقاط المسار',ru:'Точки маршрута',zh:'路线点位',lij:'Ponti do percorso'},
+    point:{it:'punto',en:'point',es:'punto',fr:'point',ar:'نقطة',ru:'точка',zh:'个点',lij:'ponto'},
+    pointsCount:{it:'punti',en:'points',es:'puntos',fr:'points',ar:'نقاط',ru:'точек',zh:'个点',lij:'ponti'},
+    empty:{it:'Non sono ancora presenti punti collegati a questo percorso.',en:'No points are currently linked to this route.',es:'Todavía no hay puntos vinculados a esta ruta.',fr:'Aucun point n’est encore associé à ce parcours.',ar:'لا توجد بعد نقاط مرتبطة بهذا المسار.',ru:'К этому маршруту пока не привязаны точки.',zh:'该路线目前还没有关联点位。',lij:'No gh’é ancon ponti colegæ a sto percorso.'}
+  };
+
+  function routeDisplayName(route, language){
+    var names = window.I18N_ROUTES && window.I18N_ROUTES[route.routeKey];
+    return translated(names, language) || route.name || route.routeKey;
+  }
+
+  function routePopupInfo(route, language){
+    var root = window.I18N_POPUP && window.I18N_POPUP[route.routeKey];
+    var start = root && root.start;
+    return translated(start, language) || {};
+  }
+
+  function getRoutePoints(route){
+    var points = window.ROUTE_FAVS && window.ROUTE_FAVS[route.routeKey];
+    return Array.isArray(points) ? points : [];
+  }
+
+  function normalizeRoutePointText(value){
+    var text = String(value == null ? '' : value).toLocaleLowerCase('it').trim();
+    try{ text = text.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }catch(_){}
+    return text.replace(/[’‘`]/g, "'").replace(/\s+/g, ' ');
+  }
+
+  function routePointLists(label){
+    var preferred = {
+      'Forte':'fav-list-forti', 'Museo':'fav-list-musei', 'Stazione':'fav-list-train',
+      'Metro':'fav-list-metro', 'Impianto':'fav-list-funi', 'Chiesa':'fav-list-chiese',
+      'Palazzo':'fav-list-palazzi', 'Parco':'fav-list-parchi-piazze', 'Piazza':'fav-list-parchi-piazze'
+    }[label];
+    var all = ['fav-list-forti','fav-list-musei','fav-list-train','fav-list-metro','fav-list-funi','fav-list-chiese','fav-list-palazzi','fav-list-parchi-piazze'];
+    return preferred ? [preferred].concat(all.filter(function(id){ return id !== preferred; })) : all;
+  }
+
+  function findRoutePointTarget(point){
+    var wanted = normalizeRoutePointText(point && point.name);
+    if(!wanted) return null;
+    var ids = routePointLists(point.label);
+    for(var i=0; i<ids.length; i++){
+      var list = document.getElementById(ids[i]);
+      if(!list) continue;
+      var items = Array.prototype.slice.call(list.querySelectorAll('.fav-item'));
+      for(var j=0; j<items.length; j++){
+        var target = items[j].querySelector('.fav-name') || items[j];
+        if(normalizeRoutePointText(target.textContent) === wanted) return target;
+      }
+    }
+    return null;
+  }
+
+  function openRoutePoint(route, point){
+    toggleOriginalControl(route.control, true);
+    var target = findRoutePointTarget(point);
+    close();
+    setTimeout(function(){
+      if(target && typeof target.click === 'function') target.click();
+    }, 90);
+  }
+
+  function renderRouteDetail(section, category, route){
+    currentView = 'route-detail';
+    currentSection = section;
+    currentCategory = category;
+    currentRoute = route;
+    applyTheme(section);
+    applyView(currentView);
+    var language = currentLanguage();
+    var ui = function(key){ return translated(ROUTE_DETAIL_UI[key], language); };
+    var displayName = routeDisplayName(route, language);
+    var info = routePopupInfo(route, language);
+    var points = getRoutePoints(route);
+    title.textContent = displayName;
+    eyebrow.textContent = ui('eyebrow');
+    backButton.hidden = false;
+    overlay.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
+    var rows = points.map(function(point, index){
+      return '<li><button type="button" class="gm-new-home-wall-point" data-route-point="'+index+'">'+
+        '<span><strong>'+escapeHtml(point.name)+'</strong><small>'+escapeHtml(point.label || ui('point'))+'</small></span><span aria-hidden="true">›</span>'+
+      '</button></li>';
+    }).join('');
+    var meta = [translated(window.I18N_CATS && window.I18N_CATS[route.groupName], language) || route.groupName, info.duration || ''].filter(Boolean).join(' · ');
+    var countLabel = points.length === 1 ? ui('point') : ui('pointsCount');
+    scroll.innerHTML = '<article class="gm-new-home-wall-detail gm-new-home-route-detail" style="--wall-color:'+escapeHtml(route.color)+'">'+
+      '<header class="gm-new-home-wall-hero"><span class="gm-new-home-wall-period">'+escapeHtml(meta)+'</span><h3>'+escapeHtml(displayName)+'</h3><p>'+escapeHtml(info.desc || '')+'</p></header>'+ 
+      '<div class="gm-new-home-wall-actions"><button type="button" class="gm-new-home-wall-show">'+escapeHtml(ui('show'))+'</button></div>'+ 
+      '<section class="gm-new-home-wall-points"><div class="gm-new-home-wall-points-head"><h4>'+escapeHtml(ui('points'))+'</h4><span>'+points.length+' '+escapeHtml(countLabel)+'</span></div>'+ 
+        (points.length ? '<ul>'+rows+'</ul>' : '<div class="gm-new-home-empty">'+escapeHtml(ui('empty'))+'</div>')+
+      '</section></article>';
+    scroll.querySelector('.gm-new-home-wall-show').addEventListener('click', function(){
+      toggleOriginalControl(route.control, true);
+      close();
+    });
+    scroll.querySelectorAll('[data-route-point]').forEach(function(button){
+      button.addEventListener('click', function(){
+        var point = points[Number(button.getAttribute('data-route-point'))];
+        if(point) openRoutePoint(route, point);
+      });
+    });
+    scroll.scrollTop = 0;
+  }
+
   function renderHistoryCategory(section, category){
     currentView = 'category';
     currentSection = section;
     currentCategory = category;
     currentAqueduct = null;
+    currentRoute = null;
     overlay.setAttribute('dir', 'ltr');
     applyTheme(section);
     applyView(currentView);
@@ -1006,6 +1123,15 @@
           var aqueductKey = button.getAttribute('data-aqueduct');
           var aqueduct = items.find(function(item){ return item.aqueductKey === aqueductKey; });
           if(aqueduct){ renderAqueductDetail(section, category, aqueduct); pushNewHomeLevel(); }
+        });
+      });
+    }
+    if(category.type === 'recommended-routes'){
+      scroll.querySelectorAll('.gm-new-home-route-open').forEach(function(button){
+        button.addEventListener('click', function(){
+          var routeKey = button.getAttribute('data-route');
+          var route = items.find(function(item){ return item.routeKey === routeKey; });
+          if(route){ renderRouteDetail(section, category, route); pushNewHomeLevel(); }
         });
       });
     }
@@ -1064,6 +1190,7 @@
   function goBack(){
     if(currentView === 'wall-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
     else if(currentView === 'aqueduct-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
+    else if(currentView === 'route-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
     else if((currentView === 'category' || currentView === 'qr-category') && currentSection){ renderSection(currentSection); }
     else renderHome();
   }
@@ -1098,11 +1225,16 @@
     }
   }
 
-  function hideNewHome(){
+  function hideNewHome(restoreFocus){
     overlay.hidden = true;
     document.documentElement.classList.remove('gm-new-home-open');
-    var opener = document.getElementById('welcome-open-btn');
-    if(opener) setTimeout(function(){ try{ opener.focus(); }catch(_){} }, 0);
+    var titleOpener = document.getElementById('title-btn');
+    if(titleOpener) titleOpener.setAttribute('aria-expanded', 'false');
+    var opener = lastOpener && document.documentElement.contains(lastOpener)
+      ? lastOpener
+      : document.getElementById('welcome-open-btn');
+    lastOpener = null;
+    if(restoreFocus !== false && opener) setTimeout(function(){ try{ opener.focus(); }catch(_){} }, 0);
   }
 
   function requestNewHomeBack(){
@@ -1130,19 +1262,26 @@
     hideNewHome();
   }
 
-  function open(){
+  function open(opener){
+    if(opener && opener.nodeType === 1) lastOpener = opener;
+    else if(document.activeElement && document.activeElement.nodeType === 1) lastOpener = document.activeElement;
     closeSettings();
+    try{
+      if(window.__gmHomePanel && typeof window.__gmHomePanel.close === 'function') window.__gmHomePanel.close();
+    }catch(_){}
     updatePosition();
     renderHome();
     overlay.hidden = false;
     document.documentElement.classList.add('gm-new-home-open');
+    var titleOpener = document.getElementById('title-btn');
+    if(titleOpener) titleOpener.setAttribute('aria-expanded', 'true');
     historyDepth = 0;
     pushNewHomeLevel();
     setTimeout(function(){ try{ closeButton.focus(); }catch(_){} }, 0);
   }
 
-  function close(){
-    hideNewHome();
+  function close(restoreFocus){
+    hideNewHome(restoreFocus);
     if(historyDepth > 0 && window.history && typeof window.history.go === 'function'){
       var levelsToRemove = historyDepth;
       historyDepth = 0;
@@ -1155,13 +1294,26 @@
   function boot(){
     createShell();
     renderHome();
-    var opener = document.getElementById('welcome-open-btn');
-    if(opener){
+    var openers = [
+      document.getElementById('title-btn'),
+      document.getElementById('welcome-open-btn')
+    ];
+    openers.forEach(function(opener){
+      if(!opener) return;
       opener.addEventListener('click', function(event){
         event.preventDefault();
         event.stopPropagation();
-        open();
+        if(!overlay.hidden) close();
+        else open(opener);
       });
+    });
+    var toolbar = document.querySelector('#app > header');
+    if(toolbar){
+      toolbar.addEventListener('click', function(event){
+        if(overlay.hidden) return;
+        if(event.target && event.target.closest && event.target.closest('#title-btn')) return;
+        close(false);
+      }, true);
     }
     document.addEventListener('keydown', function(event){
       if(event.key !== 'Escape' || overlay.hidden) return;
@@ -1170,6 +1322,9 @@
     document.addEventListener('app:set-lang', function(){
       if(currentView === 'aqueduct-detail' && currentSection && currentCategory && currentAqueduct){
         setTimeout(function(){ renderAqueductDetail(currentSection, currentCategory, currentAqueduct); }, 0);
+      }
+      else if(currentView === 'route-detail' && currentSection && currentCategory && currentRoute){
+        setTimeout(function(){ renderRouteDetail(currentSection, currentCategory, currentRoute); }, 0);
       }
     });
     window.addEventListener('resize', updatePosition, {passive:true});

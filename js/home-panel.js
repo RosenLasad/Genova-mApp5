@@ -50,7 +50,8 @@ function openHome(){
   }
   function isHomeOpen(){ return !home.classList.contains('hidden'); }
 
-  titleBtn.addEventListener('click', function(e){ e.preventDefault(); isHomeOpen() ? closeHome() : openHome(); });
+  // Il vecchio menu resta disponibile nei file e tramite __gmHomePanel,
+  // ma il titolo della toolbar ora apre la New Home.
   mapEl.addEventListener('click', function(){ if(isHomeOpen()) closeHome(); });
   window.addEventListener('resize', function(){ if(isHomeOpen()) positionHomeUnderTitle(); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape' && isHomeOpen()) closeHome(); });
@@ -612,4 +613,3 @@ sqorciBtn          = rebind(sqorciBtn, onSqorciClick);
     setup();
   }
 })();
-
