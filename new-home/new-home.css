@@ -34,7 +34,7 @@
 .gm-new-home-overlay[data-theme="food"]{ --gm-theme:#176b5b; --gm-theme-dark:#103e39; --gm-theme-accent:#5db394; --gm-theme-pale:#ddece5; --gm-section-image:url("images/mangiare-dormire.webp"); --gm-section-position:center top; }
 .gm-new-home-overlay[data-theme="media"]{ --gm-theme:#385c8e; --gm-theme-dark:#263956; --gm-theme-accent:#729ccc; --gm-theme-pale:#dfe8f3; }
 .gm-new-home-overlay[data-theme="community"]{ --gm-theme:#8b5b35; --gm-theme-dark:#513524; --gm-theme-accent:#d29a58; --gm-theme-pale:#f1e4d0; }
-.gm-new-home-overlay[data-theme="extra"]{ --gm-theme:#684f78; --gm-theme-dark:#3d304c; --gm-theme-accent:#a88abb; --gm-theme-pale:#e8deed; }
+.gm-new-home-overlay[data-theme="extra"]{ --gm-theme:#684f78; --gm-theme-dark:#3d304c; --gm-theme-accent:#a88abb; --gm-theme-pale:#e8deed; --gm-section-image:url("images/extra.webp"); --gm-section-position:center center; }
 .gm-new-home-overlay[data-theme="guide"]{ --gm-theme:#465b71; --gm-theme-dark:#29394c; --gm-theme-accent:#839bb0; --gm-theme-pale:#e1e7ec; }
 
 .gm-new-home-overlay[hidden]{ display: none !important; }
@@ -205,7 +205,7 @@ html.gm-new-home-open body{ overflow: hidden; }
 .gm-new-home-card[data-theme="food"]{ --card-a:#176b5b; --card-b:#103e39; --card-accent:#5db394; --card-image:url("images/mangiare-dormire.webp"); --card-position:center 51%; }
 .gm-new-home-card[data-theme="media"]{ --card-a:#385c8e; --card-b:#263956; --card-accent:#729ccc; }
 .gm-new-home-card[data-theme="community"]{ --card-a:#8b5b35; --card-b:#513524; --card-accent:#d29a58; }
-.gm-new-home-card[data-theme="extra"]{ --card-a:#684f78; --card-b:#3d304c; --card-accent:#a88abb; }
+.gm-new-home-card[data-theme="extra"]{ --card-a:#684f78; --card-b:#3d304c; --card-accent:#a88abb; --card-image:url("images/extra.webp"); --card-position:center 50%; }
 .gm-new-home-card[data-theme="guide"]{ --card-a:#465b71; --card-b:#29394c; --card-accent:#839bb0; }
 
 .gm-new-home-icon{
@@ -224,6 +224,22 @@ html.gm-new-home-open body{ overflow: hidden; }
   backdrop-filter: blur(7px);
 }
 .gm-new-home-icon svg{ width: 28px; height: 28px; }
+.gm-new-home-icon img{ width:32px; height:32px; display:block; }
+.gm-new-home-side-shortcut{
+  padding:0;
+  color:#fff;
+  font:inherit;
+  cursor:pointer;
+  z-index:2;
+  transition:transform .16s ease, background-color .16s ease, box-shadow .16s ease;
+  touch-action:manipulation;
+}
+.gm-new-home-side-shortcut:hover{
+  transform:scale(1.06);
+  background:rgba(8,18,31,.66);
+  box-shadow:0 7px 20px rgba(0,0,0,.28),0 0 0 2px rgba(255,255,255,.16) inset;
+}
+.gm-new-home-side-shortcut:active{ transform:scale(.97); }
 .gm-new-home-card h3{
   max-width: calc(100% - 42px);
   margin: 0 0 5px;
