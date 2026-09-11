@@ -1,5 +1,5 @@
 /* Genova mApp - Taccuino di viaggio
-   Interfaccia a tre segnalibri: Note, Percorsi, Preferiti.
+   Interfaccia a tre segnalibri: Preferiti, Percorsi, Note.
    I dati restano nel localStorage del browser e non richiedono un server. */
 (function(){
   'use strict';
@@ -14,8 +14,8 @@
 
   var state = {
     ready: false,
-    view: 'notes',
-    previousView: 'notes',
+    view: 'favorites',
+    previousView: 'favorites',
     selectedFavKey: '',
     route: null,
     favCache: [],
@@ -647,9 +647,9 @@
           '<button id="fav-notes-close" class="taccuino-close" type="button" aria-label="'+esc(t('close'))+'">×</button>' +
         '</header>' +
         '<nav class="taccuino-tabs" aria-label="'+esc(t('title'))+'">' +
-          '<button type="button" data-taccuino-action="switchTab" data-view="notes"><span aria-hidden="true">✎</span><b id="taccuino-tab-notes"></b></button>' +
-          '<button type="button" data-taccuino-action="switchTab" data-view="routes"><span aria-hidden="true">⌁</span><b id="taccuino-tab-routes"></b></button>' +
           '<button type="button" data-taccuino-action="switchTab" data-view="favorites"><span aria-hidden="true">★</span><b id="taccuino-tab-favorites"></b></button>' +
+          '<button type="button" data-taccuino-action="switchTab" data-view="routes"><span aria-hidden="true">⌁</span><b id="taccuino-tab-routes"></b></button>' +
+          '<button type="button" data-taccuino-action="switchTab" data-view="notes"><span aria-hidden="true">✎</span><b id="taccuino-tab-notes"></b></button>' +
         '</nav>' +
         '<main class="taccuino-paper">' +
           '<div class="taccuino-page-head">' +
