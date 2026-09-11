@@ -1179,16 +1179,49 @@ try{
       return true;
     }
 
-// Esporta una rimozione "forzata" (utile quando la stellina su mappa non è stata ancora ricostruita)
-window.__favForceRemove = function(label, name){
+// API condivisa per impostare lo stato Preferito da Taccuino, popup e menu.
+function setFavoriteStateEverywhere(label, name, on){
   try{
     var key = keyFor(label, name);
-    if(byKey[key]){
-      try{ FAV_STARS.removeLayer(byKey[key]); }catch(_){}
-      delete byKey[key];
+    var nameNorm = norm(name);
+    on = !!on;
+
+    if(on){
+      setFav(label, name, true);
+      var index = getIndexByLabel(label);
+      if(index && index[nameNorm]) ensureStarByNorm(index, nameNorm, label);
+    }else{
+      if(byKey[key]){
+        try{ FAV_STARS.removeLayer(byKey[key]); }catch(_){}
+        delete byKey[key];
+      }
+      setFav(label, name, false);
     }
-    setFav(label, name, false);
-  }catch(_){}
+
+    try{ syncFavoriteListRow(label, name, on); }catch(_){}
+    try{ syncPopupFavoriteButton(label, name, on); }catch(_){}
+    try{
+      window.dispatchEvent(new CustomEvent('fav:changed', {
+        detail: { label: label, name: name, on: on }
+      }));
+    }catch(_){}
+
+    return true;
+  }catch(_){
+    return false;
+  }
+}
+
+window.__favSetState = function(label, name, on){
+  return setFavoriteStateEverywhere(label, name, on);
+};
+
+window.__favForceRemove = function(label, name){
+  return setFavoriteStateEverywhere(label, name, false);
+};
+
+window.__favForceAdd = function(label, name){
+  return setFavoriteStateEverywhere(label, name, true);
 };
 
 

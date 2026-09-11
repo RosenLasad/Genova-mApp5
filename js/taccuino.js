@@ -25,7 +25,9 @@
     expandedRouteId: '',
     noteId: '',
     pageTimer: null,
-    favoritesSort: 'alphabetical'
+    favoritesSort: 'alphabetical',
+    lastRemovedFavorite: null,
+    favoriteUndoTimer: null
   };
 
   var TXT = {
@@ -59,7 +61,8 @@
       noteTitle: 'Titolo facoltativo', noteTitlePh: 'Titolo della pagina', noteBodyPh: 'Scrivi qui i tuoi appunti...',
       newNote: 'Nuova pagina', previousNote: 'Pagina precedente', nextNote: 'Pagina successiva',
       deleteNote: 'Elimina pagina', page: 'Pagina', of: 'di', noteSaved: 'Nota salvata automaticamente.',
-      created: 'Creata', modified: 'Modificata', copySuffix: 'copia'
+      created: 'Creata', modified: 'Modificata', copySuffix: 'copia',
+      removeFavorite: 'Rimuovi dai Preferiti', removedFavorite: 'Rimosso dai Preferiti', undo: 'Annulla'
     },
     en: {
       title: 'Notebook', subtitle: 'Your journey through Genoa', close: 'Close', back: 'Back',
@@ -91,7 +94,8 @@
       noteTitle: 'Optional title', noteTitlePh: 'Page title', noteBodyPh: 'Write your notes here...',
       newNote: 'New page', previousNote: 'Previous page', nextNote: 'Next page',
       deleteNote: 'Delete page', page: 'Page', of: 'of', noteSaved: 'Note saved automatically.',
-      created: 'Created', modified: 'Modified', copySuffix: 'copy'
+      created: 'Created', modified: 'Modified', copySuffix: 'copy',
+      removeFavorite: 'Remove from Favourites', removedFavorite: 'Removed from Favourites', undo: 'Undo'
     },
     es: {
       title: 'Cuaderno', subtitle: 'Tu viaje por Génova', close: 'Cerrar', back: 'Atrás',
@@ -123,7 +127,8 @@
       noteTitle: 'Título opcional', noteTitlePh: 'Título de la página', noteBodyPh: 'Escribe aquí tus apuntes...',
       newNote: 'Nueva página', previousNote: 'Página anterior', nextNote: 'Página siguiente',
       deleteNote: 'Eliminar página', page: 'Página', of: 'de', noteSaved: 'Nota guardada automáticamente.',
-      created: 'Creada', modified: 'Modificada', copySuffix: 'copia'
+      created: 'Creada', modified: 'Modificada', copySuffix: 'copia',
+      removeFavorite: 'Quitar de Favoritos', removedFavorite: 'Eliminado de Favoritos', undo: 'Deshacer'
     },
     fr: {
       title: 'Carnet', subtitle: 'Votre voyage à Gênes', close: 'Fermer', back: 'Retour',
@@ -155,7 +160,8 @@
       noteTitle: 'Titre facultatif', noteTitlePh: 'Titre de la page', noteBodyPh: 'Écrivez vos notes ici...',
       newNote: 'Nouvelle page', previousNote: 'Page précédente', nextNote: 'Page suivante',
       deleteNote: 'Supprimer la page', page: 'Page', of: 'sur', noteSaved: 'Note enregistrée automatiquement.',
-      created: 'Créée', modified: 'Modifiée', copySuffix: 'copie'
+      created: 'Créée', modified: 'Modifiée', copySuffix: 'copie',
+      removeFavorite: 'Retirer des favoris', removedFavorite: 'Retiré des favoris', undo: 'Annuler'
     },
     ar: {
       title: 'دفتر الرحلة', subtitle: 'رحلتك في جنوة', close: 'إغلاق', back: 'رجوع',
@@ -187,7 +193,8 @@
       noteTitle: 'عنوان اختياري', noteTitlePh: 'عنوان الصفحة', noteBodyPh: 'اكتب ملاحظاتك هنا...',
       newNote: 'صفحة جديدة', previousNote: 'الصفحة السابقة', nextNote: 'الصفحة التالية',
       deleteNote: 'حذف الصفحة', page: 'صفحة', of: 'من', noteSaved: 'تم حفظ الملاحظة تلقائياً.',
-      created: 'أُنشئت', modified: 'عُدّلت', copySuffix: 'نسخة'
+      created: 'أُنشئت', modified: 'عُدّلت', copySuffix: 'نسخة',
+      removeFavorite: 'إزالة من المفضلة', removedFavorite: 'تمت الإزالة من المفضلة', undo: 'تراجع'
     },
     ru: {
       title: 'Блокнот', subtitle: 'Ваше путешествие по Генуе', close: 'Закрыть', back: 'Назад',
@@ -219,7 +226,8 @@
       noteTitle: 'Необязательный заголовок', noteTitlePh: 'Заголовок страницы', noteBodyPh: 'Пишите заметки здесь...',
       newNote: 'Новая страница', previousNote: 'Предыдущая страница', nextNote: 'Следующая страница',
       deleteNote: 'Удалить страницу', page: 'Страница', of: 'из', noteSaved: 'Заметка сохранена автоматически.',
-      created: 'Создана', modified: 'Изменена', copySuffix: 'копия'
+      created: 'Создана', modified: 'Изменена', copySuffix: 'копия',
+      removeFavorite: 'Удалить из избранного', removedFavorite: 'Удалено из избранного', undo: 'Отменить'
     },
     zh: {
       title: '旅行手册', subtitle: '您的热那亚之旅', close: '关闭', back: '返回',
@@ -251,7 +259,8 @@
       noteTitle: '可选标题', noteTitlePh: '页面标题', noteBodyPh: '在此输入您的笔记……',
       newNote: '新建页面', previousNote: '上一页', nextNote: '下一页',
       deleteNote: '删除页面', page: '第', of: '页，共', noteSaved: '笔记已自动保存。',
-      created: '创建于', modified: '修改于', copySuffix: '副本'
+      created: '创建于', modified: '修改于', copySuffix: '副本',
+      removeFavorite: '从收藏中移除', removedFavorite: '已从收藏中移除', undo: '撤销'
     },
     lij: {
       title: 'Taccuin', subtitle: 'O teu viaggio a Zêna', close: 'Særa', back: 'Inderê',
@@ -283,7 +292,8 @@
       noteTitle: 'Titolo façortativo', noteTitlePh: 'Titolo da pagina', noteBodyPh: 'Scrivi chi i teu aponti...',
       newNote: 'Neuva pagina', previousNote: 'Pagina primma', nextNote: 'Pagina dòppo',
       deleteNote: 'Scancella pagina', page: 'Pagina', of: 'de', noteSaved: 'Nòtta sarvâ automaticamente.',
-      created: 'Creâ', modified: 'Modificâ', copySuffix: 'còpia'
+      created: 'Creâ', modified: 'Modificâ', copySuffix: 'còpia',
+      removeFavorite: 'Leva da-i Preferii', removedFavorite: 'Levou da-i Preferii', undo: 'Anulla'
     }
   };
 
@@ -698,9 +708,83 @@
     }
   }
 
+  function clearFavoriteUndo(){
+    if(state.favoriteUndoTimer){
+      window.clearTimeout(state.favoriteUndoTimer);
+      state.favoriteUndoTimer = null;
+    }
+    state.lastRemovedFavorite = null;
+  }
+
   function setStatus(message){
+    clearFavoriteUndo();
     var element = document.getElementById('taccuino-status');
     if(element) element.textContent = message || '';
+  }
+
+  function setFavoriteState(favorite, on){
+    if(!favorite) return false;
+    try{
+      if(typeof window.__favSetState === 'function'){
+        return window.__favSetState(favorite.label, favorite.name, !!on) !== false;
+      }
+      if(!on && typeof window.__favForceRemove === 'function'){
+        window.__favForceRemove(favorite.label, favorite.name);
+        return true;
+      }
+    }catch(_e){}
+
+    try{
+      var rows = Array.prototype.slice.call(document.querySelectorAll('#fav-menu .fav-item'));
+      var target = rows.find(function(li){
+        var nameElement = li.querySelector('.fav-name') || li;
+        return labelForLi(li) === favorite.label &&
+               norm(nameElement.textContent || '') === norm(favorite.name);
+      });
+      if(!target) return false;
+      var star = target.querySelector('.fav-star-btn');
+      if(!star || typeof star.click !== 'function') return false;
+      var isOn = star.classList.contains('on') || star.getAttribute('aria-pressed') === 'true';
+      if(isOn !== !!on) star.click();
+      return true;
+    }catch(_e){ return false; }
+  }
+
+  function showFavoriteUndo(favorite){
+    clearFavoriteUndo();
+    state.lastRemovedFavorite = favorite;
+    var element = document.getElementById('taccuino-status');
+    if(element){
+      element.innerHTML = '<span>'+esc(t('removedFavorite'))+': '+esc(favorite.name)+'</span> ' +
+        '<button type="button" data-taccuino-action="undoRemoveFavorite" ' +
+        'style="min-height:auto;padding:2px 6px;border:0;background:transparent;box-shadow:none;color:#f2d29a;text-decoration:underline;cursor:pointer;font-weight:700;">' +
+        esc(t('undo'))+'</button>';
+    }
+    state.favoriteUndoTimer = window.setTimeout(function(){
+      state.favoriteUndoTimer = null;
+      state.lastRemovedFavorite = null;
+      var current = document.getElementById('taccuino-status');
+      if(current) current.textContent = '';
+    }, 6500);
+  }
+
+  function removeFavoriteFromNotebook(favoriteKey){
+    var favorite = state.favByKey[favoriteKey];
+    if(!favorite) return;
+    var snapshot = Object.assign({}, favorite);
+    if(!setFavoriteState(snapshot, false)) return;
+    collectFavourites();
+    renderFavorites();
+    showFavoriteUndo(snapshot);
+  }
+
+  function undoFavoriteRemoval(){
+    var favorite = state.lastRemovedFavorite;
+    if(!favorite) return;
+    if(!setFavoriteState(favorite, true)) return;
+    collectFavourites();
+    renderFavorites();
+    setStatus('');
   }
 
   function setPageHeader(title, help, actionsHtml, showBack){
@@ -775,12 +859,14 @@
       '</div>';
 
     function favoriteRow(favorite){
+      var removeLabel = t('removeFavorite') + ': ' + favorite.name;
       return '' +
-        '<button type="button" class="taccuino-favorite-row" data-taccuino-action="openFavorite" data-fav-key="'+esc(favorite.key)+'" style="--fav-color:'+esc(categoryColor(favorite.label))+'">' +
+        '<div class="taccuino-favorite-row" role="button" tabindex="0" data-taccuino-action="openFavorite" data-fav-key="'+esc(favorite.key)+'" aria-label="'+esc(favorite.name)+'" style="--fav-color:'+esc(categoryColor(favorite.label))+'">' +
           '<span class="taccuino-favorite-pin" aria-hidden="true">★</span>' +
           '<span class="taccuino-favorite-copy"><strong>'+esc(favorite.name)+'</strong><small>'+esc(favorite.displayLabel || favorite.label)+'</small></span>' +
-          '<span class="taccuino-row-arrow" aria-hidden="true">›</span>' +
-        '</button>';
+          '<button type="button" class="taccuino-row-arrow taccuino-favorite-remove" data-taccuino-action="removeFavorite" data-fav-key="'+esc(favorite.key)+'" aria-label="'+esc(removeLabel)+'" title="'+esc(removeLabel)+'" ' +
+            'style="width:30px;min-width:30px;min-height:30px;margin:0;padding:0;border:0;border-radius:50%;background:transparent;box-shadow:none;color:#7c3d36;font-family:Arial,sans-serif;font-size:24px;line-height:1;cursor:pointer;">×</button>' +
+        '</div>';
     }
 
     if(alphabeticalSelected){
@@ -1025,6 +1111,8 @@
         renderFavorites();
       }
       else if(action === 'openFavorite') navigate('favoriteDetail', { favoriteKey: actionElement.getAttribute('data-fav-key') || '' });
+      else if(action === 'removeFavorite') removeFavoriteFromNotebook(actionElement.getAttribute('data-fav-key') || '');
+      else if(action === 'undoRemoveFavorite') undoFavoriteRemoval();
       else if(action === 'favoriteGps') centerFavourite(actionElement.getAttribute('data-fav-key') || state.selectedFavKey);
       else if(action === 'addSelectedFavorite') addSelectedFavorite();
       else if(action === 'newRoute') newRoute();
@@ -1051,6 +1139,17 @@
       else if(action === 'previousNote') moveNote(-1);
       else if(action === 'nextNote') moveNote(1);
       else if(action === 'deleteNote') deleteNote();
+    });
+
+    root.addEventListener('keydown', function(event){
+      var row = event.target && event.target.closest
+        ? event.target.closest('.taccuino-favorite-row[data-taccuino-action="openFavorite"]')
+        : null;
+      if(!row || event.target !== row) return;
+      if(event.key === 'Enter' || event.key === ' '){
+        event.preventDefault();
+        row.click();
+      }
     });
 
     root.addEventListener('input', function(event){
