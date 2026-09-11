@@ -66,6 +66,8 @@
                       : "(descrizione mancante)";
 
     var barColor = routeColor || "#e53935";
+    var detailsText = window.I18N_UI.details[window.CURRENT_LANG] || window.I18N_UI.details.it;
+    var detailsId = String(routeId).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; });
     var hasFavs = window.ROUTE_FAVS && window.ROUTE_FAVS[routeId] && window.ROUTE_FAVS[routeId].length;
     var isOn = window.__routeFavShown && window.__routeFavShown[routeId];
     var favBtn = hasFavs
@@ -83,6 +85,7 @@
           <div class="route-section-label">${sectionLabel}</div>
           <div class="route-duration">${durationText}</div>
           <div class="route-desc">${descText}</div>
+          <button type="button" class="gm-route-details" data-home-route="${detailsId}">${detailsText}</button>
         </div>
       </div>
     `;

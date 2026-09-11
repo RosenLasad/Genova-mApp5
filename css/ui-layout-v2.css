@@ -751,3 +751,49 @@ html body #ui-map-controls #ui-zoom-anchor .leaflet-control-zoom > a > span{
   font-size:20px !important;
   line-height:1 !important;
 }
+/* Vista iniziale accanto al joystick; guida raggiungibile dalle Impostazioni. */
+html body #help-fab{ display:none !important; }
+html body #ui-map-controls #btn-home{
+  position:absolute !important;
+  right:calc(100% + 8px) !important;
+  left:auto !important;
+  top:auto !important;
+  bottom:18px !important;
+  margin:0 !important;
+  transform:none !important;
+  width:36px !important;
+  height:36px !important;
+  min-width:36px !important;
+  min-height:36px !important;
+  padding:6px !important;
+  display:grid !important;
+  place-items:center;
+  color:#f1f5f9 !important;
+  background:rgba(11,18,34,.92) !important;
+  border:1px solid rgba(226,232,240,.38) !important;
+  border-radius:9px !important;
+  box-shadow:0 6px 16px rgba(0,0,0,.34) !important;
+  pointer-events:auto;
+}
+#ui-map-controls #btn-home [data-ui-icon],
+#ui-map-controls #btn-home svg{ width:22px !important; height:22px !important; }
+html body #ui-map-controls #btn-home:hover{ background:rgba(24,36,58,.98) !important; }
+html body #ui-map-controls #btn-home:focus-visible{ outline:3px solid #60a5fa; outline-offset:2px; }
+/* Su schermi stretti separa la casetta dallo scanner senza muovere i tre comandi centrali. */
+@media(max-width:430px){
+  html body #ui-map-controls #btn-home{ bottom:38px !important; }
+}
+/* Il vecchio posizionamento impostava top rispetto al pulsante ? ora nascosto.
+   Usa solo bottom per lasciare al contenuto la sua altezza naturale. */
+html body #help-legend{
+  top:auto !important;
+  bottom:var(--help-anchor-bottom, 64px) !important;
+  left:var(--help-anchor-left, 50%) !important;
+  right:auto !important;
+  transform:translateX(-50%) !important;
+  height:auto !important;
+  min-height:0 !important;
+  max-height:var(--help-available-height, calc(100dvh - 150px)) !important;
+  overflow-y:auto !important;
+  box-sizing:border-box;
+}

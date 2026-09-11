@@ -1,6 +1,9 @@
 
 (function(){
   const PANE = 'pane-qr-azzurri-all';
+  const VISIBILITY_KEY = 'gm-qr-points-visible';
+  var visibilityChosen = false;
+  var restoreAttempts = 0;
   function ensurePane(){
     if(!map.getPane(PANE)){
       map.createPane(PANE);
@@ -66,11 +69,34 @@ window.__qrOpenChildPanel && window.__qrOpenChildPanel(c.label, c.descr, c.media
   };
   window.__qrToggleAll = function(on){
     const grp = ensureGroup();
+    if(typeof on !== 'boolean') on = !map.hasLayer(grp);
     if(on){
       if(!map.hasLayer(grp)) map.addLayer(grp);
       window.__qrBuildAll();
     }else{
       if(map.hasLayer(grp)) map.removeLayer(grp);
     }
+    visibilityChosen = true;
+    try{ localStorage.setItem(VISIBILITY_KEY, on ? '1' : '0'); }catch(_){}
+    var master = document.getElementById('chk-qr-all');
+    if(master) master.checked = on;
+    var button = document.getElementById('btn-qr-removed');
+    if(button){
+      button.classList.toggle('is-active', on);
+      button.setAttribute('aria-pressed', String(on));
+    }
   };
+  function restoreVisibility(){
+    if(visibilityChosen) return;
+    // La mappa viene inizializzata in modo asincrono, anche dopo DOMContentLoaded.
+    if(typeof map === 'undefined' || !map || typeof map.hasLayer !== 'function' || typeof L === 'undefined'){
+      if(++restoreAttempts < 200) setTimeout(restoreVisibility, 100);
+      return;
+    }
+    var on = false;
+    try{ on = localStorage.getItem(VISIBILITY_KEY) === '1'; }catch(_){}
+    window.__qrToggleAll(on);
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', restoreVisibility, {once:true});
+  else restoreVisibility();
 })();

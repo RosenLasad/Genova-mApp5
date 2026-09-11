@@ -1,6 +1,7 @@
 (function(){
   // Dati i18n per Percorsi (spostati fuori dall'index)
   window.I18N_UI = window.I18N_UI || {
+    details: {it:"DETTAGLI",en:"DETAILS",es:"DETALLES",fr:"DÉTAILS",ar:"التفاصيل",ru:"ПОДРОБНЕЕ",zh:"详情",lij:"DETTAGGI"},
     startTooltip: { it:"Inizio", en:"Start", es:"Inicio", fr:"Départ", lij:"Iniçio", ru:"Начало", zh:"起点", ar:"البداية" },
     endTooltip:   { it:"Fine",   en:"End",   es:"Fin",    fr:"Arrivée", lij:"Fìn",   ru:"Конец",  zh:"终点", ar:"النهاية" }
   };

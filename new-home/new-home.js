@@ -150,8 +150,8 @@
       '  <header class="gm-new-home-topbar">'+
       '    <button type="button" class="gm-new-home-navbtn" id="gm-new-home-back" aria-label="Indietro" hidden><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>'+
       '    <div class="gm-new-home-heading"><span class="gm-new-home-eyebrow">Genova mApp</span><h2 class="gm-new-home-title" id="gm-new-home-title">Benvenuto</h2></div>'+
-      '    <button type="button" class="gm-new-home-navbtn" id="gm-new-home-close" aria-label="Chiudi">'+
-      '      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>'+
+      '    <button type="button" class="gm-new-home-navbtn" id="gm-new-home-close" aria-label="Vai alla mappa">'+
+      icon('routes')+'<span>MAPPA</span>'+
       '    </button>'+
       '  </header>'+
       '  <main class="gm-new-home-scroll" id="gm-new-home-content"></main>'+
@@ -195,8 +195,8 @@
       return ''+
         '<article class="gm-new-home-card'+(section.wide?' is-wide':'')+'" data-theme="'+section.theme+'" data-section="'+section.key+'" role="button" tabindex="0" aria-label="'+escapeHtml(section.title)+': Scopri">'+
         shortcut+
-        '  <h3>'+escapeHtml(section.title)+'</h3>'+
-        '  <p>'+escapeHtml(section.description)+'</p>'+
+        '  <div class="gm-new-home-card-copy"><h3>'+escapeHtml(section.title)+'</h3>'+
+        '  <p>'+escapeHtml(section.description)+'</p></div>'+
         '  <span class="gm-new-home-discover" aria-hidden="true">Scopri</span>'+
         '</article>';
     }).join('');
@@ -929,7 +929,8 @@
     currentAqueduct = aqueduct;
     applyTheme(section);
     applyView(currentView);
-    var language = currentLanguage();
+    // Il traduttore conserva la sorgente italiana e aggiorna i nodi senza ricreare la vista.
+    var language = 'it';
     var ui = function(key){ return translated(AQUEDUCT_DETAIL_UI[key], language); };
     var displayName = translated(aqueduct.names, language);
     title.textContent = displayName;
@@ -1024,7 +1025,9 @@
     var target = findRoutePointTarget(point);
     close();
     setTimeout(function(){
-      if(target && typeof target.click === 'function') target.click();
+      if(window.__gmOpenSingleRoutePoint){
+        window.__gmOpenSingleRoutePoint(point.label, point.name, route.routeKey);
+      }else if(target && typeof target.click === 'function') target.click();
     }, 90);
   }
 
@@ -1035,7 +1038,7 @@
     currentRoute = route;
     applyTheme(section);
     applyView(currentView);
-    var language = currentLanguage();
+    var language = 'it';
     var ui = function(key){ return translated(ROUTE_DETAIL_UI[key], language); };
     var displayName = routeDisplayName(route, language);
     var info = routePopupInfo(route, language);
@@ -1291,8 +1294,34 @@
     }
   }
 
+  function openRouteDetails(routeId){
+    var section = SECTIONS.find(function(item){ return item.key === 'routes'; });
+    var category = section.categories.find(function(item){ return item.type === 'recommended-routes'; });
+    var route = null;
+    getRouteGroups().some(function(group){
+      route = group.items.find(function(item){ return item.routeKey === routeId; });
+      return !!route;
+    });
+    if(!route || !overlay) return false;
+    // Usa la stessa pagina e lo stesso livello di cronologia dell'apertura dal menu.
+    if(overlay.hidden) open(document.getElementById('title-btn'));
+    renderSection(section); pushNewHomeLevel();
+    renderHistoryCategory(section, category); pushNewHomeLevel();
+    renderRouteDetail(section, category, route); pushNewHomeLevel();
+    var map = window.map || window.__LEAFLET_MAP__;
+    if(map && map.closePopup) map.closePopup();
+    return true;
+  }
+
   function boot(){
     createShell();
+    // In cattura: funziona anche nei popup Leaflet ospitati nella mappa 3D.
+    document.addEventListener('click', function(event){
+      var button = event.target.closest && event.target.closest('button[data-home-route]');
+      if(!button) return;
+      event.preventDefault(); event.stopPropagation();
+      openRouteDetails(button.getAttribute('data-home-route'));
+    }, true);
     renderHome();
     var openers = [
       document.getElementById('title-btn'),
@@ -1319,16 +1348,10 @@
       if(event.key !== 'Escape' || overlay.hidden) return;
       requestNewHomeBack();
     }, true);
-    document.addEventListener('app:set-lang', function(){
-      if(currentView === 'aqueduct-detail' && currentSection && currentCategory && currentAqueduct){
-        setTimeout(function(){ renderAqueductDetail(currentSection, currentCategory, currentAqueduct); }, 0);
-      }
-      else if(currentView === 'route-detail' && currentSection && currentCategory && currentRoute){
-        setTimeout(function(){ renderRouteDetail(currentSection, currentCategory, currentRoute); }, 0);
-      }
-    });
+    if(window.GMNewHomeI18n) window.GMNewHomeI18n.attach(overlay, [HISTORY_LAYERS, AQUEDUCT_DETAIL_UI, ROUTE_DETAIL_UI]);
     window.addEventListener('resize', updatePosition, {passive:true});
     window.addEventListener('popstate', handleHistoryBack);
+    open(document.getElementById('title-btn'));
   }
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, {once:true});
@@ -1336,4 +1359,5 @@
 
   window.gmOpenNewHome = open;
   window.gmCloseNewHome = close;
+  window.gmOpenNewHomeRoute = openRouteDetails;
 })();

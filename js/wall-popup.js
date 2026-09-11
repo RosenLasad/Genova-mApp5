@@ -239,10 +239,7 @@
     return source;
   }
 
-  function renderPopup(popup){
-    if(!isWallPopup(popup)) return false;
-    var match = wallNodeFor(popup);
-    if(!match) return false;
+  function popupMarkup(popup, match){
     var lang = currentLang();
     var text = translatedNode(match);
     var typeKey = String(match.node.type || 'altro').toLowerCase();
@@ -251,7 +248,7 @@
     var photoLabels = imageLabels();
     var image = imagePath(match);
     var color = accentFor(popup);
-    var html = '<article class="gm-wall-popup" dir="'+currentDirection()+'">'+
+    return '<article class="gm-wall-popup" dir="'+currentDirection()+'">'+
       '<div class="gm-wall-popup-header">'+
         '<span class="gm-wall-popup-category">'+escapeHtml(category)+'</span>'+ 
         '<h3 class="gm-wall-popup-title">'+escapeHtml(match.node.name)+'</h3>'+ 
@@ -262,6 +259,14 @@
         '<p class="gm-wall-popup-description">'+escapeHtml(text.descr || '')+'</p>'+ 
       '</div>'+ 
     '</article>';
+  }
+
+  function renderPopup(popup){
+    if(!isWallPopup(popup)) return false;
+    var match = wallNodeFor(popup);
+    if(!match) return false;
+    var html = popupMarkup(popup, match);
+    var color = accentFor(popup);
 
     popup.setContent(html);
     if(popup.options){ popup.options.maxWidth = 350; popup.options.minWidth = 250; }
@@ -291,6 +296,15 @@
     return true;
   }
 
+  /* La vista 3D non apre il popup Leaflet: le forniamo direttamente lo stesso
+     contenuto completo (fotografia inclusa) usato nella mappa normale. */
+  window.__gmWallPopupMarkupForLayer = function(layer){
+    if(!layer) return '';
+    var popup = {_source:layer, options:{className:'mura-popup'}};
+    var match = wallNodeFor(popup);
+    return match ? popupMarkup(popup, match) : '';
+  };
+
   function visibleRect(selector){
     var element = document.querySelector(selector);
     if(!element) return null;
@@ -301,6 +315,7 @@
   }
 
   function panIntoView(popup, animate){
+    if(popup && popup.__gm3DHosted) return;
     var mapRef = (popup._source && popup._source._map) || popup._map || window.map || window.__map;
     var element = popupElement(popup);
     var mapElement = mapRef && mapRef.getContainer ? mapRef.getContainer() : document.getElementById('map');

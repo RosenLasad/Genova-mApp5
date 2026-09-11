@@ -949,9 +949,61 @@ data.forEach(function(loc){
   if(!btn) return;
 
   // i quick toggle aggiornano aria-pressed :contentReference[oaicite:4]{index=4}
-  if(btn.getAttribute('aria-pressed') === 'true') return;
+  if(btn.getAttribute('aria-pressed') === 'true') return {button:btn, changed:false};
   btn.click();
+  return {button:btn, changed:true};
 }
+
+var routeSelection = null, routeSelectionRequest = 0;
+function openSingleRoutePoint(label, name, rid){
+  var index = getIndexByLabel(label), coords = index && index[norm(name)];
+  if(!coords) return false;
+  var request = ++routeSelectionRequest;
+  if(routeSelection){
+    if(!routeSelection.parents.some(function(parent){ return map.hasLayer(parent); })) map.removeLayer(routeSelection.marker);
+    routeSelection = null;
+  }
+  var roots = [];
+  function added(event){ roots.push(event.layer); }
+  map.on('layeradd', added);
+  var activation;
+  try{ activation = ensureFavCategoryOn(label); }
+  finally{ map.off('layeradd', added); }
+  // Costruisce il catalogo ma ripristina subito la categoria; i caricamenti asincroni
+  // popolano il gruppo nascosto, dal quale viene estratto soltanto il punto richiesto.
+  if(activation && activation.changed) activation.button.click();
+  map.eachLayer(function(layer){ roots.push(layer); });
+  var attempts = 0;
+  function locate(){
+    if(request !== routeSelectionRequest) return;
+    var candidates = [], seen = new Set();
+    function visit(layer, parents){
+      if(!layer || seen.has(layer)) return;
+      seen.add(layer);
+      if(layer.getLayers){ layer.getLayers().forEach(function(child){ visit(child, parents.concat(layer)); }); return; }
+      if(!layer.getLatLng || !layer.getPopup || !layer.getPopup() || (layer.options && layer.options.pane === pane)) return;
+      var ll = layer.getLatLng();
+      if(Math.abs(ll.lat-coords[0]) < 0.00001 && Math.abs(ll.lng-coords[1]) < 0.00001) candidates.push({marker:layer,parents:parents,rid:rid});
+    }
+    // Esamina prima i gruppi, conservando la relazione con la categoria originale.
+    roots.filter(function(layer){ return layer.getLayers; }).forEach(function(layer){ visit(layer,[]); });
+    roots.forEach(function(layer){ visit(layer,[]); });
+    var chosen = candidates.find(function(item){ return norm(item.marker.options.title || '') === norm(name); }) || candidates[0];
+    if(!chosen){ if(++attempts < 40) setTimeout(locate,150); return; }
+    if(!map.hasLayer(chosen.marker)){ chosen.marker.addTo(map); routeSelection = chosen; }
+    var view3d = window.__gmMap3D;
+    if(view3d && view3d.focus && view3d.focus(coords,17)){
+      if(view3d.syncPoints) view3d.syncPoints();
+      if(view3d.openPlace) view3d.openPlace(coords,name);
+    }else{
+      map.setView(coords,17,{animate:false});
+      chosen.marker.openPopup();
+    }
+  }
+  locate();
+  return true;
+}
+window.__gmOpenSingleRoutePoint = openSingleRoutePoint;
 
 function openFromFavStar(label, nameNorm){
   var index = getIndexByLabel(label);
@@ -1161,11 +1213,10 @@ function makeRouteDot(lat, lng, label, nameNorm, rid){
 
   var m = L.marker([lat, lng], { icon: icon, pane: pane, interactive: true });
 
-  // stesso comportamento della stella: accende categoria e apre popup punto
+  // Mostra solo il punto del percorso, conservando lo stato delle categorie.
   m.on('click', function(e){
   try{ if(e && e.originalEvent) L.DomEvent.stop(e.originalEvent); }catch(_){}
-  try{ ensureFavCategoryOn(label); }catch(_){}
-  try{ openFromFavStar(label, nameNorm, L.latLng(lat, lng)); }catch(_){}
+  openSingleRoutePoint(label, nameNorm, rid);
 });
 
 
@@ -1266,6 +1317,12 @@ function escHtml(s){
     }
 
     function centerThenOpen(index, name, label){
+      var latlng = index[norm(name)];
+      var map3d = window.__gmMap3D;
+      if(latlng && map3d && map3d.focus && map3d.focus(latlng, 17)){
+        if(map3d.openPlace) map3d.openPlace(latlng, name);
+        return;
+      }
       var didCenter = centerOn(index, name);
       if(didCenter){ var once=function(){ map.off('moveend', once); openPopupAt(index, name, label); }; map.on('moveend', once); }
       else { openPopupAt(index, name, label); }
@@ -1690,6 +1747,10 @@ function decorateFavoritePopup(popup){
 function bindPopupFavoriteButton(){
   if(!map || map.__favPopupButtonBound) return;
   map.__favPopupButtonBound = true;
+  document.addEventListener('app:popup-3d-refresh', function(event){
+    var popup = event.detail && event.detail.popup;
+    if(popup) decorateFavoritePopup(popup);
+  });
   map.on('popupopen', function(event){
     var popup = event && event.popup;
     if(!popup) return;
@@ -1909,6 +1970,11 @@ var mk = makeRouteDot(ll[0], ll[1], label, key, rid);
 }
 
 function hideRouteStars(rid){
+  if(routeSelection && routeSelection.rid === rid){
+    ++routeSelectionRequest;
+    if(!routeSelection.parents.some(function(parent){ return map.hasLayer(parent); })) map.removeLayer(routeSelection.marker);
+    routeSelection = null;
+  }
   var arr = __routeMarkers[rid];
   if(arr && arr.length){
     arr.forEach(function(m){ try{ ROUTE_STAR_LAYER.removeLayer(m); }catch(_){} });

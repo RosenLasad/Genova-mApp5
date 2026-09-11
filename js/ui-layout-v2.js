@@ -105,6 +105,7 @@
     }
 
     move(joystick, controls);
+    move(document.getElementById('btn-home'), controls);
 
     if(zoom){
       var zoomAnchor = document.getElementById('ui-zoom-anchor');
@@ -131,9 +132,40 @@
     var gps = document.getElementById('btn-gps');
     var qr = document.getElementById('map-qr-fab');
     var home = document.getElementById('btn-home');
-    var order = [help, settings, gps, qr, home].filter(Boolean);
+    var order = [settings, gps, qr].filter(Boolean);
 
     order.forEach(function(node){ move(node, bar); });
+    if(help) move(help, document.body);
+    var helpAction = document.getElementById('settings-help-action');
+    var helpPanel = document.getElementById('help-legend');
+    var settingsAnchor = document.getElementById('btn-settings');
+    if(helpPanel && settingsAnchor){
+      var anchorRect = settingsAnchor.getBoundingClientRect();
+      var panelWidth = Math.min(window.innerWidth * .92, 360);
+      var center = Math.max(panelWidth / 2 + 8, Math.min(window.innerWidth - panelWidth / 2 - 8, anchorRect.left + anchorRect.width / 2));
+      var header = document.querySelector('#app > header');
+      var headerBottom = header ? header.getBoundingClientRect().bottom : 0;
+      helpPanel.style.setProperty('--help-anchor-left', center + 'px');
+      helpPanel.style.setProperty('--help-anchor-bottom', (window.innerHeight - anchorRect.top + 10) + 'px');
+      helpPanel.style.setProperty('--help-available-height', Math.max(60, anchorRect.top - headerBottom - 20) + 'px');
+    }
+    if(helpAction){
+      var lang = (document.documentElement.lang || 'it').split('-')[0];
+      var labels = {it:'Come funziona',en:'How it works',es:'Cómo funciona',fr:'Comment ça marche',ar:'كيف يعمل',ru:'Как это работает',zh:'使用说明',lij:'Comme fonçionn-a'};
+      var text = labels[lang] || labels.it;
+      if(helpAction.textContent !== text) helpAction.textContent = text;
+      if(!helpAction.__helpBound){
+        helpAction.__helpBound = true;
+        helpAction.addEventListener('click', function(event){
+          event.preventDefault(); event.stopPropagation();
+          if(settings) settings.classList.remove('open');
+          var settingsButton = document.getElementById('btn-settings');
+          if(settingsButton) settingsButton.setAttribute('aria-expanded','false');
+          var trigger = document.getElementById('help-fab');
+          if(trigger) trigger.click();
+        });
+      }
+    }
 
     if(home){
       home.setAttribute('title', 'Vista iniziale');

@@ -97,7 +97,9 @@
     try{ if(window.__ensureQrOn) window.__ensureQrOn(); }catch(_){}
     try{
       var appMap = window.map || window.__map;
-      if(appMap && appMap.setView){
+      var map3d = window.__gmMap3D;
+      var centered3D = map3d && map3d.focus && map3d.focus([item.lat, item.lng], 17, {minZoom:true});
+      if(!centered3D && appMap && appMap.setView){
         var zoom = appMap.getZoom ? appMap.getZoom() : 16;
         appMap.setView([item.lat, item.lng], Math.max(zoom, 17), {animate:true});
       }

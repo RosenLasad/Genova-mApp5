@@ -672,6 +672,7 @@
   }
 
   function panPopupIntoSafeArea(popup, animate){
+    if(popup && popup.__gm3DHosted) return;
     if(!popup) return;
     var mapRef = (popup._source && popup._source._map) || popup._map || window.map || window.__map || window.MAP;
     var popupElement = popup.getElement ? popup.getElement() : popup._container;
@@ -811,7 +812,7 @@
 
   function decoratePopup(popup, preserveMapPosition){
     if(!popup) return false;
-    var shouldAdjustMap = preserveMapPosition !== true;
+    var shouldAdjustMap = preserveMapPosition !== true && !popup.__gm3DHosted;
     var source = popup._source;
     var type = typeFor(source);
     if(!type) return false;
@@ -876,6 +877,8 @@
   function refreshActive(){
     var popup = activePopup();
     if(!popup || !popup._source || !popup._source._gmPlaceType) return;
+    // Il modulo 3D esegue il rendering finale dopo gli aggiornamenti legacy.
+    if(popup.__gm3DHosted) return;
     // Il cambio lingua deve aggiornare soltanto i contenuti: la posizione
     // geografica scelta dall'utente non deve essere modificata.
     var mapRef = popup._map || popup._source._map || window.map || window.__map || window.MAP;
