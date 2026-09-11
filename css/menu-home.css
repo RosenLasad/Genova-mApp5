@@ -60,10 +60,10 @@
 
 /* Toolbar: sfondo al titolo "Genova mApp" */
 header #title-btn.title-btn{
-  background: #3399CC;
-  color: #fff;
-  padding: .50rem .80rem;
-  border-radius: 30px;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
   display: inline-flex;
   align-items: center;
   font: inherit;
@@ -75,12 +75,13 @@ header #title-btn.title-btn{
 }
 
 header #title-btn.title-btn:hover{
-  filter: brightness(1.08);
+  filter:none;
 }
 
 /* opzionale: stessa arrotondatura anche quando è "active" */
 header #title-btn.title-btn.active{
-  border-radius: 30px;
+  border-radius:0;
+  outline:none;
 }
 
 /* Sposta leggermente a destra il bottone "Genova mApp" (responsivo) */

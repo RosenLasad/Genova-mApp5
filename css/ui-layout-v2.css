@@ -449,11 +449,17 @@ body > #flag-switcher .flag-ico svg{
   border-color:rgba(34,211,238,.82) !important;
 }
 
-/* Titolo più sobrio, mantenendo la A arancione del marchio. */
+/* Il marchio Genova mApp usa ora un SVG interno con grifoni.
+   Il bottone esterno resta trasparente: contorno e pulse appartengono solo al badge centrale. */
 #app > header #title-btn{
-  background:linear-gradient(180deg,#2d86bb 0%,#2375a7 100%) !important;
-  border:1px solid rgba(255,255,255,.24) !important;
-  box-shadow:0 3px 10px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.16) !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  padding:0 !important;
+  border-radius:0 !important;
+  filter:none !important;
+  line-height:0 !important;
+  overflow:visible !important;
 }
 
 /* Bandiere più larghe e raccolte in un pannello leggibile. */
@@ -796,4 +802,139 @@ html body #help-legend{
   max-height:var(--help-available-height, calc(100dvh - 150px)) !important;
   overflow-y:auto !important;
   box-sizing:border-box;
+}
+
+/* ==========================================================================
+   Genova mApp toolbar brand - grifoni + badge interattivo
+   Il vecchio testo HTML resta nel DOM, ma non viene mostrato.
+   ========================================================================== */
+#app > header #title-btn .title-btn-legacy{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  margin:-1px !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  clip:rect(0 0 0 0) !important;
+  clip-path:inset(50%) !important;
+  white-space:nowrap !important;
+  opacity:0 !important;
+  pointer-events:none !important;
+}
+
+#app > header #title-btn .gm-toolbar-brand{
+  display:block;
+  width:clamp(184px, 23.5vw, 240px);
+  height:auto;
+  overflow:visible;
+  pointer-events:none;
+  user-select:none;
+  -webkit-user-select:none;
+}
+
+#app > header #title-btn .gm-brand-badge{
+  transform-box:fill-box;
+  transform-origin:center;
+  animation:gm-brand-pulse 5.2s ease-in-out infinite;
+  transition:transform .18s ease, filter .18s ease;
+}
+
+#app > header #title-btn .gm-brand-pill{
+  transition:stroke .18s ease, stroke-width .18s ease, filter .18s ease;
+}
+
+#app > header #title-btn .gm-brand-wordmark{
+  transition:filter .18s ease;
+}
+
+/* Hover/focus: si muovono e si illuminano solo scritta + contorno arrotondato. */
+#app > header #title-btn:hover .gm-brand-badge,
+#app > header #title-btn:focus-visible .gm-brand-badge{
+  animation-play-state:paused;
+  transform:scale(1.028);
+  filter:drop-shadow(0 0 5px rgba(117,189,215,.52));
+}
+
+#app > header #title-btn:hover .gm-brand-pill,
+#app > header #title-btn:focus-visible .gm-brand-pill,
+#app > header #title-btn[aria-expanded="true"] .gm-brand-pill,
+#app > header #title-btn.active .gm-brand-pill{
+  stroke:#e5f6ff;
+  stroke-width:1.9;
+}
+
+#app > header #title-btn:hover .gm-brand-wordmark,
+#app > header #title-btn:focus-visible .gm-brand-wordmark{
+  filter:drop-shadow(0 0 2px rgba(255,255,255,.34));
+}
+
+#app > header #title-btn:active .gm-brand-badge{
+  transform:scale(.99);
+}
+
+#app > header #title-btn:focus-visible{
+  outline:none !important;
+}
+
+/* Tre piccole pose, concentrate in un breve momento del loop: effetto sprite discreto. */
+#app > header #title-btn .gm-griffin-tail{
+  transform-box:fill-box;
+  transform-origin:18% 58%;
+}
+
+#app > header #title-btn .gm-griffin-left .gm-griffin-tail{
+  animation:gm-griffin-tail-left 4.6s steps(1,end) infinite;
+}
+
+#app > header #title-btn .gm-griffin-right .gm-griffin-tail{
+  animation:gm-griffin-tail-right 4.6s steps(1,end) .28s infinite;
+}
+
+@keyframes gm-brand-pulse{
+  0%, 7%, 14%, 100%{ transform:scale(1); filter:none; }
+  10%{ transform:scale(1.018); filter:drop-shadow(0 0 4px rgba(117,189,215,.38)); }
+}
+
+@keyframes gm-griffin-tail-left{
+  0%, 73%, 100%{ transform:rotate(0deg); }
+  79%{ transform:rotate(6deg) translateY(-1px); }
+  85%{ transform:rotate(-3deg) translateY(0); }
+  91%{ transform:rotate(4deg) translateY(-1px); }
+  96%{ transform:rotate(0deg); }
+}
+
+@keyframes gm-griffin-tail-right{
+  0%, 73%, 100%{ transform:rotate(0deg); }
+  79%{ transform:rotate(-6deg) translateY(-1px); }
+  85%{ transform:rotate(3deg) translateY(0); }
+  91%{ transform:rotate(-4deg) translateY(-1px); }
+  96%{ transform:rotate(0deg); }
+}
+
+/* Su tablet/telefono il marchio si restringe come un unico blocco. */
+@media (max-width:768px){
+  #app > header #title-btn .gm-toolbar-brand{
+    width:clamp(164px, 31vw, 192px);
+  }
+}
+
+@media (max-width:430px){
+  #app > header #title-btn .gm-toolbar-brand{
+    width:clamp(150px, 44vw, 168px);
+  }
+}
+
+@media (max-width:360px){
+  #app > header #title-btn .gm-toolbar-brand{
+    width:142px;
+  }
+}
+
+/* Accessibilita: se il sistema chiede meno movimento, marchio completamente statico. */
+@media (prefers-reduced-motion:reduce){
+  #app > header #title-btn .gm-brand-badge,
+  #app > header #title-btn .gm-griffin-tail{
+    animation:none !important;
+    transition:none !important;
+  }
 }
