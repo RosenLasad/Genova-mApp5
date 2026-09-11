@@ -917,7 +917,7 @@ data.forEach(function(loc){
     syncFavStarsButton();
     var byKey = {}; // "Label|nameNorm" -> star marker
 
-    function ensureFavCategoryOn(label){
+    function favCategoryButton(label){
   // mappa label -> quick toggle
   var mapSel = {
     'Forte': '.qt-forti',
@@ -943,9 +943,16 @@ data.forEach(function(loc){
   };
 
   var sel = mapSel[label];
-  if(!sel) return;
+  return sel ? document.querySelector('#quick-toggles ' + sel) : null;
+}
 
-  var btn = document.querySelector('#quick-toggles ' + sel);
+function favCategoryIsOn(label){
+  var btn = favCategoryButton(label);
+  return !!(btn && btn.getAttribute('aria-pressed') === 'true');
+}
+
+function ensureFavCategoryOn(label){
+  var btn = favCategoryButton(label);
   if(!btn) return;
 
   // i quick toggle aggiornano aria-pressed :contentReference[oaicite:4]{index=4}
@@ -1004,6 +1011,116 @@ function openSingleRoutePoint(label, name, rid){
   return true;
 }
 window.__gmOpenSingleRoutePoint = openSingleRoutePoint;
+
+// Punto Preferito isolato: se la categoria e' spenta, viene caricata solo
+// quanto basta per recuperare il marker richiesto e poi torna subito spenta.
+// Manteniamo un solo punto isolato alla volta, senza interferire con i punti
+// isolati usati dai Percorsi.
+var favoriteSelection = null, favoriteSelectionRequest = 0;
+
+function clearFavoriteSelection(){
+  ++favoriteSelectionRequest;
+  if(!favoriteSelection) return;
+  try{
+    var parentVisible = favoriteSelection.parents && favoriteSelection.parents.some(function(parent){
+      return map.hasLayer(parent);
+    });
+    if(!parentVisible && map.hasLayer(favoriteSelection.marker)) map.removeLayer(favoriteSelection.marker);
+  }catch(_e){}
+  favoriteSelection = null;
+}
+
+function openSingleFavoritePoint(label, name){
+  var index = getIndexByLabel(label), coords = index && index[norm(name)];
+  if(!coords) return false;
+
+  var request = ++favoriteSelectionRequest;
+  clearFavoriteSelection();
+  // clearFavoriteSelection incrementa il contatore: questo e' il token valido.
+  request = ++favoriteSelectionRequest;
+
+  var roots = [];
+  function added(event){ roots.push(event.layer); }
+
+  map.on('layeradd', added);
+  var activation;
+  try{ activation = ensureFavCategoryOn(label); }
+  finally{ map.off('layeradd', added); }
+
+  // Se la categoria era spenta, la richiudiamo immediatamente. Il relativo
+  // gruppo/marker resta comunque disponibile in memoria per estrarre solo il
+  // punto richiesto.
+  if(activation && activation.changed) activation.button.click();
+
+  map.eachLayer(function(layer){ roots.push(layer); });
+
+  var attempts = 0;
+  function locate(){
+    if(request !== favoriteSelectionRequest) return;
+
+    var candidates = [], seen = new Set();
+    function visit(layer, parents){
+      if(!layer || seen.has(layer)) return;
+      seen.add(layer);
+      if(layer.getLayers){
+        layer.getLayers().forEach(function(child){ visit(child, parents.concat(layer)); });
+        return;
+      }
+      if(!layer.getLatLng || !layer.getPopup || !layer.getPopup() || (layer.options && layer.options.pane === pane)) return;
+      var ll = layer.getLatLng();
+      if(Math.abs(ll.lat-coords[0]) < 0.00001 && Math.abs(ll.lng-coords[1]) < 0.00001){
+        candidates.push({marker:layer, parents:parents, label:label, name:name});
+      }
+    }
+
+    roots.filter(function(layer){ return layer && layer.getLayers; }).forEach(function(layer){ visit(layer, []); });
+    roots.forEach(function(layer){ visit(layer, []); });
+
+    var chosen = candidates.find(function(item){
+      return norm(item.marker.options && item.marker.options.title || '') === norm(name);
+    }) || candidates[0];
+
+    if(!chosen){
+      if(++attempts < 40) setTimeout(locate, 150);
+      return;
+    }
+
+    if(!map.hasLayer(chosen.marker)) chosen.marker.addTo(map);
+    favoriteSelection = chosen;
+
+    var displayName = name;
+    try{ displayName = originalFavoriteName(label, norm(name)) || name; }catch(_e){}
+
+    var view3d = window.__gmMap3D;
+    if(view3d && view3d.focus && view3d.focus(coords, 17)){
+      if(view3d.syncPoints) view3d.syncPoints();
+      if(view3d.openPlace) view3d.openPlace(coords, displayName);
+    }else{
+      map.setView(coords, 17, {animate:false});
+      try{ chosen.marker.openPopup(); }
+      catch(_e){ try{ chosen.marker.fire('click'); }catch(_e2){} }
+    }
+  }
+
+  locate();
+  return true;
+}
+
+function openFavoriteFromStar(label, nameNorm){
+  // Se la categoria e' gia' visibile, non tocchiamo il suo stato: usiamo il
+  // comportamento normale e apriamo il marker gia' presente sulla mappa.
+  if(favCategoryIsOn(label)){
+    clearFavoriteSelection();
+    openFromFavStar(label, nameNorm);
+    return;
+  }
+
+  // Categoria spenta: mostra soltanto il marker del Preferito cliccato.
+  if(!openSingleFavoritePoint(label, nameNorm)){
+    // Fallback conservativo per categorie/indici non ancora disponibili.
+    openFromFavStar(label, nameNorm);
+  }
+}
 
 function openFromFavStar(label, nameNorm){
   var index = getIndexByLabel(label);
@@ -1073,8 +1190,7 @@ function makeStar(lat, lng, label, nameNorm){
       if(e && e.originalEvent) L.DomEvent.stop(e.originalEvent);
     }catch(_){}
 
-    ensureFavCategoryOn(label);
-    openFromFavStar(label, nameNorm);
+    openFavoriteFromStar(label, nameNorm);
   });
 
   return m;
