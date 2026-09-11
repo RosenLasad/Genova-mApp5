@@ -48,10 +48,17 @@
 .gm-new-home-overlay[data-theme="move"]{ --gm-theme:#125f86; --gm-theme-dark:#123b5e; --gm-theme-accent:#38a8d1; --gm-theme-pale:#d9eff6; --gm-section-image:url("images/come-muoversi.webp"); --gm-section-position:center top; }
 .gm-new-home-overlay[data-theme="routes"]{ --gm-theme:#46563b; --gm-theme-dark:#293828; --gm-theme-accent:#899067; --gm-theme-pale:#e5e6d3; --gm-section-image:url("images/mura-acquedotti-percorsi.webp"); --gm-section-position:center top; }
 .gm-new-home-overlay[data-theme="food"]{ --gm-theme:#176b5b; --gm-theme-dark:#103e39; --gm-theme-accent:#5db394; --gm-theme-pale:#ddece5; --gm-section-image:url("images/mangiare-dormire.webp"); --gm-section-position:center top; }
-.gm-new-home-overlay[data-theme="media"]{ --gm-theme:#385c8e; --gm-theme-dark:#263956; --gm-theme-accent:#729ccc; --gm-theme-pale:#dfe8f3; }
-.gm-new-home-overlay[data-theme="community"]{ --gm-theme:#8b5b35; --gm-theme-dark:#513524; --gm-theme-accent:#d29a58; --gm-theme-pale:#f1e4d0; }
-.gm-new-home-overlay[data-theme="extra"]{ --gm-theme:#684f78; --gm-theme-dark:#3d304c; --gm-theme-accent:#a88abb; --gm-theme-pale:#e8deed; --gm-section-image:url("images/extra.webp"); --gm-section-position:center center; }
-.gm-new-home-overlay[data-theme="guide"]{ --gm-theme:#465b71; --gm-theme-dark:#29394c; --gm-theme-accent:#839bb0; --gm-theme-pale:#e1e7ec; }
+.gm-new-home-overlay[data-theme="media"]{ --gm-theme:#385c8e; --gm-theme-dark:#263956; --gm-theme-accent:#729ccc; --gm-theme-pale:#dfe8f3; --gm-section-image:url("images/multimedia.webp"); --gm-section-position:center top; }
+.gm-new-home-overlay[data-theme="community"]{ --gm-theme:#8b5b35; --gm-theme-dark:#513524; --gm-theme-accent:#d29a58; --gm-theme-pale:#f1e4d0; --gm-section-image:url("images/eventi-blog-contatti.webp"); --gm-section-position:center top; }
+.gm-new-home-overlay[data-theme="extra"]{
+  --gm-theme:#684f78;
+  --gm-theme-dark:#3d304c;
+  --gm-theme-accent:#a88abb;
+  --gm-theme-pale:#e8deed;
+  --gm-section-image:url("images/extra.webp");
+  --gm-section-position:center top;
+}
+.gm-new-home-overlay[data-theme="guide"]{ --gm-theme:#465b71; --gm-theme-dark:#29394c; --gm-theme-accent:#839bb0; --gm-theme-pale:#e1e7ec; --gm-section-image:url("images/guida-istruzioni.webp"); --gm-section-position:center top; }
 
 .gm-new-home-overlay[hidden]{ display: none !important; }
 
@@ -236,10 +243,10 @@ html.gm-new-home-open body{ overflow: hidden; }
 .gm-new-home-card[data-theme="move"]{ --card-a:#125f86; --card-b:#123b5e; --card-accent:#38a8d1; --card-image:url("images/come-muoversi.webp"); --card-position:center 49%; }
 .gm-new-home-card[data-theme="routes"]{ --card-a:#46563b; --card-b:#293828; --card-accent:#899067; --card-image:url("images/mura-acquedotti-percorsi.webp"); --card-position:center 53%; }
 .gm-new-home-card[data-theme="food"]{ --card-a:#176b5b; --card-b:#103e39; --card-accent:#5db394; --card-image:url("images/mangiare-dormire.webp"); --card-position:center 51%; }
-.gm-new-home-card[data-theme="media"]{ --card-a:#385c8e; --card-b:#263956; --card-accent:#729ccc; }
-.gm-new-home-card[data-theme="community"]{ --card-a:#8b5b35; --card-b:#513524; --card-accent:#d29a58; }
+.gm-new-home-card[data-theme="media"]{ --card-a:#385c8e; --card-b:#263956; --card-accent:#729ccc; --card-image:url("images/multimedia.webp"); --card-position:center 50%; }
+.gm-new-home-card[data-theme="community"]{ --card-a:#8b5b35; --card-b:#513524; --card-accent:#d29a58; --card-image:url("images/eventi-blog-contatti.webp"); --card-position:center 50%; }
 .gm-new-home-card[data-theme="extra"]{ --card-a:#684f78; --card-b:#3d304c; --card-accent:#a88abb; --card-image:url("images/extra.webp"); --card-position:center 50%; }
-.gm-new-home-card[data-theme="guide"]{ --card-a:#465b71; --card-b:#29394c; --card-accent:#839bb0; }
+.gm-new-home-card[data-theme="guide"]{ --card-a:#465b71; --card-b:#29394c; --card-accent:#839bb0; --card-image:url("images/guida-istruzioni.webp"); --card-position:center 50%; }
 
 .gm-new-home-icon{
   position: absolute;
@@ -439,6 +446,76 @@ html.gm-new-home-open body{ overflow: hidden; }
   color:#59697b;
   font-size:.9rem;
   line-height:1.28;
+}
+
+/* Extra > Giochi: catalogo delle esperienze interattive. */
+.gm-new-home-game-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:11px;
+}
+.gm-new-home-game-card{
+  min-height:116px;
+  display:grid;
+  grid-template-columns:82px minmax(0,1fr) auto;
+  align-items:center;
+  gap:14px;
+  padding:14px 15px;
+  color:#233245;
+  text-decoration:none;
+  background:rgba(255,255,255,.88);
+  border:1px solid color-mix(in srgb, var(--gm-theme) 25%, #d7dce2);
+  border-left:4px solid var(--gm-theme-accent);
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(30,45,60,.08);
+  transition:transform .16s ease, border-color .16s ease, background .16s ease, box-shadow .16s ease;
+}
+.gm-new-home-game-card:first-child:last-child{ grid-column:1 / -1; }
+.gm-new-home-game-card:hover{
+  transform:translateY(-2px);
+  border-color:var(--gm-theme-accent);
+  background:color-mix(in srgb, var(--gm-theme-pale) 34%, #fff);
+  box-shadow:0 9px 22px rgba(30,45,60,.12);
+}
+.gm-new-home-game-card:focus-visible{
+  outline:3px solid color-mix(in srgb, var(--gm-theme-accent) 72%, #fff);
+  outline-offset:2px;
+}
+.gm-new-home-game-icon{
+  width:82px;
+  height:82px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:color-mix(in srgb, var(--gm-theme-pale) 72%, #fff);
+  border:1px solid color-mix(in srgb, var(--gm-theme-accent) 46%, #d9dde2);
+  border-radius:18px;
+  box-shadow:0 4px 12px rgba(29,38,52,.11);
+}
+.gm-new-home-game-icon img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:contain;
+}
+.gm-new-home-game-copy{ min-width:0; }
+.gm-new-home-game-copy strong{
+  display:block;
+  margin-bottom:5px;
+  color:var(--gm-theme-dark);
+  font-size:1.06rem;
+  line-height:1.2;
+}
+.gm-new-home-game-copy small{
+  display:block;
+  color:#5b697a;
+  font-size:.9rem;
+  line-height:1.35;
+}
+.gm-new-home-game-arrow{
+  color:var(--gm-theme);
+  font-size:1.55rem;
+  font-weight:900;
 }
 
 .gm-new-home-place-list{ display:grid; gap:8px; margin:0; padding:0; list-style:none; }
@@ -868,7 +945,12 @@ button.gm-new-home-layer-copy:hover strong{ color:var(--gm-theme-dark); text-dec
   .gm-new-home-navbtn{ width: 40px; height: 40px; border-radius: 12px; }
   .gm-new-home-scroll{ padding: 12px; }
   .gm-new-home-grid,
-  .gm-new-home-category-grid{ grid-template-columns: 1fr; }
+  .gm-new-home-category-grid,
+  .gm-new-home-game-grid{ grid-template-columns: 1fr; }
+  .gm-new-home-game-card,
+  .gm-new-home-game-card:first-child:last-child{ grid-column:auto; }
+  .gm-new-home-game-card{ grid-template-columns:70px minmax(0,1fr) auto; gap:11px; padding:12px; }
+  .gm-new-home-game-icon{ width:70px; height:70px; border-radius:15px; }
   .gm-new-home-card,
   .gm-new-home-card.is-wide{ grid-column:auto; min-height:205px; }
   .gm-new-home-card p{ max-width:92%; }

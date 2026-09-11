@@ -1,0 +1,300 @@
+/* HUD giocatori (in partita) */
+.hudPlayers{
+  display:flex;
+  flex-direction:column;     /* <-- verticale */
+  gap:10px;
+  overflow-x:visible;        /* niente scroll laterale */
+  overflow-y:auto;           /* se mai serve */
+  padding:10px;
+  margin-bottom:12px;
+  border:1px solid #232735;
+  border-radius:14px;
+  background:#121623;
+
+  max-height: 42vh;          /* opzionale: evita che mangi tutto lo schermo */
+}
+
+/* scrollbar orizzontale non serve più, puoi anche eliminarle */
+.hudPlayers::-webkit-scrollbar{ width:8px; height:auto; }
+.hudPlayers::-webkit-scrollbar-thumb{ background:#2a3042; border-radius:999px; }
+
+.pChip{
+  width:min(450px, 100%);                /* <-- occupa tutta la larghezza */
+  min-width:0;               /* <-- niente min-width da carousel */
+  border:1px solid #2a3042;
+  border-radius:14px;
+  padding:10px;
+  background:#0f1115;
+}
+
+.pName{ max-width: 220px; }
+
+.pChip.active{
+  outline:2px solid #3b82f6;
+}
+.pNameRow{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:8px;
+}
+.pName{
+  font-weight:700;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  max-width: 140px;
+}
+.pMeta{
+  font-size:12px;
+  color:#aab3c6;
+  white-space:nowrap;
+}
+.pProg{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 10px;
+}
+.pItem{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:12px;
+  color:#e9eef5;
+  opacity:.95;
+}
+.pDot{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+}
+
+#qNeed { display: none !important; }
+
+/* Bottone icona "back" in alto: dimensione da bottone normale */
+.icon-btn-wide{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 12px;
+  border: 1px solid #2a3042;
+  background: transparent;
+}
+
+.icon-btn-wide:hover{
+  border-color:#3a4563;
+}
+
+.icon-btn-wide .btn-icon{
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+.gameLogo{
+  display:block;
+  height: 84px;        /* altezza “da header” */
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Se su mobile vuoi un po’ più piccolo */
+@media (max-width: 520px){
+  .gameLogo{ height: 46px; }
+}
+
+/* Opzionale: testo nascosto per accessibilità */
+.srOnly{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+.topbar{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar #btnHub{ justify-self: start; }
+
+.topbar .gameLogo{
+  justify-self: center;
+  height: 84px;   /* come hai scelto tu */
+  width: auto;
+  max-width: min(520px, 70vw);
+  object-fit: contain;
+}
+
+.topRight{
+  justify-self: end;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.top-actions{
+  display:flex;
+  flex-direction:column;   /* uno sopra l’altro */
+  gap:8px;
+  align-items:flex-end;    /* allinea a destra */
+}
+
+.top-actions button{
+  width: 90px;            /* scegli tu: 110–140 */
+}
+
+@media (max-width: 520px){
+  .top-actions{
+    flex-direction:row;
+    align-items:center;
+  }
+  .top-actions button{
+    width:auto;
+  }
+}
+
+#qText{
+  margin-top: 30px;
+  line-height: 1.35;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Timer: compatto e orizzontale */
+#timerBox{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  height: 32px;          /* più basso */
+  padding: 0 10px;       /* largo, non alto */
+  border-radius: 999px;  /* pill */
+}
+
+/* Icona timer: piccola e “in riga” */
+#timerIcon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 999px;  /* se vuoi che sembri un dot */
+  /* niente padding verticale: è quello che lo rende “quadrato” */
+}
+
+/* Testo timer più compatto */
+#timerText{
+  line-height: 1;
+  font-variant-numeric: tabular-nums; /* cifre allineate bene */
+}
+
+.qMedia{
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #232735;
+  background: #0f1115;
+  margin: 10px 0 14px;
+}
+
+.qMedia img{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+/* HUD giocatori collassabile */
+.hudPlayersWrap{
+  border:1px solid #232735;
+  border-radius:14px;
+  background:#121623;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+
+/* summary stile "header" cliccabile */
+.hudPlayersSummary{
+  list-style:none;
+  cursor:pointer;
+  padding:10px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  user-select:none;
+}
+
+/* rimuove il triangolino default (Chrome) */
+.hudPlayersWrap summary::-webkit-details-marker{ display:none; }
+
+/* aggiunge una freccia custom */
+.hudPlayersSummary::after{
+  content:"▾";
+  opacity:.8;
+  font-size:14px;
+  transition: transform .15s ease;
+}
+.hudPlayersWrap[open] .hudPlayersSummary::after{
+  transform: rotate(180deg);
+}
+
+/* contenuto: quando CHIUSO mostra solo il primo chip (giocatore di turno) */
+.hudPlayersWrap:not([open]) .hudPlayers .pChip:not(:first-child){
+  display:none;
+}
+
+/* il contenitore lista interna: un po’ di padding */
+.hudPlayers{
+  padding:10px;
+  margin:0;            /* se avevi margin-bottom interno, qui non serve */
+  border:0;            /* il wrapper già fa da box */
+  background:transparent;
+}
+
+/* Menu Pausa: bottoni più compatti e allineati */
+#overlayPause .row{
+  justify-content: flex-start; /* stop al "space-between" */
+  gap: 8px;                    /* meno distanza */
+}
+
+/* opzionale: rendili una colonna ordinata */
+#overlayPause .row{
+  flex-direction: column;
+}
+
+#overlayPause .row > button{
+  width: 100%;
+}
+
+/* Feedback risposte: corretto / sbagliato */
+.choice.correct{
+  border-color: #22c55e;
+  background: rgba(34, 197, 94, .22);
+}
+
+.choice.wrong{
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, .22);
+}
+
+/* opzionale: evidenzia la scelta fatta (anche se corretta) */
+.choice.chosen{
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.08);
+}

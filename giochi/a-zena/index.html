@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>A Zena – Quante ne sai? | Genova mApp</title>
+  
+  <style>
+    :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    body { margin: 0; background: #0f1115; color: #e9eef5; }
+    a { color: inherit; text-decoration: none; }
+    .top { display:flex; align-items:center; justify-content:space-between; gap: 12px; padding: 14px 16px; border-bottom: 1px solid #232735; position: sticky; top: 0; background:#0f1115; z-index: 10; }
+    .top h1 { font-size: 18px; margin: 0; }
+    .top-actions { display:flex; gap: 10px; align-items:center; }
+
+    .wrap { max-width: 980px; margin: 0 auto; padding: 16px; }
+    .card { background:#151923; border:1px solid #232735; border-radius: 14px; padding: 16px; }
+    .hidden { display:none !important; }
+
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 12px; }
+    .cat { padding: 14px; border-radius: 12px; border:1px solid #2a3042; background:#121623; cursor:pointer; text-align:left; }
+    .cat:hover { border-color:#3a4563; }
+    .cat h3 { margin: 0 0 8px; font-size: 16px; }
+    .dots { display:flex; gap: 6px; align-items:center; flex-wrap: wrap; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; border:1px solid #4b5472; }
+    .dot.on { background:#e9eef5; border-color:#e9eef5; }
+
+    .muted { color:#aab3c6; margin: 6px 0 0; }
+    .pill { display:inline-block; font-size: 12px; padding: 4px 10px; border-radius: 999px; border:1px solid #2a3042; color:#aab3c6; margin-bottom: 8px; }
+
+    .qhead { display:flex; justify-content:space-between; gap: 12px; align-items:flex-start; }
+    #qText { margin: 0 0 8px; font-size: 18px; }
+
+    .choices { display:grid; gap: 10px; margin-top: 10px; }
+    .choice { padding: 12px; border-radius: 12px; border:1px solid #2a3042; background:#121623; cursor:pointer; text-align:left; }
+    .choice:hover { border-color:#3a4563; }
+    .choice:disabled { cursor: default; opacity: .75; }
+
+    .feedback { margin-top: 12px; padding: 12px; border-radius: 12px; border: 1px solid #2a3042; }
+    .feedback.ok { border-color:#3d6b4a; }
+    .feedback.no { border-color:#6b3d3d; }
+
+    .row { display:flex; justify-content:space-between; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+    button, .ghost { border-radius: 12px; padding: 10px 12px; border:1px solid #2a3042; background: transparent; color: inherit; }
+    button.primary { background:#e9eef5; color:#0f1115; border-color:#e9eef5; }
+    button.ghost:hover, a.ghost:hover, button:hover { border-color:#3a4563; }
+    button:disabled { opacity: .6; cursor: not-allowed; }
+
+    .form { display:grid; gap: 12px; margin-top: 12px; }
+    .field { border:1px solid #232735; border-radius: 12px; padding: 12px; background:#121623; }
+    .field h3 { margin: 0 0 8px; font-size: 14px; color:#e9eef5; }
+    .inline { display:flex; gap: 12px; flex-wrap: wrap; align-items:center; }
+    label { display:flex; gap: 8px; align-items:center; }
+    input[type="text"], select {
+      background:#0f1115; color:#e9eef5; border:1px solid #2a3042; border-radius: 10px;
+      padding: 10px; width: 100%;
+    }
+    .names { display:grid; gap: 10px; margin-top: 10px; }
+    .names .nameRow { display:grid; grid-template-columns: 1fr; gap: 6px; }
+
+    .hud { display:flex; justify-content:space-between; align-items:center; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+    .hud .left { display:flex; gap: 10px; align-items:center; flex-wrap: wrap; }
+    .timer { font-variant-numeric: tabular-nums; border:1px solid #2a3042; border-radius: 12px; padding: 6px 10px; background:#121623; }
+    .scoreline { border:1px solid #2a3042; border-radius: 12px; padding: 6px 10px; background:#121623; color:#aab3c6; }
+
+    /* overlay/modals */
+    .overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,.62);
+      display:flex; align-items:center; justify-content:center; padding: 16px; z-index: 50;
+    }
+    .modal {
+      width: min(520px, 100%);
+      background:#151923; border:1px solid #232735; border-radius: 16px; padding: 16px;
+    }
+    .modal h2 { margin: 0 0 8px; font-size: 18px; }
+    .phoneIcon {
+      width: 64px; height: 64px; border-radius: 16px; border:1px solid #2a3042; background:#121623;
+      display:flex; align-items:center; justify-content:center; margin-bottom: 10px;
+      font-size: 28px;
+    }
+    .danger { border-color:#6b3d3d !important; }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <!-- Sinistra: torna a Genova mApp -->
+    <a id="btnHub" class="btn btn-secondary btn-icon icon-btn-wide"
+       href="../../index.html"
+       title="Torna a Genova mApp"
+       aria-label="Torna a Genova mApp">
+      <img class="btn-icon" src="./assets/ui/back.png" alt="">
+    </a>
+
+    <!-- Centro: logo del gioco -->
+    <img
+      id="gameLogo"
+      class="gameLogo"
+      src="assets/ui/azena-banner.png"
+      alt="A Zena - Quante ne sai?"
+    >
+
+    <!-- Destra: azioni partita -->
+    <div class="top-actions">
+      <button id="btnTopMenu" class="ghost hidden" type="button">Menu</button>
+      <button id="btnReset" class="ghost hidden" type="button">Ricomincia</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- MENU PRINCIPALE -->
+    <section id="screenMain" class="card">
+      <h2>Menu principale</h2>
+      <p class="muted">Imposta la partita e poi premi <b>Inizia partita</b>.</p>
+
+      <div class="form">
+        <div class="field">
+          <h3>Modalità giocatori</h3>
+          <div class="inline">
+            <label><input type="radio" name="modePlayers" value="single" checked /> Single player</label>
+            <label><input type="radio" name="modePlayers" value="multi" /> Multiplayer</label>
+          </div>
+
+          <div id="multiOptions" class="hidden" style="margin-top:12px;">
+            <div class="inline">
+              <label>Giocatori:
+                <select id="playerCount">
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </label>
+              <span class="muted">Inserisci i nomi (facoltativo, ma utile).</span>
+            </div>
+            <div id="playerNames" class="names"></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <h3>Categorie</h3>
+          <div class="inline">
+            <label><input type="radio" name="modeCats" value="all" checked /> Tutte le categorie</label>
+            <label><input type="radio" name="modeCats" value="one" /> Solo una categoria</label>
+          </div>
+          <div id="oneCatOptions" class="hidden" style="margin-top:12px;">
+            <label>Categoria:
+              <select id="singleCategory"></select>
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <h3>Timer per domanda</h3>
+          <div class="inline">
+            <label style="gap:10px;">
+              <input id="timerEnabled" type="checkbox" checked />
+              <span>Timer attivo</span>
+            </label>
+
+            <label>Durata:
+              <select id="timerSeconds">
+                <option value="30">30 secondi</option>
+                <option value="60">1 minuto</option>
+              </select>
+            </label>
+
+            <span class="muted">Il timer si ferma in pausa.</span>
+          </div>
+</div>
+
+        <div class="row">
+          <button id="btnStart" class="primary" type="button">Inizia partita</button>
+          <a id="btnHub2" class="ghost" href="../../index.html">Torna a Genova mApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELEZIONE CATEGORIE / PROGRESSO -->
+    <section id="screenCats" class="card hidden">
+      <h2 id="catsTitle">Completa le categorie</h2>
+      <p id="catsSub" class="muted"></p>
+      <div class="hud">
+        <div class="left">
+          <span id="hudPlayer" class="pill"></span>
+          <span id="hudMode" class="scoreline"></span>
+        </div>
+        <div class="right">
+          <span id="hudHint" class="muted"></span>
+        </div>
+      </div>
+      <div id="cats" class="grid"></div>
+    </section>
+
+    <!-- DOMANDA -->
+    <section id="screenQ" class="card hidden" aria-live="polite">
+
+<details id="hudPlayersWrap" class="hudPlayersWrap">
+  <summary id="hudPlayersSummary" class="hudPlayersSummary">
+    Giocatori
+  </summary>
+
+  <div id="hudPlayersQ" class="hudPlayers"></div>
+</details>
+
+      <div class="qhead">
+        <div>
+          <div class="inline" style="gap:10px;">
+            <div id="qCat" class="pill"></div>
+            <div id="qPlayer" class="pill"></div>
+          </div>
+</div>
+<div class="qprog">
+          <div id="timerBox" class="timer">⏱ <span id="timerText">00:30</span></div>
+          <div style="margin-top:8px;">
+            <span id="qNeed" class="muted"></span>
+          </div>
+        </div>
+      </div>
+
+      <div id="qMedia" class="qMedia hidden">
+  <img id="qImg" alt="">
+</div>
+
+      <h2 id="qText"></h2>
+
+      <div id="choices" class="choices"></div>
+
+      <div id="feedback" class="feedback hidden"></div>
+      <div class="row">
+        <button id="btnBack" class="ghost" type="button">Torna alle categorie</button>
+        <button id="btnNext" class="primary hidden" type="button">Continua</button>
+      </div>
+    </section>
+
+
+    <!-- VITTORIA -->
+    <section id="screenWin" class="card hidden">
+      <h2 id="winTitle">Hai vinto.</h2>
+      <p id="winSub" class="muted"></p>
+      <div id="leaderboard" style="margin-top:12px;"></div>
+      <div class="row">
+        <button id="btnNewGame" class="primary" type="button">Nuova partita</button>
+        <button id="btnRestartSame" class="ghost" type="button">Ricomincia con le stesse impostazioni</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- OVERLAY: cambio turno -->
+  <div id="overlayTurn" class="overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="phoneIcon">📱</div>
+      <h2>Passa il telefono</h2>
+      <p class="muted" id="turnText"></p>
+      <div class="row">
+        <button id="btnTurnOk" class="primary" type="button">Ok</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERLAY: menu pausa -->
+  <div id="overlayPause" class="overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h2>Menu partita</h2>
+      <p class="muted">La partita è in pausa. Il timer è fermo, miracolo della tecnologia.</p>
+      <div class="row">
+        <button id="btnResume" class="primary" type="button">Riprendi</button>
+        <button id="btnRestart" class="ghost" type="button">Ricomincia partita</button>
+        <button id="btnToMain" class="ghost danger" type="button">Menu principale</button>
+      </div>
+      <div id="confirmMain" class="hidden" style="margin-top:12px; border-top:1px solid #232735; padding-top:12px;">
+        <p class="muted"><b>Attenzione:</b> la partita in corso verrà chiusa.</p>
+        <div class="row">
+          <button id="btnConfirmMainYes" class="primary" type="button">Sì, vai al Menu principale</button>
+          <button id="btnConfirmMainNo" class="ghost" type="button">No, resta qui</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMPORTANTISSIMO: prima le domande, poi il motore -->
+  <script src="questions.js"></script>
+  <script src="games.js"></script>
+</body>
+</html>

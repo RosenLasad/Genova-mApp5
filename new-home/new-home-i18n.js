@@ -66,6 +66,8 @@
     ['Eventi','Events','Eventos','Événements','الفعاليات','События','活动','Eventi'],
     ['Contatti','Contact','Contacto','Contact','التواصل','Контакты','联系','Contatti'],
     ['Giochi','Games','Juegos','Jeux','ألعاب','Игры','游戏','Zeughi'],
+    ['A Zena – Quante ne sai?','A Zena – How much do you know?','A Zena – ¿Cuánto sabes?','A Zena – Que savez-vous ?','A Zena – كم تعرف؟','A Zena – Много ли вы знаете?','A Zena – 你知道多少？','A Zena – Quanto ti ne sæ?'],
+    ['Metti alla prova quanto conosci Genova','Test how well you know Genoa','Pon a prueba cuánto conoces Génova','Testez vos connaissances sur Gênes','اختبر مدى معرفتك بجنوة','Проверьте, насколько хорошо вы знаете Геную','测试一下您对热那亚了解多少','Metti a-a preuva quanto ti conosci Zena'],
     ['Premi','Rewards','Premios','Récompenses','جوائز','Призы','奖励','Premi'],
     ['Shop','Shop','Tienda','Boutique','المتجر','Магазин','商店','Bottega'],
     ['Blog','Blog','Blog','Blog','المدونة','Блог','博客','Blog'],

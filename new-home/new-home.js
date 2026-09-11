@@ -19,6 +19,16 @@
     return '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">'+(ICONS[name]||ICONS.guide)+'</svg>';
   }
 
+  var GAMES = [
+    {
+      key:'a-zena',
+      title:'A Zena – Quante ne sai?',
+      note:'Metti alla prova quanto conosci Genova',
+      icon:'giochi/images/game-trivial.svg',
+      href:'giochi/a-zena/index.html'
+    }
+  ];
+
   var SECTIONS = [
     {
       key:'heritage', theme:'heritage', wide:true, title:'Patrimonio storico',
@@ -100,7 +110,7 @@
       key:'extra', theme:'extra', title:'Extra',
       description:'Giochi, premi e prodotti legati a Genova mApp.',
       categories:[
-        {title:'Giochi', note:'Piccole esperienze interattive'},
+        {title:'Giochi', note:'Piccole esperienze interattive', type:'games'},
         {title:'Premi', note:'Iniziative e vantaggi per gli utenti'},
         {title:'Shop', note:'Gadget e prodotti dedicati a Genova'}
       ]
@@ -1149,10 +1159,43 @@
     scroll.scrollTop = 0;
   }
 
+  function renderGamesCategory(section, category){
+    currentView = 'games-category';
+    currentSection = section;
+    currentCategory = category;
+    currentAqueduct = null;
+    currentRoute = null;
+    applyTheme(section);
+    applyView(currentView);
+    title.textContent = category.title;
+    eyebrow.textContent = section.title;
+    backButton.hidden = false;
+
+    var games = GAMES.slice();
+    var content = games.length
+      ? '<div class="gm-new-home-game-grid">'+games.map(function(game){
+          return ''+
+            '<a class="gm-new-home-game-card" href="'+escapeHtml(game.href)+'" aria-label="'+escapeHtml(game.title)+'">'+
+            '  <span class="gm-new-home-game-icon"><img src="'+escapeHtml(game.icon)+'" alt="" aria-hidden="true"></span>'+
+            '  <span class="gm-new-home-game-copy"><strong>'+escapeHtml(game.title)+'</strong><small>'+escapeHtml(game.note)+'</small></span>'+
+            '  <span class="gm-new-home-game-arrow" aria-hidden="true">›</span>'+
+            '</a>';
+        }).join('')+'</div>'
+      : '<div class="gm-new-home-empty">La sezione è predisposta. Contenuti e collegamenti saranno completati nella prossima fase.</div>';
+
+    scroll.innerHTML = ''+
+      '<div class="gm-new-home-detail">'+
+      '  <div class="gm-new-home-detail-head"><h3>'+escapeHtml(category.title)+'</h3><p>'+escapeHtml(category.note)+'</p></div>'+
+      content+
+      '</div>';
+    scroll.scrollTop = 0;
+  }
+
   function openCategory(section, category){
     applyTheme(section);
     if(category.action){ runExistingAction(category.action); return; }
     if(category.type === 'qr'){ renderQrCategory(section, category); return; }
+    if(category.type === 'games'){ renderGamesCategory(section, category); return; }
     if(category.type === 'history-walls' || category.type === 'history-aqueducts' || category.type === 'recommended-routes'){
       renderHistoryCategory(section, category);
       return;
@@ -1194,7 +1237,7 @@
     if(currentView === 'wall-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
     else if(currentView === 'aqueduct-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
     else if(currentView === 'route-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
-    else if((currentView === 'category' || currentView === 'qr-category') && currentSection){ renderSection(currentSection); }
+    else if((currentView === 'category' || currentView === 'qr-category' || currentView === 'games-category') && currentSection){ renderSection(currentSection); }
     else renderHome();
   }
 
