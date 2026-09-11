@@ -68,9 +68,13 @@
     if(!map) map = getMap();
     if(vec.x || vec.y){
       try{
-        const c = map.getCenter();
-        const latlng = map.layerPointToLatLng(map.latLngToLayerPoint(c).add([vec.x, vec.y]));
-        map.panTo(latlng, {animate:false});
+        const map3d = window.__gmMap3D;
+        const handled3D = !!(map3d && map3d.isActive && map3d.isActive() && map3d.panBy(vec.x, vec.y));
+        if(!handled3D){
+          const c = map.getCenter();
+          const latlng = map.layerPointToLatLng(map.latLngToLayerPoint(c).add([vec.x, vec.y]));
+          map.panTo(latlng, {animate:false});
+        }
       }catch(_){}
     }
     if(dragging) rafId = requestAnimationFrame(loop);
