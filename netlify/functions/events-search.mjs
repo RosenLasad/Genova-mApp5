@@ -212,6 +212,58 @@ const EVENT_SCHEMA = {
   required: ["events"],
 };
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function upstreamErrorInfo(status, payload) {
+  const upstreamError = payload && payload.error && typeof payload.error === "object" ? payload.error : {};
+  const code = cleanString(upstreamError.code || upstreamError.type || "", 120);
+  const message = cleanString(upstreamError.message || "OpenAI non ha restituito una risposta valida.", 520);
+  return {
+    code,
+    message,
+    diagnostic: `OpenAI ${status}${code ? ` (${code})` : ""}: ${message}`,
+  };
+}
+
+function shouldRetryUpstream(status, code) {
+  if (status >= 500 && status <= 599) return true;
+  if (status !== 429) return false;
+  const terminal429 = new Set([
+    "credit_balance_exhausted",
+    "insufficient_quota",
+    "organization_spend_limit_exceeded",
+    "project_spend_limit_exceeded",
+    "organization_usage_limit_exceeded",
+  ]);
+  return !terminal429.has(code || "");
+}
+
+function retryDelayMs(response, attempt) {
+  const header = response && response.headers ? response.headers.get("retry-after") : "";
+  if (header) {
+    const seconds = Number(header);
+    if (Number.isFinite(seconds) && seconds >= 0) return Math.min(Math.max(seconds * 1000, 250), 6000);
+    const when = Date.parse(header);
+    if (Number.isFinite(when)) return Math.min(Math.max(when - Date.now(), 250), 6000);
+  }
+  return attempt === 0 ? 800 : 1600;
+}
+
+function extractRefusal(payload) {
+  for (const item of payload?.output || []) {
+    if (item?.type !== "message") continue;
+    for (const part of item.content || []) {
+      if (part?.type === "refusal" && typeof part.refusal === "string" && part.refusal.trim()) {
+        return cleanString(part.refusal, 520);
+      }
+    }
+  }
+  return "";
+}
+
+
 export default async (request) => {
   try {
     if (request.method !== "POST") return json({ error: "method_not_allowed" }, 405);
@@ -243,54 +295,104 @@ export default async (request) => {
     const baseUrl = configuredBaseUrl || "https://api.openai.com";
     const responsesEndpoint = /\/v1$/i.test(baseUrl) ? `${baseUrl}/responses` : `${baseUrl}/v1/responses`;
     const model = process.env.OPENAI_EVENTS_MODEL || "gpt-5.6-luna";
-    const upstream = await fetch(responsesEndpoint, {
-      method: "POST",
-      headers: {
-        authorization: `Bearer ${apiKey}`,
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        model,
-        store: false,
-        reasoning: { effort: "low" },
-        tools: [{ type: "web_search", search_context_size: "medium", user_location: { type: "approximate", city: "Genoa", region: "Liguria", country: "IT", timezone: "Europe/Rome" } }],
-        tool_choice: "auto",
-        include: ["web_search_call.action.sources"],
-        input: buildPrompt({ language, tags, area, range, venues }),
-        text: {
-          verbosity: "low",
-          format: {
-            type: "json_schema",
-            name: "genova_mapp_events",
-            strict: true,
-            schema: EVENT_SCHEMA,
-          },
+    const requestBody = {
+      model,
+      store: false,
+      reasoning: { effort: "low" },
+      tools: [{ type: "web_search", search_context_size: "medium", user_location: { type: "approximate", city: "Genoa", region: "Liguria", country: "IT", timezone: "Europe/Rome" } }],
+      tool_choice: "auto",
+      include: ["web_search_call.action.sources"],
+      input: buildPrompt({ language, tags, area, range, venues }),
+      max_output_tokens: 12000,
+      text: {
+        verbosity: "low",
+        format: {
+          type: "json_schema",
+          name: "genova_mapp_events",
+          strict: true,
+          schema: EVENT_SCHEMA,
         },
-      }),
-    });
+      },
+    };
 
-    const payload = await upstream.json().catch(() => null);
-    if (!upstream.ok || !payload) {
-      console.error("Genova mApp events-search upstream:", upstream.status, payload);
-      const upstreamError = payload && payload.error && typeof payload.error === "object" ? payload.error : {};
-      const upstreamCode = cleanString(upstreamError.code || upstreamError.type || "", 120);
-      const upstreamMessage = cleanString(upstreamError.message || "OpenAI non ha restituito una risposta valida.", 520);
-      const diagnostic = `OpenAI ${upstream.status}${upstreamCode ? ` (${upstreamCode})` : ""}: ${upstreamMessage}`;
-      return json({
-        error: "upstream_error",
-        message: diagnostic,
-        upstreamStatus: upstream.status,
-        upstreamCode,
-      }, 502);
+    let parsed = null;
+    let lastFailure = null;
+
+    // Una sola ripetizione automatica: serve per errori transitori (rate limit,
+    // sovraccarico, risposta incompleta o JSON eccezionalmente non leggibile),
+    // ma non ripete errori definitivi come credito esaurito o permessi.
+    for (let attempt = 0; attempt < 2; attempt++) {
+      const upstream = await fetch(responsesEndpoint, {
+        method: "POST",
+        headers: {
+          authorization: `Bearer ${apiKey}`,
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      });
+
+      const payload = await upstream.json().catch(() => null);
+      if (!upstream.ok || !payload) {
+        const info = upstreamErrorInfo(upstream.status, payload);
+        console.error("Genova mApp events-search upstream:", upstream.status, payload);
+        lastFailure = {
+          error: "upstream_error",
+          message: info.diagnostic,
+          upstreamStatus: upstream.status,
+          upstreamCode: info.code,
+        };
+        if (attempt === 0 && shouldRetryUpstream(upstream.status, info.code)) {
+          await sleep(retryDelayMs(upstream, attempt));
+          continue;
+        }
+        return json(lastFailure, 502);
+      }
+
+      if (payload.status === "incomplete") {
+        const reason = cleanString(payload?.incomplete_details?.reason || "unknown", 120);
+        console.warn("Genova mApp events-search incomplete:", reason);
+        lastFailure = {
+          error: "incomplete_search_response",
+          message: `OpenAI ha restituito una ricerca incompleta (${reason}). Riprova tra qualche secondo.`,
+        };
+        if (attempt === 0 && reason !== "content_filter") {
+          await sleep(650);
+          continue;
+        }
+        return json(lastFailure, 502);
+      }
+
+      const refusal = extractRefusal(payload);
+      if (refusal) {
+        console.warn("Genova mApp events-search refusal:", refusal);
+        return json({
+          error: "search_refused",
+          message: "La ricerca non ha prodotto risultati utilizzabili. Prova con un'altra combinazione di categorie o periodo.",
+        }, 502);
+      }
+
+      const text = extractOutputText(payload);
+      try {
+        parsed = JSON.parse(text);
+        break;
+      } catch (error) {
+        console.error("Genova mApp events-search JSON parse:", error, text?.slice(0, 1000));
+        lastFailure = {
+          error: "invalid_search_response",
+          message: "OpenAI ha completato la ricerca, ma la risposta non era nel formato eventi previsto. Riprova tra qualche secondo.",
+        };
+        if (attempt === 0) {
+          await sleep(650);
+          continue;
+        }
+        return json(lastFailure, 502);
+      }
     }
-    const text = extractOutputText(payload);
-    let parsed;
-    try { parsed = JSON.parse(text); }
-    catch (error) {
-      console.error("Genova mApp events-search JSON parse:", error, text?.slice(0, 1000));
-      return json({
+
+    if (!parsed) {
+      return json(lastFailure || {
         error: "invalid_search_response",
-        message: "OpenAI ha completato la ricerca, ma la risposta non era nel formato eventi previsto. Questo errore riguarda la formattazione della risposta, non il collegamento dei luoghi della mappa.",
+        message: "Non e stato possibile ottenere una risposta eventi valida.",
       }, 502);
     }
 

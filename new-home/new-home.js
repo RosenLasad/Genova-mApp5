@@ -1348,8 +1348,13 @@
     eventSearchState.results = [];
     var status = scroll && scroll.querySelector('.gm-new-home-events-status');
     var resultsRoot = scroll && scroll.querySelector('.gm-new-home-events-results');
+    var searchButton = scroll && scroll.querySelector('.gm-new-home-event-search');
     if(status){ status.className='gm-new-home-events-status is-error'; status.textContent=message; }
     if(resultsRoot) resultsRoot.innerHTML = '<div class="gm-new-home-events-error">'+escapeHtml(message)+'</div>';
+    // La ricerca precedente aveva disabilitato il pulsante durante il caricamento.
+    // In caso di errore va riabilitato subito, senza costringere l'utente a uscire
+    // e rientrare nella pagina Eventi. Resta disabilitato soltanto se offline.
+    if(searchButton) searchButton.disabled = navigator.onLine === false;
   }
 
   async function searchEventsOnline(){
@@ -1478,13 +1483,18 @@
 
   function resetEventsAfterLanguageChange(){
     clearTimeout(eventLanguageResetTimer);
+    var nextLanguage = currentLanguage();
+    // Il cambio lingua dell'app puo emettere sia app:set-lang sia i18n:changed.
+    // Se il secondo evento riguarda gia la stessa lingua, non deve annullare una
+    // nuova ricerca che l'utente potrebbe aver appena avviato.
+    if(eventSearchState.language === nextLanguage) return;
+    eventSearchRequestId++;
+    eventSearchState.results = [];
+    eventSearchState.searched = false;
+    eventSearchState.loading = false;
+    eventSearchState.checkedAt = '';
+    eventSearchState.language = nextLanguage;
     eventLanguageResetTimer = setTimeout(function(){
-      eventSearchRequestId++;
-      eventSearchState.results = [];
-      eventSearchState.searched = false;
-      eventSearchState.loading = false;
-      eventSearchState.checkedAt = '';
-      eventSearchState.language = currentLanguage();
       if(currentView === 'events-category' && currentSection && currentCategory){
         renderEventsCategory(currentSection,currentCategory);
       }
