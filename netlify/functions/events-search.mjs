@@ -272,14 +272,26 @@ export default async (request) => {
     const payload = await upstream.json().catch(() => null);
     if (!upstream.ok || !payload) {
       console.error("Genova mApp events-search upstream:", upstream.status, payload);
-      return json({ error: "upstream_error" }, 502);
+      const upstreamError = payload && payload.error && typeof payload.error === "object" ? payload.error : {};
+      const upstreamCode = cleanString(upstreamError.code || upstreamError.type || "", 120);
+      const upstreamMessage = cleanString(upstreamError.message || "OpenAI non ha restituito una risposta valida.", 520);
+      const diagnostic = `OpenAI ${upstream.status}${upstreamCode ? ` (${upstreamCode})` : ""}: ${upstreamMessage}`;
+      return json({
+        error: "upstream_error",
+        message: diagnostic,
+        upstreamStatus: upstream.status,
+        upstreamCode,
+      }, 502);
     }
     const text = extractOutputText(payload);
     let parsed;
     try { parsed = JSON.parse(text); }
     catch (error) {
       console.error("Genova mApp events-search JSON parse:", error, text?.slice(0, 1000));
-      return json({ error: "invalid_search_response" }, 502);
+      return json({
+        error: "invalid_search_response",
+        message: "OpenAI ha completato la ricerca, ma la risposta non era nel formato eventi previsto. Questo errore riguarda la formattazione della risposta, non il collegamento dei luoghi della mappa.",
+      }, 502);
     }
 
     return json({
@@ -290,6 +302,9 @@ export default async (request) => {
     });
   } catch (error) {
     console.error("Genova mApp events-search:", error);
-    return json({ error: "server_error" }, 500);
+    return json({
+      error: "server_error",
+      message: `Errore interno della funzione Eventi${error && error.name ? ` (${cleanString(error.name, 80)})` : ""}.`,
+    }, 500);
   }
 };
