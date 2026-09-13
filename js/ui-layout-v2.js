@@ -31,6 +31,7 @@
     var authButton = document.getElementById('auth-login-button');
     var subscription = document.querySelector('.sub-wrapper');
     var searchButton = document.getElementById('tb-search-btn');
+    var settings = document.querySelector('.settings-wrapper');
     var search = document.getElementById('tb-search');
 
     /* Il selettore Lingue resta indipendente, nell'angolo inferiore sinistro. */
@@ -45,7 +46,9 @@
     });
     if(!leftOrderIsCorrect) leftOrdered.forEach(function(node){ left.appendChild(node); });
     move(heading, center);
+    /* Comandi generali dell'app: Cerca seguito da Impostazioni. */
     move(searchButton, right);
+    move(settings, right);
 
     if(flagButton){
       flagButton.setAttribute('aria-label', 'Lingue');
@@ -53,42 +56,61 @@
     }
   }
 
+  function syncTaccuinoEdgeState(button){
+    if(!button) return;
+    var panel = document.getElementById('fav-notes-panel');
+    var open = !!(panel && panel.classList.contains('open'));
+    button.classList.toggle('is-active', open);
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
   function ensureTaccuinoToolbar(){
     var original = document.getElementById('fav-notes-btn');
-    if(!original) return;
-    var right = document.querySelector('#app > header .toolbar-right');
-    if(!right) return;
+    var mapRoot = document.getElementById('map');
+    if(!original || !mapRoot) return;
+
     var button = document.getElementById('ui-taccuino-button');
     if(!button){
       button = document.createElement('button');
       button.id = 'ui-taccuino-button';
       button.type = 'button';
-      button.className = 'btn';
-      button.addEventListener('click', function(){
+      button.addEventListener('click', function(event){
+        try{ event.preventDefault(); event.stopPropagation(); }catch(_e){}
         var source = document.getElementById('fav-notes-btn');
         if(source && typeof source.click === 'function') source.click();
+        window.setTimeout(function(){ syncTaccuinoEdgeState(button); }, 0);
+      });
+      ['pointerdown','mousedown','touchstart','dblclick'].forEach(function(type){
+        button.addEventListener(type, function(event){
+          try{ event.stopPropagation(); }catch(_e){}
+        }, type === 'touchstart' ? {passive:true} : false);
       });
     }
+
+    button.className = 'ui-taccuino-edge';
+    if(button.parentNode !== mapRoot) mapRoot.appendChild(button);
+
     var icon = button.querySelector('img.taccuino-toolbar-icon');
     if(!icon){
-      button.innerHTML = '<img alt="" class="toolbar-icon taccuino-toolbar-icon" src="toolbar/taccuino/taccuino-04-moderno.png">';
+      button.innerHTML = '<img alt="" class="taccuino-toolbar-icon" src="toolbar/taccuino/taccuino-04-moderno.png">';
     }else if(icon.getAttribute('src') !== 'toolbar/taccuino/taccuino-04-moderno.png'){
       icon.setAttribute('src', 'toolbar/taccuino/taccuino-04-moderno.png');
     }
-    var searchButton = document.getElementById('tb-search-btn');
-    var installButton = document.getElementById('pwa-install-button');
-    var search = document.getElementById('tb-search');
-    var ordered = [searchButton, button, installButton, search].filter(Boolean);
-    var current = Array.prototype.filter.call(right.children, function(child){
-      return ordered.indexOf(child) !== -1;
-    });
-    var orderIsCorrect = current.length === ordered.length && ordered.every(function(node, index){
-      return current[index] === node;
-    });
-    if(!orderIsCorrect) ordered.forEach(function(node){ right.appendChild(node); });
+
     var label = original.getAttribute('aria-label') || original.getAttribute('title') || 'Taccuino';
     button.setAttribute('aria-label', label);
     button.setAttribute('title', original.getAttribute('title') || label);
+    button.setAttribute('aria-controls', 'fav-notes-panel');
+    button.setAttribute('aria-haspopup', 'dialog');
+    syncTaccuinoEdgeState(button);
+
+    var panel = document.getElementById('fav-notes-panel');
+    if(panel && !panel.__uiTaccuinoEdgeObserved && window.MutationObserver){
+      panel.__uiTaccuinoEdgeObserved = true;
+      new MutationObserver(function(){
+        syncTaccuinoEdgeState(document.getElementById('ui-taccuino-button'));
+      }).observe(panel, {attributes:true, attributeFilter:['class','aria-hidden']});
+    }
   }
 
   function homeIconSvg(){
@@ -193,10 +215,12 @@
 
     var help = document.getElementById('help-fab');
     var settings = document.querySelector('.settings-wrapper');
+    var showQr = document.getElementById('btn-qr-removed');
     var gps = document.getElementById('btn-gps');
-    var qr = document.getElementById('map-qr-fab');
+    var scanQr = document.getElementById('map-qr-fab');
     var home = document.getElementById('btn-home');
-    var order = [settings, gps, qr].filter(Boolean);
+    /* Gruppo coerente in basso: Mostra QR, GPS, Scan QR. */
+    var order = [showQr, gps, scanQr].filter(Boolean);
 
     order.forEach(function(node){ move(node, bar); });
     if(help) move(help, document.body);
@@ -209,9 +233,10 @@
       var center = Math.max(panelWidth / 2 + 8, Math.min(window.innerWidth - panelWidth / 2 - 8, anchorRect.left + anchorRect.width / 2));
       var header = document.querySelector('#app > header');
       var headerBottom = header ? header.getBoundingClientRect().bottom : 0;
+      var panelTop = Math.max(headerBottom + 8, anchorRect.bottom + 8);
       helpPanel.style.setProperty('--help-anchor-left', center + 'px');
-      helpPanel.style.setProperty('--help-anchor-bottom', (window.innerHeight - anchorRect.top + 10) + 'px');
-      helpPanel.style.setProperty('--help-available-height', Math.max(60, anchorRect.top - headerBottom - 20) + 'px');
+      helpPanel.style.setProperty('--help-anchor-top', panelTop + 'px');
+      helpPanel.style.setProperty('--help-available-height', Math.max(90, window.innerHeight - panelTop - 12) + 'px');
     }
     if(helpAction){
       var lang = (document.documentElement.lang || 'it').split('-')[0];
