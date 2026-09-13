@@ -29,6 +29,36 @@
     }
   ];
 
+  var EVENT_TAGS = [
+    {key:'museums', label:'Musei e mostre', note:'Musei, mostre ed esposizioni', lists:['fav-list-musei','fav-list-mostre']},
+    {key:'cinema', label:'Cinema', note:'Proiezioni, rassegne e incontri', lists:['fav-list-cinema']},
+    {key:'theatre', label:'Teatro', note:'Spettacoli e appuntamenti teatrali', lists:['fav-list-teatri']},
+    {key:'music', label:'Musica', note:'Concerti e appuntamenti musicali', lists:['fav-list-teatri','fav-list-palazzi','fav-list-locali','fav-list-parchi-piazze']},
+    {key:'palaces', label:'Palazzi e ville', note:'Eventi in dimore e spazi storici', lists:['fav-list-palazzi']},
+    {key:'heritage', label:'Patrimonio storico', note:'Chiese, forti e luoghi storici', lists:['fav-list-chiese','fav-list-forti','fav-list-palazzi']},
+    {key:'festivals', label:'Festival e manifestazioni', note:'Festival, feste e grandi appuntamenti', lists:['fav-list-parchi-piazze']},
+    {key:'markets', label:'Mercati e fiere', note:'Mercati, fiere ed eventi diffusi', lists:['fav-list-parchi-piazze']},
+    {key:'sport', label:'Sport', note:'Gare, incontri e attività sportive', lists:['fav-list-sport']}
+  ];
+
+  var EVENT_PERIODS = [
+    {key:'today', label:'Oggi'},
+    {key:'weekend', label:'Questo weekend'},
+    {key:'7days', label:'Prossimi 7 giorni'},
+    {key:'30days', label:'Prossimi 30 giorni'}
+  ];
+
+  var eventSearchState = {
+    tags:[],
+    period:'7days',
+    area:'genova',
+    results:[],
+    searched:false,
+    loading:false,
+    language:'',
+    checkedAt:''
+  };
+
   var SECTIONS = [
     {
       key:'heritage', theme:'heritage', wide:true, title:'Patrimonio storico',
@@ -101,7 +131,7 @@
       key:'community', theme:'community', title:'Eventi, blog e contatti',
       description:'Novità, appuntamenti e strumenti per partecipare e contattare Genova mApp.',
       categories:[
-        {title:'Eventi', note:'Appuntamenti del giorno e della settimana'},
+        {title:'Eventi', note:'Appuntamenti del giorno e della settimana', type:'events'},
         {title:'Blog', note:'Commenti e conversazioni della comunità'},
         {title:'Contatti', note:'Scrivi agli amministratori dell’app', action:'contact'}
       ]
@@ -131,6 +161,8 @@
   var currentRoute = null;
   var historyDepth = 0;
   var closingHistoryNavigation = false;
+  var eventSearchRequestId = 0;
+  var eventLanguageResetTimer = 0;
 
   function escapeHtml(value){
     return String(value == null ? '' : value).replace(/[&<>"']/g, function(ch){
@@ -1159,6 +1191,306 @@
     scroll.scrollTop = 0;
   }
 
+  function eventLocalToday(){
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = String(now.getMonth()+1).padStart(2,'0');
+    var day = String(now.getDate()).padStart(2,'0');
+    return year+'-'+month+'-'+day;
+  }
+
+  function eventLanguageTag(){
+    var lang = currentLanguage();
+    var map = {it:'it-IT',en:'en-GB',es:'es-ES',fr:'fr-FR',ar:'ar',ru:'ru-RU',zh:'zh-CN',lij:'it-IT'};
+    return map[lang] || 'it-IT';
+  }
+
+  function collectVenueNames(listIds){
+    var seen = Object.create(null), out = [];
+    (listIds || []).forEach(function(listId){
+      getExistingPlaces(listId).forEach(function(place){
+        var key = normalizeText(place.name);
+        if(!key || seen[key]) return;
+        seen[key] = true;
+        out.push(place.name);
+      });
+    });
+    return out.sort(function(a,b){ return a.localeCompare(b,'it',{sensitivity:'base'}); });
+  }
+
+  function selectedEventVenueGroups(tags){
+    var groups = {};
+    EVENT_TAGS.forEach(function(tag){
+      if(tags.indexOf(tag.key) < 0) return;
+      groups[tag.key] = collectVenueNames(tag.lists).slice(0,180);
+    });
+    return groups;
+  }
+
+  function allEventVenueTargets(){
+    var listIds = [];
+    EVENT_TAGS.forEach(function(tag){ (tag.lists || []).forEach(function(id){ if(listIds.indexOf(id)<0) listIds.push(id); }); });
+    var seen = Object.create(null), targets = [];
+    listIds.forEach(function(listId){
+      getExistingPlaces(listId).forEach(function(place){
+        var key = normalizeText(place.name);
+        if(!key || seen[key]) return;
+        seen[key] = true;
+        targets.push({key:key,name:place.name,target:place.target});
+      });
+    });
+    return targets;
+  }
+
+  function findEventVenueTarget(name){
+    var key = normalizeText(name || '');
+    if(!key) return null;
+    var targets = allEventVenueTargets();
+    var exact = targets.find(function(item){ return item.key === key; });
+    if(exact) return exact.target;
+    var partial = targets.filter(function(item){
+      return item.key.length > 5 && (item.key.indexOf(key) >= 0 || key.indexOf(item.key) >= 0);
+    });
+    return partial.length === 1 ? partial[0].target : null;
+  }
+
+  function eventDateValue(value){
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(value || '')) return null;
+    var bits = value.split('-').map(Number);
+    return new Date(bits[0], bits[1]-1, bits[2], 12, 0, 0);
+  }
+
+  function formatEventDateRange(item){
+    var start = eventDateValue(item.startDate), end = eventDateValue(item.endDate);
+    if(!start) return item.dateLabel || '';
+    try{
+      var format = new Intl.DateTimeFormat(eventLanguageTag(), {day:'numeric',month:'short',year:'numeric'});
+      var a = format.format(start);
+      var b = end && item.endDate !== item.startDate ? format.format(end) : '';
+      return b ? a+' – '+b : a;
+    }catch(_){ return item.startDate + (end && item.endDate !== item.startDate ? ' – '+item.endDate : ''); }
+  }
+
+  function safeEventUrl(value){
+    try{
+      var url = new URL(String(value || ''), window.location.href);
+      return /^https?:$/.test(url.protocol) ? url.href : '';
+    }catch(_){ return ''; }
+  }
+
+  function renderEventResults(){
+    var resultsRoot = scroll && scroll.querySelector('.gm-new-home-events-results');
+    var status = scroll && scroll.querySelector('.gm-new-home-events-status');
+    var searchButton = scroll && scroll.querySelector('.gm-new-home-event-search');
+    if(!resultsRoot || !status) return;
+    if(searchButton) searchButton.disabled = eventSearchState.loading || navigator.onLine === false;
+    if(eventSearchState.loading){
+      status.className = 'gm-new-home-events-status is-loading';
+      status.textContent = 'Ricerca degli eventi in corso…';
+      resultsRoot.innerHTML = '<div class="gm-new-home-events-loading"><span aria-hidden="true"></span><strong>Sto cercando gli appuntamenti più aggiornati.</strong><small>La ricerca utilizza fonti online e può richiedere qualche secondo.</small></div>';
+      return;
+    }
+    if(!eventSearchState.searched){
+      status.className = 'gm-new-home-events-status';
+      status.textContent = navigator.onLine === false ? 'Ricerca eventi non disponibile offline.' : 'Seleziona almeno una categoria e avvia la ricerca.';
+      resultsRoot.innerHTML = '';
+      return;
+    }
+    var items = Array.isArray(eventSearchState.results) ? eventSearchState.results : [];
+    status.className = 'gm-new-home-events-status';
+    status.textContent = items.length ? 'Risultati: '+items.length : 'Nessun evento trovato con i filtri selezionati.';
+    if(eventSearchState.checkedAt && items.length){
+      try{
+        var checked = new Date(eventSearchState.checkedAt);
+        status.textContent += ' · Aggiornato '+new Intl.DateTimeFormat(eventLanguageTag(),{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}).format(checked);
+      }catch(_){ }
+    }
+    if(!items.length){
+      resultsRoot.innerHTML = '<div class="gm-new-home-empty">Prova ad ampliare il periodo o a selezionare altre categorie.</div>';
+      return;
+    }
+    resultsRoot.innerHTML = '<div class="gm-new-home-event-list">'+items.map(function(item,index){
+      var url = safeEventUrl(item.url);
+      var mapName = item.mapVenue || item.venue || '';
+      var hasMap = !!findEventVenueTarget(mapName);
+      var meta = [item.category || '', item.municipality || ''].filter(Boolean).join(' · ');
+      var date = formatEventDateRange(item);
+      var timing = [item.time || '', item.duration || ''].filter(Boolean).join(' · ');
+      return ''+
+        '<article class="gm-new-home-event-card" data-event-index="'+index+'">'+
+        '  <div class="gm-new-home-event-date"><span>'+escapeHtml(date || '—')+'</span></div>'+
+        '  <div class="gm-new-home-event-main">'+
+        '    <div class="gm-new-home-event-kicker">'+escapeHtml(meta)+'</div>'+
+        '    <h4>'+escapeHtml(item.title || '')+'</h4>'+
+        '    <div class="gm-new-home-event-venue">'+escapeHtml(item.venue || '')+'</div>'+
+        (timing ? '    <div class="gm-new-home-event-time">'+escapeHtml(timing)+'</div>' : '')+
+        '    <p>'+escapeHtml(item.description || '')+'</p>'+
+        '    <div class="gm-new-home-event-actions">'+
+        (url ? '<a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer">Sito dell’evento</a>' : '')+
+        (hasMap ? '<button type="button" data-event-map="'+index+'">Mostra sulla mappa</button>' : '')+
+        '    </div>'+
+        (item.sourceName ? '    <small class="gm-new-home-event-source">Fonte: '+escapeHtml(item.sourceName)+'</small>' : '')+
+        '  </div>'+
+        '</article>';
+    }).join('')+'</div>';
+    resultsRoot.querySelectorAll('[data-event-map]').forEach(function(button){
+      button.addEventListener('click', function(){
+        var item = items[Number(button.getAttribute('data-event-map'))];
+        var target = item && findEventVenueTarget(item.mapVenue || item.venue || '');
+        if(target && target.click){ close(); setTimeout(function(){ target.click(); }, 50); }
+      });
+    });
+  }
+
+  function setEventSearchError(message){
+    eventSearchState.loading = false;
+    eventSearchState.searched = true;
+    eventSearchState.results = [];
+    var status = scroll && scroll.querySelector('.gm-new-home-events-status');
+    var resultsRoot = scroll && scroll.querySelector('.gm-new-home-events-results');
+    if(status){ status.className='gm-new-home-events-status is-error'; status.textContent=message; }
+    if(resultsRoot) resultsRoot.innerHTML = '<div class="gm-new-home-events-error">'+escapeHtml(message)+'</div>';
+  }
+
+  async function searchEventsOnline(){
+    if(eventSearchState.loading) return;
+    if(navigator.onLine === false){ setEventSearchError('Ricerca eventi non disponibile offline. Connettiti a Internet e riprova.'); return; }
+    if(!eventSearchState.tags.length){ setEventSearchError('Seleziona almeno una categoria di eventi.'); return; }
+    eventSearchState.loading = true;
+    eventSearchState.searched = false;
+    eventSearchState.results = [];
+    eventSearchState.language = currentLanguage();
+    renderEventResults();
+    var requestId = ++eventSearchRequestId;
+    var payload = {
+      language:eventSearchState.language,
+      today:eventLocalToday(),
+      tags:eventSearchState.tags.slice(),
+      period:eventSearchState.period,
+      area:eventSearchState.area,
+      venues:selectedEventVenueGroups(eventSearchState.tags)
+    };
+    try{
+      var response = await fetch('/.netlify/functions/events-search', {
+        method:'POST',
+        headers:{'content-type':'application/json','accept':'application/json'},
+        body:JSON.stringify(payload)
+      });
+      var data = await response.json().catch(function(){ return {}; });
+      if(requestId !== eventSearchRequestId) return;
+      if(!response.ok){
+        var errorMessage = data && data.error === 'search_not_configured'
+          ? 'La ricerca online degli eventi è pronta nell’app, ma deve ancora essere collegata al servizio di ricerca sul server.'
+          : (data && data.message ? data.message : 'Non è stato possibile completare la ricerca degli eventi.');
+        setEventSearchError(errorMessage);
+        return;
+      }
+      eventSearchState.loading = false;
+      eventSearchState.searched = true;
+      eventSearchState.results = Array.isArray(data.events) ? data.events : [];
+      eventSearchState.checkedAt = data.checkedAt || new Date().toISOString();
+      renderEventResults();
+    }catch(_){
+      if(requestId !== eventSearchRequestId) return;
+      setEventSearchError('Non è stato possibile raggiungere il servizio eventi. Controlla la connessione e riprova.');
+    }
+  }
+
+  function renderEventsCategory(section, category){
+    currentView = 'events-category';
+    currentSection = section;
+    currentCategory = category;
+    currentAqueduct = null;
+    currentRoute = null;
+    applyTheme(section);
+    applyView(currentView);
+    title.textContent = category.title;
+    eyebrow.textContent = section.title;
+    backButton.hidden = false;
+
+    var tags = EVENT_TAGS.map(function(tag){
+      var active = eventSearchState.tags.indexOf(tag.key) >= 0;
+      return '<button type="button" class="gm-new-home-event-tag'+(active?' is-active':'')+'" data-event-tag="'+tag.key+'" aria-pressed="'+(active?'true':'false')+'"><strong>'+escapeHtml(tag.label)+'</strong><small>'+escapeHtml(tag.note)+'</small></button>';
+    }).join('');
+    var periods = EVENT_PERIODS.map(function(period){
+      var active = eventSearchState.period === period.key;
+      return '<button type="button" class="gm-new-home-event-period'+(active?' is-active':'')+'" data-event-period="'+period.key+'" aria-pressed="'+(active?'true':'false')+'">'+escapeHtml(period.label)+'</button>';
+    }).join('');
+
+    scroll.innerHTML = ''+
+      '<div class="gm-new-home-detail gm-new-home-events">'+
+      '  <div class="gm-new-home-detail-head"><h3>'+escapeHtml(category.title)+'</h3><p>Trova eventi previsti o in corso a Genova utilizzando fonti online aggiornate.</p></div>'+
+      '  <section class="gm-new-home-events-panel">'+
+      '    <div class="gm-new-home-events-intro"><strong>Che cosa ti interessa?</strong><p>Seleziona uno o più tipi di evento. La ricerca usa anche i luoghi già presenti sulla mappa come riferimento.</p></div>'+
+      '    <div class="gm-new-home-event-tags" role="group" aria-label="Tipi di evento">'+tags+'</div>'+
+      '    <div class="gm-new-home-event-controls">'+
+      '      <fieldset><legend>Periodo</legend><div class="gm-new-home-event-periods">'+periods+'</div></fieldset>'+
+      '      <label class="gm-new-home-event-area"><span>Zona</span><select data-event-area><option value="genova">Genova città</option><option value="metro">Città Metropolitana di Genova</option></select></label>'+
+      '    </div>'+
+      '    <div class="gm-new-home-event-search-row"><button type="button" class="gm-new-home-event-search">Cerca eventi</button><span class="gm-new-home-event-online" aria-live="polite"></span></div>'+
+      '    <p class="gm-new-home-event-note">La ricerca è disponibile solo online. Le fonti ufficiali e i siti degli organizzatori vengono privilegiati quando disponibili.</p>'+
+      '    <div class="gm-new-home-events-status" role="status" aria-live="polite"></div>'+
+      '    <div class="gm-new-home-events-results"></div>'+
+      '  </section>'+
+      '</div>';
+
+    var areaSelect = scroll.querySelector('[data-event-area]');
+    areaSelect.value = eventSearchState.area;
+    scroll.querySelectorAll('[data-event-tag]').forEach(function(button){
+      button.addEventListener('click', function(){
+        var key = button.getAttribute('data-event-tag');
+        var index = eventSearchState.tags.indexOf(key);
+        if(index >= 0) eventSearchState.tags.splice(index,1); else eventSearchState.tags.push(key);
+        var active = eventSearchState.tags.indexOf(key) >= 0;
+        button.classList.toggle('is-active',active);
+        button.setAttribute('aria-pressed',active?'true':'false');
+      });
+    });
+    scroll.querySelectorAll('[data-event-period]').forEach(function(button){
+      button.addEventListener('click', function(){
+        eventSearchState.period = button.getAttribute('data-event-period') || '7days';
+        scroll.querySelectorAll('[data-event-period]').forEach(function(other){
+          var active = other === button;
+          other.classList.toggle('is-active',active);
+          other.setAttribute('aria-pressed',active?'true':'false');
+        });
+      });
+    });
+    areaSelect.addEventListener('change', function(){ eventSearchState.area = areaSelect.value || 'genova'; });
+    scroll.querySelector('.gm-new-home-event-search').addEventListener('click', searchEventsOnline);
+
+    function syncOnlineState(){
+      var label = scroll && scroll.querySelector('.gm-new-home-event-online');
+      var searchButton = scroll && scroll.querySelector('.gm-new-home-event-search');
+      if(!label || !searchButton || currentView !== 'events-category') return;
+      var online = navigator.onLine !== false;
+      label.textContent = online ? 'Online' : 'Offline';
+      label.classList.toggle('is-offline',!online);
+      searchButton.disabled = !online || eventSearchState.loading;
+      if(!online && !eventSearchState.searched) renderEventResults();
+    }
+    window.addEventListener('online',syncOnlineState,{once:true});
+    window.addEventListener('offline',syncOnlineState,{once:true});
+    syncOnlineState();
+    renderEventResults();
+    scroll.scrollTop = 0;
+  }
+
+  function resetEventsAfterLanguageChange(){
+    clearTimeout(eventLanguageResetTimer);
+    eventLanguageResetTimer = setTimeout(function(){
+      eventSearchRequestId++;
+      eventSearchState.results = [];
+      eventSearchState.searched = false;
+      eventSearchState.loading = false;
+      eventSearchState.checkedAt = '';
+      eventSearchState.language = currentLanguage();
+      if(currentView === 'events-category' && currentSection && currentCategory){
+        renderEventsCategory(currentSection,currentCategory);
+      }
+    },20);
+  }
+
   function renderGamesCategory(section, category){
     currentView = 'games-category';
     currentSection = section;
@@ -1196,6 +1528,7 @@
     if(category.action){ runExistingAction(category.action); return; }
     if(category.type === 'qr'){ renderQrCategory(section, category); return; }
     if(category.type === 'games'){ renderGamesCategory(section, category); return; }
+    if(category.type === 'events'){ renderEventsCategory(section, category); return; }
     if(category.type === 'history-walls' || category.type === 'history-aqueducts' || category.type === 'recommended-routes'){
       renderHistoryCategory(section, category);
       return;
@@ -1237,7 +1570,7 @@
     if(currentView === 'wall-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
     else if(currentView === 'aqueduct-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
     else if(currentView === 'route-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
-    else if((currentView === 'category' || currentView === 'qr-category' || currentView === 'games-category') && currentSection){ renderSection(currentSection); }
+    else if((currentView === 'category' || currentView === 'qr-category' || currentView === 'games-category' || currentView === 'events-category') && currentSection){ renderSection(currentSection); }
     else renderHome();
   }
 
@@ -1392,6 +1725,8 @@
       requestNewHomeBack();
     }, true);
     if(window.GMNewHomeI18n) window.GMNewHomeI18n.attach(overlay, [HISTORY_LAYERS, AQUEDUCT_DETAIL_UI, ROUTE_DETAIL_UI]);
+    document.addEventListener('app:set-lang', resetEventsAfterLanguageChange);
+    window.addEventListener('i18n:changed', resetEventsAfterLanguageChange);
     window.addEventListener('resize', updatePosition, {passive:true});
     window.addEventListener('popstate', handleHistoryBack);
     open(document.getElementById('title-btn'));
