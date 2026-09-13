@@ -1402,3 +1402,86 @@ html body #help-legend{
     to{ opacity:1; transform:translateY(0) scale(1); }
   }
 }
+
+/* ============================================================
+   Toolbar: maggiore respiro verticale + cornice oro/bronzo
+   Mantiene la toolbar compatta e crea un piccolo stacco dagli sponsor.
+   ============================================================ */
+:root{
+  --gm-toolbar-gold-line:linear-gradient(90deg,
+    rgba(104,72,24,.20) 0%,
+    rgba(184,137,58,.72) 18%,
+    rgba(235,205,128,.94) 50%,
+    rgba(184,137,58,.72) 82%,
+    rgba(104,72,24,.20) 100%);
+  --gm-sponsor-gap:4px;
+}
+
+#app > header{
+  position:sticky !important;
+  box-sizing:border-box !important;
+  padding-top:calc(.80rem + env(safe-area-inset-top)) !important;
+  padding-bottom:.80rem !important;
+  border-bottom:0 !important;
+  isolation:isolate;
+}
+
+/* Le due linee sono decorative e non intercettano mai i tocchi. */
+#app > header::before,
+#app > header::after{
+  content:"";
+  position:absolute;
+  left:clamp(10px, 2.6vw, 34px);
+  right:clamp(10px, 2.6vw, 34px);
+  height:1px;
+  background:var(--gm-toolbar-gold-line);
+  pointer-events:none;
+  z-index:0;
+}
+
+#app > header::before{
+  top:calc(4px + env(safe-area-inset-top));
+  box-shadow:0 1px 0 rgba(255,236,181,.10);
+}
+
+#app > header::after{
+  bottom:3px;
+  box-shadow:0 -1px 0 rgba(255,236,181,.08);
+}
+
+/* I contenuti della toolbar restano sempre sopra la cornice. */
+#app > header > *{
+  position:relative;
+  z-index:1;
+}
+
+/* Piccolo spazio reale fra la linea inferiore della toolbar e gli sponsor. */
+#sponsor-strip{
+  top:calc(var(--header-h) + var(--gm-sponsor-gap)) !important;
+}
+
+@media (max-width:768px){
+  :root{
+    --gm-sponsor-gap:3px;
+  }
+
+  #app > header{
+    padding-top:calc(.64rem + env(safe-area-inset-top)) !important;
+    padding-bottom:.64rem !important;
+  }
+
+  #app > header::before{
+    top:calc(3px + env(safe-area-inset-top));
+  }
+
+  #app > header::after{
+    bottom:2px;
+  }
+}
+
+@media (max-width:360px){
+  #app > header{
+    padding-top:calc(.56rem + env(safe-area-inset-top)) !important;
+    padding-bottom:.56rem !important;
+  }
+}
