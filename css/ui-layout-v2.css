@@ -1276,3 +1276,129 @@ html body #help-legend{
     max-height:20px !important;
   }
 }
+
+
+/* ========================================================================== 
+   Impostazioni - pannello centrale FIX 2026-09-13
+   Il pannello e' figlio diretto dell'overlay/body: resta sopra allo sfondo
+   oscurato e non eredita lo stacking context della toolbar.
+   ========================================================================== */
+#settings-modal-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9890;
+  align-items:center;
+  justify-content:center;
+  padding:14px;
+  box-sizing:border-box;
+  background:rgba(2,6,23,.52);
+  backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px);
+}
+#settings-modal-overlay.is-open{
+  display:flex;
+}
+
+#settings-modal-overlay > #settings-dropdown{
+  position:relative !important;
+  inset:auto !important;
+  top:auto !important;
+  left:auto !important;
+  right:auto !important;
+  bottom:auto !important;
+  transform:none !important;
+  display:block !important;
+  width:min(410px,calc(100vw - 28px)) !important;
+  min-width:0 !important;
+  max-width:410px !important;
+  max-height:min(72vh,560px) !important;
+  overflow:auto !important;
+  box-sizing:border-box !important;
+  padding:10px !important;
+  border:1px solid rgba(255,255,255,.20) !important;
+  border-radius:18px !important;
+  background:rgba(15,23,42,.985) !important;
+  box-shadow:0 22px 70px rgba(0,0,0,.48), 0 0 0 1px rgba(148,163,184,.05) !important;
+  z-index:1 !important;
+  pointer-events:auto !important;
+  filter:none !important;
+  opacity:1 !important;
+}
+
+.settings-modal-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  min-height:42px;
+  margin:0 0 5px;
+  padding:2px 2px 8px 10px;
+  border-bottom:1px solid rgba(255,255,255,.14);
+}
+.settings-modal-title{
+  min-width:0;
+  color:#f8fafc;
+  font:700 17px/1.2 Arial,"Helvetica Neue",sans-serif;
+  text-align:start;
+}
+.settings-modal-close{
+  display:grid;
+  place-items:center;
+  flex:0 0 36px;
+  width:36px;
+  height:36px;
+  min-width:36px;
+  min-height:36px;
+  margin:0;
+  padding:0;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:9999px;
+  color:#e2e8f0;
+  background:rgba(255,255,255,.06);
+  font:400 28px/1 Arial,"Helvetica Neue",sans-serif;
+  cursor:pointer;
+}
+.settings-modal-close:hover,
+.settings-modal-close:focus-visible{
+  color:#fff;
+  background:rgba(255,255,255,.14);
+  border-color:rgba(255,255,255,.34);
+}
+
+#settings-modal-overlay #settings-dropdown .settings-row{
+  padding:12px 13px;
+  font-size:14px;
+}
+#settings-modal-overlay #settings-dropdown .settings-text-size{
+  margin-top:8px;
+}
+
+@media (max-width:480px){
+  #settings-modal-overlay{
+    padding:12px;
+  }
+  #settings-modal-overlay > #settings-dropdown{
+    width:100% !important;
+    max-width:none !important;
+    max-height:76dvh !important;
+    border-radius:16px !important;
+    padding:9px !important;
+  }
+  .settings-modal-head{
+    min-height:40px;
+  }
+  .settings-modal-title{
+    font-size:16px;
+  }
+}
+
+@media (prefers-reduced-motion:no-preference){
+  #settings-modal-overlay.is-open > #settings-dropdown{
+    animation:settings-modal-in .16s ease-out both;
+  }
+  @keyframes settings-modal-in{
+    from{ opacity:0; transform:translateY(-8px) scale(.985); }
+    to{ opacity:1; transform:translateY(0) scale(1); }
+  }
+}

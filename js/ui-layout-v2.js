@@ -32,6 +32,7 @@
     var subscription = document.querySelector('.sub-wrapper');
     var searchButton = document.getElementById('tb-search-btn');
     var settings = document.querySelector('.settings-wrapper');
+    var installButton = document.getElementById('pwa-install-button');
     var search = document.getElementById('tb-search');
 
     /* Il selettore Lingue resta indipendente, nell'angolo inferiore sinistro. */
@@ -46,9 +47,21 @@
     });
     if(!leftOrderIsCorrect) leftOrdered.forEach(function(node){ left.appendChild(node); });
     move(heading, center);
-    /* Comandi generali dell'app: Cerca seguito da Impostazioni. */
-    move(searchButton, right);
-    move(settings, right);
+    /* Comandi generali dell'app: Installa, Impostazioni, Cerca.
+       Il pulsante Installa puo essere assente/nascosto dopo l'installazione;
+       Impostazioni e Cerca mantengono comunque la stessa posizione reciproca.
+       Nota: move() non riordina nodi gia presenti nello stesso contenitore,
+       quindi controlliamo esplicitamente l'ordine e lo correggiamo solo se serve. */
+    var rightOrdered = [installButton, settings, searchButton].filter(Boolean);
+    var rightCurrent = Array.prototype.filter.call(right.children, function(child){
+      return rightOrdered.indexOf(child) !== -1;
+    });
+    var rightOrderIsCorrect = rightCurrent.length === rightOrdered.length && rightOrdered.every(function(node,index){
+      return rightCurrent[index] === node;
+    });
+    if(!rightOrderIsCorrect){
+      rightOrdered.forEach(function(node){ right.appendChild(node); });
+    }
 
     if(flagButton){
       flagButton.setAttribute('aria-label', 'Lingue');
@@ -423,11 +436,113 @@
     new MutationObserver(function(){ schedule(); }).observe(panel, {childList:true});
   }
 
+
+  /* Impostazioni: pannello centrale, indipendente dalla posizione del bottone. */
+  function settingsModalText(){
+    var labels = {
+      it:{title:'Impostazioni', close:'Chiudi Impostazioni'},
+      en:{title:'Settings', close:'Close Settings'},
+      es:{title:'Ajustes', close:'Cerrar Ajustes'},
+      fr:{title:'Parametres', close:'Fermer les parametres'},
+      ar:{title:'الإعدادات', close:'إغلاق الإعدادات'},
+      ru:{title:'Настройки', close:'Закрыть настройки'},
+      zh:{title:'设置', close:'关闭设置'},
+      lij:{title:'Impostaçioin', close:'Særa e impostaçioin'}
+    };
+    return labels[currentLang()] || labels.it;
+  }
+
+  function closeSettingsModal(){
+    var wrap = document.querySelector('.settings-wrapper');
+    var button = document.getElementById('btn-settings');
+    if(wrap) wrap.classList.remove('open');
+    if(button) button.setAttribute('aria-expanded','false');
+  }
+
+  function syncSettingsModalState(){
+    var wrap = document.querySelector('.settings-wrapper');
+    var overlay = document.getElementById('settings-modal-overlay');
+    if(!wrap || !overlay) return;
+    var open = wrap.classList.contains('open');
+    overlay.classList.toggle('is-open', open);
+    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+  }
+
+  function ensureSettingsModal(){
+    var wrap = document.querySelector('.settings-wrapper');
+    var panel = document.getElementById('settings-dropdown');
+    if(!wrap || !panel) return;
+
+    var overlay = document.getElementById('settings-modal-overlay');
+    if(!overlay){
+      overlay = document.createElement('div');
+      overlay.id = 'settings-modal-overlay';
+      overlay.setAttribute('aria-hidden','true');
+      document.body.appendChild(overlay);
+      overlay.addEventListener('click', function(event){
+        /* Chiude solo cliccando sullo sfondo, non sul pannello. */
+        if(event.target !== overlay) return;
+        event.preventDefault();
+        closeSettingsModal();
+      });
+    }
+
+    /*
+       Il pannello viene portato a livello di <body>, dentro l'overlay.
+       Prima restava nella toolbar/header: l'overlay viveva in uno stacking
+       context superiore e finiva quindi sopra al pannello, sfocandolo e
+       intercettando i click. I listener gia' collegati al pannello restano
+       validi anche dopo il reparenting del nodo.
+    */
+    if(panel.parentNode !== overlay) overlay.appendChild(panel);
+
+    var head = panel.querySelector('.settings-modal-head');
+    if(!head){
+      head = document.createElement('div');
+      head.className = 'settings-modal-head';
+
+      var title = document.createElement('div');
+      title.className = 'settings-modal-title';
+      title.id = 'settings-modal-title';
+      head.appendChild(title);
+
+      var close = document.createElement('button');
+      close.type = 'button';
+      close.className = 'settings-modal-close';
+      close.innerHTML = '<span aria-hidden="true">&times;</span>';
+      close.addEventListener('click', function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        closeSettingsModal();
+      });
+      head.appendChild(close);
+      panel.insertBefore(head, panel.firstChild);
+    }
+
+    var text = settingsModalText();
+    var titleEl = panel.querySelector('.settings-modal-title');
+    var closeEl = panel.querySelector('.settings-modal-close');
+    if(titleEl) titleEl.textContent = text.title;
+    if(closeEl){
+      closeEl.setAttribute('aria-label', text.close);
+      closeEl.setAttribute('title', text.close);
+    }
+
+    panel.setAttribute('aria-labelledby','settings-modal-title');
+
+    if(!wrap.__settingsModalObserved){
+      wrap.__settingsModalObserved = true;
+      new MutationObserver(syncSettingsModalState).observe(wrap, {attributes:true, attributeFilter:['class']});
+    }
+    syncSettingsModalState();
+  }
+
   function arrange(){
     if(arranging) return;
     arranging = true;
     try{
       arrangeHeader();
+      ensureSettingsModal();
       ensureTaccuinoToolbar();
       arrangeBottomBar();
       ensureMapControls();
