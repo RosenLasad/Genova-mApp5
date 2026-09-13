@@ -785,6 +785,22 @@ html body #ui-map-controls #btn-home{
 #ui-map-controls #btn-home svg{ width:22px !important; height:22px !important; }
 html body #ui-map-controls #btn-home:hover{ background:rgba(24,36,58,.98) !important; }
 html body #ui-map-controls #btn-home:focus-visible{ outline:3px solid #60a5fa; outline-offset:2px; }
+/* In modalita 3D lo stesso pulsante diventa il selettore Rotazione del joystick. */
+html.gm-map-3d-active body #ui-map-controls #btn-home[data-ui-map-mode="rotate"]{
+  border-color:rgba(96,165,250,.7) !important;
+}
+html.gm-map-3d-active body #ui-map-controls #btn-home[data-ui-map-mode="rotate"][aria-pressed="true"]{
+  color:#fff !important;
+  background:#2563eb !important;
+  border-color:#93c5fd !important;
+  box-shadow:0 0 0 2px rgba(96,165,250,.22), 0 6px 18px rgba(0,0,0,.4) !important;
+}
+html.gm-map-3d-active body #ui-map-controls #btn-home[data-ui-map-mode="rotate"][aria-pressed="true"] svg{
+  transform:rotate(14deg);
+}
+html.gm-map-3d-look-mode body #ui-map-controls .joystick{
+  box-shadow:0 0 0 2px rgba(96,165,250,.35), 0 6px 16px rgba(0,0,0,.32) !important;
+}
 /* Su schermi stretti separa la casetta dallo scanner senza muovere i tre comandi centrali. */
 @media(max-width:430px){
   html body #ui-map-controls #btn-home{ bottom:38px !important; }

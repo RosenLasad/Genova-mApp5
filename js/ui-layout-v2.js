@@ -91,6 +91,70 @@
     button.setAttribute('title', original.getAttribute('title') || label);
   }
 
+  function homeIconSvg(){
+    return '<svg data-ui-icon="home" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg>';
+  }
+
+  function rotateIconSvg(){
+    return '<svg data-ui-icon="rotate" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7a8 8 0 0 0-13.8-2L4 7"/><path d="M4 3v4h4"/><path d="M4 17a8 8 0 0 0 13.8 2L20 17"/><path d="M20 21v-4h-4"/></svg>';
+  }
+
+  function mapControlLabels(){
+    var labels = {
+      it:{home:'Vista iniziale',homeAria:'Ripristina la vista iniziale della mappa',rotate:'Rotazione',rotateOff:'Rotazione: usa il joystick per ruotare e inclinare la vista',rotateOn:'Rotazione attiva: premi per tornare allo spostamento'},
+      en:{home:'Initial view',homeAria:'Restore the initial map view',rotate:'Rotation',rotateOff:'Rotation: use the joystick to rotate and tilt the view',rotateOn:'Rotation active: press to return to map movement'},
+      es:{home:'Vista inicial',homeAria:'Restaurar la vista inicial del mapa',rotate:'Rotacion',rotateOff:'Rotacion: usa el joystick para girar e inclinar la vista',rotateOn:'Rotacion activa: pulsa para volver al desplazamiento'},
+      fr:{home:'Vue initiale',homeAria:'Restaurer la vue initiale de la carte',rotate:'Rotation',rotateOff:'Rotation : utilisez le joystick pour tourner et incliner la vue',rotateOn:'Rotation active : appuyez pour revenir au deplacement'},
+      ar:{home:'العرض الاولي',homeAria:'استعادة العرض الاولي للخريطة',rotate:'دوران',rotateOff:'الدوران: استخدم عصا التحكم لتدوير العرض وامالته',rotateOn:'الدوران مفعل: اضغط للعودة الى تحريك الخريطة'},
+      ru:{home:'Начальный вид',homeAria:'Восстановить начальный вид карты',rotate:'Вращение',rotateOff:'Вращение: используйте джойстик для поворота и наклона вида',rotateOn:'Вращение включено: нажмите, чтобы вернуться к перемещению карты'},
+      zh:{home:'初始视图',homeAria:'恢复地图初始视图',rotate:'旋转',rotateOff:'旋转：使用摇杆旋转和倾斜视角',rotateOn:'旋转已启用：按下可恢复地图平移'},
+      lij:{home:'Vista iniçiale',homeAria:'Repiggia a vista iniçiale da mappa',rotate:'Rotaçion',rotateOff:'Rotaçion: deuvi o joystick pe giâ e inclinâ a vista',rotateOn:'Rotaçion ativa: sciacca pe tornâ a spostâ a mappa'}
+    };
+    return labels[currentLang()] || labels.it;
+  }
+
+  function syncHomeButton3DState(){
+    var home = document.getElementById('btn-home');
+    if(!home) return;
+    var api = window.__gmMap3D;
+    var active3D = !!(api && api.isActive && api.isActive());
+    var text = mapControlLabels();
+    if(active3D){
+      var lookMode = !!(api.isJoystickLookMode && api.isJoystickLookMode());
+      home.dataset.uiMapMode = 'rotate';
+      home.setAttribute('aria-pressed', lookMode ? 'true' : 'false');
+      home.setAttribute('title', lookMode ? text.rotateOn : text.rotateOff);
+      home.setAttribute('aria-label', lookMode ? text.rotateOn : text.rotateOff);
+      if(!home.querySelector('[data-ui-icon="rotate"]')) home.innerHTML = rotateIconSvg();
+    }else{
+      home.dataset.uiMapMode = 'home';
+      home.removeAttribute('aria-pressed');
+      home.setAttribute('title', text.home);
+      home.setAttribute('aria-label', text.homeAria);
+      if(!home.querySelector('[data-ui-icon="home"]')) home.innerHTML = homeIconSvg();
+    }
+  }
+
+  function wire3DHomeButton(){
+    var home = document.getElementById('btn-home');
+    if(!home) return;
+    if(!home.__ui3DRotationBound){
+      home.__ui3DRotationBound = true;
+      /* In 3D intercetta il vecchio click "Vista iniziale" prima del listener
+         Leaflet e lo trasforma nel selettore Spostamento / Rotazione. */
+      home.addEventListener('click', function(event){
+        var api = window.__gmMap3D;
+        if(!(api && api.isActive && api.isActive())) return;
+        event.preventDefault();
+        event.stopPropagation();
+        if(event.stopImmediatePropagation) event.stopImmediatePropagation();
+        if(api.toggleJoystickLookMode) api.toggleJoystickLookMode();
+        syncHomeButton3DState();
+      }, true);
+    }
+    syncHomeButton3DState();
+  }
+
   function ensureMapControls(){
     var joystick = document.querySelector('.joystick');
     var zoom = document.querySelector('.leaflet-control-zoom');
@@ -168,8 +232,8 @@
     }
 
     if(home){
-      home.setAttribute('title', 'Vista iniziale');
-      home.setAttribute('aria-label', 'Ripristina la vista iniziale della mappa');
+      wire3DHomeButton();
+      syncHomeButton3DState();
     }
 
     var info = document.getElementById('btn-info');
@@ -287,14 +351,14 @@
         '<svg data-ui-icon="gps" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="currentColor"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>',
       'map-qr-fab':
         '<svg data-ui-icon="qr" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/><rect x="8" y="8" width="3" height="3" rx=".4" fill="currentColor" stroke="none"/><rect x="13" y="8" width="3" height="3" rx=".4" fill="currentColor" stroke="none"/><rect x="8" y="13" width="3" height="3" rx=".4" fill="currentColor" stroke="none"/><path d="M14 14h2v2h-2z" fill="currentColor" stroke="none"/></svg>',
-      'btn-home':
-        '<svg data-ui-icon="home" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg>'
+      'btn-home': homeIconSvg()
     };
     Object.keys(icons).forEach(function(id){
       var button = document.getElementById(id);
       if(!button || button.querySelector('[data-ui-icon]')) return;
       button.innerHTML = icons[id];
     });
+    syncHomeButton3DState();
   }
 
   function infoLabel(){
@@ -346,6 +410,7 @@
       wireSearch();
       wireHomeMenuSizing();
       ensureVisualIcons();
+      wire3DHomeButton();
       augmentHelpPanel();
       observeHelpPanel();
     }finally{
@@ -371,6 +436,8 @@
     window.addEventListener('resize', function(){ arrange(); positionFlagMenu(); sizeHomeMenu(); }, {passive:true});
     window.addEventListener('orientationchange', function(){ window.setTimeout(arrange, 80); });
     document.addEventListener('app:set-lang', function(){ window.setTimeout(arrange, 0); });
+    document.addEventListener('app:map-3d-change', function(){ window.setTimeout(syncHomeButton3DState, 0); });
+    document.addEventListener('app:map-3d-joystick-mode', function(){ window.setTimeout(syncHomeButton3DState, 0); });
   }
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, {once:true});

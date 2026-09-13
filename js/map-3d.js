@@ -33,6 +33,7 @@
   var notice = null;
   var noticeKind = '';
   var mouseChord = null;
+  var joystickLookMode = false;
 
   // MouseEvent.buttons: il pulsante centrale (rotellina) vale 4.
   // Intercetta il trascinamento prima dei controlli nativi di MapTiler.
@@ -931,6 +932,8 @@
     if(leaflet && leaflet.stop) leaflet.stop();
     var view = current2DView();
     active = true;
+    joystickLookMode = false;
+    document.documentElement.classList.remove('gm-map-3d-look-mode');
     container.hidden = false;
     document.documentElement.classList.add('gm-map-3d-active');
     setButtonState();
@@ -956,6 +959,8 @@
     if(!active) return;
     if(mouseChord) mouseChord.cancel();
     active = false;
+    joystickLookMode = false;
+    document.documentElement.classList.remove('gm-map-3d-look-mode');
     clearLoadTimer();
     if(languageTimer) window.clearTimeout(languageTimer);
     languageTimer = null;
@@ -983,6 +988,47 @@
     setButtonState();
     try{ if(map) map.invalidateSize(false); }catch(_e){}
     document.dispatchEvent(new CustomEvent('app:map-3d-change', {detail:{active:false}}));
+  }
+
+  function setJoystickLookMode(on){
+    on = !!on && active;
+    if(joystickLookMode === on){
+      document.documentElement.classList.toggle('gm-map-3d-look-mode', !!(active && on));
+      return joystickLookMode;
+    }
+    joystickLookMode = on;
+    document.documentElement.classList.toggle('gm-map-3d-look-mode', !!(active && on));
+    try{
+      document.dispatchEvent(new CustomEvent('app:map-3d-joystick-mode', {
+        detail:{active:joystickLookMode}
+      }));
+    }catch(_e){}
+    return joystickLookMode;
+  }
+
+  function toggleJoystickLookMode(){
+    if(!active) return false;
+    return setJoystickLookMode(!joystickLookMode);
+  }
+
+  /* Modalita joystick "Rotazione": assi volutamente invertiti rispetto
+     al vettore del joystick. Destra/sinistra modifica il bearing in senso
+     opposto; alto/basso modifica il pitch in senso opposto. */
+  function lookBy(x, y){
+    if(!active || !map3d || !joystickLookMode) return false;
+    x = Number(x) || 0;
+    y = Number(y) || 0;
+    try{
+      var minPitch = typeof map3d.getMinPitch === 'function' ? map3d.getMinPitch() : 0;
+      var maxPitch = typeof map3d.getMaxPitch === 'function' ? map3d.getMaxPitch() : 70;
+      var nextPitch = map3d.getPitch() + y * .18;
+      nextPitch = Math.max(minPitch, Math.min(maxPitch, nextPitch));
+      map3d.jumpTo({
+        bearing:map3d.getBearing() - x * .32,
+        pitch:nextPitch
+      });
+      return true;
+    }catch(_e){ return false; }
   }
 
   function panBy(x, y){
@@ -1029,7 +1075,11 @@
     focus:focus,
     openPlace:openPlace,
     syncPoints:syncPoints,
-    panBy:panBy
+    panBy:panBy,
+    lookBy:lookBy,
+    isJoystickLookMode:function(){ return !!(active && joystickLookMode); },
+    setJoystickLookMode:setJoystickLookMode,
+    toggleJoystickLookMode:toggleJoystickLookMode
   };
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, {once:true});

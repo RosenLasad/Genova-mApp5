@@ -36,7 +36,7 @@
     dragging = false;
     vec.x = vec.y = 0;
     applyThumb(0,0);
-    joy.classList.remove('active');
+    if(joy) joy.classList.remove('active');
     if(rafId){ cancelAnimationFrame(rafId); rafId = null; }
   }
 
@@ -69,8 +69,12 @@
     if(vec.x || vec.y){
       try{
         const map3d = window.__gmMap3D;
-        const handled3D = !!(map3d && map3d.isActive && map3d.isActive() && map3d.panBy(vec.x, vec.y));
-        if(!handled3D){
+        const active3D = !!(map3d && map3d.isActive && map3d.isActive());
+        if(active3D){
+          const lookMode = !!(map3d.isJoystickLookMode && map3d.isJoystickLookMode());
+          if(lookMode && map3d.lookBy) map3d.lookBy(vec.x, vec.y);
+          else if(map3d.panBy) map3d.panBy(vec.x, vec.y);
+        }else if(map){
           const c = map.getCenter();
           const latlng = map.layerPointToLatLng(map.latLngToLayerPoint(c).add([vec.x, vec.y]));
           map.panTo(latlng, {animate:false});
@@ -99,6 +103,11 @@
     document.addEventListener('visibilitychange', function(){
       if(document.hidden) endDrag({});
     });
+
+    /* Quando il bottone Rotazione cambia modalita, centra subito il joystick:
+       evita che un movimento iniziato come spostamento continui come rotazione. */
+    document.addEventListener('app:map-3d-joystick-mode', function(){ endDrag({}); });
+    document.addEventListener('app:map-3d-change', function(){ endDrag({}); });
   }
 
   requestAnimationFrame(init);
