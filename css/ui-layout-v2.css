@@ -840,12 +840,20 @@ html body #help-legend{
 
 #app > header #title-btn .gm-toolbar-brand{
   display:block;
-  width:clamp(184px, 23.5vw, 240px);
+  /* Marchio ampio ma fluido. I margini negativi gli permettono di crescere
+     visivamente senza aumentare l'altezza della toolbar. */
+  width:clamp(270px, 32vw, 340px);
   height:auto;
+  margin-top:-7px;
+  margin-bottom:-10px;
   overflow:visible;
   pointer-events:none;
   user-select:none;
   -webkit-user-select:none;
+  /* Quasi a contatto con la linea superiore e leggermente davanti a quella inferiore. */
+  transform:translateY(4px);
+  position:relative;
+  z-index:2;
 }
 
 #app > header #title-btn .gm-brand-badge{
@@ -927,22 +935,31 @@ html body #help-legend{
   96%{ transform:rotate(0deg); }
 }
 
-/* Su tablet/telefono il marchio si restringe come un unico blocco. */
+/* Su tablet/telefono il marchio resta piu leggibile, adattandosi come un unico blocco. */
 @media (max-width:768px){
   #app > header #title-btn .gm-toolbar-brand{
-    width:clamp(164px, 31vw, 192px);
+    width:clamp(250px, 50vw, 320px);
+    margin-top:-8px;
+    margin-bottom:-10px;
+    transform:translateY(8px);
   }
 }
 
 @media (max-width:430px){
   #app > header #title-btn .gm-toolbar-brand{
-    width:clamp(150px, 44vw, 168px);
+    width:clamp(205px, 57vw, 245px);
+    margin-top:-5px;
+    margin-bottom:-8px;
+    transform:translateY(6px);
   }
 }
 
 @media (max-width:360px){
   #app > header #title-btn .gm-toolbar-brand{
-    width:142px;
+    width:clamp(190px, 55vw, 205px);
+    margin-top:-4px;
+    margin-bottom:-6px;
+    transform:translateY(6px);
   }
 }
 
