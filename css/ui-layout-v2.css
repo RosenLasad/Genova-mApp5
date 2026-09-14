@@ -1502,3 +1502,28 @@ html body #help-legend{
     padding-bottom:.56rem !important;
   }
 }
+
+/* ========================================================================== 
+   Quick toggles - adattamento verticale per schermi bassi
+   La posizione normale e' top:50px (definita nel bundle principale).
+   Sotto 670px riduciamo progressivamente la distanza dal bordo superiore
+   della mappa, lasciando libera la zona Zoom/Joystick. Solo in portrait.
+   ========================================================================== */
+@media (max-height:670px) and (orientation:portrait){
+  #quick-toggles{
+    top:34px !important;
+    transform:none !important;
+  }
+}
+
+@media (max-height:590px) and (orientation:portrait){
+  #quick-toggles{
+    top:22px !important;
+  }
+}
+
+@media (max-height:550px) and (orientation:portrait){
+  #quick-toggles{
+    top:10px !important;
+  }
+}
