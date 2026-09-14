@@ -1575,7 +1575,8 @@
     var tags = EVENT_TAGS.map(function(tag){
       var active = eventSearchState.tags.indexOf(tag.key) >= 0;
       return '<button type="button" class="gm-new-home-event-tag'+(active?' is-active':'')+'" data-event-tag="'+tag.key+'" aria-pressed="'+(active?'true':'false')+'"><strong>'+escapeHtml(tag.label)+'</strong><small>'+escapeHtml(tag.note)+'</small></button>';
-    }).join('');
+    }).join('')+
+      '<button type="button" class="gm-new-home-event-tag gm-new-home-event-propose" data-event-propose aria-label="Proponi il tuo evento"><strong>Proponi il tuo evento</strong><small>Contattaci</small></button>';
     var periods = EVENT_PERIODS.map(function(period){
       var active = eventSearchState.period === period.key;
       return '<button type="button" class="gm-new-home-event-period'+(active?' is-active':'')+'" data-event-period="'+period.key+'" aria-pressed="'+(active?'true':'false')+'">'+escapeHtml(period.label)+'</button>';
@@ -1630,6 +1631,10 @@
     });
     areaSelect.addEventListener('change', function(){ eventSearchState.area = areaSelect.value || 'genova'; });
     scroll.querySelector('.gm-new-home-event-search').addEventListener('click', searchEventsOnline);
+    var proposeButton = scroll.querySelector('[data-event-propose]');
+    if(proposeButton){
+      proposeButton.addEventListener('click', function(){ runExistingAction('contact'); });
+    }
     var favoritesButton = scroll.querySelector('[data-event-favorites]');
     if(favoritesButton){
       favoritesButton.addEventListener('click', function(){

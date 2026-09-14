@@ -121,6 +121,8 @@
     ['Apri la guida','Open the guide','Abrir la guía','Ouvrir le guide','افتح الدليل','Открыть руководство','打开指南','Arvi a guida'],
     ['Audioguide','Audio guides','Audioguías','Audioguides','أدلة صوتية','Аудиогиды','语音导览','Audioguide'],
     ['Videoguide','Video guides','Videoguías','Vidéoguides','أدلة فيديو','Видеогиды','视频导览','Videoguide'],
+    ['Proponi il tuo evento','Submit your event','Propón tu evento','Proposez votre événement','اقترح فعاليتك','Предложить своё событие','提交您的活动','Propòni o teu evento'],
+    ['Contattaci','Contact us','Contáctanos','Contactez-nous','تواصل معنا','Связаться с нами','联系我们','Contàttine'],
     ['Eventi','Events','Eventos','Événements','الفعاليات','События','活动','Eventi'],
     ['Contatti','Contact','Contacto','Contact','التواصل','Контакты','联系','Contatti'],
     ['Giochi','Games','Juegos','Jeux','ألعاب','Игры','游戏','Zeughi'],
