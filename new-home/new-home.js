@@ -618,8 +618,16 @@
         }
       }catch(_){}
       try{
-        var hash = '#qr='+encodeURIComponent(point.qrid);
-        if(window.history && window.history.replaceState) window.history.replaceState(null, '', hash);
+        if(typeof window.__qrSetUrl === 'function'){
+          window.__qrSetUrl(point.qrid, {replace:true});
+        }else{
+          var url = new URL(window.location.href);
+          url.searchParams.set('qr', point.qrid);
+          if(/^#qr=/.test(url.hash || '')) url.hash = '';
+          if(window.history && window.history.replaceState){
+            window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+          }
+        }
       }catch(_){}
     }, 60);
   }

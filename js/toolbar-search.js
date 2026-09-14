@@ -105,7 +105,7 @@
       }
     }catch(_){}
     try{ if(window.__qrOpenChildPanel) window.__qrOpenChildPanel(item.title, item.description, item.media, item.id); }catch(_){}
-    try{ location.hash = 'qr='+encodeURIComponent(item.id); }catch(_){}
+    try{ if(window.__qrSetUrl) window.__qrSetUrl(item.id, {replace:true}); }catch(_){}
   }
   function render(value){
     var query = normalize(value);
