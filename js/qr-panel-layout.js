@@ -85,80 +85,99 @@
   }
 
   function getMap() {
-    return window.map &&
-      typeof window.map.latLngToContainerPoint === "function" &&
-      typeof window.map.panBy === "function"
-      ? window.map
+    var map = window.map || window.__map || window.__LEAFLET_MAP__;
+    return map &&
+      typeof map.getSize === "function" &&
+      typeof map.project === "function" &&
+      typeof map.unproject === "function"
+      ? map
       : null;
   }
 
-  function offsetQrPoint(point) {
-    var map = getMap();
-    if (!map || !point || !isFinite(point.lat) || !isFinite(point.lng)) return;
+  /*
+   * Posizione desiderata del marker QR nell'area REALE della mappa:
+   * X = 50% (centro orizzontale)
+   * Y = 70% dall'alto = 30% dal bordo inferiore.
+   *
+   * Invece di spostare graficamente il marker, calcoliamo il centro geografico
+   * che deve avere la mappa affinche' quel marker cada esattamente nel punto
+   * 50/70 del contenitore Leaflet.
+   */
+  function centerForQrPoint(map, point, zoom) {
+    if (!window.L || !window.L.point || !window.L.latLng) return null;
 
-    var mapElement = map.getContainer && map.getContainer();
-    if (!mapElement) return;
+    var size = map.getSize();
+    if (!size || !isFinite(size.x) || !isFinite(size.y) || size.x <= 0 || size.y <= 0) return null;
 
-    var mapRect = mapElement.getBoundingClientRect();
-    var panelRect = panel.getBoundingClientRect();
-    var visibleTop = mapRect.top + 18;
-    var visibleBottom = Math.min(mapRect.bottom - 18, panelRect.top - 18);
+    var latlng = window.L.latLng(Number(point.lat), Number(point.lng));
+    var projectedTarget = map.project(latlng, zoom);
+    var desired = window.L.point(size.x * 0.50, size.y * 0.70);
+    var viewportCenter = window.L.point(size.x * 0.50, size.y * 0.50);
+    var projectedCenter = projectedTarget.add(viewportCenter.subtract(desired));
 
-    if (visibleBottom <= visibleTop + 40) return;
-
-    var desiredX = mapRect.width / 2;
-    var desiredY = (visibleTop + visibleBottom) / 2 - mapRect.top;
-    var current = map.latLngToContainerPoint([point.lat, point.lng]);
-    var dx = current.x - desiredX;
-    var dy = current.y - desiredY;
-
-    if (Math.abs(dx) < 2 && Math.abs(dy) < 2) return;
-
-    map.panBy([dx, dy], {
-      animate: true,
-      duration: 0.28
-    });
+    return map.unproject(projectedCenter, zoom);
   }
 
-  function centerMapOnQrPoint(point) {
+  function focusQrPoint(point, done, options) {
+    options = options || {};
     var map = getMap();
-    if (!map || !point || !isFinite(point.lat) || !isFinite(point.lng)) return;
-
-    var adjusted = false;
-    var adjustOnce = function () {
-      if (adjusted) return;
-      adjusted = true;
-      window.requestAnimationFrame(function () {
-        updateBottomClearance();
-        offsetQrPoint(point);
-      });
-    };
-
-    try {
-      map.once("moveend", adjustOnce);
-      map.panTo([point.lat, point.lng], {
-        animate: true,
-        duration: 0.3
-      });
-    } catch (_) {
-      adjustOnce();
+    if (!map || !point || !isFinite(point.lat) || !isFinite(point.lng)) {
+      if (done) done();
+      return;
     }
 
-    window.setTimeout(adjustOnce, 380);
+    var currentZoom = Number(map.getZoom && map.getZoom());
+    if (!isFinite(currentZoom)) currentZoom = 16;
+    var targetZoom = options.keepZoom ? currentZoom : Math.max(currentZoom, 17);
+    var center = centerForQrPoint(map, point, targetZoom);
+
+    if (!center) {
+      if (done) done();
+      return;
+    }
+
+    var finished = false;
+    var timeoutId = 0;
+    function finish() {
+      if (finished) return;
+      finished = true;
+      if (timeoutId) window.clearTimeout(timeoutId);
+      try { map.off("moveend", finish); } catch (_) {}
+      if (done) done();
+    }
+
+    try { if (typeof map.stop === "function") map.stop(); } catch (_) {}
+
+    if (options.animate === false) {
+      try {
+        map.setView(center, targetZoom, { animate: false });
+      } catch (_) {}
+      finish();
+      return;
+    }
+
+    try { map.once("moveend", finish); } catch (_) {}
+    timeoutId = window.setTimeout(finish, 800);
+
+    try {
+      if (typeof map.flyTo === "function") {
+        map.flyTo(center, targetZoom, {
+          animate: true,
+          duration: 0.42,
+          easeLinearity: 0.35
+        });
+      } else {
+        map.setView(center, targetZoom, { animate: true });
+      }
+    } catch (_) {
+      finish();
+    }
   }
 
-  function applyQrLayout(point, moveMap) {
+  function preparePanel(point) {
     activeQrPoint = point;
     panel.classList.add("qr-point-panel");
     updateBottomClearance();
-
-    window.requestAnimationFrame(function () {
-      window.requestAnimationFrame(function () {
-        updateBottomClearance();
-        if (moveMap) centerMapOnQrPoint(point);
-        else offsetQrPoint(point);
-      });
-    });
   }
 
   function installWrapper() {
@@ -168,13 +187,31 @@
 
     function openQrPanel(title, descr, media, qrid) {
       var point = findQrPoint(title, media, qrid);
+      if (!point) {
+        clearQrLayout();
+        return original.apply(this, arguments);
+      }
+
+      preparePanel(point);
+
+      /*
+       * Costruiamo subito il contenuto del pannello ma lo teniamo invisibile
+       * durante l'unico movimento della mappa. In questo modo URL, video e stato
+       * Oggi/Ieri vengono preparati normalmente, mentre visivamente il pannello
+       * compare soltanto quando il marker ha raggiunto la posizione 50/70.
+       */
+      var previousVisibility = panel.style.visibility;
+      var previousPointerEvents = panel.style.pointerEvents;
+      panel.style.visibility = "hidden";
+      panel.style.pointerEvents = "none";
+
       var result = original.apply(this, arguments);
 
-      if (point) {
-        applyQrLayout(point, true);
-      } else {
-        clearQrLayout();
-      }
+      focusQrPoint(point, function () {
+        preparePanel(point);
+        panel.style.visibility = previousVisibility;
+        panel.style.pointerEvents = previousPointerEvents;
+      });
 
       return result;
     }
@@ -182,6 +219,12 @@
     openQrPanel.__qrCenteredLayout = true;
     openQrPanel.__qrOriginal = original;
     window.__qrOpenChildPanel = openQrPanel;
+
+    /* API minima utile agli altri moduli QR e ai test. */
+    window.__qrFocusPoint = function (point, callback, options) {
+      focusQrPoint(point, callback, options || {});
+    };
+
     return true;
   }
 
@@ -200,7 +243,8 @@
         panel.classList.contains("open") &&
         panel.classList.contains("qr-point-panel")
       ) {
-        applyQrLayout(activeQrPoint, false);
+        updateBottomClearance();
+        focusQrPoint(activeQrPoint, null, { animate: false, keepZoom: true });
       }
     }, 160);
   });
@@ -212,15 +256,12 @@
         panel.classList.contains("open") &&
         panel.classList.contains("qr-point-panel")
       ) {
-        applyQrLayout(activeQrPoint, false);
+        updateBottomClearance();
+        focusQrPoint(activeQrPoint, null, { animate: false, keepZoom: true });
       }
     }, 320);
   });
 
-  /*
-   * Evita che la disposizione QR rimanga applicata quando la scheda viene
-   * chiusa e il pannello viene poi riutilizzato da un altro tipo di luogo.
-   */
   if (typeof window.MutationObserver === "function") {
     new MutationObserver(function () {
       if (!panel.classList.contains("open") && activeQrPoint) {

@@ -602,16 +602,7 @@
           }
         }
       }catch(_){}
-      try{
-        var appMap = null;
-        if(typeof map !== 'undefined' && map && typeof map.setView === 'function') appMap = map;
-        else if(window.map && typeof window.map.setView === 'function') appMap = window.map;
-        else if(window.__map && typeof window.__map.setView === 'function') appMap = window.__map;
-        if(appMap && isFinite(point.lat) && isFinite(point.lng)){
-          var zoom = appMap.getZoom ? appMap.getZoom() : 16;
-          appMap.setView([point.lat, point.lng], Math.max(Number(zoom) || 16, 17), {animate:true});
-        }
-      }catch(_){}
+      // Il focus 50/70 e l'animazione unica sono gestiti da qr-panel-layout.js.
       try{
         if(typeof window.__qrOpenChildPanel === 'function'){
           window.__qrOpenChildPanel(point.name, point.descr, point.media, point.qrid);

@@ -1,26 +1,29 @@
 /*
- * Pannelli dei punti QR:
- * centrati in basso, con spazio riservato ai comandi della mappa.
- * La variabile --qr-panel-bottom viene aggiornata da qr-panel-layout.js
- * in base all'altezza reale della barra inferiore.
+ * Pannelli dei punti QR.
+ *
+ * Il marker viene portato da qr-panel-layout.js al 50% / 70% dell'area reale
+ * della mappa. Il pannello non e' piu' centrato sopra quel punto: il suo bordo
+ * inferiore viene ancorato poco sopra l'icona QR e tutto il pannello si sviluppa
+ * verso l'alto, lasciando il marker completamente visibile.
  */
 #panel.qr-point-panel {
   position: fixed !important;
-  inset: auto auto var(--qr-panel-bottom, 76px) 50% !important;
+  inset: auto !important;
+  left: var(--qr-panel-anchor-x, 50vw) !important;
+  top: var(--qr-panel-anchor-y, 70vh) !important;
   right: auto !important;
-  left: 50% !important;
-  bottom: var(--qr-panel-bottom, 76px) !important;
+  bottom: auto !important;
   width: min(560px, calc(100vw - 64px)) !important;
   max-width: none !important;
-  max-height: min(68dvh, calc(100dvh - var(--qr-panel-bottom, 76px) - 72px)) !important;
+  max-height: min(var(--qr-panel-max-height, 520px), 68dvh) !important;
   margin: 0 !important;
-  transform: translateX(-50%) !important;
+  transform: translate(-50%, -100%) !important;
   grid-template-rows: auto minmax(0, auto) auto minmax(0, 1fr) !important;
   z-index: 7100 !important;
 }
 
 #panel.qr-point-panel.open {
-  transform: translateX(-50%) !important;
+  transform: translate(-50%, -100%) !important;
 }
 
 #panel.qr-point-panel .media {
@@ -52,7 +55,7 @@
 @media (max-width: 768px) {
   #panel.qr-point-panel {
     width: calc(100vw - 48px) !important;
-    max-height: min(66dvh, calc(100dvh - var(--qr-panel-bottom, 70px) - 58px)) !important;
+    max-height: min(var(--qr-panel-max-height, 460px), 66dvh) !important;
     border-radius: 16px;
     box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.45);
   }
@@ -69,7 +72,7 @@
 @media (max-height: 520px) and (orientation: landscape) {
   #panel.qr-point-panel {
     width: min(620px, calc(100vw - 72px)) !important;
-    max-height: calc(100dvh - var(--qr-panel-bottom, 62px) - 42px) !important;
+    max-height: min(var(--qr-panel-max-height, 300px), 58dvh) !important;
   }
 
   #panel.qr-point-panel .media {

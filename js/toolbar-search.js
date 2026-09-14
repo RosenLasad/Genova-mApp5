@@ -96,14 +96,10 @@
     }
     try{ if(window.__ensureQrOn) window.__ensureQrOn(); }catch(_){}
     try{
-      var appMap = window.map || window.__map;
       var map3d = window.__gmMap3D;
-      var centered3D = map3d && map3d.focus && map3d.focus([item.lat, item.lng], 17, {minZoom:true});
-      if(!centered3D && appMap && appMap.setView){
-        var zoom = appMap.getZoom ? appMap.getZoom() : 16;
-        appMap.setView([item.lat, item.lng], Math.max(zoom, 17), {animate:true});
-      }
+      if(map3d && map3d.focus) map3d.focus([item.lat, item.lng], 17, {minZoom:true});
     }catch(_){}
+    // In 2D il focus 50/70 e l'animazione unica sono gestiti da qr-panel-layout.js.
     try{ if(window.__qrOpenChildPanel) window.__qrOpenChildPanel(item.title, item.description, item.media, item.id); }catch(_){}
     try{ if(window.__qrSetUrl) window.__qrSetUrl(item.id, {replace:true}); }catch(_){}
   }
