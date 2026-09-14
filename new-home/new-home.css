@@ -1040,104 +1040,217 @@ button.gm-new-home-layer-copy:hover strong{ color:var(--gm-theme-dark); text-dec
 .gm-new-home-events-intro p{ margin:4px 0 0; color:#647383; line-height:1.45; font-size:.88rem; }
 .gm-new-home-event-tags{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
 
-/* Colori Eventi: riprendono le palette dei punti corrispondenti sulla mappa. */
+/* Palette Eventi armonizzata: ogni categoria mantiene una personalita propria
+   usando pero saturazione, luminosita e struttura comuni. */
 .gm-new-home-event-tag,
 .gm-new-home-event-card{
   --gm-event-color:#8b6b47;
   --gm-event-color-dark:#684b2f;
   --gm-event-ink:#684b2f;
   --gm-event-foreground:#fff;
+  --gm-event-soft:10%;
 }
+/* Musei e mostre: prugna / fucsia smorzato, elegante e curatoriale. */
 .gm-new-home-event-tag[data-event-tag="museums"],
 .gm-new-home-event-card[data-event-tag="museums"]{
-  --gm-event-color:#a78bfa;
-  --gm-event-color-dark:#06b6d4;
-  --gm-event-ink:#6d28d9;
-  --gm-event-foreground:#0f172a;
-}
-.gm-new-home-event-tag[data-event-tag="cinema"],
-.gm-new-home-event-card[data-event-tag="cinema"]{
-  --gm-event-color:#a855f7;
-  --gm-event-color-dark:#7e22ce;
-  --gm-event-ink:#7e22ce;
+  --gm-event-color:#a45a7d;
+  --gm-event-color-dark:#77405d;
+  --gm-event-ink:#7d3f60;
   --gm-event-foreground:#fff;
 }
-.gm-new-home-event-tag[data-event-tag="theatre"],
-.gm-new-home-event-card[data-event-tag="theatre"]{
-  --gm-event-color:#ef4444;
-  --gm-event-color-dark:#b91c1c;
-  --gm-event-ink:#b91c1c;
-  --gm-event-foreground:#fff;
-}
-.gm-new-home-event-tag[data-event-tag="music"],
-.gm-new-home-event-card[data-event-tag="music"]{
-  --gm-event-color:#ec4899;
-  --gm-event-color-dark:#be185d;
-  --gm-event-ink:#be185d;
-  --gm-event-foreground:#fff;
-}
+/* Palazzi e ville: rame / oro neutro, architettonico e classico. */
 .gm-new-home-event-tag[data-event-tag="palaces"],
 .gm-new-home-event-card[data-event-tag="palaces"]{
-  --gm-event-color:#065f46;
-  --gm-event-color-dark:#064e3b;
-  --gm-event-ink:#065f46;
+  --gm-event-color:#b08148;
+  --gm-event-color-dark:#7d5932;
+  --gm-event-ink:#79552f;
   --gm-event-foreground:#fff;
 }
+/* Patrimonio storico: bronzo / ocra, caldo ma sobrio. */
 .gm-new-home-event-tag[data-event-tag="heritage"],
 .gm-new-home-event-card[data-event-tag="heritage"]{
-  --gm-event-color:#9b8357;
-  --gm-event-color-dark:#4b5563;
-  --gm-event-ink:#6b5a3b;
+  --gm-event-color:#9a8156;
+  --gm-event-color-dark:#6c593b;
+  --gm-event-ink:#6b5738;
   --gm-event-foreground:#fff;
 }
+/* Festival: arancio corallo, la categoria piu vivace. */
 .gm-new-home-event-tag[data-event-tag="festivals"],
 .gm-new-home-event-card[data-event-tag="festivals"]{
-  --gm-event-color:#22c55e;
-  --gm-event-color-dark:#15803d;
-  --gm-event-ink:#15803d;
-  --gm-event-foreground:#0f172a;
+  --gm-event-color:#dc744d;
+  --gm-event-color-dark:#a84f35;
+  --gm-event-ink:#a44c32;
+  --gm-event-foreground:#fff;
 }
+/* Mercati e fiere: verde oliva, popolare e accogliente. */
 .gm-new-home-event-tag[data-event-tag="markets"],
 .gm-new-home-event-card[data-event-tag="markets"]{
-  --gm-event-color:#65a30d;
-  --gm-event-color-dark:#4d7c0f;
-  --gm-event-ink:#4d7c0f;
-  --gm-event-foreground:#0f172a;
+  --gm-event-color:#83984b;
+  --gm-event-color-dark:#5d6e35;
+  --gm-event-ink:#5d6e35;
+  --gm-event-foreground:#fff;
 }
+/* Musica: blu indaco / polvere, atmosferico e contemporaneo. */
+.gm-new-home-event-tag[data-event-tag="music"],
+.gm-new-home-event-card[data-event-tag="music"]{
+  --gm-event-color:#7782b8;
+  --gm-event-color-dark:#525d91;
+  --gm-event-ink:#515b8d;
+  --gm-event-foreground:#fff;
+}
+/* Teatro: bordeaux, classico e profondo. */
+.gm-new-home-event-tag[data-event-tag="theatre"],
+.gm-new-home-event-card[data-event-tag="theatre"]{
+  --gm-event-color:#a34e58;
+  --gm-event-color-dark:#74343d;
+  --gm-event-ink:#78353f;
+  --gm-event-foreground:#fff;
+}
+/* Cinema: viola / blu notte, piu cinematografico. */
+.gm-new-home-event-tag[data-event-tag="cinema"],
+.gm-new-home-event-card[data-event-tag="cinema"]{
+  --gm-event-color:#7268a7;
+  --gm-event-color-dark:#4c4478;
+  --gm-event-ink:#51487f;
+  --gm-event-foreground:#fff;
+}
+/* Sport: verde bosco con tono oliva, energico ma non fluorescente. */
 .gm-new-home-event-tag[data-event-tag="sport"],
 .gm-new-home-event-card[data-event-tag="sport"]{
-  --gm-event-color:#808000;
-  --gm-event-color-dark:#5c5c0a;
-  --gm-event-ink:#686800;
+  --gm-event-color:#6f895b;
+  --gm-event-color-dark:#465f3b;
+  --gm-event-ink:#48623c;
+  --gm-event-foreground:#fff;
+}
+/* Proponi il tuo evento: verde petrolio, riconoscibile come azione. */
+.gm-new-home-event-propose{
+  --gm-event-color:#3d827b;
+  --gm-event-color-dark:#275e59;
+  --gm-event-ink:#28635e;
   --gm-event-foreground:#fff;
 }
 
 .gm-new-home-event-tag{
+  position:relative;
   min-height:72px;
-  padding:10px 11px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:9px;
+  padding:10px 10px 10px 12px;
   color:#283d4e;
   text-align:left;
-  background:color-mix(in srgb,var(--gm-event-color) 9%,#fff);
-  border:1px solid color-mix(in srgb,var(--gm-event-color) 38%,#dce2e5);
+  background:
+    linear-gradient(135deg,color-mix(in srgb,var(--gm-event-color) 8%,#fff),color-mix(in srgb,var(--gm-event-color) 3%,#fff));
+  border:1px solid color-mix(in srgb,var(--gm-event-color) 40%,#dce2e5);
   border-radius:13px;
-  box-shadow:inset 4px 0 0 var(--gm-event-color);
+  box-shadow:inset 4px 0 0 var(--gm-event-color),0 1px 0 rgba(255,255,255,.7);
   cursor:pointer;
+  overflow:hidden;
   transition:border-color .15s ease, background .15s ease, transform .15s ease, box-shadow .15s ease;
 }
-.gm-new-home-event-tag strong{ display:block; font-size:.9rem; }
-.gm-new-home-event-tag small{ display:block; margin-top:3px; color:#768490; font-size:.72rem; line-height:1.28; }
+.gm-new-home-event-tag::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  opacity:.7;
+}
+.gm-new-home-event-tag-copy{ min-width:0; position:relative; z-index:1; }
+.gm-new-home-event-tag strong{
+  display:block;
+  color:#2b4050;
+  font-size:.9rem;
+  font-weight:850;
+  line-height:1.15;
+  letter-spacing:-.006em;
+}
+.gm-new-home-event-tag small{
+  display:block;
+  margin-top:3px;
+  color:#73818d;
+  font-size:.71rem;
+  line-height:1.27;
+}
+.gm-new-home-event-tag-icon{
+  position:relative;
+  z-index:1;
+  flex:0 0 auto;
+  width:29px;
+  height:29px;
+  display:grid;
+  place-items:center;
+  color:var(--gm-event-ink);
+  background:color-mix(in srgb,var(--gm-event-color) 12%,rgba(255,255,255,.9));
+  border:1px solid color-mix(in srgb,var(--gm-event-color) 26%,transparent);
+  border-radius:9px;
+  opacity:.9;
+}
+.gm-new-home-event-tag-icon svg{ width:18px; height:18px; display:block; }
 .gm-new-home-event-tag:hover{
-  border-color:var(--gm-event-color);
-  background:color-mix(in srgb,var(--gm-event-color) 14%,#fff);
+  border-color:color-mix(in srgb,var(--gm-event-color) 76%,#fff);
+  background:linear-gradient(135deg,color-mix(in srgb,var(--gm-event-color) 13%,#fff),color-mix(in srgb,var(--gm-event-color) 6%,#fff));
+  transform:translateY(-1px);
 }
 .gm-new-home-event-tag.is-active{
   color:var(--gm-event-foreground);
   background:linear-gradient(135deg,var(--gm-event-color),var(--gm-event-color-dark));
   border-color:var(--gm-event-color-dark);
-  box-shadow:0 4px 12px color-mix(in srgb,var(--gm-event-color) 28%,transparent);
+  box-shadow:0 5px 14px color-mix(in srgb,var(--gm-event-color) 26%,transparent);
   transform:translateY(-1px);
 }
-.gm-new-home-event-tag.is-active small{ color:var(--gm-event-foreground); opacity:.82; }
+.gm-new-home-event-tag.is-active strong,
+.gm-new-home-event-tag.is-active small{ color:var(--gm-event-foreground); }
+.gm-new-home-event-tag.is-active small{ opacity:.82; }
+.gm-new-home-event-tag.is-active .gm-new-home-event-tag-icon{
+  color:var(--gm-event-foreground);
+  background:rgba(255,255,255,.15);
+  border-color:rgba(255,255,255,.32);
+}
+
+/* Piccole variazioni di carattere visivo, senza trasformare i tag in mini-locandine. */
+.gm-new-home-event-tag--museums::before{
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--gm-event-color) 8%,transparent);
+}
+.gm-new-home-event-tag--palaces::before{
+  inset:4px;
+  border:1px solid color-mix(in srgb,var(--gm-event-color) 14%,transparent);
+  border-radius:9px;
+}
+.gm-new-home-event-tag--heritage{ border-radius:11px; }
+.gm-new-home-event-tag--heritage .gm-new-home-event-tag-icon{ border-radius:7px; }
+.gm-new-home-event-tag--festivals{
+  background:
+    radial-gradient(circle at 88% 18%,color-mix(in srgb,var(--gm-event-color) 13%,transparent) 0 3px,transparent 4px),
+    radial-gradient(circle at 78% 78%,color-mix(in srgb,var(--gm-event-color) 10%,transparent) 0 2px,transparent 3px),
+    linear-gradient(135deg,color-mix(in srgb,var(--gm-event-color) 9%,#fff),color-mix(in srgb,var(--gm-event-color) 3%,#fff));
+}
+.gm-new-home-event-tag--festivals strong{ font-weight:900; letter-spacing:.008em; }
+.gm-new-home-event-tag--markets{ border-radius:15px 11px 15px 11px; }
+.gm-new-home-event-tag--music::before{
+  background:linear-gradient(120deg,transparent 0 68%,color-mix(in srgb,var(--gm-event-color) 7%,transparent) 68% 72%,transparent 72% 100%);
+}
+.gm-new-home-event-tag--theatre{
+  border-width:1px;
+  box-shadow:inset 4px 0 0 var(--gm-event-color),inset 0 0 0 2px rgba(255,255,255,.66);
+}
+.gm-new-home-event-tag--theatre strong{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:.94rem;
+  letter-spacing:.01em;
+}
+.gm-new-home-event-tag--cinema::before{
+  background:linear-gradient(90deg,transparent 0 86%,color-mix(in srgb,var(--gm-event-color) 9%,transparent) 86% 89%,transparent 89% 100%);
+}
+.gm-new-home-event-tag--cinema strong{ letter-spacing:.012em; }
+.gm-new-home-event-tag--sport strong{ font-weight:950; letter-spacing:.004em; }
+.gm-new-home-event-propose{
+  border-style:dashed;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--gm-event-color) 8%,#fff),color-mix(in srgb,var(--gm-event-color) 3%,#fff));
+}
+.gm-new-home-event-propose strong{ color:#28514f; }
+.gm-new-home-event-propose .gm-new-home-event-tag-icon{ border-radius:50%; }
 .gm-new-home-event-controls{ display:grid; grid-template-columns:minmax(0,1fr) minmax(190px,.7fr); gap:14px; margin-top:16px; }
 .gm-new-home-event-controls fieldset{ min-width:0; margin:0; padding:0; border:0; }
 .gm-new-home-event-controls legend,
@@ -1277,3 +1390,7 @@ button.gm-new-home-layer-copy:hover strong{ color:var(--gm-theme-dark); text-dec
   .gm-new-home-event-tag{ min-height:58px; }
   .gm-new-home-event-date{ min-height:36px; padding:7px 10px; }
 }
+
+/* Eventi v12: allineamento dei nuovi dettagli grafici in RTL. */
+.gm-new-home-overlay:dir(rtl) .gm-new-home-event-tag{ padding:10px 12px 10px 10px; }
+.gm-new-home-overlay:dir(rtl) .gm-new-home-event-tag-copy{ text-align:right; }

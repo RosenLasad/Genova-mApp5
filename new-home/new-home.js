@@ -41,6 +41,23 @@
     {key:'sport', label:'Sport', note:'Gare, incontri e attività sportive', lists:['fav-list-sport']}
   ];
 
+  var EVENT_TAG_ICONS = {
+    museums:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 17h12M7 17V9m3 8V9m4 8V9m3 8V9M5 7l7-4 7 4H5Z"/></svg>',
+    palaces:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20V8l6-4 6 4v12M9 11h.01M15 11h.01M9 15h.01M15 15h.01M11 20v-3h2v3"/></svg>',
+    heritage:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V8h14v12M8 8V5h8v3M9 20v-6a3 3 0 0 1 6 0v6M4 20h16"/></svg>',
+    festivals:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.5 3.2L17 7.7l-3.5 1.5L12 12.5l-1.5-3.3L7 7.7l3.5-1.5L12 3ZM18.5 13l.8 1.7 1.7.8-1.7.8-.8 1.7-.8-1.7-1.7-.8 1.7-.8.8-1.7ZM5.5 13l1 2.1 2.1 1-2.1 1-1 2.1-1-2.1-2.1-1 2.1-1 1-2.1Z"/></svg>',
+    markets:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-1-4H5L4 9Zm1 0v10h14V9M8 19v-5h4v5M4 9c0 1.5 1 2.5 2.5 2.5S9 10.5 9 9c0 1.5 1 2.5 3 2.5s3-1 3-2.5c0 1.5 1 2.5 2.5 2.5S20 10.5 20 9"/></svg>',
+    music:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l10-2v12M9 9l10-2M6.5 20c1.4 0 2.5-.9 2.5-2s-1.1-2-2.5-2S4 16.9 4 18s1.1 2 2.5 2Zm10 0c1.4 0 2.5-.9 2.5-2s-1.1-2-2.5-2-2.5.9-2.5 2 1.1 2 2.5 2Z"/></svg>',
+    theatre:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v5c0 5-2.5 9-7 11-4.5-2-7-6-7-11V4Zm3 5h.01M16 9h.01M9 14c1 .8 2 1.2 3 1.2s2-.4 3-1.2"/></svg>',
+    cinema:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16v11H4V8Zm0 0 2-4h4L8 8m4 0 2-4h4l-2 4M4 12h16"/></svg>',
+    sport:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v4c0 3-1.5 5-4 6-2.5-1-4-3-4-6V4Zm0 2H5v2c0 2 1.2 3.5 3.5 4M16 6h3v2c0 2-1.2 3.5-3.5 4M12 14v4M8 20h8M10 18h4"/></svg>',
+    propose:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16M12 13v4M10 15h4"/></svg>'
+  };
+
+  function eventTagIcon(key){
+    return EVENT_TAG_ICONS[key] || EVENT_TAG_ICONS.festivals;
+  }
+
   var EVENT_PERIODS = [
     {key:'today', label:'Oggi'},
     {key:'weekend', label:'Questo weekend'},
@@ -1574,9 +1591,9 @@
 
     var tags = EVENT_TAGS.map(function(tag){
       var active = eventSearchState.tags.indexOf(tag.key) >= 0;
-      return '<button type="button" class="gm-new-home-event-tag'+(active?' is-active':'')+'" data-event-tag="'+tag.key+'" aria-pressed="'+(active?'true':'false')+'"><strong>'+escapeHtml(tag.label)+'</strong><small>'+escapeHtml(tag.note)+'</small></button>';
+      return '<button type="button" class="gm-new-home-event-tag gm-new-home-event-tag--'+tag.key+(active?' is-active':'')+'" data-event-tag="'+tag.key+'" aria-pressed="'+(active?'true':'false')+'"><span class="gm-new-home-event-tag-copy"><strong>'+escapeHtml(tag.label)+'</strong><small>'+escapeHtml(tag.note)+'</small></span><span class="gm-new-home-event-tag-icon">'+eventTagIcon(tag.key)+'</span></button>';
     }).join('')+
-      '<button type="button" class="gm-new-home-event-tag gm-new-home-event-propose" data-event-propose aria-label="Proponi il tuo evento"><strong>Proponi il tuo evento</strong><small>Contattaci</small></button>';
+      '<button type="button" class="gm-new-home-event-tag gm-new-home-event-propose" data-event-propose aria-label="Proponi il tuo evento"><span class="gm-new-home-event-tag-copy"><strong>Proponi il tuo evento</strong><small>Contattaci</small></span><span class="gm-new-home-event-tag-icon">'+eventTagIcon('propose')+'</span></button>';
     var periods = EVENT_PERIODS.map(function(period){
       var active = eventSearchState.period === period.key;
       return '<button type="button" class="gm-new-home-event-period'+(active?' is-active':'')+'" data-event-period="'+period.key+'" aria-pressed="'+(active?'true':'false')+'">'+escapeHtml(period.label)+'</button>';
