@@ -1281,6 +1281,22 @@
     }catch(_){ return ''; }
   }
 
+  function resolveEventTagKey(item, fallback){
+    var key = String(item && item.eventTag || fallback || '');
+    if(EVENT_TAGS.some(function(tag){ return tag.key === key; })) return key;
+    var text = String(item && item.category || '').toLocaleLowerCase();
+    if(/muse|mostr|exhibit|expos|museum|\u043c\u0443\u0437\u0435|\u0432\u044b\u0441\u0442\u0430\u0432|\u0645\u062a\u062d\u0641|\u0645\u0639\u0631\u0636|\u535a\u7269|\u5c55\u89c8/.test(text)) return 'museums';
+    if(/cinema|cine|film|screen|\u043a\u0438\u043d\u043e|\u0633\u064a\u0646\u0645\u0627|\u7535\u5f71/.test(text)) return 'cinema';
+    if(/teatr|theatr|\u0442\u0435\u0430\u0442\u0440|\u0645\u0633\u0631\u062d|\u620f\u5267|\u5267\u9662/.test(text)) return 'theatre';
+    if(/music|musica|concert|\u043c\u0443\u0437\u044b\u043a|\u043a\u043e\u043d\u0446\u0435\u0440\u0442|\u0645\u0648\u0633\u064a\u0642|\u062d\u0641\u0644|\u97f3\u4e50/.test(text)) return 'music';
+    if(/palazz|palace|villa|palais|\u0434\u0432\u043e\u0440\u0435\u0446|\u0642\u0635\u0631|\u5bab/.test(text)) return 'palaces';
+    if(/heritage|patrimon|storico|historic|chies|church|fort|\u0438\u0441\u0442\u043e\u0440|\u0446\u0435\u0440\u043a|\u0444\u043e\u0440\u0442|\u062a\u0631\u0627\u062b|\u0643\u0646\u064a\u0633|\u062d\u0635\u0646|\u5386\u53f2|\u6559\u5802|\u5821/.test(text)) return 'heritage';
+    if(/festival|manifest|\u0444\u0435\u0441\u0442\u0438\u0432|\u0645\u0647\u0631\u062c\u0627\u0646|\u8282\u5e86/.test(text)) return 'festivals';
+    if(/mercat|market|fair|feria|foire|\u0440\u044b\u043d\u043e\u043a|\u044f\u0440\u043c\u0430\u0440|\u0633\u0648\u0642|\u5e02\u573a|\u5c55\u4f1a/.test(text)) return 'markets';
+    if(/sport|sportiv|\u0441\u043f\u043e\u0440\u0442|\u0631\u064a\u0627\u0636|\u4f53\u80b2/.test(text)) return 'sport';
+    return '';
+  }
+
   function eventFavoriteKey(item){
     item = item || {};
     var url = safeEventUrl(item.url);
@@ -1327,6 +1343,7 @@
       url:safeEventUrl(item.url),
       sourceName:String(item.sourceName || ''),
       mapVenue:String(item.mapVenue || ''),
+      eventTag:resolveEventTagKey(item, eventSearchState.tags[0] || ''),
       savedAt:new Date().toISOString(),
       savedLanguage:currentLanguage()
     };
@@ -1352,13 +1369,14 @@
       var url = safeEventUrl(item.url);
       var mapName = item.mapVenue || item.venue || '';
       var hasMap = !!findEventVenueTarget(mapName);
-      var meta = [item.category || '', item.municipality || ''].filter(Boolean).join(' · ');
+      var meta = [item.category || '', item.municipality || ''].filter(Boolean).join(' \u00b7 ');
       var date = formatEventDateRange(item);
-      var timing = [item.time || '', item.duration || ''].filter(Boolean).join(' · ');
+      var timing = [item.time || '', item.duration || ''].filter(Boolean).join(' \u00b7 ');
       var favorite = isEventFavorite(item, favorites);
+      var tagKey = resolveEventTagKey(item, currentView === 'events-category' ? (eventSearchState.tags[0] || '') : '');
       return ''+
-        '<article class="gm-new-home-event-card" data-event-index="'+index+'">'+
-        '  <div class="gm-new-home-event-date"><span>'+escapeHtml(date || '—')+'</span></div>'+
+        '<article class="gm-new-home-event-card" data-event-index="'+index+'"'+(tagKey ? ' data-event-tag="'+escapeHtml(tagKey)+'"' : '')+'>'+
+        '  <div class="gm-new-home-event-date"><span>'+escapeHtml(date || '\u2014')+'</span>'+(favorite ? '<span class="gm-new-home-event-saved">Salvato</span>' : '')+'</div>'+
         '  <div class="gm-new-home-event-main">'+
         '    <div class="gm-new-home-event-kicker">'+escapeHtml(meta)+'</div>'+
         '    <h4>'+escapeHtml(item.title || '')+'</h4>'+
@@ -1366,7 +1384,7 @@
         (timing ? '    <div class="gm-new-home-event-time">'+escapeHtml(timing)+'</div>' : '')+
         '    <p>'+escapeHtml(item.description || '')+'</p>'+
         '    <div class="gm-new-home-event-actions">'+
-        (url ? '<a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer">Sito dell’evento</a>' : '')+
+        (url ? '<a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer">Sito dell\u2019evento</a>' : '')+
         (hasMap ? '<button type="button" data-event-map="'+index+'">Mostra sulla mappa</button>' : '')+
         '<button type="button" data-event-favorite="'+index+'">'+(favorite ? 'Rimuovi dai Preferiti' : 'Salva nei Preferiti')+'</button>'+
         '    </div>'+
@@ -1434,6 +1452,21 @@
     });
   }
 
+  function scrollToEventResults(){
+    var status = scroll && scroll.querySelector('.gm-new-home-events-status');
+    if(!scroll || !status) return;
+    setTimeout(function(){
+      if(currentView !== 'events-category' || eventSearchState.loading || !eventSearchState.searched) return;
+      var scrollRect = scroll.getBoundingClientRect();
+      var statusRect = status.getBoundingClientRect();
+      var top = Math.max(0, scroll.scrollTop + statusRect.top - scrollRect.top - 10);
+      if(typeof scroll.scrollTo === 'function'){
+        try{ scroll.scrollTo({top:top, behavior:'smooth'}); return; }catch(_){ }
+      }
+      scroll.scrollTop = top;
+    }, 60);
+  }
+
   function setEventSearchError(message){
     eventSearchState.loading = false;
     eventSearchState.searched = true;
@@ -1484,9 +1517,14 @@
       }
       eventSearchState.loading = false;
       eventSearchState.searched = true;
-      eventSearchState.results = Array.isArray(data.events) ? data.events : [];
+      var resultTag = eventSearchState.tags[0] || '';
+      eventSearchState.results = (Array.isArray(data.events) ? data.events : []).map(function(item){
+        if(item && typeof item === 'object') item.eventTag = resultTag;
+        return item;
+      });
       eventSearchState.checkedAt = data.checkedAt || new Date().toISOString();
       renderEventResults();
+      if(eventSearchState.results.length) scrollToEventResults();
     }catch(_){
       if(requestId !== eventSearchRequestId) return;
       setEventSearchError('Non è stato possibile raggiungere il servizio eventi. Controlla la connessione e riprova.');
@@ -1554,7 +1592,6 @@
       '      <label class="gm-new-home-event-area"><span>Zona</span><select data-event-area><option value="genova">Genova città</option><option value="metro">Città Metropolitana di Genova</option></select></label>'+
       '    </div>'+
       '    <div class="gm-new-home-event-search-row"><button type="button" class="gm-new-home-event-search">Cerca eventi</button><button type="button" class="gm-new-home-event-period" data-event-favorites>Preferiti ('+loadEventFavorites().length+')</button><span class="gm-new-home-event-online" aria-live="polite"></span></div>'+
-      '    <p class="gm-new-home-event-note">La ricerca è disponibile solo online. Le fonti ufficiali e i siti degli organizzatori vengono privilegiati quando disponibili.</p>'+
       '    <div class="gm-new-home-events-status" role="status" aria-live="polite"></div>'+
       '    <div class="gm-new-home-events-results"></div>'+
       '  </section>'+
