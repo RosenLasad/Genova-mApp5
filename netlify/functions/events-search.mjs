@@ -3,11 +3,6 @@ const ALLOWED_TAGS = new Set(["museums", "cinema", "theatre", "music", "palaces"
 const ALLOWED_PERIODS = new Set(["today", "weekend", "7days", "30days"]);
 const ALLOWED_AREAS = new Set(["genova", "metro"]);
 const MAX_BODY_BYTES = 90000;
-const MAX_EVENT_RESULTS = 16;
-const MAX_VENUES_TOTAL = 100;
-const MAX_VENUES_PER_TAG = 40;
-const SEARCH_BUDGET_MS = 28500;
-const MIN_RETRY_REMAINING_MS = 18000;
 
 const TAG_LABELS = {
   museums: "musei, mostre ed esposizioni",
@@ -101,21 +96,16 @@ function dateRange(todayText, period) {
 function sanitizeVenues(value) {
   const out = {};
   if (!value || typeof value !== "object") return out;
-  const entries = Object.entries(value).filter(([tag, list]) => ALLOWED_TAGS.has(tag) && Array.isArray(list));
-  if (!entries.length) return out;
-  const fairPerTagLimit = Math.max(10, Math.min(MAX_VENUES_PER_TAG, Math.floor(MAX_VENUES_TOTAL / entries.length)));
-  let total = 0;
-  for (const [tag, list] of entries) {
+  for (const [tag, list] of Object.entries(value)) {
+    if (!ALLOWED_TAGS.has(tag) || !Array.isArray(list)) continue;
     const seen = new Set();
     out[tag] = [];
-    for (const item of list) {
-      if (out[tag].length >= fairPerTagLimit || total >= MAX_VENUES_TOTAL) break;
+    for (const item of list.slice(0, 180)) {
       const name = cleanString(item, 120);
       const key = name.toLocaleLowerCase("it");
       if (!name || seen.has(key)) continue;
       seen.add(key);
       out[tag].push(name);
-      total++;
     }
   }
   return out;
@@ -137,7 +127,7 @@ function cleanEvents(events, range) {
   if (!Array.isArray(events)) return [];
   const seen = new Set();
   const out = [];
-  for (const raw of events.slice(0, 28)) {
+  for (const raw of events.slice(0, 40)) {
     if (!raw || typeof raw !== "object") continue;
     const title = cleanString(raw.title, 180);
     const venue = cleanString(raw.venue, 160);
@@ -164,7 +154,7 @@ function cleanEvents(events, range) {
     });
   }
   out.sort((a, b) => a.startDate.localeCompare(b.startDate) || a.title.localeCompare(b.title, "it"));
-  return out.slice(0, MAX_EVENT_RESULTS);
+  return out.slice(0, 24);
 }
 
 function buildPrompt({ language, tags, area, range, venues }) {
@@ -187,7 +177,7 @@ function buildPrompt({ language, tags, area, range, venues }) {
     `Dai priorita a fonti ufficiali: Comune di Genova, Citta Metropolitana, Visit Genoa, musei, teatri, cinema, fondazioni, organizzatori, enti culturali, impianti sportivi e pagine ufficiali dell'evento. Usa fonti generiche solo come integrazione.\n` +
     `NON includere un evento se non riesci a verificare una data compatibile con il periodo richiesto. NON inventare URL, orari, luoghi o descrizioni. Se una pagina e vecchia o non conferma l'edizione corrente, escludila.\n` +
     `Preferisci come url la pagina ufficiale specifica dell'evento; se non esiste usa la pagina ufficiale del programma/calendario che conferma l'evento.\n` +
-    `Ordina gli eventi per data e limita il risultato a un massimo di ${MAX_EVENT_RESULTS} elementi. Evita duplicati. Mantieni le descrizioni brevi: una o due frasi.\n\n` +
+    `Ordina gli eventi per data e limita il risultato a un massimo di 24 elementi. Evita duplicati.\n\n` +
     `Questi sono i luoghi gia presenti in Genova mApp, raggruppati per tipo. Usali come indizi di ricerca. Se un evento si svolge chiaramente in uno di questi luoghi, imposta mapVenue ESATTAMENTE con il nome presente nell'elenco; altrimenti lascia mapVenue vuoto.\n${venueSections}\n\n` +
     `Per gli eventi diffusi, festival, mercati e fiere cerca anche eventi che non corrispondono a un luogo dell'elenco.`;
 }
@@ -273,40 +263,6 @@ function extractRefusal(payload) {
   return "";
 }
 
-function remainingBudgetMs(startedAt) {
-  return Math.max(0, SEARCH_BUDGET_MS - (Date.now() - startedAt));
-}
-
-function canRetryWithinBudget(startedAt) {
-  return remainingBudgetMs(startedAt) >= MIN_RETRY_REMAINING_MS;
-}
-
-async function fetchWithBudget(url, options, startedAt, attempt) {
-  const remaining = remainingBudgetMs(startedAt);
-  const safety = 1200;
-  if (remaining <= safety + 500) {
-    const error = new Error("event_search_time_budget_exhausted");
-    error.name = "EventSearchTimeoutError";
-    throw error;
-  }
-  const preferred = attempt === 0 ? 27000 : 16000;
-  const timeoutMs = Math.max(1000, Math.min(preferred, remaining - safety));
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    return await fetch(url, { ...options, signal: controller.signal });
-  } catch (error) {
-    if (error && error.name === "AbortError") {
-      const timeoutError = new Error("event_search_upstream_timeout");
-      timeoutError.name = "EventSearchTimeoutError";
-      throw timeoutError;
-    }
-    throw error;
-  } finally {
-    clearTimeout(timer);
-  }
-}
-
 
 export default async (request) => {
   try {
@@ -343,10 +299,11 @@ export default async (request) => {
       model,
       store: false,
       reasoning: { effort: "low" },
-      tools: [{ type: "web_search", search_context_size: "low", user_location: { type: "approximate", city: "Genoa", region: "Liguria", country: "IT", timezone: "Europe/Rome" } }],
+      tools: [{ type: "web_search", search_context_size: "medium", user_location: { type: "approximate", city: "Genoa", region: "Liguria", country: "IT", timezone: "Europe/Rome" } }],
       tool_choice: "auto",
+      include: ["web_search_call.action.sources"],
       input: buildPrompt({ language, tags, area, range, venues }),
-      max_output_tokens: 7000,
+      max_output_tokens: 12000,
       text: {
         verbosity: "low",
         format: {
@@ -364,30 +321,15 @@ export default async (request) => {
     // Una sola ripetizione automatica: serve per errori transitori (rate limit,
     // sovraccarico, risposta incompleta o JSON eccezionalmente non leggibile),
     // ma non ripete errori definitivi come credito esaurito o permessi.
-    const searchStartedAt = Date.now();
     for (let attempt = 0; attempt < 2; attempt++) {
-      let upstream;
-      try {
-        upstream = await fetchWithBudget(responsesEndpoint, {
-          method: "POST",
-          headers: {
-            authorization: `Bearer ${apiKey}`,
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(requestBody),
-        }, searchStartedAt, attempt);
-      } catch (error) {
-        if (error && error.name === "EventSearchTimeoutError") {
-          const elapsedMs = Date.now() - searchStartedAt;
-          console.warn("Genova mApp events-search timeout:", { language, elapsedMs, attempt: attempt + 1 });
-          return json({
-            error: "search_timeout",
-            message: "La ricerca degli eventi ha superato il tempo massimo disponibile. Riprova tra qualche secondo.",
-            elapsedMs,
-          }, 504);
-        }
-        throw error;
-      }
+      const upstream = await fetch(responsesEndpoint, {
+        method: "POST",
+        headers: {
+          authorization: `Bearer ${apiKey}`,
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      });
 
       const payload = await upstream.json().catch(() => null);
       if (!upstream.ok || !payload) {
@@ -399,7 +341,7 @@ export default async (request) => {
           upstreamStatus: upstream.status,
           upstreamCode: info.code,
         };
-        if (attempt === 0 && shouldRetryUpstream(upstream.status, info.code) && canRetryWithinBudget(searchStartedAt)) {
+        if (attempt === 0 && shouldRetryUpstream(upstream.status, info.code)) {
           await sleep(retryDelayMs(upstream, attempt));
           continue;
         }
@@ -413,7 +355,7 @@ export default async (request) => {
           error: "incomplete_search_response",
           message: `OpenAI ha restituito una ricerca incompleta (${reason}). Riprova tra qualche secondo.`,
         };
-        if (attempt === 0 && reason !== "content_filter" && canRetryWithinBudget(searchStartedAt)) {
+        if (attempt === 0 && reason !== "content_filter") {
           await sleep(650);
           continue;
         }
@@ -439,7 +381,7 @@ export default async (request) => {
           error: "invalid_search_response",
           message: "OpenAI ha completato la ricerca, ma la risposta non era nel formato eventi previsto. Riprova tra qualche secondo.",
         };
-        if (attempt === 0 && canRetryWithinBudget(searchStartedAt)) {
+        if (attempt === 0) {
           await sleep(650);
           continue;
         }
@@ -454,14 +396,10 @@ export default async (request) => {
       }, 502);
     }
 
-    const cleanedEvents = cleanEvents(parsed.events, range);
-    const elapsedMs = Date.now() - searchStartedAt;
-    console.log("Genova mApp events-search success:", { language, events: cleanedEvents.length, elapsedMs });
     return json({
-      events: cleanedEvents,
+      events: cleanEvents(parsed.events, range),
       checkedAt: new Date().toISOString(),
       range,
-      elapsedMs,
       provider: configuredBaseUrl ? "netlify-ai-gateway-openai-web-search" : "openai-web-search",
     });
   } catch (error) {
