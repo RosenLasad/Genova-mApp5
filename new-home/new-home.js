@@ -31,13 +31,13 @@
 
   var EVENT_TAGS = [
     {key:'museums', label:'Musei e mostre', note:'Musei, mostre ed esposizioni', lists:['fav-list-musei','fav-list-mostre']},
-    {key:'cinema', label:'Cinema', note:'Proiezioni, rassegne e incontri', lists:['fav-list-cinema']},
-    {key:'theatre', label:'Teatro', note:'Spettacoli e appuntamenti teatrali', lists:['fav-list-teatri']},
-    {key:'music', label:'Musica', note:'Concerti e appuntamenti musicali', lists:['fav-list-teatri','fav-list-palazzi','fav-list-locali','fav-list-parchi-piazze']},
     {key:'palaces', label:'Palazzi e ville', note:'Eventi in dimore e spazi storici', lists:['fav-list-palazzi']},
     {key:'heritage', label:'Patrimonio storico', note:'Chiese, forti e luoghi storici', lists:['fav-list-chiese','fav-list-forti','fav-list-palazzi']},
     {key:'festivals', label:'Festival', note:'Feste e manifestazioni', lists:['fav-list-parchi-piazze']},
     {key:'markets', label:'Mercati e fiere', note:'Mercati, fiere ed eventi diffusi', lists:['fav-list-parchi-piazze']},
+    {key:'music', label:'Musica', note:'Concerti e appuntamenti musicali', lists:['fav-list-teatri','fav-list-palazzi','fav-list-locali','fav-list-parchi-piazze']},
+    {key:'theatre', label:'Teatro', note:'Spettacoli e appuntamenti teatrali', lists:['fav-list-teatri']},
+    {key:'cinema', label:'Cinema', note:'Proiezioni, rassegne e incontri', lists:['fav-list-cinema']},
     {key:'sport', label:'Sport', note:'Gare, incontri e attività sportive', lists:['fav-list-sport']}
   ];
 
