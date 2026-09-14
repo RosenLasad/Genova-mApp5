@@ -1518,12 +1518,12 @@ html body #help-legend{
 
 @media (max-height:590px) and (orientation:portrait){
   #quick-toggles{
-    top:34px !important;
+    top:65px !important;
   }
 }
 
 @media (max-height:550px) and (orientation:portrait){
   #quick-toggles{
-    top:26px !important;
+    top:65px !important;
   }
 }
