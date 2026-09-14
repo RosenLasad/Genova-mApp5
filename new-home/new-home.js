@@ -48,6 +48,9 @@
     {key:'30days', label:'Prossimi 30 giorni'}
   ];
 
+  var EVENT_FAVORITES_STORAGE_KEY = 'gm_event_favorites_v1';
+  var EVENT_FAVORITES_LIMIT = 100;
+
   var eventSearchState = {
     tags:[],
     period:'7days',
@@ -1278,6 +1281,120 @@
     }catch(_){ return ''; }
   }
 
+  function eventFavoriteKey(item){
+    item = item || {};
+    var url = safeEventUrl(item.url);
+    return [
+      'event',
+      normalizeText(item.title || ''),
+      normalizeText(item.venue || ''),
+      String(item.startDate || ''),
+      String(item.endDate || ''),
+      url ? url.toLowerCase() : ''
+    ].join('|');
+  }
+
+  function loadEventFavorites(){
+    try{
+      var raw = localStorage.getItem(EVENT_FAVORITES_STORAGE_KEY);
+      var items = raw ? JSON.parse(raw) : [];
+      return Array.isArray(items) ? items.filter(function(item){ return item && typeof item === 'object' && item.title; }).slice(0,EVENT_FAVORITES_LIMIT) : [];
+    }catch(_){ return []; }
+  }
+
+  function saveEventFavorites(items){
+    try{ localStorage.setItem(EVENT_FAVORITES_STORAGE_KEY, JSON.stringify((items || []).slice(0,EVENT_FAVORITES_LIMIT))); }
+    catch(_){ }
+  }
+
+  function isEventFavorite(item, favorites){
+    var key = eventFavoriteKey(item);
+    return (favorites || loadEventFavorites()).some(function(saved){ return eventFavoriteKey(saved) === key; });
+  }
+
+  function snapshotEventFavorite(item){
+    item = item || {};
+    return {
+      title:String(item.title || ''),
+      category:String(item.category || ''),
+      venue:String(item.venue || ''),
+      municipality:String(item.municipality || ''),
+      startDate:String(item.startDate || ''),
+      endDate:String(item.endDate || ''),
+      time:String(item.time || ''),
+      duration:String(item.duration || ''),
+      description:String(item.description || ''),
+      url:safeEventUrl(item.url),
+      sourceName:String(item.sourceName || ''),
+      mapVenue:String(item.mapVenue || ''),
+      savedAt:new Date().toISOString(),
+      savedLanguage:currentLanguage()
+    };
+  }
+
+  function toggleEventFavorite(item){
+    var favorites = loadEventFavorites();
+    var key = eventFavoriteKey(item);
+    var index = favorites.findIndex(function(saved){ return eventFavoriteKey(saved) === key; });
+    if(index >= 0){
+      favorites.splice(index,1);
+      saveEventFavorites(favorites);
+      return false;
+    }
+    favorites.unshift(snapshotEventFavorite(item));
+    saveEventFavorites(favorites);
+    return true;
+  }
+
+  function eventCardsMarkup(items){
+    var favorites = loadEventFavorites();
+    return '<div class="gm-new-home-event-list">'+items.map(function(item,index){
+      var url = safeEventUrl(item.url);
+      var mapName = item.mapVenue || item.venue || '';
+      var hasMap = !!findEventVenueTarget(mapName);
+      var meta = [item.category || '', item.municipality || ''].filter(Boolean).join(' · ');
+      var date = formatEventDateRange(item);
+      var timing = [item.time || '', item.duration || ''].filter(Boolean).join(' · ');
+      var favorite = isEventFavorite(item, favorites);
+      return ''+
+        '<article class="gm-new-home-event-card" data-event-index="'+index+'">'+
+        '  <div class="gm-new-home-event-date"><span>'+escapeHtml(date || '—')+'</span></div>'+
+        '  <div class="gm-new-home-event-main">'+
+        '    <div class="gm-new-home-event-kicker">'+escapeHtml(meta)+'</div>'+
+        '    <h4>'+escapeHtml(item.title || '')+'</h4>'+
+        '    <div class="gm-new-home-event-venue">'+escapeHtml(item.venue || '')+'</div>'+
+        (timing ? '    <div class="gm-new-home-event-time">'+escapeHtml(timing)+'</div>' : '')+
+        '    <p>'+escapeHtml(item.description || '')+'</p>'+
+        '    <div class="gm-new-home-event-actions">'+
+        (url ? '<a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer">Sito dell’evento</a>' : '')+
+        (hasMap ? '<button type="button" data-event-map="'+index+'">Mostra sulla mappa</button>' : '')+
+        '<button type="button" data-event-favorite="'+index+'">'+(favorite ? 'Rimuovi dai Preferiti' : 'Salva nei Preferiti')+'</button>'+
+        '    </div>'+
+        (item.sourceName ? '    <small class="gm-new-home-event-source">Fonte: '+escapeHtml(item.sourceName)+'</small>' : '')+
+        '  </div>'+
+        '</article>';
+    }).join('')+'</div>';
+  }
+
+  function bindEventCardActions(root, items, onFavoriteChange){
+    if(!root) return;
+    root.querySelectorAll('[data-event-map]').forEach(function(button){
+      button.addEventListener('click', function(){
+        var item = items[Number(button.getAttribute('data-event-map'))];
+        var target = item && findEventVenueTarget(item.mapVenue || item.venue || '');
+        if(target && target.click){ close(); setTimeout(function(){ target.click(); }, 50); }
+      });
+    });
+    root.querySelectorAll('[data-event-favorite]').forEach(function(button){
+      button.addEventListener('click', function(){
+        var item = items[Number(button.getAttribute('data-event-favorite'))];
+        if(!item) return;
+        toggleEventFavorite(item);
+        if(typeof onFavoriteChange === 'function') onFavoriteChange();
+      });
+    });
+  }
+
   function renderEventResults(){
     var resultsRoot = scroll && scroll.querySelector('.gm-new-home-events-results');
     var status = scroll && scroll.querySelector('.gm-new-home-events-status');
@@ -1309,36 +1426,11 @@
       resultsRoot.innerHTML = '<div class="gm-new-home-empty">Prova ad ampliare il periodo o a selezionare altre categorie.</div>';
       return;
     }
-    resultsRoot.innerHTML = '<div class="gm-new-home-event-list">'+items.map(function(item,index){
-      var url = safeEventUrl(item.url);
-      var mapName = item.mapVenue || item.venue || '';
-      var hasMap = !!findEventVenueTarget(mapName);
-      var meta = [item.category || '', item.municipality || ''].filter(Boolean).join(' · ');
-      var date = formatEventDateRange(item);
-      var timing = [item.time || '', item.duration || ''].filter(Boolean).join(' · ');
-      return ''+
-        '<article class="gm-new-home-event-card" data-event-index="'+index+'">'+
-        '  <div class="gm-new-home-event-date"><span>'+escapeHtml(date || '—')+'</span></div>'+
-        '  <div class="gm-new-home-event-main">'+
-        '    <div class="gm-new-home-event-kicker">'+escapeHtml(meta)+'</div>'+
-        '    <h4>'+escapeHtml(item.title || '')+'</h4>'+
-        '    <div class="gm-new-home-event-venue">'+escapeHtml(item.venue || '')+'</div>'+
-        (timing ? '    <div class="gm-new-home-event-time">'+escapeHtml(timing)+'</div>' : '')+
-        '    <p>'+escapeHtml(item.description || '')+'</p>'+
-        '    <div class="gm-new-home-event-actions">'+
-        (url ? '<a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer">Sito dell’evento</a>' : '')+
-        (hasMap ? '<button type="button" data-event-map="'+index+'">Mostra sulla mappa</button>' : '')+
-        '    </div>'+
-        (item.sourceName ? '    <small class="gm-new-home-event-source">Fonte: '+escapeHtml(item.sourceName)+'</small>' : '')+
-        '  </div>'+
-        '</article>';
-    }).join('')+'</div>';
-    resultsRoot.querySelectorAll('[data-event-map]').forEach(function(button){
-      button.addEventListener('click', function(){
-        var item = items[Number(button.getAttribute('data-event-map'))];
-        var target = item && findEventVenueTarget(item.mapVenue || item.venue || '');
-        if(target && target.click){ close(); setTimeout(function(){ target.click(); }, 50); }
-      });
+    resultsRoot.innerHTML = eventCardsMarkup(items);
+    bindEventCardActions(resultsRoot, items, function(){
+      renderEventResults();
+      var favoritesButton = scroll && scroll.querySelector('[data-event-favorites]');
+      if(favoritesButton) favoritesButton.textContent = 'Preferiti ('+loadEventFavorites().length+')';
     });
   }
 
@@ -1401,6 +1493,33 @@
     }
   }
 
+  function renderEventFavorites(section, category){
+    currentView = 'events-favorites';
+    currentSection = section;
+    currentCategory = category;
+    currentAqueduct = null;
+    currentRoute = null;
+    applyTheme(section);
+    applyView(currentView);
+    title.textContent = 'Preferiti';
+    eyebrow.textContent = 'Eventi';
+    backButton.hidden = false;
+
+    var items = loadEventFavorites();
+    scroll.innerHTML = ''+
+      '<div class="gm-new-home-detail gm-new-home-events">'+
+      '  <div class="gm-new-home-detail-head"><h3>Preferiti</h3><p>Gli eventi salvati restano disponibili su questo dispositivo finché non li rimuovi.</p></div>'+
+      '  <section class="gm-new-home-events-panel">'+
+      '    <div class="gm-new-home-events-status" role="status" aria-live="polite">'+(items.length ? 'Eventi salvati: '+items.length : 'Non hai ancora salvato eventi nei Preferiti.')+'</div>'+
+      '    <div class="gm-new-home-events-results">'+(items.length ? eventCardsMarkup(items) : '<div class="gm-new-home-empty">Quando trovi un evento interessante, usa “Salva nei Preferiti”.</div>')+'</div>'+
+      '  </section>'+
+      '</div>';
+
+    var resultsRoot = scroll.querySelector('.gm-new-home-events-results');
+    bindEventCardActions(resultsRoot, items, function(){ renderEventFavorites(section, category); });
+    scroll.scrollTop = 0;
+  }
+
   function renderEventsCategory(section, category){
     currentView = 'events-category';
     currentSection = section;
@@ -1412,6 +1531,8 @@
     title.textContent = category.title;
     eyebrow.textContent = section.title;
     backButton.hidden = false;
+
+    if(eventSearchState.tags.length > 1) eventSearchState.tags = eventSearchState.tags.slice(0,1);
 
     var tags = EVENT_TAGS.map(function(tag){
       var active = eventSearchState.tags.indexOf(tag.key) >= 0;
@@ -1426,13 +1547,13 @@
       '<div class="gm-new-home-detail gm-new-home-events">'+
       '  <div class="gm-new-home-detail-head"><h3>'+escapeHtml(category.title)+'</h3><p>Trova eventi previsti o in corso a Genova utilizzando fonti online aggiornate.</p></div>'+
       '  <section class="gm-new-home-events-panel">'+
-      '    <div class="gm-new-home-events-intro"><strong>Che cosa ti interessa?</strong><p>Seleziona uno o più tipi di evento. La ricerca usa anche i luoghi già presenti sulla mappa come riferimento.</p></div>'+
+      '    <div class="gm-new-home-events-intro"><strong>Che cosa ti interessa?</strong><p>Seleziona un tipo di evento alla volta. La ricerca usa anche i luoghi già presenti sulla mappa come riferimento.</p></div>'+
       '    <div class="gm-new-home-event-tags" role="group" aria-label="Tipi di evento">'+tags+'</div>'+
       '    <div class="gm-new-home-event-controls">'+
       '      <fieldset><legend>Periodo</legend><div class="gm-new-home-event-periods">'+periods+'</div></fieldset>'+
       '      <label class="gm-new-home-event-area"><span>Zona</span><select data-event-area><option value="genova">Genova città</option><option value="metro">Città Metropolitana di Genova</option></select></label>'+
       '    </div>'+
-      '    <div class="gm-new-home-event-search-row"><button type="button" class="gm-new-home-event-search">Cerca eventi</button><span class="gm-new-home-event-online" aria-live="polite"></span></div>'+
+      '    <div class="gm-new-home-event-search-row"><button type="button" class="gm-new-home-event-search">Cerca eventi</button><button type="button" class="gm-new-home-event-period" data-event-favorites>Preferiti ('+loadEventFavorites().length+')</button><span class="gm-new-home-event-online" aria-live="polite"></span></div>'+
       '    <p class="gm-new-home-event-note">La ricerca è disponibile solo online. Le fonti ufficiali e i siti degli organizzatori vengono privilegiati quando disponibili.</p>'+
       '    <div class="gm-new-home-events-status" role="status" aria-live="polite"></div>'+
       '    <div class="gm-new-home-events-results"></div>'+
@@ -1444,11 +1565,20 @@
     scroll.querySelectorAll('[data-event-tag]').forEach(function(button){
       button.addEventListener('click', function(){
         var key = button.getAttribute('data-event-tag');
-        var index = eventSearchState.tags.indexOf(key);
-        if(index >= 0) eventSearchState.tags.splice(index,1); else eventSearchState.tags.push(key);
-        var active = eventSearchState.tags.indexOf(key) >= 0;
-        button.classList.toggle('is-active',active);
-        button.setAttribute('aria-pressed',active?'true':'false');
+        if(eventSearchState.loading) return;
+        var changed = eventSearchState.tags[0] !== key;
+        eventSearchState.tags = [key];
+        scroll.querySelectorAll('[data-event-tag]').forEach(function(other){
+          var active = other.getAttribute('data-event-tag') === key;
+          other.classList.toggle('is-active',active);
+          other.setAttribute('aria-pressed',active?'true':'false');
+        });
+        if(changed && eventSearchState.searched){
+          eventSearchState.results = [];
+          eventSearchState.searched = false;
+          eventSearchState.checkedAt = '';
+          renderEventResults();
+        }
       });
     });
     scroll.querySelectorAll('[data-event-period]').forEach(function(button){
@@ -1463,6 +1593,13 @@
     });
     areaSelect.addEventListener('change', function(){ eventSearchState.area = areaSelect.value || 'genova'; });
     scroll.querySelector('.gm-new-home-event-search').addEventListener('click', searchEventsOnline);
+    var favoritesButton = scroll.querySelector('[data-event-favorites]');
+    if(favoritesButton){
+      favoritesButton.addEventListener('click', function(){
+        renderEventFavorites(section, category);
+        pushNewHomeLevel();
+      });
+    }
 
     function syncOnlineState(){
       var label = scroll && scroll.querySelector('.gm-new-home-event-online');
@@ -1497,6 +1634,8 @@
     eventLanguageResetTimer = setTimeout(function(){
       if(currentView === 'events-category' && currentSection && currentCategory){
         renderEventsCategory(currentSection,currentCategory);
+      }else if(currentView === 'events-favorites' && currentSection && currentCategory){
+        renderEventFavorites(currentSection,currentCategory);
       }
     },20);
   }
@@ -1580,6 +1719,7 @@
     if(currentView === 'wall-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
     else if(currentView === 'aqueduct-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
     else if(currentView === 'route-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
+    else if(currentView === 'events-favorites' && currentSection && currentCategory){ renderEventsCategory(currentSection, currentCategory); }
     else if((currentView === 'category' || currentView === 'qr-category' || currentView === 'games-category' || currentView === 'events-category') && currentSection){ renderSection(currentSection); }
     else renderHome();
   }
