@@ -6,8 +6,8 @@ const MAX_BODY_BYTES = 90000;
 const MAX_EVENT_RESULTS = 16;
 const MAX_VENUES_TOTAL = 100;
 const MAX_VENUES_PER_TAG = 40;
-const SEARCH_BUDGET_MS = 20000;
-const MIN_RETRY_REMAINING_MS = 7000;
+const SEARCH_BUDGET_MS = 28500;
+const MIN_RETRY_REMAINING_MS = 18000;
 
 const TAG_LABELS = {
   museums: "musei, mostre ed esposizioni",
@@ -289,7 +289,7 @@ async function fetchWithBudget(url, options, startedAt, attempt) {
     error.name = "EventSearchTimeoutError";
     throw error;
   }
-  const preferred = attempt === 0 ? 17500 : 10000;
+  const preferred = attempt === 0 ? 27000 : 16000;
   const timeoutMs = Math.max(1000, Math.min(preferred, remaining - safety));
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
@@ -382,7 +382,7 @@ export default async (request) => {
           console.warn("Genova mApp events-search timeout:", { language, elapsedMs, attempt: attempt + 1 });
           return json({
             error: "search_timeout",
-            message: "La ricerca degli eventi sta impiegando troppo tempo. Riprova: la richiesta e stata interrotta prima del limite Netlify.",
+            message: "La ricerca degli eventi ha superato il tempo massimo disponibile. Riprova tra qualche secondo.",
             elapsedMs,
           }, 504);
         }
