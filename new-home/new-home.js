@@ -36,7 +36,7 @@
     {key:'music', label:'Musica', note:'Concerti e appuntamenti musicali', lists:['fav-list-teatri','fav-list-palazzi','fav-list-locali','fav-list-parchi-piazze']},
     {key:'palaces', label:'Palazzi e ville', note:'Eventi in dimore e spazi storici', lists:['fav-list-palazzi']},
     {key:'heritage', label:'Patrimonio storico', note:'Chiese, forti e luoghi storici', lists:['fav-list-chiese','fav-list-forti','fav-list-palazzi']},
-    {key:'festivals', label:'Festival e manifestazioni', note:'Festival, feste e grandi appuntamenti', lists:['fav-list-parchi-piazze']},
+    {key:'festivals', label:'Festival', note:'Feste e manifestazioni', lists:['fav-list-parchi-piazze']},
     {key:'markets', label:'Mercati e fiere', note:'Mercati, fiere ed eventi diffusi', lists:['fav-list-parchi-piazze']},
     {key:'sport', label:'Sport', note:'Gare, incontri e attività sportive', lists:['fav-list-sport']}
   ];
@@ -1427,7 +1427,7 @@
     }
     if(!eventSearchState.searched){
       status.className = 'gm-new-home-events-status';
-      status.textContent = navigator.onLine === false ? 'Ricerca eventi non disponibile offline.' : 'Seleziona almeno una categoria e avvia la ricerca.';
+      status.textContent = navigator.onLine === false ? 'Ricerca eventi non disponibile offline.' : '';
       resultsRoot.innerHTML = '';
       return;
     }
@@ -1585,7 +1585,7 @@
       '<div class="gm-new-home-detail gm-new-home-events">'+
       '  <div class="gm-new-home-detail-head"><h3>'+escapeHtml(category.title)+'</h3><p>Trova eventi previsti o in corso a Genova utilizzando fonti online aggiornate.</p></div>'+
       '  <section class="gm-new-home-events-panel">'+
-      '    <div class="gm-new-home-events-intro"><strong>Che cosa ti interessa?</strong><p>Seleziona un tipo di evento alla volta. La ricerca usa anche i luoghi già presenti sulla mappa come riferimento.</p></div>'+
+      '    <div class="gm-new-home-events-intro"><strong>Che cosa ti interessa?</strong><p>Seleziona una categoria e avvia la ricerca.</p></div>'+
       '    <div class="gm-new-home-event-tags" role="group" aria-label="Tipi di evento">'+tags+'</div>'+
       '    <div class="gm-new-home-event-controls">'+
       '      <fieldset><legend>Periodo</legend><div class="gm-new-home-event-periods">'+periods+'</div></fieldset>'+
