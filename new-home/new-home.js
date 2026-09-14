@@ -2052,7 +2052,20 @@
     document.addEventListener('genova:auth-changed', handleEventAuthChange);
     window.addEventListener('resize', updatePosition, {passive:true});
     window.addEventListener('popstate', handleHistoryBack);
-    open(document.getElementById('title-btn'));
+
+    // Apertura iniziale della New Home: se l'app nasce da un deep link QR,
+    // lasciamo subito libera la mappa per mostrare il relativo pannello Oggi/Ieri.
+    // I vecchi link #qr=... restano coperti per compatibilita.
+    var hasQrDeepLink = false;
+    try{
+      var startupUrl = new URL(window.location.href);
+      hasQrDeepLink = !!String(startupUrl.searchParams.get('qr') || '').trim();
+      if(!hasQrDeepLink){
+        hasQrDeepLink = /^#qr=/.test(String(startupUrl.hash || ''));
+      }
+    }catch(_){}
+
+    if(!hasQrDeepLink) open(document.getElementById('title-btn'));
   }
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, {once:true});
