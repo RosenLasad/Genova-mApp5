@@ -10,7 +10,9 @@
   function clearQrLayout() {
     activeQrPoint = null;
     panel.classList.remove("qr-point-panel");
-    panel.style.removeProperty("--qr-panel-bottom");
+    panel.style.removeProperty("--qr-panel-anchor-x");
+    panel.style.removeProperty("--qr-panel-anchor-y");
+    panel.style.removeProperty("--qr-panel-max-height");
   }
 
   function sameText(a, b) {
@@ -60,28 +62,40 @@
     return titleMatch;
   }
 
-  function updateBottomClearance() {
-    var bottomBar = document.getElementById("bottom-bar");
-    var clearance = window.innerWidth <= 768 ? 70 : 76;
+  /*
+   * Ancora il bordo inferiore del pannello poco sopra il marker QR.
+   *
+   * I marker dei singoli Punti QR usano normalmente un'icona alta 26 px con
+   * iconAnchor sul bordo inferiore. Il loro LatLng corrisponde quindi alla base
+   * dell'icona. Lasciamo 10 px di aria sopra l'icona: 26 + 10 = 36 px.
+   *
+   * Le coordinate sono calcolate sul rettangolo REALE del contenitore mappa,
+   * non sull'intera finestra del browser.
+   */
+  function updatePanelAnchor() {
+    var map = getMap();
+    if (!map) return;
 
-    if (bottomBar) {
-      var style = window.getComputedStyle(bottomBar);
-      var rect = bottomBar.getBoundingClientRect();
-      var visible =
-        style.display !== "none" &&
-        style.visibility !== "hidden" &&
-        rect.width > 0 &&
-        rect.height > 0;
+    var container = null;
+    try { container = map.getContainer && map.getContainer(); } catch (_) {}
+    if (!container || !container.getBoundingClientRect) return;
 
-      if (visible) {
-        clearance = Math.max(clearance, window.innerHeight - rect.top + 14);
-      }
-    }
+    var rect = container.getBoundingClientRect();
+    var width = Number(rect.width);
+    var height = Number(rect.height);
+    if (!isFinite(width) || !isFinite(height) || width <= 0 || height <= 0) return;
 
-    panel.style.setProperty(
-      "--qr-panel-bottom",
-      Math.min(Math.round(clearance), 150) + "px"
-    );
+    var markerX = rect.left + width * 0.50;
+    var markerY = rect.top + height * 0.70;
+    var markerIconHeight = 26;
+    var visualGap = 10;
+    var panelBottomY = markerY - markerIconHeight - visualGap;
+    var topMargin = 12;
+    var availableHeight = Math.max(180, panelBottomY - rect.top - topMargin);
+
+    panel.style.setProperty("--qr-panel-anchor-x", Math.round(markerX) + "px");
+    panel.style.setProperty("--qr-panel-anchor-y", Math.round(panelBottomY) + "px");
+    panel.style.setProperty("--qr-panel-max-height", Math.round(availableHeight) + "px");
   }
 
   function getMap() {
@@ -177,7 +191,7 @@
   function preparePanel(point) {
     activeQrPoint = point;
     panel.classList.add("qr-point-panel");
-    updateBottomClearance();
+    updatePanelAnchor();
   }
 
   function installWrapper() {
@@ -243,8 +257,10 @@
         panel.classList.contains("open") &&
         panel.classList.contains("qr-point-panel")
       ) {
-        updateBottomClearance();
-        focusQrPoint(activeQrPoint, null, { animate: false, keepZoom: true });
+        updatePanelAnchor();
+        focusQrPoint(activeQrPoint, function () {
+          updatePanelAnchor();
+        }, { animate: false, keepZoom: true });
       }
     }, 160);
   });
@@ -256,8 +272,10 @@
         panel.classList.contains("open") &&
         panel.classList.contains("qr-point-panel")
       ) {
-        updateBottomClearance();
-        focusQrPoint(activeQrPoint, null, { animate: false, keepZoom: true });
+        updatePanelAnchor();
+        focusQrPoint(activeQrPoint, function () {
+          updatePanelAnchor();
+        }, { animate: false, keepZoom: true });
       }
     }, 320);
   });
