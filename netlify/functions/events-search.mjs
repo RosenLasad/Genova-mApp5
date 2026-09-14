@@ -1,8 +1,15 @@
+import { getStore, getDeployStore } from "@netlify/blobs";
+
 const ALLOWED_LANGS = new Set(["it", "en", "es", "fr", "ar", "ru", "zh", "lij"]);
 const ALLOWED_TAGS = new Set(["museums", "cinema", "theatre", "music", "palaces", "heritage", "festivals", "markets", "sport"]);
 const ALLOWED_PERIODS = new Set(["today", "weekend", "7days", "30days"]);
 const ALLOWED_AREAS = new Set(["genova", "metro"]);
 const MAX_BODY_BYTES = 90000;
+const EVENT_USAGE_STORE = "genova-mapp-events-usage-v1";
+const EVENT_SEARCH_WINDOW_MS = 24 * 60 * 60 * 1000;
+const EVENT_PENDING_TTL_MS = 2 * 60 * 1000;
+const DEFAULT_USER_SEARCH_LIMIT = 5;
+const DEFAULT_GLOBAL_SEARCH_LIMIT = 500;
 
 const TAG_LABELS = {
   museums: "musei, mostre ed esposizioni",
@@ -212,6 +219,162 @@ const EVENT_SCHEMA = {
   required: ["events"],
 };
 
+function netlifyEnv(name) {
+  try {
+    return globalThis.Netlify?.env?.get(name) || "";
+  } catch {
+    return "";
+  }
+}
+
+function numericLimit(name, fallback) {
+  const raw = netlifyEnv(name);
+  if (!raw) return fallback;
+  const value = Number(raw);
+  if (!Number.isFinite(value)) return fallback;
+  if (value <= 0) return 0;
+  return Math.max(1, Math.min(Math.floor(value), 100000));
+}
+
+function userSearchLimit() {
+  return numericLimit("OPENAI_EVENTS_USER_24H_LIMIT", DEFAULT_USER_SEARCH_LIMIT);
+}
+
+function globalSearchLimit() {
+  return numericLimit("OPENAI_EVENTS_GLOBAL_24H_LIMIT", DEFAULT_GLOBAL_SEARCH_LIMIT);
+}
+
+function usageStore() {
+  const context = globalThis.Netlify?.context?.deploy?.context || netlifyEnv("CONTEXT");
+  const options = { name: EVENT_USAGE_STORE, consistency: "strong" };
+  return context === "production" ? getStore(options) : getDeployStore(options);
+}
+
+async function authenticatedUser(request) {
+  const authorization = request.headers.get("authorization") || "";
+  if (!/^Bearer\s+\S+/i.test(authorization)) return null;
+  const identityURL = new URL("/.netlify/identity/user", request.url);
+  const response = await fetch(identityURL, {
+    headers: { authorization, accept: "application/json" },
+  });
+  if (!response.ok) return null;
+  return response.json();
+}
+
+function safeUsageUserId(value) {
+  return String(value || "").replace(/[^a-zA-Z0-9._-]/g, "_").slice(0, 120);
+}
+
+function usageRecordKey(userId, state, at, id) {
+  return `user/${safeUsageUserId(userId)}/${state}/${at}-${id}`;
+}
+
+function parseUsageRecordKey(key) {
+  const match = /^user\/([^/]+)\/(pending|used)\/(\d+)-([a-zA-Z0-9._-]+)$/.exec(String(key || ""));
+  if (!match) return null;
+  const at = Number(match[3]);
+  if (!Number.isFinite(at)) return null;
+  return { key: String(key), userId: match[1], state: match[2], at };
+}
+
+function usageExpiresAt(record) {
+  if (!record) return 0;
+  return record.state === "pending" ? record.at + EVENT_PENDING_TTL_MS : record.at + EVENT_SEARCH_WINDOW_MS;
+}
+
+function isActiveUsage(record, now) {
+  return usageExpiresAt(record) > now;
+}
+
+function sortUsage(records) {
+  return records.slice().sort((a, b) => a.at - b.at || a.key.localeCompare(b.key));
+}
+
+async function listUsageRecords(store, prefix) {
+  const result = await store.list({ prefix });
+  return (result?.blobs || []).map((item) => parseUsageRecordKey(item.key)).filter(Boolean);
+}
+
+async function cleanupUsageRecords(store, records, now) {
+  const stale = records.filter((record) => !isActiveUsage(record, now)).slice(0, 250);
+  if (!stale.length) return;
+  await Promise.allSettled(stale.map((record) => store.delete(record.key)));
+}
+
+function quotaFromRecords(records, safeUserId, limit, now) {
+  const active = sortUsage(records.filter((record) => record.userId === safeUserId && isActiveUsage(record, now)));
+  const used = active.length;
+  const remaining = limit > 0 ? Math.max(0, limit - used) : null;
+  const resetAt = active.length ? new Date(Math.min(...active.map(usageExpiresAt))).toISOString() : "";
+  return {
+    limit,
+    used,
+    remaining,
+    windowHours: 24,
+    resetAt,
+  };
+}
+
+async function eventQuotaForUser(userId) {
+  const store = usageStore();
+  const now = Date.now();
+  const safeUserId = safeUsageUserId(userId);
+  const records = await listUsageRecords(store, `user/${safeUserId}/`);
+  await cleanupUsageRecords(store, records, now);
+  return quotaFromRecords(records, safeUserId, userSearchLimit(), now);
+}
+
+function reservationId() {
+  try { return crypto.randomUUID(); } catch { return `${Date.now()}-${Math.random().toString(36).slice(2)}`; }
+}
+
+async function reserveEventSearch(userId) {
+  const store = usageStore();
+  const now = Date.now();
+  const safeUserId = safeUsageUserId(userId);
+  const userLimit = userSearchLimit();
+  const globalLimit = globalSearchLimit();
+  const id = reservationId();
+  const pendingKey = usageRecordKey(safeUserId, "pending", now, id);
+  await store.set(pendingKey, "1");
+
+  const records = await listUsageRecords(store, "user/");
+  await cleanupUsageRecords(store, records, now);
+  const active = sortUsage(records.filter((record) => isActiveUsage(record, now)));
+  const userActive = active.filter((record) => record.userId === safeUserId);
+
+  const allowedByUser = userLimit <= 0 || userActive.slice(0, userLimit).some((record) => record.key === pendingKey);
+  const allowedByGlobal = globalLimit <= 0 || active.slice(0, globalLimit).some((record) => record.key === pendingKey);
+
+  if (!allowedByUser || !allowedByGlobal) {
+    await store.delete(pendingKey);
+    const withoutOwn = active.filter((record) => record.key !== pendingKey);
+    return {
+      allowed: false,
+      reason: allowedByUser ? "global" : "user",
+      quota: quotaFromRecords(withoutOwn, safeUserId, userLimit, now),
+    };
+  }
+
+  return { allowed: true, store, safeUserId, id, pendingKey };
+}
+
+async function releaseEventSearch(reservation) {
+  if (!reservation?.store || !reservation?.pendingKey) return;
+  try { await reservation.store.delete(reservation.pendingKey); } catch { }
+}
+
+async function completeEventSearch(reservation) {
+  if (!reservation?.store || !reservation?.pendingKey) return null;
+  const completedAt = Date.now();
+  const usedKey = usageRecordKey(reservation.safeUserId, "used", completedAt, reservation.id);
+  await reservation.store.set(usedKey, "1");
+  await reservation.store.delete(reservation.pendingKey);
+  const records = await listUsageRecords(reservation.store, `user/${reservation.safeUserId}/`);
+  await cleanupUsageRecords(reservation.store, records, completedAt);
+  return quotaFromRecords(records.concat([{ key: usedKey, userId: reservation.safeUserId, state: "used", at: completedAt }]).filter((record, index, arr) => arr.findIndex((x) => x.key === record.key) === index), reservation.safeUserId, userSearchLimit(), completedAt);
+}
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -265,8 +428,22 @@ function extractRefusal(payload) {
 
 
 export default async (request) => {
+  let reservation = null;
   try {
-    if (request.method !== "POST") return json({ error: "method_not_allowed" }, 405);
+    if (request.method !== "GET" && request.method !== "POST") return json({ error: "method_not_allowed" }, 405);
+
+    const user = await authenticatedUser(request);
+    if (!user || !user.id) {
+      return json({
+        error: "authentication_required",
+        message: "Accedi o registrati a Genova mApp per utilizzare Cerca eventi.",
+      }, 401);
+    }
+
+    if (request.method === "GET") {
+      return json({ quota: await eventQuotaForUser(user.id) });
+    }
+
     const raw = await request.text();
     if (new TextEncoder().encode(raw).length > MAX_BODY_BYTES) return json({ error: "payload_too_large" }, 413);
     let body;
@@ -280,8 +457,8 @@ export default async (request) => {
     const venues = sanitizeVenues(body.venues);
     const range = dateRange(cleanString(body.today, 10), period);
 
-    const apiKey = process.env.OPENAI_API_KEY;
-    const configuredBaseUrl = cleanString(process.env.OPENAI_BASE_URL || "", 500).replace(/\/+$/, "");
+    const apiKey = netlifyEnv("OPENAI_API_KEY");
+    const configuredBaseUrl = cleanString(netlifyEnv("OPENAI_BASE_URL"), 500).replace(/\/+$/, "");
     if (!apiKey) {
       return json({
         error: "search_not_configured",
@@ -294,7 +471,25 @@ export default async (request) => {
     // base URL may be absent; in that case use the official OpenAI endpoint.
     const baseUrl = configuredBaseUrl || "https://api.openai.com";
     const responsesEndpoint = /\/v1$/i.test(baseUrl) ? `${baseUrl}/responses` : `${baseUrl}/v1/responses`;
-    const model = process.env.OPENAI_EVENTS_MODEL || "gpt-5.6-luna";
+    const model = netlifyEnv("OPENAI_EVENTS_MODEL") || "gpt-5.6-luna";
+
+    const reserved = await reserveEventSearch(user.id);
+    if (!reserved.allowed) {
+      if (reserved.reason === "global") {
+        return json({
+          error: "event_search_global_limit_reached",
+          message: "Il servizio Eventi ha raggiunto temporaneamente il limite generale di ricerche. Riprova più tardi.",
+          quota: reserved.quota,
+        }, 429);
+      }
+      return json({
+        error: "event_search_limit_reached",
+        message: "Hai raggiunto il limite di 5 ricerche nelle ultime 24 ore.",
+        quota: reserved.quota,
+      }, 429);
+    }
+    reservation = reserved;
+
     const requestBody = {
       model,
       store: false,
@@ -345,6 +540,8 @@ export default async (request) => {
           await sleep(retryDelayMs(upstream, attempt));
           continue;
         }
+        await releaseEventSearch(reservation);
+        reservation = null;
         return json(lastFailure, 502);
       }
 
@@ -359,12 +556,16 @@ export default async (request) => {
           await sleep(650);
           continue;
         }
+        await releaseEventSearch(reservation);
+        reservation = null;
         return json(lastFailure, 502);
       }
 
       const refusal = extractRefusal(payload);
       if (refusal) {
         console.warn("Genova mApp events-search refusal:", refusal);
+        await releaseEventSearch(reservation);
+        reservation = null;
         return json({
           error: "search_refused",
           message: "La ricerca non ha prodotto risultati utilizzabili. Prova con un'altra combinazione di categorie o periodo.",
@@ -385,24 +586,32 @@ export default async (request) => {
           await sleep(650);
           continue;
         }
+        await releaseEventSearch(reservation);
+        reservation = null;
         return json(lastFailure, 502);
       }
     }
 
     if (!parsed) {
+      await releaseEventSearch(reservation);
+      reservation = null;
       return json(lastFailure || {
         error: "invalid_search_response",
         message: "Non e stato possibile ottenere una risposta eventi valida.",
       }, 502);
     }
 
+    const quota = await completeEventSearch(reservation);
+    reservation = null;
     return json({
       events: cleanEvents(parsed.events, range),
       checkedAt: new Date().toISOString(),
       range,
+      quota,
       provider: configuredBaseUrl ? "netlify-ai-gateway-openai-web-search" : "openai-web-search",
     });
   } catch (error) {
+    if (reservation) await releaseEventSearch(reservation);
     console.error("Genova mApp events-search:", error);
     return json({
       error: "server_error",

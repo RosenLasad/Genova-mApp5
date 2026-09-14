@@ -76,7 +76,8 @@
     searched:false,
     loading:false,
     language:'',
-    checkedAt:''
+    checkedAt:'',
+    quota:null
   };
 
   var SECTIONS = [
@@ -182,6 +183,7 @@
   var historyDepth = 0;
   var closingHistoryNavigation = false;
   var eventSearchRequestId = 0;
+  var eventQuotaRequestId = 0;
   var eventLanguageResetTimer = 0;
 
   function escapeHtml(value){
@@ -1430,6 +1432,70 @@
     });
   }
 
+  function eventCurrentUser(){
+    try{
+      return window.GenovaAuth && typeof window.GenovaAuth.getUser === 'function' ? window.GenovaAuth.getUser() : null;
+    }catch(_){ return null; }
+  }
+
+  async function eventAuthToken(){
+    if(!window.GenovaAuth || typeof window.GenovaAuth.token !== 'function') return null;
+    if(!eventCurrentUser()) return null;
+    try{ return await window.GenovaAuth.token(); }
+    catch(_){ return null; }
+  }
+
+  function eventQuotaText(quota){
+    if(!quota || !(Number(quota.limit) > 0) || quota.remaining == null) return '';
+    return 'Ricerche disponibili: '+Math.max(0,Number(quota.remaining)||0)+' su '+Math.max(0,Number(quota.limit)||0)+' nelle ultime 24 ore.';
+  }
+
+  function eventQuotaResetText(quota){
+    if(!quota || !quota.resetAt) return '';
+    try{
+      var date = new Date(quota.resetAt);
+      if(Number.isNaN(date.getTime())) return '';
+      return 'Nuova ricerca disponibile: '+new Intl.DateTimeFormat(eventLanguageTag(),{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}).format(date)+'.';
+    }catch(_){ return ''; }
+  }
+
+  function eventAuthRequiredMessage(){
+    return 'Accedi o registrati a Genova mApp per utilizzare Cerca eventi. Ogni account può effettuare fino a 5 ricerche nelle ultime 24 ore.';
+  }
+
+  function openEventLogin(){
+    try{
+      if(window.GenovaAuth && typeof window.GenovaAuth.open === 'function') window.GenovaAuth.open('login');
+    }catch(_){ }
+  }
+
+  async function refreshEventQuota(){
+    var requestId = ++eventQuotaRequestId;
+    if(!eventCurrentUser()){
+      eventSearchState.quota = null;
+      if(currentView === 'events-category') renderEventResults();
+      return;
+    }
+    var jwt = await eventAuthToken();
+    if(requestId !== eventQuotaRequestId) return;
+    if(!jwt){
+      eventSearchState.quota = null;
+      if(currentView === 'events-category') renderEventResults();
+      return;
+    }
+    try{
+      var response = await fetch('/.netlify/functions/events-search', {
+        method:'GET',
+        headers:{'accept':'application/json','authorization':'Bearer '+jwt,'cache-control':'no-store'}
+      });
+      var data = await response.json().catch(function(){ return {}; });
+      if(requestId !== eventQuotaRequestId) return;
+      if(response.ok && data && data.quota) eventSearchState.quota = data.quota;
+      else if(response.status === 401) eventSearchState.quota = null;
+      if(currentView === 'events-category') renderEventResults();
+    }catch(_){ }
+  }
+
   function renderEventResults(){
     var resultsRoot = scroll && scroll.querySelector('.gm-new-home-events-results');
     var status = scroll && scroll.querySelector('.gm-new-home-events-status');
@@ -1444,7 +1510,9 @@
     }
     if(!eventSearchState.searched){
       status.className = 'gm-new-home-events-status';
-      status.textContent = navigator.onLine === false ? 'Ricerca eventi non disponibile offline.' : '';
+      if(navigator.onLine === false) status.textContent = 'Ricerca eventi non disponibile offline.';
+      else if(!eventCurrentUser()) status.textContent = eventAuthRequiredMessage();
+      else status.textContent = eventQuotaText(eventSearchState.quota);
       resultsRoot.innerHTML = '';
       return;
     }
@@ -1457,6 +1525,8 @@
         status.textContent += ' · Aggiornato '+new Intl.DateTimeFormat(eventLanguageTag(),{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}).format(checked);
       }catch(_){ }
     }
+    var quotaText = eventQuotaText(eventSearchState.quota);
+    if(quotaText) status.textContent += (status.textContent ? ' · ' : '')+quotaText;
     if(!items.length){
       resultsRoot.innerHTML = '<div class="gm-new-home-empty">Prova ad ampliare il periodo o a selezionare altre categorie.</div>';
       return;
@@ -1503,6 +1573,17 @@
     if(eventSearchState.loading) return;
     if(navigator.onLine === false){ setEventSearchError('Ricerca eventi non disponibile offline. Connettiti a Internet e riprova.'); return; }
     if(!eventSearchState.tags.length){ setEventSearchError('Seleziona almeno una categoria di eventi.'); return; }
+    if(!eventCurrentUser()){
+      setEventSearchError(eventAuthRequiredMessage());
+      setTimeout(openEventLogin,80);
+      return;
+    }
+    var jwt = await eventAuthToken();
+    if(!jwt){
+      setEventSearchError(eventAuthRequiredMessage());
+      setTimeout(openEventLogin,80);
+      return;
+    }
     eventSearchState.loading = true;
     eventSearchState.searched = false;
     eventSearchState.results = [];
@@ -1520,20 +1601,34 @@
     try{
       var response = await fetch('/.netlify/functions/events-search', {
         method:'POST',
-        headers:{'content-type':'application/json','accept':'application/json'},
+        headers:{'content-type':'application/json','accept':'application/json','authorization':'Bearer '+jwt,'cache-control':'no-store'},
         body:JSON.stringify(payload)
       });
       var data = await response.json().catch(function(){ return {}; });
       if(requestId !== eventSearchRequestId) return;
       if(!response.ok){
-        var errorMessage = data && data.error === 'search_not_configured'
-          ? 'La ricerca online degli eventi è pronta nell’app, ma deve ancora essere collegata al servizio di ricerca sul server.'
-          : (data && data.message ? data.message : 'Non è stato possibile completare la ricerca degli eventi.');
+        if(data && data.quota) eventSearchState.quota = data.quota;
+        var errorMessage;
+        if(data && data.error === 'authentication_required'){
+          errorMessage = eventAuthRequiredMessage();
+          setTimeout(openEventLogin,80);
+        }else if(data && data.error === 'event_search_limit_reached'){
+          errorMessage = 'Hai raggiunto il limite di 5 ricerche nelle ultime 24 ore.';
+          var resetText = eventQuotaResetText(data.quota);
+          if(resetText) errorMessage += ' '+resetText;
+        }else if(data && data.error === 'event_search_global_limit_reached'){
+          errorMessage = 'Il servizio Eventi ha raggiunto temporaneamente il limite generale di ricerche. Riprova più tardi.';
+        }else if(data && data.error === 'search_not_configured'){
+          errorMessage = 'La ricerca online degli eventi è pronta nell’app, ma deve ancora essere collegata al servizio di ricerca sul server.';
+        }else{
+          errorMessage = data && data.message ? data.message : 'Non è stato possibile completare la ricerca degli eventi.';
+        }
         setEventSearchError(errorMessage);
         return;
       }
       eventSearchState.loading = false;
       eventSearchState.searched = true;
+      if(data && data.quota) eventSearchState.quota = data.quota;
       var resultTag = eventSearchState.tags[0] || '';
       eventSearchState.results = (Array.isArray(data.events) ? data.events : []).map(function(item){
         if(item && typeof item === 'object') item.eventTag = resultTag;
@@ -1674,7 +1769,17 @@
     window.addEventListener('offline',syncOnlineState,{once:true});
     syncOnlineState();
     renderEventResults();
+    refreshEventQuota();
     scroll.scrollTop = 0;
+  }
+
+  function handleEventAuthChange(){
+    eventQuotaRequestId++;
+    eventSearchState.quota = null;
+    if(currentView === 'events-category'){
+      renderEventResults();
+      refreshEventQuota();
+    }
   }
 
   function resetEventsAfterLanguageChange(){
@@ -1936,6 +2041,7 @@
     if(window.GMNewHomeI18n) window.GMNewHomeI18n.attach(overlay, [HISTORY_LAYERS, AQUEDUCT_DETAIL_UI, ROUTE_DETAIL_UI]);
     document.addEventListener('app:set-lang', resetEventsAfterLanguageChange);
     window.addEventListener('i18n:changed', resetEventsAfterLanguageChange);
+    document.addEventListener('genova:auth-changed', handleEventAuthChange);
     window.addEventListener('resize', updatePosition, {passive:true});
     window.addEventListener('popstate', handleHistoryBack);
     open(document.getElementById('title-btn'));
