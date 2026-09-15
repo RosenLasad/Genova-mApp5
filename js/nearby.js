@@ -153,7 +153,7 @@
     metro:{icon:'icons/come-muoversi/metropolitana.svg', defaultOn:false, arrays:['METRO_STATIONS'], index:'__FAV_INDEX_METRO'},
     trains:{icon:'icons/come-muoversi/treni.svg', defaultOn:false, arrays:['TRAIN_STATIONS'], index:'__FAV_INDEX_TRENI'},
     funi:{icon:'icons/come-muoversi/impianti-verticali.svg', defaultOn:false, arrays:['FUNI_POINTS'], index:'__FAV_INDEX_FUNI'},
-    sea:{icon:'icons/come-muoversi/navi-battelli.svg', defaultOn:false, arrays:['MARE_POINTS'], index:'__FAV_INDEX_MARE'},
+    sea:{icon:'icons/come-muoversi/navi-battelli.svg', defaultOn:false, arrays:['__GM_MARE_POINTS']},
     air:{icon:'icons/come-muoversi/aereo.svg', defaultOn:false, arrays:['AEREO_POINTS'], index:'__FAV_INDEX_AEREO'}
   };
 
@@ -369,10 +369,20 @@
     if(category === 'museums' && typeof window.museumSpecialPopups === 'function'){
       try{ window.museumSpecialPopups(source, marker); }catch(_e){}
     }
+    if(category === 'sea' && typeof window.__GM_MARE_POPUP_HTML === 'function'){
+      try{
+        marker.bindPopup(window.__GM_MARE_POPUP_HTML(source), {className:'mh-popup'});
+      }catch(_e){}
+    }
     if(!marker.getPopup || !marker.getPopup()){
       marker.bindPopup(fallbackPopupHtml(point), {className:'mh-popup', maxWidth:370});
     }
     marker.on('popupopen', function(ev){
+      try{
+        if(category === 'sea' && typeof window.__GM_MARE_POPUP_HTML === 'function'){
+          ev.popup.setContent(window.__GM_MARE_POPUP_HTML(source));
+        }
+      }catch(_e){}
       try{
         if(window.GenovaPlacePopup && typeof window.GenovaPlacePopup.decorate === 'function'){
           window.GenovaPlacePopup.decorate(ev.popup);

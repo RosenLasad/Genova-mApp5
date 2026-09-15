@@ -5,6 +5,49 @@
   var mapRef      = null;
   var mareMarkers = [];
 
+  // Fonte canonica dei quattro punti usati dal layer "Navi e battelli".
+  // La esponiamo anche agli strumenti esterni (es. "Vicino a me") in modo
+  // che non debbano usare il vecchio array MARE_POINTS dei Preferiti.
+  var MARE_MAP_POINTS = [
+    {
+      id:   'terminal_traghetti',
+      name: 'Terminal Traghetti',
+      addr: 'Piazzale dei Traghetti Iqbal Masih, 16126 Genova.',
+      url:  'https://www.portsofgenoa.com/it',
+      lat:  44.410861509772516,
+      lng:  8.909000848098751
+    },
+    {
+      id:   'terminal_crociere',
+      name: 'Terminal Crociere',
+      addr: 'Piazzale dei Traghetti Iqbal Masih, 16126 Genova.',
+      url:  'https://www.smge.it/',
+      lat:  44.41403997760142,
+      lng:  8.918763277125333
+    },
+    {
+      id:   'golfo_paradiso',
+      name: 'Battelli Golfo Paradiso',
+      addr: 'Calata Mandraccio, 16128 Genova.',
+      url:  'http://www.golfoparadiso.it/',
+      lat:  44.40834000106329,
+      lng:  8.925844033875116
+    },
+    {
+      id:   'navebus',
+      name: 'Navebus',
+      addr: 'Lungomare di Pegli, Genova GE',
+      url:  'https://www.amt.genova.it/amt/trasporto-multimodale/navebus/',
+      lat:  44.424590682110654,
+      lng:  8.81937896387239
+    }
+  ];
+
+  try{
+    window.__GM_MARE_POINTS = MARE_MAP_POINTS;
+    window.__GM_MARE_POPUP_HTML = popupHTML;
+  }catch(_){}
+
   function ensureMap(){
     if (mareLayer && mapRef && typeof L !== 'undefined') return true;
     try{
@@ -145,41 +188,8 @@
       html: iconHTML
     });
 
-    // I 4 punti "Mare"
-    var points = [
-      {
-        id:   'terminal_traghetti',
-        name: 'Terminal Traghetti',
-        addr: 'Piazzale dei Traghetti Iqbal Masih, 16126 Genova.',
-        url:  'https://www.portsofgenoa.com/it',
-        lat:  44.410861509772516,
-        lng:  8.909000848098751
-      },
-      {
-        id:   'terminal_crociere',
-        name: 'Terminal Crociere',
-        addr: 'Piazzale dei Traghetti Iqbal Masih, 16126 Genova.',
-        url:  'https://www.smge.it/',
-        lat:  44.41403997760142,
-        lng:  8.918763277125333
-      },
-      {
-        id:   'golfo_paradiso',
-        name: 'Battelli Golfo Paradiso',
-        addr: 'Calata Mandraccio, 16128 Genova.',
-        url:  'http://www.golfoparadiso.it/',
-        lat:  44.40834000106329,
-        lng:  8.925844033875116
-      },
-      {
-        id:   'navebus',
-        name: 'Navebus',
-        addr: 'Lungomare di Pegli, Genova GE',
-        url:  'https://www.amt.genova.it/amt/trasporto-multimodale/navebus/',
-        lat:  44.424590682110654,
-        lng:  8.81937896387239
-      }
-    ];
+    // Usa la stessa fonte canonica esposta anche a "Vicino a me".
+    var points = MARE_MAP_POINTS;
 
     points.forEach(function(p){
       var lat = parseFloat(p.lat), lng = parseFloat(p.lng);
