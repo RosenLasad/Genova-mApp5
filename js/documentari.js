@@ -102,6 +102,9 @@
   var docsById = {};
   var markersDocById = {};
   var groupDoc = null;
+  // Espone i marker originali dei MiniDoc agli strumenti esterni (es. "Vicino a me").
+  // L'oggetto viene popolato da buildMarkers senza attivare il layer globale.
+  try{ window.__GM_DOC_MARKERS = markersDocById; }catch(_e){}
 
   var DEFAULT_FILES = [
     'punti_doc/punti_doc_piazza_de_ferrari.txt',

@@ -1,6 +1,7 @@
-/* Genova mApp - "Vicino a me" / raggio 300 m - fase 1
+/* Genova mApp - "Vicino a me" / raggio 300 m - fase 1.1
    Mostra in un layer indipendente i punti selezionati entro 300 m dal GPS.
-   Non modifica i normali toggle/layer della mappa e non apre popup. */
+   I marker usano le stesse icone delle categorie normali e restano cliccabili.
+   Non modifica i normali toggle/layer della mappa. */
 (function(){
   'use strict';
   if(window.__GENOVA_NEARBY_V1__) return;
@@ -247,7 +248,11 @@
 
     if(category === 'qr'){
       (window.__QR_SOURCES || []).forEach(function(src){
-        (src && Array.isArray(src.children) ? src.children : []).forEach(function(item){ pushPoint(out, seen, category, item); });
+        (src && Array.isArray(src.children) ? src.children : []).forEach(function(item){
+          var wrapped = Object.assign({}, item || {});
+          wrapped.__gmQrParent = src && src.parent ? src.parent : {};
+          pushPoint(out, seen, category, wrapped);
+        });
       });
       return out;
     }
@@ -274,13 +279,170 @@
     return out;
   }
 
+  var MARKER_VISUALS = {
+    minidoc:{ className:'doc-ico', html:'<div class="past-map-marker past-marker-minidoc"><img src="icons/passato/minidoc.svg" alt=""></div>' },
+    forts:{ className:'forti-marker', html:'<div class="past-map-marker past-marker-forts"><img src="icons/passato/forti.svg" alt=""></div>' },
+    museums:{ className:'museum-ico', html:'<div class="past-map-marker past-marker-museums"><img src="icons/passato/musei.svg" alt=""></div>' },
+    churches:{ className:'chiese-marker', html:'<div class="past-map-marker past-marker-churches"><img src="icons/passato/chiese.svg" alt=""></div>' },
+    palaces:{ className:'palazzi-marker', html:'<div class="past-map-marker past-marker-palaces"><img src="icons/passato/palazzi.svg" alt=""></div>' },
+    exhibitions:{ className:'mostre-marker', html:'<div class="entertainment-map-marker entertainment-marker-exhibitions"><img src="icons/intrattenimento/mostre.svg" alt=""></div>' },
+    theatres:{ className:'teatri-marker', html:'<div class="entertainment-map-marker entertainment-marker-theater"><img src="icons/intrattenimento/teatri.svg" alt=""></div>' },
+    cinemas:{ className:'cinema-marker', html:'<div class="entertainment-map-marker entertainment-marker-cinema"><img src="icons/intrattenimento/cinema.svg" alt=""></div>' },
+    parks:{ className:'parks-ico', html:'<div class="entertainment-map-marker entertainment-marker-parks"><img src="icons/intrattenimento/parchi-piazze.svg" alt=""></div>' },
+    sport:{ className:'sport-marker', html:'<div class="entertainment-map-marker entertainment-marker-sport"><img src="icons/intrattenimento/sport.svg" alt=""></div>' },
+    bus:{ className:'bus-ico', html:'<div class="transport-map-marker transport-marker-bus"><img src="icons/come-muoversi/autobus.svg" alt=""></div>' },
+    metro:{ className:'metro-ico', html:'<div class="transport-map-marker transport-marker-metro"><img src="icons/come-muoversi/metropolitana.svg" alt=""></div>' },
+    trains:{ className:'train-ico', html:'<div class="transport-map-marker transport-marker-train"><img src="icons/come-muoversi/treni.svg" alt=""></div>' },
+    funi:{ className:'funi-ico', html:'<div class="transport-map-marker transport-marker-funi"><img src="icons/come-muoversi/impianti-verticali.svg" alt=""></div>' },
+    sea:{ className:'mare-marker', html:'<div class="transport-map-marker transport-marker-sea"><img src="icons/come-muoversi/navi-battelli.svg" alt=""></div>' },
+    air:{ className:'aereo-marker', html:'<div class="transport-map-marker transport-marker-air"><img src="icons/come-muoversi/aereo.svg" alt=""></div>' }
+  };
+
+  var FOOD_VISUALS = {
+    venues:{ className:'locali-marker locali-marker-locale', icon:'icons/mangiare-dormire/marker-01-locali.svg' },
+    restaurants:{ className:'locali-marker locali-marker-ristorante', icon:'icons/mangiare-dormire/marker-02-ristoranti.svg' },
+    takeaway:{ className:'locali-marker locali-marker-take-away', icon:'icons/mangiare-dormire/marker-03-take-away.svg' },
+    lodging:{ className:'locali-marker locali-marker-alloggio', icon:'icons/mangiare-dormire/marker-04-alloggi.svg' }
+  };
+
   function categoryIcon(category){
+    if(category === 'qr'){
+      return L.icon({
+        iconUrl:'qr_azzurri/marker-azzurro-qr-notch-24.svg',
+        iconSize:[24,26], iconAnchor:[12,26], popupAnchor:[0,-22], className:'qr-azzurro-icon'
+      });
+    }
+    if(FOOD_VISUALS[category]){
+      var food = FOOD_VISUALS[category];
+      return L.divIcon({
+        className:food.className,
+        html:'<img class="food-marker-icon" src="'+food.icon+'" alt="">',
+        iconSize:[30,30], iconAnchor:[15,15], popupAnchor:[0,-13]
+      });
+    }
+    var visual = MARKER_VISUALS[category];
+    if(visual){
+      return L.divIcon({
+        className:visual.className,
+        html:visual.html,
+        iconSize:[30,30], iconAnchor:[15,15], popupAnchor:[0,-15]
+      });
+    }
     var def = CATEGORIES[category] || CATEGORIES.qr;
     return L.divIcon({
-      className:'gm-nearby-marker',
-      html:'<span class="gm-nearby-marker-shell"><img src="'+def.icon+'" alt="" aria-hidden="true"></span>',
-      iconSize:[34,34], iconAnchor:[17,17]
+      className:'gm-nearby-marker-fallback',
+      html:'<img src="'+def.icon+'" alt="">',
+      iconSize:[30,30], iconAnchor:[15,15], popupAnchor:[0,-15]
     });
+  }
+
+  function escHtml(value){
+    return String(value == null ? '' : value)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  }
+
+  function fallbackPopupHtml(point){
+    var source = point && point.source || {};
+    var name = point && point.name || pointName(source) || '';
+    var desc = textValue(source.desc || source.descr || source.description || source.info || '');
+    var addr = textValue(source.addr || source.address || source.indirizzo || '');
+    var img = textValue(source.img || source.image || source.photo || '');
+    var url = textValue(source.url || source.site || source.website || '');
+    var html = '<div class="mh-popup"><div class="mh-popup-header"><span class="mh-popup-title">'+escHtml(name)+'</span></div><div class="mh-popup-body">';
+    if(img) html += '<div class="mh-popup-img"><img src="'+escHtml(img)+'" alt="'+escHtml(name)+'"></div>';
+    if(desc) html += '<p class="mh-popup-desc">'+escHtml(desc)+'</p>';
+    if(addr) html += '<p class="mh-popup-addr">'+escHtml(addr)+'</p>';
+    if(url) html += '<div class="mh-popup-link"><a href="'+escHtml(url)+'" target="_blank" rel="noopener">Info</a></div>';
+    return html + '</div></div>';
+  }
+
+  function bindStandardPopup(marker, point, category){
+    if(!marker || !point) return;
+    var source = point.source || {};
+    marker._mhData = source;
+    if(category === 'parks') marker._genovaParkData = source;
+    if(FOOD_VISUALS[category]){
+      marker._genovaLocaliData = source;
+      marker._genovaFoodKind = String(source.kind || '').toLowerCase();
+    }
+    if(category === 'museums' && typeof window.museumSpecialPopups === 'function'){
+      try{ window.museumSpecialPopups(source, marker); }catch(_e){}
+    }
+    if(!marker.getPopup || !marker.getPopup()){
+      marker.bindPopup(fallbackPopupHtml(point), {className:'mh-popup', maxWidth:370});
+    }
+    marker.on('popupopen', function(ev){
+      try{
+        if(window.GenovaPlacePopup && typeof window.GenovaPlacePopup.decorate === 'function'){
+          window.GenovaPlacePopup.decorate(ev.popup);
+        }
+      }catch(_e){}
+    });
+  }
+
+  function openQrPoint(point){
+    var source = point && point.source || {};
+    var parent = source.__gmQrParent || {};
+    var qrid = String(parent.id || 'qr') + '/' + String(source.id || 'item');
+    try{
+      if(typeof window.__qrOpenChildPanel === 'function'){
+        window.__qrOpenChildPanel(source.label || source.name || point.name || '', source.descr || source.desc || '', source.media || {}, qrid);
+        return true;
+      }
+    }catch(_e){}
+    return false;
+  }
+
+  function openMiniDocPoint(point){
+    var source = point && point.source || {};
+    var id = source.id || '';
+    var map = mapInstance();
+    var originals = window.__GM_DOC_MARKERS || {};
+    var original = id && originals[id];
+    if(original && map){
+      var wasVisible = map.hasLayer(original);
+      var previousOpacity = original.options && isFinite(Number(original.options.opacity)) ? Number(original.options.opacity) : 1;
+      try{
+        if(!wasVisible){
+          if(typeof original.setOpacity === 'function') original.setOpacity(0);
+          original.addTo(map);
+        }
+        original.openPopup();
+        if(!wasVisible){
+          original.once('popupclose', function(){
+            try{ if(map.hasLayer(original)) map.removeLayer(original); }catch(_e){}
+            try{ if(typeof original.setOpacity === 'function') original.setOpacity(previousOpacity); }catch(_e){}
+          });
+        }
+        return true;
+      }catch(_e){
+        try{ if(!wasVisible && map.hasLayer(original)) map.removeLayer(original); }catch(__){}
+        try{ if(typeof original.setOpacity === 'function') original.setOpacity(previousOpacity); }catch(__){}
+      }
+    }
+    if(map && window.L){
+      try{ L.popup({maxWidth:360,className:'doc-pop'}).setLatLng([point.lat,point.lng]).setContent(fallbackPopupHtml(point)).openOn(map); return true; }catch(_e){}
+    }
+    return false;
+  }
+
+  function createNearbyMarker(point, category){
+    var marker = L.marker([point.lat,point.lng], {
+      pane:'gmNearbyPane', icon:categoryIcon(category), title:point.name || '',
+      interactive:true, keyboard:true, zIndexOffset:800
+    });
+    marker._gmNearbyPoint = point;
+    marker._gmNearbyCategory = category;
+    if(category === 'qr'){
+      try{ marker.bindTooltip(point.name || '', {direction:'top', offset:[0,-6], className:'qr-tooltip'}); }catch(_e){}
+      marker.on('click', function(){ openQrPoint(point); });
+    }else if(category === 'minidoc'){
+      marker.on('click', function(){ openMiniDocPoint(point); });
+    }else{
+      bindStandardPopup(marker, point, category);
+    }
+    return marker;
   }
 
   function ensureLayers(){
@@ -294,7 +456,7 @@
     if(!map.getPane('gmNearbyPane')){
       var mp = map.createPane('gmNearbyPane');
       mp.style.zIndex = '640';
-      mp.style.pointerEvents = 'none';
+      mp.style.pointerEvents = '';
     }
     if(!markerLayer) markerLayer = L.layerGroup().addTo(map);
     else if(!map.hasLayer(markerLayer)) markerLayer.addTo(map);
@@ -371,10 +533,7 @@
         wanted[point.key] = point;
         count++;
         if(markerByKey[point.key]) return;
-        var marker = L.marker([point.lat,point.lng], {
-          pane:'gmNearbyPane', icon:categoryIcon(category), title:point.name || '',
-          interactive:false, keyboard:false, zIndexOffset:800
-        });
+        var marker = createNearbyMarker(point, category);
         marker.addTo(markerLayer);
         markerByKey[point.key] = marker;
       });
