@@ -3,12 +3,23 @@
 
   var panel = document.getElementById("panel");
   var activeQrPoint = null;
+  var activeQrParent = null;
+  var activeQrId = "";
+  var activeCompareSpec = null;
+  var compareCheckToken = 0;
+  var compareAvailabilityCache = Object.create(null);
+  var compareSyncRaf = 0;
   var resizeTimer = 0;
 
   if (!panel) return;
 
   function clearQrLayout() {
+    resetCompareMode(true);
+    compareCheckToken++;
     activeQrPoint = null;
+    activeQrParent = null;
+    activeQrId = "";
+    activeCompareSpec = null;
     panel.classList.remove("qr-point-panel");
     panel.style.removeProperty("--qr-panel-anchor-x");
     panel.style.removeProperty("--qr-panel-anchor-y");
@@ -349,6 +360,423 @@
     return button;
   }
 
+  var QR_COMPARE_UI = {
+    it: { today:"Oggi", past:"Ieri", play:"Riproduci confronto", pause:"Metti in pausa il confronto" },
+    en: { today:"Today", past:"Past", play:"Play comparison", pause:"Pause comparison" },
+    es: { today:"Hoy", past:"Ayer", play:"Reproducir comparación", pause:"Pausar comparación" },
+    fr: { today:"Aujourd’hui", past:"Hier", play:"Lire la comparaison", pause:"Mettre la comparaison en pause" },
+    ar: { today:"اليوم", past:"أمس", play:"تشغيل المقارنة", pause:"إيقاف المقارنة مؤقتًا" },
+    ru: { today:"Сегодня", past:"Вчера", play:"Воспроизвести сравнение", pause:"Пауза сравнения" },
+    zh: { today:"今天", past:"过去", play:"播放对比", pause:"暂停对比" },
+    lij: { today:"Ancöe", past:"Véi", play:"Reproduxi o confronto", pause:"Mette in pösa o confronto" }
+  };
+
+  function compareUiStrings(forced) {
+    var code = currentQrUiLanguage(forced);
+    return QR_COMPARE_UI[code] || QR_COMPARE_UI.it;
+  }
+
+  function stableQrId(point, parent, qrid) {
+    var id = String(qrid || "").trim().replace(/^\/+|\/+$/g, "");
+    if (id.indexOf("/") > 0) return id;
+    var parentId = String((parent && parent.id) || "").trim();
+    var childId = String((point && point.id) || "").trim();
+    return parentId && childId ? parentId + "/" + childId : "";
+  }
+
+  function compareSpecFor(point, parent, media, qrid) {
+    var explicit = media && media.confronta;
+    var today = "";
+    var past = "";
+
+    if (explicit && typeof explicit === "object") {
+      today = String(explicit.oggi || explicit.today || explicit.presente || explicit.current || "").trim();
+      past = String(explicit.ieri || explicit.past || explicit.storico || explicit.history || "").trim();
+    } else if (typeof explicit === "string" && explicit.trim()) {
+      var base = explicit.trim().replace(/\/+$/g, "");
+      today = base + "/oggi.mp4";
+      past = base + "/ieri.mp4";
+    }
+
+    var id = stableQrId(point, parent, qrid);
+    if ((!today || !past) && id) {
+      var parts = id.split("/");
+      if (parts.length >= 2) {
+        var root = String(window.__QR_COMPARE_ROOT || "/qr_confronta").replace(/\/+$/g, "");
+        // Il percorso convenzionale e' assoluto rispetto alla root del sito,
+        // cosi' resta corretto anche se l'app viene aperta da URL non-root.
+        if (!/^https?:\/\//i.test(root) && root.charAt(0) !== "/") root = "/" + root;
+        var parentId = encodeURIComponent(parts[0]);
+        var childId = encodeURIComponent(parts.slice(1).join("/"));
+        var folder = root + "/" + parentId + "/" + childId;
+        today = today || folder + "/oggi.mp4";
+        past = past || folder + "/ieri.mp4";
+      }
+    }
+
+    if (!today || !past) return null;
+    return { id: id, today: today, past: past };
+  }
+
+  function urlExists(url) {
+    if (!url || typeof window.fetch !== "function") return Promise.resolve(false);
+    if (compareAvailabilityCache[url]) return compareAvailabilityCache[url];
+
+    /*
+     * Non usiamo HEAD: alcuni hosting/CDN possono trattarlo diversamente dai
+     * normali GET degli MP4. Facciamo invece un GET minimale con Range e
+     * no-store, poi annulliamo subito il body. In questo modo controlliamo
+     * esattamente lo stesso URL che usera' il player senza scaricare il video.
+     */
+    var check = window.fetch(url, {
+      method: "GET",
+      cache: "no-store",
+      credentials: "same-origin",
+      headers: { "Range": "bytes=0-1" }
+    }).then(function (response) {
+      if (!response || !response.ok) return false;
+      var type = String(response.headers && response.headers.get ? (response.headers.get("content-type") || "") : "").toLowerCase();
+      // Evita falsi positivi se un hosting restituisce index.html con status 200.
+      if (type.indexOf("text/html") !== -1) return false;
+      try {
+        if (response.body && typeof response.body.cancel === "function") response.body.cancel();
+      } catch (_) {}
+      return true;
+    }).catch(function () { return false; }).then(function (ready) {
+      // Manteniamo in cache solo i successi: un 404 temporaneo non deve
+      // bloccare il bottone fino al successivo reload della pagina.
+      if (!ready) delete compareAvailabilityCache[url];
+      return ready;
+    });
+
+    compareAvailabilityCache[url] = check;
+    return check;
+  }
+
+  function setCompareButtonReady(ready) {
+    var button = document.getElementById("btn-compare-qr");
+    if (!button) return;
+    button.setAttribute("data-qr-compare-ready", ready ? "true" : "false");
+    button.setAttribute("aria-disabled", ready ? "false" : "true");
+    button.classList.toggle("qr-placeholder-action", !ready);
+    if (!ready) button.classList.remove("active");
+    applyMultimediaI18n();
+  }
+
+  function prepareCompareForPoint(point, parent, media, qrid) {
+    resetCompareMode(true);
+    activeQrParent = parent || null;
+    activeQrId = stableQrId(point, parent, qrid);
+    activeCompareSpec = compareSpecFor(point, parent, media, activeQrId);
+    var token = ++compareCheckToken;
+    setCompareButtonReady(false);
+
+    if (!activeCompareSpec) return;
+    var expectedId = activeQrId;
+    Promise.all([urlExists(activeCompareSpec.today), urlExists(activeCompareSpec.past)])
+      .then(function (results) {
+        if (token !== compareCheckToken || expectedId !== activeQrId) return;
+        setCompareButtonReady(!!(results[0] && results[1]));
+      });
+  }
+
+  function formatCompareTime(value) {
+    value = Math.max(0, Number(value) || 0);
+    var minutes = Math.floor(value / 60);
+    var seconds = Math.floor(value % 60);
+    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  }
+
+  function updateComparePosition(percent) {
+    var stage = panel.querySelector(".qr-compare-stage");
+    if (!stage) return;
+    percent = Math.max(1, Math.min(99, Number(percent) || 50));
+    stage.style.setProperty("--qr-compare-pos", percent.toFixed(2) + "%");
+    var divider = stage.querySelector(".qr-compare-divider");
+    if (divider) divider.setAttribute("aria-valuenow", String(Math.round(percent)));
+  }
+
+  function updateCompareTime() {
+    var stage = panel.querySelector(".qr-compare-stage");
+    if (!stage) return;
+    var master = stage.querySelector('[data-qr-compare-role="today"]');
+    var out = stage.querySelector(".qr-compare-time");
+    if (!master || !out) return;
+    var duration = isFinite(master.duration) ? master.duration : 0;
+    out.textContent = formatCompareTime(master.currentTime) + (duration ? " / " + formatCompareTime(duration) : "");
+  }
+
+  function updateComparePlayButton(forced) {
+    var stage = panel.querySelector(".qr-compare-stage");
+    if (!stage) return;
+    var master = stage.querySelector('[data-qr-compare-role="today"]');
+    var button = stage.querySelector(".qr-compare-play");
+    if (!master || !button) return;
+    var playing = typeof forced === "boolean" ? forced : !master.paused;
+    var T = compareUiStrings();
+    button.textContent = playing ? "❚❚" : "▶";
+    button.setAttribute("aria-label", playing ? T.pause : T.play);
+    button.title = playing ? T.pause : T.play;
+  }
+
+  function stopCompareSyncLoop() {
+    if (compareSyncRaf) {
+      try { window.cancelAnimationFrame(compareSyncRaf); } catch (_) {}
+      compareSyncRaf = 0;
+    }
+  }
+
+  function startCompareSyncLoop() {
+    stopCompareSyncLoop();
+    function tick() {
+      if (!panel.classList.contains("qr-compare-active")) {
+        compareSyncRaf = 0;
+        return;
+      }
+      var stage = panel.querySelector(".qr-compare-stage");
+      var master = stage && stage.querySelector('[data-qr-compare-role="today"]');
+      var slave = stage && stage.querySelector('[data-qr-compare-role="past"]');
+      if (master && slave && !master.paused) {
+        try {
+          if (Math.abs((slave.currentTime || 0) - (master.currentTime || 0)) > 0.10) {
+            slave.currentTime = master.currentTime || 0;
+          }
+          if (slave.paused) {
+            var p = slave.play();
+            if (p && typeof p.catch === "function") p.catch(function () {});
+          }
+        } catch (_) {}
+        updateCompareTime();
+      }
+      compareSyncRaf = window.requestAnimationFrame(tick);
+    }
+    compareSyncRaf = window.requestAnimationFrame(tick);
+  }
+
+  function playCompareVideos() {
+    var stage = panel.querySelector(".qr-compare-stage");
+    if (!stage) return;
+    var master = stage.querySelector('[data-qr-compare-role="today"]');
+    var slave = stage.querySelector('[data-qr-compare-role="past"]');
+    if (!master || !slave) return;
+    try { slave.currentTime = master.currentTime || 0; } catch (_) {}
+    try {
+      var p1 = master.play();
+      if (p1 && typeof p1.catch === "function") p1.catch(function () { updateComparePlayButton(false); });
+    } catch (_) {}
+    try {
+      var p2 = slave.play();
+      if (p2 && typeof p2.catch === "function") p2.catch(function () {});
+    } catch (_) {}
+    updateComparePlayButton(true);
+    startCompareSyncLoop();
+  }
+
+  function pauseCompareVideos() {
+    var stage = panel.querySelector(".qr-compare-stage");
+    if (!stage) return;
+    var master = stage.querySelector('[data-qr-compare-role="today"]');
+    var slave = stage.querySelector('[data-qr-compare-role="past"]');
+    try { if (master) master.pause(); } catch (_) {}
+    try { if (slave) slave.pause(); } catch (_) {}
+    stopCompareSyncLoop();
+    updateComparePlayButton(false);
+    updateCompareTime();
+  }
+
+  function resetCompareMode(clearSources) {
+    pauseCompareVideos();
+    panel.classList.remove("qr-compare-active");
+    var compare = document.getElementById("btn-compare-qr");
+    if (compare) compare.classList.remove("active");
+    var stage = panel.querySelector(".qr-compare-stage");
+    if (stage) {
+      stage.classList.remove("is-loading");
+      stage.setAttribute("aria-hidden", "true");
+      if (clearSources) {
+        var videos = stage.querySelectorAll("video");
+        for (var i = 0; i < videos.length; i++) {
+          try {
+            videos[i].pause();
+            videos[i].removeAttribute("src");
+            videos[i].load();
+          } catch (_) {}
+        }
+        stage.setAttribute("data-qr-compare-id", "");
+      }
+    }
+  }
+
+  function ensureCompareStage() {
+    var mediaWrap = panel.querySelector(".media");
+    if (!mediaWrap) return null;
+    var stage = mediaWrap.querySelector(".qr-compare-stage");
+    if (stage) return stage;
+
+    stage = document.createElement("div");
+    stage.className = "qr-compare-stage";
+    stage.setAttribute("aria-hidden", "true");
+    stage.innerHTML =
+      '<video class="qr-compare-video qr-compare-today" data-qr-compare-role="today" muted loop playsinline preload="metadata"></video>' +
+      '<video class="qr-compare-video qr-compare-past" data-qr-compare-role="past" muted loop playsinline preload="metadata"></video>' +
+      '<span class="qr-compare-label qr-compare-label-past"></span>' +
+      '<span class="qr-compare-label qr-compare-label-today"></span>' +
+      '<div class="qr-compare-divider" role="slider" tabindex="0" aria-valuemin="1" aria-valuemax="99" aria-valuenow="50" aria-orientation="horizontal"><span class="qr-compare-handle" aria-hidden="true">↔</span></div>' +
+      '<div class="qr-compare-playback"><button class="qr-compare-play" type="button">▶</button><span class="qr-compare-time">0:00</span></div>';
+    mediaWrap.appendChild(stage);
+    updateComparePosition(50);
+
+    var divider = stage.querySelector(".qr-compare-divider");
+    var playButton = stage.querySelector(".qr-compare-play");
+    var master = stage.querySelector('[data-qr-compare-role="today"]');
+    var slave = stage.querySelector('[data-qr-compare-role="past"]');
+    var dragging = false;
+
+    function percentFromClientX(clientX) {
+      var rect = stage.getBoundingClientRect();
+      if (!rect.width) return 50;
+      return ((clientX - rect.left) / rect.width) * 100;
+    }
+
+    if (divider) {
+      divider.addEventListener("pointerdown", function (event) {
+        dragging = true;
+        try { divider.setPointerCapture(event.pointerId); } catch (_) {}
+        updateComparePosition(percentFromClientX(event.clientX));
+        event.preventDefault();
+      });
+      divider.addEventListener("pointermove", function (event) {
+        if (!dragging) return;
+        updateComparePosition(percentFromClientX(event.clientX));
+        event.preventDefault();
+      });
+      function stopDrag(event) {
+        dragging = false;
+        try { divider.releasePointerCapture(event.pointerId); } catch (_) {}
+      }
+      divider.addEventListener("pointerup", stopDrag);
+      divider.addEventListener("pointercancel", stopDrag);
+      divider.addEventListener("keydown", function (event) {
+        var current = parseFloat((stage.style.getPropertyValue("--qr-compare-pos") || "50").replace("%", "")) || 50;
+        var next = current;
+        if (event.key === "ArrowLeft") next = current - 2;
+        else if (event.key === "ArrowRight") next = current + 2;
+        else if (event.key === "Home") next = 1;
+        else if (event.key === "End") next = 99;
+        else return;
+        updateComparePosition(next);
+        event.preventDefault();
+      });
+    }
+
+    if (playButton) {
+      playButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        if (master && !master.paused) pauseCompareVideos();
+        else playCompareVideos();
+      });
+    }
+
+    if (master && slave) {
+      master.addEventListener("play", function () {
+        try {
+          if (slave.paused) {
+            var p = slave.play();
+            if (p && typeof p.catch === "function") p.catch(function () {});
+          }
+        } catch (_) {}
+        updateComparePlayButton(true);
+        startCompareSyncLoop();
+      });
+      master.addEventListener("pause", function () {
+        try { slave.pause(); } catch (_) {}
+        updateComparePlayButton(false);
+        stopCompareSyncLoop();
+      });
+      master.addEventListener("seeking", function () {
+        try { slave.currentTime = master.currentTime || 0; } catch (_) {}
+        updateCompareTime();
+      });
+      master.addEventListener("timeupdate", updateCompareTime);
+      master.addEventListener("loadedmetadata", updateCompareTime);
+      slave.addEventListener("loadedmetadata", function () {
+        try { slave.currentTime = master.currentTime || 0; } catch (_) {}
+      });
+      function compareMediaError() {
+        if (!panel.classList.contains("qr-compare-active")) return;
+        stage.classList.remove("is-loading");
+        resetCompareMode(false);
+        setCompareButtonReady(false);
+      }
+      master.addEventListener("error", compareMediaError);
+      slave.addEventListener("error", compareMediaError);
+    }
+
+    return stage;
+  }
+
+  function enterCompareMode() {
+    var button = document.getElementById("btn-compare-qr");
+    if (!button || button.getAttribute("data-qr-compare-ready") !== "true" || !activeCompareSpec) return;
+    var stage = ensureCompareStage();
+    if (!stage) return;
+
+    var master = stage.querySelector('[data-qr-compare-role="today"]');
+    var slave = stage.querySelector('[data-qr-compare-role="past"]');
+    if (!master || !slave) return;
+
+    var loadedId = stage.getAttribute("data-qr-compare-id") || "";
+    if (loadedId !== activeCompareSpec.id) {
+      pauseCompareVideos();
+      stage.classList.add("is-loading");
+      stage.setAttribute("data-qr-compare-id", activeCompareSpec.id || "");
+      master.src = activeCompareSpec.today;
+      slave.src = activeCompareSpec.past;
+      try { master.load(); slave.load(); } catch (_) {}
+      updateComparePosition(50);
+      var pending = 2;
+      function readyOne() {
+        pending--;
+        if (pending <= 0) stage.classList.remove("is-loading");
+      }
+      master.addEventListener("canplay", readyOne, { once: true });
+      slave.addEventListener("canplay", readyOne, { once: true });
+    }
+
+    var standardToday = document.getElementById("media-video-today");
+    var standardPast = document.getElementById("media-video");
+    try { if (standardToday) standardToday.pause(); } catch (_) {}
+    try { if (standardPast) standardPast.pause(); } catch (_) {}
+
+    panel.classList.add("qr-compare-active");
+    stage.setAttribute("aria-hidden", "false");
+    var today = document.getElementById("btn-today");
+    var past = document.getElementById("btn-past");
+    var sfx = document.getElementById("btn-sfx");
+    if (today) today.classList.remove("active");
+    if (past) past.classList.remove("active");
+    if (sfx) sfx.classList.remove("active");
+    button.classList.add("active");
+    updateComparePosition(50);
+    applyMultimediaI18n();
+    playCompareVideos();
+  }
+
+  function wireStandardModeExit() {
+    ["btn-today", "btn-past", "btn-sfx"].forEach(function (id) {
+      var button = document.getElementById(id);
+      if (!button || typeof button.onclick !== "function" || button.onclick.__qrCompareExitWrapped) return;
+      var original = button.onclick;
+      function wrapped(event) {
+        resetCompareMode(false);
+        return original.call(this, event);
+      }
+      wrapped.__qrCompareExitWrapped = true;
+      button.onclick = wrapped;
+    });
+  }
+
   function applyMultimediaI18n(forced) {
     var ui = qrUiStrings(forced);
     var code = ui.code;
@@ -356,9 +784,10 @@
 
     var compare = document.getElementById("btn-compare-qr");
     if (compare) {
+      var compareReady = compare.getAttribute("data-qr-compare-ready") === "true";
       compare.textContent = T.compare;
-      compare.title = T.compare + " — " + T.comingSoon;
-      compare.setAttribute("aria-label", T.compare + ". " + T.comingSoon);
+      compare.title = compareReady ? T.compare : (T.compare + " — " + T.comingSoon);
+      compare.setAttribute("aria-label", compareReady ? T.compare : (T.compare + ". " + T.comingSoon));
     }
 
     var audio = document.getElementById("btn-audioguide-qr");
@@ -385,6 +814,16 @@
       share.setAttribute("aria-label", T.sharePoint);
     }
 
+    var stage = panel.querySelector(".qr-compare-stage");
+    if (stage) {
+      var C = compareUiStrings(forced);
+      var pastLabel = stage.querySelector(".qr-compare-label-past");
+      var todayLabel = stage.querySelector(".qr-compare-label-today");
+      if (pastLabel) pastLabel.textContent = C.past;
+      if (todayLabel) todayLabel.textContent = C.today;
+      updateComparePlayButton();
+    }
+
     var actions = panel.querySelector(".qr-extra-actions");
     if (actions) {
       actions.setAttribute("aria-label", T.actionsAria);
@@ -399,10 +838,10 @@
    * Riga 1 (subito sotto il riquadro media): Oggi / Ieri / SFX / Confronta.
    * Riga 2 (sotto la descrizione): Audioguida / MiniDoc / Condividi.
    *
-   * Confronta, Audioguida e MiniDoc sono volutamente placeholder inattivi:
-   * la struttura e' pronta, ma nessun Punto QR deve ancora dichiarare nuovi
-   * media o collegamenti. Il bottone Condividi conserva invece tutta la logica
-   * esistente e viene soltanto spostato nella nuova riga inferiore.
+   * Confronta viene abilitato automaticamente quando trova entrambi i video
+   * nella cartella convenzionale qr_confronta/<parent>/<child>/ (o quando il
+   * Punto QR dichiara media.confronta). Audioguida e MiniDoc restano invece
+   * placeholder inattivi. Condividi conserva tutta la logica esistente.
    */
   function ensureMultimediaControls() {
     var swap = panel.querySelector(".swap");
@@ -416,6 +855,15 @@
       ""
     );
     if (compare.parentNode !== swap) swap.appendChild(compare);
+    if (!compare.__qrCompareBound) {
+      compare.__qrCompareBound = true;
+      compare.addEventListener("click", function (event) {
+        if (compare.getAttribute("data-qr-compare-ready") !== "true") return;
+        event.preventDefault();
+        event.stopPropagation();
+        enterCompareMode();
+      });
+    }
 
     var actions = panel.querySelector(".qr-extra-actions");
     if (!actions) {
@@ -451,11 +899,14 @@
       actions.appendChild(share);
     }
 
+    ensureCompareStage();
+    wireStandardModeExit();
     applyMultimediaI18n();
   }
 
   function preparePanel(point, parent) {
     activeQrPoint = point;
+    activeQrParent = parent || null;
     panel.classList.add("qr-point-panel");
     updatePanelAnchor();
     if (parent) syncParentBadge(parent);
@@ -475,6 +926,8 @@
         return original.apply(this, arguments);
       }
 
+      resetCompareMode(true);
+      compareCheckToken++;
       preparePanel(point, parent);
 
       /*
@@ -491,6 +944,7 @@
       var result = original.apply(this, arguments);
       syncParentBadge(parent);
       ensureMultimediaControls();
+      prepareCompareForPoint(point, parent, media, qrid);
 
       focusQrPoint(point, function () {
         preparePanel(point, parent);
