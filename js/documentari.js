@@ -639,6 +639,12 @@ DOCS.forEach(function(d){
 {"id": "viaxxsettembre", "name": "Via XX settembre", "coords": [44.405826120223495, 8.939989775240152], "youtube": "https://youtu.be/Fdfh4CsqiDw", "info": "Mini documentario su Via XX settembre.", "thumbnail": null},
 {"id": "seno-di-giano", "name": "Seno di Giano", "coords": [44.40336915941983, 8.932371887002882], "youtube": "https://youtu.be/5mKCW0Mf5YA", "info": "Mini documentario sul Seno di Giano.", "thumbnail": null}
 ]; } catch(_ ) {} }
+      // Espone l'elenco corrente dei MiniDoc agli strumenti esterni (es. "Vicino a me")
+      // senza duplicare i dati in altri file.
+      try{
+        window.__GM_DOCS = DOCS.slice();
+        document.dispatchEvent(new CustomEvent('gm:documentari-ready', { detail:{ count:DOCS.length } }));
+      }catch(_e){}
       // Se abbiamo almeno un Doc, ora possiamo rimuovere i vecchi arancioni
       if(DOCS.length) try{ if(window.groupOrange){ if(groupOrange.getLayers) groupOrange.clearLayers(); if(window.map && map.hasLayer(groupOrange)) map.removeLayer(groupOrange); } }catch(_ ){}
       // build markers & list

@@ -1,0 +1,132 @@
+/* Genova mApp - Vicino a me (raggio 300 m) */
+#btn-nearby.gm-nearby-button{
+  --gm-nearby-size:40px;
+  position:fixed;
+  z-index:7105;
+  width:var(--gm-nearby-size);
+  height:var(--gm-nearby-size);
+  min-width:var(--gm-nearby-size);
+  min-height:var(--gm-nearby-size);
+  padding:0;
+  transform:translateX(-50%);
+  display:grid;
+  place-items:center;
+  border-radius:9999px;
+  border:1px solid rgba(125,211,252,.55);
+  background:linear-gradient(180deg,#155e75 0%,#0e4a61 100%);
+  color:#e0f2fe;
+  box-shadow:0 4px 13px rgba(0,0,0,.34);
+  cursor:pointer;
+  transition:filter .15s ease, opacity .15s ease, transform .15s ease, box-shadow .15s ease;
+  touch-action:manipulation;
+}
+#btn-nearby.gm-nearby-button svg{width:62%;height:62%;display:block;}
+#btn-nearby.gm-nearby-button:hover:not(:disabled){filter:brightness(1.13);}
+#btn-nearby.gm-nearby-button:active:not(:disabled){transform:translateX(-50%) scale(.94);}
+#btn-nearby.gm-nearby-button:focus-visible{outline:3px solid rgba(56,189,248,.85);outline-offset:2px;}
+#btn-nearby.gm-nearby-button:disabled{
+  opacity:.38;
+  filter:saturate(.35);
+  cursor:not-allowed;
+  box-shadow:0 2px 7px rgba(0,0,0,.2);
+}
+#btn-nearby.gm-nearby-button.active{
+  color:#fff;
+  border-color:rgba(186,230,253,.95);
+  background:linear-gradient(180deg,#0284c7 0%,#0369a1 100%);
+  box-shadow:0 0 0 3px rgba(56,189,248,.20),0 4px 14px rgba(0,0,0,.38);
+}
+
+.gm-nearby-panel{
+  position:fixed;
+  z-index:10050;
+  left:50%;
+  bottom:92px;
+  transform:translateX(-50%) translateY(8px);
+  width:min(430px,calc(100vw - 24px));
+  max-height:min(72dvh,650px);
+  display:none;
+  overflow:hidden;
+  color:#e5edf7;
+  background:rgba(8,18,34,.975);
+  border:1px solid rgba(125,211,252,.42);
+  border-radius:16px;
+  box-shadow:0 20px 50px rgba(0,0,0,.48);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+.gm-nearby-panel.open{display:flex;flex-direction:column;transform:translateX(-50%) translateY(0);}
+.gm-nearby-panel *{box-sizing:border-box;}
+.gm-nearby-head{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
+  padding:14px 14px 8px;
+  border-bottom:1px solid rgba(148,163,184,.16);
+}
+.gm-nearby-head h3{margin:0 0 4px;font-size:1.05rem;line-height:1.2;color:#f8fafc;}
+.gm-nearby-radius{display:inline-flex;align-items:center;gap:4px;font-size:.72rem;font-weight:800;color:#7dd3fc;text-transform:uppercase;letter-spacing:.04em;}
+.gm-nearby-close{
+  width:30px;height:30px;flex:0 0 30px;padding:0;display:grid;place-items:center;
+  border-radius:999px;border:1px solid rgba(226,232,240,.24);background:rgba(255,255,255,.06);color:#fff;
+  font-size:21px;line-height:1;cursor:pointer;
+}
+.gm-nearby-close:hover{background:rgba(255,255,255,.12);}
+.gm-nearby-intro{margin:0;padding:9px 14px 8px;color:#cbd5e1;font-size:.79rem;line-height:1.38;}
+.gm-nearby-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:5px 14px 8px;}
+.gm-nearby-toolbar strong{font-size:.78rem;color:#f1f5f9;}
+.gm-nearby-toolbar span{display:flex;gap:6px;}
+.gm-nearby-toolbar button{
+  min-height:28px;padding:4px 9px;border-radius:8px;border:1px solid rgba(125,211,252,.28);
+  background:#102b40;color:#dbeafe;font-size:.70rem;font-weight:750;cursor:pointer;
+}
+.gm-nearby-groups{overflow:auto;padding:0 10px 6px;overscroll-behavior:contain;}
+.gm-nearby-group{margin:0 0 8px;padding:8px;border:1px solid rgba(148,163,184,.14);border-radius:11px;background:rgba(255,255,255,.025);}
+.gm-nearby-group legend{padding:0 5px;color:#94a3b8;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;}
+.gm-nearby-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}
+.gm-nearby-category{
+  min-width:0;display:grid;grid-template-columns:18px 27px minmax(0,1fr);align-items:center;gap:6px;
+  min-height:37px;padding:5px 7px;border-radius:9px;background:rgba(255,255,255,.035);cursor:pointer;
+}
+.gm-nearby-category:hover{background:rgba(56,189,248,.08);}
+.gm-nearby-category input{margin:0;accent-color:#38bdf8;}
+.gm-nearby-cat-icon{width:27px;height:27px;display:grid;place-items:center;border-radius:7px;background:rgba(255,255,255,.08);overflow:hidden;}
+.gm-nearby-cat-icon img{display:block;width:24px;height:24px;object-fit:contain;}
+.gm-nearby-cat-label{min-width:0;font-size:.72rem;font-weight:700;line-height:1.15;color:#e2e8f0;}
+.gm-nearby-circle-option{display:flex;align-items:center;gap:8px;margin:1px 14px 7px;padding:8px 9px;border-radius:9px;background:rgba(56,189,248,.07);font-size:.75rem;color:#dbeafe;cursor:pointer;}
+.gm-nearby-circle-option input{margin:0;accent-color:#38bdf8;}
+.gm-nearby-status{min-height:30px;padding:4px 14px 7px;font-size:.73rem;line-height:1.3;color:#bae6fd;}
+.gm-nearby-actions{padding:9px 14px 13px;border-top:1px solid rgba(148,163,184,.14);}
+#gm-nearby-main{
+  width:100%;min-height:38px;border:1px solid rgba(125,211,252,.65);border-radius:10px;
+  background:linear-gradient(180deg,#0284c7,#0369a1);color:#fff;font-weight:850;cursor:pointer;
+}
+#gm-nearby-main.is-stop{background:linear-gradient(180deg,#7f1d1d,#651515);border-color:rgba(252,165,165,.56);}
+#gm-nearby-main:disabled{opacity:.45;cursor:not-allowed;filter:saturate(.4);}
+
+.gm-nearby-marker{background:transparent!important;border:0!important;}
+.gm-nearby-marker-shell{
+  width:34px;height:34px;display:grid;place-items:center;border-radius:10px;
+  background:rgba(8,18,34,.92);border:2px solid rgba(255,255,255,.96);
+  box-shadow:0 2px 8px rgba(0,0,0,.42);
+}
+.gm-nearby-marker-shell img{width:27px;height:27px;display:block;object-fit:contain;}
+
+@media (max-width:480px){
+  .gm-nearby-panel{width:calc(100vw - 16px);max-height:min(68dvh,570px);border-radius:14px;}
+  .gm-nearby-head{padding:12px 12px 7px;}
+  .gm-nearby-intro{padding:8px 12px 7px;font-size:.75rem;}
+  .gm-nearby-toolbar{padding:4px 12px 7px;}
+  .gm-nearby-groups{padding:0 8px 5px;}
+  .gm-nearby-grid{gap:5px;}
+  .gm-nearby-category{grid-template-columns:16px 25px minmax(0,1fr);gap:5px;min-height:35px;padding:4px 6px;}
+  .gm-nearby-cat-icon{width:25px;height:25px;}
+  .gm-nearby-cat-icon img{width:22px;height:22px;}
+  .gm-nearby-cat-label{font-size:.68rem;}
+  .gm-nearby-circle-option{margin-left:12px;margin-right:12px;}
+  .gm-nearby-status{padding-left:12px;padding-right:12px;}
+  .gm-nearby-actions{padding:8px 12px 11px;}
+}
+
+@media (max-width:350px){
+  .gm-nearby-grid{grid-template-columns:1fr;}
+}
