@@ -374,13 +374,13 @@
   background: #050b14;
 }
 
-/* Oggi e' il livello di base; Ieri e' sopra e viene ritagliato dalla barra.
- * A sinistra del divisore si vede Ieri, a destra Oggi. */
-#panel.qr-point-panel .qr-compare-today {
+/* Ieri e' il livello di base; Oggi e' sopra e viene ritagliato dalla barra.
+ * A sinistra del divisore si vede Oggi, a destra Ieri. */
+#panel.qr-point-panel .qr-compare-past {
   z-index: 1;
 }
 
-#panel.qr-point-panel .qr-compare-past {
+#panel.qr-point-panel .qr-compare-today {
   z-index: 2;
   clip-path: inset(0 calc(100% - var(--qr-compare-pos)) 0 0);
   -webkit-clip-path: inset(0 calc(100% - var(--qr-compare-pos)) 0 0);
@@ -404,8 +404,8 @@
   -webkit-backdrop-filter: blur(4px);
 }
 
-#panel.qr-point-panel .qr-compare-label-past { left: 10px; }
-#panel.qr-point-panel .qr-compare-label-today { right: 10px; }
+#panel.qr-point-panel .qr-compare-label-today { left: 10px; }
+#panel.qr-point-panel .qr-compare-label-past { right: 10px; }
 
 /* Hit-area larga 44px: la linea resta sottile ma e' comoda da trascinare
  * anche con il dito. */
@@ -540,8 +540,8 @@
     padding: .22rem .42rem;
   }
 
-  #panel.qr-point-panel .qr-compare-label-past { left: 8px; }
-  #panel.qr-point-panel .qr-compare-label-today { right: 8px; }
+#panel.qr-point-panel .qr-compare-label-today { left: 8px; }
+#panel.qr-point-panel .qr-compare-label-past { right: 8px; }
 
   #panel.qr-point-panel .qr-compare-handle {
     width: 28px;
