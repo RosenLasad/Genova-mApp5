@@ -93,20 +93,14 @@ function createQrBtn(){
   }
 
   function placeQrBtn(){
-    var rail = document.getElementById('quick-toggles');
-    if(!rail) return;
-
     var btn = createQrBtn();
+    var bar = document.getElementById('bottom-bar');
 
-    // Se era finito nella toolbar, toglilo da lì
-    try{
-      var bar = document.querySelector('.toolbar-buttons');
-      if(bar && bar.contains(btn)) bar.removeChild(btn);
-    }catch(_){}
-
-    // Mettilo in alto nella colonna destra (prima delle pillole categorie)
-    if(rail.firstElementChild !== btn){
-      rail.insertBefore(btn, rail.firstElementChild);
+    // Il comando Mostra QR appartiene al gruppo operativo in basso,
+    // insieme a GPS e Scan QR. ui-layout-v2.js rifinisce poi l'ordine.
+    if(bar && btn.parentNode !== bar){
+      if(bar.firstChild) bar.insertBefore(btn, bar.firstChild);
+      else bar.appendChild(btn);
     }
     syncLabel();
   }
