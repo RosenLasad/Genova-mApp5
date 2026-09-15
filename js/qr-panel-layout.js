@@ -111,6 +111,24 @@
    * Le coordinate sono calcolate sul rettangolo REALE del contenitore mappa,
    * non sull'intera finestra del browser.
    */
+  /*
+   * Posizione verticale responsive dei Punti QR.
+   * - schermi stretti/mobile (<= 768 px): 80% dall'alto
+   * - schermi larghi/desktop:            75% dall'alto
+   *
+   * Lo stesso valore viene usato sia per il centraggio Leaflet sia per
+   * l'ancoraggio del pannello, cosi' marker e pannello restano allineati.
+   */
+  function qrMarkerYRatio() {
+    try {
+      if (window.matchMedia && window.matchMedia("(max-width: 768px)").matches) return 0.80;
+    } catch (_) {}
+    try {
+      if (isFinite(window.innerWidth) && window.innerWidth <= 768) return 0.80;
+    } catch (_) {}
+    return 0.75;
+  }
+
   function updatePanelAnchor() {
     var map = getMap();
     if (!map) return;
@@ -125,7 +143,7 @@
     if (!isFinite(width) || !isFinite(height) || width <= 0 || height <= 0) return;
 
     var markerX = rect.left + width * 0.50;
-    var markerY = rect.top + height * 0.70;
+    var markerY = rect.top + height * qrMarkerYRatio();
     var markerIconHeight = 26;
     var visualGap = 10;
     var panelBottomY = markerY - markerIconHeight - visualGap;
@@ -150,11 +168,11 @@
   /*
    * Posizione desiderata del marker QR nell'area REALE della mappa:
    * X = 50% (centro orizzontale)
-   * Y = 70% dall'alto = 30% dal bordo inferiore.
+   * Y = 80% dall'alto su schermi <= 768 px, 75% su schermi piu' larghi.
    *
    * Invece di spostare graficamente il marker, calcoliamo il centro geografico
-   * che deve avere la mappa affinche' quel marker cada esattamente nel punto
-   * 50/70 del contenitore Leaflet.
+   * che deve avere la mappa affinche' quel marker cada esattamente nella
+   * posizione responsive prevista nel contenitore Leaflet.
    */
   function centerForQrPoint(map, point, zoom) {
     if (!window.L || !window.L.point || !window.L.latLng) return null;
@@ -164,7 +182,7 @@
 
     var latlng = window.L.latLng(Number(point.lat), Number(point.lng));
     var projectedTarget = map.project(latlng, zoom);
-    var desired = window.L.point(size.x * 0.50, size.y * 0.70);
+    var desired = window.L.point(size.x * 0.50, size.y * qrMarkerYRatio());
     var viewportCenter = window.L.point(size.x * 0.50, size.y * 0.50);
     var projectedCenter = projectedTarget.add(viewportCenter.subtract(desired));
 
