@@ -26,6 +26,63 @@
   transform: translate(-50%, -100%) !important;
 }
 
+/* Intestazione QR: nome del punto a sinistra, area/quartiere a destra.
+ * Il badge espone gia' data-qr-parent-id e data-qr-parent-label, cosi' in una
+ * fase successiva potra' diventare cliccabile senza cambiare la struttura. */
+#panel.qr-point-panel > header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+}
+
+#panel.qr-point-panel > header h2 {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+#panel.qr-point-panel .qr-parent-badge {
+  flex: 0 1 auto;
+  max-width: 42%;
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .28rem .58rem;
+  border: 1px solid rgba(56, 189, 248, .48);
+  border-radius: 999px;
+  background: rgba(14, 165, 233, .12);
+  color: var(--text);
+  font-size: .72rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: .015em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (max-width: 480px) {
+  #panel.qr-point-panel > header {
+    gap: 8px !important;
+    padding-left: .82rem !important;
+    padding-right: .82rem !important;
+  }
+
+  #panel.qr-point-panel > header h2 {
+    font-size: 1rem;
+  }
+
+  #panel.qr-point-panel .qr-parent-badge {
+    max-width: 44%;
+    padding: .25rem .48rem;
+    font-size: .68rem;
+  }
+}
+
 #panel.qr-point-panel .media {
   width: 100% !important;
   max-height: min(36dvh, 310px) !important;
@@ -81,5 +138,193 @@
 
   #panel.qr-point-panel .content {
     max-height: 17dvh !important;
+  }
+}
+
+/* -------------------------------------------------------------------------
+ * QR multimedia controls - fase 1
+ * ------------------------------------------------------------------------- */
+
+/* I nuovi controlli restano invisibili fuori dai pannelli dei Punti QR. */
+#panel .qr-compare-placeholder,
+#panel .qr-extra-actions {
+  display: none;
+}
+
+/* Con la seconda fascia di comandi il pannello ha cinque righe reali. */
+#panel.qr-point-panel {
+  grid-template-rows: auto minmax(0, auto) auto minmax(0, 1fr) auto !important;
+}
+
+/* Riga delle modalita' del riquadro media: Oggi / Ieri / SFX / Confronta. */
+#panel.qr-point-panel .swap {
+  width: 100%;
+  box-sizing: border-box;
+  margin: .5rem 0 0 !important;
+  padding: 0 .8rem .55rem;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: .38rem !important;
+  flex-wrap: nowrap;
+}
+
+#panel.qr-point-panel .swap > .btn,
+#panel.qr-point-panel .swap > #btn-sfx {
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+#panel.qr-point-panel .qr-compare-placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Placeholder: visibile per valutare il layout, ma chiaramente non attivo. */
+#panel.qr-point-panel .qr-placeholder-action {
+  opacity: .52;
+  cursor: default !important;
+  border-style: dashed !important;
+  filter: saturate(.62);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#panel.qr-point-panel .qr-placeholder-action:hover,
+#panel.qr-point-panel .qr-placeholder-action:active {
+  transform: none !important;
+  filter: saturate(.62) !important;
+}
+
+/* Seconda fascia, sotto la descrizione: Audioguida / MiniDoc / Condividi. */
+#panel.qr-point-panel .qr-extra-actions {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: .45rem;
+  padding: .62rem .8rem .72rem;
+  border-top: 1px solid rgba(148, 163, 184, .16);
+  background: rgba(15, 23, 42, .16);
+}
+
+#panel.qr-point-panel .qr-extra-actions > .btn {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 36px;
+  padding: .5rem .52rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  white-space: nowrap;
+  font-size: .8rem;
+}
+
+/* Il vecchio Condividi tondo diventa un'azione testuale nella nuova fascia. */
+#panel.qr-point-panel #btn-share-qr.btn-share-qr.qr-share-action {
+  width: auto !important;
+  height: auto !important;
+  min-height: 36px;
+  padding: .5rem .56rem !important;
+  border-radius: 10px !important;
+}
+
+#panel.qr-point-panel #btn-share-qr .qr-share-ico {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+}
+
+#panel.qr-point-panel #btn-share-qr .qr-share-label {
+  display: inline-block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Icone della fascia inferiore: visibili sempre; il testo viene nascosto solo
+ * quando la larghezza dello schermo diventa realmente stretta. */
+#panel.qr-point-panel .qr-extra-actions .qr-action-ico {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  display: block;
+}
+
+#panel.qr-point-panel .qr-extra-actions .qr-action-label {
+  display: inline-block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Su telefoni e finestre strette la fascia inferiore diventa icon-only.
+ * La scelta e' basata sulla larghezza disponibile, non sull'orientamento: un
+ * telefono in landscape puo' quindi mostrare di nuovo icona + testo. */
+@media (max-width: 560px) {
+  #panel.qr-point-panel .qr-extra-actions .qr-action-label,
+  #panel.qr-point-panel #btn-share-qr .qr-share-label {
+    display: none !important;
+  }
+
+  #panel.qr-point-panel .qr-extra-actions > .btn,
+  #panel.qr-point-panel #btn-share-qr.btn-share-qr.qr-share-action {
+    gap: 0 !important;
+    padding-left: .5rem !important;
+    padding-right: .5rem !important;
+  }
+
+  #panel.qr-point-panel .qr-extra-actions .qr-action-ico,
+  #panel.qr-point-panel #btn-share-qr .qr-share-ico {
+    width: 18px;
+    height: 18px;
+    flex-basis: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  #panel.qr-point-panel .swap {
+    padding-left: .55rem;
+    padding-right: .55rem;
+    gap: .28rem !important;
+  }
+
+  #panel.qr-point-panel .swap > .btn,
+  #panel.qr-point-panel .swap > #btn-sfx {
+    padding: .44rem .46rem;
+    font-size: .76rem;
+  }
+
+  #panel.qr-point-panel .qr-extra-actions {
+    gap: .32rem;
+    padding: .56rem .55rem .64rem;
+  }
+
+  #panel.qr-point-panel .qr-extra-actions > .btn,
+  #panel.qr-point-panel #btn-share-qr.btn-share-qr.qr-share-action {
+    min-height: 34px;
+    padding: .45rem .4rem !important;
+    font-size: .72rem;
+  }
+
+  #panel.qr-point-panel #btn-share-qr .qr-share-ico {
+    width: 14px;
+    height: 14px;
+    flex-basis: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  #panel.qr-point-panel .swap > .btn,
+  #panel.qr-point-panel .swap > #btn-sfx {
+    padding-left: .36rem;
+    padding-right: .36rem;
+    font-size: .72rem;
+  }
+
+  #panel.qr-point-panel .qr-extra-actions > .btn,
+  #panel.qr-point-panel #btn-share-qr.btn-share-qr.qr-share-action {
+    font-size: .68rem;
   }
 }
