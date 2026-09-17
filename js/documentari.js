@@ -313,6 +313,31 @@ h += '<button type="button" class="doc-lang-btn" data-lang="' + escapeAttr(code)
 
 
 
+  // Posiziona il MiniDoc lasciando piu' spazio sopra al marker per il popup.
+  // Desktop: marker al 70% dell'altezza; mobile (<=768px): al 75%.
+  function focusMiniDocMarker(marker){
+    try{
+      if(!marker || !window.map || !map.getSize || !map.project || !map.unproject) return;
+      var ll = marker.getLatLng ? marker.getLatLng() : null;
+      if(!ll) return;
+      var zoom = Math.max(16, map.getZoom ? map.getZoom() : 16);
+      var mobile = false;
+      try{
+        mobile = !!(window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
+      }catch(_mq){}
+      if(!mobile){
+        try{ mobile = isFinite(window.innerWidth) && window.innerWidth <= 768; }catch(_iw){}
+      }
+      var yRatio = mobile ? 0.75 : 0.70;
+      var size = map.getSize();
+      var markerPoint = map.project(ll, zoom);
+      var desiredPoint = L.point(size.x * 0.50, size.y * yRatio);
+      var centerPoint = markerPoint.add(L.point(size.x * 0.50 - desiredPoint.x, size.y * 0.50 - desiredPoint.y));
+      var centerLatLng = map.unproject(centerPoint, zoom);
+      map.setView(centerLatLng, zoom, {animate:true});
+    }catch(_e){}
+  }
+
   function buildMarkers(){
     var g = ensureGroupDoc(); if(!g) return;
     function mountInlinePlayer(container, vid){
@@ -465,7 +490,7 @@ try{
           setOrangeState(true);
           syncGroupDocToMaster();
           try{ m.openPopup(); }catch(_){}
-          try{ map.setView(m.getLatLng(), Math.max(16, map.getZoom?map.getZoom():16), {animate:true}); }catch(_){}
+          try{ focusMiniDocMarker(m); }catch(_){}
           try{ history.replaceState(null, '', '?doc=' + encodeURIComponent(d.id)); }catch(_){}
         });
         markersDocById[d.id] = m;
@@ -584,7 +609,7 @@ DOCS.forEach(function(d){
         var m = markersDocById[d.id];
         if(m){
           try{ m.openPopup(); }catch(_){}
-          try{ map.setView(m.getLatLng(), Math.max(16, map.getZoom?map.getZoom():16), {animate:true}); }catch(_){}
+          try{ focusMiniDocMarker(m); }catch(_){}
           try{ history.replaceState(null, '', '?doc=' + encodeURIComponent(d.id)); }catch(_){}
         }
       });
@@ -637,7 +662,7 @@ DOCS.forEach(function(d){
       }catch(_close){}
 
       m.openPopup();
-      try{ map.setView(m.getLatLng(), Math.max(16, map.getZoom?map.getZoom():16), {animate:true}); }catch(_view){}
+      try{ focusMiniDocMarker(m); }catch(_view){}
       try{ history.replaceState(null, '', '?doc=' + encodeURIComponent(id)); }catch(_url){}
 
       if(!wasVisible){
@@ -664,7 +689,7 @@ DOCS.forEach(function(d){
       var m = markersDocById[id];
       if(m){
         try{ m.openPopup(); }catch(_){}
-        try{ map.setView(m.getLatLng(), Math.max(16, map.getZoom?map.getZoom():16), {animate:true}); }catch(_){}
+        try{ focusMiniDocMarker(m); }catch(_){}
       }
     }catch(_){}
   }
