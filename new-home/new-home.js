@@ -257,11 +257,10 @@
         ? '<button type="button" class="gm-new-home-icon gm-new-home-side-shortcut" data-side-section="'+section.key+'" aria-label="'+escapeHtml(section.sideLabel || section.title)+'" title="'+escapeHtml(section.sideLabel || section.title)+'"></button>'
         : '<span class="gm-new-home-icon">'+icon(section.theme)+'</span>';
       return ''+
-        '<article class="gm-new-home-card'+(section.wide?' is-wide':'')+'" data-theme="'+section.theme+'" data-section="'+section.key+'" role="button" tabindex="0" aria-label="'+escapeHtml(section.title)+': Scopri">'+
+        '<article class="gm-new-home-card'+(section.wide?' is-wide':'')+'" data-theme="'+section.theme+'" data-section="'+section.key+'" role="button" tabindex="0" aria-label="'+escapeHtml(section.title)+'">'+
         shortcut+
         '  <div class="gm-new-home-card-copy"><h3>'+escapeHtml(section.title)+'</h3>'+
         '  <p>'+escapeHtml(section.description)+'</p></div>'+
-        '  <span class="gm-new-home-discover" aria-hidden="true">Scopri</span>'+
         '</article>';
     }).join('');
     scroll.innerHTML = ''+

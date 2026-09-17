@@ -199,7 +199,7 @@ html.gm-new-home-open body{ overflow: hidden; }
   --card-image: none;
   --card-position: center;
   position: relative;
-  min-height: 230px;
+  min-height: 190px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -237,7 +237,7 @@ html.gm-new-home-open body{ overflow: hidden; }
     linear-gradient(180deg, rgba(5,12,23,.08) 0%, rgba(5,12,23,.22) 35%, rgba(5,12,23,.9) 100%),
     linear-gradient(120deg, color-mix(in srgb, var(--card-a) 18%, transparent), transparent 62%);
 }
-.gm-new-home-card.is-wide{ grid-column: 1 / -1; min-height: 205px; }
+.gm-new-home-card.is-wide{ grid-column: 1 / -1; min-height: 180px; }
 .gm-new-home-card[data-theme="heritage"]{ --card-a:#765064; --card-b:#493442; --card-accent:#d08e82; --card-image:url("images/patrimonio-storico.webp"); --card-position:center 48%; }
 .gm-new-home-card[data-theme="fun"]{ --card-a:#8a471b; --card-b:#542b18; --card-accent:#d9922e; --card-image:url("images/intrattenimento.webp"); --card-position:center 48%; }
 .gm-new-home-card[data-theme="move"]{ --card-a:#125f86; --card-b:#123b5e; --card-accent:#38a8d1; --card-image:url("images/come-muoversi.webp"); --card-position:center 49%; }
@@ -289,9 +289,9 @@ html.gm-new-home-open body{ overflow: hidden; }
 .gm-new-home-card-copy{
   max-width:100%;
   box-sizing:border-box;
-  margin-top:52px;
-  margin-bottom:12px;
-  padding:10px 13px;
+  margin-top:42px;
+  margin-bottom:0;
+  padding:9px 12px;
   border-radius:12px;
   background:color-mix(in srgb, var(--card-b) 55%, transparent);
   border:1px solid color-mix(in srgb, var(--card-accent) 40%, transparent);
@@ -307,25 +307,8 @@ html.gm-new-home-open body{ overflow: hidden; }
   margin: 0 0 14px;
   color: rgba(255,255,255,.86);
   font-size: clamp(.84rem, 1.7vw, .96rem);
-  line-height: 1.42;
+  line-height: 1.36;
 }
-.gm-new-home-discover{
-  min-height: 38px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  color: #10283d;
-  background: rgba(255,255,255,.94);
-  border: 1px solid color-mix(in srgb, var(--card-accent) 45%, #fff);
-  border-radius: 999px;
-  font-size: .85rem;
-  font-weight: 780;
-  cursor: pointer;
-  box-shadow: 0 4px 13px rgba(0,0,0,.2);
-}
-.gm-new-home-discover::after{ content: "→"; font-size: 1rem; }
-.gm-new-home-discover:hover{ background: #fff; }
 .gm-new-home-card:focus-within{ outline: 3px solid color-mix(in srgb, var(--card-accent) 68%, #fff); outline-offset: 2px; }
 .gm-new-home-card:focus-visible{ outline: 3px solid color-mix(in srgb, var(--card-accent) 68%, #fff); outline-offset: 2px; }
 
@@ -952,7 +935,7 @@ button.gm-new-home-layer-copy:hover strong{ color:var(--gm-theme-dark); text-dec
   .gm-new-home-game-card{ grid-template-columns:70px minmax(0,1fr) auto; gap:11px; padding:12px; }
   .gm-new-home-game-icon{ width:70px; height:70px; border-radius:15px; }
   .gm-new-home-card,
-  .gm-new-home-card.is-wide{ grid-column:auto; min-height:205px; }
+  .gm-new-home-card.is-wide{ grid-column:auto; min-height:165px; }
   .gm-new-home-card p{ max-width:92%; }
   .gm-new-home-qr-tools{ grid-template-columns:1fr; }
   .gm-new-home-qr-expand{ min-height:40px; }
@@ -1013,7 +996,7 @@ button.gm-new-home-layer-copy:hover strong{ color:var(--gm-theme-dark); text-dec
   .gm-new-home-overlay{ padding-bottom: 54px; }
   .gm-new-home-topbar{ min-height: 52px; }
   .gm-new-home-card,
-  .gm-new-home-card.is-wide{ min-height: 150px; }
+  .gm-new-home-card.is-wide{ min-height: 140px; }
 }
 
 @media (prefers-reduced-motion: no-preference){
