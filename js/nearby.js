@@ -704,12 +704,17 @@
       var gps=gpsButton(), button=document.getElementById('btn-nearby'), panel=document.getElementById('gm-nearby-panel');
       if(!gps || !button) return;
       var r=gps.getBoundingClientRect(); if(!r.width || !r.height) return;
-      var size=Math.max(32,Math.min(44,Math.round(Math.max(r.width,r.height))));
+      /* v44: il GPS e' volutamente un po' piu' grande; il pulsante Raggio
+         conserva invece una dimensione piu' discreta e viene distanziato
+         leggermente di piu' verso l'alto. */
+      var size=Math.max(32,Math.min(40,Math.round(Math.max(r.width,r.height)-6)));
+      var verticalGap=12;
+      var nearbyTop=Math.max(8,r.top-size-verticalGap);
       button.style.setProperty('--gm-nearby-size',size+'px');
       button.style.left=Math.round(r.left+r.width/2)+'px';
-      button.style.top=Math.round(Math.max(8,r.top-size-8))+'px';
+      button.style.top=Math.round(nearbyTop)+'px';
       if(panel && panelIsOpen()){
-        panel.style.bottom=Math.round(Math.max(72,window.innerHeight-(r.top-size-8)+12))+'px';
+        panel.style.bottom=Math.round(Math.max(72,window.innerHeight-nearbyTop+12))+'px';
       }
     });
   }
