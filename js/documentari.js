@@ -32,7 +32,7 @@
   ready(function(){
     var menu = document.getElementById('opere-menu'); if(!menu) return;
     var wrap = menu.querySelector('.opere-accordion');
-    // Se l'accordion non esiste ancora, abort (verrÃ  creato dal patch principale)
+    // Se l'accordion non esiste ancora, abort (verrà creato dal patch principale)
     if(!wrap){ return; }
 
     // Crea la sezione "Documentari"
@@ -70,11 +70,11 @@
       if(dst.checked !== src.checked){ dst.checked = src.checked; }
     }
     function apply(){
-      // Aggiorna stato unico e applica visibilitÃ 
+      // Aggiorna stato unico e applica visibilità
       setOrangeState(chkDoc.checked);
       if(typeof applyLegendVisibility === 'function'){ try{ applyLegendVisibility(); }catch(_){ } }
       else {
-        // Fallback: applica direttamente la visibilitÃ  al layer arancione
+        // Fallback: applica direttamente la visibilità al layer arancione
         try{
           if (typeof map !== 'undefined' && typeof groupOrange !== 'undefined' && groupOrange){
             if (chkDoc.checked && !map.hasLayer(groupOrange)) map.addLayer(groupOrange);
@@ -129,7 +129,7 @@
   }
 
 function getDocYoutubeMap(doc){
-  // 1) prioritÃ : mappa esterna per id
+  // 1) priorità: mappa esterna per id
   try{
     var map = window.DOC_VIDEO_I18N || null;
     if(map && doc && doc.id && map[doc.id] && typeof map[doc.id] === 'object') return map[doc.id];
@@ -142,9 +142,9 @@ function getDocYoutubeMap(doc){
 }
 
 function pickDocYoutubeUrl(doc){
-  // Se câÃ¨ una mappa per lingua, scegli in base a:
-  // - preferenza salvata per quel doc (se lâutente clicca una lingua)
-  // - lingua corrente dellâapp
+  // Se c’è una mappa per lingua, scegli in base a:
+  // - preferenza salvata per quel doc (se l’utente clicca una lingua)
+  // - lingua corrente dell’app
   // - fallback it/en/qualunque cosa
   var m = getDocYoutubeMap(doc);
   if(m){
@@ -158,7 +158,7 @@ function pickDocYoutubeUrl(doc){
     })();
   }
 
-  // altrimenti usa il valore âclassicoâ
+  // altrimenti usa il valore “classico”
   return (doc && doc.youtube) ? doc.youtube : '';
 }
 
@@ -204,7 +204,7 @@ function getDocDesc(doc){
 }
 
 var DOC_FLAG = {
-  it:'ð®ð¹', en:'ð¬ð§', es:'ðªð¸', fr:'ð«ð·', ar:'ð¸ð¦', ru:'ð·ðº', zh:'ð¨ð³', lij:'ð´'
+  it:'🇮🇹', en:'🇬🇧', es:'🇪🇸', fr:'🇫🇷', ar:'🇸🇦', ru:'🇷🇺', zh:'🇨🇳', lij:'🏴'
 };
 
 
@@ -405,7 +405,7 @@ if(trigger){
   }, {once:true});
 }
 
-// â BOTTONI LINGUA: sempre, fuori dall'else
+// ✅ BOTTONI LINGUA: sempre, fuori dall'else
 var langBtns = el.querySelectorAll('.doc-lang-btn');
 if(langBtns && langBtns.length){
   langBtns.forEach(function(btn){
@@ -420,7 +420,7 @@ if(langBtns && langBtns.length){
   });
 }
 
-// â mount immediato SOLO se NON c'Ã¨ la thumb
+// ✅ mount immediato SOLO se NON c'è la thumb
 if(!trigger){
   var vidHolder = el.querySelector('[data-ytid]');
   if(vidHolder){
@@ -586,7 +586,7 @@ DOCS.forEach(function(d){
       cb.checked = getItemState(d.id||'');
       var chip = document.createElement('span'); chip.className='chip';
       var dot = document.createElement('span'); dot.className='dot orange';
-      var name = document.createElement('span'); name.className='name'; name.textContent = d.name||d.id||'â';
+      var name = document.createElement('span'); name.className='name'; name.textContent = d.name||d.id||'—';
       chip.appendChild(dot); chip.appendChild(name);
       row.appendChild(cb); row.appendChild(chip);
       // checkbox toggling
@@ -697,7 +697,7 @@ DOCS.forEach(function(d){
   function init(){
     // Carica i file (manifest opzionale)
     loadManifest().then(function(files){
-      // Normalizza: se il manifest Ã¨ {files:[...]}
+      // Normalizza: se il manifest è {files:[...]}
       if(files && files.files) files = files.files;
       // Un manifest valido ma vuoto significa che non ci sono ancora punti
       // documentario. I file predefiniti sono usati solo come fallback quando
@@ -723,7 +723,7 @@ DOCS.forEach(function(d){
         try{ openMiniDocById(pendingExternalOpenId); }catch(_pending){}
       }
       buildList();
-      // Sync visibilitÃ  layer e items allo stato master + preferenze
+      // Sync visibilità layer e items allo stato master + preferenze
       syncGroupDocToMaster();
       applyItemVisibility();
       // Hook legend for future changes
@@ -868,14 +868,14 @@ DOCS.forEach(function(d){
         try{ localStorage.setItem('doc_item_' + id, '0'); }catch(_){}
       }
     });
-    // 4) sincronizza visibilitÃ  layer
+    // 4) sincronizza visibilità layer
     try{ if(typeof syncGroupDocToMaster === 'function') syncGroupDocToMaster(); }catch(_){}
     try{ if(typeof applyItemVisibility === 'function') applyItemVisibility(); }catch(_){}
   }
   function waitAndApply(maxTries){
     var tries = 0;
     (function tick(){
-      // Esegui quando la lista Ã¨ pronta (chk-doc-all o almeno una voce)
+      // Esegui quando la lista è pronta (chk-doc-all o almeno una voce)
       if (document.getElementById('chk-doc-all') || document.querySelector('#opere-menu .doc-list input.doc-item')){
         applyDefaults();
         return;
@@ -1119,7 +1119,7 @@ DOCS.forEach(function(d){
     clickToolbarStoria();
     ensureDocToggle(function(tgl){
       if(typeof tgl.click === 'function') tgl.click();   // open/close Documentari
-      // Wait for the doc-all checkbox to be in DOM, then toggle it (click â toggles on/off)
+      // Wait for the doc-all checkbox to be in DOM, then toggle it (click → toggles on/off)
       ensureDocAll(function(chk){
         if(typeof chk.click === 'function') chk.click();
       });
@@ -1375,7 +1375,7 @@ return ok1 || ok2;
       var srcLab = row.querySelector('.label');
       if (!rid || !srcLab) return;
 
-      // Creiamo una riga âStoriaâ vera, con il puntino
+      // Creiamo una riga “Storia” vera, con il puntino
       var line = document.createElement('label');
       line.className = 'st-row doc-row';
       line.setAttribute('data-route-id', rid);
@@ -1501,14 +1501,14 @@ applyDocColor('storia-doc-seno-di-giano');
         try{ localStorage.setItem('doc_item_' + id, '0'); }catch(_){}
       }
     });
-    // 4) sincronizza visibilitÃ  layer
+    // 4) sincronizza visibilità layer
     try{ if(typeof syncGroupDocToMaster === 'function') syncGroupDocToMaster(); }catch(_){}
     try{ if(typeof applyItemVisibility === 'function') applyItemVisibility(); }catch(_){}
   }
   function waitAndApply(maxTries){
     var tries = 0;
     (function tick(){
-      // Esegui quando la lista Ã¨ pronta (chk-doc-all o almeno una voce)
+      // Esegui quando la lista è pronta (chk-doc-all o almeno una voce)
       if (document.getElementById('chk-doc-all') || document.querySelector('#opere-menu .doc-list input.doc-item')){
         applyDefaults();
         return;
@@ -1674,14 +1674,14 @@ applyDocColor('storia-doc-seno-di-giano');
         try{ localStorage.setItem('doc_item_' + id, '0'); }catch(_){}
       }
     });
-    // 4) sincronizza visibilitÃ  layer
+    // 4) sincronizza visibilità layer
     try{ if(typeof syncGroupDocToMaster === 'function') syncGroupDocToMaster(); }catch(_){}
     try{ if(typeof applyItemVisibility === 'function') applyItemVisibility(); }catch(_){}
   }
   function waitAndApply(maxTries){
     var tries = 0;
     (function tick(){
-      // Esegui quando la lista Ã¨ pronta (chk-doc-all o almeno una voce)
+      // Esegui quando la lista è pronta (chk-doc-all o almeno una voce)
       if (document.getElementById('chk-doc-all') || document.querySelector('#opere-menu .doc-list input.doc-item')){
         applyDefaults();
         return;

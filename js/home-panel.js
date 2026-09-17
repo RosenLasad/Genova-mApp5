@@ -188,9 +188,9 @@ function openSqorci(){
     en:  'QR Points',
     es:  'Puntos QR',
     fr:  'Points QR',
-    ar:  'ÙÙØ§Ø· QR',
-    ru:  'Ð¢Ð¾ÑÐºÐ¸ QR',
-    zh:  'QR é»ä½',
+    ar:  'نقاط QR',
+    ru:  'Точки QR',
+    zh:  'QR 點位',
     lij: 'Punti QR'
   };
 
@@ -210,7 +210,7 @@ inner.innerHTML =
   try{
     if(window.renderQrList){
       window.renderQrList('#qr-shortcuts-panel');
-      // doppio render di sicurezza, come faceva giÃ  il codice originale
+      // doppio render di sicurezza, come faceva già il codice originale
       try{
         setTimeout(function(){
           if(window.renderQrList) window.renderQrList('#qr-shortcuts-panel');
@@ -238,13 +238,13 @@ function openInfo(){
   // localized intro paragraph
   var BODY = {
     it: "Esplora Genova: storia, turismo e tempo libero. Apri Home, scegli e tocca i punti sulla mappa. Apri la GUIDA per tutte le funzioni.",
-    lij: "Esplora ZÃªna: stÃ²ria, turiÃ§mo e tenpo lÃ¬bbro. Ãrvi Home, Ã§erni e tÃ²cca i ponti in sce a mappa. Ãrvi a GUIDA pe tÃ¹tte e fonÃ§ioÃ¬n.",
+    lij: "Esplora Zêna: stòria, turiçmo e tenpo lìbbro. Àrvi Home, çerni e tòcca i ponti in sce a mappa. Àrvi a GUIDA pe tùtte e fonçioìn.",
     en: "Explore Genoa: history, tourism, and free time. Open Home, choose, and tap points on the map. Open the GUIDE for all features.",
-    es: "Explora GÃ©nova: historia, turismo y tiempo libre. Abre Home, elige y toca los puntos en el mapa. Abre la GUÃA para ver todas las funciones.",
-    fr: "Explorez GÃªnes : histoire, tourisme et temps libre. Ouvrez Home, choisissez et touchez les points sur la carte. Ouvrez le GUIDE pour toutes les fonctions.",
-    ar: "Ø§Ø³ØªÙØ´Ù Ø¬ÙÙØ©: Ø§ÙØªØ§Ø±ÙØ® ÙØ§ÙØ³ÙØ§Ø­Ø© ÙÙÙØª Ø§ÙÙØ±Ø§Øº. Ø§ÙØªØ­ HomeØ Ø§Ø®ØªØ± ÙØ§Ø¶ØºØ· Ø¹ÙÙ Ø§ÙÙÙØ§Ø· Ø¹ÙÙ Ø§ÙØ®Ø±ÙØ·Ø©. Ø§ÙØªØ­ Ø§ÙØ¯ÙÙÙ ÙÙØ¹Ø±ÙØ© Ø¬ÙÙØ¹ Ø§ÙÙÙØ²Ø§Øª.",
-      ru: "ÐÑÑÐ»ÐµÐ´ÑÐ¹ÑÐµ ÐÐµÐ½ÑÑ: Ð¸ÑÑÐ¾ÑÐ¸Ñ, ÑÑÑÐ¸Ð·Ð¼ Ð¸ Ð´Ð¾ÑÑÐ³. ÐÑÐºÑÐ¾Ð¹ÑÐµ Home, Ð²ÑÐ±ÐµÑÐ¸ÑÐµ Ð¸ Ð½Ð°Ð¶Ð¼Ð¸ÑÐµ Ð½Ð° ÑÐ¾ÑÐºÐ¸ Ð½Ð° ÐºÐ°ÑÑÐµ. ÐÑÐºÑÐ¾Ð¹ÑÐµ Ð Ð£ÐÐÐÐÐÐ¡Ð¢ÐÐ, ÑÑÐ¾Ð±Ñ ÑÐ²Ð¸Ð´ÐµÑÑ Ð²ÑÐµ ÑÑÐ½ÐºÑÐ¸Ð¸.",
-    zh: "æ¢ç´¢ç­é£äºï¼åå²ãææ¸¸ä¸ä¼é²ãæå¼ Homeï¼éæ©å¹¶ç¹å»å°å¾ä¸çç¹ä½ãæå¼æåæ¥çææåè½ã"
+    es: "Explora Génova: historia, turismo y tiempo libre. Abre Home, elige y toca los puntos en el mapa. Abre la GUÍA para ver todas las funciones.",
+    fr: "Explorez Gênes : histoire, tourisme et temps libre. Ouvrez Home, choisissez et touchez les points sur la carte. Ouvrez le GUIDE pour toutes les fonctions.",
+    ar: "استكشف جنوة: التاريخ والسياحة ووقت الفراغ. افتح Home، اختر واضغط على النقاط على الخريطة. افتح الدليل لمعرفة جميع الميزات.",
+      ru: "Исследуйте Геную: история, туризм и досуг. Откройте Home, выберите и нажмите на точки на карте. Откройте РУКОВОДСТВО, чтобы увидеть все функции.",
+    zh: "探索热那亚：历史、旅游与休闲。打开 Home，选择并点击地图上的点位。打开指南查看所有功能。"
   };
 
   // label for the guide button
@@ -252,11 +252,11 @@ function openInfo(){
     it: "Guida",
     lij:"Guida",
     en: "Guide",
-    es: "GuÃ­a",
+    es: "Guía",
     fr: "Guide",
-    ar: "Ø§ÙØ¯ÙÙÙ",
-    ru: "Ð ÑÐºÐ¾Ð²Ð¾Ð´ÑÑÐ²Ð¾",
-    zh: "æå"
+    ar: "الدليل",
+    ru: "Руководство",
+    zh: "指南"
   };
 
   // handle RTL
@@ -314,7 +314,7 @@ function openPreferiti(){
   }
 
   try{
-    // prepara modalitÃ  "embedded"
+    // prepara modalità "embedded"
     menu.classList.remove('open'); // lo gestiamo noi
     menu.classList.add('docked-home');
     menu.style.left = ''; menu.style.top = ''; menu.style.bottom = ''; menu.style.transform = '';
@@ -366,7 +366,7 @@ function openStoria(){
   }
 
   // Show a quick loading placeholder while we ensure the menu exists.
-  try{ inner.innerHTML = '<p style="opacity:.85">â¦</p>'; }catch(_){}
+  try{ inner.innerHTML = '<p style="opacity:.85">…</p>'; }catch(_){}
 
   ensureMenuThen(function(menu){
     if(menu){
@@ -523,7 +523,7 @@ sqorciBtn          = rebind(sqorciBtn, onSqorciClick);
 
 (function(){
   function setup(){
-    // Home puÃ² essere "menu-home" o "menu-home-extra" a seconda della versione
+    // Home può essere "menu-home" o "menu-home-extra" a seconda della versione
     var home    = document.getElementById('menu-home') || document.getElementById('menu-home-extra');
     var qtPanel = document.getElementById('quick-toggles');
     if (!home || !qtPanel){
