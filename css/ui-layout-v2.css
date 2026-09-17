@@ -1580,3 +1580,13 @@ html body #help-legend{
     height:22px !important;
   }
 }
+
+/* ========================================================================== 
+   v45 - Allineamento inferiore del gruppo QR / GPS / Scanner QR
+   Il GPS e' piu' grande: lo solleviamo di 3px cosi' il suo bordo inferiore
+   coincide visivamente con quello dei due pulsanti laterali.
+   ========================================================================== */
+#bottom-bar #btn-gps{
+  position:relative !important;
+  top:-3px !important;
+}
