@@ -316,7 +316,7 @@
     backButton.hidden = false;
     var categories = section.categories.map(function(category, index){
       if(category.mapIcon && category.mapToggle){
-        var sourceToggle = document.querySelector('#quick-toggles '+category.mapToggle);
+        var sourceToggle = findMapToggle(category);
         var active = isMapToggleActive(sourceToggle);
         var mapActionLabel = (active ? 'Nascondi ' : 'Mostra ')+category.title.toLowerCase()+' sulla mappa';
         return ''+
@@ -338,9 +338,10 @@
     }).join('');
     scroll.innerHTML = ''+
       '<div class="gm-new-home-detail">'+
-      '  <div class="gm-new-home-detail-head"><h3>'+escapeHtml(section.title)+'</h3><p>'+escapeHtml(section.description)+'</p></div>'+
+      detailHeadHtml(section, null)+
       '  <div class="gm-new-home-category-grid">'+categories+'</div>'+
       '</div>';
+    bindDetailMapShortcut(section, null);
     scroll.querySelectorAll('[data-category]').forEach(function(button){
       var categoryIndex = Number(button.getAttribute('data-category'));
       button.addEventListener('click', function(){
@@ -358,7 +359,7 @@
         event.stopPropagation();
         var category = section.categories[Number(button.getAttribute('data-map-category'))];
         if(!category || !category.mapToggle) return;
-        var sourceToggle = document.querySelector('#quick-toggles '+category.mapToggle);
+        var sourceToggle = findMapToggle(category);
         if(!sourceToggle) return;
         sourceToggle.click();
         setTimeout(function(){ syncMapCategoryButton(button, category); }, 80);
@@ -377,7 +378,7 @@
 
   function syncMapCategoryButton(button, category){
     if(!button || !category || !category.mapToggle) return;
-    var sourceToggle = document.querySelector('#quick-toggles '+category.mapToggle);
+    var sourceToggle = findMapToggle(category);
     var active = isMapToggleActive(sourceToggle);
     button.setAttribute('aria-pressed', active ? 'true' : 'false');
     var mapActionLabel = (active ? 'Nascondi ' : 'Mostra ')+category.title.toLowerCase()+' sulla mappa';
@@ -385,6 +386,70 @@
     button.setAttribute('aria-label', mapActionLabel);
     var card = button.closest('.gm-new-home-category');
     if(card) card.classList.toggle('is-map-active', active);
+  }
+
+  function findMapToggle(category){
+    if(!category || !category.mapToggle) return null;
+    return document.querySelector('#quick-toggles '+category.mapToggle) || document.querySelector(category.mapToggle);
+  }
+
+  function detailHeadHtml(section, category, heading, note){
+    var shortcut = '';
+    var headingText = heading == null ? (category ? category.title : section.title) : heading;
+    var noteText = note == null ? (category ? category.note : section.description) : note;
+
+    if(category && category.mapToggle){
+      var sourceToggle = findMapToggle(category);
+      if(sourceToggle){
+        var active = isMapToggleActive(sourceToggle);
+        var label = (active ? 'Nascondi ' : 'Mostra ')+category.title+' sulla mappa';
+        var visual = category.mapIcon
+          ? '<img src="'+escapeHtml(category.mapIcon)+'" alt="" aria-hidden="true">'
+          : icon(section ? section.theme : 'guide');
+        shortcut = '<button type="button" class="gm-new-home-detail-map-shortcut gm-new-home-detail-category-shortcut'+(active?' is-map-active':'')+'" data-detail-map-category="1" aria-pressed="'+(active?'true':'false')+'" title="'+escapeHtml(label)+'" aria-label="'+escapeHtml(label)+'">'+visual+'</button>';
+      }
+    }else if(section && section.sideButton){
+      var sourceButton = document.querySelector(section.sideButton);
+      if(sourceButton){
+        var sourceIcon = sourceButton.querySelector('.qt-icon');
+        var visual = sourceIcon ? sourceIcon.innerHTML : icon(section.theme || 'guide');
+        var label = 'Apri '+section.title+' sulla mappa';
+        shortcut = '<button type="button" class="gm-new-home-detail-map-shortcut gm-new-home-detail-section-shortcut" data-detail-side-section="'+escapeHtml(section.key)+'" title="'+escapeHtml(label)+'" aria-label="'+escapeHtml(label)+'">'+visual+'</button>';
+      }
+    }
+
+    return '<div class="gm-new-home-detail-head'+(shortcut?' has-map-shortcut':'')+'">'+
+      '<div class="gm-new-home-detail-head-copy"><h3>'+escapeHtml(headingText)+'</h3><p>'+escapeHtml(noteText)+'</p></div>'+shortcut+'</div>';
+  }
+
+  function bindDetailMapShortcut(section, category){
+    var sectionShortcut = scroll.querySelector('[data-detail-side-section]');
+    if(sectionShortcut && section && section.sideButton){
+      var sourceButton = document.querySelector(section.sideButton);
+      sectionShortcut.addEventListener('click', function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        if(!sourceButton) return;
+        close(false);
+        setTimeout(function(){
+          if(sourceButton.getAttribute('aria-expanded') !== 'true') sourceButton.click();
+        }, 60);
+      });
+    }
+
+    var categoryShortcut = scroll.querySelector('[data-detail-map-category]');
+    if(categoryShortcut && category && category.mapToggle){
+      var sourceToggle = findMapToggle(category);
+      categoryShortcut.addEventListener('click', function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        if(!sourceToggle) return;
+        close(false);
+        setTimeout(function(){
+          if(!isMapToggleActive(sourceToggle)) sourceToggle.click();
+        }, 60);
+      });
+    }
   }
 
   function getExistingPlaces(listId){
@@ -464,7 +529,7 @@
     }).join('');
 
     scroll.innerHTML = '<div class="gm-new-home-detail gm-new-home-area-detail">'+
-      '<div class="gm-new-home-detail-head"><h3>'+escapeHtml(category.title)+'</h3><p>'+escapeHtml(category.note)+'</p></div>'+ 
+      detailHeadHtml(section, category)+
       '<div class="gm-new-home-qr-tools gm-new-home-area-tools">'+
         '<label class="gm-new-home-qr-search"><span class="sr-only">Cerca un luogo</span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></svg><input type="search" class="gm-new-home-area-filter" placeholder="Cerca un luogo o un quartiere"></label>'+ 
         '<button type="button" class="gm-new-home-qr-expand gm-new-home-area-expand" aria-pressed="true">Chiudi tutti</button>'+ 
@@ -473,6 +538,8 @@
       '<div class="gm-new-home-qr-groups gm-new-home-area-groups">'+groupMarkup+'</div>'+ 
       '<div class="gm-new-home-empty gm-new-home-area-no-results" hidden>Nessun luogo o quartiere corrisponde alla ricerca.</div>'+ 
     '</div>';
+
+    bindDetailMapShortcut(section, category);
 
     var groupPanels = Array.prototype.slice.call(scroll.querySelectorAll('.gm-new-home-area-group'));
     var expandButton = scroll.querySelector('.gm-new-home-area-expand');
@@ -635,8 +702,9 @@
     var total = groups.reduce(function(sum, group){ return sum + group.points.length; }, 0);
     if(!groups.length){
       scroll.innerHTML = '<div class="gm-new-home-detail">'+
-        '<div class="gm-new-home-detail-head"><h3>Punti QR</h3><p>I punti QR sono in caricamento. Riapri questa sezione tra qualche istante.</p></div>'+ 
+        detailHeadHtml(section, category, 'Punti QR', 'I punti QR sono in caricamento. Riapri questa sezione tra qualche istante.')+
         '</div>';
+      bindDetailMapShortcut(section, category);
       scroll.scrollTop = 0;
       return;
     }
@@ -656,7 +724,7 @@
     }).join('');
 
     scroll.innerHTML = '<div class="gm-new-home-detail gm-new-home-qr-detail">'+
-      '<div class="gm-new-home-detail-head"><h3>Punti QR</h3><p>Esplora '+total+' punti organizzati in '+groups.length+' zone e quartieri di Genova.</p></div>'+ 
+      detailHeadHtml(section, category, 'Punti QR', 'Esplora '+total+' punti organizzati in '+groups.length+' zone e quartieri di Genova.')+
       '<div class="gm-new-home-qr-tools">'+
         '<label class="gm-new-home-qr-search"><span class="sr-only">Cerca un punto QR</span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></svg><input type="search" id="gm-new-home-qr-filter" placeholder="Cerca un punto QR o un quartiere"></label>'+ 
         '<button type="button" class="gm-new-home-qr-expand" id="gm-new-home-qr-expand" aria-pressed="true">Chiudi tutti</button>'+ 
@@ -665,6 +733,8 @@
       '<div class="gm-new-home-qr-groups">'+groupMarkup+'</div>'+ 
       '<div class="gm-new-home-empty gm-new-home-qr-no-results" hidden>Nessun punto QR corrisponde alla ricerca.</div>'+ 
     '</div>';
+
+    bindDetailMapShortcut(section, category);
 
     var groupPanels = Array.prototype.slice.call(scroll.querySelectorAll('.gm-new-home-qr-group'));
     var expandButton = scroll.querySelector('#gm-new-home-qr-expand');
@@ -1160,12 +1230,14 @@
     }).join('');
 
     scroll.innerHTML = '<div class="gm-new-home-detail gm-new-home-layer-detail">'+
-      '<div class="gm-new-home-detail-head"><h3>'+escapeHtml(category.title)+'</h3><p>'+escapeHtml(category.note)+'</p></div>'+ 
+      detailHeadHtml(section, category)+
       '<div class="gm-new-home-layer-toolbar">'+
         '<label class="gm-new-home-layer-master-row"><span><strong>Mostra tutti</strong><small class="gm-new-home-layer-status">0 tracciati attivi</small></span><input class="gm-new-home-layer-master" type="checkbox" role="switch"><span class="gm-new-home-switch" aria-hidden="true"></span></label>'+
       '</div>'+lists+
       '<button type="button" class="gm-new-home-map-view">Chiudi e guarda la mappa</button>'+ 
     '</div>';
+
+    bindDetailMapShortcut(section, category);
 
     scroll.querySelectorAll('.gm-new-home-layer-toggle').forEach(function(toggle){
       toggle.addEventListener('change', function(){
@@ -1865,9 +1937,10 @@
     }
     scroll.innerHTML = ''+
       '<div class="gm-new-home-detail">'+
-      '  <div class="gm-new-home-detail-head"><h3>'+escapeHtml(category.title)+'</h3><p>'+escapeHtml(category.note)+'</p></div>'+
+      detailHeadHtml(section, category)+
       content+
       '</div>';
+    bindDetailMapShortcut(section, category);
     scroll.querySelectorAll('[data-place]').forEach(function(button){
       button.addEventListener('click', function(){
         var place = places[Number(button.getAttribute('data-place'))];

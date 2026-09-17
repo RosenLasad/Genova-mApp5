@@ -1378,3 +1378,94 @@ button.gm-new-home-layer-copy:hover strong{ color:var(--gm-theme-dark); text-dec
 /* Eventi v12: allineamento dei nuovi dettagli grafici in RTL. */
 .gm-new-home-overlay:dir(rtl) .gm-new-home-event-tag{ padding:10px 12px 10px 10px; }
 .gm-new-home-overlay:dir(rtl) .gm-new-home-event-tag-copy{ text-align:right; }
+
+/* v43 - scorciatoie mappa nelle intestazioni di categorie e sotto-categorie */
+.gm-new-home-detail-head{
+  position:relative;
+}
+.gm-new-home-detail-head-copy{
+  min-width:0;
+}
+.gm-new-home-detail-head.has-map-shortcut .gm-new-home-detail-head-copy{
+  padding-right:72px;
+}
+.gm-new-home-detail-map-shortcut{
+  position:absolute;
+  top:12px;
+  right:max(clamp(18px, 3vw, 25px), calc((100% - 800px) / 2 + 24px));
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  padding:8px;
+  color:#fff;
+  background:rgba(8,18,31,.48);
+  border:1px solid color-mix(in srgb, var(--gm-theme-accent) 72%, #fff);
+  border-radius:14px;
+  box-shadow:0 5px 16px rgba(0,0,0,.22),0 0 0 1px rgba(255,255,255,.08) inset;
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
+  cursor:pointer;
+  z-index:2;
+  transition:transform .16s ease, background-color .16s ease, box-shadow .16s ease, border-color .16s ease;
+  touch-action:manipulation;
+}
+.gm-new-home-detail-map-shortcut:hover{
+  transform:scale(1.06);
+  background:rgba(8,18,31,.68);
+  box-shadow:0 7px 20px rgba(0,0,0,.28),0 0 0 2px rgba(255,255,255,.15) inset;
+}
+.gm-new-home-detail-map-shortcut:active{ transform:scale(.97); }
+.gm-new-home-detail-map-shortcut:focus-visible{
+  outline:3px solid color-mix(in srgb, var(--gm-theme-accent) 68%, #fff);
+  outline-offset:2px;
+}
+.gm-new-home-detail-map-shortcut img,
+.gm-new-home-detail-map-shortcut .qt-icon img{
+  width:34px;
+  height:34px;
+  display:block;
+  object-fit:contain;
+  filter:none;
+  opacity:1;
+}
+.gm-new-home-detail-map-shortcut svg,
+.gm-new-home-detail-map-shortcut .qt-icon svg{
+  width:34px;
+  height:34px;
+  display:block;
+}
+.gm-new-home-detail-category-shortcut.is-map-active{
+  background:linear-gradient(145deg, var(--gm-theme), var(--gm-theme-accent));
+  border-color:rgba(255,255,255,.76);
+  box-shadow:0 6px 18px rgba(0,0,0,.24),inset 0 0 0 2px rgba(255,255,255,.46);
+}
+.gm-new-home-overlay:dir(rtl) .gm-new-home-detail-head.has-map-shortcut .gm-new-home-detail-head-copy{
+  padding-right:0;
+  padding-left:72px;
+}
+.gm-new-home-overlay:dir(rtl) .gm-new-home-detail-map-shortcut{
+  right:auto;
+  left:max(clamp(18px, 3vw, 25px), calc((100% - 800px) / 2 + 24px));
+}
+@media (max-width: 640px){
+  .gm-new-home-detail-head.has-map-shortcut .gm-new-home-detail-head-copy{ padding-right:60px; }
+  .gm-new-home-overlay:dir(rtl) .gm-new-home-detail-head.has-map-shortcut .gm-new-home-detail-head-copy{
+    padding-right:0;
+    padding-left:60px;
+  }
+  .gm-new-home-detail-map-shortcut{
+    top:10px;
+    width:46px;
+    height:46px;
+    padding:7px;
+    border-radius:12px;
+  }
+  .gm-new-home-detail-map-shortcut img,
+  .gm-new-home-detail-map-shortcut .qt-icon img,
+  .gm-new-home-detail-map-shortcut svg,
+  .gm-new-home-detail-map-shortcut .qt-icon svg{
+    width:30px;
+    height:30px;
+  }
+}
