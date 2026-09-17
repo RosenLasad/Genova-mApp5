@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="css/flag-switcher.css">
 
 <link rel="stylesheet" href="css/inline.bundle.css?v=20260917-1">
+<link rel="stylesheet" href="css/contact-v39.css?v=20260917-1">
 <link rel="stylesheet" href="css/taccuino.css">
 <link rel="stylesheet" href="css/qr-panel-layout.css?v=20260915-8">
 <link rel="stylesheet" href="css/nearby.css?v=20260916-1">
@@ -44,7 +45,7 @@
 <script src="js/place-popup.js?v=20260911-6"></script>
 <script src="js/wall-popup.js?v=20260911-6"></script>
 <script src="js/languages.js"></script>
-<script src="js/inline.js?v=20260917-5"></script>
+<script src="js/inline.js?v=20260917-6"></script>
 <script>window.__GENOVA_INLINE_RUN(2,2);</script>
 
 <!-- PATCH: Legend as icon (help) -->
@@ -813,6 +814,42 @@
       <p style="display:none;">
         <label>Don’t fill this out: <input name="bot-field" /></label>
       </p>
+
+      <fieldset class="c-reason-field">
+        <legend data-contact-i18n="reason_title">Per cosa ci stai contattando?</legend>
+        <p class="c-reason-help" data-contact-i18n="reason_help">Seleziona il motivo principale del messaggio.</p>
+        <div class="c-reason-list">
+          <label class="c-reason-option">
+            <input type="radio" name="reason" value="add_event_place_sponsor" required />
+            <span data-contact-i18n="reason_1">Aggiunta evento / luogo / sponsor</span>
+          </label>
+          <label class="c-reason-option">
+            <input type="radio" name="reason" value="subscription_issue" required />
+            <span data-contact-i18n="reason_2">Problemi con l’abbonamento</span>
+          </label>
+          <label class="c-reason-option">
+            <input type="radio" name="reason" value="app_error" required />
+            <span data-contact-i18n="reason_3">Segnalazione errore nell’app</span>
+          </label>
+          <label class="c-reason-option">
+            <input type="radio" name="reason" value="collaboration" required />
+            <span data-contact-i18n="reason_4">Proposta di collaborazione</span>
+          </label>
+          <label class="c-reason-option">
+            <input type="radio" name="reason" value="place_content_report" required />
+            <span data-contact-i18n="reason_5">Segnalazione luogo / contenuto</span>
+          </label>
+          <label class="c-reason-option">
+            <input type="radio" name="reason" value="commercial_info" required />
+            <span data-contact-i18n="reason_6">Informazioni commerciali</span>
+          </label>
+          <label class="c-reason-option">
+            <input type="radio" name="reason" value="other" required />
+            <span data-contact-i18n="reason_7">Altro</span>
+          </label>
+        </div>
+        <div class="c-reason-error" data-contact-i18n="reason_required">Seleziona un motivo prima di inviare il messaggio.</div>
+      </fieldset>
 
       <div class="c-field">
         <label for="c-name" data-contact-i18n="name_label">Nome (opzionale)</label>

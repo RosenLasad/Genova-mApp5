@@ -51,6 +51,23 @@ function recipients(value) {
     .slice(0, 5);
 }
 
+function contactReason(value) {
+  const key = cleanLine(value, 80);
+  const reasons = {
+    add_event_place_sponsor: "Aggiunta evento / luogo / sponsor",
+    subscription_issue: "Problemi con l’abbonamento",
+    app_error: "Segnalazione errore nell’app",
+    collaboration: "Proposta di collaborazione",
+    place_content_report: "Segnalazione luogo / contenuto",
+    commercial_info: "Informazioni commerciali",
+    other: "Altro",
+  };
+  return {
+    id: Object.prototype.hasOwnProperty.call(reasons, key) ? key : "other",
+    label: reasons[key] || reasons.other,
+  };
+}
+
 async function sendContactEmail(data) {
   if (!data || data["notification-source"] !== "genova-mapp-contact-v1") return;
 
@@ -58,6 +75,7 @@ async function sendContactEmail(data) {
   // Keep the honeypot check as an additional defensive guard.
   if (cleanLine(data["bot-field"], 20)) return;
 
+  const reason = contactReason(data.reason);
   const name = cleanLine(data.name, 120);
   const senderEmail = cleanLine(data.email, 254);
   const message = cleanMessage(data.message, 6000);
@@ -81,13 +99,13 @@ async function sendContactEmail(data) {
     timeStyle: "short",
   }).format(new Date());
 
-  const displayName = name || "Utente Genova mApp";
   const validReplyTo = isEmail(senderEmail) ? senderEmail : "";
-  const subject = `[Genova mApp] Nuovo messaggio da ${displayName}`.slice(0, 180);
+  const subject = `[Genova mApp] ${reason.label}`.slice(0, 180);
 
   const text = [
     "Nuovo messaggio da Genova mApp",
     "",
+    `Motivo: ${reason.label}`,
     `Nome: ${name || "Non indicato"}`,
     `Email: ${validReplyTo || "Non indicata"}`,
     `Ricevuto: ${receivedAt}`,
@@ -111,8 +129,10 @@ async function sendContactEmail(data) {
         <div style="font-size:13px;opacity:.86;margin-top:3px">Nuovo messaggio dal modulo Contattaci</div>
       </div>
       <div style="padding:22px">
+        <div style="display:inline-block;margin:0 0 16px;padding:7px 11px;border-radius:999px;background:#e0f2fe;color:#075985;font-size:13px;font-weight:700">${escapeHtml(reason.label)}</div>
         <table role="presentation" style="border-collapse:collapse;width:100%;font-size:14px;margin-bottom:18px">
-          <tr><td style="padding:5px 10px 5px 0;font-weight:700;width:90px">Nome</td><td style="padding:5px 0">${escapeHtml(name || "Non indicato")}</td></tr>
+          <tr><td style="padding:5px 10px 5px 0;font-weight:700;width:90px">Motivo</td><td style="padding:5px 0">${escapeHtml(reason.label)}</td></tr>
+          <tr><td style="padding:5px 10px 5px 0;font-weight:700">Nome</td><td style="padding:5px 0">${escapeHtml(name || "Non indicato")}</td></tr>
           <tr><td style="padding:5px 10px 5px 0;font-weight:700">Email</td><td style="padding:5px 0">${replyBlock}</td></tr>
           <tr><td style="padding:5px 10px 5px 0;font-weight:700">Ricevuto</td><td style="padding:5px 0">${escapeHtml(receivedAt)}</td></tr>
         </table>
@@ -130,7 +150,10 @@ async function sendContactEmail(data) {
     subject,
     text,
     html,
-    tags: [{ name: "source", value: "genova_mapp_contact" }],
+    tags: [
+      { name: "source", value: "genova_mapp_contact" },
+      { name: "reason", value: reason.id },
+    ],
   };
   if (validReplyTo) payload.reply_to = validReplyTo;
 
@@ -150,7 +173,7 @@ async function sendContactEmail(data) {
     throw new Error(`Resend contact notification failed with HTTP ${response.status}`);
   }
 
-  console.log(`Genova mApp contact notification sent${result?.id ? ` (${result.id})` : ""}.`);
+  console.log(`Genova mApp contact notification sent${result?.id ? ` (${result.id})` : ""} [${reason.id}].`);
 }
 
 export default {

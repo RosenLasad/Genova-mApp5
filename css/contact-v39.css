@@ -1,0 +1,107 @@
+/* Genova mApp v39 - motivi del contatto */
+#contactPanel .c-reason-field{
+  margin:0 0 14px;
+  padding:0;
+  border:0;
+  min-width:0;
+}
+
+#contactPanel .c-reason-field legend{
+  display:block;
+  width:100%;
+  margin:0 0 3px;
+  padding:0;
+  font-size:.92rem;
+  line-height:1.3;
+  font-weight:800;
+  color:#f8fafc;
+}
+
+#contactPanel .c-reason-help{
+  margin:0 0 9px;
+  font-size:.78rem;
+  line-height:1.35;
+  color:#cbd5e1;
+}
+
+#contactPanel .c-reason-list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:6px;
+}
+
+#contactPanel .c-reason-option{
+  display:flex;
+  align-items:flex-start;
+  gap:9px;
+  margin:0;
+  padding:8px 10px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:10px;
+  background:rgba(255,255,255,.045);
+  cursor:pointer;
+  font-size:.82rem;
+  line-height:1.3;
+  opacity:1;
+  transition:background .15s ease,border-color .15s ease,box-shadow .15s ease;
+}
+
+#contactPanel .c-reason-option:hover{
+  background:rgba(255,255,255,.075);
+  border-color:rgba(255,255,255,.23);
+}
+
+#contactPanel .c-reason-option.is-selected{
+  background:rgba(56,189,248,.14);
+  border-color:rgba(56,189,248,.68);
+  box-shadow:0 0 0 2px rgba(56,189,248,.10);
+}
+
+#contactPanel .c-reason-option input[type="radio"]{
+  flex:0 0 auto;
+  width:17px;
+  height:17px;
+  margin:0;
+  margin-top:1px;
+  accent-color:#38bdf8;
+  cursor:pointer;
+}
+
+#contactPanel .c-reason-option span{
+  min-width:0;
+  color:#e5e7eb;
+}
+
+#contactPanel .c-reason-error{
+  display:none;
+  margin:7px 0 0;
+  padding:7px 9px;
+  border-radius:9px;
+  border:1px solid rgba(248,113,113,.38);
+  background:rgba(239,68,68,.13);
+  color:#fecaca;
+  font-size:.76rem;
+  line-height:1.35;
+}
+
+#contactPanel.reason-invalid .c-reason-error{
+  display:block;
+}
+
+#contactPanel.reason-invalid .c-reason-list{
+  border-radius:11px;
+  box-shadow:0 0 0 2px rgba(248,113,113,.30);
+}
+
+#contactPanel.is-sending .c-reason-option{
+  pointer-events:none;
+  opacity:.72;
+}
+
+@media (max-width:480px){
+  #contactPanel .c-reason-option{
+    padding:7px 9px;
+    font-size:.80rem;
+  }
+  #contactPanel .c-reason-list{ gap:5px; }
+}
