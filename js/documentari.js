@@ -1107,34 +1107,56 @@ DOCS.forEach(function(d){
 
 /* ===== part124.js ===== */
 (function(){
-  // Trova la checkbox "Mostra tutti i documentari"
+  // Trova il master REALE dei MiniDoc.
+  // chk-doc-all e' quello creato dalla lista Documentari e controlla l'intero
+  // catalogo caricato dal manifest (quindi anche i MiniDoc aggiunti in seguito).
+  // storia-doc-all resta solo come specchio/fallback del vecchio menu Storia.
   function ensureStoriaDocAll(cb){
     var tries = 0;
     (function tick(){
-      var el = document.getElementById('storia-doc-all');
+      var el = document.getElementById('chk-doc-all') || document.getElementById('storia-doc-all');
       if(el){ cb(el); return; }
       if(++tries < 80) setTimeout(tick, 120);
     })();
   }
 
-  // Toggle logico: on/off di "Mostra tutti i documentari"
+  function dispatchDocChange(chk){
+    try{
+      var ev = new Event('change', {bubbles:true, cancelable:true});
+      chk.dispatchEvent(ev);
+    }catch(_){
+      try{
+        var ev2 = document.createEvent('Event');
+        ev2.initEvent('change', true, true);
+        chk.dispatchEvent(ev2);
+      }catch(__){}
+    }
+  }
+
+  function syncDocAllMirrors(on){
+    try{
+      var story = document.getElementById('storia-doc-all');
+      if(story){ story.indeterminate = false; story.checked = !!on; }
+    }catch(_){}
+    try{
+      document.querySelectorAll('#qt-cat-passato .qt-doc-all').forEach(function(b){
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+    }catch(_){}
+  }
+
+  // Toggle logico: usa il master reale, cosi' il bottone MiniDoc di Passato
+  // accende/spegne TUTTI i MiniDoc presenti nel manifest, non solo i quattro
+  // storici che erano clonati nel vecchio pannello Storia.
   function toggleDocAll(btn){
     ensureStoriaDocAll(function(chk){
-      chk.checked = !chk.checked;
-
-      // scatter di eventi "change" compatibile con i browser un po' ottusi
-      try{
-        var ev = new Event('change', {bubbles:true, cancelable:true});
-        chk.dispatchEvent(ev);
-      }catch(_){
-        try{
-          var ev2 = document.createEvent('Event');
-          ev2.initEvent('change', true, true);
-          chk.dispatchEvent(ev2);
-        }catch(__){}
-      }
-
-      btn.setAttribute('aria-pressed', chk.checked ? 'true' : 'false');
+      var allOn = !!chk.checked && !chk.indeterminate;
+      var next = !allOn;
+      chk.indeterminate = false;
+      chk.checked = next;
+      dispatchDocChange(chk);
+      syncDocAllMirrors(next);
+      if(btn) btn.setAttribute('aria-pressed', next ? 'true' : 'false');
     });
   }
 
@@ -1191,7 +1213,9 @@ DOCS.forEach(function(d){
       if(el && typeof el.click==='function') el.click();
     }catch(_){}
   }
-  function findDocAll(){ return document.querySelector('#storia-doc-all'); }
+  // Il master reale dei MiniDoc e' chk-doc-all; storia-doc-all e' solo
+  // l'interfaccia secondaria del menu Storia. Preferiamo sempre il primo.
+  function findDocAll(){ return document.querySelector('#chk-doc-all') || document.querySelector('#storia-doc-all'); }
   function ensureDocAll(then){
     var tries = 0;
     (function tick(){
@@ -1200,11 +1224,23 @@ DOCS.forEach(function(d){
       if(++tries < 80) setTimeout(tick, 100);
     })();
   }
-  // New: only toggle the "Mostra tutti" checkbox, do not expand the list
+  // Toggle di tutti i MiniDoc, senza espandere l'elenco.
   function openStoriaDocAllOnly(){
     ensureDocAll(function(chk){
-      chk.checked = !chk.checked;
+      var allOn = !!chk.checked && !chk.indeterminate;
+      var next = !allOn;
+      chk.indeterminate = false;
+      chk.checked = next;
       try{ chk.dispatchEvent(new Event('change', {bubbles:true})); }catch(_){ var ev=document.createEvent('Event'); ev.initEvent('change', true, true); chk.dispatchEvent(ev); }
+      try{
+        var story = document.getElementById('storia-doc-all');
+        if(story && story !== chk){ story.indeterminate = false; story.checked = next; }
+      }catch(_story){}
+      try{
+        document.querySelectorAll('#qt-cat-passato .qt-doc-all').forEach(function(b){
+          b.setAttribute('aria-pressed', next ? 'true' : 'false');
+        });
+      }catch(_buttons){}
     });
   }
   window.openStoriaDocAllOnly = openStoriaDocAllOnly;
