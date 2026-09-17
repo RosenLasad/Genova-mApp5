@@ -1,0 +1,11 @@
+{
+  "id": "piazza-de-ferrari",
+  "name": "Piazza de Ferrari",
+  "coords": [
+    44.40712720909712,
+    8.933972142472864
+  ],
+  "youtube": "https://youtu.be/nANDItOIOlc",
+  "info": "Mini documentario su Piazza de Ferrari e la sua storia.",
+  "thumbnail": null
+}

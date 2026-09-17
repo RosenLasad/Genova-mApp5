@@ -1,0 +1,10 @@
+{
+  "id": "borgo-incrociati",
+  "name": "Borgo Incrociati",
+  "coords": [
+    44.40851090999621,
+    8.950047849156162
+  ],
+  "youtube": "https://youtu.be/LjfVjhjDvSI",
+  "info": "Mini Documentario su Borgo Incrociati"
+}

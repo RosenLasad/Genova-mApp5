@@ -1,0 +1,11 @@
+{
+  "id": "seno-di-giano",
+  "name": "Seno di Giano",
+  "coords": [
+    44.40336915941983,
+    8.932371887002882
+  ],
+  "youtube": "https://youtu.be/5mKCW0Mf5YA",
+  "info": "Mini documentario sul Seno di Giano.",
+  "thumbnail": null
+}

@@ -1,0 +1,10 @@
+{
+  "id": "cimitero-staglieno",
+  "name": "Cimitero Staglieno",
+  "coords": [
+    44.42869083288194,
+    8.950933965139109
+  ],
+  "youtube": "https://youtu.be/tMayj8iEwmM",
+  "info": "Mini Documentario sul Cimitero di Staglieno"
+}

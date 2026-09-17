@@ -1,0 +1,10 @@
+{
+  "id": "esposizione-universale-1914",
+  "name": "Esposizione Universale",
+  "coords": [
+    44.40256920446371,
+    8.944976783036836
+  ],
+  "youtube": "https://youtu.be/SXQFzLKUe8Y",
+  "info": "Mini Documentario sull'Esposizione Universale del 1914"
+}

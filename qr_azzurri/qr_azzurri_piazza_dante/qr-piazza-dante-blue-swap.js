@@ -9,6 +9,7 @@
         lng: 8.935857429434225,
         descr: "Galleria di Piazza Dante.",
         media: {
+          "minidoc": "borgo-ponticello",
           oggi: "qr_azzurri/qr_azzurri_piazza_dante/qr_azzurri_piazza_dante_galleria/qr_azzurri_piazza_dante_galleria_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_piazza_dante/qr_azzurri_piazza_dante_galleria/qr_azzurri_piazza_dante_galleria_ieri_1.mp4",
@@ -24,6 +25,7 @@
         lng: 8.936474916463442,
         descr: "Piazza Ponticello con la fontana",
         media: {
+          "minidoc": "borgo-ponticello",
           oggi: "qr_azzurri/qr_azzurri_piazza_dante/qr_azzurri_piazza_dante_ponticello/qr_azzurri_piazza_dante_ponticello_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_piazza_dante/qr_azzurri_piazza_dante_ponticello/qr_azzurri_piazza_dante_ponticello_ieri_1.mp4",

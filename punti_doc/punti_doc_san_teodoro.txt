@@ -1,0 +1,11 @@
+{
+  "id": "san-teodoro",
+  "name": "San Teodoro",
+  "coords": [
+    44.41412203482928,
+    8.914105475915406
+  ],
+  "youtube": "https://youtu.be/32TzhHyY5Qk",
+  "info": "Mini documentario su San Teodoro.",
+  "thumbnail": null
+}

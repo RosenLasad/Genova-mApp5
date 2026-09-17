@@ -14,6 +14,7 @@
         lng: 8.922370112447187,
         descr: "Piazza Acquaverde con la statua a Cristoforo Colombo",
         media: {
+          "minidoc": "stazione-principe",
           oggi: "qr_azzurri/qr_azzurri_piazza_principe/qr_azzurri_piazza_principe_acquaverde/qr_azzurri_piazza_principe_acquaverde_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_piazza_principe/qr_azzurri_piazza_principe_acquaverde/qr_azzurri_piazza_principe_acquaverde_ieri_1.mp4"
@@ -27,6 +28,7 @@
         lng: 8.918643226322418,
         descr: "Accanto alla stazione di P.Principe, passavano le linee del tram.",
         media: {
+          "minidoc": "stazione-principe",
           oggi: "qr_azzurri/qr_azzurri_piazza_principe/qr_azzurri_piazza_principe_binari/qr_azzurri_piazza_principe_binari_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_piazza_principe/qr_azzurri_piazza_principe_binari/qr_azzurri_piazza_principe_binari_ieri_1.mp4"

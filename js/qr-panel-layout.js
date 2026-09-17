@@ -402,6 +402,34 @@
     return parentId && childId ? parentId + "/" + childId : "";
   }
 
+  function miniDocIdFor(point, media) {
+    var value = '';
+    try{
+      value = (media && media.minidoc) ||
+              (point && point.minidoc) ||
+              (point && point.media && point.media.minidoc) || '';
+    }catch(_e){}
+    return String(value || '').trim();
+  }
+
+  function setMiniDocButtonReady(docId) {
+    var button = document.getElementById('btn-minidoc-qr');
+    if(!button) return;
+    var ready = !!docId;
+    button.setAttribute('data-qr-minidoc-ready', ready ? 'true' : 'false');
+    button.setAttribute('data-doc-id', ready ? docId : '');
+    button.setAttribute('aria-disabled', ready ? 'false' : 'true');
+    button.classList.toggle('qr-placeholder-action', !ready);
+    button.classList.toggle('qr-minidoc-ready', ready);
+    if(ready) button.removeAttribute('data-qr-placeholder');
+    else button.setAttribute('data-qr-placeholder','true');
+    applyMultimediaI18n();
+  }
+
+  function prepareMiniDocForPoint(point, media) {
+    setMiniDocButtonReady(miniDocIdFor(point, media));
+  }
+
   function compareSpecFor(point, parent, media, qrid) {
     var explicit = media && media.confronta;
     var today = "";
@@ -820,8 +848,9 @@
     if (miniDoc) {
       var miniLabel = miniDoc.querySelector(".qr-action-label");
       if (miniLabel) miniLabel.textContent = T.minidoc;
-      miniDoc.title = T.minidoc + " — " + T.comingSoon;
-      miniDoc.setAttribute("aria-label", T.minidoc + ". " + T.comingSoon);
+      var miniReady = miniDoc.getAttribute('data-qr-minidoc-ready') === 'true';
+      miniDoc.title = miniReady ? T.minidoc : (T.minidoc + " — " + T.comingSoon);
+      miniDoc.setAttribute("aria-label", miniReady ? T.minidoc : (T.minidoc + ". " + T.comingSoon));
     }
 
     var share = document.getElementById("btn-share-qr");
@@ -910,6 +939,26 @@
     actions.appendChild(audio);
     actions.appendChild(miniDoc);
 
+    if (!miniDoc.__qrMiniDocBound) {
+      miniDoc.__qrMiniDocBound = true;
+      miniDoc.addEventListener('click', function(event){
+        if(miniDoc.getAttribute('data-qr-minidoc-ready') !== 'true') return;
+        event.preventDefault();
+        event.stopPropagation();
+        var docId = miniDoc.getAttribute('data-doc-id') || '';
+        if(!docId) return;
+        try{
+          if(typeof window.__gmOpenMiniDocById === 'function'){
+            window.__gmOpenMiniDocById(docId);
+          }else{
+            window.setTimeout(function(){
+              try{ window.__gmOpenMiniDocById && window.__gmOpenMiniDocById(docId); }catch(_late){}
+            },150);
+          }
+        }catch(_e){}
+      });
+    }
+
     var share = document.getElementById("btn-share-qr");
     if (share) {
       share.classList.add("qr-extra-action", "qr-share-action");
@@ -962,11 +1011,13 @@
       var result = original.apply(this, arguments);
       syncParentBadge(parent);
       ensureMultimediaControls();
+      prepareMiniDocForPoint(point, media);
       prepareCompareForPoint(point, parent, media, qrid);
 
       focusQrPoint(point, function () {
         preparePanel(point, parent);
         ensureMultimediaControls();
+        prepareMiniDocForPoint(point, media);
         panel.style.visibility = previousVisibility;
         panel.style.pointerEvents = previousPointerEvents;
       });

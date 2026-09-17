@@ -608,6 +608,52 @@ DOCS.forEach(function(d){
     });
   }
 
+  var pendingExternalOpenId = '';
+
+  function openMiniDocById(id){
+    id = String(id || '').trim();
+    if(!id) return false;
+    var m = markersDocById[id];
+    if(!m){
+      pendingExternalOpenId = id;
+      return false;
+    }
+
+    pendingExternalOpenId = '';
+    try{
+      // Il MiniDoc collegato a un QR deve potersi aprire senza accendere
+      // tutti gli altri MiniDoc sulla mappa. Se il suo marker e' nascosto,
+      // lo montiamo temporaneamente e lo rimuoviamo alla chiusura del popup.
+      var wasVisible = !!(window.map && map.hasLayer && map.hasLayer(m));
+      if(!wasVisible && window.map){ m.addTo(map); }
+
+      try{
+        var closeQr = document.getElementById('close');
+        if(closeQr && typeof closeQr.click === 'function') closeQr.click();
+        else {
+          var qrPanel = document.getElementById('panel');
+          if(qrPanel) qrPanel.classList.remove('open');
+        }
+      }catch(_close){}
+
+      m.openPopup();
+      try{ map.setView(m.getLatLng(), Math.max(16, map.getZoom?map.getZoom():16), {animate:true}); }catch(_view){}
+      try{ history.replaceState(null, '', '?doc=' + encodeURIComponent(id)); }catch(_url){}
+
+      if(!wasVisible){
+        m.once('popupclose', function(){
+          try{
+            var keep = !!(groupDoc && groupDoc.hasLayer && groupDoc.hasLayer(m) && map.hasLayer(groupDoc));
+            if(!keep && map.hasLayer(m)) map.removeLayer(m);
+          }catch(_remove){}
+        });
+      }
+      return true;
+    }catch(_e){ return false; }
+  }
+
+  try{ window.__gmOpenMiniDocById = openMiniDocById; }catch(_e){}
+
   function openFromDeepLink(){
     try{
       var u = new URL(location.href);
@@ -636,12 +682,7 @@ DOCS.forEach(function(d){
     }).then(function(arr){
       DOCS = arr.filter(Boolean);
       // Fallback se non carica nulla (es. test locale con file://)
-      if(!DOCS.length) { try { DOCS = [
-{"id": "piazza-de-ferrari", "name": "Piazza de Ferrari", "coords": [44.40712720909712, 8.933972142472864], "youtube": "https://youtu.be/nANDItOIOlc", "info": "Mini documentario su Piazza de Ferrari e la sua storia.", "thumbnail": null}, 
-{"id": "san-teodoro", "name": "San Teodoro", "coords": [44.41412203482928, 8.914105475915406], "youtube": "https://youtu.be/32TzhHyY5Qk", "info": "Mini documentario su San Teodoro.", "thumbnail": null},
-{"id": "viaxxsettembre", "name": "Via XX settembre", "coords": [44.405826120223495, 8.939989775240152], "youtube": "https://youtu.be/Fdfh4CsqiDw", "info": "Mini documentario su Via XX settembre.", "thumbnail": null},
-{"id": "seno-di-giano", "name": "Seno di Giano", "coords": [44.40336915941983, 8.932371887002882], "youtube": "https://youtu.be/5mKCW0Mf5YA", "info": "Mini documentario sul Seno di Giano.", "thumbnail": null}
-]; } catch(_ ) {} }
+      if(!DOCS.length) { try { DOCS = [{"id": "piazza-de-ferrari", "name": "Piazza de Ferrari", "coords": [44.40712720909712, 8.933972142472864], "youtube": "https://youtu.be/nANDItOIOlc", "info": "Mini documentario su Piazza de Ferrari e la sua storia.", "thumbnail": null}, {"id": "san-teodoro", "name": "San Teodoro", "coords": [44.41412203482928, 8.914105475915406], "youtube": "https://youtu.be/32TzhHyY5Qk", "info": "Mini documentario su San Teodoro.", "thumbnail": null}, {"id": "seno-di-giano", "name": "Seno di Giano", "coords": [44.40336915941983, 8.932371887002882], "youtube": "https://youtu.be/5mKCW0Mf5YA", "info": "Mini documentario sul Seno di Giano.", "thumbnail": null}, {"id": "viaxxsettembre", "name": "Via XX settembre", "coords": [44.405826120223495, 8.939989775240152], "youtube": "https://youtu.be/Fdfh4CsqiDw", "info": "Mini documentario su Via XX settembre.", "thumbnail": null}, {"id": "cimitero-staglieno", "name": "Cimitero Staglieno", "coords": [44.42869083288194, 8.950933965139109], "youtube": "https://youtu.be/tMayj8iEwmM", "info": "Mini Documentario sul Cimitero di Staglieno"}, {"id": "borgo-incrociati", "name": "Borgo Incrociati", "coords": [44.40851090999621, 8.950047849156162], "youtube": "https://youtu.be/LjfVjhjDvSI", "info": "Mini Documentario su Borgo Incrociati"}, {"id": "fronti-basse", "name": "Fronti Basse", "coords": [44.40461961095648, 8.944204246412001], "youtube": "https://youtu.be/LUs7BOEziHI", "info": "Mini Documentario sulle Fronti Basse"}, {"id": "esposizione-universale-1914", "name": "Esposizione Universale", "coords": [44.40256920446371, 8.944976783036836], "youtube": "https://youtu.be/SXQFzLKUe8Y", "info": "Mini Documentario sull'Esposizione Universale del 1914"}, {"id": "stazione-brignole", "name": "Stazione Brignole", "coords": [44.40696316399487, 8.946721693490986], "youtube": "https://youtu.be/bRuiyCnLXKo", "info": "Mini Documentario sulla Stazione Brignole"}, {"id": "stazione-principe", "name": "Stazione Principe", "coords": [44.41736033780297, 8.921595766503463], "youtube": "https://youtu.be/jS6xNTdNwXc", "info": "Mini Documentario sulla Stazione P.Principe"}, {"id": "borgo-ponticello", "name": "Borgo Ponticello", "coords": [44.40598608933367, 8.936089317920874], "youtube": "https://youtu.be/QbrJlLfxRTo", "info": "Mini Documentario sul borgo di Ponticello"}, {"id": "borgo-piccapietra", "name": "Borgo Piccapietra", "coords": [44.40798507535832, 8.936440370414537], "youtube": "https://youtu.be/tf4A2yn1BWg", "info": "Mini Documentario sul borgo di Piccapietra"}, {"id": "parco-acquasola", "name": "Parco Acquasola", "coords": [44.408290447740896, 8.940179083362601], "youtube": "https://youtu.be/0eobd_4FQrU", "info": "Mini Documentario sul Parco dell'Acquasola"}, {"id": "circonvallazione-a-monte", "name": "Circonvallazione a monte", "coords": [44.41444082733196, 8.933274701938227], "youtube": "https://youtu.be/rRmjwFAd3wI", "info": "Mini Documentario sul quartiere di Castelletto"}, {"id": "corso-italia", "name": "Corso Italia", "coords": [44.39204349657359, 8.95452415798286], "youtube": "https://youtu.be/QP_5tV5ScsQ", "info": "Mini Documentario sulla nascita di Corso Italia"}]; } catch(_ ) {} }
       // Espone l'elenco corrente dei MiniDoc agli strumenti esterni (es. "Vicino a me")
       // senza duplicare i dati in altri file.
       try{
@@ -653,6 +694,9 @@ DOCS.forEach(function(d){
       // build markers & list
       ensureGroupDoc();
       buildMarkers();
+      if(pendingExternalOpenId){
+        try{ openMiniDocById(pendingExternalOpenId); }catch(_pending){}
+      }
       buildList();
       // Sync visibilitÃ  layer e items allo stato master + preferenze
       syncGroupDocToMaster();

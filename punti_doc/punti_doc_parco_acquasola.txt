@@ -1,0 +1,10 @@
+{
+  "id": "parco-acquasola",
+  "name": "Parco Acquasola",
+  "coords": [
+    44.408290447740896,
+    8.940179083362601
+  ],
+  "youtube": "https://youtu.be/0eobd_4FQrU",
+  "info": "Mini Documentario sul Parco dell'Acquasola"
+}

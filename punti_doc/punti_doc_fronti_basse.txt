@@ -1,0 +1,10 @@
+{
+  "id": "fronti-basse",
+  "name": "Fronti Basse",
+  "coords": [
+    44.40461961095648,
+    8.944204246412001
+  ],
+  "youtube": "https://youtu.be/LUs7BOEziHI",
+  "info": "Mini Documentario sulle Fronti Basse"
+}

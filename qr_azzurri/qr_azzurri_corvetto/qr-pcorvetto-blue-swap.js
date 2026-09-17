@@ -14,6 +14,7 @@
         lng: 8.938753373722692,
         descr: "Piazza Corvetto è uno dei nodi viari e urbanistici più eleganti di Genova, situato a ridosso del centro ottocentesco. Arrivando da Via XII Ottobre, la piazza si apre come un ampio e maestoso snodo circolare, arricchito da aiuole curate e dominato al centro dal grande monumento equestre dedicato a Vittorio Emanuele II.",
         media: {
+          "minidoc": "parco-acquasola",
           oggi: "qr_azzurri/qr_azzurri_corvetto/corvetto_ottobre_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_corvetto/corvetto_ottobre_ieri_1.mp4", "qr_azzurri/qr_azzurri_corvetto/corvetto_ottobre_ieri_2.mp4", "qr_azzurri/qr_azzurri_corvetto/corvetto_ottobre_ieri_3.mp4"]
         }

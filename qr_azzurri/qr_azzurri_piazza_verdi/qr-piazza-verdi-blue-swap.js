@@ -19,6 +19,7 @@
         "lat": 44.40656178307441, "lng": 8.945880164032085,
         "descr": "La Stazione Brignole costruita nel 1905.",
         "media": {
+          "minidoc": "stazione-brignole",
           "oggi": "qr_azzurri/qr_azzurri_piazza_verdi/qr_azzurri_piazza_verdi_stazione_brignole/qr_azzurri_piazza_verdi_stazione_brignole_oggi.mp4",
           "ieri": [
             "qr_azzurri/qr_azzurri_piazza_verdi/qr_azzurri_piazza_verdi_stazione_brignole/qr_azzurri_piazza_verdi_stazione_brignole_ieri_1.mp4",
@@ -31,6 +32,7 @@
         "lat": 44.40463907083693, "lng": 8.945357854090963,
         "descr": "Porta Pila su Via XX settembre.",
         "media": {
+          "minidoc": "fronti-basse",
           "oggi": "qr_azzurri/qr_azzurri_piazza_verdi/qr_azzurri_piazza_verdi_porta_pila_viaxx/qr_azzurri_piazza_verdi_porta_pila_viaxx_oggi.mp4",
           "ieri": [
 "qr_azzurri/qr_azzurri_piazza_verdi/qr_azzurri_piazza_verdi_porta_pila_viaxx/qr_azzurri_piazza_verdi_porta_pila_viaxx_ieri_1.mp4",

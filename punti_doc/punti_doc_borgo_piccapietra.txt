@@ -1,0 +1,10 @@
+{
+  "id": "borgo-piccapietra",
+  "name": "Borgo Piccapietra",
+  "coords": [
+    44.40798507535832,
+    8.936440370414537
+  ],
+  "youtube": "https://youtu.be/tf4A2yn1BWg",
+  "info": "Mini Documentario sul borgo di Piccapietra"
+}

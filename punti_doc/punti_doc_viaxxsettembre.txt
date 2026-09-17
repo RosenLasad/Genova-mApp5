@@ -1,0 +1,11 @@
+{
+  "id": "viaxxsettembre",
+  "name": "Via XX settembre",
+  "coords": [
+    44.405826120223495,
+    8.939989775240152
+  ],
+  "youtube": "https://youtu.be/Fdfh4CsqiDw",
+  "info": "Mini documentario su Via XX settembre.",
+  "thumbnail": null
+}

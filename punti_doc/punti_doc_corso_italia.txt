@@ -1,0 +1,10 @@
+{
+  "id": "corso-italia",
+  "name": "Corso Italia",
+  "coords": [
+    44.39204349657359,
+    8.95452415798286
+  ],
+  "youtube": "https://youtu.be/QP_5tV5ScsQ",
+  "info": "Mini Documentario sulla nascita di Corso Italia"
+}

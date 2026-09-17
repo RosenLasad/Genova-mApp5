@@ -14,6 +14,7 @@
         lng: 8.948688216522477,
         descr: "Spiaggia sotto San Pietro.",
         media: {
+          "minidoc": "corso-italia",
           oggi: "qr_azzurri/qr_azzurri_albaro/qr_albaro_corso_italia_spiaggia/sanpietro_spiaggia_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_albaro/qr_albaro_corso_italia_spiaggia/sanpietro_spiaggia_ieri_1.mp4",                 
                  "qr_azzurri/qr_azzurri_albaro/qr_albaro_corso_italia_spiaggia/sanpietro_spiaggia_ieri_2.mp4"]
@@ -37,6 +38,7 @@
         lng: 8.951550117601824,
         descr: "Corso Italia a Punta Vagno.",
         media: {
+          "minidoc": "corso-italia",
           oggi: "qr_azzurri/qr_azzurri_albaro/qr_albaro_vagno/corsoitalia_vagno_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_albaro/qr_albaro_vagno/corsoitalia_vagno_ieri_1.mp4",
@@ -51,6 +53,7 @@
         lng: 8.959731132398751,
         descr: "San Giuliano da Corso Italia.",
         media: {
+          "minidoc": "corso-italia",
           oggi: "qr_azzurri/qr_azzurri_albaro/qr_albaro_sangiuliano/italia_sangiuliano_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_albaro/qr_albaro_sangiuliano/italia_sangiuliano_ieri_1.mp4"]
         }
