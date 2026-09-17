@@ -2549,6 +2549,22 @@ margin-right: 0;
   }
   #contactPanel.show-success .c-success{ display:block; }
 
+  #contactPanel .c-error{
+    background: rgba(239,68,68,.16);
+    border: 1px solid rgba(248,113,113,.42);
+    color: #fee2e2;
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    display:none;
+  }
+  #contactPanel.show-error .c-error{ display:block; }
+  #contactPanel .c-submit:disabled{
+    opacity:.62;
+    cursor:wait;
+    filter:none;
+  }
+
 /* ===== extracted from index.html <style> blocks (in order) ===== */
 
 /* Popup percorsi multilingua */

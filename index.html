@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="css/btn-scan.css">
 <link rel="stylesheet" href="css/flag-switcher.css">
 
-<link rel="stylesheet" href="css/inline.bundle.css?v=20260811-1">
+<link rel="stylesheet" href="css/inline.bundle.css?v=20260917-1">
 <link rel="stylesheet" href="css/taccuino.css">
 <link rel="stylesheet" href="css/qr-panel-layout.css?v=20260915-8">
 <link rel="stylesheet" href="css/nearby.css?v=20260916-1">
@@ -44,7 +44,7 @@
 <script src="js/place-popup.js?v=20260911-6"></script>
 <script src="js/wall-popup.js?v=20260911-6"></script>
 <script src="js/languages.js"></script>
-<script src="js/inline.js?v=20260916-4"></script>
+<script src="js/inline.js?v=20260917-5"></script>
 <script>window.__GENOVA_INLINE_RUN(2,2);</script>
 
 <!-- PATCH: Legend as icon (help) -->
@@ -803,8 +803,11 @@
     <div class="c-success" id="contactSuccess" role="status" aria-live="polite" data-contact-i18n="success">
       Messaggio inviato. Grazie!
     </div>
+    <div class="c-error" id="contactError" role="alert" aria-live="assertive" data-contact-i18n="error">
+      Invio non riuscito. Riprova tra poco oppure scrivi direttamente a info@sdac.it.
+    </div>
 
-    <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <form id="contact-form" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact" />
       <p style="display:none;">
         <label>Don’t fill this out: <input name="bot-field" /></label>
@@ -830,7 +833,7 @@
       </div>
 
       <p class="c-note" data-contact-i18n="note">
-        Questo modulo usa Netlify Forms: se non hai attivato le notifiche in Netlify, i messaggi verranno comunque salvati nella sezione “Forms”.
+        Se non rispondiamo entro 48h, puoi scrivere direttamente a info@sdac.it.
       </p>
     </form>
   </div>
