@@ -34,7 +34,7 @@
 
 #app > header #auth-login-button:active{ transform:translateY(1px) scale(.97); }
 #app > header #auth-login-button svg{ width:22px !important;height:22px !important;pointer-events:none; }
-#app > header #auth-login-button .auth-toolbar-avatar{ width:26px;height:26px;border-radius:50%;object-fit:cover;pointer-events:none;display:block; }
+#app > header #auth-login-button .auth-toolbar-avatar{ width:100% !important;height:100% !important;border-radius:inherit;object-fit:cover;pointer-events:none;display:block; }
 
 #app > header #auth-login-button .auth-state-dot{
   position:absolute;
@@ -294,5 +294,4 @@ html.auth-account-open{ overflow:hidden !important; }
     width:34px !important;height:34px !important;min-width:34px !important;min-height:34px !important;
   }
   #app > header #auth-login-button svg{ width:20px !important;height:20px !important; }
-  #app > header #auth-login-button .auth-toolbar-avatar{width:23px;height:23px;}
 }
