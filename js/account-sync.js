@@ -12,7 +12,7 @@
     'genova_favstars_v1','genova_taccuino_routes_v1','genova_taccuino_draft_v1',
     'genova_taccuino_notes_v1','genova_taccuino_last_note_v1',
     'genova_taccuino_favorites_sort_v1','genova_routes_selected_v1','walls_visible','acq_visibility',
-    'legend_blue','legend_orange'
+    'legend_blue','legend_orange','genova_account_avatar_v1'
   ];
   var state={user:null,record:null,busy:false,status:'idle',lastHash:'',saveTimer:null,pullTimer:null};
 
