@@ -1,0 +1,233 @@
+/*
+ * Genova mApp v50 - Controlli video persistenti per i Punti QR
+ * La barra viene mostrata sotto il video, non sopra al fotogramma.
+ * Non viene mostrato alcun controllo volume: i video QR sono intenzionalmente muti.
+ */
+
+#panel .qr-video-controls {
+  display: none;
+}
+
+/* Nei pannelli QR standard aggiungiamo una riga dedicata fra media e Oggi/Ieri. */
+#panel.qr-point-panel {
+  grid-template-rows: auto minmax(0, auto) auto auto minmax(0, 1fr) auto !important;
+}
+
+#panel.qr-point-panel.qr-standard-video-visible:not(.qr-compare-active) .qr-video-controls {
+  width: 100%;
+  min-height: 42px;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(7, 14, 27, .96);
+  border-top: 1px solid rgba(148, 163, 184, .18);
+  border-bottom: 1px solid rgba(148, 163, 184, .14);
+  color: #f8fafc;
+  position: relative;
+  z-index: 12;
+}
+
+#panel.qr-point-panel.qr-standard-video-visible:not(.qr-compare-active) .swap {
+  margin-top: 0 !important;
+}
+
+.qr-video-control-btn {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid rgba(148, 163, 184, .26);
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(30, 41, 59, .72);
+  color: #f8fafc;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.qr-video-control-btn:hover {
+  background: rgba(51, 65, 85, .92);
+}
+
+.qr-video-control-btn:active {
+  transform: translateY(1px);
+}
+
+.qr-video-control-btn:focus-visible,
+.qr-video-progress:focus-visible,
+.qr-video-speed-option:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+.qr-video-play {
+  font-size: 15px;
+}
+
+.qr-video-progress-wrap {
+  min-width: 0;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+}
+
+.qr-video-progress {
+  width: 100%;
+  min-width: 64px;
+  height: 18px;
+  margin: 0;
+  accent-color: #38bdf8;
+  cursor: pointer;
+}
+
+.qr-video-time {
+  flex: 0 0 auto;
+  min-width: 66px;
+  text-align: center;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: #cbd5e1;
+  white-space: nowrap;
+}
+
+.qr-video-settings-wrap {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.qr-video-settings-menu {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  min-width: 146px;
+  padding: 7px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+  border: 1px solid rgba(148, 163, 184, .28);
+  border-radius: 11px;
+  background: rgba(7, 14, 27, .98);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .42);
+  z-index: 30;
+}
+
+.qr-video-settings-menu[hidden] {
+  display: none !important;
+}
+
+.qr-video-settings-title {
+  grid-column: 1 / -1;
+  padding: 1px 3px 4px;
+  font-size: 11px;
+  color: #cbd5e1;
+  font-weight: 700;
+}
+
+.qr-video-speed-option {
+  min-height: 29px;
+  padding: 4px 6px;
+  border: 1px solid rgba(148, 163, 184, .22);
+  border-radius: 8px;
+  background: rgba(30, 41, 59, .76);
+  color: #f8fafc;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+
+.qr-video-speed-option.is-active {
+  border-color: rgba(56, 189, 248, .78);
+  background: rgba(14, 165, 233, .24);
+  color: #e0f2fe;
+}
+
+.qr-video-control-icon {
+  width: 17px;
+  height: 17px;
+  display: block;
+  fill: currentColor;
+}
+
+/* Fullscreen: il pannello diventa un vero player, senza le altre fasce informative. */
+#panel.qr-point-panel:fullscreen,
+#panel.qr-point-panel:-webkit-full-screen {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background: #000 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+#panel.qr-point-panel:fullscreen > header,
+#panel.qr-point-panel:fullscreen > .swap,
+#panel.qr-point-panel:fullscreen > .content,
+#panel.qr-point-panel:fullscreen > .qr-extra-actions,
+#panel.qr-point-panel:-webkit-full-screen > header,
+#panel.qr-point-panel:-webkit-full-screen > .swap,
+#panel.qr-point-panel:-webkit-full-screen > .content,
+#panel.qr-point-panel:-webkit-full-screen > .qr-extra-actions {
+  display: none !important;
+}
+
+#panel.qr-point-panel:fullscreen .media,
+#panel.qr-point-panel:-webkit-full-screen .media {
+  flex: 1 1 auto !important;
+  width: 100% !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  background: #000 !important;
+}
+
+#panel.qr-point-panel:fullscreen .media video,
+#panel.qr-point-panel:-webkit-full-screen .media video {
+  object-fit: contain !important;
+}
+
+#panel.qr-point-panel:fullscreen .qr-video-controls,
+#panel.qr-point-panel:-webkit-full-screen .qr-video-controls {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  min-height: 48px;
+}
+
+@media (max-width: 480px) {
+  #panel.qr-point-panel.qr-standard-video-visible:not(.qr-compare-active) .qr-video-controls {
+    min-height: 40px;
+    padding: 5px 6px;
+    gap: 5px;
+  }
+
+  .qr-video-control-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+  }
+
+  .qr-video-progress {
+    min-width: 48px;
+  }
+
+  .qr-video-time {
+    min-width: 58px;
+    font-size: 10px;
+  }
+
+  .qr-video-settings-menu {
+    min-width: 132px;
+  }
+}
