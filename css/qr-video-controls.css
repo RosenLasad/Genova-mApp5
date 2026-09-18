@@ -1,5 +1,5 @@
 /*
- * Genova mApp v50 - Controlli video persistenti per i Punti QR
+ * Genova mApp v51 - Controlli video persistenti per i Punti QR
  * La barra viene mostrata sotto il video, non sopra al fotogramma.
  * Non viene mostrato alcun controllo volume: i video QR sono intenzionalmente muti.
  */
@@ -27,6 +27,7 @@
   color: #f8fafc;
   position: relative;
   z-index: 12;
+  margin-bottom: 10px;
 }
 
 #panel.qr-point-panel.qr-standard-video-visible:not(.qr-compare-active) .swap {
@@ -210,6 +211,7 @@
     min-height: 40px;
     padding: 5px 6px;
     gap: 5px;
+    margin-bottom: 8px;
   }
 
   .qr-video-control-btn {
