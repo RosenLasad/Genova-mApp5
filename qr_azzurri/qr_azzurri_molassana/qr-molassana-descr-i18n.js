@@ -4,14 +4,14 @@
 
   Object.assign(window.QR_DESCR_I18N, {
     "Via Geirato": {
-      it: "Tra la fine dell'Ottocento e i primi del Novecento, via Geirato a Molassana si presentava come una realtà radicalmente diversa da quella odierna: un paesaggio prettamente rurale, agricolo e pre-industriale, dominato dalla presenza della campagna e dall'omonimo torrente, non ancora coperto.",
-      en: "Between the late nineteenth and early twentieth centuries, Via Geirato in Molassana looked radically different from today: a distinctly rural, agricultural and pre-industrial landscape dominated by countryside and by the stream of the same name, which had not yet been covered over.",
-      es: "Entre finales del siglo XIX y comienzos del XX, via Geirato en Molassana presentaba un aspecto radicalmente distinto al actual: un paisaje claramente rural, agrícola y preindustrial, dominado por el campo y por el torrente homónimo, todavía sin cubrir.",
-      fr: "Entre la fin du XIXe siècle et le début du XXe, via Geirato à Molassana présentait un paysage radicalement différent d’aujourd’hui : un environnement essentiellement rural, agricole et préindustriel, dominé par la campagne et par le torrent du même nom, qui n’était pas encore couvert.",
-      ar: "بين أواخر القرن التاسع عشر وبدايات القرن العشرين، بدت فيا جيراتّو في مولاسانا مختلفة جذريا عن اليوم: منظر ريفي وزراعي وما قبل صناعي، تهيمن عليه الحقول والمجرى المائي الذي يحمل الاسم نفسه والذي لم يكن قد غُطي بعد.",
-      ru: "В конце XIX — начале XX века Виа Джейрато в Молассане выглядела совершенно иначе, чем сегодня: это был преимущественно сельский, аграрный и доиндустриальный пейзаж, где доминировали поля и одноименный ручей, еще не заключенный под покрытие.",
-      zh: "19世纪末至20世纪初，莫拉萨纳的杰拉托街与今天截然不同：这里是一片典型的乡村、农业和前工业化景观，周围以田野和同名溪流为主，而溪流当时尚未被覆盖。",
-      lij: "Tra-a fin de l'Ottocento e i primmi anni do Novecento, via Geirato a Molassann-a a se presentava ben diversa da ancheu: un paesaggio prettamente rural, agricolo e pre-industriale, dominou da-a campagna e da l'omonimo rio, ancon no coverto."
+      it: "Tra la fine dell’Ottocento e i primi decenni del Novecento, via Geirato attraversava un paesaggio ancora prevalentemente rurale, segnato da orti, campi e dal torrente omonimo. La successiva urbanizzazione di Molassana e la copertura del tratto finale del Geirato trasformarono profondamente questa zona.",
+      en: "Between the late nineteenth century and the first decades of the twentieth, Via Geirato crossed a still largely rural landscape of vegetable gardens, fields and the stream of the same name. The later urbanisation of Molassana and the covering of the lower Geirato radically transformed this area.",
+      es: "Entre finales del siglo XIX y las primeras décadas del XX, via Geirato atravesaba un paisaje todavía principalmente rural, marcado por huertos, campos y el torrente del mismo nombre. La posterior urbanización de Molassana y la cubrición del tramo final del Geirato transformaron profundamente esta zona.",
+      fr: "Entre la fin du XIXe siècle et les premières décennies du XXe, via Geirato traversait un paysage encore largement rural, marqué par les potagers, les champs et le torrent du même nom. L’urbanisation ultérieure de Molassana et la couverture du tronçon final du Geirato transformèrent profondément cette zone.",
+      ar: "بين أواخر القرن التاسع عشر والعقود الأولى من القرن العشرين كان شارع فيا جيراتّو يعبر منظرا لا يزال ريفيا في معظمه، تميزه البساتين والحقول والمجرى المائي الذي يحمل الاسم نفسه. ثم غيّر توسع مولاسانا العمراني وتغطية الجزء الأخير من جيراتّو هذه المنطقة بصورة عميقة.",
+      ru: "С конца XIX века до первых десятилетий XX века Виа Джейрато проходила через еще преимущественно сельский пейзаж с огородами, полями и одноименным ручьем. Последующая урбанизация Молассаны и перекрытие нижнего участка Джейрато глубоко изменили этот район.",
+      zh: "19世纪末至20世纪最初几十年，杰拉托街穿过一片仍以乡村景观为主的地区，周围分布着菜园、田地以及同名溪流。后来莫拉萨纳的城市化发展，以及杰拉托溪下游河段被覆盖，使这一地区发生了深刻变化。",
+      lij: "Tra-a fin de l’Ottocento e i primmi decenni do Novecento, via Geirato a passava inte un paesaggio ancon pe-a ciù parte rural, segnòu da orti, campi e da l’omonimo rio. A successiva urbanizzaçion de Molassann-a e a coertura do tratto finale do Geirato an trasformou profondamente sta zona."
     }
   });
 })();

@@ -12,7 +12,7 @@
   label: "Via Geirato",
   lat: 44.456914270332796,
   lng: 8.97820150368969,
-  descr: "Tra la fine dell'Ottocento e i primi del Novecento, via Geirato a Molassana si presentava come una realtà radicalmente diversa da quella odierna: un paesaggio prettamente rurale, agricolo e pre-industriale, dominato dalla presenza della campagna e dall'omonimo torrente, non ancora coperto.",
+  descr: "Tra la fine dell’Ottocento e i primi decenni del Novecento, via Geirato attraversava un paesaggio ancora prevalentemente rurale, segnato da orti, campi e dal torrente omonimo. La successiva urbanizzazione di Molassana e la copertura del tratto finale del Geirato trasformarono profondamente questa zona.",
   media: {
     oggi: "qr_azzurri/qr_azzurri_molassana/via_geirato_molassana_oggi.mp4",
     ieri: ["qr_azzurri/qr_azzurri_molassana/via_geirato_molassana_ieri.mp4"]

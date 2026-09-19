@@ -12,7 +12,7 @@
   label: "Via Provinciale",
   lat: 44.41546474937802,
   lng: 8.867488407771537,
-  descr: "A fine Ottocento e nei primi del Novecento, l'allora via Provinciale (oggi via Cornigliano) era l'asse centrale di un borgo di Riviera rinomato per la sua eleganza, incastonato tra il verde delle colline e la vicinanza con il mare, prima della grande trasformazione industriale del Novecento.",
+  descr: "Via Provinciale, aperta al traffico nel 1842 e oggi via Cornigliano, divenne l’asse principale dell’abitato. Tra Ottocento e primo Novecento attraversava un centro ancora caratterizzato da ville, giardini e dalla vicinanza del mare, prima delle profonde trasformazioni industriali del Novecento.",
   media: {
     oggi: "qr_azzurri/qr_azzurri_cornigliano/via_provinciale_cornigliano_oggi.mp4",
     ieri: ["qr_azzurri/qr_azzurri_cornigliano/via_provinciale_cornigliano_ieri.mp4"]

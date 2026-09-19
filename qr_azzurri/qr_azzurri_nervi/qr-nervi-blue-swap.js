@@ -12,7 +12,7 @@
   label: "Viale delle Palme",
   lat: 44.381576305898534,
   lng: 9.039965691324698,
-  descr: "Viale delle Palme a Nervi era un rettilineo alberato di circa 300 metri. Collegava la stazione ferroviaria alla zona centrale e al mare, rappresentando il biglietto da visita della celebre stazione climatica invernale amata dall'aristocrazia europea durante la Belle Époque.",
+  descr: "Viale delle Palme era uno degli ingressi più eleganti di Nervi, collegando la stazione ferroviaria al centro e alla costa. Tra fine Ottocento e primo Novecento accompagnò lo sviluppo della località come rinomata stazione climatica e turistica, frequentata da visitatori provenienti da tutta Europa.",
   media: {
     oggi: "qr_azzurri/qr_azzurri_nervi/via_delle_palme_nervi_oggi.mp4",
     ieri: ["qr_azzurri/qr_azzurri_nervi/via_delle_palme_nervi_ieri.mp4"]

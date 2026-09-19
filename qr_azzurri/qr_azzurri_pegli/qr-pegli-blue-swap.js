@@ -12,7 +12,7 @@
   label: "Via Mazzini",
   lat: 44.42347114580973,
   lng: 8.808972421397113,
-  descr: "A fine Ottocento e nei primi del Novecento, l'attuale via Pegli (allora nota come via Mazzini) era l'asse viario storico e il cuore pulsante del Comune di Pegli, prima del suo accorpamento nella Grande Genova. La strada si presentava come un vivace borgo marinaro e una rinomata stazione climatica affacciata sul mare.",
+  descr: "Tra la fine dell’Ottocento e i primi del Novecento, l’attuale via Pegli, allora via Mazzini, costituiva uno degli assi principali del comune autonomo. Affacciata sul mare, attraversava un vivace borgo marinaro che in quegli anni si affermava anche come rinomata località di villeggiatura.",
   media: {
     oggi: "qr_azzurri/qr_azzurri_pegli/via_mazzini_pegli_oggi.mp4",
     ieri: ["qr_azzurri/qr_azzurri_pegli/via_mazzini_pegli_ieri.mp4"]
