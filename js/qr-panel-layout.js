@@ -502,10 +502,26 @@
   function setCompareButtonReady(ready) {
     var button = document.getElementById("btn-compare-qr");
     if (!button) return;
+
     button.setAttribute("data-qr-compare-ready", ready ? "true" : "false");
     button.setAttribute("aria-disabled", ready ? "false" : "true");
     button.classList.toggle("qr-placeholder-action", !ready);
-    if (!ready) button.classList.remove("active");
+
+    /*
+     * Il comando Confronta non occupa spazio se i due video dedicati non
+     * esistono. Durante il controllo asincrono resta nascosto e compare solo
+     * dopo che entrambi gli MP4 (oggi + ieri) risultano realmente leggibili.
+     */
+    button.hidden = !ready;
+    if (ready) {
+      button.style.removeProperty("display");
+      button.removeAttribute("aria-hidden");
+    } else {
+      button.style.setProperty("display", "none", "important");
+      button.setAttribute("aria-hidden", "true");
+      button.classList.remove("active");
+    }
+
     applyMultimediaI18n();
   }
 
@@ -885,9 +901,10 @@
    * Riga 1 (subito sotto il riquadro media): Oggi / Ieri / SFX / Confronta.
    * Riga 2 (sotto la descrizione): Audioguida / MiniDoc / Condividi.
    *
-   * Confronta viene abilitato automaticamente quando trova entrambi i video
+   * Confronta viene mostrato automaticamente solo quando trova entrambi i video
    * nella cartella convenzionale qr_confronta/<parent>/<child>/ (o quando il
-   * Punto QR dichiara media.confronta). Audioguida e MiniDoc restano invece
+   * Punto QR dichiara media.confronta). Se i video non sono disponibili il
+   * bottone resta completamente nascosto. Audioguida e MiniDoc restano invece
    * placeholder inattivi. Condividi conserva tutta la logica esistente.
    */
   function ensureMultimediaControls() {
