@@ -93,6 +93,16 @@
   }
 }
 
+
+/* v55: nasconde la riga dei comandi in fullscreen anche nei browser che
+   non applicano in modo affidabile il selettore :fullscreen al pannello. */
+#panel.qr-point-panel.qr-compare-fullscreen > .swap,
+#panel.qr-point-panel.qr-compare-fullscreen .qr-compare-inline-controls {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 /* -------------------------------------------------------------------------
  * Full screen del confronto.
  * Il target e' l'intero pannello QR. In fullscreen resta visibile solo

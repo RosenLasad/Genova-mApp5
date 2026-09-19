@@ -602,24 +602,45 @@
     syncCompareFullscreenButton();
   }
 
+  function setCompareFullscreenUi(active) {
+    var swap = panel.querySelector(".swap");
+    if (!swap) return;
+    if (active) {
+      swap.style.setProperty("display", "none", "important");
+      swap.setAttribute("aria-hidden", "true");
+    } else {
+      swap.style.removeProperty("display");
+      swap.removeAttribute("aria-hidden");
+    }
+  }
+
   function exitCompareFullscreen() {
     var current = fullscreenElement();
-    panel.classList.remove("qr-compare-fullscreen");
     if (current !== panel) {
+      panel.classList.remove("qr-compare-fullscreen");
+      setCompareFullscreenUi(false);
       syncCompareFullscreenButton();
       return;
     }
     var exit = document.exitFullscreen || document.webkitExitFullscreen;
     if (!exit) {
+      panel.classList.remove("qr-compare-fullscreen");
+      setCompareFullscreenUi(false);
       syncCompareFullscreenButton();
       return;
     }
     try {
       var result = exit.call(document);
       if (result && typeof result.catch === "function") {
-        result.catch(function () { syncCompareFullscreenButton(); });
+        result.catch(function () {
+          panel.classList.remove("qr-compare-fullscreen");
+          setCompareFullscreenUi(false);
+          syncCompareFullscreenButton();
+        });
       }
     } catch (_) {
+      panel.classList.remove("qr-compare-fullscreen");
+      setCompareFullscreenUi(false);
       syncCompareFullscreenButton();
     }
   }
@@ -633,16 +654,19 @@
     var request = panel.requestFullscreen || panel.webkitRequestFullscreen;
     if (!request) return;
     panel.classList.add("qr-compare-fullscreen");
+    setCompareFullscreenUi(true);
     try {
       var result = request.call(panel);
       if (result && typeof result.catch === "function") {
         result.catch(function () {
           panel.classList.remove("qr-compare-fullscreen");
+          setCompareFullscreenUi(false);
           syncCompareFullscreenButton();
         });
       }
     } catch (_) {
       panel.classList.remove("qr-compare-fullscreen");
+      setCompareFullscreenUi(false);
       syncCompareFullscreenButton();
     }
   }
@@ -1158,6 +1182,7 @@
   function handleCompareFullscreenChange() {
     var active = fullscreenElement() === panel;
     panel.classList.toggle("qr-compare-fullscreen", active);
+    setCompareFullscreenUi(active);
     syncCompareFullscreenButton();
   }
 
