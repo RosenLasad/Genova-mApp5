@@ -12,7 +12,7 @@
   label: "Piazza Francesco Baracca",
   lat: 44.425317844773225,
   lng: 8.8494196481615,
-  descr: "Basilica di Nostra Signora Assunta a Sestri Ponente, sorta tra il 1610 e il 1620 in prossimità della allora spiaggia con l'ingresso rivolto a nord per ripararsi dalle mareggiate, si presentava a fine Ottocento come il fulcro monumentale e religioso del borgo marinaro, inserita in un contesto urbano e costiero ancora integro e non stravolto dai successivi interramenti industriali e dalla facciata rifatta nel 1928.",
+  descr: "La Basilica di Nostra Signora Assunta, costruita nel Seicento vicino all’antica spiaggia, divenne uno dei principali riferimenti religiosi e monumentali di Sestri Ponente. Il successivo sviluppo industriale e gli interramenti costieri trasformarono profondamente il rapporto originario tra la chiesa, il borgo e il mare.",
   media: {
     oggi: "qr_azzurri/qr_azzurri_sestri_ponente/piazza_baracca_sestri_oggi.mp4",
     ieri: ["qr_azzurri/qr_azzurri_sestri_ponente/piazza_baracca_sestri_ieri.mp4"]
@@ -23,7 +23,7 @@
   label: "Teatro Giuseppe Verdi",
   lat: 44.42571502302159,
   lng: 8.84989840018733,
-  descr: "Teatro Verdi di Sestri Ponente fu costruito tra il 1898 e il 1899 su iniziativa dell'impresario Giacomo Bo e del costruttore Bartolomeo Merlo. Inaugurato nell'estate del 1899 nel comune all'epoca autonomo, assunse l'attuale intitolazione nel 1901 in omaggio a Giuseppe Verdi, configurandosi come uno dei principali punti di riferimento culturali dell'area.",
+  descr: "Il Teatro Verdi di Sestri Ponente fu costruito tra il 1898 e il 1899 e inaugurato nell’estate del 1899. Dal 1901 porta il nome di Giuseppe Verdi e divenne presto uno dei principali luoghi culturali dell’allora comune autonomo, ospitando spettacoli teatrali e musicali.",
   media: {
     oggi: "qr_azzurri/qr_azzurri_sestri_ponente/teatro_verdi_oggi.mp4",
     ieri: ["qr_azzurri/qr_azzurri_sestri_ponente/teatro_verdi_ieri.mp4"]

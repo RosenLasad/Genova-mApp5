@@ -12,7 +12,7 @@
         label: "Via Gianelli",
         lat: 44.384762866492395,
         lng: 9.017676660678617,
-        descr: "Via Gianelli verso ponente.",
+        descr: "Via Gianelli segue il litorale di Quinto lungo l’antica direttrice costiera. Alla fine dell’Ottocento la ferrovia correva ancora accanto alla strada e al mare, con la vecchia stazione poco distante; il trasferimento della linea verso monte nel Novecento cambiò profondamente questo tratto.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_quinto/quinto_via_gianelli_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_quinto/quinto_via_gianelli_ieri_1.mp4"]
@@ -23,7 +23,7 @@
         label: "Via Quinto verso levante",
         lat: 44.3852849853469,
         lng: 9.010977374478458,
-        descr: "Via Quinto verso levante.",
+        descr: "Via Quinto conduce verso Bagnara lungo un tratto della storica viabilità costiera del borgo. Prima delle trasformazioni del Novecento, il paesaggio era segnato dalla vicinanza del mare, dalla ferrovia e da piccoli nuclei abitati, con un carattere ancora fortemente marinaro e residenziale.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_quinto/quinto_via_quinto_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_quinto/quinto_via_quinto_ieri_1.mp4"]

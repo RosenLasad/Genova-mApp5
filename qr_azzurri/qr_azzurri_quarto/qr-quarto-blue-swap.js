@@ -12,7 +12,7 @@
         label: "Via V maggio dal ponte",
         lat: 44.39277527167073,
         lng: 8.984352492387421,
-        descr: "Via V maggio dal ponte.",
+        descr: "Via V Maggio attraversa uno dei luoghi simbolici della storia risorgimentale genovese, vicino allo scoglio da cui Garibaldi e i Mille partirono nella notte del 5 maggio 1860. Nel tempo la zona costiera è stata trasformata dalla crescita urbana e dalla nuova viabilità.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_quarto/ponte_v_maggio_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_quarto/ponte_v_maggio_ieri_1.mp4"]
@@ -23,7 +23,7 @@
         label: "Villa De Ferrari",
         lat: 44.39101191542048,
         lng: 8.990558606210234,
-        descr: "Via V maggio su Villa De Ferrari.",
+        descr: "Lungo la costa di Quarto sorsero nei secoli numerose ville appartenenti a famiglie nobili e borghesi genovesi, immerse in giardini affacciati sul mare. Villa De Ferrari testimonia questa vocazione residenziale, sviluppatasi in un territorio apprezzato per il clima mite e il paesaggio costiero.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_quarto/quarto_villa_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_quarto/quarto_villa_ieri_1.mp4"]

@@ -12,7 +12,7 @@
         label: "Gli stabilimenti balneari",
         lat: 44.42818232336817,
         lng: 8.764869113187887,
-        descr: "A fine Ottocento il litorale di Prà univa la tradizione dei cantieri navali, specializzati anche nella costruzione di brigantini, a una crescente vocazione balneare. L'ampia spiaggia sabbiosa cominciava ad accogliere stabilimenti e strutture dedicate alla balneazione terapeutica e ricreativa.",
+        descr: "Tra Ottocento e Novecento il litorale di Prà, ampio e sabbioso, divenne una frequentata località balneare. Accanto ai tradizionali cantieri navali sorsero stabilimenti attrezzati per il bagno e il soggiorno, dando al borgo una doppia identità marinara e turistica.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_pra/stabilimenti_balneari_pra_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_pra/stabilimenti_balneari_pra_ieri.mp4"]
@@ -23,7 +23,7 @@
         label: "Panorama di Prà",
         lat: 44.42656242260401,
         lng: 8.78837592651926,
-        descr: "A fine Ottocento, Prà era un florido e industrioso comune autonomo, caratterizzato da un equilibrio tra mare, agricoltura e le prime attività industriali.",
+        descr: "Alla fine dell’Ottocento Prà era ancora un comune autonomo, disteso tra il mare e le colline. Il paesaggio univa spiagge, attività marinare, cantieri navali, orti e ville, prima delle grandi trasformazioni industriali e portuali che nel Novecento modificarono profondamente il litorale.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_pra/panorama_pra_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_pra/panorama_pra_ieri.mp4"]
@@ -34,7 +34,7 @@
         label: "La stazione ferroviaria",
         lat: 44.427142989105654,
         lng: 8.784919288715662,
-        descr: "La stazione di Prà fu inaugurata nel 1856 con l'apertura della ferrovia Sampierdarena-Voltri. A fine Ottocento si presentava come un impianto semplice, servito da treni a vapore e adeguato al traffico viaggiatori e merci dell'epoca. La linea era ancora a binario unico; oltre al binario di transito erano presenti binari di servizio per lo scalo merci e un piccolo magazzino.",
+        descr: "La stazione di Prà entrò in funzione nell’Ottocento lungo la ferrovia costiera del Ponente. Il piccolo impianto serviva viaggiatori e merci ed era inserito tra il borgo e il mare, in un paesaggio poi profondamente trasformato dall’ampliamento della linea ferroviaria e del porto.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_pra/stazione_pra_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_pra/stazione_pra_ieri.mp4"]
@@ -45,7 +45,7 @@
         label: "Forte Castelluccio",
         lat: 44.424676426471606,
         lng: 8.800336466612672,
-        descr: "Il Castelluccio di Prà era un antico fortilizio del XV secolo in posizione dominante su un roccione a picco sul mare a levante del borgo. A fine Ottocento la sua struttura quadrata originaria risultava modificata e tagliata sul lato nord per fare spazio al passaggio della linea ferroviaria Genova-Savona, assumendo una forma pentagonale e perdendo l'accesso carraio originario.",
+        descr: "Il Castelluccio di Prà sorgeva su uno sperone roccioso a picco sul mare, in posizione dominante sul litorale. L’antico fortilizio fu modificato nell’Ottocento dal passaggio della ferrovia, che ne alterò la struttura e il rapporto originario con la costa.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_pra/forte_castelluccio_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_pra/forte_castelluccio_ieri.mp4"]
@@ -56,7 +56,7 @@
         label: "Torre Cambiaso",
         lat: 44.43320302866828,
         lng: 8.800861843093932,
-        descr: "A fine Ottocento, Torre Cambiaso, situata sulle alture tra Prà e Pegli, si presentava come una suggestiva residenza signorile. Trasformata da antica torre di guardia degli Spinola in un castello neogotico dall'architetto G.B. Novaro, univa elementi militari a una vivace facciata rosa e a un grande parco panoramico sul golfo.",
+        descr: "Torre Cambiaso domina le alture tra Prà e Pegli, immersa in un grande parco panoramico. Nata da un’antica struttura difensiva, nel corso dell’Ottocento fu trasformata in una scenografica residenza signorile dall’aspetto neogotico, conservando elementi che ricordano la sua origine fortificata.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_pra/torre_cambiaso_pra_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_pra/torre_cambiaso_pra_ieri.mp4"]
@@ -67,7 +67,7 @@
         label: "La spiaggia di Palmaro",
         lat: 44.42792609473346,
         lng: 8.769083121286867,
-        descr: "Prà era un vivace litorale sabbioso e ghiaioso affacciato su un mare limpido, caratterizzato da una forte vocazione marinara e operosa, animato da cantieri navali per la costruzione di brigantini, dalle reti stese al sole dai pescatori e dalle vicine dimore storiche.",
+        descr: "Palmaro possedeva un ampio litorale di sabbia e ciottoli, animato da pescatori, barche e piccoli cantieri navali. Per generazioni la spiaggia fu parte integrante della vita del borgo, prima che le trasformazioni portuali del Novecento modificassero radicalmente la linea di costa.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_pra/palmaro_spiaggia_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_pra/palmaro_spiaggia_ieri.mp4"]
@@ -78,7 +78,7 @@
         label: "Veduta di Palmaro",
         lat: 44.42810749396792,
         lng: 8.773851401151598,
-        descr: "Palmaro è un antico e vivace borgo marinaro e agricolo, frazione e sestiere di Prà. Il paesaggio unisce la vita della spiaggia e dei cantieri navali alle fasce coltivate dell'entroterra.",
+        descr: "Palmaro era uno dei nuclei storici del territorio di Prà, caratterizzato da una forte relazione tra mare e campagna. Case, attività marinare, cantieri e fasce coltivate componevano un paesaggio costiero molto diverso da quello creato dalle successive trasformazioni urbane e portuali.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_pra/veduta_palmaro_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_pra/veduta_palmaro_ieri.mp4"]
