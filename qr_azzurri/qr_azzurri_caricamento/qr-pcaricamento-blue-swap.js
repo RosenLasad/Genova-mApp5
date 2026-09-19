@@ -12,7 +12,7 @@
         label: "Portici in piazza di Caricamento",
         lat: 44.409562128125145, 
         lng: 8.929221677476946,
-        descr: "I portici di Piazza Caricamento, noti come Sottoripa, sono i porticati pubblici più antichi d’Italia e risalgono al XII secolo: furono costruiti tra il 1125 e il 1133. Un tempo lambiti direttamente dal mare, proteggevano le botteghe e i magazzini delle merci sbarcate nel porto antico.",
+        descr: "I portici di Sottoripa, costruiti tra il 1125 e il 1133, sono tra i più antichi porticati pubblici d’Italia. In origine il mare arrivava direttamente davanti agli edifici e le arcate proteggevano botteghe, magazzini e merci sbarcate nel vicino porto.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_caricamento/caricamento_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_caricamento/caricamento_ieri_1.mp4"]
@@ -23,7 +23,7 @@
         label: "Piazza Raibetta",
         lat: 44.40856824714509,
         lng: 8.9290060963642,
-        descr: "Piazza della Raibetta è una storica piazza del centro antico di Genova, situata nei pressi di Palazzo San Giorgio e di via San Lorenzo. Il suo nome deriva dall’arabo e ricorda l’antico mercato di legumi che vi si teneva nel Medioevo.",
+        descr: "Piazza della Raibetta conserva nel nome la memoria degli antichi mercati genovesi. Il termine deriva da una voce di origine araba legata ai luoghi di deposito e commercio delle merci; in questa zona si teneva un mercato di legumi e altri generi alimentari.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_caricamento/raibetta_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_caricamento/raibetta_ieri_1.mp4",
@@ -36,7 +36,7 @@
         label: "Piazza Caricamento su S.Giorgio",
         lat: 44.40981197861113,
         lng: 8.928760914112388,
-        descr: "Piazza Caricamento è un nodo storico e urbano di Genova situato tra il Porto Antico e i celebri portici di Sottoripa. Realizzata nell’Ottocento su un’area precedentemente occupata dal mare, assunse il nome di Caricamento nel 1854, quando divenne il terminale ferroviario per il carico e lo scarico delle merci portuali. Sulla piazza si affaccia il monumentale Palazzo San Giorgio, storico edificio del XIII secolo.",
+        descr: "Piazza Caricamento nacque nell’Ottocento su un’area precedentemente occupata dal mare. Nel 1854 divenne terminale ferroviario per il carico e lo scarico delle merci portuali, assumendo il nome attuale. Sulla piazza domina Palazzo San Giorgio, uno degli edifici storici più rappresentativi dell’antico porto genovese.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_caricamento/caricsangiorgio_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_caricamento/caricsangiorgio_ieri_1.mp4",
@@ -48,7 +48,7 @@
         label: "Portici dal sottopassaggio",
         lat: 44.41120114359175,
         lng:  8.928395998250107,
-        descr: "I portici di Piazza Caricamento, storicamente noti come Sottoripa, sono i portici pubblici più antichi d’Italia. Risalgono al XII secolo, nacquero a ridosso del mare e sono caratterizzati da basse volte medievali che ospitano botteghe storiche.",
+        descr: "Da questo punto si osservano le basse arcate medievali di Sottoripa, nate nel XII secolo a diretto contatto con il mare. Per secoli accolsero botteghe e magazzini legati alle attività portuali, mentre le successive trasformazioni del porto allontanarono progressivamente la linea di costa.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_caricamento/caric_portici_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_caricamento/caric_portici_ieri_1.mp4"]
@@ -59,7 +59,7 @@
         label: "Piazza di Caricamento",
         lat: 44.40957209444895, 
         lng:  8.928772026937516,
-        descr: "Piazza di Caricamento.",
+        descr: "Per secoli quest’area fu strettamente legata allo sbarco e alla movimentazione delle merci. Nell’Ottocento, con l’ampliamento della zona portuale e l’arrivo della ferrovia, nacque l’attuale piazza Caricamento, diventata una naturale cerniera tra il Porto Antico e il centro storico.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_caricamento/carica_inpiazza_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_caricamento/carica_inpiazza_ieri_1.mp4", "qr_azzurri/qr_azzurri_caricamento/carica_inpiazza_ieri_2.mp4"]
@@ -70,7 +70,7 @@
         label: "Piazza Banchi",
         lat: 44.409341098191156,
         lng: 8.929844922249893,
-        descr: "Piazza Banchi.",
+        descr: "Piazza Banchi nacque come area di mercato a ridosso del porto e nel Medioevo ospitò i banchi dei cambiavalute, da cui deriva il nome. Alla fine del Cinquecento sorse la Loggia dei Mercanti, che dal 1855 accolse la prima Borsa Merci e Valori d’Italia.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_caricamento/banchi_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_caricamento/banchi_ieri_1.mp4"]
