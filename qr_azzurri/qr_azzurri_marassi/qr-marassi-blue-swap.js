@@ -12,7 +12,7 @@
         label: "Via Archimede",
         lat: 44.40659188019401,
         lng: 8.951612114544316,
-        descr: "Via Archimede verso Piazza Giusti. ",
+        descr: "Tra Ottocento e primo Novecento, l’espansione urbana trasformò profondamente la bassa Val Bisagno. Via Archimede, verso piazza Giusti, si inserì in un quartiere sempre più densamente costruito, dove nuovi edifici residenziali sostituirono progressivamente gli spazi più aperti che caratterizzavano questa parte della città.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_marassi/via_archimede_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_marassi/via_archimede_ieri_1.mp4"]
@@ -23,7 +23,7 @@
         label: "Tunnel di Via Archimede",
         lat: 44.40630163505363,
         lng: 8.951165101297539,
-        descr: "Tunnel di Via Archimede. ",
+        descr: "Il passaggio sotto la ferrovia di via Archimede ricorda l’arrivo della linea ferroviaria di Levante, inaugurata nel 1868 tra Genova Brignole e Chiavari. La nuova infrastruttura, con viadotti e rilevati, modificò profondamente la viabilità e il paesaggio della bassa Val Bisagno.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_marassi/tunnel_archimede_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_marassi/tunnel_archimede_ieri_1.mp4"]
@@ -34,7 +34,7 @@
         label: "Corso Galilei",
         lat: 44.40707387113022,
         lng: 8.95066283538313,
-        descr: "Corso Galilei.",
+        descr: "Da Corso Galilei si conserva la memoria del Ponte di Sant’Agata, antico attraversamento medievale del Bisagno lungo il percorso della Via Aurelia. Originariamente composto da numerose arcate, fu progressivamente ridotto dall’espansione urbana tra Ottocento e Novecento e successivamente danneggiato dalle alluvioni.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_marassi/corso_galilei_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_marassi/corso_galilei_ieri_1.mp4"]

@@ -12,7 +12,7 @@
         label: "Ponte Reale",
         lat: 44.41335584241666,
         lng: 8.924099275633305,
-        descr: "Ponte Reale.",
+        descr: "Il cosiddetto Ponte Reale era un passaggio sopraelevato voluto dai Savoia per collegare direttamente Palazzo Reale con la Darsena e il porto, evitando la strada sottostante. Divenuto un elemento caratteristico di via Carlo Alberto, fu demolito nel 1964 durante la costruzione della Sopraelevata.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_darsena/qr_azzurri_darsena_ponte_reale/qr_azzurri_darsena_ponte_reale_oggi.mp4",
           ieri: [
@@ -25,7 +25,7 @@
         label: "Via Gramsci",
         lat: 44.4132968500203,
         lng: 8.926367986872602,
-        descr: "Via Gramsci.",
+        descr: "L’attuale via Gramsci, un tempo chiamata via Carlo Alberto, fu aperta nell’Ottocento come importante arteria al servizio del porto e della Darsena. Affiancata in passato da binari e strutture portuali, nel secondo dopoguerra assunse il nome attuale e venne poi affiancata dalla Sopraelevata.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_darsena/qr_azzurri__darsena_via_gramsci/qr_azzurri__darsena_via_gramsci_oggi.mp4",
           ieri: [

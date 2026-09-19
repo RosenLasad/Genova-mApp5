@@ -12,7 +12,7 @@
         label: "Piazza Corvetto da Via XII ottobre",
         lat: 44.40942825849114, 
         lng: 8.938753373722692,
-        descr: "Piazza Corvetto è uno dei nodi viari e urbanistici più eleganti di Genova, situato a ridosso del centro ottocentesco. Arrivando da Via XII Ottobre, la piazza si apre come un ampio e maestoso snodo circolare, arricchito da aiuole curate e dominato al centro dal grande monumento equestre dedicato a Vittorio Emanuele II.",
+        descr: "Piazza Corvetto fu realizzata nel 1877 nell’ambito delle trasformazioni ottocentesche del centro cittadino. Arrivando da via XII Ottobre, la piazza si apre attorno al monumento equestre a Vittorio Emanuele II, inaugurato nel 1886, con i giardini dell’Acquasola e Villetta Di Negro sui lati opposti.",
         media: {
           "minidoc": "parco-acquasola",
           oggi: "qr_azzurri/qr_azzurri_corvetto/corvetto_ottobre_oggi.mp4",
@@ -24,7 +24,7 @@
         label: "Piazza Corvetto da Via Piaggio",
         lat: 44.41052707395092,  
         lng: 8.937909962344625,
-        descr: "Piazza Corvetto vista da Via Piaggio, scendendo dalla circonvallazione a monte, offre un suggestivo affaccio dall’alto prima di immettersi nel centro cittadino. La prospettiva mette in risalto il dislivello di Genova e l’integrazione tra aree verdi e viabilità ottocentesca.",
+        descr: "Da via Martin Piaggio, Piazza Corvetto appare dall’alto come uno snodo tra il centro ottocentesco e la circonvallazione a monte. La sistemazione della piazza, realizzata nel 1877, modificò profondamente quest’area, creando un raccordo monumentale tra nuove strade, edifici rappresentativi e spazi verdi storici.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_corvetto/corvetto_piaggio_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_corvetto/corvetto_piaggio_ieri_1.mp4", "qr_azzurri/qr_azzurri_corvetto/corvetto_piaggio_ieri_2.mp4"]
