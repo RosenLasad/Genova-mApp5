@@ -5,25 +5,25 @@
   Object.assign(window.QR_DESCR_I18N, {
 
 "Galleria di Piazza Dante": {
-it: "La galleria di Piazza Dante (OGGI) fu iniziata nel 1936 (IERI 1), e inaugurata nel 1937 (IERI 2). La galleria sorge dove si trovavano i palazzi del borgo di Ponticello (IERI 3).",
-en: "The gallery in Piazza Dante (TODAY) was begun in 1936 (YESTERDAY 1) and inaugurated in 1937 (YESTERDAY 2). It stands where the buildings of the Ponticello district once stood (YESTERDAY 3).",
-es: "La galería de Piazza Dante (HOY) se empezó en 1936 (AYER 1) y se inauguró en 1937 (AYER 2). La galería se levanta donde antes estaban los edificios del barrio de Ponticello (AYER 3).",
-fr: "La galerie de la Piazza Dante (AUJOURD’HUI) fut commencée en 1936 (HIER 1) et inaugurée en 1937 (HIER 2). Elle s’élève à l’emplacement des anciens immeubles du bourg de Ponticello (HIER 3).",
-ar: "بدأ إنشاء نفق/ممر ساحة دانتي (اليوم) عام 1936 (الأمس 1)، وتم افتتاحه عام 1937 (الأمس 2). ويقع في الموقع الذي كانت تقوم فيه مباني حي بونتشيللو (الأمس 3).",
-ru: "Строительство галереи на площади Данте (СЕГОДНЯ) началось в 1936 году (ВЧЕРА 1), а открыта она была в 1937 году (ВЧЕРА 2). Галерея расположена там, где раньше стояли дома квартала Понтичелло (ВЧЕРА 3).",
-zh: "但丁广场的隧道/通廊（Piazza Dante，“今天”）于1936年开工（“昨天 1”），并在1937年落成启用（“昨天 2”）。它建在昔日蓬蒂切洛街区建筑原址上（“昨天 3”）。",
-lij: "A galleria de piazza Dante (ancheu) a fu iniziâ inte o 1936 (îeri 1) e innaugurâ inte o 1937 (îeri 2). A galleria a se trêuva indò gh’êivan i palassi do bòrgo de Ponticello (îeri 3)."
+  it: "La Galleria Cristoforo Colombo, completata nel 1937, fu realizzata nell’ambito della grande trasformazione di Piazza Dante avviata tra la fine degli anni Venti e gli anni Trenta. Attraversando il colle di Carignano, creò un nuovo collegamento tra il centro cittadino e Piazza della Vittoria, alternativo a via XX Settembre.",
+  en: "The Cristoforo Colombo Tunnel, completed in 1937, was built as part of the major transformation of Piazza Dante begun between the late 1920s and the 1930s. Passing through the Carignano hill, it created a new link between the city centre and Piazza della Vittoria, as an alternative to Via XX Settembre.",
+  es: "La Galería Cristoforo Colombo, terminada en 1937, se realizó en el marco de la gran transformación de Piazza Dante iniciada entre finales de los años veinte y los años treinta. Atravesando la colina de Carignano, creó una nueva conexión entre el centro y Piazza della Vittoria, alternativa a Via XX Settembre.",
+  fr: "La galerie Cristoforo Colombo, achevée en 1937, fut réalisée dans le cadre de la grande transformation de la Piazza Dante engagée entre la fin des années 1920 et les années 1930. Traversant la colline de Carignano, elle créa une nouvelle liaison entre le centre-ville et la Piazza della Vittoria, alternative à la Via XX Settembre.",
+  ar: "اكتمل نفق كريستوفورو كولومبو عام 1937، وقد أُنجز ضمن التحول الكبير لساحة دانتي الذي بدأ بين أواخر عشرينيات وثلاثينيات القرن العشرين. وباختراقه تل كارينيانو، أنشأ رابطًا جديدًا بين وسط المدينة وساحة ديلا فيتوريا، كبديل عن شارع XX Settembre.",
+  ru: "Галерея Кристофоро Коломбо, завершённая в 1937 году, была построена в рамках масштабного преобразования площади Данте, начатого на рубеже конца 1920-х и 1930-х годов. Пройдя сквозь холм Кариньяно, она создала новую связь между центром города и площадью делла Виттория, альтернативную улице XX Settembre.",
+  zh: "克里斯托弗罗·科隆博隧道于1937年完工，是但丁广场在20世纪20年代末至30年代大规模改造的一部分。隧道穿过卡里尼亚诺山丘，为市中心与胜利广场之间建立了新的通道，成为Via XX Settembre之外的另一条路线。",
+  lij: "A Galleria Cristoforo Colombo, completâ into 1937, a fu realizzâ inte a grande trasformaçion de Piazza Dante avviâ tra a fin di anni vinti e i anni trenta. Passando sotto o colle de Carignano, a creò un neuvo colegamento tra o centro da çittæ e Piazza della Vittoria, alternativo a via XX Settembre."
 },
 
 "Piazza Ponticello": {
-it: "Piazza di Ponticello (OGGI), sopravvisse ai primi lavori di demolizione del borgo di Ponticello (IERI 1), e qui vi si trovavano prestigiosi negozi ed empori (IERI 2).",
-en: "Piazza di Ponticello (TODAY) survived the first demolition works in the Ponticello district (YESTERDAY 1), and here there used to be prestigious shops and emporiums (YESTERDAY 2).",
-es: "La Piazza di Ponticello (HOY) sobrevivió a las primeras obras de demolición del barrio de Ponticello (AYER 1), y aquí se encontraban prestigiosas tiendas y emporios (AYER 2).",
-fr: "La Piazza di Ponticello (AUJOURD’HUI) survécut aux premiers travaux de démolition du bourg de Ponticello (HIER 1), et l’on y trouvait des boutiques et des emporiums prestigieux (HIER 2).",
-ar: "صمدت ساحة «بياцца دي بونتشيللو» (اليوم) أمام أوّل أعمال هدم حي بونتشيللو (الأمس 1)، وكان يوجد فيها متاجر وبازارات مرموقة (الأمس 2).",
-ru: "Площадь Пьяцца ди Понтичелло (СЕГОДНЯ) пережила первые работы по сносу квартала Понтичелло (ВЧЕРА 1), и здесь располагались престижные магазины и универмаги (ВЧЕРА 2).",
-zh: "蓬蒂切洛广场（Piazza di Ponticello，“今天”）在最初一轮对蓬蒂切洛街区的拆除工程中得以保留（“昨天 1”），当时这里曾汇集多家高档商店和大商号（“昨天 2”）。",
-lij: "Piazza de Ponticello (ancheu) a sopravvise a-i primmi travaggi de demöçion do bòrgo de Ponticello (îeri 1), e chi ghe l’êivan negozi e empori prestigioxi (îeri 2)."
+  it: "Piazza Ponticello era il cuore di un popoloso borgo sviluppato appena fuori Porta Soprana. Al centro si trovava un barchile seicentesco, oggi in piazza Campetto. Negli anni Trenta il quartiere fu quasi completamente demolito per realizzare Piazza Dante e il nuovo centro direzionale.",
+  en: "Piazza Ponticello was the heart of a densely populated neighbourhood that developed just outside Porta Soprana. At its centre stood a seventeenth-century fountain, now in Piazza Campetto. In the 1930s the district was almost entirely demolished to create Piazza Dante and the new business centre.",
+  es: "Piazza Ponticello era el corazón de un populoso barrio desarrollado justo fuera de Porta Soprana. En el centro se encontraba una fuente del siglo XVII, hoy situada en Piazza Campetto. En los años treinta el barrio fue casi completamente demolido para crear Piazza Dante y el nuevo centro de negocios.",
+  fr: "La Piazza Ponticello était le cœur d’un quartier très peuplé développé juste à l’extérieur de Porta Soprana. En son centre se trouvait une fontaine du XVIIe siècle, aujourd’hui Piazza Campetto. Dans les années 1930, le quartier fut presque entièrement démoli pour aménager la Piazza Dante et le nouveau centre d’affaires.",
+  ar: "كانت ساحة بونتشيليلو قلب حي مكتظ بالسكان نشأ مباشرة خارج بوابة بورتا سوبرانا. وفي وسطها كانت توجد نافورة من القرن السابع عشر، موجودة اليوم في ساحة كامبيتو. وفي ثلاثينيات القرن العشرين هُدم الحي تقريبًا بالكامل لإنشاء ساحة دانتي والمركز الإداري الجديد.",
+  ru: "Площадь Понтичелло была сердцем густонаселённого квартала, возникшего сразу за воротами Порта-Сопрана. В центре находился фонтан XVII века, ныне перенесённый на площадь Кампетто. В 1930-е годы квартал почти полностью снесли ради создания площади Данте и нового делового центра.",
+  zh: "蓬蒂切洛广场曾是一个人口稠密街区的中心，该街区位于苏普拉纳门外。广场中央曾有一座17世纪喷泉，如今位于坎佩托广场。20世纪30年代，这一街区几乎被全部拆除，以建设但丁广场和新的商务中心。",
+  lij: "Piazza Ponticello a l’êa o cheu d’un bòrgo popoloso cresciuo appena fòra da Porta Soprana. In mezo gh’êa un barchile do Seicento, ancheu in Piazza Campetto. Inti anni trenta o quartier o fu quasi tutto demolio pe realizzâ Piazza Dante e o neuvo centro direçionale."
 }
 
   });

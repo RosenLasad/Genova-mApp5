@@ -3,35 +3,35 @@
     parent: { id:"molo", label:"Molo", lat:44.406960335393258, lng:8.926195855862169 },
     children: [
       {
-        "id":"cavour","label":"Piazza Cavour","lat":44.40643883494313,"lng":8.927690363115637,"descr":"Il quartiere del Molo da Piazza Cavour.",
+        "id":"cavour","label":"Piazza Cavour","lat":44.40643883494313,"lng":8.927690363115637,"descr": "Piazza Cavour segna uno degli accessi allo storico quartiere del Molo. Prima della costruzione della Sopraelevata, realizzata tra il 1962 e il 1965, lo spazio aveva un rapporto più diretto con il fronte portuale; la nuova infrastruttura modificò profondamente l’aspetto e la percezione di questa parte della città.",
         "media":{
           "oggi":"qr_azzurri/qr_azzurri_molo/qr_azzurri_molo_cavour/qr_azzurri_molo_cavour_oggi.mp4",
           "ieri":["qr_azzurri/qr_azzurri_molo/qr_azzurri_molo_cavour/qr_azzurri_molo_cavour_ieri_1.mp4"]
         }
       },
       {
-        "id":"sottoripa","label":"Sottoripa","lat":44.41005467562237,"lng":8.929140336931178,"descr":"Sotto i portici di Sottoripa.",
+        "id":"sottoripa","label":"Sottoripa","lat":44.41005467562237,"lng":8.929140336931178,"descr": "I portici medievali di Sottoripa si svilupparono lungo l’antico fronte portuale e ospitarono per secoli botteghe, magazzini e attività legate al commercio. Ancora oggi costituiscono uno degli ambienti più caratteristici del centro storico, conservando lo stretto legame tra la città e la sua tradizione mercantile.",
         "media":{
           "oggi":"qr_azzurri/qr_azzurri_molo/qr_azzurri_sottoripa/qr_azzurri_sottoripa_oggi.mp4",
           "ieri":["qr_azzurri/qr_azzurri_molo/qr_azzurri_sottoripa/qr_azzurri_sottoripa_ieri_1.mp4"]
         }
       },
       {
-        "id":"cavour_sopra","label":"Pz. Cavour dalla Sopraelevata","lat":44.406235364481404,"lng":8.927517858776639,"descr":"Pz. Cavour dalla Sopraelevata.",
+        "id":"cavour_sopra","label":"Pz. Cavour dalla Sopraelevata","lat":44.406235364481404,"lng":8.927517858776639,"descr": "Dalla Sopraelevata si osserva Piazza Cavour e l’ingresso al Molo da una prospettiva nata con la grande infrastruttura viaria degli anni Sessanta. Il viadotto, sospeso sopra il fronte portuale, introdusse un nuovo livello di attraversamento della città e trasformò radicalmente questo tratto del centro.",
         "media":{
           "oggi":"qr_azzurri/qr_azzurri_molo/qr_azzurri_molo_sopraelevata/qr_azzurri_molo_sopra_oggi.mp4",
           "ieri":["qr_azzurri/qr_azzurri_molo/qr_azzurri_molo_sopraelevata/qr_azzurri_molo_sopraelevata_ieri_1.mp4"]
         }
       },
       {
-        "id":"san_marco","label":"San Marco al Molo","lat":44.407861182464906,"lng":8.925929425416395,"descr":"La Chiesa di San Marco al Molo è un antico edificio religioso di Genova situato in via del Molo, a ridosso del Porto Antico. Fondata nel XII secolo in stile romanico per assistere spiritualmente i lavoratori portuali e i marinai, la chiesa si trova oggi curiosamente incorporata tra gli edifici residenziali del quartiere.",
+        "id":"san_marco","label":"San Marco al Molo","lat":44.407861182464906,"lng":8.925929425416395,"descr": "La chiesa di San Marco al Molo fu fondata nel 1173 e costruita sui primi ampliamenti artificiali del molo. In origine si affacciava direttamente sulla banchina del porto; l’espansione delle aree portuali e urbane l’ha progressivamente inglobata nel fitto tessuto edilizio circostante.",
         "media":{
           "oggi":"qr_azzurri/qr_azzurri_molo/qr_azzurri_molo_san_marco/qr_azzurri_molo_san_marco_oggi.mp4",
           "ieri":["qr_azzurri/qr_azzurri_molo/qr_azzurri_molo_san_marco/qr_azzurri_molo_san_marco_ieri_1.mp4"]
         }
       },
       {
-        "id":"siberia","label":"Porta Siberia","lat":44.408279620719604,"lng":8.923917198032887,"descr":"La Porta del Molo, comunemente ed erroneamente nota come Porta Siberia, è un’imponente fortezza rinascimentale situata all’estremità dello storico sestiere del Molo. Progettata dal celebre architetto perugino Galeazzo Alessi e costruita tra il 1551 e il 1553 da Antonio Roderio da Carona, rappresenta l’unica porta ancora esistente della cinta muraria cinquecentesca della città.",
+        "id":"siberia","label":"Porta Siberia","lat":44.408279620719604,"lng":8.923917198032887,"descr": "La Porta del Molo, conosciuta come Porta Siberia, fu progettata da Galeazzo Alessi nel Cinquecento e completata nel 1553. Inserita nelle mura portuali, univa funzioni difensive e di accesso alla città, controllando uno dei principali passaggi tra il porto e lo storico quartiere del Molo.",
         "media":{
           "oggi":"qr_azzurri/qr_azzurri_molo/qr_azzurri_molo_siberia/qr_azzurri_molo_siberia_oggi.mp4",
           "ieri":[

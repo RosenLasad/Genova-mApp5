@@ -7,7 +7,7 @@
         label: "Galleria di Piazza Dante",
         lat: 44.40530925255768,
         lng: 8.935857429434225,
-        descr: "Galleria di Piazza Dante.",
+        descr: "La Galleria Cristoforo Colombo, completata nel 1937, fu realizzata nell’ambito della grande trasformazione di Piazza Dante avviata tra la fine degli anni Venti e gli anni Trenta. Attraversando il colle di Carignano, creò un nuovo collegamento tra il centro cittadino e Piazza della Vittoria, alternativo a via XX Settembre.",
         media: {
           "minidoc": "borgo-ponticello",
           oggi: "qr_azzurri/qr_azzurri_piazza_dante/qr_azzurri_piazza_dante_galleria/qr_azzurri_piazza_dante_galleria_oggi.mp4",
@@ -23,7 +23,7 @@
         label: "Piazza Ponticello",
         lat: 44.40514306896972,
         lng: 8.936474916463442,
-        descr: "Piazza Ponticello con la fontana",
+        descr: "Piazza Ponticello era il cuore di un popoloso borgo sviluppato appena fuori Porta Soprana. Al centro si trovava un barchile seicentesco, oggi in piazza Campetto. Negli anni Trenta il quartiere fu quasi completamente demolito per realizzare Piazza Dante e il nuovo centro direzionale.",
         media: {
           "minidoc": "borgo-ponticello",
           oggi: "qr_azzurri/qr_azzurri_piazza_dante/qr_azzurri_piazza_dante_ponticello/qr_azzurri_piazza_dante_ponticello_oggi.mp4",

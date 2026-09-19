@@ -5,37 +5,37 @@
   Object.assign(window.QR_DESCR_I18N, {
 
 "Piazza Matteotti": {
-      it: "Piazza Matteotti (OGGI) si chiamava prima Piazza Umberto I (IERI 1), e ancora prima Piazza Nuova (IERI 2). Sulla piazza si teneva il mercato (IERI 3).",
-en: "Piazza Matteotti (TODAY) was previously called Piazza Umberto I (YESTERDAY 1), and before that Piazza Nuova (YESTERDAY 2). A market used to be held in the square (YESTERDAY 3).",
-es: "La Piazza Matteotti (HOY) se llamaba antes Piazza Umberto I (AYER 1), y todavía antes Piazza Nuova (AYER 2). En la plaza se celebraba el mercado (AYER 3).",
-fr: "La Piazza Matteotti (AUJOURD’HUI) s’appelait auparavant Piazza Umberto I (HIER 1), et encore avant Piazza Nuova (HIER 2). Sur la place se tenait le marché (HIER 3).",
-ar: "كانت ساحة ماتيوتي (اليوم) تُسمّى سابقًا «بيازا أومبرتو الأوّل» (الأمس 1)، وقبل ذلك «بيازا نوفا» (الأمس 2). وكان يُقام في الساحة سوق (الأمس 3).",
-ru: "Площадь Матеотти (СЕГОДНЯ) раньше называлась площадью Умберто I (ВЧЕРА 1), а ещё раньше — площадью Нуова (ВЧЕРА 2). На площади располагался рынок (ВЧЕРА 3).",
-zh: "马泰奥蒂广场（“今天”）过去名为翁贝托一世广场（“昨天 1”），在此之前又叫新广场（Piazza Nuova，“昨天 2”）。当时广场上还设有集市（“昨天 3”）。",
-lij: "Piazza Matteotti (ancheu) a se ciamava prima piazza Umberto I (îeri 1), e ancora prima piazza Neuva (îeri 2). In sciâ piaxça gh’êiva o mercato (îeri 3)."
+  it: "L’attuale Piazza Matteotti nacque nel Cinquecento come Piazza Nuova di Ferreria, davanti a Palazzo Ducale, e in seguito prese il nome di Piazza Umberto I. Per secoli ospitò mercati e attività commerciali, mantenendo ancora oggi il ruolo di importante spazio pubblico nel cuore della città.",
+  en: "Today’s Piazza Matteotti originated in the sixteenth century as Piazza Nuova di Ferreria, in front of Palazzo Ducale, and later took the name Piazza Umberto I. For centuries it hosted markets and commercial activities, and it still remains an important public space in the heart of the city.",
+  es: "La actual Piazza Matteotti nació en el siglo XVI como Piazza Nuova di Ferreria, frente al Palazzo Ducale, y posteriormente tomó el nombre de Piazza Umberto I. Durante siglos acogió mercados y actividades comerciales, manteniendo todavía hoy su papel como importante espacio público en el corazón de la ciudad.",
+  fr: "L’actuelle Piazza Matteotti naquit au XVIe siècle sous le nom de Piazza Nuova di Ferreria, devant le Palazzo Ducale, puis prit le nom de Piazza Umberto I. Pendant des siècles, elle accueillit marchés et activités commerciales et conserve encore aujourd’hui son rôle d’espace public important au cœur de la ville.",
+  ar: "نشأت ساحة ماتيوتي الحالية في القرن السادس عشر باسم «بيازا نوفا دي فيريريا» أمام قصر الدوج، ثم حملت لاحقًا اسم ساحة أومبرتو الأول. وعلى مدى قرون استضافت الأسواق والأنشطة التجارية، ولا تزال اليوم مساحة عامة مهمة في قلب المدينة.",
+  ru: "Нынешняя площадь Матеотти возникла в XVI веке как Пьяцца-Нуова-ди-Феррерия перед Палаццо Дукале, а позднее получила имя площади Умберто I. На протяжении веков здесь проходили рынки и торговая деятельность; и сегодня она остаётся важным общественным пространством в самом сердце города.",
+  zh: "今天的马泰奥蒂广场始于16世纪，当时称为费雷里亚新广场，位于总督宫前，后来改名为翁贝托一世广场。数百年来这里一直举办市场和各种商业活动，至今仍是城市中心重要的公共空间。",
+  lij: "L’attuale Piazza Matteotti a nasci into Cinqueçento comme Piazza Neuva de Ferreria, davanti a Palazzo Ducale, e dòppo a piggiò o nomme de Piazza Umberto I. Pe secoli a l’ha ospitou mercati e ativitæ comercia, e ancheu a conserva o seu ròllo de importante spaçio pubrico into cheu da çittæ."
+},
+
+        "Teatro Carlo Felice": {
+      it: "Il Teatro Carlo Felice, progettato da Carlo Barabino, fu inaugurato nel 1828 nell’area dell’antico complesso di San Domenico. Davanti al teatro fu inaugurato nel 1893 il monumento equestre a Giuseppe Garibaldi. Gravemente danneggiato durante la guerra, il teatro riaprì completamente ricostruito nel 1991.",
+      en: "Teatro Carlo Felice, designed by Carlo Barabino, opened in 1828 on the site of the former San Domenico complex. The equestrian monument to Giuseppe Garibaldi was unveiled in front of the theatre in 1893. Severely damaged during the war, the theatre reopened fully rebuilt in 1991.",
+      es: "El Teatro Carlo Felice, proyectado por Carlo Barabino, fue inaugurado en 1828 en el área del antiguo complejo de San Domenico. Frente al teatro se inauguró en 1893 el monumento ecuestre a Giuseppe Garibaldi. Gravemente dañado durante la guerra, el teatro reabrió completamente reconstruido en 1991.",
+      fr: "Le Teatro Carlo Felice, conçu par Carlo Barabino, fut inauguré en 1828 à l’emplacement de l’ancien complexe de San Domenico. Devant le théâtre, le monument équestre à Giuseppe Garibaldi fut inauguré en 1893. Gravement endommagé pendant la guerre, le théâtre rouvrit entièrement reconstruit en 1991.",
+      ar: "افتُتح مسرح كارلو فيليتشي، من تصميم كارلو بارابينو، عام 1828 في موقع مجمع سان دومينيكو القديم. وفي عام 1893 دُشّن أمامه النصب الفروسي لجوزيبي غاريبالدي. وبعد تعرضه لأضرار جسيمة خلال الحرب، أعيد افتتاح المسرح عام 1991 بعد إعادة بنائه بالكامل.",
+      ru: "Театр Карло Феличе, спроектированный Карло Барабино, открылся в 1828 году на месте бывшего комплекса Сан-Доменико. В 1893 году перед театром установили конный памятник Джузеппе Гарибальди. Сильно повреждённый во время войны, театр вновь открылся после полной реконструкции в 1991 году.",
+      zh: "卡洛·费利切剧院由卡洛·巴拉比诺设计，1828年在原圣多梅尼科建筑群所在地落成开放。1893年，剧院前的朱塞佩·加里波第骑马纪念碑揭幕。剧院在战争中严重受损，经过全面重建后于1991年重新开放。",
+      lij: "O Teatro Carlo Felice, progettou da Carlo Barabino, o fu innaugurou into 1828 inte l’ærea de l’antigo complesso de San Domenego. Davanti a-o teatro, into 1893, a fu innaugurâ a statua equestre a Giuseppe Garibaldi. Gravemente danegiou durante a guæra, o teatro o riaprî completamente ricostruio into 1991."
     },
 
-    "Teatro Carlo Felice": {
-      it: "Il Teatro Carlo Felice (OGGI) fu costruito nel 1825 (IERI 1). La statua a Giuseppe Garibaldi fu installata nel 1895 (IERI 2). Il teatro sorge sulle ceneri della chiesa di San Domenico (IERI 3).",
-en: "Teatro Carlo Felice (TODAY) was built in 1825 (YESTERDAY 1). The statue of Giuseppe Garibaldi was installed in 1895 (YESTERDAY 2). The theatre stands on the remains of the former church of San Domenico (YESTERDAY 3).",
-es: "El Teatro Carlo Felice (HOY) fue construido en 1825 (AYER 1). La estatua a Giuseppe Garibaldi se instaló en 1895 (AYER 2). El teatro se levanta sobre los restos de la antigua iglesia de San Domenico (AYER 3).",
-fr: "Le Teatro Carlo Felice (AUJOURD’HUI) fut construit en 1825 (HIER 1). La statue de Giuseppe Garibaldi fut installée en 1895 (HIER 2). Le théâtre s’élève sur les vestiges de l’ancienne église San Domenico (HIER 3).",
-ar: "بُنِيَ مسرح «كارلو فيليتشي» (اليوم) عام 1825 (الأمس 1). ونُصِبَ تمثال جوزيبي غاريبالدي عام 1895 (الأمس 2). ويقوم المسرح فوق بقايا كنيسة «سان دومينيكو» السابقة (الأمس 3).",
-ru: "Театр «Карло Феличе» (СЕГОДНЯ) был построен в 1825 году (ВЧЕРА 1). Статуя Джузеппе Гарибальди была установлена в 1895 году (ВЧЕРА 2). Театр стоит на месте бывшей церкви Сан-Доменико, от которой остались лишь следы (ВЧЕРА 3).",
-zh: "卡洛·费利切剧院（Teatro Carlo Felice，“今天”）建于1825年（“昨天 1”）。向朱塞佩·加里波第致敬的雕像于1895年竖立（“昨天 2”）。剧院坐落在旧圣多米尼科教堂遗址之上（“昨天 3”）。",
-lij: "O Teatro Carlo Felice (ancheu) o fu costruio inte o 1825 (îeri 1). A stàtua dedicâ a Giuseppe Garibaldi a fu instalâ inte o 1895 (îeri 2). O teatro o se drizza in sciæ cènner de l’ànn-a gésa de San Domenego (îeri 3)."
-    },
-
-    "Palazzo della Regione": {
-  it: "Il Palazzo della Regione nasce come Palazzo della NGI nel 1924. La fontana fu inaugurata nel 1936.",
-  en: "The Regional Government Palace was originally built as the NGI Palace in 1924. The fountain was inaugurated in 1936.",
-  es: "El Palacio de la Región se construyó originalmente como Palacio de la NGI en 1924. La fuente fue inaugurada en 1936.",
-  fr: "L’actuel palais de la Région a été construit à l’origine comme palais de la NGI en 1924. La fontaine a été inaugurée en 1936.",
-  ar: "شُيِّد مبنى مقرّ الإقليم أصلاً كقصر لشركة NGI عام 1924. وتم افتتاح النافورة عام 1936.",
-  ru: "Здание Дворца Региона изначально было построено как дворец компании NGI в 1924 году. Фонтан был открыт в 1936 году.",
-  zh: "如今的大区政府大楼最初于1924年建成，作为NGI大楼使用。喷泉于1936年落成启用。",
-  lij: "O Palazzo da Regione o l’ê nato comme Palazzo da NGI inte o 1924. A funtan-a a l’é stæta innaugurâ inte o 1936."
-}
+        "Palazzo della Regione": {
+      it: "L’attuale Palazzo della Regione fu costruito come sede della Navigazione Generale Italiana e completato nel 1924 su progetto di Cesare Gamba con Giuseppe Tallero. Negli anni successivi divenne uno degli edifici simbolo della nuova Piazza De Ferrari, completata nel 1936 dalla monumentale fontana centrale.",
+      en: "The present Palazzo della Regione was built as the headquarters of Navigazione Generale Italiana and completed in 1924 to a design by Cesare Gamba with Giuseppe Tallero. In the following years it became one of the landmark buildings of the new Piazza De Ferrari, completed in 1936 by the monumental central fountain.",
+      es: "El actual Palazzo della Regione fue construido como sede de la Navigazione Generale Italiana y terminado en 1924 según un proyecto de Cesare Gamba con Giuseppe Tallero. En los años siguientes se convirtió en uno de los edificios emblemáticos de la nueva Piazza De Ferrari, completada en 1936 con la monumental fuente central.",
+      fr: "L’actuel Palazzo della Regione fut construit comme siège de la Navigazione Generale Italiana et achevé en 1924 sur un projet de Cesare Gamba avec Giuseppe Tallero. Dans les années suivantes, il devint l’un des édifices emblématiques de la nouvelle Piazza De Ferrari, complétée en 1936 par la monumentale fontaine centrale.",
+      ar: "شُيّد المبنى الحالي لقصر الإقليم مقرًا لشركة الملاحة العامة الإيطالية، واكتمل عام 1924 وفق تصميم تشيزاري غامبا بالتعاون مع جوزيبي تاليرو. وفي السنوات التالية أصبح أحد المباني الرمزية لساحة دي فيراري الجديدة، التي اكتمل مظهرها عام 1936 بالنافورة المركزية الضخمة.",
+      ru: "Нынешний Палаццо делла Regione был построен как штаб-квартира компании Navigazione Generale Italiana и завершён в 1924 году по проекту Чезаре Гамбы при участии Джузеппе Таллеро. В последующие годы он стал одним из символов новой площади Де Феррари, завершённой в 1936 году монументальным центральным фонтаном.",
+      zh: "如今的大区政府宫最初作为意大利总航运公司总部兴建，并于1924年按切萨雷·甘巴与朱塞佩·塔莱罗的设计完成。此后它成为新德·费拉里广场的标志性建筑之一；1936年广场中央宏伟喷泉落成，使整体布局最终完成。",
+      lij: "L’attuale Palazzo da Regione o fu costruio comme sede da Navigaçion Generale Italian-a e completou into 1924 in sciô progetto de Cesare Gamba con Giuseppe Tallero. Inti anni dòppo o diventò un di edifiçi simbolo da neuva Piazza De Ferrari, completâ into 1936 da-a monumentale funtan-a centrale."
+    }
 
 
   });

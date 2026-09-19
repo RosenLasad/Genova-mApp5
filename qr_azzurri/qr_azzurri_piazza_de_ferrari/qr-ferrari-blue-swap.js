@@ -7,7 +7,7 @@
         label: "Piazza Matteotti",
         lat: 44.40697661301905,
         lng: 8.932735558901697,
-        descr: "Piazza Matteotti si chiamava prima Piazza Umberto I, e ancora prima Piazza Nuova.",
+        descr: "L’attuale Piazza Matteotti nacque nel Cinquecento come Piazza Nuova di Ferreria, davanti a Palazzo Ducale, e in seguito prese il nome di Piazza Umberto I. Per secoli ospitò mercati e attività commerciali, mantenendo ancora oggi il ruolo di importante spazio pubblico nel cuore della città.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_piazza_de_ferrari/qr_azzurri_piazza_de_ferrari_piazza_matteotti/piazza_matteotti_oggi.mp4",
           ieri: [
@@ -23,7 +23,7 @@
         label: "Teatro Carlo Felice",
         lat: 44.40788038005325,
         lng: 8.933937994594435,
-        descr: "Teatro Carlo Felice",
+        descr: "Il Teatro Carlo Felice, progettato da Carlo Barabino, fu inaugurato nel 1828 nell’area dell’antico complesso di San Domenico. Davanti al teatro fu inaugurato nel 1893 il monumento equestre a Giuseppe Garibaldi. Gravemente danneggiato durante la guerra, il teatro riaprì completamente ricostruito nel 1991.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_piazza_de_ferrari/qr_azzurri_piazza_de_ferrari_teatro_carlo_felice/teatro_carlo_felice_oggi.mp4",
           ieri: [
@@ -41,7 +41,7 @@
         label: "Palazzo della Regione",
         lat: 44.407104258788635,
         lng: 8.934398277618188,
-        descr: "Il Palazzo della Regione nasce come Palazzo della NGI nel 1924..",
+        descr: "L’attuale Palazzo della Regione fu costruito come sede della Navigazione Generale Italiana e completato nel 1924 su progetto di Cesare Gamba con Giuseppe Tallero. Negli anni successivi divenne uno degli edifici simbolo della nuova Piazza De Ferrari, completata nel 1936 dalla monumentale fontana centrale.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_piazza_de_ferrari/qr_azzurri_piazza_de_ferrari_palazzo_della_regione/scorci_azzurri_piazza_de_ferrari_palazzo_della_regione_oggi.mp4",
           ieri: [
