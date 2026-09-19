@@ -189,7 +189,7 @@
       blue.bindTooltip(parent.label || "Villa del Principe", { permanent: false, direction: "right", offset: [8, 0], className: "qr-tooltip" });
     }
     blue.on("click", function () {
-      window.__qrOpenChildPanel && window.__qrOpenChildPanel(parent.label || "Villa del Principe", "Zooma per vedere i punti.", { oggi: null, ieri: [] });
+      window.__qrOpenChildPanel && window.__qrOpenChildPanel(parent.label || "Villa del Principe", "Zooma per vedere i punti di Villa del Principe.", { oggi: null, ieri: [] });
     });
 
     var azzIcon = L.icon({
@@ -217,7 +217,6 @@
 
     var chk = document.getElementById("chk-qr-villa-del-principe");
 
-    function showBlue() { try { group.removeFrom(map); } catch (e) {} try { blue.addTo(map); } catch (e) {} }
     function showKids() { try { blue.removeFrom(map); } catch (e) {} try { group.addTo(map); } catch (e) {} }
     function hideAll()  { try { blue.removeFrom(map); } catch (e) {} try { group.removeFrom(map); } catch (e) {} }
 

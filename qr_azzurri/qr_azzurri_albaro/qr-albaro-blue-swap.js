@@ -129,7 +129,7 @@
       if (window.__qrOpenChildPanel) {
         window.__qrOpenChildPanel(
           parent.label || "",
-          "Zooma per vedere i punti di Caricamento.",
+          "Zooma per vedere i punti di Albaro.",
           { oggi: null, ieri: [] }
         );
       }
@@ -176,15 +176,12 @@
       group.addLayer(m);
     });
 
-    function showBlue() { try { group.removeFrom(map); } catch (e) {} try { blue.addTo(map); } catch (e) {} }
     function showKids() { try { blue.removeFrom(map); } catch (e) {} try { group.addTo(map); } catch (e) {} }
     function hideAll()  { try { blue.removeFrom(map); } catch (e) {} try { group.removeFrom(map); } catch (e) {} }
 
-    var THRESH = 0;
     function update() {
       var on = !!(chk && chk.checked);
       if (!on) { hideAll(); return; }
-      var z = map.getZoom ? map.getZoom() : 0;
       showKids();
     }
 

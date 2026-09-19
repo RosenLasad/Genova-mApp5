@@ -127,7 +127,6 @@
       group.addLayer(m);
     });
 
-    function showBlue(){ try{ group.removeFrom(map); }catch(e){} try{ blue.addTo(map); }catch(e){} }
     function showKids(){ try{ blue.removeFrom(map); }catch(e){} try{ group.addTo(map); }catch(e){} }
     function hideAll(){ try{ blue.removeFrom(map); }catch(e){} try{ group.removeFrom(map); }catch(e){} }
 
