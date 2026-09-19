@@ -12,7 +12,7 @@
         label: "Piazza Acquaverde",
         lat: 44.41667256297017,
         lng: 8.922370112447187,
-        descr: "Piazza Acquaverde con la statua a Cristoforo Colombo",
+        descr: "Piazza Acquaverde assunse il suo assetto moderno con la costruzione della stazione di Genova Principe, completata nel 1860. Sul lato verso via Andrea Doria il porticato terminava in un grande arco a tre luci, demolito nel 1929 per ampliare la carreggiata.",
         media: {
           "minidoc": "stazione-principe",
           oggi: "qr_azzurri/qr_azzurri_piazza_principe/qr_azzurri_piazza_principe_acquaverde/qr_azzurri_piazza_principe_acquaverde_oggi.mp4",
@@ -26,7 +26,7 @@
         label: "Binari di P.Principe",
         lat: 44.41660826959373,
         lng: 8.918643226322418,
-        descr: "Accanto alla stazione di P.Principe, passavano le linee del tram.",
+        descr: "La stazione di Piazza Principe, inaugurata nel 1860, nacque come grande stazione di testa. Con l’apertura della galleria Traversata nel 1872 e l’ampliamento dei binari passanti nei primi anni del Novecento, divenne uno dei principali nodi ferroviari della città.",
         media: {
           "minidoc": "stazione-principe",
           oggi: "qr_azzurri/qr_azzurri_piazza_principe/qr_azzurri_piazza_principe_binari/qr_azzurri_piazza_principe_binari_oggi.mp4",

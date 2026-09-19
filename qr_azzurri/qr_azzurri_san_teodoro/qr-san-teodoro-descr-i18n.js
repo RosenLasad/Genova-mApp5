@@ -5,36 +5,36 @@
   Object.assign(window.QR_DESCR_I18N, {
 
 "Chiesa di San Teodoro": {
-it: "Dove oggi sorge via Milano (OGGI) una volta si trovava la chiesa di San Teodoro, costruita intorno al 1100 (IERI 1): si affacciava sul mare del golfo (IERI 2), ma con l'espansione del porto fu demolita nel 1870 (IERI 3).",
-en: "Where Via Milano stands today (TODAY) there once stood the church of San Teodoro, built around 1100 (YESTERDAY 1). It faced the sea of the gulf (YESTERDAY 2), but with the expansion of the port it was demolished in 1870 (YESTERDAY 3).",
-fr: "Là où se trouve aujourd’hui la via Milano (AUJOURD’HUI) s’élevait autrefois l’église San Teodoro, construite vers 1100 (HIER 1). Elle donnait sur la mer du golfe (HIER 2), mais avec l’extension du port elle fut démolie en 1870 (HIER 3).",
-es: "Donde hoy se encuentra la vía Milano (HOY) antes se alzaba la iglesia de San Teodoro, construida hacia el año 1100 (AYER 1). Estaba orientada hacia el mar del golfo (AYER 2), pero con la expansión del puerto fue demolida en 1870 (AYER 3).",
-ar: "في المكان الذي تقوم فيه اليوم طريق فيا ميلانو (اليوم)، كانت توجد في السابق كنيسة سان تئودورو، التي بُنيت نحو عام 1100 (الأمس 1). كانت مُطِلّة على بحر الخليج (الأمس 2)، ولكن مع توسّع الميناء هُدمت عام 1870 (الأمس 3).",
-ru: "Там, где сегодня проходит улица Виа Милано (СЕГОДНЯ), когда-то находилась церковь Сан-Теодоро, построенная примерно в 1100 году (ВЧЕРА 1). Она выходила фасадом к морю залива (ВЧЕРА 2), но с расширением порта была снесена в 1870 году (ВЧЕРА 3).",
-zh: "如今的米兰大街所在地（“今日”）过去曾是圣特奥多罗教堂的所在处，该教堂建于约 1100 年（“昔日 1”）。它面朝海湾之海面（“昔日 2”），但随着港口的扩建，于 1870 年被拆除（“昔日 3”）。",
-lij: "Dove òggi ghe l’è via Milano (OGGI) ’na vòtta ghe stæiva a gésa de San Teodoro, costruîa intorno ao 1100 (IERI 1). A s’affacciava in sciô mâ do górfo (IERI 2), ma co l’espansion do pòrto fù demöa into 1870 (IERI 3)."
+it: "L’antica chiesa di San Teodoro, fondata agli inizi del XII secolo, sorgeva vicino al mare e affacciava sul golfo. Fu demolita nel 1870 per le nuove esigenze di viabilità e per l’espansione portuale, che trasformarono radicalmente questo tratto di costa.",
+en: "The old church of San Teodoro, founded in the early twelfth century, stood close to the sea overlooking the gulf. It was demolished in 1870 to meet new road needs and port expansion, which radically transformed this stretch of coastline.",
+es: "La antigua iglesia de San Teodoro, fundada a comienzos del siglo XII, se alzaba cerca del mar y dominaba el golfo. Fue demolida en 1870 por las nuevas necesidades viarias y la expansión portuaria, que transformaron radicalmente este tramo de costa.",
+fr: "L’ancienne église de San Teodoro, fondée au début du XIIe siècle, se dressait près de la mer et dominait le golfe. Elle fut démolie en 1870 pour répondre aux nouveaux besoins de voirie et à l’expansion portuaire, qui transformèrent radicalement ce secteur du littoral.",
+ar: "كانت كنيسة سان تيودورو القديمة، التي تأسست في أوائل القرن الثاني عشر، تقع قرب البحر وتشرف على الخليج. وهُدمت عام 1870 بسبب متطلبات الطرق الجديدة وتوسع الميناء، وهما عاملان غيّرا هذا الجزء من الساحل بصورة جذرية.",
+ru: "Старая церковь Сан-Теодоро, основанная в начале XII века, стояла у моря и выходила на залив. Её снесли в 1870 году из-за новых транспортных потребностей и расширения порта, радикально изменивших этот участок побережья.",
+zh: "古老的圣特奥多罗教堂创建于12世纪初，原位于海边，面向海湾。1870年，为适应新的道路需求和港口扩建，教堂被拆除；这些工程彻底改变了这一段海岸的面貌。",
+lij: "L'antiga gexa de San Teodoro, fondâ a l'iniçio do XII secolo, a stava vizin ao mâ e a guardava o górfo. A fù demolîa into 1870 pe-e neuve esigenze de viabilitæ e pe l'espansion do pòrto, che han trasformou radicalmente sto tratto de costa."
 },
 
 "Nuova San Teodoro": {
-it: "La chiesa di San Teodoro su via Venezia (OGGI), fu costruita nel 1875 (IERI).",
-en: "The church of San Teodoro on Via Venezia (TODAY) was built in 1875 (YESTERDAY).",
-fr: "L’église San Teodoro sur la via Venezia (AUJOURD’HUI) fut construite en 1875 (HIER).",
-es: "La iglesia de San Teodoro en la via Venezia (HOY) fue construida en 1875 (AYER).",
-ar: "شُيِّدت كنيسة سان تئودورو في شارع فيا فينزيا (اليوم) عام 1875 (الأمس).",
-ru: "Церковь Сан-Теодоро на улице Виа Венеция (СЕГОДНЯ) была построена в 1875 году (ВЧЕРА).",
-zh: "位于威尼斯街的圣特奥多罗教堂（“今日”）建于 1875 年（“昔日”）。",
-lij: "A gésa de San Teodoro in sciâ via Venezia (OGGI) a fù costruîa into 1875 (IERI)."
+it: "Dopo la demolizione dell’antica chiesa nel 1870, San Teodoro fu ricostruita poco più a monte, lungo l’attuale via Venezia. Il nuovo edificio neogotico venne completato e consacrato nel 1876, diventando il nuovo punto di riferimento religioso del quartiere.",
+en: "After the old church was demolished in 1870, San Teodoro was rebuilt slightly uphill along today's Via Venezia. The new Neo-Gothic building was completed and consecrated in 1876, becoming the new religious landmark of the neighbourhood.",
+es: "Tras la demolición de la antigua iglesia en 1870, San Teodoro fue reconstruida un poco más arriba, a lo largo de la actual via Venezia. El nuevo edificio neogótico se terminó y consagró en 1876, convirtiéndose en el nuevo punto de referencia religioso del barrio.",
+fr: "Après la démolition de l’ancienne église en 1870, San Teodoro fut reconstruite un peu plus haut, le long de l’actuelle via Venezia. Le nouvel édifice néogothique fut achevé et consacré en 1876, devenant le nouveau repère religieux du quartier.",
+ar: "بعد هدم الكنيسة القديمة عام 1870، أعيد بناء سان تيودورو أعلى قليلًا على طول فيا فينيتسيا الحالية. واكتمل المبنى الجديد على الطراز القوطي الجديد وكُرّس عام 1876، ليصبح المرجع الديني الجديد للحي.",
+ru: "После сноса старой церкви в 1870 году Сан-Теодоро была заново построена немного выше, вдоль современной Виа Венеция. Новое неоготическое здание завершили и освятили в 1876 году, и оно стало новым религиозным центром района.",
+zh: "1870年老教堂拆除后，圣特奥多罗教堂在稍高处、沿今天的威尼斯街重建。新的新哥特式建筑于1876年完工并举行祝圣仪式，成为该街区新的宗教中心。",
+lij: "Dòppo a demoliçion de l'antiga gexa into 1870, San Teodoro a fù ricostruîa un pö ciù in sciù, longo l'attuale via Venezia. O neuvo edificio neogotico o fù finîo e consacrou into 1876, diventando o neuvo riferimento religioso do quartê."
 },
 
 "Via Buozzi": {
-it: "Dove oggi sorge via Buozzi (OGGI), fino all'Ottocento il mare arrivava sotto la passeggiata (IERI 1), e si ricorda la grande mareggiata del 1821 (IERI 2).",
-en: "Where Via Buozzi stands today (TODAY), until the 19th century the sea reached right below the promenade (YESTERDAY 1), and the great storm surge of 1821 is still remembered (YESTERDAY 2).",
-fr: "Là où se trouve aujourd’hui la via Buozzi (AUJOURD’HUI), jusqu’au XIXe siècle la mer arrivait au pied de la promenade (HIER 1), et l’on se souvient encore de la grande marée de 1821 (HIER 2).",
-es: "Donde hoy se encuentra la via Buozzi (HOY), hasta el siglo XIX el mar llegaba justo bajo el paseo (AYER 1), y aún se recuerda el gran temporal de 1821 (AYER 2).",
-ar: "في المكان الذي تقوم فيه اليوم طريق فيا بواتسي (اليوم)، كان البحر حتى القرن التاسع عشر يصل إلى أسفل الممر (الأمس 1)، ولا تزال تُذكَر العاصفة البحرية الكبيرة عام 1821 (الأمس 2).",
-ru: "Там, где сегодня проходит улица Виа Буоцци (СЕГОДНЯ), вплоть до XIX века море доходило прямо до прогулочной аллеи (ВЧЕРА 1), и до сих пор помнят большое морское наводнение 1821 года (ВЧЕРА 2).",
-zh: "如今的布奥齐大街所在地（“今日”），在十九世纪以前，大海一直拍打到步道下方（“昔日 1”），人们至今仍记得 1821 年那场巨大的风暴潮（“昔日 2”）。",
-lij: "Dove òggi gh’è via Buozzi (OGGI), fin a-o Ottocento o mâ arivava pròpio sòtta a passeggiata (IERI 1), e se regòrda ancora a grande mareggiâ do 1821 (IERI 2)."
+it: "Prima dell’espansione del porto, il mare arrivava molto più vicino all’attuale via Buozzi e alla strada della Marina. La violenta mareggiata del 25 dicembre 1821, documentata anche da Luigi Garibbo, mostra quanto questo tratto di San Teodoro fosse allora direttamente esposto al golfo.",
+en: "Before the port expanded, the sea reached much closer to today's Via Buozzi and the Marina road. The violent storm of 25 December 1821, also documented by Luigi Garibbo, shows how directly this part of San Teodoro was then exposed to the gulf.",
+es: "Antes de la expansión del puerto, el mar llegaba mucho más cerca de la actual via Buozzi y de la carretera de la Marina. El violento temporal del 25 de diciembre de 1821, documentado también por Luigi Garibbo, muestra hasta qué punto este tramo de San Teodoro estaba entonces expuesto directamente al golfo.",
+fr: "Avant l’expansion du port, la mer arrivait beaucoup plus près de l’actuelle via Buozzi et de la route de la Marina. La violente tempête du 25 décembre 1821, également documentée par Luigi Garibbo, montre combien ce secteur de San Teodoro était alors directement exposé au golfe.",
+ar: "قبل توسع الميناء كان البحر يصل إلى مسافة أقرب بكثير من فيا بواتسي الحالية وطريق المارينا. وتُظهر العاصفة البحرية العنيفة في 25 ديسمبر 1821، التي وثقها أيضًا لويجي غاريبو، مدى تعرض هذا الجزء من سان تيودورو مباشرة للخليج آنذاك.",
+ru: "До расширения порта море подходило значительно ближе к современной Виа Буоцци и дороге Марина. Сильный шторм 25 декабря 1821 года, запечатлённый также Луиджи Гариббо, показывает, насколько открытым заливу был тогда этот участок Сан-Теодоро.",
+zh: "港口扩建之前，海水比今天更靠近布奥齐街和滨海道路。1821年12月25日的猛烈风暴也被路易吉·加里博记录下来，显示当时圣特奥多罗这一带直接暴露在海湾风浪之中。",
+lij: "Primma de l'espansion do pòrto, o mâ o arivava ben ciù vizin a l'attuale via Buozzi e a-a stradda da Marina. A violenta mareggiâ do 25 de dexembre 1821, documentâ anche da Luigi Garibbo, a mostra quanto sto tratto de San Teodoro o fùsse alloa direttamente esposto ao górfo."
 }
 
   });

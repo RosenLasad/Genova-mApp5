@@ -12,7 +12,7 @@
         label: "Colle di San Benigno",
         lat: 44.41092421681016,
         lng: 8.907769957856738,
-        descr: "Colle di San Benigno affacciato sul golfo.",
+        descr: "Il colle di San Benigno era un promontorio roccioso tra Genova e Sampierdarena, affacciato sul golfo e sulla Lanterna. Per secoli ospitò l’abbazia omonima; nel Novecento il colle fu progressivamente sbancato per creare nuovi collegamenti, spazi portuali e infrastrutture.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_san-benigno/qr_azzurri_san_benigno_colle_sanbenigno/qr_azzurri_san_benigno_colle_sanbenigno_oggi.mp4",
           ieri: [
@@ -25,7 +25,7 @@
         label: "Caserma di San Benigno",
         lat: 44.40854477692903, 
         lng: 8.908148550099648,
-        descr: "Caserma di San Benigno, accanto alla Lanterna.",
+        descr: "Intorno alla metà dell’Ottocento, sul sito dell’antica abbazia sorse il grande complesso delle Caserme di San Benigno. Utilizzato fino ai primi decenni del Novecento, scomparve insieme al colle durante i vasti lavori di sbancamento che ridisegnarono l’area occidentale del porto.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_san-benigno/caserma_sanbenigno_oggi.mp4",
           ieri: [
@@ -41,7 +41,7 @@ sfx: [
         label: "La Lanterna",
         lat: 44.40548101050629,
         lng: 8.906294614297556,
-        descr: "La Lanterna di Genova.",
+        descr: "La Lanterna domina da secoli l’ingresso occidentale del porto di Genova. Dalla seconda metà dell’Ottocento, la costruzione del porto moderno e dei nuovi bacini mercantili trasformò profondamente il paesaggio circostante, inglobando il faro in un sistema sempre più vasto di moli, banchine e infrastrutture.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_san-benigno/qr_azzurri_san_benigno_lanterna/qr_azzurri_san_benigno_lanterna_oggi.mp4",
           ieri: [

@@ -5,25 +5,25 @@
   Object.assign(window.QR_DESCR_I18N, {
 
 "Piazza Acquaverde": {
-it: "L'arco su Via Andrea Doria (IERI), demolito a metà Novecento, oggi è scomparso (OGGI).",
-en: "The arch on Via Andrea Doria (YESTERDAY), demolished in the mid-20th century, has now disappeared (TODAY).",
-es: "El arco de la via Andrea Doria (AYER), demolido a mediados del siglo XX, hoy ha desaparecido (HOY).",
-fr: "L’arc de la via Andrea Doria (HIER), démoli vers le milieu du XXe siècle, a aujourd’hui disparu (AUJOURD’HUI).",
-ar: "القوس في طريق أندريا دوريا (الأمس)، الذي هُدم في منتصف القرن العشرين، هو اليوم مفقود (اليوم).",
-ru: "Арка на улице Андреа Дориа (ВЧЕРА), снесённая в середине XX века, сегодня уже не существует (СЕГОДНЯ).",
-zh: "位于安德烈亚·多里亚街的拱门（“昔日”）在二十世纪中叶被拆除，如今已不复存在（“今日”）。",
-lij: "L’ârco in sciâ via Andrea Doria (IERI), demolîo a mescàn do Novecento, òggi o l’è sparîo (OGGI)."
+it: "Piazza Acquaverde assunse il suo assetto moderno con la costruzione della stazione di Genova Principe, completata nel 1860. Sul lato verso via Andrea Doria il porticato terminava in un grande arco a tre luci, demolito nel 1929 per ampliare la carreggiata.",
+en: "Piazza Acquaverde took on its modern form with the construction of Genova Principe station, completed in 1860. On the Via Andrea Doria side, the portico ended in a large three-arched structure, demolished in 1929 to widen the roadway.",
+es: "Piazza Acquaverde adquirió su aspecto moderno con la construcción de la estación de Genova Principe, terminada en 1860. En el lado de via Andrea Doria, el pórtico terminaba en un gran arco de tres vanos, demolido en 1929 para ensanchar la calzada.",
+fr: "Piazza Acquaverde prit son aspect moderne avec la construction de la gare de Genova Principe, achevée en 1860. Du côté de via Andrea Doria, le portique se terminait par un grand arc à trois baies, démoli en 1929 pour élargir la chaussée.",
+ar: "اكتسبت ساحة أكوافِردي شكلها الحديث مع بناء محطة جنوة برينتشيبي، التي اكتمل إنشاؤها عام 1860. ومن جهة فيا أندريا دوريا كان الرواق ينتهي بقوس كبير ذي ثلاث فتحات، هُدم عام 1929 لتوسيع الطريق.",
+ru: "Площадь Аккуаверде приобрела современный облик со строительством вокзала Генуя Принчипе, завершённого в 1860 году. Со стороны улицы Андреа Дориа портик заканчивался большой трёхпролётной аркой, снесённой в 1929 году для расширения проезжей части.",
+zh: "阿夸韦尔德广场随着热那亚王子火车站的建设形成了现代格局，车站于1860年完工。朝安德烈亚·多里亚街一侧，柱廊原以一座三孔大拱门结束；1929年为拓宽道路，该拱门被拆除。",
+lij: "Piazza Acquaverde a piggiò a seu forma moderna co-a costruçion da staçion de Zêna Principe, finîa into 1860. Da-a parte de via Andrea Doria o portego o finiva inte un grande arco a trei luxe, demolîo into 1929 pe slargâ a careggiâ."
 },
 
 "Binari di P.Principe": {
-it: "Accanto ai binari della stazione Principe (OGGI), fino ai primi del Novecento qui passavano carrozze e tram (IERI).",
-en: "Next to the tracks of Principe station (TODAY), until the early 20th century carriages and trams used to pass here (YESTERDAY).",
-es: "Junto a las vías de la estación Principe (HOY), hasta principios del siglo XX por aquí pasaban carruajes y tranvías (AYER).",
-fr: "Le long des voies de la gare Principe (AUJOURD’HUI), jusqu’au début du XXe siècle passaient ici des voitures à cheval et des tramways (HIER).",
-ar: "بجوار سكك محطة برينتشيبي (اليوم)، حتى بدايات القرن العشرين كانت تمر من هنا العربات والترامواي (الأمس).",
-ru: "Рядом с путями вокзала Принчипе (СЕГОДНЯ) до начала XX века здесь проходили конные экипажи и трамваи (ВЧЕРА).",
-zh: "在如今的王子火车站股道旁（“今日”），一直到二十世纪初，这里还行驶着马车和电车（“昔日”）。",
-lij: "Vicìn ai binæ da stassion Principe (OGGI), fin ai primmi do Novecento chi passâvan carezze e tram (IERI)."
+it: "La stazione di Piazza Principe, inaugurata nel 1860, nacque come grande stazione di testa. Con l’apertura della galleria Traversata nel 1872 e l’ampliamento dei binari passanti nei primi anni del Novecento, divenne uno dei principali nodi ferroviari della città.",
+en: "Piazza Principe station, inaugurated in 1860, was built as a large terminus. With the opening of the Traversata tunnel in 1872 and the expansion of through tracks in the early twentieth century, it became one of the city's main railway hubs.",
+es: "La estación de Piazza Principe, inaugurada en 1860, nació como una gran estación terminal. Con la apertura del túnel Traversata en 1872 y la ampliación de las vías pasantes a comienzos del siglo XX, se convirtió en uno de los principales nudos ferroviarios de la ciudad.",
+fr: "La gare de Piazza Principe, inaugurée en 1860, fut conçue comme une grande gare terminus. Avec l’ouverture du tunnel Traversata en 1872 et l’extension des voies traversantes au début du XXe siècle, elle devint l’un des principaux nœuds ferroviaires de la ville.",
+ar: "افتُتحت محطة بيازا برينتشيبي عام 1860 كمحطة نهائية كبيرة. ومع افتتاح نفق ترافرساتا عام 1872 وتوسيع خطوط السكك العابرة في أوائل القرن العشرين، أصبحت واحدة من أهم عقد السكك الحديدية في المدينة.",
+ru: "Вокзал Пьяцца Принчипе, открытый в 1860 году, первоначально был крупной тупиковой станцией. После открытия тоннеля Траверсата в 1872 году и расширения сквозных путей в начале XX века он стал одним из главных железнодорожных узлов города.",
+zh: "王子广场车站于1860年启用，最初是一座大型终点站。1872年Traversata隧道开通，20世纪初又扩建了贯通式轨道，使这里成为热那亚最重要的铁路枢纽之一。",
+lij: "A staçion de Piazza Principe, inaugurâ into 1860, a nasceiva comme grande staçion de testa. Co-a avertua da galleria Traversata into 1872 e l'allargamento di binæ passanti inti primmi anni do Novecento, a diventò un di prinçipæ nodi ferroviäi da çittæ."
 }
 
   });

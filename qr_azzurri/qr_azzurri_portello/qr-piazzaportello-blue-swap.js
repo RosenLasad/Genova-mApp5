@@ -7,7 +7,7 @@
         label: "Galleria di Piazza Portello",
         lat: 44.41151377671163,
         lng: 8.934539852389975,
-        descr: "Galleria di Piazza Portello?",
+        descr: "Tra la fine dell’Ottocento e gli anni Venti Piazza Portello fu trasformata dalla costruzione delle gallerie verso Zecca e Corvetto. Il primo tunnel tranviario fu poi sostituito da una più ampia galleria stradale, parte del nuovo asse di attraversamento del centro cittadino.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_portello/galleria_portello_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_portello/galleria_portello_ieri_1.mp4"]
@@ -18,7 +18,7 @@
         label: "Via Roma",
         lat: 44.4087646666711, 
         lng: 8.935116111153581,
-        descr: "Via Roma è una delle strade più eleganti e monumentali di Genova, realizzata negli anni Settanta dell’Ottocento per collegare Piazza Corvetto a Piazza De Ferrari. Caratterizzata da sontuosi palazzi ottocenteschi in stile eclettico, ospita boutique di alta moda e botteghe storiche ed è affiancata dalla suggestiva Galleria Mazzini.",
+        descr: "Via Roma fu aperta negli anni Settanta dell’Ottocento per collegare Piazza Corvetto con il centro monumentale. Fiancheggiata da eleganti palazzi e dalla Galleria Mazzini, divenne presto uno degli assi più rappresentativi della nuova Genova borghese, commerciale e residenziale.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_portello/viaroma_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_portello/viaroma_ieri_1.mp4"]
@@ -29,7 +29,7 @@
         label: "Piazza Fontane Marose",
         lat: 44.41024200512034,
         lng: 8.935210139968515,
-        descr: "Piazza Fontane Marose.",
+        descr: "Piazza Fontane Marose deve il nome a un’antica fonte documentata dal 1206, alimentata da una grande cisterna sotterranea. La fontana fu demolita nel 1849 per l’apertura di via Interiano; nell’Ottocento la piazza divenne anche un importante nodo di transito urbano.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_portello/marose_oggi.mp4",
           ieri: [
