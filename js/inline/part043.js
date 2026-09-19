@@ -1,15 +1,24 @@
 
 (function(){
+  function releaseVideo(video){
+    if(!video) return;
+    try{ video.pause(); }catch(e){}
+    try{
+      video.removeAttribute('src');
+      video.load();
+    }catch(e){}
+  }
+
   function defineClose(){
     if (window.__qrClosePanel) return;
     window.__qrClosePanel = function(){
       var panel = document.getElementById('panel');
       if(!panel) return;
-      // Pause and hide videos
+      // Stop the active QR videos and release their network/buffer resources.
       var vidToday = document.getElementById('media-video-today');
       var vidPast  = document.getElementById('media-video');
-      try{ vidToday && vidToday.pause && vidToday.pause(); }catch(e){}
-      try{ vidPast  && vidPast.pause  && vidPast.pause();  }catch(e){}
+      releaseVideo(vidToday);
+      releaseVideo(vidPast);
       panel.classList.remove('open');
     };
   }

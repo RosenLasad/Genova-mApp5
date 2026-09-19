@@ -1780,7 +1780,19 @@ map.on('zoomend', function(){
     function hide(el){ if(el) el.style.display = 'none'; }
     function showPaywall(){ show(paywall); }
     function hidePaywall(){ hide(paywall); }
-    function stopAllMedia(){ try{ vidToday.pause(); }catch(e){} try{ vidPast.pause(); }catch(e){} if(ytIframe){ try{ ytIframe.src = ytIframe.src; }catch(e){} } }
+    function releaseVideo(video){
+      if(!video) return;
+      try{ video.pause(); }catch(e){}
+      try{
+        video.removeAttribute('src');
+        video.load();
+      }catch(e){}
+    }
+    function stopAllMedia(){
+      releaseVideo(vidToday);
+      releaseVideo(vidPast);
+      if(ytIframe){ try{ ytIframe.src = ytIframe.src; }catch(e){} }
+    }
 
     var current=null, galleryToday=[], galleryPast=[], gallerySfx=[], idxToday=0, idxPast=0, idxSfx=0, currentMode='today';
     var previewTimer=null; var PREVIEW_MS=10000; // 10s anteprima
