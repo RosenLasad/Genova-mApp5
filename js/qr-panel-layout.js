@@ -379,14 +379,14 @@
   }
 
   var QR_COMPARE_UI = {
-    it: { today:"Oggi", past:"Ieri", play:"Riproduci confronto", pause:"Metti in pausa il confronto" },
-    en: { today:"Today", past:"Past", play:"Play comparison", pause:"Pause comparison" },
-    es: { today:"Hoy", past:"Ayer", play:"Reproducir comparación", pause:"Pausar comparación" },
-    fr: { today:"Aujourd’hui", past:"Hier", play:"Lire la comparaison", pause:"Mettre la comparaison en pause" },
-    ar: { today:"اليوم", past:"أمس", play:"تشغيل المقارنة", pause:"إيقاف المقارنة مؤقتًا" },
-    ru: { today:"Сегодня", past:"Вчера", play:"Воспроизвести сравнение", pause:"Пауза сравнения" },
-    zh: { today:"今天", past:"过去", play:"播放对比", pause:"暂停对比" },
-    lij: { today:"Ancöe", past:"Véi", play:"Reproduxi o confronto", pause:"Mette in pösa o confronto" }
+    it: { today:"Oggi", past:"Ieri", play:"Riproduci confronto", pause:"Metti in pausa il confronto", fullscreen:"Schermo intero", exitFullscreen:"Esci da schermo intero" },
+    en: { today:"Today", past:"Past", play:"Play comparison", pause:"Pause comparison", fullscreen:"Full screen", exitFullscreen:"Exit full screen" },
+    es: { today:"Hoy", past:"Ayer", play:"Reproducir comparación", pause:"Pausar comparación", fullscreen:"Pantalla completa", exitFullscreen:"Salir de pantalla completa" },
+    fr: { today:"Aujourd’hui", past:"Hier", play:"Lire la comparaison", pause:"Mettre la comparaison en pause", fullscreen:"Plein écran", exitFullscreen:"Quitter le plein écran" },
+    ar: { today:"اليوم", past:"أمس", play:"تشغيل المقارنة", pause:"إيقاف المقارنة مؤقتًا", fullscreen:"ملء الشاشة", exitFullscreen:"الخروج من ملء الشاشة" },
+    ru: { today:"Сегодня", past:"Вчера", play:"Воспроизвести сравнение", pause:"Пауза сравнения", fullscreen:"Во весь экран", exitFullscreen:"Выйти из полноэкранного режима" },
+    zh: { today:"今天", past:"过去", play:"播放对比", pause:"暂停对比", fullscreen:"全屏", exitFullscreen:"退出全屏" },
+    lij: { today:"Ancöe", past:"Véi", play:"Reproduxi o confronto", pause:"Mette in pösa o confronto", fullscreen:"Schermo pinn-o", exitFullscreen:"Sciòrti da-o schermo pinn-o" }
   };
 
   function compareUiStrings(forced) {
@@ -542,13 +542,6 @@
       });
   }
 
-  function formatCompareTime(value) {
-    value = Math.max(0, Number(value) || 0);
-    var minutes = Math.floor(value / 60);
-    var seconds = Math.floor(value % 60);
-    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-  }
-
   function updateComparePosition(percent) {
     var stage = panel.querySelector(".qr-compare-stage");
     if (!stage) return;
@@ -558,27 +551,142 @@
     if (divider) divider.setAttribute("aria-valuenow", String(Math.round(percent)));
   }
 
-  function updateCompareTime() {
-    var stage = panel.querySelector(".qr-compare-stage");
-    if (!stage) return;
-    var master = stage.querySelector('[data-qr-compare-role="today"]');
-    var out = stage.querySelector(".qr-compare-time");
-    if (!master || !out) return;
-    var duration = isFinite(master.duration) ? master.duration : 0;
-    out.textContent = formatCompareTime(master.currentTime) + (duration ? " / " + formatCompareTime(duration) : "");
+  function fullscreenElement() {
+    return document.fullscreenElement || document.webkitFullscreenElement || null;
+  }
+
+  function compareFullscreenSupported() {
+    return !!(panel.requestFullscreen || panel.webkitRequestFullscreen);
+  }
+
+  function compareFullscreenIcon(active) {
+    if (active) {
+      return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3v6H3M15 3v6h6M9 21v-6H3M15 21v-6h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    }
+    return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   }
 
   function updateComparePlayButton(forced) {
     var stage = panel.querySelector(".qr-compare-stage");
     if (!stage) return;
     var master = stage.querySelector('[data-qr-compare-role="today"]');
-    var button = stage.querySelector(".qr-compare-play");
+    var button = document.getElementById("btn-compare-play-inline");
     if (!master || !button) return;
     var playing = typeof forced === "boolean" ? forced : !master.paused;
     var T = compareUiStrings();
     button.textContent = playing ? "❚❚" : "▶";
     button.setAttribute("aria-label", playing ? T.pause : T.play);
     button.title = playing ? T.pause : T.play;
+    button.setAttribute("aria-pressed", playing ? "true" : "false");
+  }
+
+  function syncCompareFullscreenButton() {
+    var button = document.getElementById("btn-compare-fullscreen");
+    if (!button) return;
+    var active = fullscreenElement() === panel;
+    var T = compareUiStrings();
+    button.innerHTML = compareFullscreenIcon(active);
+    button.setAttribute("aria-label", active ? T.exitFullscreen : T.fullscreen);
+    button.title = active ? T.exitFullscreen : T.fullscreen;
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+    button.disabled = !compareFullscreenSupported();
+  }
+
+  function syncCompareInlineControls() {
+    var controls = document.getElementById("qr-compare-inline-controls");
+    if (!controls) return;
+    var active = panel.classList.contains("qr-compare-active");
+    controls.hidden = !active;
+    controls.setAttribute("aria-hidden", active ? "false" : "true");
+    updateComparePlayButton();
+    syncCompareFullscreenButton();
+  }
+
+  function exitCompareFullscreen() {
+    var current = fullscreenElement();
+    panel.classList.remove("qr-compare-fullscreen");
+    if (current !== panel) {
+      syncCompareFullscreenButton();
+      return;
+    }
+    var exit = document.exitFullscreen || document.webkitExitFullscreen;
+    if (!exit) {
+      syncCompareFullscreenButton();
+      return;
+    }
+    try {
+      var result = exit.call(document);
+      if (result && typeof result.catch === "function") {
+        result.catch(function () { syncCompareFullscreenButton(); });
+      }
+    } catch (_) {
+      syncCompareFullscreenButton();
+    }
+  }
+
+  function toggleCompareFullscreen() {
+    if (!panel.classList.contains("qr-compare-active") || !compareFullscreenSupported()) return;
+    if (fullscreenElement() === panel) {
+      exitCompareFullscreen();
+      return;
+    }
+    var request = panel.requestFullscreen || panel.webkitRequestFullscreen;
+    if (!request) return;
+    panel.classList.add("qr-compare-fullscreen");
+    try {
+      var result = request.call(panel);
+      if (result && typeof result.catch === "function") {
+        result.catch(function () {
+          panel.classList.remove("qr-compare-fullscreen");
+          syncCompareFullscreenButton();
+        });
+      }
+    } catch (_) {
+      panel.classList.remove("qr-compare-fullscreen");
+      syncCompareFullscreenButton();
+    }
+  }
+
+  function ensureCompareInlineControls(swap) {
+    if (!swap) return null;
+    var controls = document.getElementById("qr-compare-inline-controls");
+    if (!controls) {
+      controls = document.createElement("span");
+      controls.id = "qr-compare-inline-controls";
+      controls.className = "qr-compare-inline-controls";
+      controls.hidden = true;
+      controls.setAttribute("aria-hidden", "true");
+      controls.innerHTML =
+        '<button id="btn-compare-play-inline" class="btn qr-compare-inline-btn qr-compare-inline-play" type="button" aria-pressed="false">▶</button>' +
+        '<button id="btn-compare-fullscreen" class="btn qr-compare-inline-btn qr-compare-inline-fullscreen" type="button" aria-pressed="false"></button>';
+    }
+    if (controls.parentNode !== swap) swap.appendChild(controls);
+
+    var play = document.getElementById("btn-compare-play-inline");
+    if (play && !play.__qrCompareInlineBound) {
+      play.__qrCompareInlineBound = true;
+      play.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var stage = panel.querySelector(".qr-compare-stage");
+        var master = stage && stage.querySelector('[data-qr-compare-role="today"]');
+        if (master && !master.paused) pauseCompareVideos();
+        else playCompareVideos();
+      });
+    }
+
+    var fullscreen = document.getElementById("btn-compare-fullscreen");
+    if (fullscreen && !fullscreen.__qrCompareFullscreenBound) {
+      fullscreen.__qrCompareFullscreenBound = true;
+      fullscreen.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        toggleCompareFullscreen();
+      });
+    }
+
+    syncCompareInlineControls();
+    return controls;
   }
 
   function stopCompareSyncLoop() {
@@ -608,7 +716,6 @@
             if (p && typeof p.catch === "function") p.catch(function () {});
           }
         } catch (_) {}
-        updateCompareTime();
       }
       compareSyncRaf = window.requestAnimationFrame(tick);
     }
@@ -643,11 +750,13 @@
     try { if (slave) slave.pause(); } catch (_) {}
     stopCompareSyncLoop();
     updateComparePlayButton(false);
-    updateCompareTime();
   }
 
   function resetCompareMode(clearSources) {
     pauseCompareVideos();
+    if (fullscreenElement() === panel || panel.classList.contains("qr-compare-fullscreen")) {
+      exitCompareFullscreen();
+    }
     panel.classList.remove("qr-compare-active");
     var compare = document.getElementById("btn-compare-qr");
     if (compare) compare.classList.remove("active");
@@ -667,6 +776,7 @@
         stage.setAttribute("data-qr-compare-id", "");
       }
     }
+    syncCompareInlineControls();
   }
 
   function ensureCompareStage() {
@@ -683,13 +793,11 @@
       '<video class="qr-compare-video qr-compare-past" data-qr-compare-role="past" muted loop playsinline preload="metadata"></video>' +
       '<span class="qr-compare-label qr-compare-label-past"></span>' +
       '<span class="qr-compare-label qr-compare-label-today"></span>' +
-      '<div class="qr-compare-divider" role="slider" tabindex="0" aria-valuemin="1" aria-valuemax="99" aria-valuenow="50" aria-orientation="horizontal"><span class="qr-compare-handle" aria-hidden="true">↔</span></div>' +
-      '<div class="qr-compare-playback"><button class="qr-compare-play" type="button">▶</button><span class="qr-compare-time">0:00</span></div>';
+      '<div class="qr-compare-divider" role="slider" tabindex="0" aria-valuemin="1" aria-valuemax="99" aria-valuenow="50" aria-orientation="horizontal"><span class="qr-compare-handle" aria-hidden="true">↔</span></div>';
     mediaWrap.appendChild(stage);
     updateComparePosition(50);
 
     var divider = stage.querySelector(".qr-compare-divider");
-    var playButton = stage.querySelector(".qr-compare-play");
     var master = stage.querySelector('[data-qr-compare-role="today"]');
     var slave = stage.querySelector('[data-qr-compare-role="past"]');
     var dragging = false;
@@ -731,14 +839,6 @@
       });
     }
 
-    if (playButton) {
-      playButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        if (master && !master.paused) pauseCompareVideos();
-        else playCompareVideos();
-      });
-    }
 
     if (master && slave) {
       master.addEventListener("play", function () {
@@ -758,10 +858,7 @@
       });
       master.addEventListener("seeking", function () {
         try { slave.currentTime = master.currentTime || 0; } catch (_) {}
-        updateCompareTime();
       });
-      master.addEventListener("timeupdate", updateCompareTime);
-      master.addEventListener("loadedmetadata", updateCompareTime);
       slave.addEventListener("loadedmetadata", function () {
         try { slave.currentTime = master.currentTime || 0; } catch (_) {}
       });
@@ -813,6 +910,7 @@
 
     panel.classList.add("qr-compare-active");
     stage.setAttribute("aria-hidden", "false");
+    syncCompareInlineControls();
     var today = document.getElementById("btn-today");
     var past = document.getElementById("btn-past");
     var sfx = document.getElementById("btn-sfx");
@@ -885,6 +983,7 @@
       if (pastLabel) pastLabel.textContent = C.past;
       if (todayLabel) todayLabel.textContent = C.today;
       updateComparePlayButton();
+      syncCompareFullscreenButton();
     }
 
     var actions = panel.querySelector(".qr-extra-actions");
@@ -928,6 +1027,8 @@
         enterCompareMode();
       });
     }
+
+    ensureCompareInlineControls(swap);
 
     var actions = panel.querySelector(".qr-extra-actions");
     if (!actions) {
@@ -1053,6 +1154,15 @@
 
     return true;
   }
+
+  function handleCompareFullscreenChange() {
+    var active = fullscreenElement() === panel;
+    panel.classList.toggle("qr-compare-fullscreen", active);
+    syncCompareFullscreenButton();
+  }
+
+  document.addEventListener("fullscreenchange", handleCompareFullscreenChange);
+  document.addEventListener("webkitfullscreenchange", handleCompareFullscreenChange);
 
   document.addEventListener("app:set-lang", function (event) {
     var detail = event && event.detail;

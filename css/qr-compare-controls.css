@@ -1,0 +1,196 @@
+/* Genova mApp v53 - controlli compatti per QR Confronta */
+
+/* La vecchia pillola Play/tempo dentro il video non deve piu' comparire. */
+#panel.qr-point-panel .qr-compare-playback,
+#panel.qr-point-panel .qr-compare-time,
+#panel.qr-point-panel .qr-compare-play {
+  display: none !important;
+}
+
+/* Play/Pausa + Full screen vivono nella stessa riga Oggi/Ieri/SFX/Confronta. */
+#panel.qr-point-panel .qr-compare-inline-controls {
+  display: none;
+  align-items: center;
+  gap: .28rem;
+  margin-inline-start: auto;
+  flex: 0 0 auto;
+}
+
+#panel.qr-point-panel .qr-compare-inline-controls[hidden] {
+  display: none !important;
+}
+
+#panel.qr-point-panel.qr-compare-active .qr-compare-inline-controls:not([hidden]) {
+  display: inline-flex;
+}
+
+#panel.qr-point-panel .qr-compare-inline-btn.btn {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  min-height: 34px;
+  padding: 0 !important;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 34px;
+  line-height: 1;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+#panel.qr-point-panel .qr-compare-inline-fullscreen svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  pointer-events: none;
+}
+
+#panel.qr-point-panel .qr-compare-inline-btn:focus-visible {
+  outline: 2px solid rgba(56, 189, 248, .95);
+  outline-offset: 2px;
+}
+
+#panel.qr-point-panel .qr-compare-inline-btn:disabled {
+  display: none !important;
+}
+
+/* Quando Confronta e' attivo, la riga usa tutto lo spazio disponibile:
+   i due controlli compatti restano allineati a destra. */
+#panel.qr-point-panel.qr-compare-active .swap {
+  justify-content: flex-start;
+}
+
+@media (max-width: 480px) {
+  #panel.qr-point-panel .qr-compare-inline-controls {
+    gap: .22rem;
+  }
+
+  #panel.qr-point-panel .qr-compare-inline-btn.btn {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    flex-basis: 30px;
+    border-radius: 8px;
+    font-size: 11px;
+  }
+
+  #panel.qr-point-panel .qr-compare-inline-fullscreen svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  #panel.qr-point-panel .qr-compare-inline-btn.btn {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    min-height: 28px;
+    flex-basis: 28px;
+  }
+}
+
+/* -------------------------------------------------------------------------
+ * Full screen del confronto.
+ * Il target e' l'intero pannello QR, ma in fullscreen restano visibili solo
+ * il riquadro di confronto e la riga Oggi/Ieri/SFX/Confronta + Play/Full.
+ * In questo modo i controlli non coprono mai il video nemmeno a tutto schermo.
+ * ------------------------------------------------------------------------- */
+
+#panel.qr-point-panel.qr-compare-fullscreen:fullscreen,
+#panel.qr-point-panel.qr-compare-fullscreen:-webkit-full-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: none !important;
+  max-height: none !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  inset: 0 !important;
+  transform: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #050b14 !important;
+  overflow: hidden !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: minmax(0, 1fr) auto !important;
+  box-shadow: none !important;
+}
+
+#panel.qr-point-panel.qr-compare-fullscreen:fullscreen > header,
+#panel.qr-point-panel.qr-compare-fullscreen:fullscreen > .content,
+#panel.qr-point-panel.qr-compare-fullscreen:fullscreen > .qr-extra-actions,
+#panel.qr-point-panel.qr-compare-fullscreen:-webkit-full-screen > header,
+#panel.qr-point-panel.qr-compare-fullscreen:-webkit-full-screen > .content,
+#panel.qr-point-panel.qr-compare-fullscreen:-webkit-full-screen > .qr-extra-actions {
+  display: none !important;
+}
+
+#panel.qr-point-panel.qr-compare-fullscreen:fullscreen > .media,
+#panel.qr-point-panel.qr-compare-fullscreen:-webkit-full-screen > .media {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  aspect-ratio: auto !important;
+  overflow: hidden !important;
+  background: #050b14 !important;
+}
+
+#panel.qr-point-panel.qr-compare-fullscreen:fullscreen > .swap,
+#panel.qr-point-panel.qr-compare-fullscreen:-webkit-full-screen > .swap {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: .62rem max(.8rem, env(safe-area-inset-right)) max(.62rem, env(safe-area-inset-bottom)) max(.8rem, env(safe-area-inset-left)) !important;
+  box-sizing: border-box !important;
+  justify-content: flex-start !important;
+  background: rgba(5, 11, 20, .98) !important;
+  border-top: 1px solid rgba(148, 163, 184, .22) !important;
+  overflow-x: auto !important;
+  scrollbar-width: none;
+}
+
+#panel.qr-point-panel.qr-compare-fullscreen:fullscreen > .swap::-webkit-scrollbar,
+#panel.qr-point-panel.qr-compare-fullscreen:-webkit-full-screen > .swap::-webkit-scrollbar {
+  display: none;
+}
+
+#panel.qr-point-panel.qr-compare-fullscreen:fullscreen .qr-compare-stage,
+#panel.qr-point-panel.qr-compare-fullscreen:-webkit-full-screen .qr-compare-stage {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+}
+
+#panel.qr-point-panel.qr-compare-fullscreen:fullscreen .qr-compare-video,
+#panel.qr-point-panel.qr-compare-fullscreen:-webkit-full-screen .qr-compare-video {
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #050b14 !important;
+}
+
+@media (orientation: landscape) {
+  #panel.qr-point-panel.qr-compare-fullscreen:fullscreen > .swap,
+  #panel.qr-point-panel.qr-compare-fullscreen:-webkit-full-screen > .swap {
+    padding-top: .48rem !important;
+    padding-bottom: max(.48rem, env(safe-area-inset-bottom)) !important;
+  }
+}
