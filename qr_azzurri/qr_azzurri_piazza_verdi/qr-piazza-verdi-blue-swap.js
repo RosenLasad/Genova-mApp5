@@ -4,7 +4,7 @@
     children: [
       { "id": "palazzo_poste2", "label": "Il palazzo delle Poste in Piazza Verdi",
         "lat": 44.40651698103183, "lng": 8.945601061122955,
-        "descr": "Il palazzo delle Poste in Piazza Verdi.",
+        "descr": "Il palazzo delle Poste in Piazza Verdi fu costruito nei primi anni Trenta, sostituendo precedenti edifici del quartiere sorti a ridosso delle antiche mura. La nuova costruzione accompagnò la profonda trasformazione urbanistica dell’area di Brignole e della vicina spianata del Bisagno.",
         "media": {
           "oggi": "qr_azzurri/qr_azzurri_piazza_verdi/qr_azzurri_piazza_verdi_palazzo_poste2/qr_azzurri_piazza_verdi_palazzo_poste2_oggi.mp4",
           "ieri": [
@@ -17,7 +17,7 @@
 
       { "id": "stazione_brignole", "label": "La nuova Stazione Brignole",
         "lat": 44.40656178307441, "lng": 8.945880164032085,
-        "descr": "La Stazione Brignole costruita nel 1905.",
+        "descr": "La nuova Stazione Brignole fu progettata nel 1902 e completata nel 1905, in occasione dell’Esposizione Internazionale. Il nuovo fabbricato sostituì il precedente scalo ottocentesco e contribuì a trasformare Piazza Verdi in uno dei principali nodi ferroviari e urbani della città.",
         "media": {
           "minidoc": "stazione-brignole",
           "oggi": "qr_azzurri/qr_azzurri_piazza_verdi/qr_azzurri_piazza_verdi_stazione_brignole/qr_azzurri_piazza_verdi_stazione_brignole_oggi.mp4",
@@ -30,7 +30,7 @@
 
       { "id": "porta_pila_viaxx", "label": "Porta Pila su Via XX settembre",
         "lat": 44.40463907083693, "lng": 8.945357854090963,
-        "descr": "Porta Pila su Via XX settembre.",
+        "descr": "Porta Pila segnava l’ingresso orientale della città all’estremità di quella che sarebbe diventata Via XX Settembre. Rimasta isolata dopo la demolizione delle mura, fu smontata nel 1899 e ricostruita nel 1900 sotto il colle di Montesano, vicino alla stazione Brignole.",
         "media": {
           "minidoc": "fronti-basse",
           "oggi": "qr_azzurri/qr_azzurri_piazza_verdi/qr_azzurri_piazza_verdi_porta_pila_viaxx/qr_azzurri_piazza_verdi_porta_pila_viaxx_oggi.mp4",

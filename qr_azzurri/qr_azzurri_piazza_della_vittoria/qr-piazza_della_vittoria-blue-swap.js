@@ -12,7 +12,7 @@
         label: "Arco della Vittoria",
         lat: 44.40276956624745,
         lng: 8.944792358145323,
-        descr: "Arco della Vittoria.",
+        descr: "L’Arco della Vittoria, dedicato ai caduti della Prima guerra mondiale, fu progettato da Marcello Piacentini con lo scultore Arturo Dazzi e inaugurato nel 1931. Il monumento divenne il fulcro scenografico della nuova piazza, sistemata negli anni Trenta insieme alla copertura del Bisagno.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_piazza_della_vittoria/qr_azzurri_piazza_della_vittoria_arco/qr_azzurri_piazza_della_vittoria_arco_oggi.mp4",
           ieri: [
@@ -25,7 +25,7 @@
         label: "Ponte Pila sul Bisagno",
         lat: 44.40386193752678,
         lng: 8.947389752937294,
-        descr: "Ponte Pila sul Bisagno.",
+        descr: "Ponte Pila, noto anche come ponte di Santa Zita, era uno dei principali attraversamenti del Bisagno e collegava la città con Borgo Pila e le zone di levante. Ricostruito in ferro nell’Ottocento, scomparve con la copertura del torrente avviata alla fine degli anni Venti.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_piazza_della_vittoria/ponte_pila_1_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_piazza_della_vittoria/ponte_pila_1_ieri_1.mp4"]
@@ -36,7 +36,7 @@
         label: "Ponte Pila verso sud",
         lat: 44.404361898463705,
         lng: 8.946814062423213,
-        descr: "Ponte Pila verso sud.",
+        descr: "Guardando da Ponte Pila verso sud, il Bisagno scorreva ancora a cielo aperto in direzione della Foce, tra argini, terreni e costruzioni sparse. La copertura del tratto finale del torrente trasformò completamente questo panorama, creando il nuovo asse urbano verso il mare.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_piazza_della_vittoria/ponte_pila_3_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_piazza_della_vittoria/ponte_pila_3_ieri_1.mp4"]
@@ -47,7 +47,7 @@
         label: "Ponte Pila verso est",
         lat: 44.404252279356456,
         lng: 8.946609080646999,
-        descr: "Ponte Pila verso est.",
+        descr: "Verso est, Ponte Pila costituiva un passaggio fondamentale tra Genova e Borgo Pila, lungo il percorso diretto verso Albaro e i quartieri orientali. La successiva copertura del Bisagno e la nuova sistemazione viaria cancellarono il ponte e ridisegnarono completamente l’area.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_piazza_della_vittoria/ponte_pila_2_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_piazza_della_vittoria/ponte_pila_2_ieri_1.mp4"]
@@ -58,7 +58,7 @@
         label: "Statua del marinaio",
         lat: 44.39606632733933,
         lng: 8.94347614228691,
-        descr: "Statua del marinaio.",
+        descr: "La statua del marinaio fu collocata nei primi anni Trenta durante la sistemazione del nuovo asse viario costruito sopra la copertura del Bisagno. L’intervento trasformò l’antico letto del torrente in un grande collegamento urbano tra la zona di Brignole e la Foce.",
         media: { "oggi": "qr_azzurri/qr_azzurri_piazza_della_vittoria/qr_azzurri_foce_statua_oggi.mp4",
                    "ieri": ["qr_azzurri/qr_azzurri_piazza_della_vittoria/qr_azzurri_foce_statua_ieri_1.mp4"]
        }
@@ -68,7 +68,7 @@
         label: "Ponte Bezzecca sul Bisagno",
         lat: 44.40093911519035,
         lng: 8.945811780151582,
-        descr: "Ponte Bezzecca sul Bisagno.",
+        descr: "Ponte Bezzecca fu realizzato alla fine dell’Ottocento per migliorare i collegamenti attraverso il Bisagno, in una zona in rapida espansione urbana. Rimase in funzione fino ai lavori di copertura del torrente, che tra la fine degli anni Venti e i primi Trenta trasformarono radicalmente l’area.",
         media: { "oggi": "qr_azzurri/qr_azzurri_piazza_della_vittoria/ponte_bezzecca_oggi.mp4",
                    "ieri": ["qr_azzurri/qr_azzurri_piazza_della_vittoria/ponte_bezzecca_ieri_1.mp4",
                             "qr_azzurri/qr_azzurri_piazza_della_vittoria/ponte_bezzecca_ieri_2.mp4",

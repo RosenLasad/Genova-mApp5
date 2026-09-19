@@ -5,25 +5,25 @@
   Object.assign(window.QR_DESCR_I18N, {
 
 "Porta degli Archi": {
-it: "Il Ponte Monumentale (OGGI) sorge davanti a dove si trovava Porta degli Archi (IERI), che faceva parte delle mura del Cinquecento.",
-en: "The Monumental Bridge (TODAY) stands in front of the place where Porta degli Archi (YESTERDAY) once stood, which was part of the sixteenth-century walls.",
-es: "El Puente Monumental (HOY) se alza frente al lugar donde antes estaba la Porta degli Archi (AYER), que formaba parte de las murallas del siglo XVI.",
-fr: "Le Pont Monumental (AUJOURD’HUI) se dresse devant l’emplacement de l’ancienne Porta degli Archi (HIER), qui faisait partie des remparts du XVIe siècle.",
-ar: "يقع الجسر التذكاري (اليوم) أمام الموقع الذي كانت فيه بوابة «بورتا ديللي أرشي» (الأمس)، والتي كانت جزءًا من أسوار القرن السادس عشر.",
-ru: "Монументальный мост (СЕГОДНЯ) находится перед местом, где раньше располагались ворота Порта дельи Арки (ВЧЕРА), входившие в крепостные стены XVI века.",
-zh: "纪念桥（“今天”）矗立在昔日波尔塔·德利阿尔基城门（“昨天”）所在地前方，这座城门曾是16世纪城墙的一部分。",
-lij: "O Ponte Monumentale (ancheu) o se trêuva davanti a-o pòsto dòve gh’êa a Porta di Âxi (îeri), che a fæiva parte de e mûre do Cinquecento."
+it: "Porta degli Archi, detta anche Porta di Santo Stefano, apparteneva alle mura cinquecentesche e sorgeva dove oggi Via XX Settembre passa sotto il Ponte Monumentale. Durante la trasformazione ottocentesca della zona fu smontata e ricostruita presso le Mura del Prato, dove si trova ancora.",
+en: "Porta degli Archi, also known as Porta di Santo Stefano, formed part of the sixteenth-century walls and stood where Via XX Settembre now passes beneath the Ponte Monumentale. During the nineteenth-century redevelopment of the area it was dismantled and rebuilt near the Mura del Prato, where it still stands.",
+es: "Porta degli Archi, también llamada Porta di Santo Stefano, formaba parte de las murallas del siglo XVI y se alzaba donde hoy Via XX Settembre pasa bajo el Ponte Monumentale. Durante la transformación del siglo XIX fue desmontada y reconstruida junto a las Mura del Prato, donde aún se encuentra.",
+fr: "La Porta degli Archi, également appelée Porta di Santo Stefano, faisait partie des murailles du XVIe siècle et se trouvait là où la Via XX Settembre passe aujourd’hui sous le Ponte Monumentale. Lors des transformations du XIXe siècle, elle fut démontée et reconstruite près des Mura del Prato, où elle se trouve encore.",
+ar: "كانت بوابة ديلي آركي، المعروفة أيضاً باسم بوابة سانتو ستيفانو، جزءاً من أسوار القرن السادس عشر، وتقع حيث يمر اليوم شارع فيا XX سيتّيمبري تحت بونتي مونومنتالي. وخلال تحولات القرن التاسع عشر فُككت وأعيد بناؤها قرب أسوار براتو، حيث لا تزال قائمة.",
+ru: "Порта-дельи-Арки, также известная как Порта-ди-Санто-Стефано, входила в систему стен XVI века и стояла там, где сегодня Виа XX Сеттембре проходит под Монументальным мостом. В ходе преобразований XIX века ворота разобрали и восстановили у Мура-дель-Прато, где они находятся и сейчас.",
+zh: "拱门城门又称圣斯特凡诺门，属于16世纪城墙体系，原址就在今天九月二十日街穿过纪念桥下方的位置。19世纪城市改造期间，城门被拆解并在普拉托城墙附近重建，至今仍在那里。",
+lij: "A Pòrta di Archi, dita anche Pòrta de Santo Stefano, a fæiva parte de mûe do Cinqueçento e a l’êa dove ancheu Via XX Settembre a passa sotta o Ponte Monumentale. Durante a transformaçion ottoçentesca da zona a fù smontâ e ricostruïa apreuvo a-e Mûe do Prato, dove a l’é ancon."
 },
 
 "Corso Podestà": {
-it: "La via prende il nome dal sindaco Andrea Podestà, in carica durante i grandi lavori tra piazza de Ferrari e il torrente Bisagno.",
-en: "The street is named after Mayor Andrea Podestà, who was in office during the major construction works between Piazza De Ferrari and the Bisagno stream.",
-es: "La calle recibe su nombre del alcalde Andrea Podestà, que estaba en el cargo durante las grandes obras entre la plaza De Ferrari y el arroyo Bisagno.",
-fr: "La rue tient son nom du maire Andrea Podestà, en fonction lors des grands travaux entre la place De Ferrari et le torrent Bisagno.",
-ar: "يستمد الشارع اسمه من العمدة أندريا بوديستا، الذي كان في منصبه خلال أعمال التشييد الكبرى بين ساحة دي فيراري ونهر بيزانيو.",
-ru: "Улица получила своё название в честь мэра Андреа Подесты, занимавшего этот пост во время масштабных работ между площадью Де Феррари и рекой Бизаньо.",
-zh: "这条街以市长安德烈亚·波德斯塔（Andrea Podestà）的名字命名，他在德费拉里广场与比萨涅河之间的大型工程期间担任市长。",
-lij: "A via a pìggia o nómme dò sindaco Andrea Podestà, che o l’ê stæto in càrrega inti grandi travaggi tra piazza De Ferrari e o torrente Bisagno."
+it: "Corso Andrea Podestà corre sopra il Ponte Monumentale e collega le alture di Carignano e dell’Acquasola. La strada ricorda il sindaco Andrea Podestà, tra i principali sostenitori delle grandi trasformazioni urbanistiche che portarono alla realizzazione della nuova Via XX Settembre.",
+en: "Corso Andrea Podestà runs above the Ponte Monumentale and links the heights of Carignano and Acquasola. The street commemorates Mayor Andrea Podestà, one of the main supporters of the major urban transformations that led to the creation of the new Via XX Settembre.",
+es: "Corso Andrea Podestà pasa sobre el Ponte Monumentale y conecta las zonas elevadas de Carignano y Acquasola. La calle recuerda al alcalde Andrea Podestà, uno de los principales impulsores de las grandes transformaciones urbanísticas que llevaron a la creación de la nueva Via XX Settembre.",
+fr: "Le Corso Andrea Podestà passe au-dessus du Ponte Monumentale et relie les hauteurs de Carignano et de l’Acquasola. La rue rend hommage au maire Andrea Podestà, l’un des principaux promoteurs des grandes transformations urbaines qui conduisirent à la création de la nouvelle Via XX Settembre.",
+ar: "يمر كورسو أندريا بوديستا فوق بونتي مونومنتالي ويربط مرتفعات كارينيانو وأكواسولا. ويحمل الشارع اسم العمدة أندريا بوديستا، أحد أبرز الداعمين للتحولات العمرانية الكبرى التي أدت إلى إنشاء فيا XX سيتّيمبري الجديدة.",
+ru: "Корсо Андреа Подеста проходит над Монументальным мостом и соединяет возвышенности Кариньяно и Аккуасола. Улица названа в честь мэра Андреа Подесты, одного из главных сторонников масштабных градостроительных преобразований, приведших к созданию новой Виа XX Сеттембре.",
+zh: "安德烈亚·波德斯塔大道从纪念桥上方通过，连接卡里尼亚诺与阿夸索拉高地。街道以市长安德烈亚·波德斯塔命名，他是推动大规模城市改造、最终建成新九月二十日街的重要人物之一。",
+lij: "Corso Andrea Podestà o passa in çimma a-o Ponte Monumentale e o collega e alture de Caignan e de l’Acquasöa. A stradda a ricòrda o sindaco Andrea Podestà, fra i prinçipæ sostenitoî de grande trasformazioni urbanistiche che portæ a-a realizaçion da neuva Via XX Settembre."
 }
 
   });
