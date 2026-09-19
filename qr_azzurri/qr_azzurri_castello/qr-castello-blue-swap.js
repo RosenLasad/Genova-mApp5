@@ -11,7 +11,7 @@
         label: "Via Fieschi",
         lat: 44.40400925255768,
         lng: 8.935857429434225,
-        descr: "Via Fieschi.",
+        descr: "Via Fieschi fu aperta tra il 1865 e il 1870 su un progetto ideato da Carlo Barabino decenni prima. Collegava Carignano a piazza Ponticello; negli anni Trenta del Novecento fu prolungata verso via XX Settembre, mentre le trasformazioni successive modificarono profondamente il quartiere circostante.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_castello/qr_azzurri_castello_pozzo/qr_azzurri_castello_via_fieschi_oggi.mp4",
           ieri: [
@@ -26,7 +26,7 @@
         label: "Seno di Giano",
         lat: 44.40317155823251,
         lng: 8.9306031569551,
-        descr: "Fino alla fine del XIX secolo, le Mura delle Grazie si affacciavano sul mare.",
+        descr: "Fino alla fine dell’Ottocento, in questa zona le Mura delle Grazie segnavano il limite della città verso il mare, che arrivava direttamente ai loro piedi. La costruzione della Circonvallazione a mare allontanò la linea di costa, trasformando radicalmente il rapporto tra le mura, il porto e il litorale.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_castello/qr_azzurri_castello_sarzano/qr_azzurri_castello_sarzano_oggi.mp4",
           ieri: [
