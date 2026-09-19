@@ -4,69 +4,64 @@
 
   Object.assign(window.QR_DESCR_I18N, {
     "Veduta panoramica di Voltri": {
-      it: "A fine Ottocento, Voltri era un florido comune autonomo dell'estremo ponente ligure, celebre come dinamico polo industriale e manifatturiero basato sulle storiche cartiere e sui cantieri navali.",
-      en: "In the late nineteenth century, Voltri was a prosperous independent municipality at the far western edge of Liguria, renowned as a dynamic industrial and manufacturing centre built around its historic paper mills and shipyards.",
-      es: "A finales del siglo XIX, Voltri era un próspero municipio autónomo del extremo occidental de Liguria, célebre como dinámico centro industrial y manufacturero basado en sus históricas papeleras y astilleros.",
-      fr: "À la fin du XIXe siècle, Voltri était une commune autonome prospère de l'extrême ouest de la Ligurie, réputée comme un centre industriel et manufacturier dynamique, fondé sur ses anciennes papeteries et ses chantiers navals.",
-      ar: "في أواخر القرن التاسع عشر كانت فولتري بلدية مستقلة مزدهرة في أقصى غرب ليغوريا، واشتهرت بوصفها مركزاً صناعياً وحرفياً نشطاً يعتمد على مصانع الورق التاريخية وأحواض بناء السفن.",
-      ru: "В конце XIX века Вольтри был процветающим самостоятельным муниципалитетом на крайнем западе Лигурии и был известен как динамичный промышленный и производственный центр, основанный на исторических бумажных фабриках и судоверфях.",
-      zh: "19世纪末，沃尔特里是利古里亚最西端一个繁荣的自治市镇，以历史悠久的造纸厂和造船厂为基础，发展成为活跃的工业和制造业中心。",
-      lij: "A-a fin de l'Ottocento, Votri o l'êa un prospero comune autonomo de l'estremo ponente ligure, conosciuo comme un dinamico centro industriale e manifatturiero fondou in sce e stöiche cartê e in sci cantê navæ."
+    it: "Alla fine dell’Ottocento Voltri era ancora un comune autonomo e uno dei centri più attivi del Ponente. Il paesaggio univa il borgo costiero, le colline e una forte presenza manifatturiera, alimentata soprattutto dalle storiche cartiere dell’entroterra e dalle attività cantieristiche e marinare.",
+    en: "At the end of the nineteenth century Voltri was still an independent municipality and one of the most active centres in Genoa’s western area. Its landscape combined the coastal town, surrounding hills and strong manufacturing activity, driven especially by historic inland paper mills, shipbuilding and maritime trades.",
+    es: "A finales del siglo XIX Voltri seguía siendo un municipio autónomo y uno de los centros más activos del Poniente. El paisaje unía el núcleo costero, las colinas y una fuerte presencia manufacturera, impulsada sobre todo por las históricas papeleras del interior y por las actividades navales y marítimas.",
+    fr: "À la fin du XIXe siècle, Voltri était encore une commune autonome et l’un des centres les plus actifs du Ponant. Le paysage associait le bourg côtier, les collines et une forte activité manufacturière, alimentée surtout par les anciennes papeteries de l’arrière-pays, les chantiers navals et les activités maritimes.",
+    ar: "في نهاية القرن التاسع عشر كانت فولتري لا تزال بلدية مستقلة وواحدة من أنشط مراكز الجهة الغربية. وكان المشهد يجمع البلدة الساحلية والتلال وحضوراً صناعياً قوياً، تدعمه خصوصاً مصانع الورق التاريخية في الداخل وأعمال بناء السفن والأنشطة البحرية.",
+    ru: "В конце XIX века Вольтри всё ещё был самостоятельным муниципалитетом и одним из самых активных центров западной части Генуи. Пейзаж сочетал прибрежный городок, холмы и развитое производство, особенно исторические бумажные фабрики в глубине территории, судостроение и морские промыслы.",
+    zh: "19世纪末，沃尔特里仍是一个独立市镇，也是热那亚西部最活跃的中心之一。这里的景观融合了海滨城镇、丘陵和发达的制造业，尤其依靠内陆历史悠久的造纸厂以及造船和海事活动。",
+    lij: "A-a fin de l’Ottocento Votri o l’êa ancora un comune autonomo e un di centri ciù attivi do Ponente. O paesaggio o metteiva inseme o borgo costiê, e collinne e unna forte presensa manifatturiê, sostegnua soprattutto da-e stöiche cartê de l’entroterra e da-e attivitæ de cantê navæ e mainæ."
     },
-
     "Municipio": {
-      it: "A fine Ottocento e nei primi del Novecento, il Municipio di Voltri era la sede amministrativa di un comune autonomo in forte espansione industriale. L'edificio e l'area municipale riflettevano l'identità di un borgo operaio e mercantile.",
-      en: "In the late nineteenth and early twentieth centuries, Voltri Town Hall was the administrative seat of an independent municipality undergoing strong industrial expansion. The building and the municipal area reflected the identity of a working-class and mercantile town.",
-      es: "A finales del siglo XIX y principios del XX, el Ayuntamiento de Voltri era la sede administrativa de un municipio autónomo en plena expansión industrial. El edificio y el área municipal reflejaban la identidad de una localidad obrera y mercantil.",
-      fr: "À la fin du XIXe et au début du XXe siècle, l'hôtel de ville de Voltri était le siège administratif d'une commune autonome en forte expansion industrielle. Le bâtiment et le secteur municipal reflétaient l'identité d'un bourg ouvrier et marchand.",
-      ar: "في أواخر القرن التاسع عشر وبدايات القرن العشرين كان مبنى بلدية فولتري المقر الإداري لبلدية مستقلة تشهد توسعاً صناعياً كبيراً. وكان المبنى والمنطقة البلدية يعكسان هوية بلدة عمالية وتجارية.",
-      ru: "В конце XIX — начале XX века ратуша Вольтри была административным центром самостоятельного муниципалитета, переживавшего быстрый промышленный рост. Здание и прилегающий муниципальный район отражали характер рабочего и торгового города.",
-      zh: "19世纪末至20世纪初，沃尔特里市政厅是一个工业迅速扩张的自治市镇的行政中心。市政建筑及其周边区域体现了这座工人和商贸城镇的特色。",
-      lij: "A-a fin de l'Ottocento e inti primi anni do Neuveçento, o Municipio de Votri o l'êa a sede aministrativa de un comune autonomo in forte espansion industriale. O palaçio e a zona comunale rifletteivan l'identitæ de un borgo de operai e mercanti."
+    it: "Tra Ottocento e primo Novecento il Municipio di Voltri era il centro amministrativo di un comune autonomo in forte crescita. Attorno all’edificio si concentravano servizi, commerci e vita pubblica, in un borgo caratterizzato da una vivace economia industriale, artigianale, marittima e mercantile.",
+    en: "Between the nineteenth and early twentieth centuries, Voltri Town Hall was the administrative centre of a rapidly growing independent municipality. Services, trade and public life clustered around the building in a town shaped by a lively industrial, craft, maritime and mercantile economy.",
+    es: "Entre los siglos XIX y XX, el Ayuntamiento de Voltri era el centro administrativo de un municipio autónomo en fuerte crecimiento. Alrededor del edificio se concentraban servicios, comercios y vida pública, en una localidad caracterizada por una activa economía industrial, artesanal, marítima y mercantil.",
+    fr: "Entre le XIXe et le début du XXe siècle, l’hôtel de ville de Voltri était le centre administratif d’une commune autonome en forte croissance. Autour du bâtiment se concentraient services, commerces et vie publique, dans un bourg animé par une économie industrielle, artisanale, maritime et marchande.",
+    ar: "بين القرن التاسع عشر وبدايات القرن العشرين كان مبنى بلدية فولتري المركز الإداري لبلدية مستقلة تشهد نمواً سريعاً. وحول المبنى تركزت الخدمات والتجارة والحياة العامة في بلدة تميزت باقتصاد صناعي وحرفي وبحري وتجاري نشط.",
+    ru: "В XIX — начале XX века ратуша Вольтри была административным центром быстро растущего самостоятельного муниципалитета. Вокруг здания сосредоточились службы, торговля и общественная жизнь города с развитой промышленной, ремесленной, морской и коммерческой экономикой.",
+    zh: "19世纪至20世纪初，沃尔特里市政厅是一个快速发展的独立市镇的行政中心。建筑周围集中了公共服务、商业和市民生活，而当地经济则以活跃的工业、手工业、航海和贸易活动为特色。",
+    lij: "Tra Ottocento e primi do Neuveçento o Municipio de Votri o l’êa o centro aministrativo de un comune autonomo in forte crescitâ. Intorno a-o palaçio se concentravan servissi, commerci e vitta pubblica, inte un borgo con unn’economia vivace industriale, artigiann-a, mainâ e mercantile."
     },
-
     "Via San Giuliano": {
-      it: "La ferrovia raggiunse Voltri nel 1856 e passava accanto a Via San Giuliano, seguendo il litorale.",
-      en: "The railway reached Voltri in 1856 and ran beside Via San Giuliano, following the coastline.",
-      es: "El ferrocarril llegó a Voltri en 1856 y pasaba junto a Via San Giuliano, siguiendo la línea de costa.",
-      fr: "Le chemin de fer atteignit Voltri en 1856 et longeait la Via San Giuliano en suivant le littoral.",
-      ar: "وصل خط السكك الحديدية إلى فولتري عام 1856، وكان يمر بمحاذاة شارع سان جوليانو متتبعاً الساحل.",
-      ru: "Железная дорога достигла Вольтри в 1856 году и проходила рядом с улицей Виа Сан-Джулиано, следуя вдоль побережья.",
-      zh: "铁路于1856年通达沃尔特里，并沿海岸线从圣朱利亚诺街一带经过。",
-      lij: "A ferovia a l'è arrivâ a Votri into 1856 e a passava arente a Via San Giuliano, seguendo a costa."
+    it: "La ferrovia raggiunse Voltri nel 1856 e correva lungo il litorale, passando accanto a Via San Giuliano. L’arrivo dei binari modificò il rapporto tra il borgo e il mare e rese Voltri uno dei primi centri del Ponente collegati direttamente a Genova per ferrovia.",
+    en: "The railway reached Voltri in 1856 and ran along the shoreline beside Via San Giuliano. The arrival of the tracks changed the relationship between the town and the sea and made Voltri one of the first western centres to be directly connected with Genoa by rail.",
+    es: "El ferrocarril llegó a Voltri en 1856 y recorría el litoral junto a Via San Giuliano. La llegada de las vías modificó la relación entre el núcleo urbano y el mar e hizo de Voltri uno de los primeros centros del Poniente conectados directamente con Génova por ferrocarril.",
+    fr: "Le chemin de fer atteignit Voltri en 1856 et longeait le littoral à côté de la Via San Giuliano. L’arrivée des voies modifia le rapport entre le bourg et la mer et fit de Voltri l’un des premiers centres du Ponant directement reliés à Gênes par le rail.",
+    ar: "وصلت السكك الحديدية إلى فولتري عام 1856 وكانت تسير بمحاذاة الساحل قرب شارع سان جوليانو. وقد غير وصول القضبان العلاقة بين البلدة والبحر وجعل فولتري من أوائل مراكز الغرب المرتبطة مباشرة بجنوة بالقطار.",
+    ru: "Железная дорога достигла Вольтри в 1856 году и шла вдоль побережья рядом с Via San Giuliano. Появление путей изменило связь города с морем и сделало Вольтри одним из первых западных центров, напрямую соединённых с Генуей железной дорогой.",
+    zh: "铁路于1856年抵达沃尔特里，并沿海岸从圣朱利亚诺街旁经过。铁路线的到来改变了城镇与大海之间的关系，也使沃尔特里成为热那亚西部较早通过铁路与市区直接相连的中心之一。",
+    lij: "A ferovia a l’arrivò a Votri into 1856 e a correiva longo a costa, arente a Via San Giuliano. L’arrivo di binari o cangiò o rapporto tra o borgo e o mâ e o fece de Votri un di primi centri do Ponente collegæ direto a Zêna co-a ferovia."
     },
-
     "Stazione ferroviaria": {
-      it: "La ferrovia raggiunse Voltri nel 1856, creando uno dei primi collegamenti ferroviari moderni tra il ponente e Genova. La stazione di Voltri si affacciava sulla strada, dove in seguito passarono anche i binari tranviari, ed era frequentata da viaggiatori, carrozze e mezzi trainati da cavalli.",
-      en: "The railway reached Voltri in 1856, creating one of the first modern rail connections between Genoa and its western area. Voltri station faced the road, where tram tracks were later laid, and was busy with travellers, carriages and horse-drawn vehicles.",
-      es: "El ferrocarril llegó a Voltri en 1856, creando una de las primeras conexiones ferroviarias modernas entre el poniente y Génova. La estación de Voltri daba a la calle, por donde más tarde pasaron también las vías del tranvía, y era frecuentada por viajeros, carruajes y vehículos tirados por caballos.",
-      fr: "Le chemin de fer atteignit Voltri en 1856, créant l'une des premières liaisons ferroviaires modernes entre l'ouest et Gênes. La gare de Voltri donnait sur la rue, où passèrent ensuite des voies de tramway, et elle était fréquentée par des voyageurs, des voitures et des véhicules hippomobiles.",
-      ar: "وصلت السكك الحديدية إلى فولتري عام 1856، فأنشأت واحداً من أوائل الروابط الحديدية الحديثة بين المنطقة الغربية وجنوة. وكانت محطة فولتري تطل على الطريق الذي مرت فيه لاحقاً أيضاً خطوط الترام، وكان يرتادها المسافرون والعربات والمركبات التي تجرها الخيول.",
-      ru: "Железная дорога пришла в Вольтри в 1856 году, создав одно из первых современных железнодорожных сообщений между западной частью побережья и Генуей. Вокзал Вольтри выходил на дорогу, где позднее прошли также трамвайные пути; здесь постоянно бывали пассажиры, экипажи и другие повозки на конной тяге.",
-      zh: "铁路于1856年通达沃尔特里，形成了热那亚与西部地区之间较早的现代铁路连接之一。沃尔特里车站面向道路，后来有轨电车轨道也从这里经过；当时这里常见旅客、马车和其他畜力车辆。",
-      lij: "A ferovia a l'è arrivâ a Votri into 1856, creando un di primi collegamenti ferroviari moderni tra o ponente e Zêna. A staçion de Votri a dava in sce-a stradda, dove dòppo son passæ anche i binari do tram, e a l'êa frequentâ da viaggiatöi, carrozze e mezzi tiræ da cavalli."
+    it: "La stazione ferroviaria di Voltri entrò in funzione nel 1856 con l’apertura della linea proveniente da Sampierdarena. Affacciata sulla viabilità del borgo, divenne rapidamente un punto di scambio per viaggiatori e merci; in seguito, nelle strade vicine comparvero anche i binari delle linee tranviarie.",
+    en: "Voltri railway station entered service in 1856 with the opening of the line from Sampierdarena. Facing the town’s road network, it quickly became an interchange for passengers and goods; later, tram tracks also appeared in the nearby streets.",
+    es: "La estación ferroviaria de Voltri entró en servicio en 1856 con la apertura de la línea procedente de Sampierdarena. Abierta hacia la red viaria del núcleo urbano, se convirtió rápidamente en punto de intercambio de viajeros y mercancías; más tarde aparecieron también vías de tranvía en las calles cercanas.",
+    fr: "La gare de Voltri entra en service en 1856 avec l’ouverture de la ligne venant de Sampierdarena. Donnant sur la voirie du bourg, elle devint rapidement un point d’échange pour voyageurs et marchandises ; plus tard, des voies de tramway apparurent également dans les rues voisines.",
+    ar: "دخلت محطة قطارات فولتري الخدمة عام 1856 مع افتتاح الخط القادم من سامبييردارينا. وبفضل موقعها على طرق البلدة أصبحت سريعاً نقطة تبادل للمسافرين والبضائع؛ وفي وقت لاحق ظهرت أيضاً خطوط الترام في الشوارع المجاورة.",
+    ru: "Железнодорожная станция Вольтри начала работу в 1856 году с открытием линии из Сампьердарены. Выходя к уличной сети города, она быстро стала пунктом пересадки и перевалки пассажиров и грузов; позднее на соседних улицах появились и трамвайные пути.",
+    zh: "沃尔特里火车站于1856年随着来自桑皮耶达雷纳的铁路开通而投入使用。车站面向城镇道路，很快成为旅客和货物的重要换乘节点；后来附近街道上还铺设了有轨电车轨道。",
+    lij: "A staçion ferroviaria de Votri a l’intrò in funçion into 1856 co-a avertua da linia da Sampierdarena. Affacciâ in sciâ viabilitæ do borgo, a diventò fito un ponto de scambio pe viaggiatoî e merçe; pöi, inte stradde vixin-e, comparivan anche i binari di tram."
     },
-
     "Chiesa dei Santi Nicolò ed Erasmo": {
-      it: "La Chiesa dei Santi Nicolò ed Erasmo è un grande edificio barocco del XVII secolo a Voltri (Genova), nato sul sito di un'antica cappella dei marinai. Conserva tre navate, ricchi marmi policromi e tele di pregiati artisti genovesi come Domenico Piola e Giovanni Ansaldo.",
-      en: "The Church of Saints Nicholas and Erasmus is a large seventeenth-century Baroque building in Voltri, Genoa, erected on the site of an earlier sailors' chapel. It has three naves, richly coloured marble and paintings by notable Genoese artists such as Domenico Piola and Giovanni Ansaldo.",
-      es: "La Iglesia de los Santos Nicolás y Erasmo es un gran edificio barroco del siglo XVII situado en Voltri, Génova, levantado en el lugar de una antigua capilla de los marineros. Conserva tres naves, ricos mármoles policromos y lienzos de destacados artistas genoveses como Domenico Piola y Giovanni Ansaldo.",
-      fr: "L'église des Saints-Nicolas-et-Érasme est un grand édifice baroque du XVIIe siècle situé à Voltri, à Gênes, construit à l'emplacement d'une ancienne chapelle de marins. Elle conserve trois nefs, de riches marbres polychromes et des toiles d'artistes génois renommés tels que Domenico Piola et Giovanni Ansaldo.",
-      ar: "كنيسة القديسين نيكولو وإيرازمو مبنى باروكي كبير من القرن السابع عشر في فولتري بجنوة، شُيّد في موقع كنيسة صغيرة قديمة للبحارة. وتضم ثلاث بلاطات ورخاماً متعدد الألوان ولوحات لفنانين جنويين بارزين مثل دومينيكو بيولا وجوفاني أنسالدو.",
-      ru: "Церковь Святых Николая и Эразма — крупное барочное здание XVII века в Вольтри, Генуя, возведённое на месте старинной часовни моряков. В ней сохранились три нефа, богатый полихромный мрамор и полотна известных генуэзских художников, среди которых Доменико Пьола и Джованни Ансальдо.",
-      zh: "圣尼科洛与圣埃拉斯莫教堂是热那亚沃尔特里一座大型17世纪巴洛克建筑，建在一座古老水手小教堂的旧址上。教堂拥有三条中殿、华丽的多色大理石，并收藏多梅尼科·皮奥拉、乔瓦尼·安萨尔多等热那亚著名艺术家的画作。",
-      lij: "A Gexia di Santi Nicolò e Erasmo a l'è un grande edificio baròcco do XVII secolo a Votri, Zêna, nato in sciô scito de unn'antiga cappella di mainæ. A conserva trei navæ, ricchi màrmi policrommi e quadri de pregiæ artisti zeneixi comme Domenico Piola e Giovanni Ansaldo."
+    it: "La chiesa dei Santi Nicolò ed Erasmo, legata alla tradizione marinara di Voltri, assunse l’attuale aspetto barocco nel Seicento sul luogo di un edificio religioso più antico. L’interno conserva tre navate, ricchi marmi policromi e importanti opere di artisti della scuola genovese.",
+    en: "The Church of Saints Nicholas and Erasmus, closely tied to Voltri’s maritime tradition, acquired its present Baroque appearance in the seventeenth century on the site of an older religious building. Its interior preserves three naves, rich polychrome marble and important works by artists of the Genoese school.",
+    es: "La iglesia de los Santos Nicolás y Erasmo, ligada a la tradición marinera de Voltri, adquirió su actual aspecto barroco en el siglo XVII sobre el lugar de un edificio religioso más antiguo. El interior conserva tres naves, ricos mármoles policromos e importantes obras de artistas de la escuela genovesa.",
+    fr: "L’église des Saints-Nicolas-et-Érasme, liée à la tradition maritime de Voltri, prit son aspect baroque actuel au XVIIe siècle sur l’emplacement d’un édifice religieux plus ancien. L’intérieur conserve trois nefs, de riches marbres polychromes et d’importantes œuvres d’artistes de l’école génoise.",
+    ar: "اكتسبت كنيسة القديسين نيكولو وإيرازمو، المرتبطة بالتقاليد البحرية في فولتري، مظهرها الباروكي الحالي في القرن السابع عشر فوق موقع مبنى ديني أقدم. ويضم داخلها ثلاث بلاطات ورخاماً متعدد الألوان وأعمالاً مهمة لفنانين من المدرسة الجنوية.",
+    ru: "Церковь Святых Николая и Эразма, связанная с морскими традициями Вольтри, приобрела нынешний барочный облик в XVII веке на месте более древнего культового сооружения. В интерьере сохранились три нефа, богатый полихромный мрамор и важные произведения художников генуэзской школы.",
+    zh: "圣尼科洛与圣埃拉斯莫教堂与沃尔特里的航海传统密切相关，17世纪在一座更古老的宗教建筑旧址上形成了今天的巴洛克外观。内部保留三条中殿、华丽的多色大理石以及热那亚画派艺术家的重要作品。",
+    lij: "A gexia di Santi Nicolò e Erasmo, ligâ a-a tradiçion mainâ de Votri, a piggiò l’aspetto baròcco de ancheu into Seixento in sciô scito de un edificio religioso ciù antigo. Dentro a conserva trei navæ, ricchi màrmi policrommi e òpere importanti de artisti da schêua zeneize."
     },
-
     "Piazza Lerda": {
-      it: "A fine Ottocento, la futura Piazza Giovanni Lerda a Voltri era nota come la piazza dello scalo (ciassa do sca'), un vivace snodo commerciale e di passaggio affacciato verso la costa e legato alle attività marinare e di trasporto del borgo.",
-      en: "In the late nineteenth century, the future Piazza Giovanni Lerda in Voltri was known as the station square (ciassa do sca'), a lively commercial and transit hub facing the coast and closely linked to the town's maritime and transport activities.",
-      es: "A finales del siglo XIX, la futura Piazza Giovanni Lerda de Voltri era conocida como la plaza de la estación (ciassa do sca'), un animado nudo comercial y de paso orientado hacia la costa y ligado a las actividades marítimas y de transporte de la localidad.",
-      fr: "À la fin du XIXe siècle, la future Piazza Giovanni Lerda de Voltri était connue comme la place de la gare (ciassa do sca'), un carrefour commercial et de passage animé, tourné vers la côte et lié aux activités maritimes et de transport du bourg.",
-      ar: "في أواخر القرن التاسع عشر كانت ساحة جيوفاني ليردا المستقبلية في فولتري تُعرف باسم ساحة المحطة (ciassa do sca')، وكانت عقدة نشطة للتجارة والعبور تطل نحو الساحل وترتبط بأنشطة البلدة البحرية والنقلية.",
-      ru: "В конце XIX века будущая площадь Джованни Лерда в Вольтри была известна как привокзальная площадь (ciassa do sca') — оживлённый торговый и транзитный узел, обращённый к побережью и тесно связанный с морской и транспортной деятельностью города.",
-      zh: "19世纪末，如今的沃尔特里乔瓦尼·莱尔达广场一带被称为“车站广场”（ciassa do sca'），是一个面向海岸、十分活跃的商业和交通节点，与当地的航海及运输活动密切相关。",
-      lij: "A-a fin de l'Ottocento, a futura Piazza Giovanni Lerda a Votri a l'êa conosciûa comme a ciassa do sca', un vivace ponto de commercio e de passaggio affacciou verso a costa e ligou a-e attivitæ mainæ e de trasporto do borgo."
+    it: "Alla fine dell’Ottocento l’attuale Piazza Giovanni Lerda era conosciuta come “ciassa do sca’”, la piazza dello scalo. La vicinanza alla ferrovia e al litorale ne faceva un vivace punto di passaggio, incontro e commercio, strettamente legato ai trasporti e alle attività marinare di Voltri.",
+    en: "At the end of the nineteenth century, today’s Piazza Giovanni Lerda was known as “ciassa do sca’”, the station square. Its proximity to the railway and the shoreline made it a lively place of transit, meeting and trade, closely linked to Voltri’s transport and maritime activities.",
+    es: "A finales del siglo XIX, la actual Piazza Giovanni Lerda era conocida como “ciassa do sca’”, la plaza de la estación. Su proximidad al ferrocarril y al litoral la convertía en un animado lugar de paso, encuentro y comercio, estrechamente ligado al transporte y a las actividades marítimas de Voltri.",
+    fr: "À la fin du XIXe siècle, l’actuelle Piazza Giovanni Lerda était connue sous le nom de « ciassa do sca’ », la place de la gare. Sa proximité avec le chemin de fer et le littoral en faisait un lieu animé de passage, de rencontre et de commerce, étroitement lié aux transports et aux activités maritimes de Voltri.",
+    ar: "في نهاية القرن التاسع عشر كانت ساحة جيوفاني ليردا الحالية تُعرف باسم «ciassa do sca’»، أي ساحة المحطة. وبفضل قربها من السكك الحديدية والساحل كانت مكاناً نشطاً للعبور واللقاء والتجارة، مرتبطاً ارتباطاً وثيقاً بالنقل والأنشطة البحرية في فولتري.",
+    ru: "В конце XIX века нынешняя площадь Джованни Лерда была известна как «ciassa do sca’» — привокзальная площадь. Близость к железной дороге и побережью делала её оживлённым местом движения, встреч и торговли, тесно связанным с транспортом и морской деятельностью Вольтри.",
+    zh: "19世纪末，如今的乔瓦尼·莱尔达广场被称为“ciassa do sca’”，即“车站广场”。由于靠近铁路和海岸，这里成为热闹的交通、会面和贸易场所，与沃尔特里的运输和海事活动关系密切。",
+    lij: "A-a fin de l’Ottocento l’attuale Piazza Giovanni Lerda a l’êa conosciûa comme “ciassa do sca’”, a ciassa da staçion. A vixinansa a-a ferovia e a-a costa a ne faiva un ponto vivace de passaggio, incontro e commercio, ben ligou a-i trasporti e a-e attivitæ mainæ de Votri."
     }
   });
 })();

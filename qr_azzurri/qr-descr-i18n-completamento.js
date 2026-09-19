@@ -310,16 +310,15 @@
       zh: "九月二十日街下段通向布里尼奥莱，规划为一条宽阔笔直的城市轴线，两侧排列大型建筑和拱廊。这里还有1899年开业的东方市场，后来成为热那亚最重要的室内市场之一。",
       lij: "A parte bassa de Via XX Settembre, verso Brignole, a fù pensâ comme un grande asse drito con grandi edifici e portici da-e due bande. Inte sto tratto gh’é anche o Mercou Orientale, inaugurou into 1899 e deventou unn-a di prinçipæ mercæ coverci da çittæ."
     },
-
     "Via Aurelia": {
-      it: "La Via Aurelia a Voltri costituisce la spina dorsale costiera del quartiere più occidentale di Genova. Nota localmente come Via Camozzini e Via Ventimiglia, attraversa l’antico borgo marinaro correndo parallela alla spiaggia e all’ampia passeggiata a mare.",
-      en: "The Via Aurelia in Voltri forms the coastal backbone of Genoa’s westernmost district. Known locally as Via Camozzini and Via Ventimiglia, it crosses the old seaside village parallel to the beach and the broad seafront promenade.",
-      es: "La Vía Aurelia en Voltri constituye el eje costero del barrio más occidental de Génova. Conocida localmente como Via Camozzini y Via Ventimiglia, atraviesa el antiguo pueblo marinero en paralelo a la playa y al amplio paseo marítimo.",
-      fr: "La Via Aurelia à Voltri constitue l’axe côtier du quartier le plus occidental de Gênes. Connue localement sous les noms de Via Camozzini et Via Ventimiglia, elle traverse l’ancien village maritime parallèlement à la plage et à la vaste promenade du front de mer.",
-      ar: "يشكل طريق أوريليا في فولتري المحور الساحلي للحي الواقع في أقصى غرب جنوة. ويُعرف محلياً باسم فيا كاموتسّيني وفيا فينتيميليا، ويعبر القرية البحرية القديمة موازياً للشاطئ وللممشى البحري الواسع.",
-      ru: "Виа Аурелия в Вольтри образует главную прибрежную ось самого западного района Генуи. На местном уровне она известна как Виа Камоццини и Виа Вентимилья и пересекает старинный приморский посёлок параллельно пляжу и широкой набережной.",
-      zh: "沃尔特里的奥雷利亚大道构成热那亚最西部街区的滨海主干道。它在当地被称为卡莫齐尼街和文蒂米利亚街，穿过古老的海滨村镇，与海滩和宽阔的滨海步道平行延伸。",
-      lij: "A Via Aurelia a Votri a l’é a spinn-a dorsâ da costa do quartê ciù a ponente de Zena. Conosciûa localmente comme Via Camozzini e Via Ventimiglia, a passa pe l’antigo borgo mainâ, parallela a-a spiaggia e a-a grande passeggiâ a-o mâ."
+    it: "La Via Aurelia attraversa Voltri lungo la storica direttrice costiera del Ponente genovese. Nel centro del borgo il percorso assume i nomi di via Camozzini e via Ventimiglia; per secoli ha collegato abitazioni, attività commerciali e il fronte marittimo, accompagnando la crescita del paese.",
+    en: "The Via Aurelia crosses Voltri along the historic coastal route of Genoa’s western area. In the town centre the road takes the names Via Camozzini and Via Ventimiglia; for centuries it has linked homes, businesses and the waterfront, accompanying the growth of the settlement.",
+    es: "La Via Aurelia atraviesa Voltri siguiendo la histórica ruta costera del Poniente genovés. En el centro del núcleo urbano el recorrido toma los nombres de Via Camozzini y Via Ventimiglia; durante siglos ha conectado viviendas, comercios y el frente marítimo, acompañando el crecimiento de la localidad.",
+    fr: "La Via Aurelia traverse Voltri le long de l’ancienne route côtière du Ponant génois. Dans le centre du bourg, elle prend les noms de Via Camozzini et Via Ventimiglia ; pendant des siècles, elle a relié habitations, commerces et front de mer, accompagnant le développement de la localité.",
+    ar: "يعبر طريق أوريليا فولتري على امتداد المسار الساحلي التاريخي في غرب جنوة. وفي وسط البلدة يحمل الطريق اسمي فيا كاموتسيني وفيا فينتيميليا؛ وعلى مدى قرون ربط المساكن والأنشطة التجارية بالواجهة البحرية وواكب نمو البلدة.",
+    ru: "Виа Аурелия пересекает Вольтри по историческому прибрежному маршруту западной части Генуи. В центре города дорога называется Via Camozzini и Via Ventimiglia; на протяжении веков она связывала жилые дома, торговые заведения и набережную, сопровождая развитие поселения.",
+    zh: "奥雷利亚大道沿着热那亚西部历史悠久的海岸路线穿过沃尔特里。在镇中心，这条道路分别称为卡莫齐尼街和文蒂米利亚街；几个世纪以来，它连接着住宅、商业活动和海滨，并伴随城镇不断发展。",
+    lij: "A Via Aurelia a passa pe Votri longo l’antiga direttrice costiê do Ponente zeneize. Intô centro do borgo o percorso o piggia i nommi de via Camozzini e via Ventimiglia; pe secoli o l’ha collegou case, attivitæ comerciæ e o fronte do mâ, accompagnando a crescitâ do paese."
     }
   });
 })();

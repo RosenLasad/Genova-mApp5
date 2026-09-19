@@ -7,7 +7,7 @@
         label: "Via Colombo",
         lat: 44.4102889952129,
         lng: 8.8885158848832,
-        descr: "Via Colombo.",
+        descr: "Via Colombo, oggi parte di via San Pier d’Arena, seguiva l’antico fronte costiero del borgo. Tra Ottocento e primo Novecento divenne uno degli assi principali di Sampierdarena, affiancato da abitazioni, ville e locali frequentati prima della costruzione del moderno bacino portuale.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_sampierdarena/viacolombo_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_sampierdarena/viacolombo_ieri_1.mp4"]
@@ -18,7 +18,7 @@
         label: "Spiaggia",
         lat: 44.40869782905921,
         lng: 8.892927141863167,
-        descr: "Spiaggia a Sampierdarena.",
+        descr: "Prima dell’espansione del porto, il litorale di Sampierdarena era caratterizzato da spiagge e stabilimenti balneari molto frequentati. L’area dove corre Lungomare Canepa conservò a lungo un rapporto diretto con il mare, poi profondamente trasformato dalla costruzione dei nuovi bacini portuali nel Novecento.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_sampierdarena/canepa_spiaggia_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_sampierdarena/canepa_spiaggia_ieri_1.mp4", "qr_azzurri/qr_azzurri_sampierdarena/canepa_spiaggia_ieri_2.mp4"]
@@ -29,7 +29,7 @@
         label: "Foto di gruppo al mare",
         lat: 44.40679125866593,
         lng: 8.897371418248346,
-        descr: "Foto di gruppo al mare.",
+        descr: "Tra Ottocento e primo Novecento il mare faceva parte della vita quotidiana di Sampierdarena, con spiagge frequentate da famiglie e gruppi di bagnanti. Le fotografie dell’epoca ricordano un litorale oggi scomparso, occupato successivamente dall’espansione del porto industriale e dalle nuove infrastrutture.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_sampierdarena/sampi-spiaggia_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_sampierdarena/sampi-spiaggia_ieri_1.mp4"]
@@ -40,7 +40,7 @@
         label: "Municipio di Sampierdarena",
         lat: 44.41016432157373,
         lng: 8.88923273392057,
-        descr: "Municipio di Sampierdarena.",
+        descr: "L’ex Municipio di Sampierdarena fu costruito nel 1852, quando il centro era ancora un comune autonomo. L’edificio sorse sul luogo di un piccolo fortilizio affacciato sull’antica linea di costa e mantenne la funzione municipale fino all’annessione alla Grande Genova nel 1926.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_sampierdarena/sampi-municipio_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_sampierdarena/sampi-municipio_ieri_1.mp4"]
@@ -51,7 +51,7 @@
         label: "Piazza Masnata",
         lat: 44.41818795151047,
         lng: 8.886263066534422,
-        descr: "Piazza Masnata.",
+        descr: "Piazza Masnata era uno degli spazi di incontro della Sampierdarena in espansione tra Ottocento e Novecento. Fino ai primi decenni del XX secolo, al centro della piazza si trovava una caratteristica edicola, poi scomparsa con le successive trasformazioni della viabilità e dell’arredo urbano.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_sampierdarena/sampi-masnata_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_sampierdarena/sampi-masnata_ieri_1.mp4"]
@@ -62,7 +62,7 @@
         label: "Piazza Vittorio Veneto",
         lat: 44.41161445025252,
         lng: 8.888822522274651,
-        descr: "Piazza Vittorio Veneto.",
+        descr: "Piazza Vittorio Veneto fu a lungo un importante nodo del trasporto pubblico di Sampierdarena. Nei primi anni del Novecento ospitava una stazione tranviaria, punto di partenza e di passaggio dei tram che collegavano il quartiere con Genova e con gli altri centri del Ponente.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_sampierdarena/sampi-veneto_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_sampierdarena/sampi-veneto_ieri_1.mp4"]
@@ -73,7 +73,7 @@
         label: "Via Pietro Chiesa",
         lat: 44.40858185156502,
         lng: 8.895625331137941,
-        descr: "Via Pietro Chiesa.",
+        descr: "Via Pietro Chiesa, un tempo via Galata, attraversava il quartiere della Coscia, strettamente legato al mare e al lavoro portuale. Tra Ottocento e Novecento la zona ospitava attività commerciali, stabilimenti e associazioni di lavoratori, tra cui lo storico circolo dei carbonai fondato nel 1904.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_sampierdarena/sampi-pietrochiesa_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_sampierdarena/sampi-pietrochiesa_ieri_1.mp4"]
