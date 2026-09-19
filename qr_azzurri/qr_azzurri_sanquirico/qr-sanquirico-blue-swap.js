@@ -12,7 +12,7 @@
   label: "Via San Quirico",
   lat: 44.47556035745746,
   lng: 8.90005758046,
-  descr: "Tra la fine dell'Ottocento e l'inizio del Novecento, via San Quirico era l'asse centrale di un comune autonomo nella valle del Polcevera, caratterizzato da un paesaggio rurale e di borgo operaio con basse case popolari, orti, ville patrizie e il passaggio della linea tranviaria per Pontedecimo.",
+  descr: "Tra fine Ottocento e inizio Novecento, via San Quirico attraversava il cuore dell’omonimo comune autonomo della Val Polcevera. Il borgo conservava ancora un carattere rurale, con case, orti e ville distribuiti lungo la strada principale, prima dell’annessione alla Grande Genova nel 1926.",
   media: {
     oggi: "qr_azzurri/qr_azzurri_sanquirico/via_san_quirico_oggi.mp4",
     ieri: ["qr_azzurri/qr_azzurri_sanquirico/via_san_quirico_ieri.mp4"]

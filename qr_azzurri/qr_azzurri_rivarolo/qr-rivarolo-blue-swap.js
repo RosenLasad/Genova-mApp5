@@ -12,7 +12,7 @@
   label: "Via Jori",
   lat: 44.432694301933196,
   lng: 8.89213781481779,
-  descr: "Tra fine Ottocento e inizio Novecento, via Giovan Battista Jori e la zona della Certosa nel comune di Rivarolo vivevano una fase di forte transizione da area rurale e di svago a sobborgo operaio e residenziale. Nei primi del Novecento iniziarono a essere tracciate e sistemate le vie d'accesso per collegare i fondovalle ai nuovi insediamenti residenziali che salivano verso le colline",
+  descr: "All’inizio del Novecento via Jori attraversava Certosa come un’ampia strada percorsa dai tram. Il quartiere, già legato alla storica Certosa di San Bartolomeo, stava vivendo una rapida crescita urbana e industriale, accompagnata dall’apertura di nuove vie e, nel 1908, della galleria tranviaria verso il centro.",
   media: {
     oggi: "qr_azzurri/qr_azzurri_rivarolo/via_jori_rivarolo_oggi.mp4",
     ieri: ["qr_azzurri/qr_azzurri_rivarolo/via_jori_rivarolo_ieri.mp4"]

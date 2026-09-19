@@ -12,7 +12,7 @@
   label: "Via Nazionale",
   lat: 44.44972770335052,
   lng: 9.017623068910106,
-  descr: "Tra la fine dell'Ottocento e i primi del Novecento, via Nazionale (oggi via Struppa) era la spina dorsale pianeggiante e rurale dell'allora comune autonomo di Struppa, un'arteria stradale che stava vivendo una profonda transizione da via di comunicazione ottocentesca a fulcro dello sviluppo urbano della media Val Bisagno.",
+  descr: "Via Nazionale era uno degli assi principali della media Val Bisagno e attraversava il territorio dell’allora comune autonomo di Struppa. Tra fine Ottocento e inizio Novecento collegava borghi e campagne lungo la valle, prima che la progressiva urbanizzazione trasformasse profondamente il paesaggio rurale circostante.",
   media: {
     oggi: "qr_azzurri/qr_azzurri_struppa/via_nazionale_struppa_oggi.mp4",
     ieri: ["qr_azzurri/qr_azzurri_struppa/via_nazionale_struppa_ieri.mp4"]

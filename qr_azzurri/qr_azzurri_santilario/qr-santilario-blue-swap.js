@@ -12,7 +12,7 @@
   label: "Chiesa di Sant'Ilario",
   lat: 44.384934643998264,
   lng: 9.054518663776634,
-  descr: "La chiesa di Sant'Ilario, situata nell'omonimo borgo collinare sopra Nervi (all'epoca ancora comune autonomo prima dell'unione alla Grande Genova del 1926), si presenta a cavallo tra l'Ottocento e il Novecento come un raccolto e sobrio edificio di culto al centro della vita della comunità rurale e marinara.",
+  descr: "La chiesa di Sant’Ilario, documentata almeno dal 1198, domina il borgo collinare sopra Nervi. Tra Ottocento e Novecento rimase il centro religioso e comunitario dell’allora comune autonomo; nel 1911 la sua antica facciata fu ricostruita nelle forme neoclassiche visibili ancora oggi.",
   media: {
     oggi: "qr_azzurri/qr_azzurri_santilario/chiesa_santilario_oggi.mp4",
     ieri: ["qr_azzurri/qr_azzurri_santilario/chiesa_santilario_ieri.mp4"]

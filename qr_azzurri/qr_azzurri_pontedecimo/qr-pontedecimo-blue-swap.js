@@ -12,7 +12,7 @@
   label: "Piazza Pontedecimo",
   lat: 44.49935137639013,
   lng: 8.90333191077162,
-  descr: "A cavallo tra la fine dell'Ottocento e i primi del Novecento, piazza Regina Margherita (originariamente nota come \"piazza dei Pein\" o piazza Perino, e oggi piazza Pontedecimo) si presentava come il vero cuore pulsante, economico e sociale del borgo della Valpolcevera.",
+  descr: "Piazza Pontedecimo, un tempo piazza Regina Margherita e conosciuta popolarmente come “ciassa di Pein”, divenne nell’Ottocento il cuore commerciale e sociale del borgo. L’apertura della strada dei Giovi ne rafforzò il ruolo di crocevia, poi consolidato dall’arrivo dei tram all’inizio del Novecento.",
   media: {
     oggi: "qr_azzurri/qr_azzurri_pontedecimo/piazza_pontedecimo_oggi.mp4",
     ieri: ["qr_azzurri/qr_azzurri_pontedecimo/piazza_pontedecimo_ieri.mp4"]

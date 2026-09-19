@@ -213,14 +213,14 @@
     },
 
     "Via Caprera": {
-      it: "Via Caprera è una delle principali arterie viarie di Sturla, quartiere del levante genovese. Aperta all’inizio del Novecento, contribuisce a collegare l’area di Albaro con la zona costiera di Sturla e Quarto dei Mille ed è caratterizzata da palazzi d’epoca e da numerose attività commerciali.",
-      en: "Via Caprera is one of the main roads in Sturla, a district in eastern Genoa. Opened in the early 20th century, it helps connect the Albaro area with the coastal districts of Sturla and Quarto dei Mille and is lined with period buildings and numerous businesses.",
-      es: "Via Caprera es una de las principales arterias de Sturla, barrio situado en el este de Génova. Abierta a principios del siglo XX, contribuye a conectar la zona de Albaro con los barrios costeros de Sturla y Quarto dei Mille y está caracterizada por edificios de época y numerosas actividades comerciales.",
-      fr: "La Via Caprera est l’un des principaux axes de Sturla, quartier de l’est de Gênes. Ouverte au début du XXe siècle, elle contribue à relier le secteur d’Albaro aux zones côtières de Sturla et de Quarto dei Mille. Elle est bordée d’immeubles anciens et de nombreux commerces.",
-      ar: "يُعد شارع كابريرا أحد الطرق الرئيسية في ستورلا، أحد أحياء شرق جنوة. افتُتح في أوائل القرن العشرين، ويسهم في ربط منطقة ألبارو بالمناطق الساحلية في ستورلا وكوارتو دي ميلّه، وتنتشر على جانبيه مبانٍ تاريخية والعديد من الأنشطة التجارية.",
-      ru: "Виа Капрера — одна из главных улиц Стурлы, района на востоке Генуи. Открытая в начале XX века, она соединяет район Альбаро с прибрежными зонами Стурлы и Кварто-деи-Милле. Вдоль неё расположены старинные здания и многочисленные магазины и предприятия.",
-      zh: "卡普雷拉街是热那亚东部斯图尔拉区的主要道路之一。它于20世纪初开通，有助于连接阿尔巴罗与斯图尔拉及千人远征纪念区的滨海地带，沿街分布着历史建筑和众多商业场所。",
-      lij: "Via Caprera a l’é unn-a de prinçipæ arterie de Sturla, quartê do levante zeneize. Averta a-o prinçipio do Neuveçento, a l’aggiutta a collegâ a zöna d’Arbâ co-e coste de Sturla e Quarto dei Mille, e a l’é caratterizzâ da palaçi d’epoca e da tante attivitæ comerciaæ."
+      it: "Via Caprera si sviluppa sul viadotto che supera la valletta del torrente Vernazza e collega piazza Sturla con il quartiere verso ponente. La sua realizzazione, nel corso delle trasformazioni viarie del Novecento, modificò un’area precedentemente segnata da corsi d’acqua, creuze e piccoli nuclei abitati.",
+      en: "Via Caprera runs across the viaduct spanning the small valley of the Vernazza stream and links Piazza Sturla with the neighbourhood to the west. Its construction, during twentieth-century road improvements, transformed an area previously shaped by watercourses, traditional creuze paths and small clusters of houses.",
+      es: "Via Caprera discurre sobre el viaducto que salva el pequeño valle del torrente Vernazza y conecta Piazza Sturla con el barrio hacia poniente. Su construcción, dentro de las transformaciones viarias del siglo XX, modificó una zona antes marcada por cursos de agua, antiguas creuze y pequeños núcleos de viviendas.",
+      fr: "La Via Caprera emprunte le viaduc qui franchit la petite vallée du torrent Vernazza et relie Piazza Sturla au quartier situé vers l’ouest. Sa réalisation, dans le cadre des transformations routières du XXe siècle, modifia un secteur auparavant marqué par les cours d’eau, les anciennes creuze et de petits noyaux d’habitat.",
+      ar: "يمتد شارع كابريرا فوق الجسر الذي يعبر الوادي الصغير لنهر فيرنازا، ويربط ساحة ستورلا بالحي الواقع إلى الغرب. وقد أدى إنشاؤه، ضمن تحولات شبكة الطرق في القرن العشرين، إلى تغيير منطقة كانت من قبل تتسم بالمجاري المائية ومسارات «الكرويزه» التقليدية وتجمعات سكنية صغيرة.",
+      ru: "Виа Капрера проходит по виадуку над небольшой долиной ручья Вернацца и связывает Пьяцца Стурла с районом к западу. Ее строительство в ходе дорожных преобразований XX века изменило территорию, прежде сформированную водотоками, традиционными генуэзскими дорожками-креузами и небольшими группами домов.",
+      zh: "卡普雷拉街沿跨越韦尔纳扎溪小谷地的高架桥延伸，将斯图尔拉广场与西侧街区连接起来。它在20世纪道路改造过程中建成，改变了这一原本由溪流、热那亚传统坡道“creuze”和小型居民聚落构成的区域。",
+      lij: "Via Caprera a passa in sce-o viadotto che o supera a valetta do rio Vernazza e a collega piazza Sturla co-o quartê verso ponente. A seu realizaçion, durante e trasformaçioin viâie do Novecento, a l’à cangiou unn-a zona primma segnâ da corsi d’ægua, creuze e piccin nuclei de case."
     },
 
     "Piazza Colombo": {

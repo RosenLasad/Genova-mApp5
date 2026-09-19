@@ -12,7 +12,7 @@
         label: "Via Caprera",
         lat: 44.394812990735055, 
         lng: 8.979329735225619,
-        descr: "Ponte di Via Caprera.",
+        descr: "Via Caprera si sviluppa sul viadotto che supera la valletta del torrente Vernazza e collega piazza Sturla con il quartiere verso ponente. La sua realizzazione, nel corso delle trasformazioni viarie del Novecento, modificò un’area precedentemente segnata da corsi d’acqua, creuze e piccoli nuclei abitati.",
         media: {
           oggi: "qr_azzurri/qr_azzurri_sturla/sturla_caprera_oggi.mp4",
           ieri: ["qr_azzurri/qr_azzurri_sturla/sturla_caprera_ieri_1.mp4"]

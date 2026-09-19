@@ -4,14 +4,14 @@
 
   Object.assign(window.QR_DESCR_I18N, {
     "Piazza Pontedecimo": {
-      it: "A cavallo tra la fine dell'Ottocento e i primi del Novecento, piazza Regina Margherita (originariamente nota come \"piazza dei Pein\" o piazza Perino, e oggi piazza Pontedecimo) si presentava come il vero cuore pulsante, economico e sociale del borgo della Valpolcevera.",
-      en: "At the turn of the twentieth century, Piazza Regina Margherita (originally known as “piazza dei Pein” or Piazza Perino, and today Piazza Pontedecimo) was the true economic and social heart of the Val Polcevera village.",
-      es: "Entre finales del siglo XIX y comienzos del XX, piazza Regina Margherita (conocida originalmente como “piazza dei Pein” o piazza Perino, y hoy piazza Pontedecimo) era el auténtico corazón económico y social del pueblo de la Val Polcevera.",
-      fr: "Au tournant du XXe siècle, piazza Regina Margherita (à l’origine connue sous le nom de « piazza dei Pein » ou piazza Perino, aujourd’hui piazza Pontedecimo) constituait le véritable cœur économique et social du bourg de la Val Polcevera.",
-      ar: "عند الانتقال من القرن التاسع عشر إلى العشرين، كانت ساحة ريجينا مارغريتا (المعروفة أصلا باسم «بيازا دي بيين» أو بيازا بيرينو، واليوم بيازا بونتيديتشيمو) القلب الاقتصادي والاجتماعي الحقيقي لبلدة وادي بولتشيفيرا.",
-      ru: "На рубеже XIX–XX веков площадь Реджина Маргерита (первоначально известная как «пьяцца деи Пейн» или Пьяцца Перино, ныне Пьяцца Понтедечимо) была настоящим экономическим и общественным центром поселка в Валь-Польчевере.",
-      zh: "19世纪末20世纪初，雷吉娜·玛格丽塔广场（最初称“Pein广场”或佩里诺广场，今为蓬泰代奇莫广场）是波尔切韦拉河谷这个村镇真正的经济与社会中心。",
-      lij: "Tra-a fin de l'Ottocento e o prinçipio do Novecento, piazza Regina Margherita (in origine conosciua comme \"piazza dei Pein\" ò piazza Perino, e ancheu piazza Pontedecimo) a l'êa o vero cheu economico e sociale do borgo da Val Polcevera."
+      it: "Piazza Pontedecimo, un tempo piazza Regina Margherita e conosciuta popolarmente come “ciassa di Pein”, divenne nell’Ottocento il cuore commerciale e sociale del borgo. L’apertura della strada dei Giovi ne rafforzò il ruolo di crocevia, poi consolidato dall’arrivo dei tram all’inizio del Novecento.",
+      en: "Piazza Pontedecimo, once called Piazza Regina Margherita and popularly known as “ciassa di Pein”, became the village’s commercial and social heart in the nineteenth century. The opening of the Giovi road strengthened its role as a crossroads, later reinforced by the arrival of trams in the early twentieth century.",
+      es: "Piazza Pontedecimo, llamada antiguamente Piazza Regina Margherita y conocida popularmente como “ciassa di Pein”, se convirtió en el siglo XIX en el corazón comercial y social del pueblo. La apertura de la carretera de los Giovi reforzó su papel de encrucijada, consolidado después por la llegada de los tranvías a comienzos del siglo XX.",
+      fr: "Piazza Pontedecimo, autrefois appelée Piazza Regina Margherita et connue localement sous le nom de « ciassa di Pein », devint au XIXe siècle le cœur commercial et social du bourg. L’ouverture de la route des Giovi renforça son rôle de carrefour, ensuite consolidé par l’arrivée des tramways au début du XXe siècle.",
+      ar: "كانت ساحة بونتيديتشيمو، التي حملت سابقًا اسم ساحة ريجينا مارغريتا وعُرفت شعبيًا باسم «ciassa di Pein»، قد أصبحت في القرن التاسع عشر القلب التجاري والاجتماعي للبلدة. وعزز افتتاح طريق جوفي دورها كمفترق طرق، ثم رسخه وصول الترام في أوائل القرن العشرين.",
+      ru: "Пьяцца Понтедечимо, ранее называвшаяся Пьяцца Реджина Маргерита и известная в народе как «ciassa di Pein», в XIX веке стала торговым и общественным центром поселка. Открытие дороги Джови усилило ее роль перекрестка путей, а в начале XX века это значение закрепило появление трамваев.",
+      zh: "蓬泰代奇莫广场过去称为雷吉娜·玛格丽塔广场，当地俗称“ciassa di Pein”。19世纪时，它成为村镇的商业和社会中心。乔维公路的开通强化了这里作为交通交汇点的作用，20世纪初有轨电车的到来又进一步巩固了这一地位。",
+      lij: "Piazza Pontedecimo, un tempo ciamâ piazza Regina Margherita e conosciua popolarmente comme “ciassa di Pein”, into Ottocento a l’é vegnua o cheu comerciale e sociale do borgo. L’avertua da stradda di Giovi a l’à rinforçou o seu ruolo de croxe de stradde, consolidou pöi da l’arrivo di tram a-o prinçipio do Novecento."
     }
   });
 })();
