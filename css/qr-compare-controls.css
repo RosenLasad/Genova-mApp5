@@ -95,9 +95,9 @@
 
 /* -------------------------------------------------------------------------
  * Full screen del confronto.
- * Il target e' l'intero pannello QR, ma in fullscreen restano visibili solo
- * il riquadro di confronto e la riga Oggi/Ieri/SFX/Confronta + Play/Full.
- * In questo modo i controlli non coprono mai il video nemmeno a tutto schermo.
+ * Il target e' l'intero pannello QR. In fullscreen resta visibile solo
+ * il riquadro di confronto: la riga Oggi/Ieri/SFX/Confronta + Play/Full
+ * viene nascosta, cosi il video occupa tutto lo schermo senza controlli sovrapposti.
  * ------------------------------------------------------------------------- */
 
 #panel.qr-point-panel.qr-compare-fullscreen:fullscreen,
@@ -118,7 +118,7 @@
   overflow: hidden !important;
   display: grid !important;
   grid-template-columns: minmax(0, 1fr) !important;
-  grid-template-rows: minmax(0, 1fr) auto !important;
+  grid-template-rows: minmax(0, 1fr) !important;
   box-shadow: none !important;
 }
 
@@ -153,22 +153,7 @@
 
 #panel.qr-point-panel.qr-compare-fullscreen:fullscreen > .swap,
 #panel.qr-point-panel.qr-compare-fullscreen:-webkit-full-screen > .swap {
-  grid-column: 1 !important;
-  grid-row: 2 !important;
-  width: 100% !important;
-  margin: 0 !important;
-  padding: .62rem max(.8rem, env(safe-area-inset-right)) max(.62rem, env(safe-area-inset-bottom)) max(.8rem, env(safe-area-inset-left)) !important;
-  box-sizing: border-box !important;
-  justify-content: flex-start !important;
-  background: rgba(5, 11, 20, .98) !important;
-  border-top: 1px solid rgba(148, 163, 184, .22) !important;
-  overflow-x: auto !important;
-  scrollbar-width: none;
-}
-
-#panel.qr-point-panel.qr-compare-fullscreen:fullscreen > .swap::-webkit-scrollbar,
-#panel.qr-point-panel.qr-compare-fullscreen:-webkit-full-screen > .swap::-webkit-scrollbar {
-  display: none;
+  display: none !important;
 }
 
 #panel.qr-point-panel.qr-compare-fullscreen:fullscreen .qr-compare-stage,
@@ -187,10 +172,3 @@
   background: #050b14 !important;
 }
 
-@media (orientation: landscape) {
-  #panel.qr-point-panel.qr-compare-fullscreen:fullscreen > .swap,
-  #panel.qr-point-panel.qr-compare-fullscreen:-webkit-full-screen > .swap {
-    padding-top: .48rem !important;
-    padding-bottom: max(.48rem, env(safe-area-inset-bottom)) !important;
-  }
-}
