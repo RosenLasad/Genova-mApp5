@@ -13,21 +13,21 @@
 
 #panel.qr-point-panel .qr-visit-toggle {
   flex: 0 0 auto;
-  min-height: 32px;
-  max-width: 132px;
-  padding: .28rem .52rem;
+  min-height: 28px;
+  max-width: 124px;
+  padding: .18rem .44rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: .34rem;
+  gap: .28rem;
   border: 1px solid rgba(148, 163, 184, .38);
   border-radius: 999px;
   background: rgba(15, 23, 42, .10);
   color: var(--text);
   font: inherit;
-  font-size: .70rem;
+  font-size: .64rem;
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1;
   white-space: nowrap;
   cursor: pointer;
   transition: border-color .15s ease, background .15s ease, transform .08s ease;
@@ -51,9 +51,9 @@
 }
 
 #panel.qr-point-panel .qr-visit-status-dot {
-  width: 8px;
-  height: 8px;
-  flex: 0 0 8px;
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
   border-radius: 999px;
   background: #0ea5e9;
   box-shadow: 0 0 0 2px rgba(14, 165, 233, .14);
@@ -66,15 +66,15 @@
 
 @media (max-width: 560px) {
   #panel.qr-point-panel .qr-visit-toggle {
-    width: 34px;
-    min-width: 34px;
-    max-width: 34px;
-    height: 34px;
-    min-height: 34px;
+    width: 30px;
+    min-width: 30px;
+    max-width: 30px;
+    height: 30px;
+    min-height: 30px;
     padding: 0;
   }
   #panel.qr-point-panel .qr-visit-label { display: none; }
-  #panel.qr-point-panel .qr-parent-badge { max-width: 38%; }
+  #panel.qr-point-panel .qr-parent-badge { max-width: 52%; }
 }
 
 /* New Home: per-group map action --------------------------------------- */
