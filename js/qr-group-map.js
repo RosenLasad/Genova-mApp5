@@ -362,6 +362,7 @@
   })(0);
 
   observeHome();
+  document.addEventListener('qr:list-rendered', scheduleEnhance);
 
   try {
     var langObserver = new MutationObserver(function (mutations) {

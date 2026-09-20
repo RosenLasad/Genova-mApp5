@@ -226,6 +226,16 @@ try{ window.__ensureQrOn = ensureQrOn; }catch(_){}
           + (open ? '▾' : '▸') + '</span>';
         html += '</button>';
 
+        // Pulsante mappa del gruppo: viene renderizzato insieme alla riga,
+        // così non dipende da un'iniezione successiva tramite MutationObserver.
+        html += '<button type="button" class="qr-group-map-btn" data-qr-group-map="'+pid+'"'
+          + ' aria-pressed="false" title="Mostra sulla mappa" aria-label="Mostra sulla mappa">'
+          + '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+          + '<path d="M3.5 5.5l5-2 7 2.5 5-2v14.5l-5 2-7-2.5-5 2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>'
+          + '<path d="M8.5 3.5v14.5M15.5 6v14.5" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".75"></path>'
+          + '<circle cx="12" cy="11" r="2.2" fill="currentColor"></circle>'
+          + '</svg></button>';
+
         html += '<ul data-qr-acc="body" data-open="'+(open?'1':'0')+'"'
           + ' style="list-style:none;margin:.15rem 0 0 0;padding:0;'
           + 'display:'+(open?'grid':'none')+';gap:.2rem">';
@@ -245,6 +255,7 @@ try{ window.__ensureQrOn = ensureQrOn; }catch(_){}
       });
 
       groupsEl.innerHTML = html || '<div style="opacity:.7">Nessun punto trovato.</div>';
+      try { document.dispatchEvent(new CustomEvent('qr:list-rendered')); } catch(_) {}
     }
 
     // Debounced filter
@@ -259,6 +270,18 @@ try{ window.__ensureQrOn = ensureQrOn; }catch(_){}
     // Clicks: toggle groups OR pan map
     if(groupsEl){
       groupsEl.addEventListener('click', function(e){
+        // 0) Mostra/nascondi soltanto questo Gruppo sulla mappa
+        var groupMapBtn = e.target.closest('.qr-group-map-btn[data-qr-group-map]');
+        if(groupMapBtn){
+          e.preventDefault();
+          e.stopPropagation();
+          var mapGroupId = groupMapBtn.getAttribute('data-qr-group-map') || '';
+          try {
+            if(window.__qrToggleGroupOnly) window.__qrToggleGroupOnly(mapGroupId);
+          }catch(_){}
+          return;
+        }
+
         // 1) Toggle group
         var head = e.target.closest('[data-qr-acc="head"]');
         if(head){
