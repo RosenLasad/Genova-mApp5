@@ -628,11 +628,13 @@ html body #ui-map-controls #ui-zoom-anchor .leaflet-control-zoom > a > span{
     min-height:38px !important;
   }
 
-  header.tb-search-open #tb-search{
-    left:8px !important;
-    right:8px !important;
+  #app > header.tb-search-open #tb-search{
+    left:50% !important;
+    right:auto !important;
     top:calc(100% + 7px) !important;
+    width:min(360px, calc(100vw - 16px)) !important;
     max-width:none !important;
+    transform:translateX(-50%) !important;
   }
 
   #bottom-bar{

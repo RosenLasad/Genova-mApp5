@@ -1855,6 +1855,10 @@ map.on('zoomend', function(){
     function incIndex(){ var g=getCurrentGallery(); var i=getCurrentIndex(); setCurrentIndex((i+1)%g.length); }
 
     function clearPreview(){ if(previewTimer){ clearTimeout(previewTimer); previewTimer=null; } hidePaywall(); }
+    // I pannelli QR e Confronta sono contenuti pubblici. Esporre questa pulizia
+    // permette loro di annullare un eventuale timer Premium rimasto attivo
+    // dopo la chiusura di un altro contenuto.
+    window.__gmClearMediaPreview = clearPreview;
     function startPreviewIfNeeded(item){
       clearPreview(); if(!current) return;
       var isPremium=current.category==='premium';

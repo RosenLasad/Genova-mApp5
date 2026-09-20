@@ -13,6 +13,17 @@
 
   if (!panel) return;
 
+  function clearPublicCompareBlockers() {
+    try {
+      if (typeof window.__gmClearMediaPreview === "function") {
+        window.__gmClearMediaPreview();
+      } else {
+        var paywall = document.getElementById("paywall");
+        if (paywall) paywall.style.display = "none";
+      }
+    } catch (_) {}
+  }
+
   function clearQrLayout() {
     resetCompareMode(true);
     compareCheckToken++;
@@ -145,9 +156,9 @@
     var markerX = rect.left + width * 0.50;
     var markerY = rect.top + height * qrMarkerYRatio();
     var markerIconHeight = 26;
-    var visualGap = 10;
+    var visualGap = 6;
     var panelBottomY = markerY - markerIconHeight - visualGap;
-    var topMargin = 12;
+    var topMargin = 6;
     var availableHeight = Math.max(180, panelBottomY - rect.top - topMargin);
 
     panel.style.setProperty("--qr-panel-anchor-x", Math.round(markerX) + "px");
@@ -602,45 +613,24 @@
     syncCompareFullscreenButton();
   }
 
-  function setCompareFullscreenUi(active) {
-    var swap = panel.querySelector(".swap");
-    if (!swap) return;
-    if (active) {
-      swap.style.setProperty("display", "none", "important");
-      swap.setAttribute("aria-hidden", "true");
-    } else {
-      swap.style.removeProperty("display");
-      swap.removeAttribute("aria-hidden");
-    }
-  }
-
   function exitCompareFullscreen() {
     var current = fullscreenElement();
+    panel.classList.remove("qr-compare-fullscreen");
     if (current !== panel) {
-      panel.classList.remove("qr-compare-fullscreen");
-      setCompareFullscreenUi(false);
       syncCompareFullscreenButton();
       return;
     }
     var exit = document.exitFullscreen || document.webkitExitFullscreen;
     if (!exit) {
-      panel.classList.remove("qr-compare-fullscreen");
-      setCompareFullscreenUi(false);
       syncCompareFullscreenButton();
       return;
     }
     try {
       var result = exit.call(document);
       if (result && typeof result.catch === "function") {
-        result.catch(function () {
-          panel.classList.remove("qr-compare-fullscreen");
-          setCompareFullscreenUi(false);
-          syncCompareFullscreenButton();
-        });
+        result.catch(function () { syncCompareFullscreenButton(); });
       }
     } catch (_) {
-      panel.classList.remove("qr-compare-fullscreen");
-      setCompareFullscreenUi(false);
       syncCompareFullscreenButton();
     }
   }
@@ -654,19 +644,16 @@
     var request = panel.requestFullscreen || panel.webkitRequestFullscreen;
     if (!request) return;
     panel.classList.add("qr-compare-fullscreen");
-    setCompareFullscreenUi(true);
     try {
       var result = request.call(panel);
       if (result && typeof result.catch === "function") {
         result.catch(function () {
           panel.classList.remove("qr-compare-fullscreen");
-          setCompareFullscreenUi(false);
           syncCompareFullscreenButton();
         });
       }
     } catch (_) {
       panel.classList.remove("qr-compare-fullscreen");
-      setCompareFullscreenUi(false);
       syncCompareFullscreenButton();
     }
   }
@@ -902,6 +889,7 @@
   function enterCompareMode() {
     var button = document.getElementById("btn-compare-qr");
     if (!button || button.getAttribute("data-qr-compare-ready") !== "true" || !activeCompareSpec) return;
+    clearPublicCompareBlockers();
     var stage = ensureCompareStage();
     if (!stage) return;
 
@@ -1041,6 +1029,7 @@
       "qr-compare-placeholder",
       ""
     );
+    compare.setAttribute("data-qr-access", "public");
     if (compare.parentNode !== swap) swap.appendChild(compare);
     if (!compare.__qrCompareBound) {
       compare.__qrCompareBound = true;
@@ -1127,6 +1116,7 @@
     if (original.__qrCenteredLayout) return true;
 
     function openQrPanel(title, descr, media, qrid) {
+      clearPublicCompareBlockers();
       var context = findQrContext(title, media, qrid);
       var point = context && context.point;
       var parent = context && context.parent;
@@ -1182,7 +1172,6 @@
   function handleCompareFullscreenChange() {
     var active = fullscreenElement() === panel;
     panel.classList.toggle("qr-compare-fullscreen", active);
-    setCompareFullscreenUi(active);
     syncCompareFullscreenButton();
   }
 

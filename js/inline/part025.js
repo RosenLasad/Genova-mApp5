@@ -47,7 +47,8 @@
       // If click is on a candidate control (button/link/role=button)
       var tag = t.tagName;
       var role = (t.getAttribute && t.getAttribute('role')) || '';
-      var cls = (t.className || '').toLowerCase();
+      var rawClass = t.className;
+      var cls = (typeof rawClass === 'string' ? rawClass : (rawClass && rawClass.baseVal) || '').toLowerCase();
       var clickable = tag === 'BUTTON' || tag === 'A' || role === 'button' || cls.includes('btn') || typeof t.onclick === 'function';
       if (clickable) closeLegendIfOpen();
     }, true);

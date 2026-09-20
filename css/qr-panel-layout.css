@@ -15,7 +15,7 @@
   bottom: auto !important;
   width: min(560px, calc(100vw - 64px)) !important;
   max-width: none !important;
-  max-height: min(var(--qr-panel-max-height, 520px), 68dvh) !important;
+  max-height: min(var(--qr-panel-max-height, 560px), 72dvh) !important;
   margin: 0 !important;
   transform: translate(-50%, -100%) !important;
   grid-template-rows: auto minmax(0, auto) auto minmax(0, 1fr) !important;
@@ -115,7 +115,7 @@
 @media (max-width: 768px) {
   #panel.qr-point-panel {
     width: calc(100vw - 48px) !important;
-    max-height: min(var(--qr-panel-max-height, 460px), 66dvh) !important;
+    max-height: min(var(--qr-panel-max-height, 500px), 72dvh) !important;
     border-radius: 16px;
     box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.45);
   }
