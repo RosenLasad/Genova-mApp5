@@ -255,7 +255,12 @@
       var lang = (document.documentElement.lang || 'it').split('-')[0];
       var labels = {it:'Guida e istruzioni',en:'Guide and instructions',es:'Guía e instrucciones',fr:'Guide et instructions',ar:'الدليل والتعليمات',ru:'Руководство и инструкции',zh:'指南与说明',lij:'Guida e istruçioin'};
       var text = labels[lang] || labels.it;
-      if(helpAction.textContent !== text) helpAction.textContent = text;
+      var v2Label = helpAction.querySelector && helpAction.querySelector('.settings-v2-label');
+      if(v2Label){
+        if(v2Label.textContent !== text) v2Label.textContent = text;
+      }else if(helpAction.textContent !== text){
+        helpAction.textContent = text;
+      }
       helpAction.setAttribute('aria-controls', 'gm-new-home');
       if(!helpAction.__helpBound){
         helpAction.__helpBound = true;

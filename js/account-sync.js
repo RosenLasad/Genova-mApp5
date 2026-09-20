@@ -147,6 +147,24 @@
     var result=await api('POST',{action:action,plan:plan});state.record=result.record||state.record;
     cacheSubscription(state.record&&state.record.subscription);return state.record.subscription;
   }
+
+  /* Ripristina i dati personali dell'app senza toccare account, avatar o abbonamento. */
+  async function resetPreferences(){
+    var values={};
+    try{
+      var avatar=localStorage.getItem('genova_account_avatar_v1');
+      if(avatar!==null)values.genova_account_avatar_v1=avatar;
+    }catch(_e){}
+    var data={version:1,updatedAt:Date.now(),values:values};
+    applySnapshot(data);
+    try{localStorage.setItem(DIRTY_KEY,String(data.updatedAt));}catch(_e){}
+    if(state.user&&navigator.onLine){
+      await saveData(data);
+    }else if(state.user){
+      setStatus('offline');
+    }
+    return true;
+  }
   function setUser(user){
     var changed=(!state.user&&user)||(state.user&&(!user||state.user.id!==user.id));state.user=user||null;
     if(!state.user){setStatus('idle');cacheSubscription(null);return;}
@@ -174,7 +192,8 @@
     getState:function(){return{user:state.user,record:state.record,subscription:(state.record&&state.record.subscription)||cachedSubscription(),active:!!window.isSubscribed,status:state.status};},
     syncNow:function(){return loadAccount(true);},
     activateSubscription:function(plan){return subscriptionAction('activateSubscription',plan==='yearly'?'yearly':'monthly');},
-    cancelSubscription:function(){return subscriptionAction('cancelSubscription');}
+    cancelSubscription:function(){return subscriptionAction('cancelSubscription');},
+    resetPreferences:function(){return resetPreferences();}
   };
 
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
