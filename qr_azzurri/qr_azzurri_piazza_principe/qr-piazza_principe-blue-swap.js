@@ -34,6 +34,34 @@
             "qr_azzurri/qr_azzurri_piazza_principe/qr_azzurri_piazza_principe_binari/qr_azzurri_piazza_principe_binari_ieri_1.mp4"
           ]
         }
+      },
+
+{
+        id: "il_dinegro",
+        label: "Il Dinegro",
+        lat: 44.416205018347235,
+        lng: 8.91864978808025,
+        descr: "Accanto alla Villa del Principe scorreva il Dinegro, piccolo corso d’acqua che attraversava l’area di Fassolo prima delle grandi trasformazioni ottocentesche e novecentesche. Ferrovia, viabilità e ampliamenti portuali modificarono profondamente il paesaggio, fino a far scomparire quasi del tutto l’antico assetto naturale.",
+        media: {
+          oggi: "qr_azzurri/qr_azzurri_villa_del_principe/qr_azzurri_villa_del_principe_il_dinegro/qrcode-villadoria2-oggi.mp4",
+          ieri: ["qr_azzurri/qr_azzurri_villa_del_principe/qr_azzurri_villa_del_principe_il_dinegro/qrcode-villadoria2-ieri1.mp4"]
+        }
+      },
+      {
+        id: "villa_del_principe_doria",
+        label: "Villa del Principe Doria",
+        lat: 44.41602047846311,
+        lng: 8.919390925348477,
+        descr: "La Villa del Principe fu avviata da Andrea Doria nel 1521 come sontuosa residenza suburbana. I suoi giardini si estendevano dal mare alla collina; nella parte alta sorgeva la gigantesca statua di Giove, detta “il Gigante”, oggi scomparsa.",
+        media: {
+          oggi: "qr_azzurri/qr_azzurri_villa_del_principe/qr_azzurri_villa_del_principe_villa_del_principe/qrcode-villadoria1-oggi.mp4",
+          ieri: [
+            "qr_azzurri/qr_azzurri_villa_del_principe/qr_azzurri_villa_del_principe_villa_del_principe/qrcode-villadoria1-ieri1.mp4",
+            "qr_azzurri/qr_azzurri_villa_del_principe/qr_azzurri_villa_del_principe_villa_del_principe/qrcode-villadoria1-ieri2.mp4",
+"qr_azzurri/qr_azzurri_villa_del_principe/qr_azzurri_villa_del_principe_villa_del_principe/qrcode-villadoria1-ieri3.mp4",
+"qr_azzurri/qr_azzurri_villa_del_principe/qr_azzurri_villa_del_principe_villa_del_principe/qrcode-villadoria1-ieri4.mp4"
+          ]
+        }
       }
     ]
   };

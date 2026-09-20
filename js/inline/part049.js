@@ -25,6 +25,13 @@
     if(parts.length < 2) return null;
     var pid = parts[0], cid = parts[1];
 
+    // Compatibilita con link QR condivisi prima della fusione dei gruppi.
+    var legacyParentAliases = {
+      seno_di_giano: 'castello',
+      villa_del_principe: 'piazza_principe'
+    };
+    pid = legacyParentAliases[pid] || pid;
+
     var srcs = window.__QR_SOURCES || [];
     for(var s=0; s<srcs.length; s++){
       var src = srcs[s];

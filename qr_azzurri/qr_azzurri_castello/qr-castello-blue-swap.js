@@ -33,6 +33,46 @@
             "qr_azzurri/qr_azzurri_castello/qr_azzurri_castello_sarzano/qr_azzurri_castello_sarzano_ieri_1.mp4"
           ]
         }
+      },
+
+{
+        id: "campana",
+        label: "Scoglio Campana",
+        lat: 44.40338522320385,
+        lng: 8.931322940778454,
+        descr: "Lo Scoglio Campana emergeva davanti alle Mura delle Grazie, in un tratto dove il mare arrivava direttamente ai piedi delle fortificazioni. Raffigurato anche in vedute ottocentesche, scomparve dal paesaggio con i riempimenti e le trasformazioni viarie che modificarono profondamente l’antica insenatura della Marina.",
+        media: {
+          oggi: "qr_azzurri/qr_azzurri_seno_di_giano/qr_azzurri_seno_di_giano_campana/qr_azzurri_seno_di_giano_campana_oggi.mp4",
+          ieri: [
+            "qr_azzurri/qr_azzurri_seno_di_giano/qr_azzurri_seno_di_giano_campana/qr_azzurri_seno_di_giano_campana_ieri_1.mp4"
+          ]
+        }
+      },
+      {
+        id: "mura_grazie",
+        label: "Mura delle Grazie",
+        lat: 44.40382060888646,
+        lng: 8.930566983445246,
+        descr: "Le Mura delle Grazie fanno parte della cinta fortificata cinquecentesca di Genova e segnavano qui il limite della città verso il mare. Prima dei grandi riempimenti ottocenteschi, le onde arrivavano direttamente sotto le mura; la nuova viabilità costiera allontanò progressivamente la linea di riva.",
+        media: {
+          oggi: "qr_azzurri/qr_azzurri_seno_di_giano/qr_azzurri_seno_di_giano_mura_grazie/qr_azzurri_seno_di_giano_mura_grazie_oggi.mp4",
+          ieri: [
+            "qr_azzurri/qr_azzurri_seno_di_giano/qr_azzurri_seno_di_giano_mura_grazie/qr_azzurri_seno_di_giano_mura_grazie_ieri_1.mp4"
+          ]
+        }
+      },
+      {
+        id: "piazzetta",
+        label: "Piazzetta",
+        lat: 44.40287052449395,
+        lng: 8.932006353117693,
+        descr: "All’estremità dell’antico quartiere della Marina, vicino a Via Madre di Dio, si apriva una piccola piazza accanto alle mura che attraversavano l’insenatura. Le trasformazioni urbanistiche e viarie del Novecento modificarono completamente questo spazio, lasciando solo alcuni elementi delle fortificazioni storiche come riferimento.",
+        media: {
+          oggi: "qr_azzurri/qr_azzurri_seno_di_giano/qr_azzurri_seno_di_giano_piazzetta/qr_azzurri_seno_di_giano_piazzetta_oggi.mp4",
+          ieri: [
+            "qr_azzurri/qr_azzurri_seno_di_giano/qr_azzurri_seno_di_giano_piazzetta/qr_azzurri_seno_di_giano_piazzetta_ieri_1.mp4"
+          ]
+        }
       }
     ]
   };
