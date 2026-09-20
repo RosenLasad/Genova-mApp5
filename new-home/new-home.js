@@ -236,6 +236,13 @@
     ],
     "sections": [
       {
+        "title": "Ricerca globale",
+        "p": [
+          "Nella New Home puoi usare la ricerca globale per trovare rapidamente luoghi, trasporti, percorsi, punti QR e altri contenuti senza aprire prima una categoria.",
+          "Digita almeno due caratteri e seleziona un risultato per aprire direttamente il contenuto o la sezione corrispondente."
+        ]
+      },
+      {
         "title": "Guida e istruzioni",
         "p": [
           "Da questa sezione puoi consultare la guida completa dell’app e scoprire il funzionamento dei principali strumenti di Genova mApp."
@@ -745,6 +752,10 @@
   var eventSearchRequestId = 0;
   var eventQuotaRequestId = 0;
   var eventLanguageResetTimer = 0;
+  var globalSearchCache = null;
+  var globalSearchCacheLanguage = '';
+  var globalSearchCacheAt = 0;
+  var positionUpdateFrame = 0;
 
   function escapeHtml(value){
     return String(value == null ? '' : value).replace(/[&<>"']/g, function(ch){
@@ -805,6 +816,7 @@
     currentView = 'home';
     guideReturnActive = false;
     currentSection = null;
+    currentCategory = null;
     currentAqueduct = null;
     currentRoute = null;
     overlay.setAttribute('dir', 'ltr');
@@ -828,7 +840,21 @@
       '<div class="gm-new-home-intro">'+
       '  <h3>Che cosa vuoi scoprire?</h3>'+
       '</div>'+
+      '<div class="gm-new-home-global-search">'+
+      '  <label class="gm-new-home-global-search-box" for="gm-new-home-global-search-input">'+
+      '    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></svg>'+
+      '    <span class="sr-only">Cerca in Genova mApp</span>'+
+      '    <input type="search" id="gm-new-home-global-search-input" autocomplete="off" spellcheck="false" placeholder="Cerca luoghi, trasporti, percorsi e contenuti">'+
+      '  </label>'+
+      '  <div class="gm-new-home-global-search-results" hidden>'+
+      '    <div class="gm-new-home-global-search-summary" aria-live="polite"><span>Risultati</span><strong>0</strong></div>'+
+      '    <div class="gm-new-home-global-search-list"></div>'+
+      '    <div class="gm-new-home-empty gm-new-home-global-search-empty" hidden>Nessun risultato trovato.</div>'+
+      '    <div class="gm-new-home-global-search-hint" hidden>Scrivi almeno 2 caratteri</div>'+
+      '  </div>'+
+      '</div>'+
       '<div class="gm-new-home-grid">'+cards+'</div>';
+    bindGlobalSearch();
     scroll.querySelectorAll('[data-section]').forEach(function(button){
       function activate(){
         var section = SECTIONS.find(function(item){ return item.key === button.getAttribute('data-section'); });
@@ -992,6 +1018,7 @@
     }
     currentView = 'section';
     currentSection = section;
+    currentCategory = null;
     currentAqueduct = null;
     overlay.setAttribute('dir', 'ltr');
     applyTheme(section);
@@ -1014,7 +1041,7 @@
         return ''+
           '<div class="gm-new-home-category has-map-icon'+(active?' is-map-active':'')+'">'+
           '  <button type="button" class="gm-new-home-category-map" data-map-category="'+index+'" aria-pressed="'+(active?'true':'false')+'" title="'+escapeHtml(mapActionLabel)+'" aria-label="'+escapeHtml(mapActionLabel)+'">'+
-          '    <img src="'+escapeHtml(category.mapIcon)+'" alt="" aria-hidden="true">'+
+          '    <img src="'+escapeHtml(category.mapIcon)+'" alt="" aria-hidden="true" loading="lazy" decoding="async">'+
           '  </button>'+
           '  <button type="button" class="gm-new-home-category-open" data-category="'+index+'">'+
           '    <span><strong>'+escapeHtml(category.title)+'</strong><small>'+escapeHtml(category.note)+'</small></span>'+
@@ -1111,7 +1138,7 @@
         var active = isMapToggleActive(sourceToggle);
         var label = (active ? 'Nascondi ' : 'Mostra ')+category.title+' sulla mappa';
         var visual = category.mapIcon
-          ? '<img src="'+escapeHtml(category.mapIcon)+'" alt="" aria-hidden="true">'
+          ? '<img src="'+escapeHtml(category.mapIcon)+'" alt="" aria-hidden="true" loading="lazy" decoding="async">'
           : icon(section ? section.theme : 'guide');
         shortcut = '<button type="button" class="gm-new-home-detail-map-shortcut gm-new-home-detail-category-shortcut'+(active?' is-map-active':'')+'" data-detail-map-category="1" aria-pressed="'+(active?'true':'false')+'" title="'+escapeHtml(label)+'" aria-label="'+escapeHtml(label)+'">'+visual+'</button>';
       }
@@ -1186,6 +1213,209 @@
     var text = String(value == null ? '' : value).toLocaleLowerCase('it');
     try{ text = text.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }catch(_){}
     return text;
+  }
+
+  function invalidateGlobalSearchIndex(){
+    globalSearchCache = null;
+    globalSearchCacheLanguage = '';
+    globalSearchCacheAt = 0;
+  }
+
+  function localizedSearchText(value, language){
+    var source = String(value == null ? '' : value);
+    try{
+      if(window.GMNewHomeI18n && typeof window.GMNewHomeI18n.translate === 'function'){
+        return window.GMNewHomeI18n.translate(source, language || currentLanguage()) || source;
+      }
+    }catch(_){}
+    return source;
+  }
+
+  function addGlobalSearchEntry(entries, seen, entry){
+    if(!entry || !entry.name) return;
+    var identity = [entry.kind || '', entry.section && entry.section.key || '', entry.category && (entry.category.type || entry.category.listId || entry.category.title) || '', entry.name, entry.id || ''].join('|');
+    if(seen[identity]) return;
+    seen[identity] = true;
+    entries.push(entry);
+  }
+
+  function buildGlobalSearchIndex(force){
+    var language = currentLanguage();
+    var now = Date.now();
+    if(!force && globalSearchCache && globalSearchCacheLanguage === language && (now - globalSearchCacheAt) < 30000) return globalSearchCache;
+
+    var entries = [];
+    var seen = Object.create(null);
+    SECTIONS.forEach(function(section){
+      addGlobalSearchEntry(entries, seen, {kind:'section', name:section.title, note:section.description, section:section});
+      (section.categories || []).forEach(function(category){
+        if(category.disabled) return;
+        addGlobalSearchEntry(entries, seen, {kind:'category', name:category.title, note:category.note, section:section, category:category});
+
+        if(category.listId){
+          getExistingPlaces(category.listId).forEach(function(place){
+            addGlobalSearchEntry(entries, seen, {kind:'place', name:place.name, section:section, category:category, target:place.target});
+          });
+        }
+        if(category.type === 'minidoc'){
+          getMiniDocs().forEach(function(place){
+            addGlobalSearchEntry(entries, seen, {kind:'place', name:place.name, section:section, category:category, target:place.target});
+          });
+        }
+        if(category.type === 'qr'){
+          getQrGroups().forEach(function(group){
+            group.points.forEach(function(point){
+              addGlobalSearchEntry(entries, seen, {kind:'qr', name:point.name, note:group.name, section:section, category:category, point:point});
+            });
+          });
+        }
+        if(category.type === 'history-walls' || category.type === 'history-aqueducts'){
+          (HISTORY_LAYERS[category.type] || []).forEach(function(item){
+            addGlobalSearchEntry(entries, seen, {kind:category.type === 'history-walls' ? 'wall' : 'aqueduct', name:item.name, note:item.note, section:section, category:category, item:item, id:item.wallKey || item.aqueductKey});
+          });
+        }
+        if(category.type === 'recommended-routes'){
+          getRouteGroups().forEach(function(group){
+            group.items.forEach(function(route){
+              addGlobalSearchEntry(entries, seen, {kind:'route', name:route.name, note:group.name, section:section, category:category, item:route, id:route.routeKey});
+            });
+          });
+        }
+        if(category.type === 'games'){
+          GAMES.forEach(function(game){
+            addGlobalSearchEntry(entries, seen, {kind:'game', name:game.title, note:game.note, section:section, category:category, game:game, id:game.key});
+          });
+        }
+      });
+    });
+
+    globalSearchCache = entries;
+    globalSearchCacheLanguage = language;
+    globalSearchCacheAt = now;
+    return entries;
+  }
+
+  function globalSearchMeta(entry){
+    var parts = [];
+    if(entry.note) parts.push(entry.note);
+    if(entry.category && entry.category.title && entry.category.title !== entry.name) parts.push(entry.category.title);
+    if(entry.section && entry.section.title && entry.section.title !== entry.name) parts.push(entry.section.title);
+    var out = [];
+    parts.forEach(function(part){ if(part && out.indexOf(part) < 0) out.push(part); });
+    return out.slice(0,2).join(' · ');
+  }
+
+  function searchGlobalEntries(query){
+    var language = currentLanguage();
+    var normalizedQuery = normalizeText(query).trim();
+    if(normalizedQuery.length < 2) return [];
+    var terms = normalizedQuery.split(/\s+/).filter(Boolean);
+    return buildGlobalSearchIndex(false).map(function(entry){
+      var localizedName = localizedSearchText(entry.name, language);
+      var localizedMeta = localizedSearchText(globalSearchMeta(entry), language);
+      var nameText = normalizeText(localizedName);
+      var haystack = normalizeText(localizedName+' '+localizedMeta);
+      if(!terms.every(function(term){ return haystack.indexOf(term) >= 0; })) return null;
+      var score = nameText === normalizedQuery ? 0 : (nameText.indexOf(normalizedQuery) === 0 ? 1 : (nameText.indexOf(normalizedQuery) >= 0 ? 2 : 3));
+      return {entry:entry, score:score, localizedName:localizedName};
+    }).filter(Boolean).sort(function(a,b){
+      if(a.score !== b.score) return a.score - b.score;
+      return a.localizedName.localeCompare(b.localizedName, language === 'lij' ? 'it' : language, {sensitivity:'base'});
+    }).slice(0,36).map(function(match){ return match.entry; });
+  }
+
+  function openGlobalSearchEntry(entry){
+    if(!entry) return;
+    if(entry.kind === 'place' && entry.target && entry.target.click){
+      close();
+      setTimeout(function(){ entry.target.click(); }, 50);
+      return;
+    }
+    if(entry.kind === 'qr' && entry.point){ openQrPoint(entry.point); return; }
+    if(entry.kind === 'game' && entry.game && entry.game.href){
+      close(false);
+      setTimeout(function(){ window.location.href = entry.game.href; }, 40);
+      return;
+    }
+    if(entry.kind === 'route' && entry.item && entry.item.routeKey){
+      openRouteDetails(entry.item.routeKey);
+      return;
+    }
+    if(entry.kind === 'section' && entry.section){
+      renderSection(entry.section);
+      pushNewHomeLevel();
+      return;
+    }
+    if(entry.section && entry.category){
+      renderSection(entry.section);
+      pushNewHomeLevel();
+      if(entry.kind === 'category'){
+        var before = currentView;
+        openCategory(entry.section, entry.category);
+        if(!overlay.hidden && currentView !== before) pushNewHomeLevel();
+        return;
+      }
+      renderHistoryCategory(entry.section, entry.category);
+      pushNewHomeLevel();
+      if(entry.kind === 'wall' && entry.item){ renderWallDetail(entry.section, entry.category, entry.item); pushNewHomeLevel(); }
+      else if(entry.kind === 'aqueduct' && entry.item){ renderAqueductDetail(entry.section, entry.category, entry.item); pushNewHomeLevel(); }
+    }
+  }
+
+  function bindGlobalSearch(){
+    if(!scroll) return;
+    var input = scroll.querySelector('#gm-new-home-global-search-input');
+    var panel = scroll.querySelector('.gm-new-home-global-search-results');
+    var list = scroll.querySelector('.gm-new-home-global-search-list');
+    var empty = scroll.querySelector('.gm-new-home-global-search-empty');
+    var hint = scroll.querySelector('.gm-new-home-global-search-hint');
+    var summary = scroll.querySelector('.gm-new-home-global-search-summary');
+    if(!input || !panel || !list || !empty || !hint || !summary) return;
+    var timer = 0;
+    var lastResults = [];
+
+    function renderResults(){
+      var query = (input.value || '').trim();
+      if(!query){
+        panel.hidden = true;
+        list.innerHTML = '';
+        lastResults = [];
+        return;
+      }
+      panel.hidden = false;
+      if(normalizeText(query).length < 2){
+        list.innerHTML = '';
+        lastResults = [];
+        hint.hidden = false;
+        empty.hidden = true;
+        summary.hidden = true;
+        return;
+      }
+      lastResults = searchGlobalEntries(query);
+      hint.hidden = true;
+      summary.hidden = false;
+      summary.querySelector('strong').textContent = String(lastResults.length);
+      empty.hidden = lastResults.length !== 0;
+      list.innerHTML = lastResults.map(function(entry, index){
+        var meta = globalSearchMeta(entry);
+        return '<button type="button" class="gm-new-home-global-search-result" data-global-search-result="'+index+'">'+
+          '<span><strong>'+escapeHtml(entry.name)+'</strong>'+(meta ? '<small>'+escapeHtml(meta)+'</small>' : '')+'</span>'+
+          '<span class="gm-new-home-global-search-arrow" aria-hidden="true">›</span>'+
+        '</button>';
+      }).join('');
+    }
+
+    input.addEventListener('input', function(){
+      clearTimeout(timer);
+      timer = setTimeout(renderResults, 90);
+    });
+    input.addEventListener('search', function(){ clearTimeout(timer); renderResults(); });
+    panel.addEventListener('click', function(event){
+      var button = event.target.closest && event.target.closest('[data-global-search-result]');
+      if(!button) return;
+      var entry = lastResults[Number(button.getAttribute('data-global-search-result'))];
+      if(entry) openGlobalSearchEntry(entry);
+    });
   }
 
   function buildAreaGroups(listId, places){
@@ -1399,6 +1629,7 @@
   function renderQrCategory(section, category){
     currentView = 'qr-category';
     currentSection = section;
+    currentCategory = category;
     applyTheme(section);
     applyView(currentView);
     title.textContent = category.title;
@@ -2587,6 +2818,7 @@
 
   function resetEventsAfterLanguageChange(){
     clearTimeout(eventLanguageResetTimer);
+    invalidateGlobalSearchIndex();
     var nextLanguage = currentLanguage();
     // Il cambio lingua dell'app puo emettere sia app:set-lang sia i18n:changed.
     // Se il secondo evento riguarda gia la stessa lingua, non deve annullare una
@@ -2624,7 +2856,7 @@
       ? '<div class="gm-new-home-game-grid">'+games.map(function(game){
           return ''+
             '<a class="gm-new-home-game-card" href="'+escapeHtml(game.href)+'" aria-label="'+escapeHtml(game.title)+'">'+
-            '  <span class="gm-new-home-game-icon"><img src="'+escapeHtml(game.icon)+'" alt="" aria-hidden="true"></span>'+
+            '  <span class="gm-new-home-game-icon"><img src="'+escapeHtml(game.icon)+'" alt="" aria-hidden="true" loading="lazy" decoding="async"></span>'+
             '  <span class="gm-new-home-game-copy"><strong>'+escapeHtml(game.title)+'</strong><small>'+escapeHtml(game.note)+'</small></span>'+
             '  <span class="gm-new-home-game-arrow" aria-hidden="true">›</span>'+
             '</a>';
@@ -2641,6 +2873,7 @@
 
   function openCategory(section, category){
     applyTheme(section);
+    currentCategory = category;
     if(category.action){ runExistingAction(category.action); return; }
     if(category.type === 'qr'){ renderQrCategory(section, category); return; }
     if(category.type === 'games'){ renderGamesCategory(section, category); return; }
@@ -2713,12 +2946,28 @@
     scroll.scrollTop = 0;
   }
 
+  function focusCategoryAfterBack(categoryTitle){
+    if(!categoryTitle || !scroll) return;
+    setTimeout(function(){
+      var buttons = Array.prototype.slice.call(scroll.querySelectorAll('[data-category]'));
+      var button = buttons.find(function(node){
+        var index = Number(node.getAttribute('data-category'));
+        return currentSection && currentSection.categories && currentSection.categories[index] && currentSection.categories[index].title === categoryTitle;
+      });
+      if(button){ try{ button.focus({preventScroll:true}); }catch(_){ try{ button.focus(); }catch(__){} } }
+    }, 0);
+  }
+
   function goBack(){
     if(currentView === 'wall-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
     else if(currentView === 'aqueduct-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
     else if(currentView === 'route-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
     else if(currentView === 'events-favorites' && currentSection && currentCategory){ renderEventsCategory(currentSection, currentCategory); }
-    else if((currentView === 'category' || currentView === 'qr-category' || currentView === 'games-category' || currentView === 'events-category') && currentSection){ renderSection(currentSection); }
+    else if((currentView === 'category' || currentView === 'qr-category' || currentView === 'games-category' || currentView === 'events-category') && currentSection){
+      var categoryTitle = currentCategory && currentCategory.title;
+      renderSection(currentSection);
+      focusCategoryAfterBack(categoryTitle);
+    }
     else if(currentView === 'section' && guideReturnActive){
       var guideSection = SECTIONS.find(function(item){ return item.key === 'guide'; });
       guideReturnActive = false;
@@ -2738,6 +2987,15 @@
       if(isFinite(rect.top)) top = Math.max(0, Math.round(rect.top));
     }
     overlay.style.setProperty('--gm-nh-top', top+'px');
+  }
+
+  function schedulePositionUpdate(){
+    if(positionUpdateFrame) return;
+    var raf = window.requestAnimationFrame || function(callback){ return setTimeout(callback, 16); };
+    positionUpdateFrame = raf(function(){
+      positionUpdateFrame = 0;
+      updatePosition();
+    });
   }
 
   function closeSettings(){
@@ -2906,7 +3164,12 @@
     document.addEventListener('app:set-lang', resetEventsAfterLanguageChange);
     window.addEventListener('i18n:changed', resetEventsAfterLanguageChange);
     document.addEventListener('genova:auth-changed', handleEventAuthChange);
-    window.addEventListener('resize', updatePosition, {passive:true});
+    // Alcuni elenchi vengono popolati dagli script dell'app subito dopo il boot:
+    // invalidiamo la cache iniziale della ricerca per includerli appena disponibili.
+    setTimeout(invalidateGlobalSearchIndex, 1500);
+    setTimeout(invalidateGlobalSearchIndex, 5000);
+    window.addEventListener('resize', schedulePositionUpdate, {passive:true});
+    try{ if(window.visualViewport) window.visualViewport.addEventListener('resize', schedulePositionUpdate, {passive:true}); }catch(_){}
     window.addEventListener('popstate', handleHistoryBack);
 
     // Apertura iniziale della New Home: se l'app nasce da un deep link QR,

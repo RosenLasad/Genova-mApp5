@@ -4,7 +4,7 @@
   if(window.__GENOVA_SETTINGS_V2__) return;
   window.__GENOVA_SETTINGS_V2__ = true;
 
-  var APP_VERSION = '1.0.0';
+  var APP_VERSION = '1.1.0';
 
   var I18N = {
     it:{
