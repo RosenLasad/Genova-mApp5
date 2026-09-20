@@ -1,8 +1,8 @@
 /* QR visit state --------------------------------------------------------- */
 #map .leaflet-marker-icon.qr-azzurro-icon.qr-visit-unvisited {
   filter:
-    drop-shadow(0 0 2px rgba(220, 38, 38, .98))
-    drop-shadow(0 0 6px rgba(220, 38, 38, .82));
+    drop-shadow(0 0 2px rgba(14, 165, 233, .90))
+    drop-shadow(0 0 6px rgba(14, 165, 233, .68));
 }
 
 #map .leaflet-marker-icon.qr-azzurro-icon.qr-visit-visited {
@@ -41,8 +41,8 @@
 }
 
 #panel.qr-point-panel .qr-visit-toggle.is-unvisited {
-  border-color: rgba(220, 38, 38, .58);
-  background: rgba(220, 38, 38, .10);
+  border-color: rgba(14, 165, 233, .58);
+  background: rgba(14, 165, 233, .10);
 }
 
 #panel.qr-point-panel .qr-visit-toggle.is-visited {
@@ -55,8 +55,8 @@
   height: 8px;
   flex: 0 0 8px;
   border-radius: 999px;
-  background: #dc2626;
-  box-shadow: 0 0 0 2px rgba(220, 38, 38, .14);
+  background: #0ea5e9;
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, .14);
 }
 
 #panel.qr-point-panel .qr-visit-toggle.is-visited .qr-visit-status-dot {
