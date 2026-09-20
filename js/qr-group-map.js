@@ -351,6 +351,7 @@
   window.__qrToggleGroupOnly = showOnlyGroup;
   window.__qrClearGroupOnly = function () { clearGroupOnly(false); };
   window.__qrActiveGroupOnly = function () { return activeGroupId; };
+  window.__qrSyncGroupMapButtons = syncButtons;
 
   (function boot(attempt) {
     installMasterWrapper();

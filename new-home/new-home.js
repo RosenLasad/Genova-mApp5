@@ -715,10 +715,15 @@
           '<span>'+escapeHtml(point.name)+'</span><span aria-hidden="true">›</span></button></li>';
       }).join('');
       return '<section class="gm-new-home-qr-group" data-qr-group-panel="'+groupIndex+'">'+
-        '<button type="button" class="gm-new-home-qr-group-toggle" aria-expanded="true">'+
-          '<span><strong>'+escapeHtml(group.name)+'</strong><small>'+group.points.length+' '+(group.points.length === 1 ? 'punto' : 'punti')+'</small></span>'+ 
+        '<div class="gm-new-home-qr-group-head">'+
+          '<button type="button" class="gm-new-home-qr-group-toggle" aria-expanded="true">'+
+            '<strong>'+escapeHtml(group.name)+'</strong>'+
+          '</button>'+ 
+          '<button type="button" class="gm-new-home-qr-map-button qr-group-map-btn" data-qr-group-map="'+escapeHtml(group.id)+'" data-qr-group-index="'+groupIndex+'" aria-pressed="false" title="Mostra sulla mappa" aria-label="Mostra sulla mappa">'+
+            '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 5.5l5-2 7 2.5 5-2v14.5l-5 2-7-2.5-5 2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8.5 3.5v14.5M15.5 6v14.5" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".75"></path><circle cx="12" cy="11" r="2.2" fill="currentColor"></circle></svg>'+
+          '</button>'+ 
           '<span class="gm-new-home-qr-chevron" aria-hidden="true">⌄</span>'+ 
-        '</button>'+ 
+        '</div>'+ 
         '<ul class="gm-new-home-qr-points">'+points+'</ul>'+ 
       '</section>';
     }).join('');
@@ -748,6 +753,10 @@
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       list.hidden = !open;
     }
+
+    try{
+      if(typeof window.__qrSyncGroupMapButtons === 'function') window.__qrSyncGroupMapButtons();
+    }catch(_){}
 
     groupPanels.forEach(function(panel){
       panel.querySelector('.gm-new-home-qr-group-toggle').addEventListener('click', function(){
@@ -794,6 +803,23 @@
       summary.textContent = visibleGroups+' '+(visibleGroups === 1 ? 'zona' : 'zone')+' · '+visiblePoints+' punti QR';
       expandButton.setAttribute('aria-pressed', visiblePoints ? 'true' : 'false');
       expandButton.textContent = visiblePoints ? 'Chiudi tutti' : 'Espandi tutti';
+    });
+
+    scroll.querySelectorAll('.gm-new-home-qr-map-button[data-qr-group-map]').forEach(function(button){
+      button.addEventListener('click', function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        var groupId = button.getAttribute('data-qr-group-map') || '';
+        try{
+          if(typeof window.__qrToggleGroupOnly === 'function') window.__qrToggleGroupOnly(groupId);
+        }catch(_){}
+        try{
+          if(typeof window.__qrSyncGroupMapButtons === 'function') window.__qrSyncGroupMapButtons();
+        }catch(_){}
+        // L'azione serve a mostrare il quartiere sulla mappa: chiudiamo la New Home
+        // dopo aver attivato e centrato il relativo gruppo.
+        try{ setTimeout(function(){ close(); }, 40); }catch(_){}
+      });
     });
 
     scroll.querySelectorAll('.gm-new-home-qr-point').forEach(function(button){
