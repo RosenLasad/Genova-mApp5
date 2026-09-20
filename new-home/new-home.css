@@ -439,6 +439,157 @@ html.gm-new-home-open body{ overflow: hidden; }
   line-height:1.28;
 }
 
+
+/* Guida e istruzioni: capitoli richiudibili e collegamenti alla New Home. */
+.gm-new-home-guide-detail{ padding-bottom:18px; }
+.gm-new-home-guide{
+  width:min(800px, calc(100% - 28px));
+  margin:0 auto;
+  padding:2px 0 10px;
+}
+.gm-new-home-guide-intro{
+  margin:0 0 14px;
+  padding:16px 18px;
+  color:#27394a;
+  background:rgba(255,255,255,.9);
+  border:1px solid color-mix(in srgb, var(--gm-theme) 22%, #d6dce0);
+  border-radius:16px;
+  box-shadow:0 5px 15px rgba(30,45,60,.07);
+}
+.gm-new-home-guide-intro p{
+  margin:0 0 8px;
+  line-height:1.55;
+}
+.gm-new-home-guide-intro p:last-of-type{ margin-bottom:13px; }
+.gm-new-home-guide-expand{
+  min-height:40px;
+  padding:8px 14px;
+  color:#fff;
+  font-weight:800;
+  background:linear-gradient(145deg,var(--gm-theme),var(--gm-theme-dark));
+  border:1px solid color-mix(in srgb, var(--gm-theme-accent) 60%, #fff);
+  border-radius:11px;
+  cursor:pointer;
+  box-shadow:0 4px 11px color-mix(in srgb, var(--gm-theme-dark) 20%, transparent);
+}
+.gm-new-home-guide-expand:hover{ filter:brightness(1.06); }
+.gm-new-home-guide-chapters{ display:grid; gap:9px; }
+.gm-new-home-guide-chapter{
+  overflow:hidden;
+  background:rgba(255,255,255,.9);
+  border:1px solid color-mix(in srgb, var(--gm-theme) 22%, #d6dce0);
+  border-left:4px solid var(--gm-theme-accent);
+  border-radius:14px;
+  box-shadow:0 5px 15px rgba(30,45,60,.065);
+}
+.gm-new-home-guide-chapter > summary{
+  min-height:58px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:12px;
+  padding:13px 16px;
+  color:#1c3042;
+  font-size:1rem;
+  font-weight:850;
+  line-height:1.32;
+  list-style:none;
+  cursor:pointer;
+  user-select:none;
+}
+.gm-new-home-guide-chapter > summary::-webkit-details-marker{ display:none; }
+.gm-new-home-guide-chapter > summary:hover{
+  background:color-mix(in srgb, var(--gm-theme-pale) 35%, #fff);
+}
+.gm-new-home-guide-chevron{
+  color:var(--gm-theme);
+  font-size:1.3rem;
+  line-height:1;
+  transition:transform .18s ease;
+}
+.gm-new-home-guide-chapter[open] .gm-new-home-guide-chevron{ transform:rotate(180deg); }
+.gm-new-home-guide-chapter-body{
+  padding:4px 17px 17px;
+  color:#33485a;
+  border-top:1px solid color-mix(in srgb, var(--gm-theme) 12%, #e7ebee);
+}
+.gm-new-home-guide-chapter-body > p{
+  margin:12px 0;
+  line-height:1.58;
+}
+.gm-new-home-guide-chapter-intro{
+  color:#526476;
+  font-weight:600;
+}
+.gm-new-home-guide-section{
+  padding:14px 0 3px;
+  border-top:1px solid #e7ebee;
+}
+.gm-new-home-guide-section:first-of-type{ margin-top:4px; }
+.gm-new-home-guide-section-title{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:7px;
+}
+.gm-new-home-guide-section h5{
+  margin:0;
+  color:#203649;
+  font-size:1rem;
+}
+.gm-new-home-guide-section p{
+  margin:6px 0;
+  line-height:1.58;
+}
+.gm-new-home-guide-section ul{
+  margin:8px 0 9px;
+  padding-left:22px;
+}
+.gm-new-home-guide-section li{
+  margin:5px 0;
+  line-height:1.48;
+}
+.gm-new-home-guide-section-link{
+  min-width:0;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:5px 9px;
+  margin-left:-9px;
+  color:var(--gm-theme-dark);
+  font:inherit;
+  font-size:1rem;
+  font-weight:850;
+  text-align:left;
+  background:transparent;
+  border:0;
+  border-radius:9px;
+  cursor:pointer;
+}
+.gm-new-home-guide-section-link:hover{
+  color:var(--gm-theme);
+  background:color-mix(in srgb, var(--gm-theme-pale) 58%, transparent);
+}
+.gm-new-home-guide-link-arrow{
+  color:var(--gm-theme);
+  font-size:1.25rem;
+  font-weight:900;
+}
+.gm-new-home-guide-badge{
+  display:inline-flex;
+  align-items:center;
+  min-height:24px;
+  padding:3px 8px;
+  color:var(--gm-theme-dark);
+  font-size:.72rem;
+  font-weight:850;
+  letter-spacing:.02em;
+  background:color-mix(in srgb, var(--gm-theme-pale) 76%, #fff);
+  border:1px solid color-mix(in srgb, var(--gm-theme) 24%, #d5dce1);
+  border-radius:999px;
+}
+
 /* Extra > Giochi: catalogo delle esperienze interattive. */
 .gm-new-home-game-grid{
   display:grid;
@@ -975,6 +1126,10 @@ button.gm-new-home-layer-copy:hover strong{ color:var(--gm-theme-dark); text-dec
   .gm-new-home-card p{ max-width:92%; }
   .gm-new-home-qr-tools{ grid-template-columns:1fr; }
   .gm-new-home-qr-expand{ min-height:40px; }
+  .gm-new-home-guide{ width:100%; }
+  .gm-new-home-guide-intro{ padding:14px; border-radius:14px; }
+  .gm-new-home-guide-chapter > summary{ min-height:54px; padding:12px 13px; }
+  .gm-new-home-guide-chapter-body{ padding:3px 14px 15px; }
 }
 
 @media (hover:hover) and (pointer:fine){
@@ -1027,6 +1182,15 @@ button.gm-new-home-layer-copy:hover strong{ color:var(--gm-theme-dark); text-dec
 .gm-new-home-overlay:dir(rtl) .gm-new-home-qr-point span:last-child{
   transform:scaleX(-1);
 }
+
+
+.gm-new-home-overlay:dir(rtl) .gm-new-home-guide-chapter{
+  border-left:1px solid color-mix(in srgb, var(--gm-theme) 22%, #d6dce0);
+  border-right:4px solid var(--gm-theme-accent);
+}
+.gm-new-home-overlay:dir(rtl) .gm-new-home-guide-section-link{ margin-left:0; margin-right:-9px; text-align:right; }
+.gm-new-home-overlay:dir(rtl) .gm-new-home-guide-link-arrow{ transform:scaleX(-1); }
+.gm-new-home-overlay:dir(rtl) .gm-new-home-guide-section ul{ padding-left:0; padding-right:22px; }
 
 @media (max-height: 620px) and (orientation: landscape){
   .gm-new-home-overlay{ padding-bottom: 54px; }

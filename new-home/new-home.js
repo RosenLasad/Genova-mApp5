@@ -84,7 +84,7 @@
     {
       key:'guide', theme:'guide', wide:true, title:'Guida e istruzioni',
       description:'Scopri come usare Genova mApp e tutte le sue funzioni.',
-      categories:[{title:'Apri la guida', note:'Istruzioni complete di Genova mApp', action:'guide'}]
+      categories:[]
     },
     {
       key:'heritage', theme:'heritage', wide:true, title:'Patrimonio storico',
@@ -173,11 +173,554 @@
     }
   ];
 
+  var GUIDE_CHAPTERS = [
+  {
+    "title": "1. Per iniziare con Genova mApp",
+    "intro": [
+      "Genova mApp è una mappa interattiva dedicata alla scoperta di Genova. Attraverso la mappa puoi esplorare luoghi storici, musei, chiese, palazzi, fortificazioni, parchi, cinema, teatri, locali, trasporti, percorsi, contenuti multimediali e molte altre informazioni sulla città."
+    ],
+    "sections": [
+      {
+        "title": "La mappa",
+        "p": [
+          "La mappa è il cuore di Genova mApp.",
+          "Puoi spostarla trascinandola con il dito o con il mouse e puoi ingrandire o ridurre la visualizzazione per esplorare le diverse zone della città.",
+          "Sulla mappa vengono mostrati punti, percorsi e altri elementi corrispondenti ai contenuti attivati."
+        ]
+      },
+      {
+        "title": "Aprire la New Home",
+        "p": [
+          "Premendo il logo Genova mApp nella barra superiore puoi aprire la New Home, la schermata principale dalla quale accedere alle diverse aree dell’app.",
+          "Qui i contenuti sono organizzati per argomento, in modo da aiutarti a trovare rapidamente ciò che stai cercando."
+        ]
+      },
+      {
+        "title": "Aprire un luogo",
+        "p": [
+          "Quando sulla mappa è visibile un punto di interesse, toccalo o cliccaci sopra per visualizzarne le informazioni.",
+          "A seconda del contenuto potrai trovare descrizioni, immagini, posizione, collegamenti, contenuti multimediali o altre funzioni disponibili."
+        ]
+      },
+      {
+        "title": "Come orientarsi nell’interfaccia",
+        "p": [
+          "Gli strumenti principali di Genova mApp sono distribuiti in diverse aree dello schermo:"
+        ],
+        "bullets": [
+          "nella parte superiore trovi i comandi generali dell’app;",
+          "sul bordo destro trovi i pulsanti per visualizzare categorie e contenuti sulla mappa;",
+          "nella parte inferiore trovi alcuni strumenti della mappa;",
+          "in basso a sinistra trovi il comando per cambiare lingua;",
+          "il Taccuino permette di gestire preferiti, percorsi e note."
+        ],
+        "after": [
+          "Nei capitoli successivi trovi una spiegazione dettagliata di ogni area."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "2. New Home – Scopri Genova",
+    "intro": [
+      "La New Home raccoglie le principali sezioni di Genova mApp.",
+      "Puoi aprirla in qualsiasi momento premendo il logo Genova mApp nella barra superiore. Seleziona una categoria per visualizzare le relative funzioni e sottocategorie."
+    ],
+    "sections": [
+      {
+        "title": "Guida e istruzioni",
+        "p": [
+          "Da questa sezione puoi consultare la guida completa dell’app e scoprire il funzionamento dei principali strumenti di Genova mApp."
+        ]
+      },
+      {
+        "title": "Patrimonio storico",
+        "linkKey": "heritage",
+        "p": [
+          "Raccoglie alcune delle principali categorie dedicate alla storia e al patrimonio della città."
+        ],
+        "bullets": [
+          "Forti — fortificazioni e sistemi difensivi.",
+          "Musei — musei e strutture culturali presenti in città.",
+          "Chiese — chiese, basiliche, santuari e altri edifici religiosi.",
+          "Palazzi — palazzi storici, ville e altri edifici di particolare interesse storico e architettonico."
+        ]
+      },
+      {
+        "title": "Intrattenimento",
+        "linkKey": "entertainment",
+        "p": [
+          "Raccoglie luoghi e attività dedicati al tempo libero e alla cultura."
+        ],
+        "bullets": [
+          "Mostre — spazi espositivi, mostre e strutture dedicate alle esposizioni.",
+          "Teatri — i principali teatri della città.",
+          "Cinema — le sale cinematografiche presenti a Genova.",
+          "Parchi e piazze — parchi, giardini, aree verdi e altri spazi pubblici.",
+          "Sport — impianti, strutture e luoghi dedicati alle attività sportive."
+        ]
+      },
+      {
+        "title": "Come muoversi",
+        "linkKey": "transport",
+        "p": [
+          "Raccoglie le principali informazioni e i servizi relativi ai trasporti. Puoi consultare le diverse modalità di spostamento e visualizzare sulla mappa le informazioni disponibili."
+        ],
+        "bullets": [
+          "Autobus.",
+          "Metropolitana.",
+          "Treni.",
+          "Funicolari, ascensori e cremagliere.",
+          "Navi e battelli.",
+          "Aereo."
+        ]
+      },
+      {
+        "title": "Mura, acquedotti e percorsi",
+        "linkKey": "routes",
+        "p": [
+          "Permette di esplorare elementi che si sviluppano attraverso diverse zone della città."
+        ],
+        "bullets": [
+          "Mura storiche — le diverse cinte murarie che hanno caratterizzato la storia di Genova.",
+          "Acquedotti — percorsi e punti dedicati agli acquedotti storici della città.",
+          "Percorsi consigliati — itinerari attraverso luoghi, quartieri o temi specifici, visualizzabili direttamente sulla mappa."
+        ]
+      },
+      {
+        "title": "Mangiare e dormire",
+        "linkKey": "food",
+        "p": [
+          "Raccoglie attività e strutture utili durante la visita della città, visualizzabili direttamente sulla mappa."
+        ],
+        "bullets": [
+          "Locali.",
+          "Ristoranti.",
+          "Take-away.",
+          "Alberghi e B&B."
+        ]
+      },
+      {
+        "title": "Multimedia",
+        "linkKey": "media",
+        "p": [
+          "Qui trovi contenuti che permettono di scoprire Genova attraverso immagini, video e audio."
+        ],
+        "bullets": [
+          "Punti QR — contenuti collegati a luoghi e aree della città.",
+          "MiniDoc — brevi documentari dedicati alla storia, ai luoghi e alle trasformazioni di Genova.",
+          "Audioguide — contenuti audio dedicati alla scoperta della città.",
+          "Videoguide — contenuti video dedicati a luoghi, percorsi e argomenti specifici."
+        ]
+      },
+      {
+        "title": "Eventi, blog e contatti",
+        "linkKey": "community",
+        "p": [],
+        "bullets": [
+          "Eventi — appuntamenti, manifestazioni e iniziative presenti in città.",
+          "Blog — spazio dedicato a contenuti, approfondimenti e conversazioni legate a Genova e alla sua comunità.",
+          "Contatti — informazioni per comunicare con Genova mApp."
+        ]
+      },
+      {
+        "title": "Extra",
+        "linkKey": "extra",
+        "p": [],
+        "bullets": [
+          "Giochi — giochi dedicati a Genova, come A Zena – Trivial, e altre esperienze interattive.",
+          "Premi — iniziative, obiettivi e vantaggi disponibili per gli utenti.",
+          "Shop — prodotti e contenuti legati a Genova e a Genova mApp."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "3. I comandi in alto",
+    "intro": [
+      "Nella parte superiore dello schermo trovi i principali comandi generali di Genova mApp. Alcuni elementi possono adattarsi o cambiare posizione in base alle dimensioni dello schermo."
+    ],
+    "sections": [
+      {
+        "title": "Genova mApp / Home",
+        "p": [
+          "Premendo il logo Genova mApp puoi aprire la New Home. Puoi utilizzarlo in qualsiasi momento per tornare rapidamente all’elenco principale delle sezioni dell’app."
+        ]
+      },
+      {
+        "title": "Cerca",
+        "p": [
+          "La funzione Cerca permette di trovare rapidamente luoghi e contenuti presenti in Genova mApp senza doverli individuare manualmente sulla mappa.",
+          "Inserisci il nome o una parola relativa a ciò che stai cercando e seleziona uno dei risultati disponibili."
+        ]
+      },
+      {
+        "title": "Profilo e accesso",
+        "p": [
+          "Quando disponibili, le funzioni relative al profilo permettono di accedere al proprio account e ai servizi personali collegati a Genova mApp. Alcune funzioni possono richiedere l’accesso con il proprio account."
+        ]
+      },
+      {
+        "title": "Abbonamento",
+        "p": [
+          "La sezione Abbonamento è dedicata alla gestione dei servizi e dei vantaggi disponibili per gli utenti abbonati.",
+          "Alcune funzioni relative all’abbonamento sono ancora in fase di completamento e saranno rese disponibili progressivamente."
+        ],
+        "comingSoon": true
+      },
+      {
+        "title": "Impostazioni",
+        "p": [
+          "Le Impostazioni permettono di personalizzare alcuni aspetti dell’app e di accedere a funzioni di servizio."
+        ],
+        "bullets": [
+          "Benvenuto.",
+          "Guida e istruzioni.",
+          "Contatti.",
+          "Dimensione del testo.",
+          "Altre preferenze dell’app, quando disponibili."
+        ]
+      },
+      {
+        "title": "Installa Genova mApp",
+        "p": [
+          "Quando questa funzione è disponibile sul dispositivo utilizzato, puoi installare Genova mApp per accedervi più facilmente, in modo simile a una normale applicazione.",
+          "La disponibilità e la modalità di installazione possono dipendere dal dispositivo e dal browser utilizzato."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "4. Pulsanti bordo destro",
+    "intro": [
+      "Sul bordo destro della mappa trovi un gruppo di pulsanti dedicati alla visualizzazione dei diversi tipi di contenuti. Questi pulsanti permettono di scegliere rapidamente ciò che vuoi vedere sulla mappa.",
+      "Selezionando una categoria puoi accedere alle relative sottocategorie oppure attivare e disattivare i contenuti disponibili."
+    ],
+    "sections": [
+      {
+        "title": "Preferiti",
+        "p": [
+          "Permette di visualizzare sulla mappa i luoghi che hai precedentemente salvato tra i tuoi Preferiti. È utile per ritrovare rapidamente i punti che ti interessano senza doverli cercare nuovamente."
+        ]
+      },
+      {
+        "title": "Trasporti",
+        "p": [
+          "Raccoglie i principali sistemi di trasporto disponibili a Genova. Puoi attivare soltanto ciò che ti interessa per mantenere la mappa più semplice e leggibile."
+        ],
+        "bullets": [
+          "Autobus.",
+          "Treni.",
+          "Metropolitana.",
+          "Funicolari, ascensori e cremagliere.",
+          "Navi e battelli.",
+          "Aereo."
+        ]
+      },
+      {
+        "title": "Passato",
+        "p": [
+          "La sezione dedicata al passato raccoglie numerosi contenuti storici di Genova. Utilizzando le sottocategorie puoi decidere quali elementi mostrare sulla mappa."
+        ],
+        "bullets": [
+          "Forti.",
+          "Musei.",
+          "Chiese.",
+          "Palazzi e ville.",
+          "Mura storiche.",
+          "Acquedotti.",
+          "Contenuti storici e multimediali."
+        ]
+      },
+      {
+        "title": "Luoghi e intrattenimento",
+        "p": [
+          "Permette di visualizzare luoghi dedicati alla cultura, al tempo libero e alle attività in città."
+        ],
+        "bullets": [
+          "Mostre.",
+          "Teatri.",
+          "Cinema.",
+          "Parchi e piazze.",
+          "Sport."
+        ]
+      },
+      {
+        "title": "Mangiare e dormire",
+        "p": [
+          "Permette di mostrare sulla mappa attività e strutture dedicate alla ristorazione e al soggiorno."
+        ],
+        "bullets": [
+          "Locali.",
+          "Ristoranti.",
+          "Take-away.",
+          "Alberghi e B&B."
+        ]
+      },
+      {
+        "title": "Percorsi",
+        "p": [
+          "Permette di accedere ai percorsi disponibili e di visualizzarli sulla mappa.",
+          "Un percorso può essere composto da diversi punti e da un itinerario che li collega. Puoi utilizzare i percorsi proposti da Genova mApp oppure, attraverso il Taccuino, creare e organizzare i tuoi itinerari personali."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "5. Gli strumenti della mappa",
+    "intro": [
+      "Nella parte inferiore dello schermo trovi diversi strumenti utili durante l’esplorazione della mappa."
+    ],
+    "sections": [
+      {
+        "title": "Strumenti in basso al centro",
+        "p": []
+      },
+      {
+        "title": "Punti QR",
+        "p": [
+          "Il comando dedicato ai Punti QR permette di mostrare o nascondere sulla mappa i punti collegati ai contenuti QR di Genova mApp. Toccando un punto puoi accedere ai relativi contenuti."
+        ]
+      },
+      {
+        "title": "Sono qui / GPS",
+        "p": [
+          "Questo comando utilizza, quando autorizzato, la posizione fornita dal dispositivo per mostrarti dove ti trovi sulla mappa.",
+          "Può essere utile mentre visiti la città per confrontare la tua posizione con i luoghi e i percorsi presenti in Genova mApp. La precisione dipende dal dispositivo, dal segnale disponibile e dalle autorizzazioni concesse."
+        ]
+      },
+      {
+        "title": "Scanner QR",
+        "p": [
+          "Lo Scanner QR permette di leggere i QR Code compatibili utilizzando la fotocamera del dispositivo. Quando richiesto, sarà necessario autorizzare l’accesso alla fotocamera.",
+          "Dopo la scansione, Genova mApp può aprire direttamente il contenuto associato al QR Code."
+        ]
+      },
+      {
+        "title": "Strumenti in basso a destra",
+        "p": []
+      },
+      {
+        "title": "Zoom + e −",
+        "p": [
+          "I pulsanti di zoom permettono di ingrandire o ridurre rapidamente la visualizzazione della mappa. Puoi ottenere lo stesso risultato anche utilizzando i normali gesti dello schermo o i controlli del mouse, quando disponibili."
+        ]
+      },
+      {
+        "title": "Vista iniziale",
+        "p": [
+          "Questo comando riporta rapidamente la mappa alla visualizzazione iniziale prevista da Genova mApp. È utile quando ti sei spostato molto sulla mappa e vuoi tornare alla vista generale della città."
+        ]
+      },
+      {
+        "title": "Vista e rotazione 3D",
+        "p": [
+          "Quando la visualizzazione utilizzata lo consente, Genova mApp permette di modificare l’inclinazione e l’orientamento della mappa. La vista tridimensionale può aiutare a comprendere meglio il territorio, le alture e la disposizione urbana di Genova."
+        ]
+      },
+      {
+        "title": "Joystick",
+        "p": [
+          "Quando disponibile, il joystick permette di controllare in maniera più immediata alcuni movimenti e orientamenti della visualizzazione della mappa. Le funzioni disponibili possono variare in base alla modalità di visualizzazione utilizzata."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "6. Taccuino",
+    "intro": [
+      "Il Taccuino è lo spazio personale di Genova mApp. Puoi utilizzarlo per conservare i luoghi che ti interessano, organizzare percorsi e creare note.",
+      "In questo modo Genova mApp può diventare non soltanto uno strumento per esplorare la città, ma anche un supporto per organizzare la tua visita."
+    ],
+    "sections": [
+      {
+        "title": "Preferiti",
+        "p": [
+          "Quando trovi un luogo che ti interessa puoi salvarlo tra i Preferiti. I luoghi salvati possono essere consultati successivamente dal Taccuino e mostrati nuovamente sulla mappa.",
+          "Puoi utilizzare i Preferiti, per esempio, per preparare in anticipo un elenco di luoghi che desideri visitare."
+        ]
+      },
+      {
+        "title": "Percorsi",
+        "p": [
+          "La sezione Percorsi permette di organizzare diversi luoghi all’interno di un itinerario personale. Puoi creare un nuovo percorso, assegnargli un nome e aggiungere i punti che desideri visitare."
+        ],
+        "bullets": [
+          "Aprire un percorso.",
+          "Visualizzarlo sulla mappa.",
+          "Modificarne i contenuti.",
+          "Duplicarlo.",
+          "Eliminarlo quando non serve più."
+        ],
+        "after": [
+          "Questa funzione è particolarmente utile per preparare itinerari personalizzati attraverso Genova. Puoi, per esempio, creare un percorso dedicato ai palazzi storici, ai musei, ai forti oppure semplicemente ai luoghi che vuoi visitare durante una giornata."
+        ]
+      },
+      {
+        "title": "Note",
+        "p": [
+          "La sezione Note permette di conservare annotazioni personali. Puoi utilizzarla per ricordare informazioni, idee, luoghi da visitare o qualsiasi altro appunto utile durante l’utilizzo di Genova mApp."
+        ]
+      },
+      {
+        "title": "Preferiti, percorsi e mappa",
+        "p": [
+          "Taccuino e mappa lavorano insieme. Quando richiesto puoi visualizzare sulla mappa i contenuti che hai salvato, ritrovando più facilmente luoghi e percorsi personali.",
+          "Il Taccuino rimane quindi il punto di riferimento per organizzare ciò che hai scoperto attraverso Genova mApp."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "7. Lingue e accessibilità",
+    "intro": [
+      "Genova mApp è progettata per essere utilizzata in più lingue e comprende alcune funzioni che permettono di adattare la lettura dei contenuti alle proprie esigenze."
+    ],
+    "sections": [
+      {
+        "title": "Cambiare lingua",
+        "p": [
+          "Il pulsante Lingue, situato nella parte inferiore sinistra dell’interfaccia, permette di scegliere la lingua dell’app."
+        ],
+        "bullets": [
+          "Italiano.",
+          "English.",
+          "Español.",
+          "Français.",
+          "العربية.",
+          "Русский.",
+          "中文.",
+          "Ligure."
+        ],
+        "after": [
+          "Seleziona la lingua desiderata per modificare i contenuti disponibili."
+        ]
+      },
+      {
+        "title": "Traduzione dei contenuti",
+        "p": [
+          "Il cambio della lingua viene applicato ai menu, ai comandi e ai contenuti per i quali è disponibile una traduzione.",
+          "Alcuni contenuti particolari o provenienti da fonti esterne potrebbero non essere disponibili immediatamente in tutte le lingue."
+        ]
+      },
+      {
+        "title": "Dimensione del testo",
+        "p": [
+          "Attraverso le Impostazioni puoi modificare la dimensione del testo scegliendo la soluzione più comoda per la lettura.",
+          "Quando disponibili, puoi utilizzare le diverse dimensioni previste dall’app, per esempio Piccolo, Medio e Grande. La modifica permette di rendere più leggibili testi, descrizioni e altri elementi dell’interfaccia."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "8. QR, multimedia ed eventi",
+    "intro": [
+      "Genova mApp contiene diversi strumenti per scoprire la città anche attraverso fotografie, video, audio e contenuti interattivi."
+    ],
+    "sections": [
+      {
+        "title": "Punti QR",
+        "p": [
+          "I Punti QR collegano determinati luoghi della città a contenuti dedicati. Puoi visualizzarli sulla mappa e aprire il punto che ti interessa per accedere alle informazioni e ai contenuti disponibili.",
+          "Alcuni QR Code possono essere presenti anche fisicamente sul territorio o all’interno di materiali collegati a Genova mApp."
+        ]
+      },
+      {
+        "title": "Genova ieri e oggi / Confronta",
+        "p": [
+          "Alcuni contenuti permettono di confrontare Genova nel passato con la città di oggi. Attraverso fotografie storiche, immagini contemporanee e altri materiali puoi osservare come strade, piazze, edifici, quartieri e paesaggi siano cambiati nel tempo.",
+          "Questa funzione permette di utilizzare la mappa anche come strumento per leggere l’evoluzione storica della città."
+        ]
+      },
+      {
+        "title": "MiniDoc",
+        "p": [
+          "I MiniDoc sono brevi contenuti video dedicati a luoghi, avvenimenti, personaggi e trasformazioni della storia di Genova. Quando un MiniDoc è disponibile puoi aprirlo dalla relativa sezione o dal punto associato."
+        ]
+      },
+      {
+        "title": "Audioguide",
+        "p": [
+          "Le Audioguide permettono di ascoltare contenuti dedicati ai luoghi e agli argomenti presenti nell’app. Sono pensate per accompagnare l’esplorazione della città anche mentre ci si trova sul posto."
+        ]
+      },
+      {
+        "title": "Videoguide",
+        "p": [
+          "Le Videoguide utilizzano immagini e video per raccontare luoghi, percorsi e argomenti legati a Genova. Quando disponibili possono essere aperte direttamente dai relativi contenuti dell’app."
+        ]
+      },
+      {
+        "title": "Eventi",
+        "p": [
+          "La sezione Eventi permette di scoprire appuntamenti, spettacoli, manifestazioni, incontri e altre iniziative presenti a Genova.",
+          "Puoi consultare gli eventi disponibili e aprire quelli che ti interessano per visualizzarne le informazioni. Quando previsto, gli eventi possono essere organizzati o filtrati per data, periodo o categoria.",
+          "Puoi inoltre salvare tra i Preferiti gli eventi che vuoi ricordare o consultare nuovamente."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "9. Community, servizi ed Extra",
+    "intro": [
+      "Genova mApp comprende anche funzioni pensate per ampliare l’esperienza oltre la semplice consultazione della mappa.",
+      "Alcune di queste sezioni sono ancora in fase di sviluppo e verranno completate progressivamente."
+    ],
+    "sections": [
+      {
+        "title": "Blog",
+        "p": [
+          "Il Blog sarà uno spazio dedicato a Genova, alle sue storie, ai luoghi, agli eventi e agli argomenti collegati alla città. Potrà ospitare approfondimenti, contenuti e altre forme di partecipazione della comunità."
+        ],
+        "comingSoon": true
+      },
+      {
+        "title": "Contatti",
+        "p": [
+          "La sezione Contatti permette di trovare i riferimenti disponibili per comunicare con Genova mApp. Puoi utilizzarla per richieste, informazioni, segnalazioni o altre comunicazioni relative al progetto."
+        ]
+      },
+      {
+        "title": "Giochi",
+        "p": [
+          "La sezione Giochi raccoglie esperienze interattive dedicate a Genova. Tra i giochi disponibili puoi trovare A Zena – Trivial, insieme agli altri giochi che verranno aggiunti nel tempo.",
+          "I giochi rappresentano un modo diverso per conoscere Genova, mettendo alla prova le proprie conoscenze e scoprendo nuove curiosità."
+        ]
+      },
+      {
+        "title": "Premi",
+        "p": [
+          "La sezione Premi sarà dedicata alle iniziative e ai vantaggi collegati alle attività svolte attraverso Genova mApp. Le modalità di funzionamento e i premi disponibili verranno indicati direttamente nell’app quando il servizio sarà attivo."
+        ],
+        "comingSoon": true
+      },
+      {
+        "title": "Shop",
+        "p": [
+          "Lo Shop sarà uno spazio dedicato a prodotti, pubblicazioni e altri contenuti collegati a Genova e a Genova mApp. I prodotti disponibili e le relative modalità di acquisto saranno indicati nella sezione dedicata."
+        ],
+        "comingSoon": true
+      },
+      {
+        "title": "Abbonamento e vantaggi",
+        "p": [
+          "Genova mApp prevede una sezione dedicata all’Abbonamento, attraverso la quale sarà possibile accedere ai servizi e ai vantaggi previsti per gli utenti abbonati.",
+          "Le informazioni relative ai diversi piani, alla durata e alle funzioni comprese saranno mostrate direttamente all’interno dell’app. Alcune parti del sistema di abbonamento sono ancora in fase di completamento e saranno rese disponibili progressivamente.",
+          "Genova mApp continuerà inoltre a crescere nel tempo con nuovi luoghi, percorsi, contenuti e strumenti."
+        ]
+      }
+    ]
+  }
+];
+
   var overlay, scroll, title, eyebrow, backButton, closeButton;
   var lastOpener = null;
   var currentView = 'home';
   var currentSection = null;
   var currentCategory = null;
+  var guideExpanded = [];
+  var guideScrollTop = 0;
+  var guideReturnActive = false;
   var currentAqueduct = null;
   var currentRoute = null;
   var historyDepth = 0;
@@ -243,6 +786,7 @@
 
   function renderHome(){
     currentView = 'home';
+    guideReturnActive = false;
     currentSection = null;
     currentAqueduct = null;
     currentRoute = null;
@@ -303,7 +847,132 @@
     scroll.scrollTop = 0;
   }
 
+  function captureGuideState(){
+    if(!scroll || currentView !== 'guide') return;
+    guideExpanded = Array.prototype.slice.call(scroll.querySelectorAll('.gm-new-home-guide-chapter')).map(function(chapter){
+      return !!chapter.open;
+    });
+    guideScrollTop = scroll.scrollTop || 0;
+  }
+
+  function guideTextBlocks(values, className){
+    return (values || []).map(function(value){
+      return '<p'+(className ? ' class="'+className+'"' : '')+'>'+escapeHtml(value)+'</p>';
+    }).join('');
+  }
+
+  function guideSectionHtml(item){
+    var heading;
+    if(item.linkKey){
+      heading = '<button type="button" class="gm-new-home-guide-section-link" data-guide-section="'+escapeHtml(item.linkKey)+'">'+
+        '<span>'+escapeHtml(item.title)+'</span><span class="gm-new-home-guide-link-arrow" aria-hidden="true">›</span>'+
+      '</button>';
+    }else{
+      heading = '<h5>'+escapeHtml(item.title)+'</h5>';
+    }
+    var badge = item.comingSoon ? '<span class="gm-new-home-guide-badge">In arrivo</span>' : '';
+    var bullets = item.bullets && item.bullets.length
+      ? '<ul>'+item.bullets.map(function(value){ return '<li>'+escapeHtml(value)+'</li>'; }).join('')+'</ul>'
+      : '';
+    return ''+
+      '<section class="gm-new-home-guide-section'+(item.linkKey?' has-link':'')+'">'+
+      '  <div class="gm-new-home-guide-section-title">'+heading+badge+'</div>'+
+      guideTextBlocks(item.p)+
+      bullets+
+      guideTextBlocks(item.after)+
+      '</section>';
+  }
+
+  function renderGuide(section, options){
+    options = options || {};
+    if(!options.preserve){
+      guideExpanded = [];
+      guideScrollTop = 0;
+    }
+    currentView = 'guide';
+    currentSection = section;
+    currentCategory = null;
+    currentAqueduct = null;
+    currentRoute = null;
+    overlay.setAttribute('dir', 'ltr');
+    applyTheme(section);
+    applyView(currentView);
+    title.textContent = section.title;
+    eyebrow.textContent = 'Esplora';
+    backButton.hidden = false;
+
+    var chapters = GUIDE_CHAPTERS.map(function(chapter, index){
+      var open = !!guideExpanded[index];
+      return ''+
+        '<details class="gm-new-home-guide-chapter" data-guide-chapter="'+index+'"'+(open?' open':'')+'>'+
+        '  <summary>'+
+        '    <span>'+escapeHtml(chapter.title)+'</span>'+
+        '    <span class="gm-new-home-guide-chevron" aria-hidden="true">⌄</span>'+
+        '  </summary>'+
+        '  <div class="gm-new-home-guide-chapter-body">'+
+             guideTextBlocks(chapter.intro, 'gm-new-home-guide-chapter-intro')+
+             (chapter.sections || []).map(guideSectionHtml).join('')+
+        '  </div>'+
+        '</details>';
+    }).join('');
+
+    scroll.innerHTML = ''+
+      '<div class="gm-new-home-detail gm-new-home-guide-detail">'+
+        detailHeadHtml(section, null)+
+      '  <div class="gm-new-home-guide">'+
+      '    <div class="gm-new-home-guide-intro">'+
+      '      <p>Qui trovi tutto ciò che serve per utilizzare Genova mApp: dalla mappa alle categorie, dal Taccuino ai contenuti multimediali.</p>'+
+      '      <p>Apri il capitolo che ti interessa oppure utilizza il comando qui sotto per visualizzare l’intera guida.</p>'+
+      '      <button type="button" class="gm-new-home-guide-expand" data-guide-expand-all aria-pressed="false">Espandi tutti</button>'+
+      '    </div>'+
+      '    <div class="gm-new-home-guide-chapters">'+chapters+'</div>'+
+      '  </div>'+
+      '</div>';
+
+    var chapterNodes = Array.prototype.slice.call(scroll.querySelectorAll('.gm-new-home-guide-chapter'));
+    var expandButton = scroll.querySelector('[data-guide-expand-all]');
+
+    function updateExpandButton(){
+      var allOpen = chapterNodes.length > 0 && chapterNodes.every(function(chapter){ return chapter.open; });
+      if(expandButton){
+        expandButton.setAttribute('aria-pressed', allOpen ? 'true' : 'false');
+        expandButton.textContent = allOpen ? 'Chiudi tutti' : 'Espandi tutti';
+      }
+      guideExpanded = chapterNodes.map(function(chapter){ return !!chapter.open; });
+    }
+
+    chapterNodes.forEach(function(chapter){
+      chapter.addEventListener('toggle', updateExpandButton);
+    });
+
+    if(expandButton){
+      expandButton.addEventListener('click', function(){
+        var shouldOpen = !chapterNodes.length || !chapterNodes.every(function(chapter){ return chapter.open; });
+        chapterNodes.forEach(function(chapter){ chapter.open = shouldOpen; });
+        updateExpandButton();
+      });
+    }
+
+    scroll.querySelectorAll('[data-guide-section]').forEach(function(button){
+      button.addEventListener('click', function(){
+        var target = SECTIONS.find(function(item){ return item.key === button.getAttribute('data-guide-section'); });
+        if(!target) return;
+        captureGuideState();
+        guideReturnActive = true;
+        renderSection(target);
+        pushNewHomeLevel();
+      });
+    });
+
+    updateExpandButton();
+    scroll.scrollTop = options.preserve ? guideScrollTop : 0;
+  }
+
   function renderSection(section){
+    if(section && section.key === 'guide'){
+      renderGuide(section, {preserve:false});
+      return;
+    }
     currentView = 'section';
     currentSection = section;
     currentAqueduct = null;
@@ -1981,6 +2650,13 @@
     else if(currentView === 'route-detail' && currentSection && currentCategory){ renderHistoryCategory(currentSection, currentCategory); }
     else if(currentView === 'events-favorites' && currentSection && currentCategory){ renderEventsCategory(currentSection, currentCategory); }
     else if((currentView === 'category' || currentView === 'qr-category' || currentView === 'games-category' || currentView === 'events-category') && currentSection){ renderSection(currentSection); }
+    else if(currentView === 'section' && guideReturnActive){
+      var guideSection = SECTIONS.find(function(item){ return item.key === 'guide'; });
+      guideReturnActive = false;
+      if(guideSection) renderGuide(guideSection, {preserve:true});
+      else renderHome();
+    }
+    else if(currentView === 'guide'){ renderHome(); }
     else renderHome();
   }
 
