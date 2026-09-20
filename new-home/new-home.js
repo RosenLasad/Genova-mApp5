@@ -112,14 +112,22 @@
     {
       key:'transport', theme:'move', title:'Come muoversi',
       sideButton:'#qt-cat-trasporti-btn', sideLabel:'Apri Trasporti sulla mappa',
-      description:'Trasporti pubblici e collegamenti per spostarsi a Genova e sul territorio.',
+      description:'Trasporti, collegamenti e servizi per spostarsi a Genova e sul territorio.',
+      categoryGroups:[
+        {key:'public', title:'Trasporto pubblico e collegamenti'},
+        {key:'rentals', title:'Noleggi'}
+      ],
       categories:[
-        {title:'Bus', note:'Fermate e rete urbana AMT', listId:'fav-list-bus', searchPlaceholder:'Cerca una linea, una fermata o una destinazione', mapIcon:'icons/come-muoversi/autobus.svg', mapToggle:'.qt-bus'},
-        {title:'Metropolitana', note:'Stazioni della metropolitana', listId:'fav-list-metro', searchPlaceholder:'Cerca una stazione o una fermata', mapIcon:'icons/come-muoversi/metropolitana.svg', mapToggle:'.qt-metro'},
-        {title:'Treni', note:'Stazioni ferroviarie', listId:'fav-list-train', searchPlaceholder:'Cerca una stazione', mapIcon:'icons/come-muoversi/treni.svg', mapToggle:'.qt-train'},
-        {title:'Funicolari e ascensori', note:'Impianti verticali e cremagliere', listId:'fav-list-funi', searchPlaceholder:'Cerca un impianto o una fermata', mapIcon:'icons/come-muoversi/impianti-verticali.svg', mapToggle:'.qt-funi'},
-        {title:'Navi e battelli', note:'Navebus e collegamenti marittimi', listId:'fav-list-mare', searchPlaceholder:'Cerca una linea, un approdo o una destinazione', mapIcon:'icons/come-muoversi/navi-battelli.svg', mapToggle:'.qt-mare'},
-        {title:'Aereo', note:'Aeroporto e collegamenti', listId:'fav-list-aereo', searchPlaceholder:'Cerca un collegamento o una destinazione', mapIcon:'icons/come-muoversi/aereo.svg', mapToggle:'.qt-aereo'}
+        {title:'Bus', note:'Fermate e rete urbana AMT', group:'public', listId:'fav-list-bus', searchPlaceholder:'Cerca una linea, una fermata o una destinazione', mapIcon:'icons/come-muoversi/autobus.svg', mapToggle:'.qt-bus'},
+        {title:'Metropolitana', note:'Stazioni della metropolitana', group:'public', listId:'fav-list-metro', searchPlaceholder:'Cerca una stazione o una fermata', mapIcon:'icons/come-muoversi/metropolitana.svg', mapToggle:'.qt-metro'},
+        {title:'Treni', note:'Stazioni ferroviarie', group:'public', listId:'fav-list-train', searchPlaceholder:'Cerca una stazione', mapIcon:'icons/come-muoversi/treni.svg', mapToggle:'.qt-train'},
+        {title:'Funicolari e ascensori', note:'Impianti verticali e cremagliere', group:'public', listId:'fav-list-funi', searchPlaceholder:'Cerca un impianto o una fermata', mapIcon:'icons/come-muoversi/impianti-verticali.svg', mapToggle:'.qt-funi'},
+        {title:'Navi e battelli', note:'Navebus e collegamenti marittimi', group:'public', listId:'fav-list-mare', searchPlaceholder:'Cerca una linea, un approdo o una destinazione', mapIcon:'icons/come-muoversi/navi-battelli.svg', mapToggle:'.qt-mare'},
+        {title:'Aereo', note:'Aeroporto e collegamenti', group:'public', listId:'fav-list-aereo', searchPlaceholder:'Cerca un collegamento o una destinazione', mapIcon:'icons/come-muoversi/aereo.svg', mapToggle:'.qt-aereo'},
+        {title:'Noleggio auto', note:'Servizi di autonoleggio in città', group:'rentals', disabled:true, comingSoon:true},
+        {title:'Noleggio moto e scooter', note:'Servizi di noleggio per moto e scooter', group:'rentals', disabled:true, comingSoon:true},
+        {title:'Noleggio bici e bike sharing', note:'Negozi, bike sharing e servizi con app o QR Code', group:'rentals', disabled:true, comingSoon:true},
+        {title:'Noleggio imbarcazioni', note:'Noleggio barche e servizi nautici', group:'rentals', disabled:true, comingSoon:true}
       ]
     },
     {
@@ -167,8 +175,8 @@
       description:'Giochi, premi e prodotti legati a Genova mApp.',
       categories:[
         {title:'Giochi', note:'Piccole esperienze interattive', type:'games'},
-        {title:'Premi', note:'Iniziative e vantaggi per gli utenti'},
-        {title:'Shop', note:'Gadget e prodotti dedicati a Genova'}
+        {title:'Premi', note:'Iniziative e vantaggi per gli utenti', disabled:true, comingSoon:true},
+        {title:'Shop', note:'Gadget e prodotti dedicati a Genova', disabled:true, comingSoon:true}
       ]
     }
   ];
@@ -272,7 +280,14 @@
           "Treni.",
           "Funicolari, ascensori e cremagliere.",
           "Navi e battelli.",
-          "Aereo."
+          "Aereo.",
+          "Noleggio auto — In arrivo.",
+          "Noleggio moto e scooter — In arrivo.",
+          "Noleggio bici e bike sharing — In arrivo.",
+          "Noleggio imbarcazioni — In arrivo."
+        ],
+        "after": [
+          "Le voci dedicate ai noleggi sono già predisposte e saranno attivate progressivamente quando i relativi servizi saranno disponibili."
         ]
       },
       {
@@ -329,8 +344,8 @@
         "p": [],
         "bullets": [
           "Giochi — giochi dedicati a Genova, come A Zena – Trivial, e altre esperienze interattive.",
-          "Premi — iniziative, obiettivi e vantaggi disponibili per gli utenti.",
-          "Shop — prodotti e contenuti legati a Genova e a Genova mApp."
+          "Premi — iniziative, obiettivi e vantaggi disponibili per gli utenti. In arrivo.",
+          "Shop — prodotti e contenuti legati a Genova e a Genova mApp. In arrivo."
         ]
       }
     ]
@@ -982,7 +997,14 @@
     title.textContent = section.title;
     eyebrow.textContent = 'Esplora';
     backButton.hidden = false;
-    var categories = section.categories.map(function(category, index){
+    function categoryCardHtml(category, index){
+      if(category.disabled){
+        return ''+
+          '<div class="gm-new-home-category is-coming-soon" aria-disabled="true">'+
+          '  <span><strong>'+escapeHtml(category.title)+'</strong><small>'+escapeHtml(category.note)+'</small></span>'+
+          '  <span class="gm-new-home-category-status">'+escapeHtml(category.comingSoon ? 'In arrivo' : '')+'</span>'+
+          '</div>';
+      }
       if(category.mapIcon && category.mapToggle){
         var sourceToggle = findMapToggle(category);
         var active = isMapToggleActive(sourceToggle);
@@ -1003,11 +1025,26 @@
         '  <span><strong>'+escapeHtml(category.title)+'</strong><small>'+escapeHtml(category.note)+'</small></span>'+
         '  <span class="gm-new-home-category-arrow" aria-hidden="true">›</span>'+
         '</button>';
-    }).join('');
+    }
+    var categories;
+    if(section.categoryGroups && section.categoryGroups.length){
+      categories = '<div class="gm-new-home-category-groups">'+section.categoryGroups.map(function(group){
+        var cards = section.categories.map(function(category, index){
+          return category.group === group.key ? categoryCardHtml(category, index) : '';
+        }).join('');
+        return ''+
+          '<section class="gm-new-home-category-group">'+
+          '  <h4>'+escapeHtml(group.title)+'</h4>'+
+          '  <div class="gm-new-home-category-grid">'+cards+'</div>'+
+          '</section>';
+      }).join('')+'</div>';
+    }else{
+      categories = '<div class="gm-new-home-category-grid">'+section.categories.map(categoryCardHtml).join('')+'</div>';
+    }
     scroll.innerHTML = ''+
       '<div class="gm-new-home-detail">'+
       detailHeadHtml(section, null)+
-      '  <div class="gm-new-home-category-grid">'+categories+'</div>'+
+      categories+
       '</div>';
     bindDetailMapShortcut(section, null);
     scroll.querySelectorAll('[data-category]').forEach(function(button){
