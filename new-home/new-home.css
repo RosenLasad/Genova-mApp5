@@ -1668,3 +1668,38 @@ button.gm-new-home-layer-copy:hover strong{ color:var(--gm-theme-dark); text-dec
     height:30px;
   }
 }
+
+
+/* Elenchi per area: intestazione piu leggibile e freccia allineata al bordo. */
+.gm-new-home-area-toggle{
+  width:100%;
+  min-height:54px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 34px;
+  align-items:center;
+  column-gap:12px;
+  padding:8px 12px 8px 18px;
+}
+.gm-new-home-area-name{
+  min-width:0;
+  display:block;
+}
+.gm-new-home-area-toggle .gm-new-home-area-name strong{
+  display:block;
+  overflow:visible;
+  text-overflow:clip;
+  white-space:normal;
+  line-height:1.2;
+}
+.gm-new-home-area-toggle .gm-new-home-qr-chevron{
+  justify-self:end;
+  margin-left:0;
+  align-self:center;
+}
+.gm-new-home-area-toggle[aria-expanded="true"] .gm-new-home-qr-chevron{
+  transform:rotate(180deg);
+}
+.gm-new-home-overlay:dir(rtl) .gm-new-home-area-toggle{
+  padding-right:18px;
+  padding-left:12px;
+}

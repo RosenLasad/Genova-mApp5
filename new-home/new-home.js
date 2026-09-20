@@ -1189,7 +1189,7 @@
       }).join('');
       return '<section class="gm-new-home-qr-group gm-new-home-area-group'+(group.fallback?' is-fallback':'')+'" data-area-group-panel="'+groupIndex+'">'+
         '<button type="button" class="gm-new-home-qr-group-toggle gm-new-home-area-toggle" aria-expanded="true">'+
-          '<span><strong>'+escapeHtml(group.name)+'</strong><small>'+group.places.length+' '+(group.places.length === 1 ? 'luogo' : 'luoghi')+'</small></span>'+ 
+          '<span class="gm-new-home-area-name"><strong>'+escapeHtml(group.name)+'</strong></span>'+ 
           '<span class="gm-new-home-qr-chevron" aria-hidden="true">⌄</span>'+ 
         '</button>'+ 
         '<ul class="gm-new-home-qr-points gm-new-home-area-places">'+items+'</ul>'+ 
