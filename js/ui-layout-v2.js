@@ -253,9 +253,10 @@
     }
     if(helpAction){
       var lang = (document.documentElement.lang || 'it').split('-')[0];
-      var labels = {it:'Come funziona',en:'How it works',es:'Cómo funciona',fr:'Comment ça marche',ar:'كيف يعمل',ru:'Как это работает',zh:'使用说明',lij:'Comme fonçionn-a'};
+      var labels = {it:'Guida e istruzioni',en:'Guide and instructions',es:'Guía e instrucciones',fr:'Guide et instructions',ar:'الدليل والتعليمات',ru:'Руководство и инструкции',zh:'指南与说明',lij:'Guida e istruçioin'};
       var text = labels[lang] || labels.it;
       if(helpAction.textContent !== text) helpAction.textContent = text;
+      helpAction.setAttribute('aria-controls', 'gm-new-home');
       if(!helpAction.__helpBound){
         helpAction.__helpBound = true;
         helpAction.addEventListener('click', function(event){
@@ -263,8 +264,12 @@
           if(settings) settings.classList.remove('open');
           var settingsButton = document.getElementById('btn-settings');
           if(settingsButton) settingsButton.setAttribute('aria-expanded','false');
-          var trigger = document.getElementById('help-fab');
-          if(trigger) trigger.click();
+          if(typeof window.gmOpenNewHomeGuide === 'function'){
+            window.gmOpenNewHomeGuide(helpAction);
+          }else if(typeof window.gmOpenNewHome === 'function'){
+            // Fallback prudenziale: apre almeno la New Home se la funzione diretta non è disponibile.
+            window.gmOpenNewHome(helpAction);
+          }
         });
       }
     }

@@ -2775,6 +2775,29 @@
     setTimeout(function(){ try{ closeButton.focus(); }catch(_){} }, 0);
   }
 
+  function openGuide(opener){
+    var guideSection = SECTIONS.find(function(item){ return item.key === 'guide'; });
+    if(!guideSection) return false;
+    if(opener && opener.nodeType === 1) lastOpener = opener;
+    else if(document.activeElement && document.activeElement.nodeType === 1) lastOpener = document.activeElement;
+    closeSettings();
+    try{
+      if(window.__gmHomePanel && typeof window.__gmHomePanel.close === 'function') window.__gmHomePanel.close();
+    }catch(_){}
+    updatePosition();
+    renderGuide(guideSection, {preserve:false});
+    overlay.hidden = false;
+    document.documentElement.classList.add('gm-new-home-open');
+    var titleOpener = document.getElementById('title-btn');
+    if(titleOpener) titleOpener.setAttribute('aria-expanded', 'true');
+    historyDepth = 0;
+    // Mantiene la New Home come livello precedente: Indietro dalla guida torna alla Home.
+    pushNewHomeLevel();
+    pushNewHomeLevel();
+    setTimeout(function(){ try{ closeButton.focus(); }catch(_){} }, 0);
+    return true;
+  }
+
   function close(restoreFocus){
     hideNewHome(restoreFocus);
     if(historyDepth > 0 && window.history && typeof window.history.go === 'function'){
@@ -2866,6 +2889,7 @@
   else boot();
 
   window.gmOpenNewHome = open;
+  window.gmOpenNewHomeGuide = openGuide;
   window.gmCloseNewHome = close;
   window.gmOpenNewHomeRoute = openRouteDetails;
 })();
