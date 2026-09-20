@@ -298,3 +298,1175 @@
 .choice.chosen{
   box-shadow: inset 0 0 0 2px rgba(255,255,255,.08);
 }
+
+/* =========================================================
+   A Zena - home refresh + difficulty selector
+   ========================================================= */
+
+:root{
+  --az-bg: #0b1018;
+  --az-panel: rgba(18, 24, 35, .92);
+  --az-panel-soft: rgba(16, 22, 32, .72);
+  --az-border: rgba(148, 163, 184, .18);
+  --az-border-strong: rgba(148, 163, 184, .34);
+  --az-text: #eef4fb;
+  --az-muted: #9eabc0;
+  --az-accent: #63b3ff;
+  --az-accent-soft: rgba(99, 179, 255, .14);
+  --az-shadow: 0 24px 70px rgba(0, 0, 0, .28);
+}
+
+body{
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(54, 129, 212, .16), transparent 36%),
+    radial-gradient(circle at 86% 18%, rgba(65, 89, 146, .15), transparent 34%),
+    linear-gradient(180deg, #0b1018 0%, #0d131d 52%, #090d14 100%);
+  color: var(--az-text);
+}
+
+.top{
+  background: rgba(11, 16, 24, .88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: rgba(148, 163, 184, .14);
+}
+
+.wrap{
+  width: min(1040px, calc(100% - 24px));
+  max-width: 1040px;
+  padding: 22px 0 34px;
+}
+
+.card{
+  border-color: var(--az-border);
+  background: var(--az-panel);
+  box-shadow: var(--az-shadow);
+}
+
+.mainCard{
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: clamp(18px, 3vw, 30px);
+}
+
+.mainCard::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, rgba(99, 179, 255, .055), transparent 32%),
+    radial-gradient(circle at 85% 0%, rgba(255, 255, 255, .035), transparent 24%);
+}
+
+.mainCard > *{
+  position: relative;
+  z-index: 1;
+}
+
+.mainIntro{
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 22px;
+}
+
+.mainIntro h2{
+  margin: 5px 0 8px;
+  font-size: clamp(25px, 4vw, 36px);
+  letter-spacing: -.02em;
+}
+
+.mainIntro .muted{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.eyebrow{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 4px 10px;
+  border: 1px solid rgba(99, 179, 255, .24);
+  border-radius: 999px;
+  background: rgba(99, 179, 255, .08);
+  color: #beddff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.setupStack{
+  display: grid;
+  gap: 14px;
+}
+
+.setupBlock{
+  border: 1px solid var(--az-border);
+  border-radius: 18px;
+  padding: 16px;
+  background: var(--az-panel-soft);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .025);
+}
+
+.blockTitle{
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-bottom: 13px;
+}
+
+.blockTitle h3{
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: .01em;
+}
+
+.blockTitle .muted{
+  margin: 3px 0 0;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.stepBadge{
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 9px;
+  background: rgba(99, 179, 255, .12);
+  border: 1px solid rgba(99, 179, 255, .2);
+  color: #cde6ff;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.selectCards{
+  display: grid;
+  gap: 10px;
+}
+
+.playerModeGrid{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.difficultyGrid{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.selectCard{
+  min-width: 0;
+  min-height: 104px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 14px 12px;
+  border: 1px solid var(--az-border);
+  border-radius: 16px;
+  background: rgba(9, 14, 22, .58);
+  cursor: pointer;
+  text-align: center;
+  transition: transform .16s ease, border-color .16s ease, background .16s ease, box-shadow .16s ease;
+}
+
+.selectCard:hover{
+  transform: translateY(-2px);
+  border-color: var(--az-border-strong);
+  background: rgba(19, 27, 40, .88);
+}
+
+.selectCard:has(input:checked){
+  border-color: rgba(99, 179, 255, .78);
+  background: linear-gradient(180deg, rgba(99, 179, 255, .16), rgba(99, 179, 255, .075));
+  box-shadow: 0 0 0 2px rgba(99, 179, 255, .08), 0 12px 34px rgba(0, 0, 0, .18);
+}
+
+.optionIcon{
+  font-size: 25px;
+  line-height: 1;
+  margin-bottom: 6px;
+  filter: saturate(.9);
+}
+
+.optionText,
+.difficultyName{
+  color: var(--az-text);
+  font-weight: 850;
+  font-size: 14px;
+}
+
+.optionHint{
+  color: var(--az-muted);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.difficultyLevel{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--az-border);
+  background: rgba(255, 255, 255, .035);
+  color: #c5d0df;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin: 2px 0 4px;
+}
+
+.level1Card:has(input:checked){ border-color: rgba(93, 196, 139, .72); background: linear-gradient(180deg, rgba(54, 150, 102, .16), rgba(54, 150, 102, .06)); }
+.level2Card:has(input:checked){ border-color: rgba(99, 179, 255, .78); }
+.level3Card:has(input:checked){ border-color: rgba(212, 168, 74, .75); background: linear-gradient(180deg, rgba(212, 168, 74, .15), rgba(212, 168, 74, .055)); }
+
+.setupNotice{
+  margin-top: 10px;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(93, 196, 139, .16);
+  background: rgba(93, 196, 139, .07);
+  color: #bddbc9;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.setupNotice.warning{
+  border-color: rgba(232, 177, 81, .2);
+  background: rgba(232, 177, 81, .075);
+  color: #ead1a4;
+}
+
+.multiOptions{
+  margin-top: 11px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--az-border);
+  background: rgba(8, 13, 20, .54);
+}
+
+.multiHead{
+  display: grid;
+  grid-template-columns: auto 90px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.multiHead label{
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.multiHead .muted{
+  margin: 0;
+  font-size: 11px;
+}
+
+.names{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.names .nameRow{
+  gap: 5px;
+}
+
+.names .nameRow label{
+  font-size: 11px;
+}
+
+input[type="text"], select{
+  box-sizing: border-box;
+  min-height: 40px;
+  border-color: var(--az-border);
+  background: rgba(6, 10, 16, .72);
+}
+
+.segmented{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  padding: 4px;
+  border: 1px solid var(--az-border);
+  border-radius: 14px;
+  background: rgba(8, 13, 20, .6);
+}
+
+.segmentOption{
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--az-muted);
+  font-size: 12px;
+  font-weight: 800;
+  transition: background .15s ease, color .15s ease, box-shadow .15s ease;
+}
+
+.segmentOption:has(input:checked){
+  color: var(--az-text);
+  background: rgba(99, 179, 255, .13);
+  box-shadow: inset 0 0 0 1px rgba(99, 179, 255, .22);
+}
+
+.categoryStrip{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  overflow: visible;
+  padding: 10px 2px 4px;
+}
+
+.categoryChip{
+  flex: 0 1 auto;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--az-border);
+  background: rgba(8, 13, 20, .58);
+  color: #dce6f2;
+  font-size: 11px;
+  font-weight: 750;
+  white-space: nowrap;
+  transition: border-color .15s ease, background .15s ease, opacity .15s ease, transform .15s ease;
+}
+
+.categoryChip:not(:disabled):hover{
+  transform: translateY(-1px);
+  border-color: rgba(99, 179, 255, .46);
+}
+
+.categoryChip.selected{
+  border-color: rgba(99, 179, 255, .8);
+  background: rgba(99, 179, 255, .16);
+  box-shadow: 0 0 0 2px rgba(99, 179, 255, .07);
+}
+
+.categoryChip.unavailable{
+  opacity: .34;
+}
+
+.categoryStrip.is-disabled .categoryChip{
+  opacity: .44;
+}
+
+.categoryStrip.is-disabled .categoryChip.unavailable{
+  opacity: .22;
+}
+
+.compactBlock{
+  padding-bottom: 14px;
+}
+
+.timerTitleRow{
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.timerCopy{
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.switchControl{
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.switchControl input{
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.switchTrack{
+  width: 42px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  box-sizing: border-box;
+  border-radius: 999px;
+  background: #273244;
+  border: 1px solid var(--az-border);
+  transition: background .15s ease;
+}
+
+.switchKnob{
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #eaf2fb;
+  transform: translateX(0);
+  transition: transform .15s ease;
+}
+
+.switchControl input:checked + .switchTrack{
+  background: rgba(63, 146, 226, .78);
+}
+
+.switchControl input:checked + .switchTrack .switchKnob{
+  transform: translateX(17px);
+}
+
+.switchText{
+  width: 56px;
+  color: #dbe7f4;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.timerOptions{
+  display: grid;
+  grid-template-columns: auto 150px 1fr;
+  gap: 10px;
+  align-items: center;
+  padding-left: 38px;
+}
+
+.timerOptions label{
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.timerOptions .muted{
+  margin: 0;
+  font-size: 11px;
+}
+
+.mainActions{
+  display: grid;
+  gap: 9px;
+  grid-template-columns: 1fr;
+  margin-top: 2px;
+}
+
+.startCta,
+.continueCta{
+  width: 100%;
+  min-height: 50px;
+  border-radius: 15px;
+  font-weight: 900;
+  letter-spacing: .015em;
+}
+
+button.primary.startCta{
+  border-color: #d8e9fa;
+  background: linear-gradient(180deg, #f5f9fd, #dce9f5);
+  color: #09111b;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .2);
+}
+
+button.primary.startCta:not(:disabled):hover{
+  transform: translateY(-1px);
+  border-color: white;
+}
+
+.startCta:disabled{
+  opacity: .45;
+  filter: saturate(.4);
+}
+
+.difficultyPill{
+  background: rgba(255, 255, 255, .05);
+  color: #d9e3ef;
+}
+
+@media (max-width: 700px){
+  .wrap{
+    width: min(100% - 16px, 1040px);
+    padding-top: 12px;
+  }
+
+  .mainCard{
+    border-radius: 18px;
+    padding: 14px;
+  }
+
+  .setupStack{
+    gap: 10px;
+  }
+
+  .setupBlock{
+    padding: 13px;
+    border-radius: 15px;
+  }
+
+  .difficultyGrid{
+    gap: 7px;
+  }
+
+  .difficultyCard{
+    min-height: 96px;
+    padding: 10px 7px;
+  }
+
+  .difficultyCard .optionHint{
+    display: none;
+  }
+
+  .difficultyName{
+    font-size: 12px;
+  }
+
+  .difficultyLevel{
+    font-size: 9px;
+    padding-inline: 6px;
+  }
+
+  .multiHead{
+    grid-template-columns: auto 76px 1fr;
+  }
+
+  .names{
+    grid-template-columns: 1fr;
+  }
+
+  .timerOptions{
+    grid-template-columns: 1fr 130px;
+    padding-left: 0;
+  }
+
+  .timerOptions .muted{
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px){
+  .top{
+    padding: 9px 10px;
+  }
+
+  .gameLogo{
+    height: 44px;
+    max-width: 58vw;
+  }
+
+  .mainIntro{
+    margin-bottom: 14px;
+  }
+
+  .mainIntro h2{
+    font-size: 24px;
+  }
+
+  .mainIntro .muted{
+    font-size: 12px;
+  }
+
+  .playerModeGrid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .playerCard{
+    min-height: 70px;
+    padding: 10px;
+  }
+
+  .playerCard .optionIcon{
+    margin: 0;
+    font-size: 28px;
+  }
+
+  .playerCard .optionText,
+  .playerCard .optionHint{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .difficultyCard .optionIcon{
+    font-size: 21px;
+    margin-bottom: 3px;
+  }
+
+  .segmented{
+    gap: 5px;
+  }
+
+  .segmentOption{
+    min-height: 40px;
+    padding: 0 6px;
+    font-size: 10px;
+  }
+
+  .categoryStrip{
+    margin-right: -13px;
+    padding-right: 13px;
+  }
+
+  .categoryChip{
+    min-height: 34px;
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  .timerTitleRow{
+    align-items: flex-start;
+  }
+
+  .switchControl{
+    margin-top: 1px;
+  }
+
+  .switchText{
+    display: none;
+  }
+
+  .timerOptions{
+    grid-template-columns: 1fr 120px;
+  }
+
+  .blockTitle .muted{
+    font-size: 11px;
+  }
+
+  .setupNotice{
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .selectCard,
+  .categoryChip,
+  .switchKnob,
+  .switchTrack,
+  button{
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   A Zena - compact responsive pass
+   Ottimizzato anche per finestre desktop strette
+   ========================================================= */
+
+/* Evita che i controlli principali si allarghino inutilmente su desktop. */
+.wrap{
+  width: min(900px, calc(100% - 24px));
+  max-width: 900px;
+}
+
+.mainCard{
+  padding: clamp(16px, 2.2vw, 24px);
+}
+
+.mainIntro{
+  margin-bottom: 18px;
+}
+
+.setupStack{
+  gap: 11px;
+}
+
+.setupBlock{
+  padding: 14px;
+}
+
+.blockTitle{
+  margin-bottom: 10px;
+}
+
+/* Modalita di gioco: due card compatte e centrate. */
+.playerModeGrid{
+  width: min(100%, 460px);
+  margin-inline: auto;
+}
+
+.playerCard{
+  min-height: 78px;
+  padding: 10px 12px;
+}
+
+.playerCard .optionIcon{
+  font-size: 22px;
+  margin-bottom: 3px;
+}
+
+/* Difficolta: tre card compatte e centrate. */
+.difficultyGrid{
+  width: min(100%, 620px);
+  margin-inline: auto;
+}
+
+.difficultyCard{
+  min-height: 82px;
+  padding: 10px 9px;
+}
+
+.difficultyCard .optionIcon{
+  font-size: 21px;
+  margin-bottom: 3px;
+}
+
+.difficultyCard .optionHint{
+  font-size: 10px;
+}
+
+.difficultyLevel{
+  min-height: 18px;
+  margin: 1px 0 2px;
+}
+
+/* CTA piu proporzionata: non occupa tutta la larghezza del pannello. */
+.mainActions{
+  display: flex;
+  justify-content: center;
+}
+
+.startCta,
+.continueCta{
+  width: min(100%, 300px);
+  min-height: 44px;
+  border-radius: 13px;
+  padding-inline: 18px;
+}
+
+/* Prima soglia responsive: include anche finestre desktop/tablet strette. */
+@media (max-width: 900px){
+  .wrap{
+    width: min(100% - 18px, 900px);
+    padding-top: 14px;
+  }
+
+  .mainCard{
+    border-radius: 18px;
+    padding: 14px;
+  }
+
+  .mainIntro{
+    margin-bottom: 14px;
+  }
+
+  .mainIntro h2{
+    font-size: clamp(24px, 4vw, 30px);
+  }
+
+  .setupBlock{
+    padding: 12px;
+    border-radius: 15px;
+  }
+
+  .playerModeGrid{
+    width: min(100%, 430px);
+  }
+
+  .difficultyGrid{
+    width: min(100%, 570px);
+    gap: 7px;
+  }
+
+  .playerCard{
+    min-height: 68px;
+  }
+
+  .difficultyCard{
+    min-height: 74px;
+    padding: 8px 7px;
+  }
+
+  .playerCard .optionHint,
+  .difficultyCard .optionHint{
+    display: none;
+  }
+}
+
+/* Desktop molto stretto / tablet: resta tutto leggibile senza card giganti. */
+@media (max-width: 700px){
+  .wrap{
+    width: min(100% - 14px, 900px);
+    padding-top: 10px;
+  }
+
+  .mainCard{
+    padding: 12px;
+  }
+
+  .setupStack{
+    gap: 8px;
+  }
+
+  .setupBlock{
+    padding: 11px;
+  }
+
+  .blockTitle{
+    margin-bottom: 8px;
+  }
+
+  .playerModeGrid{
+    width: min(100%, 390px);
+    gap: 7px;
+  }
+
+  .playerCard{
+    min-height: 62px;
+    padding: 8px;
+  }
+
+  .difficultyGrid{
+    width: 100%;
+  }
+
+  .difficultyCard{
+    min-height: 68px;
+    padding: 7px 5px;
+  }
+
+  .difficultyCard .optionIcon{
+    font-size: 19px;
+    margin-bottom: 1px;
+  }
+
+  .difficultyName{
+    font-size: 11px;
+  }
+
+  .difficultyLevel{
+    min-height: 16px;
+    padding: 1px 5px;
+    font-size: 8px;
+  }
+
+  .setupNotice{
+    min-height: 30px;
+    margin-top: 7px;
+    padding: 6px 8px;
+  }
+
+  .startCta,
+  .continueCta{
+    width: min(100%, 290px);
+    min-height: 42px;
+  }
+}
+
+@media (max-width: 520px){
+  .wrap{
+    width: min(100% - 10px, 900px);
+  }
+
+  .mainCard{
+    padding: 10px;
+  }
+
+  .mainIntro h2{
+    font-size: 22px;
+  }
+
+  .playerModeGrid{
+    width: min(100%, 300px);
+  }
+
+  .playerCard{
+    min-height: 56px;
+    padding: 7px;
+  }
+
+  .playerCard .optionIcon{
+    font-size: 25px;
+    margin: 0;
+  }
+
+  .difficultyCard{
+    min-height: 64px;
+  }
+
+  .startCta,
+  .continueCta{
+    width: min(100%, 270px);
+  }
+}
+
+/* =========================================================
+   A Zena - overflow-safe responsive pass
+   Corregge le finestre desktop strette e impedisce qualsiasi
+   elemento della home di allargare la pagina oltre il viewport.
+   ========================================================= */
+
+html{
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body{
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+/* Header: logo e controlli non possono mai superare la viewport. */
+.top{
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.top > *{
+  min-width: 0;
+}
+
+.top .gameLogo{
+  flex: 0 1 auto;
+  width: auto;
+  max-width: min(520px, 58vw);
+  object-fit: contain;
+}
+
+.top-actions{
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+/* Contenitore principale realmente fluido, compreso il padding/bordo. */
+.wrap{
+  width: calc(100% - 24px);
+  max-width: 900px;
+  min-width: 0;
+  margin-inline: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.mainCard,
+.setupStack,
+.setupBlock,
+.mainIntro,
+.playerModeGrid,
+.difficultyGrid,
+.segmented,
+.categoryStrip,
+.timerOptions,
+.multiOptions,
+.multiHead,
+.names,
+.mainActions{
+  min-width: 0;
+  max-width: 100%;
+}
+
+.mainCard,
+.setupStack,
+.setupBlock{
+  width: 100%;
+}
+
+/* Le griglie possono restringersi senza essere forzate dal contenuto testuale. */
+.playerModeGrid,
+.difficultyGrid,
+.segmented,
+.names{
+}
+
+.selectCard,
+.segmentOption,
+.categoryChip,
+.timerCopy,
+.blockTitle > div{
+  min-width: 0;
+}
+
+.segmentOption > span:last-child{
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Le categorie vanno automaticamente su piu righe quando lo spazio si riduce. */
+.categoryStrip{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* Evita che testi lunghi nei messaggi allarghino i pannelli. */
+.setupNotice,
+.blockTitle .muted,
+.timerOptions .muted,
+.multiHead .muted{
+  overflow-wrap: anywhere;
+}
+
+/* Finestre desktop strette: il layout si compatta prima di arrivare al mobile. */
+@media (max-width: 900px){
+  .wrap{
+    width: calc(100% - 16px);
+  }
+
+  .top{
+    gap: 8px;
+    padding-inline: 10px;
+  }
+
+  .top .gameLogo{
+    max-width: 54vw;
+    height: clamp(48px, 8vw, 68px);
+  }
+
+  .mainCard{
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .setupBlock{
+    overflow: hidden;
+  }
+
+  .multiHead{
+    grid-template-columns: minmax(0, 1fr) 82px;
+    gap: 8px;
+  }
+
+  .multiHead .muted{
+    grid-column: 1 / -1;
+  }
+
+  .timerOptions{
+    grid-template-columns: minmax(0, 1fr) 130px;
+    gap: 8px;
+    padding-left: 0;
+  }
+
+  .timerOptions .muted{
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 700px){
+  .wrap{
+    width: calc(100% - 12px);
+  }
+
+  .top .gameLogo{
+    max-width: 52vw;
+  }
+
+  .difficultyGrid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .difficultyCard{
+    min-width: 0;
+  }
+
+  .difficultyName{
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 520px){
+  .wrap{
+    width: calc(100% - 8px);
+  }
+
+  .top{
+    gap: 6px;
+    padding-inline: 7px;
+  }
+
+  .top .gameLogo{
+    max-width: 56vw;
+  }
+
+  .icon-btn-wide{
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+  }
+
+  .icon-btn-wide .btn-icon{
+    width: 30px;
+    height: 30px;
+  }
+
+  .segmented{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .timerOptions{
+    grid-template-columns: minmax(0, 1fr) 112px;
+  }
+}
+
+@media (max-width: 380px){
+  .wrap{
+    width: calc(100% - 6px);
+  }
+
+  .mainCard{
+    padding-inline: 8px;
+  }
+
+  .setupBlock{
+    padding-inline: 8px;
+  }
+
+  .top .gameLogo{
+    max-width: 52vw;
+  }
+}
+/* Categorie responsive: niente scorrimento orizzontale, si distribuiscono su piu righe. */
+@media (max-width: 700px){
+  .categoryStrip{
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .categoryChip{
+    flex: 0 1 auto;
+    min-height: 34px;
+    padding: 6px 9px;
+    font-size: 10.5px;
+  }
+}
+
+@media (max-width: 420px){
+  .categoryStrip{
+    gap: 5px;
+  }
+
+  .categoryChip{
+    padding-inline: 8px;
+  }
+}
+

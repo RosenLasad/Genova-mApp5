@@ -1,5 +1,5 @@
 // games.js
-// Motore del Quiz di Genova. Le domande stanno in questions.js (window.QUIZ_QUESTIONS).
+// Motore del Quiz di Genova. Le domande sono caricate dai file in ./questions/ dentro window.QUIZ_QUESTIONS.
 
 const CATEGORIES = [
   { id: "storia", label: "Storia" },
@@ -12,6 +12,16 @@ const CATEGORIES = [
   { id: "cucina", label: "Cucina" },
   { id: "dialetto", label: "Dialetto e cultura" },
 ];
+
+const DIFFICULTIES = {
+  1: { name: "Foresto", level: "Facile" },
+  2: { name: "Zeneize", level: "Medio" },
+  3: { name: "Superbo", level: "Difficile" },
+};
+
+function getDifficultyInfo(level) {
+  return DIFFICULTIES[Number(level)] || DIFFICULTIES[1];
+}
 
 const WIN_PER_CAT = 3;
 
@@ -51,7 +61,7 @@ function applyCatCardStyle(el, catId) {
 const CAT_SET = new Set(CATEGORIES.map(c => c.id));
 
 // --- Persistence (LocalStorage) ---
-const SAVE_KEY = "gdg_quiz_save_v1";
+const SAVE_KEY = "gdg_quiz_save_v2";
 
 function getActiveScreenId() {
   if (!screenMain.classList.contains("hidden")) return "main";
@@ -66,7 +76,7 @@ function serializeGame() {
   const g = JSON.parse(JSON.stringify(game));
 
   // Non salviamo l'oggetto domanda completo: basta l'id.
-  if (g.current && g.current.q && typeof g.current.q._id === "number") {
+  if (g.current && g.current.q && (typeof g.current.q._id === "string" || typeof g.current.q._id === "number")) {
     g.current.qId = g.current.q._id;
     delete g.current.q;
   }
@@ -77,10 +87,16 @@ function hydrateGame(g) {
   if (!g) return null;
 
   // Ricostruisci q dall'id
-  if (g.current && typeof g.current.qId === "number") {
-    const qObj = QUESTIONS[g.current.qId];
+  if (g.current && (typeof g.current.qId === "string" || typeof g.current.qId === "number")) {
+    let qObj = ALL_QUESTIONS.find(q => q._id === g.current.qId);
+
+    // Compatibilita con i salvataggi creati prima dei livelli di difficolta.
+    if (!qObj && typeof g.current.qId === "string" && !/^\d+::/.test(g.current.qId)) {
+      qObj = ALL_QUESTIONS.find(q => `${q.category}::${q.question.trim()}` === g.current.qId);
+    }
+
     if (qObj) {
-      g.current.q = { ...qObj, _id: g.current.qId };
+      g.current.q = { ...qObj, _id: qObj._id };
     } else {
       g.current = null;
     }
@@ -91,7 +107,7 @@ function hydrateGame(g) {
 
 function makeSavePayload() {
   return {
-    v: 1,
+    v: 3,
     savedAt: Date.now(),
     settings,
     game: serializeGame(),
@@ -128,7 +144,7 @@ function loadSave() {
     const raw = localStorage.getItem(SAVE_KEY);
     if (!raw) return null;
     const data = JSON.parse(raw);
-    if (!data || data.v !== 1) return null;
+    if (!data || ![2, 3].includes(data.v)) return null;
     if (!data.settings || !data.game) return null;
     return data;
   } catch {
@@ -141,7 +157,7 @@ function hasValidSave() {
 }
 
 
-function sanitizeQuestions(raw) {
+function sanitizeQuestions(raw, level) {
   const out = [];
   (raw || []).forEach((q, i) => {
     const ok =
@@ -153,17 +169,41 @@ function sanitizeQuestions(raw) {
       (q.image === undefined || (typeof q.image === "string" && q.image.trim().length > 0));
 
     if (!ok) {
-      console.warn(`QUIZ: domanda ignorata (indice ${i}). Controlla questions.js`, q);
+      console.warn(`QUIZ: domanda ignorata (livello ${level}, indice ${i}).`, q);
       return;
     }
-    out.push(q);
+
+    out.push({
+      ...q,
+      _level: Number(level),
+      _id: `${level}::${q.category}::${q.question.trim()}`,
+    });
   });
   return out;
 }
 
-const QUESTIONS = sanitizeQuestions(Array.isArray(window.QUIZ_QUESTIONS) ? window.QUIZ_QUESTIONS : []);
-if (QUESTIONS.length === 0) {
-  console.warn("QUIZ: Nessuna domanda caricata. Controlla questions.js e l'ordine degli script in index.html.");
+const QUESTIONS_BY_LEVEL = {
+  1: sanitizeQuestions(window.QUIZ_LEVELS?.[1], 1),
+  2: sanitizeQuestions(window.QUIZ_LEVELS?.[2], 2),
+  3: sanitizeQuestions(window.QUIZ_LEVELS?.[3], 3),
+};
+
+const ALL_QUESTIONS = [
+  ...QUESTIONS_BY_LEVEL[1],
+  ...QUESTIONS_BY_LEVEL[2],
+  ...QUESTIONS_BY_LEVEL[3],
+];
+
+function questionsForLevel(level) {
+  return QUESTIONS_BY_LEVEL[Number(level)] || [];
+}
+
+function questionCount(level, categoryId) {
+  return questionsForLevel(level).filter(q => q.category === categoryId).length;
+}
+
+if (ALL_QUESTIONS.length === 0) {
+  console.warn("QUIZ: Nessuna domanda caricata. Controlla i file dentro ./questions/level_1, level_2 e level_3.");
 }
 
 const $ = (s) => document.querySelector(s);
@@ -184,6 +224,8 @@ const playerCountSel = $("#playerCount");
 const playerNamesBox = $("#playerNames");
 const oneCatOptions = $("#oneCatOptions");
 const singleCategorySel = $("#singleCategory");
+const categoryButtons = Array.from(document.querySelectorAll(".categoryChip"));
+const levelAvailability = $("#levelAvailability");
 const timerSecondsSel = $("#timerSeconds");
 const timerEnabledChk = $("#timerEnabled");
 const btnStart = $("#btnStart");
@@ -199,6 +241,7 @@ const hudHint = $("#hudHint");
 
 // Question UI
 const qCat = $("#qCat");
+const qDifficulty = $("#qDifficulty");
 const qPlayer = $("#qPlayer");
 const qText = $("#qText");
 const qNeed = $("#qNeed");
@@ -352,14 +395,85 @@ function readTimerFromMenu() {
   return { enabled, seconds };
 }
 
-function initMainMenu() {
-  // Popola select categoria singola
-  singleCategorySel.innerHTML = CATEGORIES.map(c => `<option value="${c.id}">${c.label}</option>`).join("");
+function readDifficultyFromMenu() {
+  const raw = document.querySelector('input[name="difficulty"]:checked')?.value || "1";
+  const level = parseInt(raw, 10);
+  return DIFFICULTIES[level] ? level : 1;
+}
 
-  // Default names inputs
+function syncSelectedCategoryChip() {
+  const mode = document.querySelector('input[name="modeCats"]:checked')?.value || "all";
+  categoryButtons.forEach(btn => {
+    btn.classList.toggle("selected", mode === "one" && btn.dataset.category === singleCategorySel.value);
+  });
+}
+
+function updateSetupAvailability() {
+  const level = readDifficultyFromMenu();
+  const info = getDifficultyInfo(level);
+  const mode = document.querySelector('input[name="modeCats"]:checked')?.value || "all";
+  const counts = Object.fromEntries(CATEGORIES.map(c => [c.id, questionCount(level, c.id)]));
+  const available = CATEGORIES.filter(c => counts[c.id] > 0);
+
+  if (mode === "one" && (!singleCategorySel.value || counts[singleCategorySel.value] === 0)) {
+    singleCategorySel.value = available[0]?.id || CATEGORIES[0].id;
+  }
+
+  if (oneCatOptions) {
+    oneCatOptions.classList.toggle("is-disabled", mode !== "one");
+    oneCatOptions.setAttribute("aria-disabled", mode === "one" ? "false" : "true");
+  }
+
+  categoryButtons.forEach(btn => {
+    const catId = btn.dataset.category;
+    const count = counts[catId] || 0;
+    btn.dataset.count = String(count);
+    btn.disabled = mode !== "one" || count === 0;
+    btn.classList.toggle("unavailable", count === 0);
+    btn.title = count > 0 ? `${count} domande disponibili` : "Nessuna domanda disponibile in questo livello";
+  });
+  syncSelectedCategoryChip();
+
+  const total = questionsForLevel(level).length;
+  const missing = CATEGORIES.filter(c => counts[c.id] === 0);
+  let canStart = total > 0;
+  let notice = `${info.name} - ${info.level}: ${total} domande disponibili.`;
+
+  if (total === 0) {
+    canStart = false;
+    notice = `${info.name} - ${info.level}: questo livello non contiene ancora domande.`;
+  } else if (mode === "all" && missing.length > 0) {
+    canStart = false;
+    notice = `${info.name}: per giocare con tutte le categorie mancano ancora ${missing.length} categorie.`;
+  } else if (mode === "one") {
+    const selectedCount = counts[singleCategorySel.value] || 0;
+    canStart = selectedCount > 0;
+    const selectedLabel = CATEGORIES.find(c => c.id === singleCategorySel.value)?.label || "Categoria";
+    notice = canStart
+      ? `${info.name}: ${selectedCount} domande disponibili in ${selectedLabel}.`
+      : `${info.name}: scegli una categoria con domande disponibili.`;
+  }
+
+  if (levelAvailability) {
+    levelAvailability.textContent = notice;
+    levelAvailability.classList.toggle("warning", !canStart);
+  }
+
+  if (btnStart) btnStart.disabled = !canStart;
+}
+
+function syncTimerMenuUI() {
+  const enabled = !!timerEnabledChk?.checked;
+  if (timerSecondsSel) timerSecondsSel.disabled = !enabled;
+  const switchText = document.querySelector(".switchText");
+  if (switchText) switchText.textContent = enabled ? "Attivo" : "Disattivo";
+}
+
+function initMainMenu() {
+  singleCategorySel.innerHTML = CATEGORIES.map(c => `<option value="${c.id}">${c.label}</option>`).join("");
+  singleCategorySel.value = CATEGORIES[0].id;
   buildNamesInputs(parseInt(playerCountSel.value, 10));
 
-  // Toggle UI
   document.querySelectorAll('input[name="modePlayers"]').forEach(r => {
     r.addEventListener("change", () => {
       const isMulti = document.querySelector('input[name="modePlayers"]:checked')?.value === "multi";
@@ -372,39 +486,36 @@ function initMainMenu() {
     buildNamesInputs(parseInt(playerCountSel.value, 10));
   });
 
-  document.querySelectorAll('input[name="modeCats"]').forEach(r => {
-    r.addEventListener("change", () => {
-      const one = document.querySelector('input[name="modeCats"]:checked')?.value === "one";
-      oneCatOptions.classList.toggle("hidden", !one);
-    });
-
-  function syncTimerMenuUI() {
-    const enabled = !!timerEnabledChk?.checked;
-    if (timerSecondsSel) timerSecondsSel.disabled = !enabled;
-    if (timerSecondsSel) timerSecondsSel.style.opacity = enabled ? "1" : ".6";
-  }
-
-  if (timerEnabledChk) {
-    timerEnabledChk.addEventListener("change", syncTimerMenuUI);
-  }
-  syncTimerMenuUI();
-
+  document.querySelectorAll('input[name="difficulty"]').forEach(r => {
+    r.addEventListener("change", updateSetupAvailability);
   });
 
+  document.querySelectorAll('input[name="modeCats"]').forEach(r => {
+    r.addEventListener("change", updateSetupAvailability);
+  });
 
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (btn.disabled) return;
+      singleCategorySel.value = btn.dataset.category || CATEGORIES[0].id;
+      syncSelectedCategoryChip();
+      updateSetupAvailability();
+    });
+  });
 
+  if (timerEnabledChk) timerEnabledChk.addEventListener("change", syncTimerMenuUI);
+  syncTimerMenuUI();
+  updateSetupAvailability();
 
-  // Bottone "Continua partita" (creato via JS per non toccare l'HTML)
   let btnContinue = $("#btnContinue");
   if (!btnContinue) {
     btnContinue = document.createElement("button");
     btnContinue.type = "button";
     btnContinue.id = "btnContinue";
-    btnContinue.className = "ghost";
+    btnContinue.className = "ghost continueCta";
     btnContinue.textContent = "Continua partita";
-    // Inseriscilo accanto a "Inizia partita"
     const row = btnStart?.parentElement;
-    if (row) row.insertBefore(btnContinue, btnStart.nextSibling);
+    if (row) row.appendChild(btnContinue);
   }
 
   function refreshContinueButton() {
@@ -420,6 +531,7 @@ function initMainMenu() {
 
     try {
       settings = data.settings;
+      settings.difficulty = Number(settings.difficulty) || 1;
       game = hydrateGame(data.game);
 
       timeLeft = Number.isFinite(data.ui?.timeLeft)
@@ -427,19 +539,16 @@ function initMainMenu() {
         : ((settings && settings.timerEnabled === false) ? 0 : (settings?.timerSeconds || 30));
 
       paused = !!data.ui?.paused;
-
       const target = data.ui?.screen || "main";
 
       if (target === "win" && game?.finished) {
         showOnly(screenWin);
-  renderQuestionMedia(null);
-
+        renderQuestionMedia(null);
         const winnerName = game.players[game.winnerIndex]?.name || "Qualcuno";
         winTitle.textContent = settings.isMulti ? `${winnerName} ha vinto.` : "Hai vinto.";
         winSub.textContent = settings.isMulti
           ? "Complimenti. E ora potete litigare su chi teneva il telefono storto."
-          : "Ora puoi vantarti con chiunque. Sì, anche se nessuno te l’ha chiesto.";
-
+          : "Ora puoi vantarti con chiunque. Sì, anche se nessuno te l'ha chiesto.";
         renderLeaderboard();
         stopTimer();
         paused = false;
@@ -450,11 +559,8 @@ function initMainMenu() {
       }
 
       if (target === "q") {
-        if (game?.current?.q) {
-          restoreQuestionUIFromSave(data);
-        } else {
-          startFirstQuestion();
-        }
+        if (game?.current?.q) restoreQuestionUIFromSave(data);
+        else startFirstQuestion();
         setTopButtons(true);
         saveNow();
         refreshContinueButton();
@@ -469,7 +575,6 @@ function initMainMenu() {
         return;
       }
 
-      // fallback: se non sappiamo dove metterti, riparti dalla domanda
       if (game && settings) {
         startFirstQuestion();
         setTopButtons(true);
@@ -481,26 +586,16 @@ function initMainMenu() {
 
       refreshContinueButton();
     } catch (e) {
-      console.warn("QUIZ: ripristino fallito, riparto dalla domanda", e);
-      try {
-        if (settings && game) {
-          startFirstQuestion();
-          setTopButtons(true);
-          saveNow();
-        } else {
-          showMainMenu();
-          setTopButtons(false);
-        }
-      } catch {}
+      console.warn("QUIZ: ripristino fallito", e);
+      clearSave();
+      showMainMenu();
+      setTopButtons(false);
       refreshContinueButton();
     }
   });
 
   refreshContinueButton();
-
-  btnStart.addEventListener("click", () => {
-    startNewMatchFromMenu();
-  });
+  btnStart.addEventListener("click", startNewMatchFromMenu);
 }
 
 function makeEmptyScores(activeCats) {
@@ -544,23 +639,40 @@ function makeGame(settings) {
 }
 
 function startNewMatchFromMenu() {
-  clearSave();
   const { isMulti, names } = readPlayersFromMenu();
   const cats = readCategoriesFromMenu();
   const t = readTimerFromMenu();
+  const difficulty = readDifficultyFromMenu();
+  const pool = questionsForLevel(difficulty);
 
+  if (pool.length === 0) {
+    alert("Questo livello non contiene ancora domande.");
+    return;
+  }
+
+  if (cats.mode === "all") {
+    const missing = CATEGORIES.filter(c => questionCount(difficulty, c.id) === 0);
+    if (missing.length > 0) {
+      alert("Per giocare con tutte le categorie, ogni categoria deve avere almeno una domanda in questo livello.");
+      return;
+    }
+  } else if (questionCount(difficulty, cats.active[0]) === 0) {
+    alert("La categoria scelta non contiene ancora domande in questo livello.");
+    return;
+  }
+
+  clearSave();
   settings = {
     isMulti,
     players: names,
-    categoriesMode: cats.mode,   // all | one
+    difficulty,
+    categoriesMode: cats.mode,
     activeCategories: cats.active,
     timerEnabled: t.enabled,
     timerSeconds: t.seconds,
   };
 
   game = makeGame(settings);
-
-  // Avvia subito la prima domanda (categoria sorteggiata se 'tutte')
   startFirstQuestion();
   saveNow();
 }
@@ -582,6 +694,7 @@ function showMainMenu() {
   showOnly(screenMain);
   updateTimerVisibility();
   renderQuestionMedia(null);
+  updateSetupAvailability();
   const bc = document.querySelector("#btnContinue");
   if (bc) {
     const ok = hasValidSave();
@@ -607,9 +720,10 @@ function hasWon(player) {
 function updateCatsHUD() {
   const p = currentPlayer();
   hudPlayer.textContent = settings.isMulti ? `Turno: ${p.name}` : `Giocatore: ${p.name}`;
+  const diff = getDifficultyInfo(settings.difficulty);
   hudMode.textContent = settings.categoriesMode === "all"
-    ? `Obiettivo: ${WIN_PER_CAT} corrette per categoria`
-    : `Obiettivo: ${WIN_PER_CAT} corrette in 1 categoria`;
+    ? `${diff.name} \u00b7 Obiettivo: ${WIN_PER_CAT} corrette per categoria`
+    : `${diff.name} \u00b7 Obiettivo: ${WIN_PER_CAT} corrette in 1 categoria`;
   hudHint.textContent = settings.isMulti ? "Dopo ogni domanda passa il turno." : "";
 }
 
@@ -675,9 +789,7 @@ function renderCatsForPlayer(player) {
 }
 
 function pickQuestion(categoryId) {
-  const pool = QUESTIONS
-    .map((q, idx) => ({ ...q, _id: idx }))
-    .filter(q => q.category === categoryId);
+  const pool = questionsForLevel(settings?.difficulty || 1).filter(q => q.category === categoryId);
 
   if (pool.length === 0) return null;
 
@@ -714,7 +826,7 @@ function renderQuestionMedia(q) {
 function startQuestion(categoryId) {
   const q = pickQuestion(categoryId);
   if (!q) {
-    alert("Non ci sono domande per questa categoria. Aggiungile in questions.js.");
+    alert("Non ci sono domande per questa categoria. Aggiungile nel relativo file dentro ./questions/.");
     return;
   }
 
@@ -725,6 +837,7 @@ function startQuestion(categoryId) {
 
   qCat.textContent = catLabel;
   applyCatPillStyle(qCat, categoryId);
+  if (qDifficulty) qDifficulty.textContent = getDifficultyInfo(settings?.difficulty).name;
   updateTimerVisibility();
   if (timerBox) timerBox.style.borderColor = getCatColor(categoryId);
   updateTimerVisibility();
@@ -841,6 +954,7 @@ function restoreQuestionUIFromSave(data) {
 
   qCat.textContent = catLabel;
   applyCatPillStyle(qCat, categoryId);
+  if (qDifficulty) qDifficulty.textContent = getDifficultyInfo(settings?.difficulty).name;
   qPlayer.textContent = settings.isMulti ? `Gioca: ${p.name}` : p.name;
   qText.textContent = q.question;
 

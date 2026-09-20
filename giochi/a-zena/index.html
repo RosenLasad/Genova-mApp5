@@ -109,68 +109,148 @@
 
   <main class="wrap">
     <!-- MENU PRINCIPALE -->
-    <section id="screenMain" class="card">
-      <h2>Menu principale</h2>
-      <p class="muted">Imposta la partita e poi premi <b>Inizia partita</b>.</p>
+    <section id="screenMain" class="card mainCard">
+      <div class="mainIntro">
+        <span class="eyebrow">QUIZ DI GENOVA</span>
+        <h2>Prepara la sfida</h2>
+        <p class="muted">Scegli come giocare, quanto vuoi metterti alla prova e quali categorie affrontare.</p>
+      </div>
 
-      <div class="form">
-        <div class="field">
-          <h3>Modalità giocatori</h3>
-          <div class="inline">
-            <label><input type="radio" name="modePlayers" value="single" checked /> Single player</label>
-            <label><input type="radio" name="modePlayers" value="multi" /> Multiplayer</label>
+      <div class="setupStack">
+        <section class="setupBlock" aria-labelledby="playersTitle">
+          <div class="blockTitle">
+            <span class="stepBadge">1</span>
+            <div>
+              <h3 id="playersTitle">Come vuoi giocare?</h3>
+              <p class="muted">Da solo oppure fino a quattro giocatori sullo stesso dispositivo.</p>
+            </div>
           </div>
 
-          <div id="multiOptions" class="hidden" style="margin-top:12px;">
-            <div class="inline">
-              <label>Giocatori:
-                <select id="playerCount">
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-              </label>
-              <span class="muted">Inserisci i nomi (facoltativo, ma utile).</span>
+          <div class="selectCards playerModeGrid">
+            <label class="selectCard playerCard" title="Single player">
+              <input class="srOnly" type="radio" name="modePlayers" value="single" checked>
+              <span class="optionIcon" aria-hidden="true">&#128100;</span>
+              <span class="optionText">Single player</span>
+              <span class="optionHint">Gioca da solo</span>
+            </label>
+            <label class="selectCard playerCard" title="Multiplayer">
+              <input class="srOnly" type="radio" name="modePlayers" value="multi">
+              <span class="optionIcon" aria-hidden="true">&#128101;</span>
+              <span class="optionText">Multiplayer</span>
+              <span class="optionHint">Da 2 a 4 giocatori</span>
+            </label>
+          </div>
+
+          <div id="multiOptions" class="multiOptions hidden">
+            <div class="multiHead">
+              <label for="playerCount">Giocatori</label>
+              <select id="playerCount">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              <span class="muted">I nomi sono facoltativi.</span>
             </div>
             <div id="playerNames" class="names"></div>
           </div>
-        </div>
+        </section>
 
-        <div class="field">
-          <h3>Categorie</h3>
-          <div class="inline">
-            <label><input type="radio" name="modeCats" value="all" checked /> Tutte le categorie</label>
-            <label><input type="radio" name="modeCats" value="one" /> Solo una categoria</label>
+        <section class="setupBlock" aria-labelledby="difficultyTitle">
+          <div class="blockTitle">
+            <span class="stepBadge">2</span>
+            <div>
+              <h3 id="difficultyTitle">Quanto sei genovese?</h3>
+              <p class="muted">Scegli il livello di difficolt&agrave; della partita.</p>
+            </div>
           </div>
-          <div id="oneCatOptions" class="hidden" style="margin-top:12px;">
-            <label>Categoria:
-              <select id="singleCategory"></select>
+
+          <div class="selectCards difficultyGrid">
+            <label class="selectCard difficultyCard level1Card">
+              <input class="srOnly" type="radio" name="difficulty" value="1" checked>
+              <span class="optionIcon" aria-hidden="true">&#129517;</span>
+              <span class="difficultyName">Foresto</span>
+              <span class="difficultyLevel">Facile</span>
+              <span class="optionHint">Per chi sta ancora esplorando Zena</span>
+            </label>
+            <label class="selectCard difficultyCard level2Card">
+              <input class="srOnly" type="radio" name="difficulty" value="2">
+              <span class="optionIcon" aria-hidden="true">&#9875;</span>
+              <span class="difficultyName">Zeneize</span>
+              <span class="difficultyLevel">Medio</span>
+              <span class="optionHint">Per chi Genova la conosce bene</span>
+            </label>
+            <label class="selectCard difficultyCard level3Card">
+              <input class="srOnly" type="radio" name="difficulty" value="3">
+              <span class="optionIcon" aria-hidden="true">&#10022;</span>
+              <span class="difficultyName">Superbo</span>
+              <span class="difficultyLevel">Difficile</span>
+              <span class="optionHint">Per chi pensa di sapere proprio tutto</span>
             </label>
           </div>
-        </div>
+          <div id="levelAvailability" class="setupNotice" role="status" aria-live="polite"></div>
+        </section>
 
-        <div class="field">
-          <h3>Timer per domanda</h3>
-          <div class="inline">
-            <label style="gap:10px;">
-              <input id="timerEnabled" type="checkbox" checked />
-              <span>Timer attivo</span>
-            </label>
-
-            <label>Durata:
-              <select id="timerSeconds">
-                <option value="30">30 secondi</option>
-                <option value="60">1 minuto</option>
-              </select>
-            </label>
-
-            <span class="muted">Il timer si ferma in pausa.</span>
+        <section class="setupBlock" aria-labelledby="categoriesTitle">
+          <div class="blockTitle">
+            <span class="stepBadge">3</span>
+            <div>
+              <h3 id="categoriesTitle">Categorie</h3>
+              <p class="muted">Giocale tutte oppure concentrati su una categoria.</p>
+            </div>
           </div>
-</div>
 
-        <div class="row">
-          <button id="btnStart" class="primary" type="button">Inizia partita</button>
-          <a id="btnHub2" class="ghost" href="../../index.html">Torna a Genova mApp</a>
+          <div class="segmented" role="radiogroup" aria-label="Modalita categorie">
+            <label class="segmentOption">
+              <input class="srOnly" type="radio" name="modeCats" value="all" checked>
+              <span aria-hidden="true">&#127922;</span>
+              <span>Tutte le categorie</span>
+            </label>
+            <label class="segmentOption">
+              <input class="srOnly" type="radio" name="modeCats" value="one">
+              <span aria-hidden="true">&#127919;</span>
+              <span>Scegli categoria</span>
+            </label>
+          </div>
+
+          <select id="singleCategory" class="srOnly" tabindex="-1" aria-hidden="true"></select>
+          <div id="oneCatOptions" class="categoryStrip is-disabled" aria-disabled="true">
+            <button type="button" class="categoryChip" data-category="storia"><span aria-hidden="true">&#127963;</span><span>Storia</span></button>
+            <button type="button" class="categoryChip" data-category="geografia"><span aria-hidden="true">&#127757;</span><span>Geografia</span></button>
+            <button type="button" class="categoryChip" data-category="musica"><span aria-hidden="true">&#127925;</span><span>Musica</span></button>
+            <button type="button" class="categoryChip" data-category="arte"><span aria-hidden="true">&#127912;</span><span>Arte</span></button>
+            <button type="button" class="categoryChip" data-category="spettacolo"><span aria-hidden="true">&#127917;</span><span>Spettacolo</span></button>
+            <button type="button" class="categoryChip" data-category="scienza"><span aria-hidden="true">&#128300;</span><span>Scienza</span></button>
+            <button type="button" class="categoryChip" data-category="sport"><span aria-hidden="true">&#9917;</span><span>Sport</span></button>
+            <button type="button" class="categoryChip" data-category="cucina"><span aria-hidden="true">&#127869;</span><span>Cucina</span></button>
+            <button type="button" class="categoryChip" data-category="dialetto"><span aria-hidden="true">&#128483;</span><span>Dialetto e cultura</span></button>
+          </div>
+        </section>
+
+        <section class="setupBlock compactBlock" aria-labelledby="timerTitle">
+          <div class="blockTitle timerTitleRow">
+            <span class="stepBadge">4</span>
+            <div class="timerCopy">
+              <h3 id="timerTitle">Timer</h3>
+              <p class="muted">Decidi se giocare contro il tempo.</p>
+            </div>
+            <label class="switchControl" title="Attiva o disattiva timer">
+              <input id="timerEnabled" type="checkbox" checked>
+              <span class="switchTrack" aria-hidden="true"><span class="switchKnob"></span></span>
+              <span class="switchText">Attivo</span>
+            </label>
+          </div>
+          <div class="timerOptions">
+            <label for="timerSeconds">Tempo per domanda</label>
+            <select id="timerSeconds">
+              <option value="30">30 secondi</option>
+              <option value="60">1 minuto</option>
+            </select>
+            <span class="muted">Il timer si ferma automaticamente quando metti la partita in pausa.</span>
+          </div>
+        </section>
+
+        <div class="mainActions">
+          <button id="btnStart" class="primary startCta" type="button"><span aria-hidden="true">&#9654;</span> Inizia la sfida</button>
         </div>
       </div>
     </section>
@@ -206,6 +286,7 @@
         <div>
           <div class="inline" style="gap:10px;">
             <div id="qCat" class="pill"></div>
+            <div id="qDifficulty" class="pill difficultyPill"></div>
             <div id="qPlayer" class="pill"></div>
           </div>
 </div>
@@ -277,8 +358,43 @@
     </div>
   </div>
 
-  <!-- IMPORTANTISSIMO: prima le domande, poi il motore -->
+  <!-- Prima il registro delle domande, poi i tre livelli, infine il motore -->
   <script src="questions.js"></script>
+
+  <script>window.QUIZ_QUESTIONS = window.QUIZ_LEVELS[1];</script>
+  <script src="questions/level_1/storia_1.js"></script>
+  <script src="questions/level_1/geografia_1.js"></script>
+  <script src="questions/level_1/musica_1.js"></script>
+  <script src="questions/level_1/arte_1.js"></script>
+  <script src="questions/level_1/spettacolo_1.js"></script>
+  <script src="questions/level_1/scienza_1.js"></script>
+  <script src="questions/level_1/sport_1.js"></script>
+  <script src="questions/level_1/cucina_1.js"></script>
+  <script src="questions/level_1/dialetto-cultura_1.js"></script>
+
+  <script>window.QUIZ_QUESTIONS = window.QUIZ_LEVELS[2];</script>
+  <script src="questions/level_2/storia_2.js"></script>
+  <script src="questions/level_2/geografia_2.js"></script>
+  <script src="questions/level_2/musica_2.js"></script>
+  <script src="questions/level_2/arte_2.js"></script>
+  <script src="questions/level_2/spettacolo_2.js"></script>
+  <script src="questions/level_2/scienza_2.js"></script>
+  <script src="questions/level_2/sport_2.js"></script>
+  <script src="questions/level_2/cucina_2.js"></script>
+  <script src="questions/level_2/dialetto-cultura_2.js"></script>
+
+  <script>window.QUIZ_QUESTIONS = window.QUIZ_LEVELS[3];</script>
+  <script src="questions/level_3/storia_3.js"></script>
+  <script src="questions/level_3/geografia_3.js"></script>
+  <script src="questions/level_3/musica_3.js"></script>
+  <script src="questions/level_3/arte_3.js"></script>
+  <script src="questions/level_3/spettacolo_3.js"></script>
+  <script src="questions/level_3/scienza_3.js"></script>
+  <script src="questions/level_3/sport_3.js"></script>
+  <script src="questions/level_3/cucina_3.js"></script>
+  <script src="questions/level_3/dialetto-cultura_3.js"></script>
+
+  <script>window.QUIZ_QUESTIONS = window.QUIZ_LEVELS[1];</script>
   <script src="games.js"></script>
 </body>
 </html>
