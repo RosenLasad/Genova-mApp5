@@ -157,8 +157,8 @@
       categories:[
         {title:'Punti QR', note:'Guarda com’erano i luoghi di Genova', type:'qr', mapIcon:'toolbar/qr.svg', mapToggle:'#btn-qr-removed'},
         {title:'MiniDoc', note:'Brevi documentari dedicati a quartieri e luoghi', type:'minidoc', mapIcon:'icons/passato/minidoc.svg', mapToggle:'.qt-doc-all'},
-        {title:'Audioguide', note:'Ascolta storie e approfondimenti'},
-        {title:'Videoguide', note:'Percorsi raccontati attraverso le immagini'}
+        {title:'Audioguide', note:'Ascolta storie e approfondimenti', disabled:true, comingSoon:true},
+        {title:'Videoguide', note:'Percorsi raccontati attraverso le immagini', disabled:true, comingSoon:true}
       ]
     },
     {
@@ -166,7 +166,7 @@
       description:'Novità, appuntamenti e strumenti per partecipare e contattare Genova mApp.',
       categories:[
         {title:'Eventi', note:'Appuntamenti del giorno e della settimana', type:'events'},
-        {title:'Blog', note:'Commenti e conversazioni della comunità'},
+        {title:'Blog', note:'Commenti e conversazioni della comunità', disabled:true, comingSoon:true},
         {title:'Contatti', note:'Scrivi agli amministratori dell’app', action:'contact'}
       ]
     },
@@ -324,8 +324,8 @@
         "bullets": [
           "Punti QR — contenuti collegati a luoghi e aree della città.",
           "MiniDoc — brevi documentari dedicati alla storia, ai luoghi e alle trasformazioni di Genova.",
-          "Audioguide — contenuti audio dedicati alla scoperta della città.",
-          "Videoguide — contenuti video dedicati a luoghi, percorsi e argomenti specifici."
+          "Audioguide — contenuti audio dedicati alla scoperta della città. In arrivo.",
+          "Videoguide — contenuti video dedicati a luoghi, percorsi e argomenti specifici. In arrivo."
         ]
       },
       {
@@ -334,7 +334,7 @@
         "p": [],
         "bullets": [
           "Eventi — appuntamenti, manifestazioni e iniziative presenti in città.",
-          "Blog — spazio dedicato a contenuti, approfondimenti e conversazioni legate a Genova e alla sua comunità.",
+          "Blog — spazio dedicato a contenuti, approfondimenti e conversazioni legate a Genova e alla sua comunità. In arrivo.",
           "Contatti — informazioni per comunicare con Genova mApp."
         ]
       },
@@ -656,14 +656,16 @@
       {
         "title": "Audioguide",
         "p": [
-          "Le Audioguide permettono di ascoltare contenuti dedicati ai luoghi e agli argomenti presenti nell’app. Sono pensate per accompagnare l’esplorazione della città anche mentre ci si trova sul posto."
-        ]
+          "Le Audioguide permetteranno di ascoltare contenuti dedicati ai luoghi e agli argomenti presenti nell’app. Saranno pensate per accompagnare l’esplorazione della città anche mentre ci si trova sul posto."
+        ],
+        "comingSoon": true
       },
       {
         "title": "Videoguide",
         "p": [
-          "Le Videoguide utilizzano immagini e video per raccontare luoghi, percorsi e argomenti legati a Genova. Quando disponibili possono essere aperte direttamente dai relativi contenuti dell’app."
-        ]
+          "Le Videoguide utilizzeranno immagini e video per raccontare luoghi, percorsi e argomenti legati a Genova. Quando saranno disponibili potranno essere aperte direttamente dai relativi contenuti dell’app."
+        ],
+        "comingSoon": true
       },
       {
         "title": "Eventi",

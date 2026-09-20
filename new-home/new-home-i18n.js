@@ -789,24 +789,24 @@
     "MiniDoc — documentai curti dedicæ a-a stöia, a-i leughi e a-e trasformaçioin de Zena."
   ],
   [
-    "Audioguide — contenuti audio dedicati alla scoperta della città.",
-    "Audio guides — audio content for discovering the city.",
-    "Audioguías — contenidos de audio dedicados a descubrir la ciudad.",
-    "Audioguides — contenus audio consacrés à la découverte de la ville.",
-    "الأدلة الصوتية — محتوى صوتي لاكتشاف المدينة.",
-    "Аудиогиды — аудиоматериалы для знакомства с городом.",
-    "语音导览 — 用于探索城市的音频内容。",
-    "Audioguide — contegnui audio pe descovrî a çittæ."
+    "Audioguide — contenuti audio dedicati alla scoperta della città. In arrivo.",
+    "Audio guides — audio content for discovering the city. Coming soon.",
+    "Audioguías — contenidos de audio dedicados a descubrir la ciudad. Próximamente.",
+    "Audioguides — contenus audio consacrés à la découverte de la ville. Bientôt disponible.",
+    "الأدلة الصوتية — محتوى صوتي لاكتشاف المدينة. قريباً.",
+    "Аудиогиды — аудиоматериалы для знакомства с городом. Скоро.",
+    "语音导览 — 用于探索城市的音频内容。即将推出。",
+    "Audioguide — contegnui audio pe descovrî a çittæ. In arrivo."
   ],
   [
-    "Videoguide — contenuti video dedicati a luoghi, percorsi e argomenti specifici.",
-    "Video guides — video content dedicated to places, routes and specific topics.",
-    "Videoguías — contenidos de vídeo dedicados a lugares, recorridos y temas específicos.",
-    "Vidéoguides — contenus vidéo consacrés à des lieux, itinéraires et thèmes spécifiques.",
-    "أدلة الفيديو — محتوى فيديو مخصص لأماكن ومسارات وموضوعات محددة.",
-    "Видеогиды — видеоматериалы о местах, маршрутах и отдельных темах.",
-    "视频导览 — 与地点、路线和特定主题相关的视频内容。",
-    "Videoguide — contegnui video dedicæ a leughi, percorsi e argomenti speçifichi."
+    "Videoguide — contenuti video dedicati a luoghi, percorsi e argomenti specifici. In arrivo.",
+    "Video guides — video content dedicated to places, routes and specific topics. Coming soon.",
+    "Videoguías — contenidos de vídeo dedicados a lugares, recorridos y temas específicos. Próximamente.",
+    "Vidéoguides — contenus vidéo consacrés à des lieux, itinéraires et thèmes spécifiques. Bientôt disponible.",
+    "أدلة الفيديو — محتوى فيديو مخصص لأماكن ومسارات وموضوعات محددة. قريباً.",
+    "Видеогиды — видеоматериалы о местах, маршрутах и отдельных темах. Скоро.",
+    "视频导览 — 与地点、路线和特定主题相关的视频内容。即将推出。",
+    "Videoguide — contegnui video dedicæ a leughi, percorsi e argomenti speçifichi. In arrivo."
   ],
   [
     "Eventi — appuntamenti, manifestazioni e iniziative presenti in città.",
@@ -819,14 +819,14 @@
     "Eventi — appontamenti, manifestaçioin e iniçiative presenti inta çittæ."
   ],
   [
-    "Blog — spazio dedicato a contenuti, approfondimenti e conversazioni legate a Genova e alla sua comunità.",
-    "Blog — a space for content, insights and conversations about Genoa and its community.",
-    "Blog — espacio dedicado a contenidos, análisis y conversaciones relacionadas con Génova y su comunidad.",
-    "Blog — espace consacré à des contenus, approfondissements et échanges liés à Gênes et à sa communauté.",
-    "المدونة — مساحة للمحتوى والتعمق والنقاشات المرتبطة بجنوة ومجتمعها.",
-    "Блог — пространство для материалов, подробностей и обсуждений о Генуе и её сообществе.",
-    "博客 — 用于发布与热那亚及其社区相关的内容、深度文章和交流。",
-    "Blog — spaçio dedicòu a contegnui, approfondimenti e conversaçioin in sce Zena e a seu comunitæ."
+    "Blog — spazio dedicato a contenuti, approfondimenti e conversazioni legate a Genova e alla sua comunità. In arrivo.",
+    "Blog — a space for content, insights and conversations about Genoa and its community. Coming soon.",
+    "Blog — espacio dedicado a contenidos, análisis y conversaciones relacionadas con Génova y su comunidad. Próximamente.",
+    "Blog — espace consacré à des contenus, approfondissements et échanges liés à Gênes et à sa communauté. Bientôt disponible.",
+    "المدونة — مساحة للمحتوى والتعمق والنقاشات المرتبطة بجنوة ومجتمعها. قريباً.",
+    "Блог — пространство для материалов, подробностей и обсуждений о Генуе и её сообществе. Скоро.",
+    "博客 — 用于发布与热那亚及其社区相关的内容、深度文章和交流。即将推出。",
+    "Blog — spaçio dedicòu a contegnui, approfondimenti e conversaçioin in sce Zena e a seu comunitæ. In arrivo."
   ],
   [
     "Contatti — informazioni per comunicare con Genova mApp.",
@@ -1959,24 +1959,24 @@
     "I MiniDoc son video curti dedicæ a leughi, avvenimenti, personnaggi e trasformaçioin da stöia de Zena. Quande gh’é un MiniDoc disponibile ti peu arvîlo da-a seçion relativa ò dò ponto associòu."
   ],
   [
-    "Le Audioguide permettono di ascoltare contenuti dedicati ai luoghi e agli argomenti presenti nell’app. Sono pensate per accompagnare l’esplorazione della città anche mentre ci si trova sul posto.",
-    "Audio guides let you listen to content about places and topics in the app. They are designed to accompany your exploration of the city, including while you are on site.",
-    "Las Audioguías permiten escuchar contenidos dedicados a los lugares y temas presentes en la app. Están pensadas para acompañar la exploración de la ciudad incluso mientras te encuentras en el lugar.",
-    "Les Audioguides permettent d’écouter des contenus consacrés aux lieux et aux thèmes présents dans l’application. Elles sont conçues pour accompagner la découverte de la ville, y compris lorsque vous êtes sur place.",
-    "تتيح الأدلة الصوتية الاستماع إلى محتوى مخصص للأماكن والموضوعات الموجودة في التطبيق. وهي مصممة لمرافقة استكشاف المدينة حتى أثناء وجودك في الموقع.",
-    "Аудиогиды позволяют слушать материалы о местах и темах приложения. Они созданы для сопровождения знакомства с городом, в том числе непосредственно на месте.",
-    "语音导览可播放与应用中的地点和主题相关的音频内容，适合在实际游览城市时陪伴使用。",
-    "E Audioguide permettan d’ascoltâ contegnui dedicæ a-i leughi e a-i argomenti presenti inte l’app. Son fæte pe accompagnâ l’esploraçion da çittæ anche quande ti sei in sciô pòsto."
+    "Le Audioguide permetteranno di ascoltare contenuti dedicati ai luoghi e agli argomenti presenti nell’app. Saranno pensate per accompagnare l’esplorazione della città anche mentre ci si trova sul posto.",
+    "Audio guides will let you listen to content about places and topics in the app. They will be designed to accompany your exploration of the city, including while you are on site.",
+    "Las Audioguías permitirán escuchar contenidos dedicados a los lugares y temas presentes en la app. Estarán pensadas para acompañar la exploración de la ciudad incluso mientras te encuentras en el lugar.",
+    "Les Audioguides permettront d’écouter des contenus consacrés aux lieux et aux thèmes présents dans l’application. Elles seront conçues pour accompagner la découverte de la ville, y compris lorsque vous serez sur place.",
+    "ستتيح الأدلة الصوتية الاستماع إلى محتوى مخصص للأماكن والموضوعات الموجودة في التطبيق. وستكون مصممة لمرافقة استكشاف المدينة حتى أثناء وجودك في الموقع.",
+    "Аудиогиды позволят слушать материалы о местах и темах приложения. Они будут предназначены для сопровождения знакомства с городом, в том числе непосредственно на месте.",
+    "语音导览将提供与应用中的地点和主题相关的音频内容，并用于在实际游览城市时陪伴使用。",
+    "E Audioguide permettian d’ascoltâ contegnui dedicæ a-i leughi e a-i argomenti presenti inte l’app. Saian fæte pe accompagnâ l’esploraçion da çittæ anche quande ti sei in sciô pòsto."
   ],
   [
-    "Le Videoguide utilizzano immagini e video per raccontare luoghi, percorsi e argomenti legati a Genova. Quando disponibili possono essere aperte direttamente dai relativi contenuti dell’app.",
-    "Video guides use images and video to tell the story of places, routes and topics related to Genoa. When available, they can be opened directly from the corresponding app content.",
-    "Las Videoguías utilizan imágenes y vídeo para contar lugares, recorridos y temas relacionados con Génova. Cuando estén disponibles, pueden abrirse directamente desde los contenidos correspondientes de la app.",
-    "Les Vidéoguides utilisent des images et des vidéos pour raconter des lieux, des itinéraires et des thèmes liés à Gênes. Lorsqu’elles sont disponibles, elles peuvent être ouvertes directement depuis les contenus correspondants de l’application.",
-    "تستخدم أدلة الفيديو الصور والفيديو لسرد قصص الأماكن والمسارات والموضوعات المرتبطة بجنوة. وعند توفرها يمكن فتحها مباشرة من المحتوى المقابل في التطبيق.",
-    "Видеогиды используют изображения и видео, чтобы рассказывать о местах, маршрутах и темах, связанных с Генуей. Когда они доступны, их можно открыть прямо из соответствующих материалов приложения.",
-    "视频导览通过图片和视频讲述与热那亚有关的地点、路线和主题。可用时，可直接从对应的应用内容中打开。",
-    "E Videoguide adêuvian imagine e video pe contâ leughi, percorsi e argomenti ligæ a Zena. Quande disponibili se peu arvî direttamente da-i contegnui relativi de l’app."
+    "Le Videoguide utilizzeranno immagini e video per raccontare luoghi, percorsi e argomenti legati a Genova. Quando saranno disponibili potranno essere aperte direttamente dai relativi contenuti dell’app.",
+    "Video guides will use images and video to tell the story of places, routes and topics related to Genoa. When available, they will be accessible directly from the corresponding app content.",
+    "Las Videoguías utilizarán imágenes y vídeo para contar lugares, recorridos y temas relacionados con Génova. Cuando estén disponibles, podrán abrirse directamente desde los contenidos correspondientes de la app.",
+    "Les Vidéoguides utiliseront des images et des vidéos pour raconter des lieux, des itinéraires et des thèmes liés à Gênes. Lorsqu’elles seront disponibles, elles pourront être ouvertes directement depuis les contenus correspondants de l’application.",
+    "ستستخدم أدلة الفيديو الصور والفيديو لسرد قصص الأماكن والمسارات والموضوعات المرتبطة بجنوة. وعندما تصبح متاحة، سيكون بالإمكان فتحها مباشرة من المحتوى المقابل في التطبيق.",
+    "Видеогиды будут использовать изображения и видео, чтобы рассказывать о местах, маршрутах и темах, связанных с Генуей. Когда они станут доступны, их можно будет открыть прямо из соответствующих материалов приложения.",
+    "视频导览将通过图片和视频讲述与热那亚有关的地点、路线和主题。上线后，可直接从对应的应用内容中打开。",
+    "E Videoguide adêuviian imagine e video pe contâ leughi, percorsi e argomenti ligæ a Zena. Quande saian disponibili se porian arvî direttamente da-i contegnui relativi de l’app."
   ],
   [
     "La sezione Eventi permette di scoprire appuntamenti, spettacoli, manifestazioni, incontri e altre iniziative presenti a Genova.",
