@@ -82,6 +82,11 @@
 
   var SECTIONS = [
     {
+      key:'guide', theme:'guide', wide:true, title:'Guida e istruzioni',
+      description:'Scopri come usare Genova mApp e tutte le sue funzioni.',
+      categories:[{title:'Apri la guida', note:'Istruzioni complete di Genova mApp', action:'guide'}]
+    },
+    {
       key:'heritage', theme:'heritage', wide:true, title:'Patrimonio storico',
       sideButton:'#qt-cat-passato-btn', sideLabel:'Apri Passato sulla mappa',
       description:'Forti, musei, chiese e palazzi raccontano la storia e l’identità di Genova.',
@@ -165,11 +170,6 @@
         {title:'Premi', note:'Iniziative e vantaggi per gli utenti'},
         {title:'Shop', note:'Gadget e prodotti dedicati a Genova'}
       ]
-    },
-    {
-      key:'guide', theme:'guide', wide:true, title:'Guida e istruzioni',
-      description:'Scopri come utilizzare la mappa, i filtri, il Taccuino e tutti gli strumenti dell’app.',
-      categories:[{title:'Apri la guida', note:'Istruzioni complete di Genova mApp', action:'guide'}]
     }
   ];
 
@@ -213,7 +213,7 @@
       '<section class="gm-new-home-shell" role="dialog" aria-modal="true" aria-labelledby="gm-new-home-title">'+
       '  <header class="gm-new-home-topbar">'+
       '    <button type="button" class="gm-new-home-navbtn" id="gm-new-home-back" aria-label="Indietro" hidden><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>'+
-      '    <div class="gm-new-home-heading"><span class="gm-new-home-eyebrow">Genova mApp</span><h2 class="gm-new-home-title" id="gm-new-home-title">Benvenuto</h2></div>'+
+      '    <div class="gm-new-home-heading"><span class="gm-new-home-eyebrow"></span><h2 class="gm-new-home-title" id="gm-new-home-title">Benvenuto</h2></div>'+
       '    <button type="button" class="gm-new-home-navbtn" id="gm-new-home-close" aria-label="Vai alla mappa">'+
       icon('routes')+'<span>MAPPA</span>'+
       '    </button>'+
@@ -250,7 +250,7 @@
     applyTheme(null);
     applyView(currentView);
     title.textContent = 'Benvenuto';
-    eyebrow.textContent = 'Genova mApp';
+    eyebrow.textContent = '';
     backButton.hidden = true;
     var cards = SECTIONS.map(function(section){
       var shortcut = section.sideButton
@@ -266,7 +266,6 @@
     scroll.innerHTML = ''+
       '<div class="gm-new-home-intro">'+
       '  <h3>Che cosa vuoi scoprire?</h3>'+
-      '  <p>Scegli un argomento e lasciati guidare tra luoghi, storie, servizi e contenuti.</p>'+
       '</div>'+
       '<div class="gm-new-home-grid">'+cards+'</div>';
     scroll.querySelectorAll('[data-section]').forEach(function(button){

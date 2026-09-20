@@ -85,7 +85,7 @@ html.gm-new-home-open body{ overflow: hidden; }
 .gm-new-home-topbar{
   min-height: 64px;
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) minmax(0, auto) minmax(0, 1fr);
   align-items: center;
   gap: 10px;
   padding: 9px 12px;
@@ -95,7 +95,7 @@ html.gm-new-home-open body{ overflow: hidden; }
   box-shadow: 0 5px 18px rgba(4,11,22,.18);
 }
 
-.gm-new-home-heading{ min-width: 0; text-align: center; }
+.gm-new-home-heading{ min-width: 0; max-width: min(62vw, 640px); text-align: center; }
 .gm-new-home-eyebrow{
   display: block;
   margin-bottom: 1px;
@@ -111,6 +111,13 @@ html.gm-new-home-open body{ overflow: hidden; }
   font: 760 clamp(1.02rem, 2.2vw, 1.35rem)/1.18 ui-sans-serif, system-ui, sans-serif;
   overflow-wrap: anywhere;
 }
+.gm-new-home-overlay[data-view="home"] .gm-new-home-eyebrow{ display:none; }
+.gm-new-home-overlay[data-view="home"] .gm-new-home-title{
+  font-size:clamp(1.35rem, 3vw, 1.75rem);
+  line-height:1.1;
+}
+#gm-new-home-back{ justify-self:start; }
+#gm-new-home-close{ justify-self:end; }
 
 .gm-new-home-navbtn{
   width: 42px;
@@ -169,7 +176,7 @@ html.gm-new-home-open body{ overflow: hidden; }
 }
 
 .gm-new-home-intro{
-  margin: 0 auto clamp(14px, 2vw, 22px);
+  margin: 0 auto clamp(11px, 1.7vw, 18px);
   max-width: 720px;
   text-align: center;
 }
