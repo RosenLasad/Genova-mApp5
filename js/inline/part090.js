@@ -107,7 +107,7 @@
 
   var tries = 0, max = 60;
   var iv = setInterval(function(){
-    if (typeof L !== 'undefined' && typeof map !== 'undefined' && attach()){
+    if (typeof L !== 'undefined' && map && typeof map.hasLayer === 'function' && attach()){
       clearInterval(iv);
     }
     if (++tries >= max) clearInterval(iv);

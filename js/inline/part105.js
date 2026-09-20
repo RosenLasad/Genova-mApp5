@@ -49,7 +49,7 @@ return guess || null;
       window.addEventListener('resize', positionDock, {passive:true});
       window.addEventListener('orientationchange', positionDock);
       // If map resizes, also reposition
-      if (typeof map !== 'undefined' && map.on) {
+      if (typeof map !== 'undefined' && map && typeof map.on === 'function') {
         map.on('resize', positionDock);
       }
     }

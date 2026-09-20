@@ -139,7 +139,7 @@
     "lat": 44.410818066238726,
     "lng": 8.934136225371043,
     "addr": "Via Garibaldi, 4, 16124 Genova",
-    "url": "http:///",
+    "url": "https://www.ge.camcom.gov.it/it/la-camera/le-sedi-1/palazzo-tobia-pallavicino-1",
     "img": "palazzi/palazzo-tobia-pallavicino.jpg",
     "desc": {
       "it": "Costruito tra il 1558 e il 1561 per il marchese Tobia Pallavicino, ricchissimo commerciante in allume, su progetto di Giovanni Battista Castello detto il Bergamasco, è uno dei primi grandi palazzi rinascimentali della nuova strada nobiliare cinquecentesca. La facciata su via Garibaldi, con il bugnato in pietra al piano terreno e le lesene ioniche al piano nobile, introduce a un atrio e a saloni interamente decorati a stucco e affresco con le storie di Enea, che ne fecero un modello di modernità per i contemporanei. Passato ai Carrega nel Settecento, il palazzo fu sopraelevato e ampliato verso piazza del Ferro con la celebre galleria dorata di Lorenzo De Ferrari; inserito nei Palazzi dei Rolli e tra i 42 edifici UNESCO del sistema delle Strade Nuove, è oggi sede della Camera di Commercio di Genova.",
@@ -196,7 +196,7 @@
     "lat": 44.41037166113946,
     "lng": 8.93533874336221,
     "addr": "Piazza delle Fontane Marose, 4, 16123 Genova",
-    "url": "http:///",
+    "url": "https://www.rolliestradenuove.it/rollo/6-palazzo-di-agostino-ayrolo/",
     "img": "palazzi/palazzo-agostino-ayrolo.jpg",
     "desc": {
       "it": "Nato dall’unione, tra fine Cinquecento e Seicento, di più edifici affacciati su piazza delle Fontane Marose, il palazzo fu residenza dell’ambasciatore spagnolo Francesco De Ugarte e passò poi agli Spinola, ad Agostino Ayrolo e infine ai Negrone, che ne ridefinirono l’aspetto tra Sette e Ottocento con il lungo prospetto a quattordici assi di finestre e i due portali gemelli sulla piazza. Considerato uno dei palazzi dei Rolli più imponenti e scenografici, conserva al piano nobile una delle decorazioni barocche meglio preservate di Genova, con la celebre galleria affrescata da Giovanni Battista Carlone per celebrare il matrimonio di Agostino Ayrolo e, intorno al 1700, gli interventi di Domenico Parodi in onore della famiglia Negrone. Inserito tra i 42 palazzi delle Strade Nuove riconosciuti dall’UNESCO, è oggi un edificio privato sottoposto a tutela, visitabile solo in occasioni speciali come i Rolli Days.",
@@ -215,7 +215,7 @@
     "lat": 44.410169958511005,
     "lng": 8.935836454742024,
     "addr": "Salita Santa Caterina, 3, 16123 Genova",
-    "url": "http:///",
+    "url": "",
     "img": "palazzi/palazzo-tommaso-spinola.jpg",
     "desc": {
       "it": "Edificato tra il 1558 e il 1561 per Tommaso Spinola su progetto di Giovan Battista Castello, detto il Bergamasco, il palazzo sorge lungo la salita di S. Caterina, tra l’antica piazza degli Spinola di Luccoli e quella Della Rovere, in posizione strategica tra il centro e la porta di S. Caterina. La facciata, difficilmente leggibile dalla strada per la forte altezza, è interamente rivestita da un elaborato apparato di stucchi e quadrature manieriste: erme femminili, mascheroni mostruosi, trofei d’armi e figure ibride con code di pesce, ali e zampe artigliate, interpretati come allusione a simboli magico-ermetici. Dall’atrio affrescato con il mito di Andromeda e Perseo si accede ai saloni di rappresentanza, decorati nel Cinquecento da Luca Cambiaso e dalla bottega di Andrea e Ottavio Semino con imprese belliche di Carlo V, uno dei cicli più significativi del manierismo genovese. Inserito nei Palazzi dei Rolli e fra i 42 edifici UNESCO del sistema delle Strade Nuove, passato nei secoli ai Negrone e ai Pessagno, è oggi una residenza privata tutelata, con l’atrio talvolta accessibile durante i Rolli Days.",
@@ -272,7 +272,7 @@
     "lat": 44.412825671194994,
     "lng": 8.927397298511366,
     "addr": "Piazza Santa Sabina, 2, 16124 Genova",
-    "url": "http:///",
+    "url": "",
     "img": "palazzi/palazzo-rebuffo.jpg",
     "desc": {
       "it": "Costruito nel 1509 da Bartolomeo Rebuffo su preesistenze medievali addossate alle mura del XII secolo, il palazzo venne ampliato a metà Seicento dal senatore Marc’Aurelio Rebuffo, che incorporò anche la torre nord dell’antica porta di Santa Fede (o dei Vacca), ingresso occidentale della cinta muraria medievale. Inserito nei Rolli nel 1664 e trasformato nel 1779 dal marchese Stefano Serra con un radicale intervento di Gio Battista Pellegrini, si presenta oggi con la facciata nobiliare su piazza Santa Sabina e la lunga galleria coperta affacciata su via delle Fontane, che testimoniano l’assetto settecentesco dell’intero isolato. All’interno conserva affreschi settecenteschi di Carlo Giuseppe Ratti e, pur essendo un palazzo dei Rolli non compreso nel nucleo UNESCO, è oggi uno snodo vivo del quartiere di Prè come sede del Dipartimento di Lingue e Culture Moderne dell’Università di Genova.",
@@ -291,7 +291,7 @@
     "lat": 44.411921208899486,
     "lng": 8.92923989113838,
     "addr": "Piazza Fossatello, 3, 16124 Genova",
-    "url": "http:///",
+    "url": "https://www.rolliestradenuove.it/rollo/33-palazzo-di-gio-battista-centurione/",
     "img": "palazzi/palazzo-andrea-pitto.jpg",
     "desc": {
       "it": "Edificato a partire dal 1611–1612 da Battista Centurione su case preesistenti di famiglia, su progetto di Battista e Filippo Cantone, il palazzo si imposta all’angolo tra piazza Fossatello, via del Campo e via Lomellini come una sorta di enorme prua di nave affacciata sul cuore commerciale della città. Iscritto nei Rolli dal 1664 e oggi fra i 42 palazzi UNESCO del sistema delle Strade Nuove, conserva i due piani nobili con lo scalone voltato originale e un ricchissimo ciclo di stucchi e affreschi di Domenico Piola, Gregorio De Ferrari, Bartolomeo Guidobono e Giovanni Battista Semino, oltre a una cappella decorata da Giovanni Carlone. Oggi noto come Palazzo Andrea Pitto o Centurione Cambiaso, è in gran parte ad uso privato ma si apre al pubblico in occasioni speciali, come i Rolli Days e visite guidate dedicate alla sua “galleria della Giustizia” e agli interni barocchi.",
@@ -310,7 +310,7 @@
     "lat": 44.40694651594779,
     "lng": 8.934920879924707,
     "addr": "P.zza Raffaele de Ferrari, 16121 Genova",
-    "url": "http:///",
+    "url": "https://www.ge.camcom.gov.it/it/la-camera/le-sedi-1/palazzo-della-borsa-valori-1",
     "img": "palazzi/palazzo-della-borsa.jpg",
     "desc": {
       "it": "Inaugurato nel 1912 come sede della nuova Borsa Valori di Genova, il palazzo affaccia su piazza De Ferrari con una monumentale facciata curva in stile neo-cinquecentesco, progettata dagli ingegneri Dario Carbone e Amedeo Pieragostini per celebrare la potenza finanziaria della città. Gli interni, firmati da Adolfo Coppedè, sono un trionfo di Liberty: la grande Sala delle Grida ellittica, coperta da una cupola vetrata e circondata da scagni e lampadari in bronzo, era all’epoca la più vasta d’Italia per le contrattazioni di borsa. Dopo la chiusura delle attività borsistiche nel 1998, il palazzo è stato restaurato e oggi ospita eventi, mostre e convegni, mantenendo il ruolo di “salotto economico” della città.",

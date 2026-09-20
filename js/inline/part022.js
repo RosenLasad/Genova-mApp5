@@ -1431,7 +1431,27 @@ map.fitBounds(comuneBounds, { padding:[0,0] });
             apiKey: window.MAPTILER_KEY,
             style: window.GENOVA_BASEMAP_STYLE_ID,
             language: 'it'
-          }).addTo(map);
+          });
+          tiles.addTo(map);
+          // Alcuni elementi dello stile personalizzato hanno un campo immagine nullo.
+          // MapTiler lo segnala come "Image null" anche se la mappa resta utilizzabile:
+          // registriamo subito una risorsa trasparente sulla mappa interna.
+          try {
+            var maptilerMap = (typeof tiles.getMaptilerSDKMap === 'function')
+              ? tiles.getMaptilerSDKMap()
+              : ((typeof tiles.getMaptilerMap === 'function') ? tiles.getMaptilerMap() : null);
+            if (maptilerMap && typeof maptilerMap.on === 'function') {
+              maptilerMap.on('styleimagemissing', function(event) {
+                if (!event || event.id !== 'null') return;
+                if (typeof maptilerMap.hasImage === 'function' && maptilerMap.hasImage('null')) return;
+                maptilerMap.addImage('null', {
+                  width: 1,
+                  height: 1,
+                  data: new Uint8Array([0, 0, 0, 0])
+                });
+              });
+            }
+          } catch (_) {}
           window.__GENOVA_BASEMAP_MODE = 'vector-custom';
         } else {
           tiles = L.tileLayer(rasterFallbackUrl, {
