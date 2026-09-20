@@ -27,19 +27,19 @@ const WIN_PER_CAT = 3;
 
 // Colori categoria (UI): scelti per essere leggibili su sfondo scuro.
 const CATEGORY_COLORS = {
-  storia: "#ef4444",      // rosso
-  geografia: "#3b82f6",   // blu
-  musica: "#a855f7",      // viola
-  arte: "#f97316",        // arancio
-  spettacolo: "#14b8a6",  // teal
-  scienza: "#22c55e",     // verde
-  sport: "#eab308",       // giallo
-  cucina: "#fb7185",      // rosa
-  dialetto: "#94a3b8",    // grigio/ardesia
+  storia: "#c8675b",      // terracotta / rosso mattone
+  geografia: "#4f9c95",   // petrolio / turchese sobrio
+  musica: "#9a6fae",      // prugna
+  arte: "#d09a4b",        // ocra
+  spettacolo: "#c56f86",  // rosa bordeaux
+  scienza: "#78956f",     // verde oliva
+  sport: "#d1ad4f",       // oro
+  cucina: "#d07b4d",      // arancio bruciato
+  dialetto: "#7c8d98",    // ardesia
 };
 
 function getCatColor(catId) {
-  return CATEGORY_COLORS[catId] || "#2a3042";
+  return CATEGORY_COLORS[catId] || "#8d8172";
 }
 
 function applyCatPillStyle(el, catId) {
@@ -47,7 +47,7 @@ function applyCatPillStyle(el, catId) {
   if (!el) return;
   el.style.background = col;
   el.style.borderColor = col;
-  el.style.color = "#0f1115";
+  el.style.color = "#191714";
 }
 
 function applyCatCardStyle(el, catId) {
@@ -1101,8 +1101,8 @@ function renderLeaderboard() {
     });
 
   leaderboard.innerHTML = `
-    <div style="border:1px solid #232735; border-radius:12px; overflow:hidden;">
-      <div style="padding:10px 12px; background:#121623; border-bottom:1px solid #232735; display:flex; justify-content:space-between; gap:10px; align-items:center;">
+    <div style="border:1px solid rgba(226,214,194,.16); border-radius:12px; overflow:hidden;">
+      <div style="padding:10px 12px; background:rgba(24,22,20,.82); border-bottom:1px solid rgba(226,214,194,.16); display:flex; justify-content:space-between; gap:10px; align-items:center;">
         <b>Classifica</b>
         <span class="muted" style="font-size:12px;">Categorie: ${rows[0]?.catsCount ?? 0} · Target: ${WIN_PER_CAT}/cat</span>
       </div>
@@ -1110,9 +1110,9 @@ function renderLeaderboard() {
         const isWinner = (r.idx === game.winnerIndex);
         const medal = pos === 0 ? "🥇" : pos === 1 ? "🥈" : pos === 2 ? "🥉" : `${pos + 1}`;
         return `
-          <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:10px 12px; border-bottom:1px solid #232735; ${isWinner ? "background:#10131a;" : ""}">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:10px 12px; border-bottom:1px solid rgba(226,214,194,.16); ${isWinner ? "background:rgba(209,161,94,.07);" : ""}">
             <div style="display:flex; gap:10px; align-items:center; min-width:0;">
-              <div style="width:34px; height:34px; border-radius:12px; border:1px solid #2a3042; background:#121623; display:flex; align-items:center; justify-content:center; font-variant-numeric: tabular-nums;">
+              <div style="width:34px; height:34px; border-radius:12px; border:1px solid rgba(226,214,194,.16); background:rgba(24,22,20,.82); display:flex; align-items:center; justify-content:center; font-variant-numeric: tabular-nums;">
                 ${medal}
               </div>
               <div style="min-width:0;">

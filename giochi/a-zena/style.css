@@ -1470,3 +1470,336 @@ body{
   }
 }
 
+
+/* =========================================================
+   A Zena - Fase 1 look & feel
+   Palette piu varia e sobria + pannelli base + player mode compatto
+   ========================================================= */
+
+:root{
+  --az-bg: #171614;
+  --az-panel: rgba(31, 29, 27, .94);
+  --az-panel-soft: rgba(39, 36, 32, .78);
+  --az-panel-deep: rgba(23, 21, 19, .82);
+  --az-border: rgba(226, 214, 194, .16);
+  --az-border-strong: rgba(226, 214, 194, .32);
+  --az-text: #f4f0e8;
+  --az-muted: #b8b0a3;
+  --az-accent: #d1a15e;
+  --az-accent-soft: rgba(209, 161, 94, .14);
+  --az-terracotta: #c46f5d;
+  --az-teal: #55958d;
+  --az-plum: #92709f;
+  --az-olive: #78906a;
+  --az-gold: #d0a64f;
+  --az-shadow: 0 24px 70px rgba(0, 0, 0, .30);
+}
+
+body{
+  background:
+    radial-gradient(circle at 10% 8%, rgba(196, 111, 93, .14), transparent 34%),
+    radial-gradient(circle at 88% 13%, rgba(85, 149, 141, .105), transparent 34%),
+    radial-gradient(circle at 52% 104%, rgba(146, 112, 159, .075), transparent 35%),
+    linear-gradient(180deg, #181715 0%, #141412 54%, #11110f 100%);
+}
+
+.top{
+  background: rgba(23, 22, 20, .9);
+  border-bottom-color: rgba(226, 214, 194, .13);
+}
+
+.card,
+.modal{
+  border-color: var(--az-border);
+  background: var(--az-panel);
+}
+
+.mainCard::before{
+  background:
+    radial-gradient(circle at 8% 5%, rgba(196, 111, 93, .085), transparent 28%),
+    radial-gradient(circle at 92% 7%, rgba(85, 149, 141, .07), transparent 28%),
+    radial-gradient(circle at 55% 100%, rgba(208, 166, 79, .045), transparent 34%);
+}
+
+.eyebrow{
+  border-color: rgba(208, 166, 79, .34);
+  background: rgba(208, 166, 79, .09);
+  color: #ead0a1;
+}
+
+.setupBlock{
+  border-color: var(--az-border);
+  background: linear-gradient(180deg, rgba(43, 39, 35, .82), rgba(31, 29, 27, .72));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.025),
+    0 8px 24px rgba(0,0,0,.08);
+}
+
+/* Un piccolo accento diverso per ogni fase, senza trasformare i pannelli in blocchi colorati. */
+.setupBlock:nth-of-type(1) .stepBadge{
+  color: #f0c3b9;
+  border-color: rgba(196, 111, 93, .34);
+  background: rgba(196, 111, 93, .13);
+}
+.setupBlock:nth-of-type(2) .stepBadge{
+  color: #efd29c;
+  border-color: rgba(208, 166, 79, .34);
+  background: rgba(208, 166, 79, .12);
+}
+.setupBlock:nth-of-type(3) .stepBadge{
+  color: #b9ddd8;
+  border-color: rgba(85, 149, 141, .34);
+  background: rgba(85, 149, 141, .12);
+}
+.setupBlock:nth-of-type(4) .stepBadge{
+  color: #d7c2df;
+  border-color: rgba(146, 112, 159, .34);
+  background: rgba(146, 112, 159, .12);
+}
+
+.selectCard{
+  border-color: var(--az-border);
+  background: rgba(23, 21, 19, .62);
+}
+
+.selectCard:hover{
+  border-color: var(--az-border-strong);
+  background: rgba(48, 43, 38, .88);
+}
+
+/* Selezione generica: oro caldo al posto dell'azzurro. */
+.selectCard:has(input:checked){
+  border-color: rgba(209, 161, 94, .66);
+  background: linear-gradient(180deg, rgba(209, 161, 94, .14), rgba(209, 161, 94, .055));
+  box-shadow: 0 0 0 2px rgba(209, 161, 94, .065), 0 12px 34px rgba(0,0,0,.18);
+}
+
+/* Modalita giocatore: una sola riga, piu bassa e piu leggibile. */
+.playerModeGrid{
+  width: min(100%, 600px);
+  gap: 9px;
+}
+
+.playerCard{
+  min-height: 52px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+  padding: 7px 12px;
+  border-radius: 13px;
+  text-align: left;
+}
+
+.playerCard .optionIcon{
+  flex: 0 0 auto;
+  margin: 0;
+  font-size: 20px;
+}
+
+.playerCard .optionText{
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.playerCard .optionHint{
+  margin-left: auto;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.playerCard:nth-child(1):has(input:checked){
+  border-color: rgba(85, 149, 141, .68);
+  background: linear-gradient(180deg, rgba(85, 149, 141, .15), rgba(85, 149, 141, .055));
+  box-shadow: 0 0 0 2px rgba(85, 149, 141, .06), 0 10px 28px rgba(0,0,0,.16);
+}
+
+.playerCard:nth-child(2):has(input:checked){
+  border-color: rgba(146, 112, 159, .72);
+  background: linear-gradient(180deg, rgba(146, 112, 159, .16), rgba(146, 112, 159, .055));
+  box-shadow: 0 0 0 2px rgba(146, 112, 159, .06), 0 10px 28px rgba(0,0,0,.16);
+}
+
+/* Difficolta: tre famiglie cromatiche, niente blu dominante. */
+.level1Card:has(input:checked){
+  border-color: rgba(120, 144, 106, .72);
+  background: linear-gradient(180deg, rgba(120, 144, 106, .17), rgba(120, 144, 106, .06));
+}
+.level2Card:has(input:checked){
+  border-color: rgba(196, 111, 93, .74);
+  background: linear-gradient(180deg, rgba(196, 111, 93, .16), rgba(196, 111, 93, .055));
+}
+.level3Card:has(input:checked){
+  border-color: rgba(208, 166, 79, .76);
+  background: linear-gradient(180deg, rgba(208, 166, 79, .16), rgba(208, 166, 79, .055));
+}
+
+.segmented,
+.multiOptions,
+input[type="text"],
+select{
+  border-color: var(--az-border);
+  background: var(--az-panel-deep);
+}
+
+.segmentOption:has(input:checked){
+  color: var(--az-text);
+  background: rgba(209, 161, 94, .13);
+  box-shadow: inset 0 0 0 1px rgba(209, 161, 94, .25);
+}
+
+.categoryChip{
+  border-color: var(--az-border);
+  background: rgba(23, 21, 19, .66);
+  color: #ebe5db;
+}
+.categoryChip:not(:disabled):hover{
+  border-color: rgba(209, 161, 94, .44);
+}
+.categoryChip.selected{
+  border-color: rgba(209, 161, 94, .78);
+  background: rgba(209, 161, 94, .14);
+  box-shadow: 0 0 0 2px rgba(209, 161, 94, .055);
+}
+
+.switchTrack{
+  background: #393630;
+  border-color: var(--az-border);
+}
+.switchControl input:checked + .switchTrack{
+  background: rgba(85, 149, 141, .82);
+}
+.switchKnob{
+  background: #f4f0e8;
+}
+
+.setupNotice{
+  border-color: rgba(120, 144, 106, .22);
+  background: rgba(120, 144, 106, .085);
+  color: #cbd8c3;
+}
+
+.setupNotice.warning{
+  border-color: rgba(208, 166, 79, .25);
+  background: rgba(208, 166, 79, .085);
+  color: #ead1a2;
+}
+
+button.primary.startCta,
+button.primary{
+  border-color: #e6d7bc;
+  background: linear-gradient(180deg, #f2eadc, #dfcfb2);
+  color: #211d18;
+}
+
+button.primary.startCta:not(:disabled):hover,
+button.primary:not(:disabled):hover{
+  border-color: #fff8eb;
+}
+
+button,
+.ghost{
+  border-color: var(--az-border);
+}
+button.ghost:hover,
+a.ghost:hover,
+button:hover{
+  border-color: var(--az-border-strong);
+}
+
+.icon-btn-wide{
+  border-color: var(--az-border);
+}
+.icon-btn-wide:hover{
+  border-color: var(--az-border-strong);
+  background: rgba(209, 161, 94, .06);
+}
+
+/* Pannelli base della partita: stessi materiali della home. */
+.hudPlayers,
+.hudPlayersWrap,
+.pChip,
+.qMedia,
+.timer,
+.scoreline,
+.cat,
+.choice,
+.field,
+.phoneIcon{
+  border-color: var(--az-border);
+  background: rgba(24, 22, 20, .74);
+}
+
+.pChip.active{
+  outline-color: rgba(209, 161, 94, .78);
+}
+
+.pMeta,
+.muted,
+.optionHint{
+  color: var(--az-muted);
+}
+
+.choice:hover,
+.cat:hover{
+  border-color: var(--az-border-strong);
+  background: rgba(47, 42, 37, .78);
+}
+
+.feedback{
+  border-color: var(--az-border);
+  background: rgba(24, 22, 20, .62);
+}
+
+/* Manteniamo verde/rosso funzionali per corretto e sbagliato, ma meno neon. */
+.choice.correct{
+  border-color: #69906d;
+  background: rgba(105, 144, 109, .22);
+}
+.choice.wrong{
+  border-color: #b8625b;
+  background: rgba(184, 98, 91, .22);
+}
+.feedback.ok{ border-color:#69906d; }
+.feedback.no{ border-color:#b8625b; }
+
+@media (max-width: 900px){
+  .playerCard{
+    min-height: 50px;
+    padding: 7px 10px;
+  }
+}
+
+@media (max-width: 520px){
+  .playerModeGrid{
+    width: 100%;
+    gap: 7px;
+  }
+
+  .playerCard{
+    min-height: 46px;
+    padding: 6px 8px;
+    gap: 7px;
+  }
+
+  .playerCard .optionIcon{
+    font-size: 18px;
+  }
+
+  /* Nella versione precedente su mobile restavano solo le icone:
+     manteniamo invece il nome della modalita e togliamo solo il sottotitolo. */
+  .playerCard .optionText{
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    font-size: 11px;
+    line-height: 1.1;
+  }
+
+  .playerCard .optionHint{
+    display: none;
+  }
+}
