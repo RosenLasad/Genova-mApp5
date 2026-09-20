@@ -699,6 +699,9 @@ html.gm-new-home-open body{ overflow: hidden; }
   padding:5px 0 7px;
   background:linear-gradient(180deg, #f3f0e9 72%, rgba(243,240,233,0));
 }
+.gm-new-home-transport-tools{ grid-template-columns:minmax(0,1fr); }
+.gm-new-home-transport-search{ width:100%; }
+
 .gm-new-home-qr-search{
   min-height:44px;
   display:flex;

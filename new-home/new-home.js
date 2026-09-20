@@ -114,12 +114,12 @@
       sideButton:'#qt-cat-trasporti-btn', sideLabel:'Apri Trasporti sulla mappa',
       description:'Trasporti pubblici e collegamenti per spostarsi a Genova e sul territorio.',
       categories:[
-        {title:'Bus', note:'Fermate e rete urbana AMT', listId:'fav-list-bus', mapIcon:'icons/come-muoversi/autobus.svg', mapToggle:'.qt-bus'},
-        {title:'Metropolitana', note:'Stazioni della metropolitana', listId:'fav-list-metro', mapIcon:'icons/come-muoversi/metropolitana.svg', mapToggle:'.qt-metro'},
-        {title:'Treni', note:'Stazioni ferroviarie', listId:'fav-list-train', mapIcon:'icons/come-muoversi/treni.svg', mapToggle:'.qt-train'},
-        {title:'Funicolari e ascensori', note:'Impianti verticali e cremagliere', listId:'fav-list-funi', mapIcon:'icons/come-muoversi/impianti-verticali.svg', mapToggle:'.qt-funi'},
-        {title:'Navi e battelli', note:'Navebus e collegamenti marittimi', listId:'fav-list-mare', mapIcon:'icons/come-muoversi/navi-battelli.svg', mapToggle:'.qt-mare'},
-        {title:'Aereo', note:'Aeroporto e collegamenti', listId:'fav-list-aereo', mapIcon:'icons/come-muoversi/aereo.svg', mapToggle:'.qt-aereo'}
+        {title:'Bus', note:'Fermate e rete urbana AMT', listId:'fav-list-bus', searchPlaceholder:'Cerca una linea, una fermata o una destinazione', mapIcon:'icons/come-muoversi/autobus.svg', mapToggle:'.qt-bus'},
+        {title:'Metropolitana', note:'Stazioni della metropolitana', listId:'fav-list-metro', searchPlaceholder:'Cerca una stazione o una fermata', mapIcon:'icons/come-muoversi/metropolitana.svg', mapToggle:'.qt-metro'},
+        {title:'Treni', note:'Stazioni ferroviarie', listId:'fav-list-train', searchPlaceholder:'Cerca una stazione', mapIcon:'icons/come-muoversi/treni.svg', mapToggle:'.qt-train'},
+        {title:'Funicolari e ascensori', note:'Impianti verticali e cremagliere', listId:'fav-list-funi', searchPlaceholder:'Cerca un impianto o una fermata', mapIcon:'icons/come-muoversi/impianti-verticali.svg', mapToggle:'.qt-funi'},
+        {title:'Navi e battelli', note:'Navebus e collegamenti marittimi', listId:'fav-list-mare', searchPlaceholder:'Cerca una linea, un approdo o una destinazione', mapIcon:'icons/come-muoversi/navi-battelli.svg', mapToggle:'.qt-mare'},
+        {title:'Aereo', note:'Aeroporto e collegamenti', listId:'fav-list-aereo', searchPlaceholder:'Cerca un collegamento o una destinazione', mapIcon:'icons/come-muoversi/aereo.svg', mapToggle:'.qt-aereo'}
       ]
     },
     {
@@ -2622,10 +2622,18 @@
       return;
     }
     var content;
+    var isTransportList = section && section.key === 'transport' && places.length;
     if(places.length){
       content = '<ul class="gm-new-home-place-list">'+places.map(function(place,index){
         return '<li><button type="button" class="gm-new-home-place" data-place="'+index+'">'+escapeHtml(place.name)+'</button></li>';
       }).join('')+'</ul>';
+      if(isTransportList){
+        content = ''+
+          '<div class="gm-new-home-qr-tools gm-new-home-transport-tools">'+
+          '  <label class="gm-new-home-qr-search gm-new-home-transport-search"><span class="sr-only">Cerca nell\'elenco</span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></svg><input type="search" class="gm-new-home-transport-filter" placeholder="'+escapeHtml(category.searchPlaceholder || 'Cerca nell\'elenco')+'"></label>'+ 
+          '</div>'+content+
+          '<div class="gm-new-home-empty gm-new-home-transport-no-results" hidden>Nessun risultato trovato.</div>';
+      }
     }else{
       content = '<div class="gm-new-home-empty">La sezione è predisposta. Contenuti e collegamenti saranno completati nella prossima fase.</div>';
     }
@@ -2641,6 +2649,28 @@
         if(place && place.target && place.target.click){ close(); setTimeout(function(){ place.target.click(); }, 40); }
       });
     });
+    if(isTransportList){
+      var transportFilter = scroll.querySelector('.gm-new-home-transport-filter');
+      var transportList = scroll.querySelector('.gm-new-home-place-list');
+      var transportNoResults = scroll.querySelector('.gm-new-home-transport-no-results');
+      var transportRows = transportList ? Array.prototype.slice.call(transportList.querySelectorAll('li')) : [];
+      function filterTransportPlaces(){
+        var query = normalizeText(transportFilter ? transportFilter.value : '').trim();
+        var visible = 0;
+        transportRows.forEach(function(row){
+          var button = row.querySelector('.gm-new-home-place');
+          var haystack = normalizeText(button ? button.textContent : row.textContent);
+          var match = !query || haystack.indexOf(query) >= 0;
+          row.hidden = !match;
+          if(match) visible += 1;
+        });
+        if(transportNoResults) transportNoResults.hidden = visible !== 0;
+      }
+      if(transportFilter){
+        transportFilter.addEventListener('input', filterTransportPlaces);
+        transportFilter.addEventListener('search', filterTransportPlaces);
+      }
+    }
     scroll.scrollTop = 0;
   }
 
