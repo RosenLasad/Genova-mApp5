@@ -1788,7 +1788,15 @@ map.on('zoomend', function(){
     function wirePanel(){
       var closePanelBtn=document.getElementById('close'); if(closePanelBtn) closePanelBtn.addEventListener('click', function(){ panel.classList.remove('open'); stopAllMedia(); });
       var closeOverlayBtn=document.getElementById('btn-close-overlay'); if(closeOverlayBtn) closeOverlayBtn.addEventListener('click', function(){ hidePaywall(); });
-      var subscribeBtn=document.getElementById('btn-subscribe'); if(subscribeBtn) subscribeBtn.addEventListener('click', function(){ setSubscribed(true); });
+      var subscribeBtn=document.getElementById('btn-subscribe'); if(subscribeBtn) subscribeBtn.addEventListener('click', function(){
+        hidePaywall();
+        if(window.GenovaSubscription && typeof window.GenovaSubscription.open==='function'){
+          window.GenovaSubscription.open();
+          return;
+        }
+        var subscriptionButton=document.getElementById('btn-sub');
+        if(subscriptionButton)subscriptionButton.click();
+      });
       if(btnToday) btnToday.addEventListener('click', function(){ setMode('today'); });
       if(btnPast) btnPast.addEventListener('click', function(){ setMode('past'); });
       if(btnSfx) btnSfx.addEventListener('click', function(){ setMode('sfx'); });

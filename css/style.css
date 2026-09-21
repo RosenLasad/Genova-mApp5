@@ -532,6 +532,16 @@ a {
 #btn-sub[data-state="gold"] {
   background: #ffcc00;        /* oro */
 }
+#btn-sub[data-state="bronze"] {
+  background: #a96932;        /* bronzo */
+}
+#btn-sub[data-state="bronze"] img {
+  filter: sepia(1) saturate(2.35) hue-rotate(338deg) brightness(.78) contrast(1.08);
+}
+#btn-sub[data-state="silver"] img,
+#btn-sub[data-state="gold"] img {
+  filter: none;
+}
 #btn-sub img,
 #btn-sub svg {
   display: block;

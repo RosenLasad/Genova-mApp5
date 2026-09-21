@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="css/btn-scan.css">
 <link rel="stylesheet" href="css/flag-switcher.css">
 
-<link rel="stylesheet" href="css/inline.bundle.css?v=20260917-1">
+<link rel="stylesheet" href="css/inline.bundle.css?v=20260921-2">
 <link rel="stylesheet" href="css/contact-v39.css?v=20260917-1">
 <link rel="stylesheet" href="css/taccuino.css">
 <link rel="stylesheet" href="css/qr-panel-layout.css?v=20260920-10">
@@ -33,7 +33,7 @@
 <link rel="stylesheet" href="css/settings-v2.css?v=20260920-3">
 <link rel="stylesheet" href="css/pwa-install.css?v=20260807-1">
 <link rel="stylesheet" href="css/auth-ui.css?v=20260917-2">
-<link rel="stylesheet" href="css/account-sync.css?v=20260807-2">
+<link rel="stylesheet" href="css/account-sync.css?v=20260921-2">
 <link rel="stylesheet" href="css/place-popup.css?v=20260808-8">
 <link rel="stylesheet" href="css/wall-popup.css?v=20260811-7"> 
 <link rel="stylesheet" href="css/aqueduct-popup.css?v=20260811-2">
@@ -49,7 +49,7 @@
 <script src="js/place-popup.js?v=20260911-6"></script>
 <script src="js/wall-popup.js?v=20260911-6"></script>
 <script src="js/languages.js"></script>
-<script src="js/inline.js?v=20260920-6"></script>
+<script src="js/inline.js?v=20260921-1"></script>
 <script>window.__GENOVA_INLINE_RUN(2,2);</script>
 
 <!-- PATCH: Legend as icon (help) -->
@@ -536,16 +536,10 @@
 </button>
 
 <div class="sub-wrapper" style="position:relative;">
-    <button aria-expanded="false" aria-haspopup="true" class="btn-sub" data-state="gold" id="btn-sub">
-      <img alt="" src="Abbonamento/coin-gold.svg"/>
-      <span class="sr-only">Abbonato</span>
+    <button aria-controls="sub-modal" aria-haspopup="dialog" class="btn-sub" data-state="bronze" id="btn-sub" type="button">
+      <img alt="" src="Abbonamento/coin-silver.svg"/>
+      <span class="sr-only">Visitatore</span>
     </button>
-<!-- dropdown abbonamento -->
-<div aria-labelledby="btn-sub" class="sub-dropdown" id="sub-dropdown" role="menu">
-      <button class="sub-row" data-action="primary" role="menuitem"></button>
-      <button class="sub-row" data-action="secondary" role="menuitem"></button>
-      <button class="sub-row" data-action="tertiary" disabled="" role="menuitem"></button>
-    </div>
   </div>  <div class="settings-wrapper" style="position:relative;">
     <button id="btn-settings" aria-expanded="false" aria-haspopup="true"
               class="btn-settings"
@@ -1701,8 +1695,10 @@
 <script src="new-home/new-home.js?v=20260921-1"></script>
 <script src="js/pwa-install.js?v=20260807-1"></script>
 <script src="js/auth-ui.js?v=20260917-2"></script>
-<script src="js/account-sync.js?v=20260920-1"></script>
-<script src="js/subscription-v2.js?v=20260807-1"></script>
+<script src="js/account-sync.js?v=20260921-2"></script>
+<script src="js/subscription-entitlements.js?v=20260921-1"></script>
+<script src="js/billing.js?v=20260921-1"></script>
+<script src="js/subscription-v2.js?v=20260921-3"></script>
 <script src="js/text-size.js?v=20260920-1"></script>
 <script src="js/ui-layout-v2.js?v=20260920-1"></script>
 <script src="js/settings-v2.js?v=20260921-1"></script>

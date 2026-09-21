@@ -48,20 +48,6 @@ function cleanDataSnapshot(value) {
   };
 }
 
-function activeSubscription(plan) {
-  const now = Date.now();
-  const year = plan === "yearly";
-  return {
-    status: "active",
-    plan: year ? "yearly" : "monthly",
-    simulated: true,
-    startedAt: now,
-    trialEndsAt: now + 24 * 60 * 60 * 1000,
-    renewsAt: now + (year ? 365 : 30) * 24 * 60 * 60 * 1000,
-    checkedAt: now,
-  };
-}
-
 export default async (request) => {
   try {
     const user = await authenticatedUser(request);
@@ -71,14 +57,7 @@ export default async (request) => {
     const key = `user-${user.id}`;
     const existing = (await store.get(key, { type: "json" })) || null;
 
-    if (request.method === "GET") {
-      if (existing?.subscription?.status === "active") {
-        existing.subscription.checkedAt = Date.now();
-        existing.updatedAt = Date.now();
-        await store.setJSON(key, existing);
-      }
-      return json({ record: existing });
-    }
+    if (request.method === "GET") return json({ record: existing });
 
     if (request.method !== "POST") {
       return json({ error: "method_not_allowed" }, 405);
@@ -95,7 +74,7 @@ export default async (request) => {
       userId: user.id,
       email: user.email || "",
       data: null,
-      subscription: { status: "inactive", simulated: true, checkedAt: now },
+      subscription: { status: "inactive", simulated: false, checkedAt: now },
       createdAt: now,
     };
 
@@ -104,16 +83,6 @@ export default async (request) => {
 
     if (body.action === "saveData") {
       record.data = cleanDataSnapshot(body.data);
-    } else if (body.action === "activateSubscription") {
-      record.subscription = activeSubscription(body.plan);
-    } else if (body.action === "cancelSubscription") {
-      record.subscription = {
-        ...(record.subscription || {}),
-        status: "cancelled",
-        simulated: true,
-        cancelledAt: now,
-        checkedAt: now,
-      };
     } else {
       return json({ error: "invalid_action" }, 400);
     }

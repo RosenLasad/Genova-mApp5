@@ -91,7 +91,8 @@
   function cacheSubscription(subscription){
     var sub=subscription||{status:'inactive',simulated:true,checkedAt:Date.now()};
     try{localStorage.setItem(SUB_CACHE_KEY,JSON.stringify(sub));}catch(_e){}
-    var active=sub.status==='active'&&Date.now()-Number(sub.checkedAt||0)<=24*60*60*1000;
+    var stripeActive=sub.simulated===false&&sub.status==='active'&&(!sub.currentPeriodEnd||Number(sub.currentPeriodEnd)>Date.now());
+    var active=stripeActive||(sub.status==='active'&&Date.now()-Number(sub.checkedAt||0)<=24*60*60*1000);
     try{localStorage.setItem('genovaqr_sub',active?'1':'0');}catch(_e){}
     window.isSubscribed=active;
     document.dispatchEvent(new CustomEvent('genova:subscription-changed',{detail:{subscription:sub,active:active}}));
@@ -141,13 +142,6 @@
     }catch(_e){state.busy=false;setStatus(navigator.onLine?'error':'offline');cacheSubscription(cachedSubscription());renderSyncPanel();}
   }
 
-  async function subscriptionAction(action,plan){
-    if(!state.user)throw new Error('not_authenticated');
-    if(!navigator.onLine)throw new Error('offline');
-    var result=await api('POST',{action:action,plan:plan});state.record=result.record||state.record;
-    cacheSubscription(state.record&&state.record.subscription);return state.record.subscription;
-  }
-
   /* Ripristina i dati personali dell'app senza toccare account, avatar o abbonamento. */
   async function resetPreferences(){
     var values={};
@@ -191,8 +185,6 @@
   window.GenovaAccount={
     getState:function(){return{user:state.user,record:state.record,subscription:(state.record&&state.record.subscription)||cachedSubscription(),active:!!window.isSubscribed,status:state.status};},
     syncNow:function(){return loadAccount(true);},
-    activateSubscription:function(plan){return subscriptionAction('activateSubscription',plan==='yearly'?'yearly':'monthly');},
-    cancelSubscription:function(){return subscriptionAction('cancelSubscription');},
     resetPreferences:function(){return resetPreferences();}
   };
 
