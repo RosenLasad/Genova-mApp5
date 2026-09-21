@@ -12,10 +12,50 @@ const LOOKUP_KEYS = {
   yearly: "genova_mapp_premium_yearly",
 };
 
+const PRICE_ID_ENV = {
+  monthly: "STRIPE_PRICE_MONTHLY_ID",
+  yearly: "STRIPE_PRICE_YEARLY_ID",
+};
+
+const EXPECTED_PRICE = {
+  monthly: { amount: 69, interval: "month" },
+  yearly: { amount: 499, interval: "year" },
+};
+
 function stripeClient() {
   const secret = Netlify.env.get("STRIPE_SECRET_KEY");
   if (!secret) throw new Error("stripe_not_configured");
   return new Stripe(secret);
+}
+
+async function priceForPlan(stripe, plan) {
+  const configuredId = (Netlify.env.get(PRICE_ID_ENV[plan]) || "").trim();
+  let price;
+
+  if (configuredId) {
+    if (!configuredId.startsWith("price_")) throw new Error("invalid_price_id");
+    price = await stripe.prices.retrieve(configuredId);
+  } else {
+    const prices = await stripe.prices.list({
+      active: true,
+      lookup_keys: [LOOKUP_KEYS[plan]],
+      limit: 1,
+    });
+    price = prices.data[0];
+  }
+
+  if (!price) return null;
+
+  const expected = EXPECTED_PRICE[plan];
+  if (price.active !== true ||
+      price.type !== "recurring" ||
+      price.currency !== "eur" ||
+      price.unit_amount !== expected.amount ||
+      price.recurring?.interval !== expected.interval) {
+    throw new Error("price_configuration_mismatch");
+  }
+
+  return price;
 }
 
 export default async (request) => {
@@ -29,12 +69,7 @@ export default async (request) => {
     const plan = body.plan === "monthly" ? "monthly" : "yearly";
     const invoiceRequested = body.invoiceRequested === true;
     const stripe = stripeClient();
-    const prices = await stripe.prices.list({
-      active: true,
-      lookup_keys: [LOOKUP_KEYS[plan]],
-      limit: 1,
-    });
-    const price = prices.data[0];
+    const price = await priceForPlan(stripe, plan);
     if (!price) return json({ error: "price_not_configured" }, 503);
 
     const now = Date.now();
