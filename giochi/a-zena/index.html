@@ -80,7 +80,7 @@
     }
     .danger { border-color:#6b3d3d !important; }
   </style>
-<link rel="stylesheet" href="style.css?v=20260921-phase2">
+<link rel="stylesheet" href="style.css?v=20260921-settings1">
 </head>
 <body>
   <header class="top">
@@ -100,10 +100,15 @@
       alt="A Zena - Quante ne sai?"
     >
 
-    <!-- Destra: azioni partita -->
+    <!-- Destra: impostazioni e guida -->
     <div class="top-actions">
-      <button id="btnTopMenu" class="ghost hidden" type="button">Menu</button>
-      <button id="btnReset" class="ghost hidden" type="button">Ricomincia</button>
+      <button id="btnSettings" class="settingsIconBtn" type="button"
+              title="Impostazioni e guida" aria-label="Apri impostazioni e guida" aria-haspopup="dialog" aria-controls="overlaySettings">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.09A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.09A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.09A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.14.37.36.7.66.96.3.25.68.4 1.07.4H21v4h-.09c-.39 0-.77.14-1.07.4-.3.25-.52.58-.66.95Z"></path>
+        </svg>
+      </button>
     </div>
   </header>
 
@@ -325,6 +330,54 @@
     </section>
   </main>
 
+
+  <!-- PANNELLO: impostazioni e guida -->
+  <div id="overlaySettings" class="settingsOverlay hidden" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <aside class="settingsPanel">
+      <div class="settingsPanelHeader">
+        <div>
+          <span class="settingsKicker">A ZENA</span>
+          <h2 id="settingsTitle">Impostazioni e guida</h2>
+        </div>
+        <button id="btnSettingsClose" class="settingsCloseBtn" type="button" aria-label="Chiudi impostazioni" title="Chiudi">&times;</button>
+      </div>
+
+      <div class="settingsPanelBody">
+        <section class="settingsGuideCard settingsGuideIntro">
+          <h3>A Zena – Quante ne sai?</h3>
+          <p>Un quiz dedicato a Genova: scegli il livello, una o più categorie e metti alla prova quanto conosci la città, da solo oppure in compagnia.</p>
+        </section>
+
+        <section class="settingsGuideCard">
+          <h3>Prepara la sfida</h3>
+          <p>La Home raccoglie tutte le impostazioni della partita in quattro passaggi:</p>
+          <ol class="settingsSteps">
+            <li><strong>Come vuoi giocare?</strong> Scegli Single player oppure Multiplayer per 2–4 giocatori sullo stesso dispositivo.</li>
+            <li><strong>Quanto sei genovese?</strong> Seleziona Foresto, Zeneize o Superbo per cambiare il livello di difficoltà.</li>
+            <li><strong>Categorie.</strong> Puoi giocarle tutte oppure concentrarti su una sola categoria.</li>
+            <li><strong>Timer.</strong> Puoi attivarlo o disattivarlo e scegliere il tempo disponibile per ogni domanda.</li>
+          </ol>
+          <p>Quando è tutto pronto, premi <strong>Inizia la sfida</strong>.</p>
+        </section>
+
+        <section class="settingsGuideCard">
+          <h3>Durante la partita</h3>
+          <p>Scegli una risposta tra quelle proposte. Il gioco mostra subito se hai risposto correttamente e aggiorna i progressi nelle categorie.</p>
+          <p>Nel Multiplayer il turno passa da un giocatore all'altro sullo stesso dispositivo. Se il timer è attivo, viene fermato automaticamente quando apri un menu o questa guida.</p>
+        </section>
+
+        <section id="settingsGameActions" class="settingsGuideCard settingsGameActions hidden">
+          <h3>Partita in corso</h3>
+          <p>Da qui puoi mettere in pausa la partita oppure ricominciarla con le stesse impostazioni.</p>
+          <div class="settingsActionRow">
+            <button id="btnTopMenu" class="ghost" type="button">Menu partita</button>
+            <button id="btnReset" class="ghost" type="button">Ricomincia partita</button>
+          </div>
+        </section>
+      </div>
+    </aside>
+  </div>
+
   <!-- OVERLAY: cambio turno -->
   <div id="overlayTurn" class="overlay hidden" role="dialog" aria-modal="true">
     <div class="modal">
@@ -394,6 +447,6 @@
   <script src="questions/level_3/dialetto-cultura_3.js"></script>
 
   <script>window.QUIZ_QUESTIONS = window.QUIZ_LEVELS[1];</script>
-  <script src="games.js?v=20260921-phase2"></script>
+  <script src="games.js?v=20260921-settings1"></script>
 </body>
 </html>

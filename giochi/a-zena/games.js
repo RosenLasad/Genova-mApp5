@@ -214,7 +214,11 @@ const screenCats = $("#screenCats");
 const screenQ = $("#screenQ");
 const screenWin = $("#screenWin");
 
-// Top buttons
+// Top / settings buttons
+const btnSettings = $("#btnSettings");
+const btnSettingsClose = $("#btnSettingsClose");
+const overlaySettings = $("#overlaySettings");
+const settingsGameActions = $("#settingsGameActions");
 const btnTopMenu = $("#btnTopMenu");
 const btnResetTop = $("#btnReset");
 
@@ -284,6 +288,7 @@ let game = null;
 let timerInterval = null;
 let timeLeft = 0;
 let paused = false;
+let settingsPanelPausedGame = false;
 
 function showOnly(screen) {
   [screenMain, screenCats, screenQ, screenWin].forEach(s => s.classList.add("hidden"));
@@ -293,9 +298,32 @@ function showOnly(screen) {
 }
 
 function setTopButtons(inGame) {
-  // Menu appare solo in partita (cats o question)
+  // Le azioni di partita vivono nel pannello Impostazioni.
   btnTopMenu.classList.toggle("hidden", !inGame);
   btnResetTop.classList.toggle("hidden", !inGame);
+  if (settingsGameActions) settingsGameActions.classList.toggle("hidden", !inGame);
+}
+
+function openSettingsPanel() {
+  if (!overlaySettings) return;
+  settingsPanelPausedGame = Boolean(game && !paused);
+  if (settingsPanelPausedGame) pauseGame();
+  overlaySettings.classList.remove("hidden");
+  document.body.classList.add("settings-open");
+  if (btnSettings) btnSettings.setAttribute("aria-expanded", "true");
+  window.requestAnimationFrame(() => btnSettingsClose?.focus());
+}
+
+function closeSettingsPanel({ resume = true, restoreFocus = true } = {}) {
+  if (!overlaySettings || overlaySettings.classList.contains("hidden")) return;
+  overlaySettings.classList.add("hidden");
+  document.body.classList.remove("settings-open");
+  if (btnSettings) btnSettings.setAttribute("aria-expanded", "false");
+
+  const shouldResume = resume && settingsPanelPausedGame && game;
+  settingsPanelPausedGame = false;
+  if (shouldResume) resumeGame();
+  if (restoreFocus) window.requestAnimationFrame(() => btnSettings?.focus());
 }
 
 function updateTimerVisibility() {
@@ -690,6 +718,7 @@ function restartSameMatch() {
 }
 
 function showMainMenu() {
+  closeSettingsPanel({ resume: false, restoreFocus: false });
   stopTimer();
   paused = false;
   settings = null;
@@ -1210,10 +1239,24 @@ btnRestartSame.addEventListener("click", () => {
   restartSameMatch();
 });
 
+// Impostazioni / guida
+btnSettings?.addEventListener("click", openSettingsPanel);
+btnSettingsClose?.addEventListener("click", () => closeSettingsPanel());
+overlaySettings?.addEventListener("click", (event) => {
+  if (event.target === overlaySettings) closeSettingsPanel();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && overlaySettings && !overlaySettings.classList.contains("hidden")) {
+    closeSettingsPanel();
+  }
+});
+
 // Top menu / pause
 btnTopMenu.addEventListener("click", () => {
-  // Pausa solo se siamo dentro una partita
+  // Pausa solo se siamo dentro una partita.
   if (!game) return;
+  closeSettingsPanel({ resume: false, restoreFocus: false });
   overlayPause.classList.remove("hidden");
   confirmMain.classList.add("hidden");
   pauseGame();
@@ -1249,6 +1292,8 @@ btnConfirmMainNo.addEventListener("click", () => {
 
 // Top reset (riavvia match con stesse impostazioni)
 btnResetTop.addEventListener("click", () => {
+  closeSettingsPanel({ resume: false, restoreFocus: false });
+  paused = false;
   restartSameMatch();
 });
 

@@ -1897,3 +1897,218 @@ body.azena-home .startCta{
     transform: none;
   }
 }
+
+/* =========================================================
+   A Zena - Impostazioni e guida
+   ========================================================= */
+
+.settingsIconBtn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px !important;
+  min-width:44px;
+  height:44px;
+  padding:0;
+  border-radius:12px;
+  border:1px solid var(--az-border);
+  background:rgba(24, 22, 20, .42);
+  color:var(--az-text);
+  cursor:pointer;
+  transition:border-color .15s ease, background .15s ease, transform .15s ease;
+}
+
+.settingsIconBtn svg{
+  width:23px;
+  height:23px;
+  display:block;
+}
+
+.settingsIconBtn:hover,
+.settingsIconBtn:focus-visible{
+  border-color:var(--az-border-strong);
+  background:rgba(209, 161, 94, .10);
+}
+
+.settingsIconBtn:active{
+  transform:scale(.97);
+}
+
+.settingsOverlay{
+  position:fixed;
+  inset:0;
+  z-index:90;
+  display:flex;
+  justify-content:flex-end;
+  background:rgba(7, 7, 6, .56);
+  -webkit-backdrop-filter:blur(4px);
+  backdrop-filter:blur(4px);
+}
+
+.settingsPanel{
+  width:min(540px, 100%);
+  height:100%;
+  box-sizing:border-box;
+  overflow-y:auto;
+  background:linear-gradient(180deg, rgba(34, 31, 28, .985), rgba(22, 21, 19, .985));
+  border-left:1px solid rgba(226, 214, 194, .18);
+  box-shadow:-24px 0 70px rgba(0, 0, 0, .34);
+  color:var(--az-text);
+}
+
+.settingsPanelHeader{
+  position:sticky;
+  top:0;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:18px 20px 16px;
+  background:rgba(28, 26, 23, .94);
+  border-bottom:1px solid rgba(226, 214, 194, .13);
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+}
+
+.settingsKicker{
+  display:block;
+  margin-bottom:3px;
+  color:#d8b77e;
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.15em;
+}
+
+.settingsPanelHeader h2{
+  margin:0;
+  font-size:20px;
+  line-height:1.15;
+}
+
+.settingsCloseBtn{
+  flex:0 0 auto;
+  width:40px;
+  height:40px;
+  padding:0;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--az-border);
+  border-radius:12px;
+  background:rgba(255,255,255,.025);
+  color:var(--az-text);
+  font-size:27px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.settingsCloseBtn:hover,
+.settingsCloseBtn:focus-visible{
+  border-color:var(--az-border-strong);
+  background:rgba(209, 161, 94, .08);
+}
+
+.settingsPanelBody{
+  display:grid;
+  gap:12px;
+  padding:16px 20px calc(24px + env(safe-area-inset-bottom));
+}
+
+.settingsGuideCard{
+  border:1px solid rgba(226, 214, 194, .15);
+  border-radius:16px;
+  padding:15px 16px;
+  background:rgba(48, 43, 38, .48);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
+}
+
+.settingsGuideIntro{
+  border-color:rgba(208, 166, 79, .24);
+  background:linear-gradient(180deg, rgba(208, 166, 79, .10), rgba(48, 43, 38, .42));
+}
+
+.settingsGuideCard h3{
+  margin:0 0 7px;
+  font-size:15px;
+  color:#f3eadc;
+}
+
+.settingsGuideCard p{
+  margin:0;
+  color:var(--az-muted);
+  font-size:13px;
+  line-height:1.55;
+}
+
+.settingsGuideCard p + p{
+  margin-top:9px;
+}
+
+.settingsSteps{
+  margin:10px 0;
+  padding-left:21px;
+  color:var(--az-muted);
+  font-size:13px;
+  line-height:1.5;
+}
+
+.settingsSteps li + li{
+  margin-top:7px;
+}
+
+.settingsSteps strong,
+.settingsGuideCard strong{
+  color:#ece3d6;
+}
+
+.settingsGameActions{
+  border-color:rgba(85, 149, 141, .23);
+}
+
+.settingsActionRow{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+  margin-top:12px;
+}
+
+.settingsActionRow button{
+  min-height:42px;
+  background:rgba(23, 21, 19, .58);
+}
+
+body.settings-open{
+  overflow:hidden;
+}
+
+@media (max-width: 620px){
+  .settingsPanel{
+    width:100%;
+    border-left:0;
+  }
+
+  .settingsPanelHeader{
+    padding:14px 14px 13px;
+  }
+
+  .settingsPanelBody{
+    padding:12px 14px calc(20px + env(safe-area-inset-bottom));
+  }
+
+  .settingsGuideCard{
+    padding:13px 14px;
+  }
+}
+
+@media (max-width: 390px){
+  .settingsActionRow{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .settingsIconBtn{
+    transition:none;
+  }
+}
