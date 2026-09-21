@@ -1898,6 +1898,86 @@ body.azena-home .startCta{
   }
 }
 
+
+/* =========================================================
+   A Zena - Fase 3 / Sfondi di categoria durante la partita
+   ========================================================= */
+
+body.azena-play{
+  position: relative;
+  background: #151412;
+  --az-play-bg-image: none;
+}
+
+body.azena-play[data-azena-cat="storia"]{ --az-play-bg-image: url("images/bg-cat-storia.jpg"); }
+body.azena-play[data-azena-cat="geografia"]{ --az-play-bg-image: url("images/bg-cat-geografia.jpg"); }
+body.azena-play[data-azena-cat="musica"]{ --az-play-bg-image: url("images/bg-cat-musica.jpg"); }
+body.azena-play[data-azena-cat="arte"]{ --az-play-bg-image: url("images/bg-cat-arte.jpg"); }
+body.azena-play[data-azena-cat="spettacolo"]{ --az-play-bg-image: url("images/bg-cat-spettacolo.jpg"); }
+body.azena-play[data-azena-cat="scienza"]{ --az-play-bg-image: url("images/bg-cat-scienza.jpg"); }
+body.azena-play[data-azena-cat="sport"]{ --az-play-bg-image: url("images/bg-cat-sport.jpg"); }
+body.azena-play[data-azena-cat="cucina"]{ --az-play-bg-image: url("images/bg-cat-cucina.jpg"); }
+body.azena-play[data-azena-cat="dialetto"]{ --az-play-bg-image: url("images/bg-cat-dialetto.jpg"); }
+
+body.azena-play::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(20, 18, 16, .34), rgba(20, 18, 16, .62)),
+    linear-gradient(0deg, rgba(245, 236, 220, .07), rgba(245, 236, 220, .07)),
+    var(--az-play-bg-image) center center / cover no-repeat;
+  filter: saturate(.80) contrast(.90) brightness(.82) blur(1.35px);
+  transform: translateZ(0);
+}
+
+body.azena-play .top,
+body.azena-play .wrap{
+  position: relative;
+  z-index: 1;
+}
+
+body.azena-play .top{
+  background: rgba(23, 22, 20, .84);
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+}
+
+body.azena-play #screenCats,
+body.azena-play #screenQ,
+body.azena-play #screenWin{
+  background: rgba(31, 29, 27, .70);
+  border-color: rgba(235, 223, 202, .20);
+  box-shadow: 0 22px 58px rgba(0, 0, 0, .28);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+body.azena-play .hudPlayersWrap,
+body.azena-play .timer,
+body.azena-play .scoreline,
+body.azena-play .feedback,
+body.azena-play .cat,
+body.azena-play .choice{
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+@media (max-width: 620px){
+  body.azena-play::before{
+    background-position: 50% center;
+    filter: saturate(.76) contrast(.88) brightness(.80) blur(1.5px);
+  }
+
+  body.azena-play #screenCats,
+  body.azena-play #screenQ,
+  body.azena-play #screenWin{
+    background: rgba(31, 29, 27, .76);
+  }
+}
+
 /* =========================================================
    A Zena - Impostazioni e guida
    ========================================================= */
@@ -2110,5 +2190,121 @@ body.settings-open{
 @media (prefers-reduced-motion: reduce){
   .settingsIconBtn{
     transition:none;
+  }
+}
+
+
+/* =========================================================
+   A Zena - Rifinitura layout domanda / risposte
+   ========================================================= */
+
+/* Categoria, difficolta e giocatore diventano un gruppo centrale
+   piu leggibile, mantenendo il wrap sui display stretti. */
+#screenQ .qMetaRow{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px 12px !important;
+  margin-inline:auto;
+}
+
+#screenQ .qMetaRow .pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:38px;
+  margin:0;
+  padding:7px 14px;
+  box-sizing:border-box;
+  font-size:15px;
+  line-height:1.15;
+  font-weight:750;
+  text-align:center;
+}
+
+#screenQ .qhead{
+  align-items:flex-start;
+}
+
+#screenQ .qhead > div:first-child{
+  flex:1 1 auto;
+  min-width:0;
+}
+
+/* Le quattro risposte hanno la stessa scala tipografica della domanda. */
+#screenQ .choice{
+  padding:14px 16px;
+  font-size:18px;
+  line-height:1.35;
+  font-weight:650;
+}
+
+/* Azioni in fondo: Indietro a sinistra, Pausa/Continua a destra. */
+#screenQ .questionActions{
+  width:100%;
+  align-items:center;
+  flex-wrap:nowrap;
+}
+
+#screenQ .questionActionsRight{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:10px;
+}
+
+#screenQ #btnPause{
+  min-width:86px;
+}
+
+@media (max-width: 620px){
+  #screenQ .qMetaRow{
+    gap:8px;
+  }
+
+  #screenQ .qMetaRow .pill{
+    min-height:36px;
+    padding:7px 11px;
+    font-size:14px;
+  }
+
+  #screenQ #qText,
+  #screenQ .choice{
+    font-size:17px;
+  }
+
+  #screenQ .choice{
+    padding:13px 14px;
+  }
+
+  #screenQ .questionActions{
+    gap:8px;
+  }
+
+  #screenQ .questionActions > #btnBack,
+  #screenQ .questionActionsRight button{
+    padding-inline:10px;
+  }
+
+  #screenQ #btnPause{
+    min-width:auto;
+  }
+}
+
+@media (max-width: 430px){
+  #screenQ .questionActions{
+    align-items:stretch;
+  }
+
+  #screenQ .questionActions > #btnBack{
+    flex:1 1 auto;
+  }
+
+  #screenQ .questionActionsRight{
+    flex:0 0 auto;
+    gap:7px;
   }
 }

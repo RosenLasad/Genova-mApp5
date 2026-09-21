@@ -38,6 +38,18 @@ const CATEGORY_COLORS = {
   dialetto: "#7c8d98",    // ardesia
 };
 
+const CATEGORY_BACKGROUNDS = {
+  storia: "images/bg-cat-storia.jpg",
+  geografia: "images/bg-cat-geografia.jpg",
+  musica: "images/bg-cat-musica.jpg",
+  arte: "images/bg-cat-arte.jpg",
+  spettacolo: "images/bg-cat-spettacolo.jpg",
+  scienza: "images/bg-cat-scienza.jpg",
+  sport: "images/bg-cat-sport.jpg",
+  cucina: "images/bg-cat-cucina.jpg",
+  dialetto: "images/bg-cat-dialetto.jpg",
+};
+
 function getCatColor(catId) {
   return CATEGORY_COLORS[catId] || "#8d8172";
 }
@@ -55,6 +67,18 @@ function applyCatCardStyle(el, catId) {
   if (!el) return;
   el.style.borderColor = col;
   el.style.boxShadow = `inset 6px 0 0 ${col}`;
+}
+
+function setGameBackdrop(catId = "") {
+  const validCatId = (typeof catId === "string" && Object.prototype.hasOwnProperty.call(CATEGORY_BACKGROUNDS, catId))
+    ? catId
+    : "";
+
+  if (validCatId) {
+    document.body.dataset.azenaCat = validCatId;
+  } else {
+    delete document.body.dataset.azenaCat;
+  }
 }
 
 
@@ -255,6 +279,7 @@ const elChoices = $("#choices");
 const elFeedback = $("#feedback");
 const btnNext = $("#btnNext");
 const btnBack = $("#btnBack");
+const btnPause = $("#btnPause");
 const timerText = $("#timerText");
 const timerBox = $("#timerBox");
 const hudPlayersQ = $("#hudPlayersQ");
@@ -293,8 +318,13 @@ let settingsPanelPausedGame = false;
 function showOnly(screen) {
   [screenMain, screenCats, screenQ, screenWin].forEach(s => s.classList.add("hidden"));
   screen.classList.remove("hidden");
-  // Lo sfondo illustrato appartiene solo alla home del gioco.
-  document.body.classList.toggle("azena-home", screen === screenMain);
+
+  const isHomeScreen = screen === screenMain;
+  // La home ha il proprio panorama; durante il gioco usiamo gli sfondi di categoria.
+  document.body.classList.toggle("azena-home", isHomeScreen);
+  document.body.classList.toggle("azena-play", !isHomeScreen);
+
+  if (isHomeScreen) setGameBackdrop("");
 }
 
 function setTopButtons(inGame) {
@@ -775,9 +805,11 @@ function showCatsScreen() {
   if (settings.categoriesMode === "one") {
     const catId = settings.activeCategories[0];
     const catLabel = CATEGORIES.find(c => c.id === catId)?.label ?? catId;
+    setGameBackdrop(catId);
     catsTitle.textContent = `Categoria: ${catLabel}`;
     catsSub.textContent = `Completa ${WIN_PER_CAT} risposte corrette per vincere.`;
   } else {
+    setGameBackdrop(game?.current?.categoryId || "");
     catsTitle.textContent = "Completa le categorie";
     catsSub.textContent = `Vinci quando fai ${WIN_PER_CAT} risposte corrette in ciascuna categoria.`;
   }
@@ -864,6 +896,7 @@ function startQuestion(categoryId) {
   }
 
   game.current = { categoryId, q };
+  setGameBackdrop(categoryId);
 
   const catLabel = CATEGORIES.find(c => c.id === categoryId)?.label ?? categoryId;
   const p = currentPlayer();
@@ -982,6 +1015,7 @@ function restoreQuestionUIFromSave(data) {
   }
 
   const { categoryId, q } = game.current;
+  setGameBackdrop(categoryId);
   const catLabel = CATEGORIES.find(c => c.id === categoryId)?.label ?? categoryId;
   const p = currentPlayer();
 
@@ -1252,15 +1286,18 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// Top menu / pause
-btnTopMenu.addEventListener("click", () => {
+// Menu partita / pausa
+function openPauseMenu() {
   // Pausa solo se siamo dentro una partita.
   if (!game) return;
   closeSettingsPanel({ resume: false, restoreFocus: false });
   overlayPause.classList.remove("hidden");
   confirmMain.classList.add("hidden");
   pauseGame();
-});
+}
+
+btnTopMenu.addEventListener("click", openPauseMenu);
+btnPause?.addEventListener("click", openPauseMenu);
 
 btnResume.addEventListener("click", () => {
   overlayPause.classList.add("hidden");

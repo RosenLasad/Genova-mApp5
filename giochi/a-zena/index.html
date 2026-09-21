@@ -80,7 +80,7 @@
     }
     .danger { border-color:#6b3d3d !important; }
   </style>
-<link rel="stylesheet" href="style.css?v=20260921-settings1">
+<link rel="stylesheet" href="style.css?v=20260921-question-layout1">
 </head>
 <body>
   <header class="top">
@@ -288,7 +288,7 @@
 
       <div class="qhead">
         <div>
-          <div class="inline" style="gap:10px;">
+          <div class="inline qMetaRow">
             <div id="qCat" class="pill"></div>
             <div id="qDifficulty" class="pill difficultyPill"></div>
             <div id="qPlayer" class="pill"></div>
@@ -311,9 +311,12 @@
       <div id="choices" class="choices"></div>
 
       <div id="feedback" class="feedback hidden"></div>
-      <div class="row">
+      <div class="row questionActions">
         <button id="btnBack" class="ghost" type="button">Torna alle categorie</button>
-        <button id="btnNext" class="primary hidden" type="button">Continua</button>
+        <div class="questionActionsRight">
+          <button id="btnPause" class="ghost" type="button">Pausa</button>
+          <button id="btnNext" class="primary hidden" type="button">Continua</button>
+        </div>
       </div>
     </section>
 
@@ -447,6 +450,6 @@
   <script src="questions/level_3/dialetto-cultura_3.js"></script>
 
   <script>window.QUIZ_QUESTIONS = window.QUIZ_LEVELS[1];</script>
-  <script src="games.js?v=20260921-settings1"></script>
+  <script src="games.js?v=20260921-question-layout1"></script>
 </body>
 </html>
