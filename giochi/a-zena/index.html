@@ -80,7 +80,7 @@
     }
     .danger { border-color:#6b3d3d !important; }
   </style>
-<link rel="stylesheet" href="style.css?v=20260921-phase1">
+<link rel="stylesheet" href="style.css?v=20260921-phase2">
 </head>
 <body>
   <header class="top">
@@ -122,7 +122,6 @@
             <span class="stepBadge">1</span>
             <div>
               <h3 id="playersTitle">Come vuoi giocare?</h3>
-              <p class="muted">Da solo oppure fino a quattro giocatori sullo stesso dispositivo.</p>
             </div>
           </div>
 
@@ -136,7 +135,7 @@
             <label class="selectCard playerCard" title="Multiplayer">
               <input class="srOnly" type="radio" name="modePlayers" value="multi">
               <span class="optionIcon" aria-hidden="true">&#128101;</span>
-              <span class="optionText">Multiplayer</span>
+              <span class="optionText">Multiplayer 2-4</span>
               <span class="optionHint">Da 2 a 4 giocatori</span>
             </label>
           </div>
@@ -187,7 +186,7 @@
               <span class="optionHint">Per chi pensa di sapere proprio tutto</span>
             </label>
           </div>
-          <div id="levelAvailability" class="setupNotice" role="status" aria-live="polite"></div>
+          <div id="levelAvailability" class="setupNotice" role="status" aria-live="polite" hidden></div>
         </section>
 
         <section class="setupBlock" aria-labelledby="categoriesTitle">
@@ -395,6 +394,6 @@
   <script src="questions/level_3/dialetto-cultura_3.js"></script>
 
   <script>window.QUIZ_QUESTIONS = window.QUIZ_LEVELS[1];</script>
-  <script src="games.js?v=20260921-phase1"></script>
+  <script src="games.js?v=20260921-phase2"></script>
 </body>
 </html>

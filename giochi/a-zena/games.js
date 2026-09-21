@@ -288,6 +288,8 @@ let paused = false;
 function showOnly(screen) {
   [screenMain, screenCats, screenQ, screenWin].forEach(s => s.classList.add("hidden"));
   screen.classList.remove("hidden");
+  // Lo sfondo illustrato appartiene solo alla home del gioco.
+  document.body.classList.toggle("azena-home", screen === screenMain);
 }
 
 function setTopButtons(inGame) {
@@ -437,7 +439,7 @@ function updateSetupAvailability() {
   const total = questionsForLevel(level).length;
   const missing = CATEGORIES.filter(c => counts[c.id] === 0);
   let canStart = total > 0;
-  let notice = `${info.name} - ${info.level}: ${total} domande disponibili.`;
+  let notice = "";
 
   if (total === 0) {
     canStart = false;
@@ -448,14 +450,14 @@ function updateSetupAvailability() {
   } else if (mode === "one") {
     const selectedCount = counts[singleCategorySel.value] || 0;
     canStart = selectedCount > 0;
-    const selectedLabel = CATEGORIES.find(c => c.id === singleCategorySel.value)?.label || "Categoria";
-    notice = canStart
-      ? `${info.name}: ${selectedCount} domande disponibili in ${selectedLabel}.`
-      : `${info.name}: scegli una categoria con domande disponibili.`;
+    if (!canStart) {
+      notice = `${info.name}: scegli una categoria con domande disponibili.`;
+    }
   }
 
   if (levelAvailability) {
     levelAvailability.textContent = notice;
+    levelAvailability.hidden = !notice;
     levelAvailability.classList.toggle("warning", !canStart);
   }
 
@@ -470,6 +472,8 @@ function syncTimerMenuUI() {
 }
 
 function initMainMenu() {
+  // All'avvio A Zena si apre sulla home: attiva subito il relativo sfondo.
+  document.body.classList.add("azena-home");
   singleCategorySel.innerHTML = CATEGORIES.map(c => `<option value="${c.id}">${c.label}</option>`).join("");
   singleCategorySel.value = CATEGORIES[0].id;
   buildNamesInputs(parseInt(playerCountSel.value, 10));

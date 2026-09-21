@@ -1803,3 +1803,97 @@ button:hover{
     display: none;
   }
 }
+
+
+/* =========================================================
+   A Zena - Fase 2 / Sfondo illustrato della home
+   L'immagine resta confinata al menu principale; le schermate
+   di partita mantengono per ora il fondo neutro della Fase 1.
+   ========================================================= */
+
+body.azena-home{
+  position: relative;
+  background: #151412;
+}
+
+body.azena-home::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(22, 20, 18, .30), rgba(22, 20, 18, .42)),
+    linear-gradient(0deg, rgba(247, 239, 225, .08), rgba(247, 239, 225, .08)),
+    url("images/bg-home-a-zena.jpg") center center / cover no-repeat;
+  filter: saturate(.82) contrast(.92) brightness(.90) blur(1.2px);
+  transform: translateZ(0);
+}
+
+body.azena-home .top,
+body.azena-home .wrap{
+  position: relative;
+  z-index: 1;
+}
+
+body.azena-home .top{
+  background: rgba(23, 22, 20, .82);
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+}
+
+body.azena-home .mainCard{
+  background: rgba(31, 29, 27, .46);
+  border-color: rgba(235, 223, 202, .20);
+  box-shadow: 0 26px 78px rgba(0, 0, 0, .34);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+body.azena-home .mainIntro h2,
+body.azena-home .mainIntro .muted{
+  text-shadow: 0 2px 10px rgba(0, 0, 0, .45), 0 1px 2px rgba(0, 0, 0, .40);
+}
+
+body.azena-home .setupBlock{
+  background: linear-gradient(180deg, rgba(43, 39, 35, .66), rgba(31, 29, 27, .58));
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+body.azena-home .field,
+body.azena-home .multiOptions,
+body.azena-home .timerOptions,
+body.azena-home .categoryStrip,
+body.azena-home .selectCard,
+body.azena-home .segmentOption,
+body.azena-home .setupNotice{
+  background-color: rgba(23, 21, 19, .56);
+}
+
+body.azena-home button.primary.startCta,
+body.azena-home .startCta{
+  background: linear-gradient(180deg, rgba(242, 234, 220, .92), rgba(223, 207, 178, .88));
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .20);
+}
+
+/* Su schermi stretti privilegiamos la parte centrale del panorama,
+   dove lo sfondo è volutamente più libero e leggibile. */
+@media (max-width: 620px){
+  body.azena-home::before{
+    background-position: 50% center;
+    filter: saturate(.80) contrast(.90) brightness(.88) blur(1.4px);
+  }
+
+  body.azena-home .mainCard{
+    background: rgba(31, 29, 27, .52);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  body.azena-home::before{
+    transform: none;
+  }
+}
