@@ -92,7 +92,8 @@
     var sub=subscription||{status:'inactive',simulated:true,checkedAt:Date.now()};
     try{localStorage.setItem(SUB_CACHE_KEY,JSON.stringify(sub));}catch(_e){}
     var stripeActive=sub.simulated===false&&sub.status==='active'&&(!sub.currentPeriodEnd||Number(sub.currentPeriodEnd)>Date.now());
-    var active=stripeActive||(sub.status==='active'&&Date.now()-Number(sub.checkedAt||0)<=24*60*60*1000);
+    var adminActive=sub.adminOverride===true&&sub.simulated===true&&sub.status==='active';
+    var active=stripeActive||adminActive;
     try{localStorage.setItem('genovaqr_sub',active?'1':'0');}catch(_e){}
     window.isSubscribed=active;
     document.dispatchEvent(new CustomEvent('genova:subscription-changed',{detail:{subscription:sub,active:active}}));

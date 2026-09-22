@@ -245,9 +245,11 @@
     var s=account(),section=node('section','sub-v2-activation');section.appendChild(node('h3','',s.active?t().activeTitle:t().activateTitle));
     if(s.active){
       var sub=s.subscription||{},details=node('dl','sub-v2-details');
-      [[t().user,displayName(s.user)],[t().plan,sub.plan==='monthly'?t().monthly:t().yearly],[sub.cancelAtPeriodEnd?t().accessUntil:t().renewal,date(sub.currentPeriodEnd||sub.renewsAt)]].forEach(function(pair){details.appendChild(node('dt','',pair[0]));details.appendChild(node('dd','',pair[1]));});section.appendChild(details);
-      var manage=buttonNode('sub-v2-checkout',t().activeCta);manage.addEventListener('click',function(){openPortal(section,manage);});
-      var activeRow=node('div','sub-v2-action-row');activeRow.appendChild(manage);section.appendChild(activeRow);section.appendChild(node('p','sub-v2-secure',t().secure));return section;
+      var adminOverride=sub.adminOverride===true;
+      var rows=adminOverride?[[t().user,displayName(s.user)],[t().plan,t().premiumState]]:[[t().user,displayName(s.user)],[t().plan,sub.plan==='monthly'?t().monthly:t().yearly],[sub.cancelAtPeriodEnd?t().accessUntil:t().renewal,date(sub.currentPeriodEnd||sub.renewsAt)]];
+      rows.forEach(function(pair){details.appendChild(node('dt','',pair[0]));details.appendChild(node('dd','',pair[1]));});section.appendChild(details);
+      if(!adminOverride){var manage=buttonNode('sub-v2-checkout',t().activeCta);manage.addEventListener('click',function(){openPortal(section,manage);});var activeRow=node('div','sub-v2-action-row');activeRow.appendChild(manage);section.appendChild(activeRow);}
+      section.appendChild(node('p','sub-v2-secure',t().secure));return section;
     }
     section.appendChild(node('p','sub-v2-activation-intro',s.user?t().activateFree:t().activateGuest));
     var choices=node('div','sub-v2-plan-choices');var monthly=planChoice('monthly',t().monthly,t().monthlyPrice,t().flexible,'');var yearly=planChoice('yearly',t().yearly,t().yearlyPrice,t().recommended,t().saving);choices.appendChild(yearly);choices.appendChild(monthly);section.appendChild(choices);

@@ -1,4 +1,5 @@
 import { getStore } from "@netlify/blobs";
+import { isAdminUser } from "./_shared/billing-store.mjs";
 
 const STORE_NAME = "genova-mapp-users-v1";
 const MAX_BODY_BYTES = 750000;
@@ -48,6 +49,34 @@ function cleanDataSnapshot(value) {
   };
 }
 
+function normalizedSubscription(user, subscription) {
+  const now = Date.now();
+  const current = subscription && typeof subscription === "object" ? subscription : null;
+  const realActive = current?.simulated === false &&
+    current?.status === "active" &&
+    (!current.currentPeriodEnd || Number(current.currentPeriodEnd) > now);
+
+  if (realActive) return current;
+
+  if (isAdminUser(user)) {
+    return {
+      status: "active",
+      simulated: true,
+      adminOverride: true,
+      plan: "admin",
+      checkedAt: current?.adminOverride === true ? (Number(current.checkedAt) || now) : now,
+    };
+  }
+
+  if (current?.simulated === false) return current;
+  return { status: "inactive", simulated: false, checkedAt: now };
+}
+
+function sameSubscription(left, right) {
+  try { return JSON.stringify(left || null) === JSON.stringify(right || null); }
+  catch (_error) { return false; }
+}
+
 export default async (request) => {
   try {
     const user = await authenticatedUser(request);
@@ -56,8 +85,27 @@ export default async (request) => {
     const store = getStore({ name: STORE_NAME, consistency: "strong" });
     const key = `user-${user.id}`;
     const existing = (await store.get(key, { type: "json" })) || null;
+    const now = Date.now();
+    const record = existing || {
+      version: 1,
+      userId: user.id,
+      email: user.email || "",
+      data: null,
+      subscription: null,
+      createdAt: now,
+    };
+    const normalized = normalizedSubscription(user, record.subscription);
+    const subscriptionChanged = !sameSubscription(record.subscription, normalized);
+    record.subscription = normalized;
+    record.email = user.email || record.email || "";
 
-    if (request.method === "GET") return json({ record: existing });
+    if (request.method === "GET") {
+      if (!existing || subscriptionChanged) {
+        record.updatedAt = now;
+        await store.setJSON(key, record);
+      }
+      return json({ record });
+    }
 
     if (request.method !== "POST") {
       return json({ error: "method_not_allowed" }, 405);
@@ -68,17 +116,6 @@ export default async (request) => {
       return json({ error: "payload_too_large" }, 413);
     }
     const body = raw ? JSON.parse(raw) : {};
-    const now = Date.now();
-    const record = existing || {
-      version: 1,
-      userId: user.id,
-      email: user.email || "",
-      data: null,
-      subscription: { status: "inactive", simulated: false, checkedAt: now },
-      createdAt: now,
-    };
-
-    record.email = user.email || record.email || "";
     record.updatedAt = now;
 
     if (body.action === "saveData") {

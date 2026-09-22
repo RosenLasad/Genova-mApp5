@@ -2,6 +2,7 @@ import Stripe from "stripe";
 import {
   authenticatedUser,
   initialUserRecord,
+  isAdminUser,
   json,
   readUserRecord,
   writeUserRecord,
@@ -74,8 +75,10 @@ export default async (request) => {
 
     const now = Date.now();
     const record = (await readUserRecord(user.id)) || initialUserRecord(user);
-    if (record.subscription?.status === "active" &&
-        (!record.subscription.currentPeriodEnd || Number(record.subscription.currentPeriodEnd) > now)) {
+    const realSubscriptionActive = record.subscription?.simulated === false &&
+        record.subscription?.status === "active" &&
+        (!record.subscription.currentPeriodEnd || Number(record.subscription.currentPeriodEnd) > now);
+    if (isAdminUser(user) || realSubscriptionActive) {
       return json({ error: "subscription_already_active" }, 409);
     }
 

@@ -37,6 +37,20 @@ export async function writeUserRecord(userId, record) {
   return record;
 }
 
+function configuredList(name) {
+  return String(Netlify.env.get(name) || "")
+    .split(",")
+    .map((value) => value.trim().toLowerCase())
+    .filter(Boolean);
+}
+
+export function isAdminUser(user) {
+  const userId = String(user?.id || "").trim().toLowerCase();
+  const email = String(user?.email || "").trim().toLowerCase();
+  return (userId && configuredList("GENOVA_ADMIN_USER_IDS").includes(userId)) ||
+    (email && configuredList("GENOVA_ADMIN_EMAILS").includes(email));
+}
+
 export function initialUserRecord(user) {
   const now = Date.now();
   return {
