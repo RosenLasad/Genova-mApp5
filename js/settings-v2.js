@@ -4,7 +4,7 @@
   if(window.__GENOVA_SETTINGS_V2__) return;
   window.__GENOVA_SETTINGS_V2__ = true;
 
-  var APP_VERSION = '1.2.0';
+  var APP_VERSION = '1.3.0';
 
   var I18N = {
     it:{
@@ -287,7 +287,8 @@
       reset:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>',
       info:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></svg>',
       version:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10l4 4v10l-4 4H7l-4-4V7z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>',
-      coupon:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H19v4a3 3 0 0 0 0 6v4H5.5A2.5 2.5 0 0 1 3 16.5z"/><path d="M9 8v8" stroke-dasharray="2 2"/></svg>'
+      coupon:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H19v4a3 3 0 0 0 0 6v4H5.5A2.5 2.5 0 0 1 3 16.5z"/><path d="M9 8v8" stroke-dasharray="2 2"/></svg>',
+      users:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>'
     };
     return icons[name] || icons.info;
   }
@@ -356,6 +357,12 @@
     refs.coupon.className='settings-v2-action';
     refs.coupon.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();closeSettings();if(window.GenovaCouponAdmin&&typeof window.GenovaCouponAdmin.open==='function')window.GenovaCouponAdmin.open();});
     refs.admin.list.appendChild(refs.coupon);
+
+    refs.subscribers=document.createElement('button');
+    refs.subscribers.type='button';
+    refs.subscribers.className='settings-v2-action';
+    refs.subscribers.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();closeSettings();if(window.GenovaSubscribersAdmin&&typeof window.GenovaSubscribersAdmin.open==='function')window.GenovaSubscribersAdmin.open();});
+    refs.admin.list.appendChild(refs.subscribers);
 
     refs.about=document.createElement('button');
     refs.about.type='button';
@@ -493,6 +500,7 @@
     decorateExisting(refs.contact,d.contact,'contact');
     makeActionContent(refs.reset,d.reset,'reset');
     makeActionContent(refs.coupon,'Coupon','coupon');
+    makeActionContent(refs.subscribers,'Iscritti e abbonati','users');
     makeActionContent(refs.about,d.about,'info');
     refs.versionLabel.textContent=d.version;
     refs.versionNumber.textContent=APP_VERSION;
