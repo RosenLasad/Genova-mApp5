@@ -98,7 +98,6 @@ export default async (request) => {
     const subscriptionChanged = !sameSubscription(record.subscription, normalized);
     record.subscription = normalized;
     record.email = user.email || record.email || "";
-    record.isAdmin = isAdminUser(user);
 
     if (request.method === "GET") {
       if (!existing || subscriptionChanged) {

@@ -119,3 +119,30 @@ html.sub-v2-open{overflow:hidden!important}
   .sub-v2-legal-links{display:grid}.auth-sync-panel{grid-template-columns:1fr}.auth-sync-panel button{width:100%}
 }
 @media(prefers-reduced-motion:reduce){.sub-v2-plan-choice{transition:none}}
+
+/* Codice promozionale nel pannello Abbonamento */
+.sub-v2-promo{
+  display:grid;gap:10px;margin:4px 0 15px;padding:14px 15px;
+  border:1px solid rgba(96,165,250,.22);border-radius:14px;
+  background:linear-gradient(135deg,rgba(30,64,175,.13),rgba(24,24,30,.78));
+}
+.sub-v2-promo-copy h4{margin:0 0 3px;color:#dbeafe;font-size:.92rem}
+.sub-v2-promo-copy p{margin:0;color:#aeb8c7;font-size:.78rem;line-height:1.45}
+.sub-v2-promo-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center}
+.sub-v2-promo-input{
+  min-width:0;min-height:42px;padding:9px 12px;border:1px solid rgba(148,163,184,.28);border-radius:10px;
+  color:#f8fafc;background:#11131a;font:800 .86rem/1.2 Arial,sans-serif;letter-spacing:.045em;text-transform:uppercase;
+}
+.sub-v2-promo-input::placeholder{color:#6b7280;letter-spacing:.02em}
+.sub-v2-promo-input:focus{outline:none;border-color:#60a5fa;box-shadow:0 0 0 3px rgba(59,130,246,.14)}
+.sub-v2-promo-button{
+  min-height:42px;padding:9px 15px;border:1px solid rgba(96,165,250,.48);border-radius:10px;
+  color:#eff6ff;background:linear-gradient(180deg,#244f7b,#173655);font-weight:800;cursor:pointer;white-space:nowrap;
+}
+.sub-v2-promo-button:hover,.sub-v2-promo-button:focus-visible{background:linear-gradient(180deg,#2d6093,#1d456d);outline:none}
+.sub-v2-promo-button:disabled,.sub-v2-promo-input:disabled{opacity:.58;cursor:wait}
+.sub-v2-promo-status{margin:0;padding:8px 10px;border-radius:9px;background:rgba(59,130,246,.1);color:#dbeafe;font-size:.78rem;line-height:1.4}
+.sub-v2-promo-status.is-success{border:1px solid rgba(74,222,128,.2);background:rgba(22,101,52,.17);color:#bbf7d0}
+.sub-v2-promo-status.is-error{border:1px solid rgba(248,113,113,.22);background:rgba(127,29,29,.18);color:#fecaca}
+#sub-modal[dir="rtl"] .sub-v2-promo-input{text-align:right}
+@media(max-width:520px){.sub-v2-promo-row{grid-template-columns:1fr}.sub-v2-promo-button{width:100%}}

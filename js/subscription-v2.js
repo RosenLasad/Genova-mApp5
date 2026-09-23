@@ -15,6 +15,7 @@
       premiumFeatures:['30 ricerche Eventi ogni 24 ore','GPS + Raggio/Vicino a me','Note e impostazioni sincronizzate','Punti Preferiti illimitati','Percorsi personalizzati illimitati','MiniDoc completi'],
       activateTitle:'Attiva il tuo abbonamento',activateGuest:'Accedi o crea gratuitamente il tuo account prima di aprire il checkout sicuro di Stripe.',activateFree:'Il tuo account è pronto. Scegli la durata dell’abbonamento e continua con Stripe.',
       monthly:'Mensile',monthlyPrice:'0,69 € / mese',flexible:'Flessibile',yearly:'Annuale',yearlyPrice:'4,99 € / anno',recommended:'Consigliato',saving:'Risparmi circa il 40%',
+      promoTitle:'Hai un codice promozionale?',promoHint:'Inseriscilo qui per attivare un periodo Premium gratuito, se previsto dal codice.',promoPlaceholder:'GENOVAMAPP-XXXXXX',promoCta:'Attiva codice',promoLogin:'Accedi per usare il codice',promoWorking:'Verifica del codice…',promoSuccess:'Codice attivato. Premium disponibile fino al {date}.',promoInvalid:'Codice promozionale non valido.',promoUsed:'Questo codice è già stato utilizzato.',promoExpired:'Questo codice promozionale è scaduto.',promoAlreadyPremium:'Hai già Premium attivo. Potrai usare un codice quando terminerà il periodo attuale.',promoError:'Non è stato possibile verificare il codice. Riprova tra poco.',couponPlan:'Promozione con coupon',couponNoRenewal:'Nessun rinnovo automatico.',
       invoice:'Richiedo la fattura',invoiceHint:'I dati fiscali saranno richiesti nel checkout quando necessario.',loginCta:'Accedi o registrati',checkoutCta:'Continua con Stripe',activeCta:'Gestisci su Stripe',
       secure:'Pagamento sicuro gestito da Stripe.',renewalTerms:'Rinnovo automatico. Puoi disdire in qualsiasi momento e mantenere Premium fino alla fine del periodo già pagato.',
       seller:'Servizio venduto da Associazione Indie Club.',support:'Assistenza',terms:'Termini del servizio',privacy:'Privacy',legalPreparing:'Documento in preparazione',
@@ -31,6 +32,7 @@
       premiumFeatures:['30 Event searches every 24 hours','GPS + Radius/Near me','Synced notes and settings','Unlimited Favourite points','Unlimited custom Routes','Full MiniDocs'],
       activateTitle:'Activate your subscription',activateGuest:'Log in or create your free account before opening the secure Stripe checkout.',activateFree:'Your account is ready. Choose your billing period and continue with Stripe.',
       monthly:'Monthly',monthlyPrice:'€0.69 / month',flexible:'Flexible',yearly:'Yearly',yearlyPrice:'€4.99 / year',recommended:'Recommended',saving:'Save about 40%',
+      promoTitle:'Do you have a promo code?',promoHint:'Enter it here to activate a free Premium period, when included with the code.',promoPlaceholder:'GENOVAMAPP-XXXXXX',promoCta:'Activate code',promoLogin:'Log in to use the code',promoWorking:'Checking code…',promoSuccess:'Code activated. Premium is available until {date}.',promoInvalid:'Invalid promo code.',promoUsed:'This code has already been used.',promoExpired:'This promo code has expired.',promoAlreadyPremium:'Premium is already active. You can use a code after your current period ends.',promoError:'The code could not be checked. Please try again shortly.',couponPlan:'Coupon promotion',couponNoRenewal:'No automatic renewal.',
       invoice:'I need an invoice',invoiceHint:'Billing details will be requested at checkout when needed.',loginCta:'Log in or sign up',checkoutCta:'Continue with Stripe',activeCta:'Manage on Stripe',
       secure:'Secure payment powered by Stripe.',renewalTerms:'Renews automatically. Cancel at any time and keep Premium until the end of the paid period.',
       seller:'Service sold by Associazione Indie Club.',support:'Support',terms:'Terms of service',privacy:'Privacy',legalPreparing:'Document in preparation',
@@ -47,6 +49,7 @@
       premiumFeatures:['30 búsquedas de Eventos cada 24 horas','GPS + Radio/Cerca de mí','Notas y ajustes sincronizados','Puntos Favoritos ilimitados','Rutas personalizadas ilimitadas','MiniDoc completos'],
       activateTitle:'Activa tu suscripción',activateGuest:'Accede o crea gratis tu cuenta antes de abrir el pago seguro de Stripe.',activateFree:'Tu cuenta está lista. Elige la duración y continúa con Stripe.',
       monthly:'Mensual',monthlyPrice:'0,69 € / mes',flexible:'Flexible',yearly:'Anual',yearlyPrice:'4,99 € / año',recommended:'Recomendado',saving:'Ahorra aproximadamente un 40 %',
+      promoTitle:'¿Tienes un código promocional?',promoHint:'Introdúcelo aquí para activar un periodo Premium gratuito, si el código lo incluye.',promoPlaceholder:'GENOVAMAPP-XXXXXX',promoCta:'Activar código',promoLogin:'Accede para usar el código',promoWorking:'Comprobando código…',promoSuccess:'Código activado. Premium disponible hasta {date}.',promoInvalid:'Código promocional no válido.',promoUsed:'Este código ya ha sido utilizado.',promoExpired:'Este código promocional ha caducado.',promoAlreadyPremium:'Ya tienes Premium activo. Podrás usar un código cuando termine el periodo actual.',promoError:'No se pudo comprobar el código. Vuelve a intentarlo en breve.',couponPlan:'Promoción con cupón',couponNoRenewal:'Sin renovación automática.',
       invoice:'Necesito factura',invoiceHint:'Los datos fiscales se solicitarán durante el pago cuando sean necesarios.',loginCta:'Acceder o registrarse',checkoutCta:'Continuar con Stripe',activeCta:'Gestionar en Stripe',
       secure:'Pago seguro gestionado por Stripe.',renewalTerms:'Renovación automática. Puedes cancelar en cualquier momento y conservar Premium hasta el final del periodo pagado.',
       seller:'Servicio vendido por Associazione Indie Club.',support:'Asistencia',terms:'Términos del servicio',privacy:'Privacidad',legalPreparing:'Documento en preparación',
@@ -63,6 +66,7 @@
       premiumFeatures:['30 recherches Événements toutes les 24 heures','GPS + Rayon/À proximité','Notes et réglages synchronisés','Points Favoris illimités','Parcours personnalisés illimités','MiniDoc complets'],
       activateTitle:'Activez votre abonnement',activateGuest:'Connectez-vous ou créez gratuitement votre compte avant d’ouvrir le paiement sécurisé Stripe.',activateFree:'Votre compte est prêt. Choisissez la durée et continuez avec Stripe.',
       monthly:'Mensuel',monthlyPrice:'0,69 € / mois',flexible:'Flexible',yearly:'Annuel',yearlyPrice:'4,99 € / an',recommended:'Recommandé',saving:'Économisez environ 40 %',
+      promoTitle:'Vous avez un code promotionnel ?',promoHint:'Saisissez-le ici pour activer une période Premium gratuite si elle est prévue par le code.',promoPlaceholder:'GENOVAMAPP-XXXXXX',promoCta:'Activer le code',promoLogin:'Connectez-vous pour utiliser le code',promoWorking:'Vérification du code…',promoSuccess:'Code activé. Premium est disponible jusqu’au {date}.',promoInvalid:'Code promotionnel non valide.',promoUsed:'Ce code a déjà été utilisé.',promoExpired:'Ce code promotionnel a expiré.',promoAlreadyPremium:'Premium est déjà actif. Vous pourrez utiliser un code à la fin de la période actuelle.',promoError:'Impossible de vérifier le code. Réessayez dans quelques instants.',couponPlan:'Promotion avec coupon',couponNoRenewal:'Aucun renouvellement automatique.',
       invoice:'Je souhaite une facture',invoiceHint:'Les données de facturation seront demandées lors du paiement si nécessaire.',loginCta:'Se connecter ou s’inscrire',checkoutCta:'Continuer avec Stripe',activeCta:'Gérer sur Stripe',
       secure:'Paiement sécurisé géré par Stripe.',renewalTerms:'Renouvellement automatique. Résiliez à tout moment et conservez Premium jusqu’à la fin de la période payée.',
       seller:'Service vendu par Associazione Indie Club.',support:'Assistance',terms:'Conditions d’utilisation',privacy:'Confidentialité',legalPreparing:'Document en préparation',
@@ -79,6 +83,7 @@
       premiumFeatures:['30 عملية بحث عن الفعاليات كل 24 ساعة','GPS + النطاق/بالقرب مني','مزامنة الملاحظات والإعدادات','نقاط مفضلة غير محدودة','مسارات مخصصة غير محدودة','MiniDoc كاملة'],
       activateTitle:'فعّل اشتراكك',activateGuest:'سجّل الدخول أو أنشئ حسابك المجاني قبل فتح صفحة الدفع الآمنة من Stripe.',activateFree:'حسابك جاهز. اختر مدة الاشتراك وتابع مع Stripe.',
       monthly:'شهري',monthlyPrice:'0.69 € / شهر',flexible:'مرن',yearly:'سنوي',yearlyPrice:'4.99 € / سنة',recommended:'موصى به',saving:'وفّر نحو 40٪',
+      promoTitle:'هل لديك رمز ترويجي؟',promoHint:'أدخله هنا لتفعيل فترة Premium مجانية إذا كان الرمز يتضمن ذلك.',promoPlaceholder:'GENOVAMAPP-XXXXXX',promoCta:'تفعيل الرمز',promoLogin:'سجّل الدخول لاستخدام الرمز',promoWorking:'جارٍ التحقق من الرمز…',promoSuccess:'تم تفعيل الرمز. Premium متاح حتى {date}.',promoInvalid:'الرمز الترويجي غير صالح.',promoUsed:'تم استخدام هذا الرمز بالفعل.',promoExpired:'انتهت صلاحية هذا الرمز الترويجي.',promoAlreadyPremium:'Premium نشط بالفعل. يمكنك استخدام رمز بعد انتهاء الفترة الحالية.',promoError:'تعذر التحقق من الرمز. حاول مرة أخرى بعد قليل.',couponPlan:'عرض بقسيمة',couponNoRenewal:'لا يوجد تجديد تلقائي.',
       invoice:'أحتاج إلى فاتورة',invoiceHint:'ستُطلب بيانات الفوترة أثناء الدفع عند الحاجة.',loginCta:'تسجيل الدخول أو إنشاء حساب',checkoutCta:'المتابعة مع Stripe',activeCta:'الإدارة على Stripe',
       secure:'دفع آمن تديره Stripe.',renewalTerms:'يتجدد تلقائيًا. يمكنك الإلغاء في أي وقت والاحتفاظ بـ Premium حتى نهاية الفترة المدفوعة.',
       seller:'الخدمة مقدمة من Associazione Indie Club.',support:'الدعم',terms:'شروط الخدمة',privacy:'الخصوصية',legalPreparing:'المستند قيد الإعداد',
@@ -95,6 +100,7 @@
       premiumFeatures:['30 поисков событий за 24 часа','GPS + Радиус/Рядом со мной','Синхронизация заметок и настроек','Неограниченное число Избранных точек','Неограниченное число своих Маршрутов','Полные MiniDoc'],
       activateTitle:'Подключите подписку',activateGuest:'Войдите или бесплатно создайте аккаунт перед переходом к защищённой оплате Stripe.',activateFree:'Ваш аккаунт готов. Выберите период подписки и продолжите в Stripe.',
       monthly:'Ежемесячно',monthlyPrice:'0,69 € / месяц',flexible:'Гибко',yearly:'Ежегодно',yearlyPrice:'4,99 € / год',recommended:'Рекомендуем',saving:'Экономия около 40%',
+      promoTitle:'У вас есть промокод?',promoHint:'Введите его здесь, чтобы активировать бесплатный период Premium, если он предусмотрен кодом.',promoPlaceholder:'GENOVAMAPP-XXXXXX',promoCta:'Активировать код',promoLogin:'Войдите, чтобы использовать код',promoWorking:'Проверяем код…',promoSuccess:'Код активирован. Premium доступен до {date}.',promoInvalid:'Неверный промокод.',promoUsed:'Этот код уже был использован.',promoExpired:'Срок действия этого промокода истёк.',promoAlreadyPremium:'Premium уже активен. Вы сможете использовать код после окончания текущего периода.',promoError:'Не удалось проверить код. Повторите попытку позже.',couponPlan:'Промо по купону',couponNoRenewal:'Без автоматического продления.',
       invoice:'Мне нужен счёт',invoiceHint:'Платёжные реквизиты будут запрошены при оплате, если это необходимо.',loginCta:'Войти или зарегистрироваться',checkoutCta:'Продолжить в Stripe',activeCta:'Управлять в Stripe',
       secure:'Безопасная оплата через Stripe.',renewalTerms:'Автоматическое продление. Отменить можно в любой момент; Premium действует до конца оплаченного периода.',
       seller:'Услугу предоставляет Associazione Indie Club.',support:'Поддержка',terms:'Условия использования',privacy:'Конфиденциальность',legalPreparing:'Документ готовится',
@@ -111,6 +117,7 @@
       premiumFeatures:['每 24 小时可搜索 30 次活动','GPS + 半径/附近功能','同步笔记和设置','不限量收藏地图点','不限量创建自定义路线','完整观看 MiniDoc'],
       activateTitle:'开通订阅',activateGuest:'请先登录或免费创建账户，再进入 Stripe 安全结账页面。',activateFree:'你的账户已准备就绪。请选择订阅周期并继续前往 Stripe。',
       monthly:'月度',monthlyPrice:'0.69 € / 月',flexible:'灵活',yearly:'年度',yearlyPrice:'4.99 € / 年',recommended:'推荐',saving:'约节省 40%',
+      promoTitle:'有促销代码吗？',promoHint:'在此输入代码；如该代码包含免费权益，即可激活一段 Premium 免费使用期。',promoPlaceholder:'GENOVAMAPP-XXXXXX',promoCta:'激活代码',promoLogin:'登录后使用代码',promoWorking:'正在验证代码…',promoSuccess:'代码已激活。Premium 可使用至 {date}。',promoInvalid:'促销代码无效。',promoUsed:'此代码已被使用。',promoExpired:'此促销代码已过期。',promoAlreadyPremium:'Premium 已处于有效状态。当前期限结束后可再使用代码。',promoError:'无法验证代码，请稍后重试。',couponPlan:'优惠券促销',couponNoRenewal:'不会自动续订。',
       invoice:'我需要发票',invoiceHint:'如有需要，结账时将要求填写开票信息。',loginCta:'登录或注册',checkoutCta:'继续前往 Stripe',activeCta:'在 Stripe 管理',
       secure:'由 Stripe 提供安全支付服务。',renewalTerms:'自动续订。可随时取消，Premium 权益保留至已付款周期结束。',
       seller:'服务由 Associazione Indie Club 销售。',support:'帮助',terms:'服务条款',privacy:'隐私',legalPreparing:'文件准备中',
@@ -127,6 +134,7 @@
       premiumFeatures:['30 riçerche Eventi ògni 24 oe','GPS + Raggio/Vixin a mi','Nòtte e impostaçioin sincronizzæ','Ponti Preferii sensa limite','Percorsi personalizzæ sensa limite','MiniDoc completi'],
       activateTitle:'Ativa o teu abonamento',activateGuest:'Intra ò crea gratis o teu account primma d’arvî o checkout seguo de Stripe.',activateFree:'O teu account o l’é pronto. Çèrni a duâ do abonamento e continoa con Stripe.',
       monthly:'Menscile',monthlyPrice:'0,69 € / meize',flexible:'Flessibile',yearly:'Annuâ',yearlyPrice:'4,99 € / anno',recommended:'Consegiou',saving:'Ti sparagni circa o 40%',
+      promoTitle:'Ti gh’æ un còdice promoçionâ?',promoHint:'Scrivilo chi pe ativâ un periodo Premium gratis, se o còdice o-o prevede.',promoPlaceholder:'GENOVAMAPP-XXXXXX',promoCta:'Ativa o còdice',promoLogin:'Intra pe deuviâ o còdice',promoWorking:'Contròllo do còdice…',promoSuccess:'Còdice ativou. Premium disponibile finn-a-o {date}.',promoInvalid:'Còdice promoçionâ no valido.',promoUsed:'Sto còdice o l’é za stæto deuviou.',promoExpired:'Sto còdice promoçionâ o l’é scadûo.',promoAlreadyPremium:'Premium o l’é za ativo. Ti peu deuviâ un còdice quande o periodo atual o finisce.',promoError:'No semmo riescîi a verificâ o còdice. Preuva torna tra un pö.',couponPlan:'Promoçion con coupon',couponNoRenewal:'Nisciun renovo automatico.',
       invoice:'Domando a fatura',invoiceHint:'I dæti fiscali saiàn domandæ into checkout quande servan.',loginCta:'Intra ò registrite',checkoutCta:'Continoa con Stripe',activeCta:'Gestisci in sce Stripe',
       secure:'Pagamento seguo gestio da Stripe.',renewalTerms:'Renovo automatico. Ti peu disdî quande ti veu e tegnî Premium finn-a-a fin do periodo pagou.',
       seller:'Serviçio venduo da Associazione Indie Club.',support:'Assistenza',terms:'Termini do serviçio',privacy:'Privacy',legalPreparing:'Documento in preparaçion',
@@ -205,6 +213,45 @@
     var actions=root.querySelector('.sub-v2-action-row');actions.parentNode.insertBefore(el,actions.nextSibling);
   }
 
+  function promoMessage(box,message,isError,isSuccess){
+    var status=box.querySelector('.sub-v2-promo-status');if(!status)return;
+    status.textContent=message||'';status.hidden=!message;
+    status.classList.toggle('is-error',!!isError);status.classList.toggle('is-success',!!isSuccess);
+  }
+
+  function promoErrorMessage(code){
+    if(code==='coupon_invalid')return t().promoInvalid;
+    if(code==='coupon_used')return t().promoUsed;
+    if(code==='coupon_expired')return t().promoExpired;
+    if(code==='already_premium')return t().promoAlreadyPremium;
+    return t().promoError;
+  }
+
+  async function redeemPromo(box,input,cta){
+    var s=account();
+    if(!s.user){closeModal();if(window.GenovaAuth)window.GenovaAuth.open('login');return;}
+    var value=String(input.value||'').trim();
+    if(!value){promoMessage(box,t().promoInvalid,true,false);input.focus();return;}
+    if(busy)return;busy=true;cta.disabled=true;input.disabled=true;var original=cta.textContent;cta.textContent=t().promoWorking;promoMessage(box,'',false,false);
+    try{
+      if(!window.GenovaBilling||typeof window.GenovaBilling.redeemCoupon!=='function')throw new Error('coupon_unavailable');
+      var result=await window.GenovaBilling.redeemCoupon(value);
+      var message=String(t().promoSuccess).replace('{date}',date(result&&result.currentPeriodEnd));
+      promoMessage(box,message,false,true);
+      if(window.GenovaAccount&&typeof window.GenovaAccount.syncNow==='function')await window.GenovaAccount.syncNow();
+    }catch(error){promoMessage(box,promoErrorMessage(error&&error.message),true,false);}
+    finally{busy=false;cta.disabled=false;input.disabled=false;cta.textContent=original;}
+  }
+
+  function promoBox(){
+    var s=account(),box=node('section','sub-v2-promo');
+    var copy=node('div','sub-v2-promo-copy');copy.appendChild(node('h4','',t().promoTitle));copy.appendChild(node('p','',t().promoHint));box.appendChild(copy);
+    var row=node('div','sub-v2-promo-row');var input=document.createElement('input');input.type='text';input.className='sub-v2-promo-input';input.placeholder=t().promoPlaceholder;input.setAttribute('aria-label',t().promoTitle);input.autocomplete='off';input.autocapitalize='characters';input.spellcheck=false;input.maxLength=32;
+    input.addEventListener('input',function(){var start=input.selectionStart;input.value=input.value.toUpperCase();try{input.setSelectionRange(start,start);}catch(_e){}});
+    var cta=buttonNode('sub-v2-promo-button',s.user?t().promoCta:t().promoLogin);cta.addEventListener('click',function(){redeemPromo(box,input,cta);});input.addEventListener('keydown',function(event){if(event.key==='Enter'){event.preventDefault();redeemPromo(box,input,cta);}});
+    row.appendChild(input);row.appendChild(cta);box.appendChild(row);var status=node('p','sub-v2-promo-status','');status.hidden=true;status.setAttribute('role','status');box.appendChild(status);return box;
+  }
+
   async function beginCheckout(root,cta){
     var s=account();
     if(!s.user){closeModal();if(window.GenovaAuth)window.GenovaAuth.open('login');return;}
@@ -245,15 +292,18 @@
     var s=account(),section=node('section','sub-v2-activation');section.appendChild(node('h3','',s.active?t().activeTitle:t().activateTitle));
     if(s.active){
       var sub=s.subscription||{},details=node('dl','sub-v2-details');
-      var adminOverride=sub.adminOverride===true;
-      var rows=adminOverride?[[t().user,displayName(s.user)],[t().plan,t().premiumState]]:[[t().user,displayName(s.user)],[t().plan,sub.plan==='monthly'?t().monthly:t().yearly],[sub.cancelAtPeriodEnd?t().accessUntil:t().renewal,date(sub.currentPeriodEnd||sub.renewsAt)]];
+      var adminOverride=sub.adminOverride===true;var couponActive=sub.source==='coupon'||sub.plan==='coupon';var rows;
+      if(adminOverride)rows=[[t().user,displayName(s.user)],[t().plan,t().premiumState]];
+      else if(couponActive)rows=[[t().user,displayName(s.user)],[t().plan,t().couponPlan],[t().accessUntil,date(sub.currentPeriodEnd)]];
+      else rows=[[t().user,displayName(s.user)],[t().plan,sub.plan==='monthly'?t().monthly:t().yearly],[sub.cancelAtPeriodEnd?t().accessUntil:t().renewal,date(sub.currentPeriodEnd||sub.renewsAt)]];
       rows.forEach(function(pair){details.appendChild(node('dt','',pair[0]));details.appendChild(node('dd','',pair[1]));});section.appendChild(details);
-      if(!adminOverride){var manage=buttonNode('sub-v2-checkout',t().activeCta);manage.addEventListener('click',function(){openPortal(section,manage);});var activeRow=node('div','sub-v2-action-row');activeRow.appendChild(manage);section.appendChild(activeRow);}
-      section.appendChild(node('p','sub-v2-secure',t().secure));return section;
+      if(!adminOverride&&!couponActive){var manage=buttonNode('sub-v2-checkout',t().activeCta);manage.addEventListener('click',function(){openPortal(section,manage);});var activeRow=node('div','sub-v2-action-row');activeRow.appendChild(manage);section.appendChild(activeRow);}
+      section.appendChild(node('p','sub-v2-secure',couponActive?t().couponNoRenewal:t().secure));return section;
     }
     section.appendChild(node('p','sub-v2-activation-intro',s.user?t().activateFree:t().activateGuest));
     var choices=node('div','sub-v2-plan-choices');var monthly=planChoice('monthly',t().monthly,t().monthlyPrice,t().flexible,'');var yearly=planChoice('yearly',t().yearly,t().yearlyPrice,t().recommended,t().saving);choices.appendChild(yearly);choices.appendChild(monthly);section.appendChild(choices);
     monthly.addEventListener('click',function(){setPlan('monthly',section);});yearly.addEventListener('click',function(){setPlan('yearly',section);});
+    section.appendChild(promoBox());
     var invoice=node('label','sub-v2-invoice');var checkbox=document.createElement('input');checkbox.type='checkbox';checkbox.id='sub-v2-invoice';invoice.appendChild(checkbox);var invoiceCopy=node('span','');invoiceCopy.appendChild(node('strong','',t().invoice));invoiceCopy.appendChild(node('small','',t().invoiceHint));invoice.appendChild(invoiceCopy);section.appendChild(invoice);
     var actionRow=node('div','sub-v2-action-row');var cta=buttonNode('sub-v2-checkout',s.user?t().checkoutCta:t().loginCta);cta.addEventListener('click',function(){beginCheckout(section,cta);});actionRow.appendChild(cta);section.appendChild(actionRow);
     section.appendChild(node('p','sub-v2-secure',t().secure+' '+t().renewalTerms));setPlan(selectedPlan,section);return section;

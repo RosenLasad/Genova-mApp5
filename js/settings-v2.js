@@ -4,7 +4,7 @@
   if(window.__GENOVA_SETTINGS_V2__) return;
   window.__GENOVA_SETTINGS_V2__ = true;
 
-  var APP_VERSION = '1.1.0';
+  var APP_VERSION = '1.2.0';
 
   var I18N = {
     it:{
@@ -286,7 +286,8 @@
       contact:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/></svg>',
       reset:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>',
       info:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></svg>',
-      version:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10l4 4v10l-4 4H7l-4-4V7z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>'
+      version:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10l4 4v10l-4 4H7l-4-4V7z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>',
+      coupon:'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H19v4a3 3 0 0 0 0 6v4H5.5A2.5 2.5 0 0 1 3 16.5z"/><path d="M9 8v8" stroke-dasharray="2 2"/></svg>'
     };
     return icons[name] || icons.info;
   }
@@ -336,6 +337,7 @@
     refs.help=makeSection('help');
     refs.display=makeSection('display');
     refs.data=makeSection('data');
+    refs.admin=makeSection('admin');
     refs.info=makeSection('info');
 
     if(refs.welcome)refs.help.list.appendChild(refs.welcome);
@@ -348,6 +350,12 @@
     refs.reset.className='settings-v2-action settings-v2-danger';
     refs.reset.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();openReset();});
     refs.data.list.appendChild(refs.reset);
+
+    refs.coupon=document.createElement('button');
+    refs.coupon.type='button';
+    refs.coupon.className='settings-v2-action';
+    refs.coupon.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();closeSettings();if(window.GenovaCouponAdmin&&typeof window.GenovaCouponAdmin.open==='function')window.GenovaCouponAdmin.open();});
+    refs.admin.list.appendChild(refs.coupon);
 
     refs.about=document.createElement('button');
     refs.about.type='button';
@@ -365,7 +373,7 @@
     refs.version.appendChild(refs.versionIcon);refs.version.appendChild(refs.versionLabel);refs.version.appendChild(refs.versionValue);
     refs.info.list.appendChild(refs.version);
 
-    [refs.help,refs.display,refs.data,refs.info].forEach(function(s){refs.body.appendChild(s.section);});
+    [refs.help,refs.display,refs.data,refs.admin,refs.info].forEach(function(s){refs.body.appendChild(s.section);});
     panel.appendChild(refs.body);
     createAbout();
     createReset();
@@ -466,17 +474,25 @@
     refs.aboutOverlay.setAttribute('dir',lang()==='ar'?'rtl':'ltr');
   }
 
+  function isAdmin(){
+    try{var state=window.GenovaAccount&&window.GenovaAccount.getState();return !!(state&&((state.record&&state.record.isAdmin===true)||(state.subscription&&state.subscription.adminOverride===true)));}
+    catch(_e){return false;}
+  }
+
   function render(){
     if(!refs.panel)return;
     var d=t();
     refs.help.heading.textContent=d.sections.help;
     refs.display.heading.textContent=d.sections.display;
     refs.data.heading.textContent=d.sections.data;
+    refs.admin.heading.textContent='Amministrazione';
+    refs.admin.section.hidden=!isAdmin();
     refs.info.heading.textContent=d.sections.info;
     decorateExisting(refs.welcome,d.welcome,'welcome');
     decorateExisting(refs.guide,d.guide,'guide');
     decorateExisting(refs.contact,d.contact,'contact');
     makeActionContent(refs.reset,d.reset,'reset');
+    makeActionContent(refs.coupon,'Coupon','coupon');
     makeActionContent(refs.about,d.about,'info');
     refs.versionLabel.textContent=d.version;
     refs.versionNumber.textContent=APP_VERSION;
@@ -548,6 +564,9 @@
     buildSettings();
     document.addEventListener('app:set-lang',function(){window.setTimeout(render,0);});
     window.addEventListener('i18n:changed',function(){window.setTimeout(render,0);});
+    document.addEventListener('genova:subscription-changed',function(){window.setTimeout(render,0);});
+    document.addEventListener('genova:auth-changed',function(){window.setTimeout(render,0);});
+    document.addEventListener('genova:settings-reopen',function(){window.setTimeout(reopenSettings,0);});
     document.addEventListener('keydown',function(e){
       if(e.key!=='Escape')return;
       if(refs.resetOverlay&&refs.resetOverlay.classList.contains('is-open')){closeReset();return;}

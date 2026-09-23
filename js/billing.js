@@ -23,7 +23,8 @@
 
   window.GenovaBilling={
     createCheckoutSession:function(options){return post('/.netlify/functions/stripe-checkout',options||{});},
-    createPortalSession:function(){return post('/.netlify/functions/stripe-portal',{});}
+    createPortalSession:function(){return post('/.netlify/functions/stripe-portal',{});},
+    redeemCoupon:function(code){return post('/.netlify/functions/coupon-redeem',{code:code});}
   };
 
   try{
