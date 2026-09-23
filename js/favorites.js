@@ -816,6 +816,43 @@ data.forEach(function(loc){
   function saveFavs(obj){
     try{ localStorage.setItem(LS_KEY, JSON.stringify(obj||{})); }catch(_){}
   }
+
+  var FAVORITE_ACCESS_TEXT = {
+    it:{login:'Accedi o registrati per salvare punti Preferiti sulla mappa.',limit:'Con l’Account gratuito puoi salvare fino a 10 punti Preferiti. Passa a Premium per averli illimitati.'},
+    en:{login:'Log in or sign up to save Favourite points on the map.',limit:'With a free account you can save up to 10 Favourite points. Upgrade to Premium for unlimited Favourites.'},
+    es:{login:'Inicia sesión o regístrate para guardar puntos Favoritos en el mapa.',limit:'Con la cuenta gratuita puedes guardar hasta 10 puntos Favoritos. Pásate a Premium para tenerlos ilimitados.'},
+    fr:{login:'Connectez-vous ou inscrivez-vous pour enregistrer des points Favoris sur la carte.',limit:'Avec le compte gratuit, vous pouvez enregistrer jusqu’à 10 points Favoris. Passez à Premium pour des Favoris illimités.'},
+    ar:{login:'سجّل الدخول أو أنشئ حساباً لحفظ النقاط المفضلة على الخريطة.',limit:'يتيح الحساب المجاني حفظ ما يصل إلى 10 نقاط مفضلة. انتقل إلى Premium للحصول على مفضلة غير محدودة.'},
+    ru:{login:'Войдите или зарегистрируйтесь, чтобы сохранять Избранные точки на карте.',limit:'Бесплатный аккаунт позволяет сохранить до 10 Избранных точек. Перейдите на Premium для неограниченного количества.'},
+    zh:{login:'登录或注册后即可在地图上保存收藏点。',limit:'免费账号最多可保存10个收藏点。升级到 Premium 后可无限收藏。'},
+    lij:{login:'Intra ò registrite pe sarvâ ponti Preferii in sciâ mappa.',limit:'Con l’Account gratuito ti peu sarvâ finn-a 10 ponti Preferii. Passa a Premium pe avei Preferii sensa limite.'}
+  };
+  function favoriteAccessLang(){
+    var value='it';try{value=localStorage.getItem('lang')||document.documentElement.lang||'it';}catch(_e){}
+    value=String(value||'it').toLowerCase().split(/[-_]/)[0];
+    return FAVORITE_ACCESS_TEXT[value]?value:'it';
+  }
+  function favoriteLimit(){
+    try{if(window.GenovaEntitlements)return window.GenovaEntitlements.get().favoritePoints;}catch(_e){}
+    try{var st=window.GenovaAccount&&window.GenovaAccount.getState?window.GenovaAccount.getState():null;return st&&st.active?null:(st&&st.user?10:0);}catch(_e){return 0;}
+  }
+  function favoriteCount(){ return Object.keys(loadFavs()).length; }
+  function canAddFavorite(label,name){
+    if(isFav(label,name)) return true;
+    var limit=favoriteLimit();
+    if(limit===null) return true;
+    var text=FAVORITE_ACCESS_TEXT[favoriteAccessLang()]||FAVORITE_ACCESS_TEXT.it;
+    if(!(Number(limit)>0)){
+      try{window.alert(text.login);}catch(_e){}
+      try{if(window.GenovaAuth&&typeof window.GenovaAuth.open==='function')window.GenovaAuth.open('login');}catch(_e){}
+      return false;
+    }
+    if(favoriteCount()>=Number(limit)){
+      try{window.alert(text.limit);}catch(_e){}
+      return false;
+    }
+    return true;
+  }
   function setFav(label, name, on){
     const key = (label||'') + '|' + norm(name);
     const favs = loadFavs();
@@ -824,6 +861,7 @@ data.forEach(function(loc){
     saveFavs(favs);
   }
   function isFav(label, name){
+    if(favoriteLimit() === 0) return false;
     const favs = loadFavs();
     return !!favs[(label||'') + '|' + norm(name)];
   }
@@ -1303,6 +1341,7 @@ function setFavoriteStateEverywhere(label, name, on){
     on = !!on;
 
     if(on){
+      if(!canAddFavorite(label, name)) return false;
       setFav(label, name, true);
       var index = getIndexByLabel(label);
       if(index && index[nameNorm]) ensureStarByNorm(index, nameNorm, label);
@@ -1411,6 +1450,7 @@ function makeRouteDot(lat, lng, label, nameNorm, rid){
         setFav(label, name, false);
         return false;
       } else {
+        if(!canAddFavorite(label, name)) return false;
         var latlng = index[nameNorm];
         var m = makeStar(latlng[0], latlng[1], label, nameNorm);
         m.addTo(FAV_STARS);
@@ -1518,7 +1558,7 @@ function escHtml(s){
           var nameEl = li.querySelector('.fav-name') || li;
           var btn = li.querySelector('.fav-star-btn');
           var k = keyFor(label, nameEl && nameEl.textContent || '');
-          var on = !!favs[k];
+          var on = favoriteLimit() !== 0 && !!favs[k];
           li.classList.toggle('is-selected', on);
           if(btn){ btn.classList.toggle('on', on); btn.setAttribute('aria-pressed', on ? 'true' : 'false'); }
         });
@@ -1571,7 +1611,7 @@ function escHtml(s){
           var nameEl = li.querySelector('.fav-name') || li;
           var btn = li.querySelector('.fav-star-btn');
           var k = keyFor(label, nameEl && nameEl.textContent || '');
-          var on = !!favs[k];
+          var on = favoriteLimit() !== 0 && !!favs[k];
           li.classList.toggle('is-selected', on);
           if(btn){ btn.classList.toggle('on', on); btn.setAttribute('aria-pressed', on ? 'true' : 'false'); }
         });
@@ -1604,6 +1644,7 @@ function escHtml(s){
 
     // Restore stars on the map from localStorage (markers)
     function restoreStars(){
+      if(favoriteLimit() === 0) return;
       eachFav(function(label, nameNorm){
         var idx = getIndexByLabel(label);
         if(!idx) return;
@@ -1635,10 +1676,20 @@ function escHtml(s){
 
     }catch(_){}
 
+    function refreshFavoriteAccessView(){
+      try{ FAV_STARS.clearLayers(); }catch(_e){}
+      byKey = {};
+      restoreStars();
+      enhanceAll();
+      try{ window.dispatchEvent(new CustomEvent('fav:access-changed')); }catch(_e){}
+    }
+
     // Initial run
     restoreStars();
     // Enhance lists now and whenever menu opens; sync UI with persisted state
     enhanceAll();
+    document.addEventListener('genova:auth-changed', function(){ setTimeout(refreshFavoriteAccessView, 0); });
+    document.addEventListener('genova:subscription-changed', function(){ setTimeout(refreshFavoriteAccessView, 0); });
     window.__favEnhanceLists = enhanceAll;
     document.addEventListener('click', function(){
       var menu = document.getElementById('fav-menu');

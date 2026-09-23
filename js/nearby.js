@@ -168,6 +168,28 @@
 
   function T(){ return TEXT[currentLang()] || TEXT.it; }
 
+  var NEARBY_ACCESS_TEXT = {
+    it:'Accedi o registrati per utilizzare Raggio / Vicino a me.',
+    en:'Log in or sign up to use Radius / Near me.',
+    es:'Inicia sesión o regístrate para usar Radio / Cerca de mí.',
+    fr:'Connectez-vous ou inscrivez-vous pour utiliser Rayon / À proximité.',
+    ar:'سجّل الدخول أو أنشئ حساباً لاستخدام النطاق / بالقرب مني.',
+    ru:'Войдите или зарегистрируйтесь, чтобы использовать Радиус / Рядом со мной.',
+    zh:'登录或注册后即可使用半径 / 附近功能。',
+    lij:'Intra ò registrite pe adêuviâ Raggio / A-o me vexin.'
+  };
+  function nearbyAllowed(){
+    try{if(window.GenovaEntitlements)return window.GenovaEntitlements.allows('nearby');}catch(_e){}
+    try{var st=window.GenovaAccount&&window.GenovaAccount.getState?window.GenovaAccount.getState():null;return !!(st&&st.user);}catch(_e){return false;}
+  }
+  function nearbyAccessMessage(){ return NEARBY_ACCESS_TEXT[currentLang()] || NEARBY_ACCESS_TEXT.it; }
+  function requestNearbyAccess(){
+    if(nearbyAllowed()) return true;
+    try{window.alert(nearbyAccessMessage());}catch(_e){}
+    try{if(window.GenovaAuth&&typeof window.GenovaAuth.open==='function')window.GenovaAuth.open('login');}catch(_e){}
+    return false;
+  }
+
   function mapInstance(){
     var m = window.map || window.__map || window.__LEAFLET_MAP__;
     return m && typeof m.eachLayer === 'function' ? m : null;
@@ -569,6 +591,7 @@
   }
 
   function activateNearby(){
+    if(!requestNearbyAccess()) return false;
     var txt=T();
     if(!gpsIsActive()){ updateStatus(null,txt.gpsOff); return false; }
     if(!selectedCount()){ updateStatus(null,txt.selectOne); return false; }
@@ -590,7 +613,9 @@
 
   function openPanel(){
     var p=document.getElementById('gm-nearby-panel'); var b=document.getElementById('btn-nearby');
-    if(!p || !b || b.disabled) return;
+    if(!p || !b) return;
+    if(!requestNearbyAccess()) return;
+    if(b.disabled) return;
     applyTexts();
     p.classList.add('open'); p.setAttribute('aria-hidden','false'); b.setAttribute('aria-expanded','true');
     positionControls();
@@ -662,14 +687,15 @@
     var txt=T();
     button.textContent = nearbyActive ? txt.deactivate : txt.activate;
     button.classList.toggle('is-stop',nearbyActive);
-    button.disabled = !nearbyActive && (!gpsIsActive() || selectedCount()===0);
+    button.disabled = !nearbyAllowed() || (!nearbyActive && (!gpsIsActive() || selectedCount()===0));
   }
 
   function applyTexts(){
     var txt=T(), button=document.getElementById('btn-nearby'), panel=document.getElementById('gm-nearby-panel');
     if(button){
-      button.setAttribute('title', gpsIsActive()?txt.button:txt.gpsFirst);
-      button.setAttribute('aria-label', gpsIsActive()?txt.button:txt.gpsFirst);
+      var actionLabel = nearbyAllowed() ? (gpsIsActive()?txt.button:txt.gpsFirst) : nearbyAccessMessage();
+      button.setAttribute('title', actionLabel);
+      button.setAttribute('aria-label', actionLabel);
     }
     if(!panel) return;
     panel.setAttribute('dir',currentLang()==='ar'?'rtl':'ltr');
@@ -721,10 +747,16 @@
 
   function syncGpsState(){
     var button=ensureButton(); if(!button) return;
-    var on=gpsIsActive();
-    button.disabled=!on; button.classList.toggle('gps-ready',on);
-    if(!on && nearbyActive) deactivateNearby(T().gpsOff);
-    if(!on && panelIsOpen()) updateStatus(null,T().gpsOff);
+    var on=gpsIsActive(), allowed=nearbyAllowed();
+    // Il Visitatore può premere il pulsante per ricevere il messaggio di accesso,
+    // ma non può aprire o attivare la funzione.
+    button.disabled=allowed ? !on : false;
+    button.classList.toggle('gps-ready',on && allowed);
+    button.classList.toggle('account-required',!allowed);
+    if(!allowed && nearbyActive) deactivateNearby(nearbyAccessMessage());
+    else if(!on && nearbyActive) deactivateNearby(T().gpsOff);
+    if(!allowed && panelIsOpen()) closePanel();
+    else if(!on && panelIsOpen()) updateStatus(null,T().gpsOff);
     applyTexts(); positionControls();
   }
 
@@ -774,6 +806,8 @@
   window.addEventListener('load',function(){ setTimeout(positionControls,60); },{once:true});
   window.addEventListener('orientationchange',function(){ setTimeout(positionControls,120); });
   document.addEventListener('app:set-lang',function(){ setTimeout(function(){ applyTexts(); if(nearbyActive) updateNearby(); },0); });
+  document.addEventListener('genova:auth-changed',function(){ setTimeout(syncGpsState,0); });
+  document.addEventListener('genova:subscription-changed',function(){ setTimeout(syncGpsState,0); });
   window.addEventListener('i18n:changed',function(){ setTimeout(function(){ applyTexts(); if(nearbyActive) updateNearby(); },0); });
   document.addEventListener('pointerdown',function(event){
     var panel=document.getElementById('gm-nearby-panel'), button=document.getElementById('btn-nearby');

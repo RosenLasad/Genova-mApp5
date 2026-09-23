@@ -1,6 +1,6 @@
 /* Genova mApp - catalogo centrale dei livelli di accesso.
-   Le interfacce possono leggerlo subito; Supabase/Stripe diventeranno in seguito
-   la fonte autorevole per il livello dell'utente. */
+   Le interfacce leggono qui i limiti funzionali; account Netlify, coupon e Stripe
+   determinano il livello effettivo dell'utente. */
 (function(){
   'use strict';
   if(window.GenovaEntitlements)return;
@@ -8,7 +8,7 @@
   var TIERS={
     guest:{
       code:'guest',
-      eventSearchesPer24h:2,
+      eventSearchesPer24h:0,
       gps:true,
       nearby:false,
       notes:true,

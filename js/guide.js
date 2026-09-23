@@ -49,6 +49,15 @@
 
   // evento dal bottone nel bubble
   document.addEventListener('app:open-guide', function(e){
+    // La Guida della New Home e' la fonte principale e piu aggiornata.
+    // Manteniamo il vecchio iframe soltanto come fallback prudenziale.
+    if(typeof window.gmOpenNewHomeGuide === 'function'){
+      try{
+        if(!modal.classList.contains('hidden')) closeGuide();
+        window.gmOpenNewHomeGuide(document.activeElement || null);
+        return;
+      }catch(_e){}
+    }
     openGuide(e && e.detail ? e.detail.lang : null);
   });
 

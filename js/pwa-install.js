@@ -12,7 +12,7 @@
     it:{
       label:'Installa Genova mApp', title:'Installa Genova mApp',
       body:'Puoi installare Genova mApp su questo dispositivo e aprirla rapidamente come una normale applicazione. Preferiti, percorsi e appunti salvati resteranno disponibili su questo dispositivo.',
-      account:'Quando sarà disponibile l’accesso con account, potrai recuperare anche i dati associati al tuo utente registrato.',
+      account:'Accedendo al tuo account puoi ritrovare anche su altri dispositivi i dati personali sincronizzati con Genova mApp.',
       cancel:'Annulla', install:'Installa app', done:'Ho capito',
       iosTitle:'Installa su iPhone o iPad',
       iosSafari:'In Safari, tocca Condividi, scegli “Aggiungi alla schermata Home”, attiva “Apri come app web” e conferma con “Aggiungi”.',
@@ -22,7 +22,7 @@
     en:{
       label:'Install Genova mApp', title:'Install Genova mApp',
       body:'You can install Genova mApp on this device and open it quickly like a regular app. Saved favourites, routes and notes will remain available on this device.',
-      account:'When account access becomes available, you will also be able to retrieve the data linked to your registered user.',
+      account:'By signing in to your account, you can also retrieve your Genova mApp synced personal data on other devices.',
       cancel:'Cancel', install:'Install app', done:'Got it',
       iosTitle:'Install on iPhone or iPad',
       iosSafari:'In Safari, tap Share, choose “Add to Home Screen”, enable “Open as Web App”, then confirm with “Add”.',
@@ -32,7 +32,7 @@
     es:{
       label:'Instalar Genova mApp', title:'Instala Genova mApp',
       body:'Puedes instalar Genova mApp en este dispositivo y abrirla rápidamente como una aplicación normal. Los favoritos, recorridos y apuntes guardados seguirán disponibles en este dispositivo.',
-      account:'Cuando esté disponible el acceso con cuenta, también podrás recuperar los datos asociados a tu usuario registrado.',
+      account:'Al iniciar sesión en tu cuenta, también puedes recuperar en otros dispositivos tus datos personales sincronizados con Genova mApp.',
       cancel:'Cancelar', install:'Instalar app', done:'Entendido',
       iosTitle:'Instalar en iPhone o iPad',
       iosSafari:'En Safari, toca Compartir, elige “Añadir a pantalla de inicio”, activa “Abrir como app web” y confirma con “Añadir”.',
@@ -42,7 +42,7 @@
     fr:{
       label:'Installer Genova mApp', title:'Installer Genova mApp',
       body:'Vous pouvez installer Genova mApp sur cet appareil et l’ouvrir rapidement comme une application normale. Les favoris, parcours et notes enregistrés resteront disponibles sur cet appareil.',
-      account:'Lorsque l’accès par compte sera disponible, vous pourrez également récupérer les données associées à votre profil enregistré.',
+      account:'En vous connectant à votre compte, vous pouvez aussi retrouver sur d’autres appareils vos données personnelles synchronisées avec Genova mApp.',
       cancel:'Annuler', install:'Installer l’app', done:'J’ai compris',
       iosTitle:'Installer sur iPhone ou iPad',
       iosSafari:'Dans Safari, touchez Partager, choisissez « Sur l’écran d’accueil », activez « Ouvrir comme app web », puis confirmez avec « Ajouter ».',
@@ -52,7 +52,7 @@
     ar:{
       label:'تثبيت Genova mApp', title:'تثبيت Genova mApp',
       body:'يمكنك تثبيت Genova mApp على هذا الجهاز وفتحها بسرعة كتطبيق عادي. ستبقى الأماكن المفضلة والمسارات والملاحظات المحفوظة متاحة على هذا الجهاز.',
-      account:'عندما تتوفر إمكانية الدخول بالحساب، ستتمكن أيضًا من استعادة البيانات المرتبطة بالمستخدم المسجل.',
+      account:'عند تسجيل الدخول إلى حسابك، يمكنك أيضاً استعادة بياناتك الشخصية المتزامنة مع Genova mApp على أجهزة أخرى.',
       cancel:'إلغاء', install:'تثبيت التطبيق', done:'فهمت',
       iosTitle:'التثبيت على iPhone أو iPad',
       iosSafari:'في Safari، اضغط على مشاركة، ثم اختر «إضافة إلى الشاشة الرئيسية»، وفعّل «فتح كتطبيق ويب»، ثم أكد بالضغط على «إضافة».',
@@ -62,7 +62,7 @@
     ru:{
       label:'Установить Genova mApp', title:'Установить Genova mApp',
       body:'Вы можете установить Genova mApp на это устройство и быстро открывать её как обычное приложение. Сохранённые избранные места, маршруты и заметки останутся доступны на этом устройстве.',
-      account:'Когда станет доступен вход в аккаунт, вы также сможете восстановить данные, связанные с зарегистрированным пользователем.',
+      account:'Войдя в аккаунт, вы также сможете получить на других устройствах личные данные, синхронизированные с Genova mApp.',
       cancel:'Отмена', install:'Установить', done:'Понятно',
       iosTitle:'Установка на iPhone или iPad',
       iosSafari:'В Safari нажмите «Поделиться», выберите «На экран Домой», включите «Открыть как веб-приложение» и подтвердите кнопкой «Добавить».',
@@ -72,7 +72,7 @@
     zh:{
       label:'安装 Genova mApp', title:'安装 Genova mApp',
       body:'你可以在此设备上安装 Genova mApp，并像普通应用一样快速打开。已保存的收藏地点、路线和笔记将继续保存在此设备上。',
-      account:'账户登录功能推出后，你还可以恢复与注册用户关联的数据。',
+      account:'登录账号后，你还可以在其他设备上找回与 Genova mApp 同步的个人数据。',
       cancel:'取消', install:'安装应用', done:'知道了',
       iosTitle:'在 iPhone 或 iPad 上安装',
       iosSafari:'在 Safari 中点按“共享”，选择“添加到主屏幕”，启用“作为网页 App 打开”，然后点按“添加”。',
@@ -82,7 +82,7 @@
     lij:{
       label:'Installa Genova mApp', title:'Installa Genova mApp',
       body:'Ti peu installâ Genova mApp in sciô dispositivo e arvîla comme ’na app normale. Preferîi, percorsi e appunti sarvæ restan disponibili in sciô dispositivo.',
-      account:'Quande o login o saià disponibbile, ti poiæ recuperâ ascì i dæti ligæ a-o teu utente registrou.',
+      account:'Intrando into teu account, ti peu retrovâ ascì in atri dispoxitivi i dæti personæ sincronizzæ con Genova mApp.',
       cancel:'Anulla', install:'Installa app', done:'Ò capîo',
       iosTitle:'Installa in sce iPhone ò iPad',
       iosSafari:'In Safari, tocca Condividdi, çerni “Azonzi a-a schermâ prinçipâ”, attiva “Arvi comme app web” e conferma con “Azonzi”.',

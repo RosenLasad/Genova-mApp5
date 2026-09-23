@@ -379,16 +379,15 @@
       {
         "title": "Profilo e accesso",
         "p": [
-          "Quando disponibili, le funzioni relative al profilo permettono di accedere al proprio account e ai servizi personali collegati a Genova mApp. Alcune funzioni possono richiedere l’accesso con il proprio account."
+          "Le funzioni del profilo permettono di accedere al proprio account e ai servizi personali collegati a Genova mApp. Alcune funzioni richiedono l’accesso con il proprio account."
         ]
       },
       {
         "title": "Abbonamento",
         "p": [
-          "La sezione Abbonamento è dedicata alla gestione dei servizi e dei vantaggi disponibili per gli utenti abbonati.",
-          "Alcune funzioni relative all’abbonamento sono ancora in fase di completamento e saranno rese disponibili progressivamente."
-        ],
-        "comingSoon": true
+          "La sezione Abbonamento permette di confrontare Visitatore, Account gratuito e Premium, attivare un piano mensile o annuale tramite Stripe e riscattare eventuali codici promozionali.",
+          "Dal pannello puoi verificare il tuo livello attuale e, quando hai Premium tramite Stripe, gestire il tuo abbonamento."
+        ]
       },
       {
         "title": "Impostazioni",
@@ -728,8 +727,8 @@
       {
         "title": "Abbonamento e vantaggi",
         "p": [
-          "Genova mApp prevede una sezione dedicata all’Abbonamento, attraverso la quale sarà possibile accedere ai servizi e ai vantaggi previsti per gli utenti abbonati.",
-          "Le informazioni relative ai diversi piani, alla durata e alle funzioni comprese saranno mostrate direttamente all’interno dell’app. Alcune parti del sistema di abbonamento sono ancora in fase di completamento e saranno rese disponibili progressivamente.",
+          "Genova mApp dispone di una sezione dedicata all’Abbonamento, dalla quale puoi confrontare i livelli di accesso e attivare Premium.",
+          "Il pannello mostra i piani disponibili, la durata, le funzioni comprese, l’eventuale codice promozionale e lo stato dell’abbonamento. I pagamenti dei piani mensile e annuale sono gestiti tramite Stripe.",
           "Genova mApp continuerà inoltre a crescere nel tempo con nuovi luoghi, percorsi, contenuti e strumenti."
         ]
       }
@@ -2494,7 +2493,7 @@
   }
 
   function eventAuthRequiredMessage(){
-    return 'Accedi o registrati a Genova mApp per utilizzare Cerca eventi. Ogni account può effettuare fino a 5 ricerche nelle ultime 24 ore.';
+    return 'Accedi o registrati a Genova mApp per utilizzare Cerca eventi. L’Account gratuito dispone di 5 ricerche ogni 24 ore; Premium di 30.';
   }
 
   function openEventLogin(){
@@ -2647,7 +2646,8 @@
           errorMessage = eventAuthRequiredMessage();
           setTimeout(openEventLogin,80);
         }else if(data && data.error === 'event_search_limit_reached'){
-          errorMessage = 'Hai raggiunto il limite di 5 ricerche nelle ultime 24 ore.';
+          var searchLimit = data && data.quota && Number(data.quota.limit) > 0 ? Number(data.quota.limit) : 5;
+          errorMessage = 'Hai raggiunto il limite di '+searchLimit+' ricerche nelle ultime 24 ore.';
           var resetText = eventQuotaResetText(data.quota);
           if(resetText) errorMessage += ' '+resetText;
         }else if(data && data.error === 'event_search_global_limit_reached'){

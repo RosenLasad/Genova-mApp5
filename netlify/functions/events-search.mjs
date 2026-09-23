@@ -1,4 +1,5 @@
 import { getStore, getDeployStore } from "@netlify/blobs";
+import { isAdminUser, readUserRecord } from "./_shared/billing-store.mjs";
 
 const ALLOWED_LANGS = new Set(["it", "en", "es", "fr", "ar", "ru", "zh", "lij"]);
 const ALLOWED_TAGS = new Set(["museums", "cinema", "theatre", "music", "palaces", "heritage", "festivals", "markets", "sport"]);
@@ -8,7 +9,8 @@ const MAX_BODY_BYTES = 90000;
 const EVENT_USAGE_STORE = "genova-mapp-events-usage-v1";
 const EVENT_SEARCH_WINDOW_MS = 24 * 60 * 60 * 1000;
 const EVENT_PENDING_TTL_MS = 2 * 60 * 1000;
-const DEFAULT_USER_SEARCH_LIMIT = 5;
+const DEFAULT_FREE_SEARCH_LIMIT = 5;
+const DEFAULT_PREMIUM_SEARCH_LIMIT = 30;
 const DEFAULT_GLOBAL_SEARCH_LIMIT = 500;
 
 const TAG_LABELS = {
@@ -236,8 +238,28 @@ function numericLimit(name, fallback) {
   return Math.max(1, Math.min(Math.floor(value), 100000));
 }
 
-function userSearchLimit() {
-  return numericLimit("OPENAI_EVENTS_USER_24H_LIMIT", DEFAULT_USER_SEARCH_LIMIT);
+function freeSearchLimit() {
+  // Mantiene compatibilita con la precedente variabile OPENAI_EVENTS_USER_24H_LIMIT.
+  return numericLimit("OPENAI_EVENTS_FREE_24H_LIMIT", numericLimit("OPENAI_EVENTS_USER_24H_LIMIT", DEFAULT_FREE_SEARCH_LIMIT));
+}
+
+function premiumSearchLimit() {
+  return numericLimit("OPENAI_EVENTS_PREMIUM_24H_LIMIT", DEFAULT_PREMIUM_SEARCH_LIMIT);
+}
+
+async function eventAccessForUser(user) {
+  if (isAdminUser(user)) return { tier: "premium", limit: premiumSearchLimit() };
+
+  const record = await readUserRecord(user.id).catch(() => null);
+  const subscription = record?.subscription || null;
+  const periodEnd = Number(subscription?.currentPeriodEnd || 0);
+  const premiumActive = subscription?.status === "active" &&
+    subscription?.simulated === false &&
+    (!periodEnd || periodEnd > Date.now());
+
+  return premiumActive
+    ? { tier: "premium", limit: premiumSearchLimit() }
+    : { tier: "free", limit: freeSearchLimit() };
 }
 
 function globalSearchLimit() {
@@ -301,7 +323,7 @@ async function cleanupUsageRecords(store, records, now) {
   await Promise.allSettled(stale.map((record) => store.delete(record.key)));
 }
 
-function quotaFromRecords(records, safeUserId, limit, now) {
+function quotaFromRecords(records, safeUserId, limit, now, tier = "free") {
   const active = sortUsage(records.filter((record) => record.userId === safeUserId && isActiveUsage(record, now)));
   const used = active.length;
   const remaining = limit > 0 ? Math.max(0, limit - used) : null;
@@ -312,27 +334,27 @@ function quotaFromRecords(records, safeUserId, limit, now) {
     remaining,
     windowHours: 24,
     resetAt,
+    tier,
   };
 }
 
-async function eventQuotaForUser(userId) {
+async function eventQuotaForUser(userId, limit, tier) {
   const store = usageStore();
   const now = Date.now();
   const safeUserId = safeUsageUserId(userId);
   const records = await listUsageRecords(store, `user/${safeUserId}/`);
   await cleanupUsageRecords(store, records, now);
-  return quotaFromRecords(records, safeUserId, userSearchLimit(), now);
+  return quotaFromRecords(records, safeUserId, limit, now, tier);
 }
 
 function reservationId() {
   try { return crypto.randomUUID(); } catch { return `${Date.now()}-${Math.random().toString(36).slice(2)}`; }
 }
 
-async function reserveEventSearch(userId) {
+async function reserveEventSearch(userId, userLimit, tier) {
   const store = usageStore();
   const now = Date.now();
   const safeUserId = safeUsageUserId(userId);
-  const userLimit = userSearchLimit();
   const globalLimit = globalSearchLimit();
   const id = reservationId();
   const pendingKey = usageRecordKey(safeUserId, "pending", now, id);
@@ -352,11 +374,11 @@ async function reserveEventSearch(userId) {
     return {
       allowed: false,
       reason: allowedByUser ? "global" : "user",
-      quota: quotaFromRecords(withoutOwn, safeUserId, userLimit, now),
+      quota: quotaFromRecords(withoutOwn, safeUserId, userLimit, now, tier),
     };
   }
 
-  return { allowed: true, store, safeUserId, id, pendingKey };
+  return { allowed: true, store, safeUserId, id, pendingKey, userLimit, tier };
 }
 
 async function releaseEventSearch(reservation) {
@@ -372,7 +394,7 @@ async function completeEventSearch(reservation) {
   await reservation.store.delete(reservation.pendingKey);
   const records = await listUsageRecords(reservation.store, `user/${reservation.safeUserId}/`);
   await cleanupUsageRecords(reservation.store, records, completedAt);
-  return quotaFromRecords(records.concat([{ key: usedKey, userId: reservation.safeUserId, state: "used", at: completedAt }]).filter((record, index, arr) => arr.findIndex((x) => x.key === record.key) === index), reservation.safeUserId, userSearchLimit(), completedAt);
+  return quotaFromRecords(records.concat([{ key: usedKey, userId: reservation.safeUserId, state: "used", at: completedAt }]).filter((record, index, arr) => arr.findIndex((x) => x.key === record.key) === index), reservation.safeUserId, reservation.userLimit, completedAt, reservation.tier);
 }
 
 function sleep(ms) {
@@ -440,8 +462,10 @@ export default async (request) => {
       }, 401);
     }
 
+    const access = await eventAccessForUser(user);
+
     if (request.method === "GET") {
-      return json({ quota: await eventQuotaForUser(user.id) });
+      return json({ quota: await eventQuotaForUser(user.id, access.limit, access.tier) });
     }
 
     const raw = await request.text();
@@ -473,7 +497,7 @@ export default async (request) => {
     const responsesEndpoint = /\/v1$/i.test(baseUrl) ? `${baseUrl}/responses` : `${baseUrl}/v1/responses`;
     const model = netlifyEnv("OPENAI_EVENTS_MODEL") || "gpt-5.6-luna";
 
-    const reserved = await reserveEventSearch(user.id);
+    const reserved = await reserveEventSearch(user.id, access.limit, access.tier);
     if (!reserved.allowed) {
       if (reserved.reason === "global") {
         return json({
@@ -484,7 +508,7 @@ export default async (request) => {
       }
       return json({
         error: "event_search_limit_reached",
-        message: "Hai raggiunto il limite di 5 ricerche nelle ultime 24 ore.",
+        message: `Hai raggiunto il limite di ${reserved.quota.limit} ricerche nelle ultime 24 ore.`,
         quota: reserved.quota,
       }, 429);
     }

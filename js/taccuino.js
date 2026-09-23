@@ -342,6 +342,38 @@
   }
 
   function t(key){ return (TXT[lang()] && TXT[lang()][key]) || TXT.it[key] || key; }
+
+  var ROUTE_ACCESS_TEXT = {
+    it:{login:'Accedi o registrati per creare Percorsi personalizzati.',limit:'Con l’Account gratuito puoi salvare 1 Percorso personalizzato. Passa a Premium per crearne senza limiti.'},
+    en:{login:'Log in or sign up to create custom Routes.',limit:'With a free account you can save 1 custom Route. Upgrade to Premium to create unlimited Routes.'},
+    es:{login:'Inicia sesión o regístrate para crear Rutas personalizadas.',limit:'Con la cuenta gratuita puedes guardar 1 Ruta personalizada. Pásate a Premium para crear Rutas ilimitadas.'},
+    fr:{login:'Connectez-vous ou inscrivez-vous pour créer des Parcours personnalisés.',limit:'Avec le compte gratuit, vous pouvez enregistrer 1 Parcours personnalisé. Passez à Premium pour en créer sans limite.'},
+    ar:{login:'سجّل الدخول أو أنشئ حساباً لإنشاء مسارات مخصصة.',limit:'يتيح الحساب المجاني حفظ مسار مخصص واحد. انتقل إلى Premium لإنشاء مسارات بلا حدود.'},
+    ru:{login:'Войдите или зарегистрируйтесь, чтобы создавать собственные маршруты.',limit:'Бесплатный аккаунт позволяет сохранить 1 собственный маршрут. Перейдите на Premium для неограниченного количества.'},
+    zh:{login:'登录或注册后即可创建自定义路线。',limit:'免费账号可保存1条自定义路线。升级到 Premium 后可无限创建路线。'},
+    lij:{login:'Intra ò registrite pe creâ Percorsi personalizzæ.',limit:'Con l’Account gratuito ti peu sarvâ 1 Percorso personalizzou. Passa a Premium pe creâne sensa limite.'}
+  };
+  function routeLimit(){
+    try{if(window.GenovaEntitlements)return window.GenovaEntitlements.get().customRoutes;}catch(_e){}
+    try{var st=window.GenovaAccount&&window.GenovaAccount.getState?window.GenovaAccount.getState():null;return st&&st.active?null:(st&&st.user?1:0);}catch(_e){return 0;}
+  }
+  function routeAccessMessage(kind){
+    var msg=(ROUTE_ACCESS_TEXT[lang()]||ROUTE_ACCESS_TEXT.it)[kind];
+    setStatus(msg);
+    if(kind==='login') try{if(window.GenovaAuth&&typeof window.GenovaAuth.open==='function')window.GenovaAuth.open('login');}catch(_e){}
+    return false;
+  }
+  function canUseRoutes(){
+    var limit=routeLimit();
+    return limit===null||Number(limit)>0 ? true : routeAccessMessage('login');
+  }
+  function canCreateRoute(){
+    var limit=routeLimit();
+    if(limit===null) return true;
+    if(!(Number(limit)>0)) return routeAccessMessage('login');
+    if(routes().length>=Number(limit)) return routeAccessMessage('limit');
+    return true;
+  }
   function locale(){ return LOCALES[lang()] || LOCALES.it; }
   function categoryName(canonical){
     var names = CATEGORY_NAMES[lang()] || CATEGORY_NAMES.it;
@@ -398,6 +430,9 @@
   }
 
   function routes(){
+    // I dati restano conservati localmente, ma per il Visitatore i Percorsi
+    // personali non sono disponibili finche non accede a un account.
+    if(routeLimit() === 0) return [];
     var list = readJSON(ROUTES_KEY, []);
     return Array.isArray(list) ? list : [];
   }
@@ -1219,7 +1254,12 @@
   }
 
   function addFavouriteToTarget(favorite, target, note){
+    if(!canUseRoutes()) return;
     target = target || 'current';
+    if(target === 'current' && (!state.route || !state.route.id) && routes().length >= Number(routeLimit() || 0) && routeLimit() !== null){
+      routeAccessMessage('limit');
+      return;
+    }
     if(target === 'current'){
       ensureRoute();
       var existing = state.route.steps.find(function(step){ return step.key === favorite.key; });
@@ -1268,6 +1308,7 @@
   }
 
   function newRoute(){
+    if(!canCreateRoute()) return;
     state.route = blankRoute();
     saveDraft();
     navigate('routeDetail');
@@ -1293,6 +1334,7 @@
   }
 
   function duplicateRoute(id){
+    if(!canCreateRoute()) return;
     var list = routes();
     var found = list.find(function(route){ return route && route.id === id; });
     if(!found) return;
@@ -1326,8 +1368,11 @@
   }
 
   function saveCurrentRoute(asNew){
+    if(!canUseRoutes()) return;
     ensureRoute();
     syncRouteInputs();
+    var createsNew = !!asNew || !state.route.id;
+    if(createsNew && !canCreateRoute()) return;
     if(asNew) state.route.id = null;
     state.route.name = state.route.name || t('unnamed');
     if(!state.route.id) state.route.id = uid('rt');
@@ -1659,6 +1704,18 @@
     window.addEventListener('keydown', function(event){ if(event.key === 'Escape') closePanel(); }, true);
     window.addEventListener('i18n:changed', render);
     document.addEventListener('app:set-lang', render);
+    function refreshRouteAccess(){
+      if(routeLimit() === 0){
+        if(state.mapVisible) hideRouteFromMap(false);
+        if(state.view === 'routeDetail') state.view = 'routes';
+        state.route = blankRoute();
+      }else{
+        state.route = normalizeRoute(readJSON(DRAFT_KEY, null) || blankRoute());
+      }
+      render();
+    }
+    document.addEventListener('genova:auth-changed', function(){ setTimeout(refreshRouteAccess, 0); });
+    document.addEventListener('genova:subscription-changed', function(){ setTimeout(refreshRouteAccess, 0); });
   }
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
