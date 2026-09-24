@@ -4,7 +4,7 @@
   if(window.__GENOVA_SETTINGS_V2__) return;
   window.__GENOVA_SETTINGS_V2__ = true;
 
-  var APP_VERSION = '1.3.1';
+  var APP_VERSION = '1.3.2';
 
   var I18N = {
     it:{
@@ -27,7 +27,7 @@
         ]},
         {title:'Privacy e dati personali',paras:[
           'Genova mApp utilizza alcuni dati necessari per offrire le funzioni personali dell’app.',
-          'Quando viene utilizzato un account, possono essere associati all’utente dati relativi all’iscrizione e all’abbonamento, l’immagine del profilo, i Preferiti e i contenuti del Taccuino. Lo stato dei punti QR visitati o non visitati e alcune preferenze restano invece salvati localmente sul dispositivo.',
+          'Quando viene utilizzato un account, possono essere associati all’utente e sincronizzati dati relativi all’iscrizione e all’abbonamento, l’immagine del profilo, i Preferiti, i contenuti del Taccuino e lo stato dei punti QR visitati o non visitati. Alcune preferenze generali dell’app restano invece salvate localmente sul dispositivo.',
           'L’accesso all’account è gestito tramite Netlify, mentre i pagamenti relativi agli abbonamenti sono gestiti tramite Stripe.',
           'La posizione del dispositivo viene utilizzata solo quando l’utente attiva volontariamente una funzione che la richiede, per esempio per mostrare la propria posizione sulla mappa.',
           'Le funzioni personali sono utilizzate per permettere all’utente di ritrovare e organizzare i propri contenuti e le proprie preferenze all’interno di Genova mApp.'
@@ -60,7 +60,7 @@
         ]},
         {title:'Privacy and personal data',paras:[
           'Genova mApp uses certain data needed to provide the app’s personal features.',
-          'When an account is used, data relating to registration and subscription, the profile image, Favourites and Notebook contents may be associated with the user. The visited or not-visited status of QR points and some preferences remain stored locally on the device.',
+          'When an account is used, registration and subscription data, the profile image, Favourites, Notebook contents and the visited or not-visited status of QR points may be associated with the user and synced. Some general app preferences remain stored locally on the device.',
           'Account access is managed through Netlify, while subscription payments are handled through Stripe.',
           'The device location is used only when the user voluntarily activates a feature that requires it, for example to show their position on the map.',
           'Personal features are used to let users find and organise their own content and preferences within Genova mApp.'
@@ -93,7 +93,7 @@
         ]},
         {title:'Privacidad y datos personales',paras:[
           'Genova mApp utiliza algunos datos necesarios para ofrecer las funciones personales de la aplicación.',
-          'Cuando se utiliza una cuenta, pueden asociarse al usuario datos relativos al registro y la suscripción, la imagen de perfil, los Favoritos y los contenidos del Cuaderno. El estado de los puntos QR visitados o no visitados y algunas preferencias permanecen guardados localmente en el dispositivo.',
+          'Cuando se utiliza una cuenta, pueden asociarse al usuario y sincronizarse los datos de registro y suscripción, la imagen de perfil, los Favoritos, los contenidos del Cuaderno y el estado visitado o no visitado de los puntos QR. Algunas preferencias generales de la app permanecen guardadas localmente en el dispositivo.',
           'El acceso a la cuenta se gestiona mediante Netlify, mientras que los pagos de las suscripciones se gestionan mediante Stripe.',
           'La ubicación del dispositivo se utiliza solo cuando el usuario activa voluntariamente una función que la necesita, por ejemplo para mostrar su posición en el mapa.',
           'Las funciones personales permiten al usuario recuperar y organizar sus contenidos y preferencias dentro de Genova mApp.'
@@ -126,7 +126,7 @@
         ]},
         {title:'Confidentialité et données personnelles',paras:[
           'Genova mApp utilise certaines données nécessaires pour proposer les fonctions personnelles de l’application.',
-          'Lorsqu’un compte est utilisé, des données liées à l’inscription et à l’abonnement, l’image de profil, les Favoris et le contenu du Carnet peuvent être associés à l’utilisateur. L’état visité ou non visité des points QR et certaines préférences restent enregistrés localement sur l’appareil.',
+          'Lorsqu’un compte est utilisé, les données liées à l’inscription et à l’abonnement, l’image de profil, les Favoris, le contenu du Carnet et l’état visité ou non visité des points QR peuvent être associés à l’utilisateur et synchronisés. Certaines préférences générales de l’app restent enregistrées localement sur l’appareil.',
           'L’accès au compte est géré via Netlify, tandis que les paiements liés aux abonnements sont gérés via Stripe.',
           'La position de l’appareil est utilisée uniquement lorsque l’utilisateur active volontairement une fonction qui la nécessite, par exemple pour afficher sa position sur la carte.',
           'Les fonctions personnelles permettent à l’utilisateur de retrouver et d’organiser ses contenus et préférences dans Genova mApp.'
@@ -159,7 +159,7 @@
         ]},
         {title:'الخصوصية والبيانات الشخصية',paras:[
           'تستخدم Genova mApp بعض البيانات اللازمة لتوفير الوظائف الشخصية في التطبيق.',
-          'عند استخدام حساب، قد ترتبط بالمستخدم بيانات التسجيل والاشتراك وصورة الملف الشخصي والمفضلة ومحتويات دفتر الملاحظات. أما حالة نقاط QR التي تمت زيارتها أو لم تتم زيارتها وبعض التفضيلات فتبقى محفوظة محلياً على الجهاز.',
+          'عند استخدام حساب، قد ترتبط بالمستخدم وتتم مزامنة بيانات التسجيل والاشتراك وصورة الملف الشخصي والمفضلة ومحتويات دفتر الملاحظات وحالة نقاط QR التي تمت زيارتها أو لم تتم زيارتها. وتبقى بعض التفضيلات العامة للتطبيق محفوظة محلياً على الجهاز.',
           'تتم إدارة الوصول إلى الحساب عبر Netlify، بينما تتم إدارة المدفوعات المتعلقة بالاشتراكات عبر Stripe.',
           'يتم استخدام موقع الجهاز فقط عندما يفعّل المستخدم طوعاً وظيفة تتطلبه، مثل إظهار موقعه على الخريطة.',
           'تُستخدم الوظائف الشخصية للسماح للمستخدم بالعثور على محتواه وتفضيلاته وتنظيمها داخل Genova mApp.'
@@ -192,7 +192,7 @@
         ]},
         {title:'Конфиденциальность и персональные данные',paras:[
           'Genova mApp использует некоторые данные, необходимые для работы персональных функций приложения.',
-          'При использовании аккаунта с пользователем могут быть связаны данные о регистрации и подписке, изображение профиля, Избранное и содержимое Блокнота. Статус посещённых или непосещённых QR-точек и некоторые настройки остаются сохранёнными локально на устройстве.',
+          'При использовании аккаунта с пользователем могут быть связаны и синхронизированы данные о регистрации и подписке, изображение профиля, Избранное, содержимое Блокнота и статус посещённых или непосещённых QR-точек. Некоторые общие настройки приложения остаются сохранёнными локально на устройстве.',
           'Доступ к аккаунту управляется через Netlify, а платежи по подписке обрабатываются через Stripe.',
           'Местоположение устройства используется только тогда, когда пользователь сам включает функцию, которой оно необходимо, например для отображения своей позиции на карте.',
           'Персональные функции помогают пользователю находить и организовывать собственные материалы и настройки внутри Genova mApp.'
@@ -225,7 +225,7 @@
         ]},
         {title:'隐私与个人数据',paras:[
           'Genova mApp 会使用提供应用个人功能所必需的部分数据。',
-          '使用账号时，与注册和订阅有关的数据、头像、收藏和记事本内容可能会与用户关联。QR 点的已访问/未访问状态以及部分偏好设置仍保存在当前设备本地。',
+          '使用账号时，与注册和订阅有关的数据、头像、收藏、记事本内容以及 QR 点的已访问/未访问状态可能会与用户关联并同步。部分通用应用偏好设置仍保存在当前设备本地。',
           '账号访问由 Netlify 管理，订阅相关付款由 Stripe 处理。',
           '只有当用户主动启用需要位置的功能时，应用才会使用设备位置，例如在地图上显示用户当前位置。',
           '个人功能用于帮助用户在 Genova mApp 中查找和整理自己的内容与偏好。'
@@ -258,7 +258,7 @@
         ]},
         {title:'Privacy e dæti personali',paras:[
           'Genova mApp a deuvia quarche dæto necessario pe offrî e fonçioin personali de l’app.',
-          'Quande se deuvia un account, peu ese associæ a l’utente dæti relativi a l’iscriçion e a l’abonamento, l’immagine do profilo, i Preferii e i contegnui do Taccuin. O stato di ponti QR visitæ ò no visitæ e quarche preferensa restan invece sarvæ localmente in sciô dispoxitivo.',
+          'Quande se deuvia un account, peu ese associæ a l’utente e sincronizzæ i dæti relativi a l’iscriçion e a l’abonamento, l’immagine do profilo, i Preferii, i contegnui do Taccuin e o stato di ponti QR visitæ ò no visitæ. Quarche preferensa generâ de l’app a resta invece sarvâ localmente in sciô dispoxitivo.',
           'L’accesso a l’account o l’é gestio tramite Netlify, mentre i pagamenti relativi a-i abonamenti en gestii tramite Stripe.',
           'A posiçion do dispositivo a l’é adêuviâ solo quande l’utente o ativa volontariamente unna fonçion che a ne gh’à beseugno, pe exempio pe mostrâ a seu posiçion in sciâ mappa.',
           'E fonçioin personali servan pe permette a l’utente de retrovâ e organizâ i seu contegnui e e seu preferense drento Genova mApp.'

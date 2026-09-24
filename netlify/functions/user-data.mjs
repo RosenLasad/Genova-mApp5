@@ -1,5 +1,5 @@
 import { getStore } from "@netlify/blobs";
-import { isAdminUser } from "./_shared/billing-store.mjs";
+import { isAdminUser, isDeletedUser } from "./_shared/billing-store.mjs";
 
 const STORE_NAME = "genova-mapp-users-v1";
 const MAX_BODY_BYTES = 750000;
@@ -7,7 +7,7 @@ const DATA_KEYS = new Set([
   "genova_favstars_v1", "genova_taccuino_routes_v1", "genova_taccuino_draft_v1",
   "genova_taccuino_notes_v1", "genova_taccuino_last_note_v1",
   "genova_taccuino_favorites_sort_v1", "genova_routes_selected_v1", "walls_visible", "acq_visibility",
-  "legend_blue", "legend_orange", "genova_account_avatar_v1",
+  "legend_blue", "legend_orange", "genova_account_avatar_v1", "gm-qr-visited-v1",
 ]);
 
 function json(value, status = 200) {
@@ -81,6 +81,7 @@ export default async (request) => {
   try {
     const user = await authenticatedUser(request);
     if (!user || !user.id) return json({ error: "unauthorized" }, 401);
+    if (await isDeletedUser(user.id)) return json({ error: "account_deleted" }, 410);
 
     const store = getStore({ name: STORE_NAME, consistency: "strong" });
     const key = `user-${user.id}`;

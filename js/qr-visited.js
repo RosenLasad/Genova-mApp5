@@ -47,18 +47,26 @@
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state || {})); } catch (_) {}
   }
 
+  function entryVisited(entry) {
+    if (entry === true) return true;
+    if (entry === false || entry == null) return false;
+    return !!(entry && typeof entry === 'object' && entry.visited === true);
+  }
+
   function isVisited(id) {
     if (!id) return false;
     var state = loadState();
-    return state[String(id)] === true;
+    return entryVisited(state[String(id)]);
   }
 
   function setVisited(id, value) {
     id = String(id || '');
     if (!id) return false;
     var state = loadState();
-    if (value) state[id] = true;
-    else delete state[id];
+    /* Conserviamo anche il passaggio a "Non visitato" con un timestamp:
+       cosi' la sincronizzazione fra dispositivi puo' propagare correttamente
+       sia Visitato sia Non visitato, invece di trattare l'assenza come dato ignoto. */
+    state[id] = { visited: !!value, updatedAt: Date.now() };
     saveState(state);
     refreshMarkers(id);
     if (activePointId === id) syncPanelButton(id);
@@ -368,4 +376,8 @@
 
   window.addEventListener('i18n:changed', refreshLanguage);
   document.addEventListener('app:set-lang', refreshLanguage);
+  document.addEventListener('genova:data-synced', function () {
+    refreshMarkers();
+    if (activePointId) syncPanelButton(activePointId);
+  });
 })();

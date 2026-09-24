@@ -1,0 +1,48 @@
+.auth-account-dialog.is-authenticated{width:min(520px,calc(100vw - 32px))}
+.auth-account-status.is-premium{color:#fde68a}
+.auth-account-status.is-premium::before{background:#facc15;box-shadow:0 0 0 3px rgba(250,204,21,.12)}
+.auth-account-dashboard{display:grid;gap:13px;margin-top:14px}
+.auth-account-dashboard[hidden],.auth-account-danger[hidden]{display:none!important}
+.auth-dashboard-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.auth-dashboard-card{
+  min-width:0;display:grid;align-content:start;gap:4px;padding:12px 13px;border:1px solid rgba(147,197,253,.16);border-radius:12px;
+  background:linear-gradient(155deg,rgba(30,58,95,.28),rgba(17,28,46,.38));box-shadow:inset 0 1px 0 rgba(255,255,255,.025)
+}
+.auth-dashboard-label{color:#9fb4c9;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.035em}
+.auth-dashboard-card>strong{color:#f8fafc;font-size:1.08rem;line-height:1.25}
+.auth-dashboard-card>small{min-height:1em;color:#bfdbfe;font-size:.7rem}
+.auth-dashboard-sync-card{align-content:start}
+.auth-dashboard-sync-card .auth-sync-panel{grid-template-columns:1fr;margin:1px 0 0;padding:0;border:0}
+.auth-dashboard-sync-card .auth-sync-panel span{color:#f8fafc;font-size:.82rem;font-weight:700}
+.auth-dashboard-sync-card .auth-sync-panel button{width:100%;margin-top:3px}
+.auth-dashboard-subscription{
+  min-height:42px;padding:9px 14px;border:1px solid #93c5fd;border-radius:10px;color:#eff6ff;background:linear-gradient(180deg,#2563a9,#1e477b);
+  font:800 .88rem/1.2 Arial,sans-serif;cursor:pointer
+}
+.auth-dashboard-subscription.is-premium{color:#fff7d6;border-color:#e7bd54;background:linear-gradient(180deg,#8a6418,#62440f)}
+.auth-dashboard-subscription:hover,.auth-dashboard-subscription:focus-visible{filter:brightness(1.08)}
+.auth-dashboard-subscription:focus-visible{outline:2px solid #f8fafc;outline-offset:2px}
+.auth-account-danger{margin-top:12px;padding-top:12px;border-top:1px solid rgba(248,113,113,.14)}
+#auth-account-delete{
+  display:block;margin:0 auto;padding:6px 10px;color:#fca5a5;background:transparent;border:0;border-radius:8px;font:700 .76rem/1.2 Arial,sans-serif;
+  text-decoration:underline;text-underline-offset:3px;cursor:pointer
+}
+#auth-account-delete:hover,#auth-account-delete:focus-visible{color:#fecaca;background:rgba(127,29,29,.18);outline:none}
+.auth-delete-confirm{display:grid;gap:9px;margin-top:10px;padding:13px;border:1px solid rgba(248,113,113,.28);border-radius:12px;background:rgba(127,29,29,.14)}
+.auth-delete-confirm[hidden]{display:none!important}
+.auth-delete-confirm>strong{color:#fecaca;font-size:.9rem;text-align:center}
+.auth-delete-confirm p{margin:0;color:#e5e7eb;font-size:.77rem;line-height:1.45;text-align:left}
+.auth-account-dialog[dir="rtl"] .auth-delete-confirm p{text-align:right}
+.auth-delete-confirm .auth-delete-premium{color:#fde68a}
+.auth-delete-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:2px}
+.auth-delete-actions button{min-height:38px;padding:7px 9px;border-radius:9px;font:800 .76rem/1.2 Arial,sans-serif;cursor:pointer}
+#auth-delete-cancel{color:#e5edf5;background:#243247;border:1px solid #64748b}
+#auth-delete-confirm-button{color:#fff1f2;background:linear-gradient(180deg,#9f2835,#711d27);border:1px solid #f87171}
+.auth-delete-actions button:disabled{opacity:.55;cursor:wait}
+.auth-delete-actions button:focus-visible{outline:2px solid #f8fafc;outline-offset:2px}
+.auth-delete-status{min-height:1.2em!important;color:#fcd34d!important;text-align:center!important}
+@media(max-width:430px){
+  .auth-account-dialog.is-authenticated{width:min(400px,calc(100vw - 20px))}
+  .auth-dashboard-grid{grid-template-columns:1fr}
+  .auth-delete-actions{grid-template-columns:1fr}
+}

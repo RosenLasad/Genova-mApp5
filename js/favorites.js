@@ -818,14 +818,14 @@ data.forEach(function(loc){
   }
 
   var FAVORITE_ACCESS_TEXT = {
-    it:{login:'Accedi o registrati per salvare punti Preferiti sulla mappa.',limit:'Con l’Account gratuito puoi salvare fino a 10 punti Preferiti. Passa a Premium per averli illimitati.'},
-    en:{login:'Log in or sign up to save Favourite points on the map.',limit:'With a free account you can save up to 10 Favourite points. Upgrade to Premium for unlimited Favourites.'},
-    es:{login:'Inicia sesión o regístrate para guardar puntos Favoritos en el mapa.',limit:'Con la cuenta gratuita puedes guardar hasta 10 puntos Favoritos. Pásate a Premium para tenerlos ilimitados.'},
-    fr:{login:'Connectez-vous ou inscrivez-vous pour enregistrer des points Favoris sur la carte.',limit:'Avec le compte gratuit, vous pouvez enregistrer jusqu’à 10 points Favoris. Passez à Premium pour des Favoris illimités.'},
-    ar:{login:'سجّل الدخول أو أنشئ حساباً لحفظ النقاط المفضلة على الخريطة.',limit:'يتيح الحساب المجاني حفظ ما يصل إلى 10 نقاط مفضلة. انتقل إلى Premium للحصول على مفضلة غير محدودة.'},
-    ru:{login:'Войдите или зарегистрируйтесь, чтобы сохранять Избранные точки на карте.',limit:'Бесплатный аккаунт позволяет сохранить до 10 Избранных точек. Перейдите на Premium для неограниченного количества.'},
-    zh:{login:'登录或注册后即可在地图上保存收藏点。',limit:'免费账号最多可保存10个收藏点。升级到 Premium 后可无限收藏。'},
-    lij:{login:'Intra ò registrite pe sarvâ ponti Preferii in sciâ mappa.',limit:'Con l’Account gratuito ti peu sarvâ finn-a 10 ponti Preferii. Passa a Premium pe avei Preferii sensa limite.'}
+    it:{loginTitle:'Salva i tuoi luoghi preferiti',login:'Crea gratuitamente un account Genova mApp per utilizzare i Preferiti e ritrovarli sui tuoi dispositivi.',limitTitle:'Hai raggiunto il limite dei Preferiti',limit:'Con l’Account gratuito puoi salvare fino a 10 punti Preferiti. Con Premium i Preferiti sono illimitati.'},
+    en:{loginTitle:'Save your favourite places',login:'Create a free Genova mApp account to use Favourites and find them again on your devices.',limitTitle:'You reached the Favourites limit',limit:'With a free account you can save up to 10 Favourite points. Premium gives you unlimited Favourites.'},
+    es:{loginTitle:'Guarda tus lugares favoritos',login:'Crea gratuitamente una cuenta Genova mApp para usar Favoritos y encontrarlos de nuevo en tus dispositivos.',limitTitle:'Has alcanzado el límite de Favoritos',limit:'Con la cuenta gratuita puedes guardar hasta 10 puntos Favoritos. Con Premium los Favoritos son ilimitados.'},
+    fr:{loginTitle:'Enregistrez vos lieux favoris',login:'Créez gratuitement un compte Genova mApp pour utiliser les Favoris et les retrouver sur vos appareils.',limitTitle:'Vous avez atteint la limite des Favoris',limit:'Avec le compte gratuit, vous pouvez enregistrer jusqu’à 10 points Favoris. Avec Premium, les Favoris sont illimités.'},
+    ar:{loginTitle:'احفظ أماكنك المفضلة',login:'أنشئ حساب Genova mApp مجاناً لاستخدام المفضلة والعثور عليها مجدداً على أجهزتك.',limitTitle:'لقد وصلت إلى حد المفضلة',limit:'يتيح الحساب المجاني حفظ ما يصل إلى 10 نقاط مفضلة. مع Premium تصبح المفضلة غير محدودة.'},
+    ru:{loginTitle:'Сохраняйте любимые места',login:'Создайте бесплатный аккаунт Genova mApp, чтобы пользоваться Избранным и находить его на своих устройствах.',limitTitle:'Достигнут лимит Избранного',limit:'Бесплатный аккаунт позволяет сохранить до 10 Избранных точек. С Premium количество не ограничено.'},
+    zh:{loginTitle:'保存你喜爱的地点',login:'免费创建 Genova mApp 账户，即可使用收藏并在你的设备上重新找到它们。',limitTitle:'已达到收藏上限',limit:'免费账户最多可保存 10 个收藏点。Premium 可无限收藏。'},
+    lij:{loginTitle:'Sarva i teu pòsti Preferii',login:'Crea gratis un account Genova mApp pe adêuviâ i Preferii e retrovâli in sci teu dispoxitivi.',limitTitle:'Ti gh’æ arrivou a-o limite di Preferii',limit:'Con l’Account gratuito ti peu sarvâ finn-a 10 ponti Preferii. Con Premium i Preferii en sensa limite.'}
   };
   function favoriteAccessLang(){
     var value='it';try{value=localStorage.getItem('lang')||document.documentElement.lang||'it';}catch(_e){}
@@ -843,11 +843,21 @@ data.forEach(function(loc){
     if(limit===null) return true;
     var text=FAVORITE_ACCESS_TEXT[favoriteAccessLang()]||FAVORITE_ACCESS_TEXT.it;
     if(!(Number(limit)>0)){
+      try{
+        if(window.GenovaAccessNotice&&typeof window.GenovaAccessNotice.show==='function'){
+          return window.GenovaAccessNotice.show({mode:'login',title:text.loginTitle,message:text.login});
+        }
+      }catch(_e){}
       try{window.alert(text.login);}catch(_e){}
       try{if(window.GenovaAuth&&typeof window.GenovaAuth.open==='function')window.GenovaAuth.open('login');}catch(_e){}
       return false;
     }
     if(favoriteCount()>=Number(limit)){
+      try{
+        if(window.GenovaAccessNotice&&typeof window.GenovaAccessNotice.show==='function'){
+          return window.GenovaAccessNotice.show({mode:'limit',title:text.limitTitle,message:text.limit,current:favoriteCount(),limit:Number(limit)});
+        }
+      }catch(_e){}
       try{window.alert(text.limit);}catch(_e){}
       return false;
     }

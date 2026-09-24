@@ -1,6 +1,7 @@
 import { getStore } from "@netlify/blobs";
 
 export const USER_STORE_NAME = "genova-mapp-users-v1";
+export const DELETED_USER_STORE_NAME = "genova-mapp-deleted-users-v1";
 
 export function json(value, status = 200) {
   return Response.json(value, {
@@ -26,6 +27,26 @@ export async function authenticatedUser(request) {
 
 export function userStore() {
   return getStore({ name: USER_STORE_NAME, consistency: "strong" });
+}
+
+export function deletedUserStore() {
+  return getStore({ name: DELETED_USER_STORE_NAME, consistency: "strong" });
+}
+
+export async function isDeletedUser(userId) {
+  if (!userId) return false;
+  const value = await deletedUserStore().get(`deleted-${userId}`, { type: "json" }).catch(() => null);
+  return !!value;
+}
+
+export async function markDeletedUser(userId) {
+  if (!userId) return;
+  await deletedUserStore().setJSON(`deleted-${userId}`, { userId, deletedAt: Date.now() });
+}
+
+export async function clearDeletedUserMark(userId) {
+  if (!userId) return;
+  await deletedUserStore().delete(`deleted-${userId}`);
 }
 
 export async function readUserRecord(userId) {

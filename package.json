@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "dependencies": {
     "@netlify/blobs": "10.7.10",
-    "stripe": "latest"
+    "stripe": "latest",
+    "@netlify/identity": "2.0.0"
   }
 }

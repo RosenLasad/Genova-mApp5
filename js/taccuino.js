@@ -344,22 +344,34 @@
   function t(key){ return (TXT[lang()] && TXT[lang()][key]) || TXT.it[key] || key; }
 
   var ROUTE_ACCESS_TEXT = {
-    it:{login:'Accedi o registrati per creare Percorsi personalizzati.',limit:'Con l’Account gratuito puoi salvare 1 Percorso personalizzato. Passa a Premium per crearne senza limiti.'},
-    en:{login:'Log in or sign up to create custom Routes.',limit:'With a free account you can save 1 custom Route. Upgrade to Premium to create unlimited Routes.'},
-    es:{login:'Inicia sesión o regístrate para crear Rutas personalizadas.',limit:'Con la cuenta gratuita puedes guardar 1 Ruta personalizada. Pásate a Premium para crear Rutas ilimitadas.'},
-    fr:{login:'Connectez-vous ou inscrivez-vous pour créer des Parcours personnalisés.',limit:'Avec le compte gratuit, vous pouvez enregistrer 1 Parcours personnalisé. Passez à Premium pour en créer sans limite.'},
-    ar:{login:'سجّل الدخول أو أنشئ حساباً لإنشاء مسارات مخصصة.',limit:'يتيح الحساب المجاني حفظ مسار مخصص واحد. انتقل إلى Premium لإنشاء مسارات بلا حدود.'},
-    ru:{login:'Войдите или зарегистрируйтесь, чтобы создавать собственные маршруты.',limit:'Бесплатный аккаунт позволяет сохранить 1 собственный маршрут. Перейдите на Premium для неограниченного количества.'},
-    zh:{login:'登录或注册后即可创建自定义路线。',limit:'免费账号可保存1条自定义路线。升级到 Premium 后可无限创建路线。'},
-    lij:{login:'Intra ò registrite pe creâ Percorsi personalizzæ.',limit:'Con l’Account gratuito ti peu sarvâ 1 Percorso personalizzou. Passa a Premium pe creâne sensa limite.'}
+    it:{loginTitle:'Crea i tuoi Percorsi personali',login:'Crea gratuitamente un account Genova mApp per progettare e salvare Percorsi personalizzati.',limitTitle:'Hai raggiunto il limite dei Percorsi',limit:'Con l’Account gratuito puoi salvare 1 Percorso personalizzato. Con Premium puoi crearne senza limiti.'},
+    en:{loginTitle:'Create your personal Routes',login:'Create a free Genova mApp account to plan and save custom Routes.',limitTitle:'You reached the Routes limit',limit:'With a free account you can save 1 custom Route. Premium lets you create unlimited Routes.'},
+    es:{loginTitle:'Crea tus Rutas personales',login:'Crea gratuitamente una cuenta Genova mApp para planificar y guardar Rutas personalizadas.',limitTitle:'Has alcanzado el límite de Rutas',limit:'Con la cuenta gratuita puedes guardar 1 Ruta personalizada. Con Premium puedes crear Rutas ilimitadas.'},
+    fr:{loginTitle:'Créez vos Parcours personnels',login:'Créez gratuitement un compte Genova mApp pour concevoir et enregistrer des Parcours personnalisés.',limitTitle:'Vous avez atteint la limite des Parcours',limit:'Avec le compte gratuit, vous pouvez enregistrer 1 Parcours personnalisé. Avec Premium, vous pouvez en créer sans limite.'},
+    ar:{loginTitle:'أنشئ مساراتك الشخصية',login:'أنشئ حساب Genova mApp مجاناً لتخطيط المسارات المخصصة وحفظها.',limitTitle:'لقد وصلت إلى حد المسارات',limit:'يتيح الحساب المجاني حفظ مسار مخصص واحد. مع Premium يمكنك إنشاء مسارات بلا حدود.'},
+    ru:{loginTitle:'Создавайте личные маршруты',login:'Создайте бесплатный аккаунт Genova mApp, чтобы планировать и сохранять собственные маршруты.',limitTitle:'Достигнут лимит маршрутов',limit:'Бесплатный аккаунт позволяет сохранить 1 собственный маршрут. С Premium можно создавать маршруты без ограничений.'},
+    zh:{loginTitle:'创建你的个人路线',login:'免费创建 Genova mApp 账户，即可规划并保存自定义路线。',limitTitle:'已达到路线数量上限',limit:'免费账户可保存 1 条自定义路线。Premium 可无限创建路线。'},
+    lij:{loginTitle:'Crea i teu Percorsi personâ',login:'Crea gratis un account Genova mApp pe progettâ e sarvâ Percorsi personalizzæ.',limitTitle:'Ti gh’æ arrivou a-o limite di Percorsi',limit:'Con l’Account gratuito ti peu sarvâ 1 Percorso personalizzou. Con Premium ti peu creâne sensa limite.'}
   };
   function routeLimit(){
     try{if(window.GenovaEntitlements)return window.GenovaEntitlements.get().customRoutes;}catch(_e){}
     try{var st=window.GenovaAccount&&window.GenovaAccount.getState?window.GenovaAccount.getState():null;return st&&st.active?null:(st&&st.user?1:0);}catch(_e){return 0;}
   }
   function routeAccessMessage(kind){
-    var msg=(ROUTE_ACCESS_TEXT[lang()]||ROUTE_ACCESS_TEXT.it)[kind];
+    var copy=ROUTE_ACCESS_TEXT[lang()]||ROUTE_ACCESS_TEXT.it;
+    var msg=copy[kind];
     setStatus(msg);
+    try{
+      if(window.GenovaAccessNotice&&typeof window.GenovaAccessNotice.show==='function'){
+        return window.GenovaAccessNotice.show({
+          mode:kind==='limit'?'limit':'login',
+          title:kind==='limit'?copy.limitTitle:copy.loginTitle,
+          message:msg,
+          current:kind==='limit'?routes().length:undefined,
+          limit:kind==='limit'?routeLimit():undefined
+        });
+      }
+    }catch(_e){}
     if(kind==='login') try{if(window.GenovaAuth&&typeof window.GenovaAuth.open==='function')window.GenovaAuth.open('login');}catch(_e){}
     return false;
   }

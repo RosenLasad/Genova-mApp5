@@ -169,23 +169,30 @@
   function T(){ return TEXT[currentLang()] || TEXT.it; }
 
   var NEARBY_ACCESS_TEXT = {
-    it:'Accedi o registrati per utilizzare Raggio / Vicino a me.',
-    en:'Log in or sign up to use Radius / Near me.',
-    es:'Inicia sesión o regístrate para usar Radio / Cerca de mí.',
-    fr:'Connectez-vous ou inscrivez-vous pour utiliser Rayon / À proximité.',
-    ar:'سجّل الدخول أو أنشئ حساباً لاستخدام النطاق / بالقرب مني.',
-    ru:'Войдите или зарегистрируйтесь, чтобы использовать Радиус / Рядом со мной.',
-    zh:'登录或注册后即可使用半径 / 附近功能。',
-    lij:'Intra ò registrite pe adêuviâ Raggio / A-o me vexin.'
+    it:{title:'Scopri cosa c’è vicino a te',message:'Crea gratuitamente un account Genova mApp per utilizzare Raggio / Vicino a me.'},
+    en:{title:'Discover what is near you',message:'Create a free Genova mApp account to use Radius / Near me.'},
+    es:{title:'Descubre qué hay cerca de ti',message:'Crea gratuitamente una cuenta Genova mApp para usar Radio / Cerca de mí.'},
+    fr:{title:'Découvrez ce qui se trouve près de vous',message:'Créez gratuitement un compte Genova mApp pour utiliser Rayon / À proximité.'},
+    ar:{title:'اكتشف ما هو قريب منك',message:'أنشئ حساب Genova mApp مجاناً لاستخدام النطاق / بالقرب مني.'},
+    ru:{title:'Узнайте, что находится рядом',message:'Создайте бесплатный аккаунт Genova mApp, чтобы использовать Радиус / Рядом со мной.'},
+    zh:{title:'发现你附近的地点',message:'免费创建 Genova mApp 账户，即可使用半径 / 附近功能。'},
+    lij:{title:'Descovri quello ch’o l’é vixin a ti',message:'Crea gratis un account Genova mApp pe adêuviâ Raggio / A-o me vexin.'}
   };
   function nearbyAllowed(){
     try{if(window.GenovaEntitlements)return window.GenovaEntitlements.allows('nearby');}catch(_e){}
     try{var st=window.GenovaAccount&&window.GenovaAccount.getState?window.GenovaAccount.getState():null;return !!(st&&st.user);}catch(_e){return false;}
   }
-  function nearbyAccessMessage(){ return NEARBY_ACCESS_TEXT[currentLang()] || NEARBY_ACCESS_TEXT.it; }
+  function nearbyAccessCopy(){ return NEARBY_ACCESS_TEXT[currentLang()] || NEARBY_ACCESS_TEXT.it; }
+  function nearbyAccessMessage(){ return nearbyAccessCopy().message; }
   function requestNearbyAccess(){
     if(nearbyAllowed()) return true;
-    try{window.alert(nearbyAccessMessage());}catch(_e){}
+    var copy=nearbyAccessCopy();
+    try{
+      if(window.GenovaAccessNotice&&typeof window.GenovaAccessNotice.show==='function'){
+        return window.GenovaAccessNotice.show({mode:'login',title:copy.title,message:copy.message});
+      }
+    }catch(_e){}
+    try{window.alert(copy.message);}catch(_e){}
     try{if(window.GenovaAuth&&typeof window.GenovaAuth.open==='function')window.GenovaAuth.open('login');}catch(_e){}
     return false;
   }

@@ -1,10 +1,11 @@
-/* Sincronizzazione account Genova mApp: Taccuino, Preferiti e preferenze mappa. */
+/* Sincronizzazione account Genova mApp: Taccuino, Preferiti, QR visitati e preferenze mappa. */
 (function(){
   'use strict';
   if(window.__GENOVA_ACCOUNT_SYNC__)return;
   window.__GENOVA_ACCOUNT_SYNC__=true;
 
   var ENDPOINT='/.netlify/functions/user-data';
+  var DELETE_ENDPOINT='/.netlify/functions/account-delete';
   var BOUND_KEY='genova_sync_account_v1';
   var DIRTY_KEY='genova_sync_dirty_v1';
   var SUB_CACHE_KEY='genova_subscription_cache_v1';
@@ -12,9 +13,14 @@
     'genova_favstars_v1','genova_taccuino_routes_v1','genova_taccuino_draft_v1',
     'genova_taccuino_notes_v1','genova_taccuino_last_note_v1',
     'genova_taccuino_favorites_sort_v1','genova_routes_selected_v1','walls_visible','acq_visibility',
-    'legend_blue','legend_orange','genova_account_avatar_v1'
+    'legend_blue','legend_orange','genova_account_avatar_v1','gm-qr-visited-v1'
   ];
-  var state={user:null,record:null,busy:false,status:'idle',lastHash:'',saveTimer:null,pullTimer:null};
+  var PERSONAL_KEYS=[
+    'genova_favstars_v1','genova_taccuino_routes_v1','genova_taccuino_draft_v1',
+    'genova_taccuino_notes_v1','genova_taccuino_last_note_v1','genova_taccuino_favorites_sort_v1',
+    'genova_routes_selected_v1','genova_account_avatar_v1','gm-qr-visited-v1'
+  ];
+  var state={user:null,record:null,busy:false,status:'idle',lastHash:'',saveTimer:null,pullTimer:null,deleting:false};
 
   var TEXT={
     it:{idle:'Dati dell’account pronti',syncing:'Sincronizzazione…',saved:'Dati sincronizzati',offline:'Offline: dati conservati sul dispositivo',error:'Sincronizzazione non disponibile',button:'Sincronizza ora'},
@@ -36,11 +42,28 @@
   function meaningful(data){
     var v=(data&&data.values)||{};
     try{if(Object.keys(JSON.parse(v.genova_favstars_v1||'{}')).length)return true;}catch(_e){}
+    try{if(Object.keys(JSON.parse(v['gm-qr-visited-v1']||'{}')).length)return true;}catch(_e){}
     var listKeys=['genova_taccuino_routes_v1','genova_taccuino_notes_v1'];
     for(var i=0;i<listKeys.length;i++)try{if(JSON.parse(v[listKeys[i]]||'[]').length)return true;}catch(_e){}
     return false;
   }
   function mergeJSONObjects(a,b){try{return JSON.stringify(Object.assign({},JSON.parse(a||'{}'),JSON.parse(b||'{}')));}catch(_e){return b||a;}}
+  function qrEntry(value){
+    if(value&&typeof value==='object'&&!Array.isArray(value))return{visited:value.visited===true,updatedAt:Number(value.updatedAt)||0};
+    if(value===true||value===false)return{visited:value===true,updatedAt:0};
+    return null;
+  }
+  function mergeQRVisited(a,b){
+    var remote={},local={};try{remote=JSON.parse(a||'{}')||{};}catch(_e){}try{local=JSON.parse(b||'{}')||{};}catch(_e){}
+    if(!remote||typeof remote!=='object'||Array.isArray(remote))remote={};if(!local||typeof local!=='object'||Array.isArray(local))local={};
+    var keys=Object.create(null);Object.keys(remote).forEach(function(key){keys[key]=1;});Object.keys(local).forEach(function(key){keys[key]=1;});
+    var out={};Object.keys(keys).forEach(function(key){
+      var r=qrEntry(remote[key]),l=qrEntry(local[key]);var chosen=null;
+      if(!r)chosen=l;else if(!l)chosen=r;else chosen=Number(l.updatedAt)>=Number(r.updatedAt)?l:r;
+      if(chosen)out[key]={visited:!!chosen.visited,updatedAt:Number(chosen.updatedAt)||0};
+    });
+    return JSON.stringify(out);
+  }
   function mergeLists(a,b){
     var one=[],two=[];try{one=JSON.parse(a||'[]');}catch(_e){}try{two=JSON.parse(b||'[]');}catch(_e){}
     if(!Array.isArray(one))one=[];if(!Array.isArray(two))two=[];
@@ -51,6 +74,7 @@
     var newer=Number(local.updatedAt)>=Number(remote.updatedAt)?local:remote;
     var values=Object.assign({},remote.values||{},local.values||{});
     values.genova_favstars_v1=mergeJSONObjects(remote.values&&remote.values.genova_favstars_v1,local.values&&local.values.genova_favstars_v1);
+    values['gm-qr-visited-v1']=mergeQRVisited(remote.values&&remote.values['gm-qr-visited-v1'],local.values&&local.values['gm-qr-visited-v1']);
     values.genova_taccuino_routes_v1=mergeLists(remote.values&&remote.values.genova_taccuino_routes_v1,local.values&&local.values.genova_taccuino_routes_v1);
     values.genova_taccuino_notes_v1=mergeLists(remote.values&&remote.values.genova_taccuino_notes_v1,local.values&&local.values.genova_taccuino_notes_v1);
     return{version:1,updatedAt:Number(newer.updatedAt)||Date.now(),values:values};
@@ -82,8 +106,10 @@
   function setStatus(value){state.status=value;renderSyncPanel();document.dispatchEvent(new CustomEvent('genova:sync-status',{detail:{status:value}}));}
   function syncPanel(){
     var profile=document.getElementById('auth-account-profile');if(!profile)return null;
+    var slot=document.getElementById('auth-account-sync-slot')||profile;
     var panel=document.getElementById('auth-sync-panel');
-    if(!panel){panel=document.createElement('div');panel.id='auth-sync-panel';panel.className='auth-sync-panel';panel.innerHTML='<span id="auth-sync-status" aria-live="polite"></span><button id="auth-sync-now" type="button"></button>';profile.appendChild(panel);panel.querySelector('button').addEventListener('click',function(){loadAccount(true);});}
+    if(!panel){panel=document.createElement('div');panel.id='auth-sync-panel';panel.className='auth-sync-panel';panel.innerHTML='<span id="auth-sync-status" aria-live="polite"></span><button id="auth-sync-now" type="button"></button>';panel.querySelector('button').addEventListener('click',function(){loadAccount(true);});}
+    if(panel.parentNode!==slot)slot.appendChild(panel);
     return panel;
   }
   function renderSyncPanel(){var panel=syncPanel();if(!panel)return;var t=text();var label=t[state.status]||t.idle;panel.querySelector('span').textContent=label;panel.querySelector('button').textContent=t.button;panel.querySelector('button').disabled=state.busy||!navigator.onLine;}
@@ -101,7 +127,7 @@
   function cachedSubscription(){try{return JSON.parse(localStorage.getItem(SUB_CACHE_KEY)||'null');}catch(_e){return null;}}
 
   async function saveData(data){
-    if(!state.user||state.busy||!navigator.onLine)return;
+    if(!state.user||state.busy||state.deleting||!navigator.onLine)return;
     state.busy=true;setStatus('syncing');
     try{
       var result=await api('POST',{action:'saveData',data:data||snapshot()});
@@ -113,7 +139,7 @@
   }
 
   async function loadAccount(manual){
-    if(!state.user||state.busy)return;
+    if(!state.user||state.busy||state.deleting)return;
     if(!navigator.onLine){setStatus('offline');cacheSubscription(cachedSubscription());return;}
     state.busy=true;setStatus('syncing');
     try{
@@ -160,6 +186,32 @@
     }
     return true;
   }
+  function clearLocalAfterDeletion(){
+    PERSONAL_KEYS.forEach(function(key){try{localStorage.removeItem(key);}catch(_e){}});
+    try{localStorage.removeItem(BOUND_KEY);localStorage.removeItem(DIRTY_KEY);localStorage.removeItem(SUB_CACHE_KEY);localStorage.removeItem('genovaqr_sub');}catch(_e){}
+    state.record=null;state.lastHash=hash(snapshot());state.status='idle';state.busy=false;state.user=null;
+    window.isSubscribed=false;
+    try{document.dispatchEvent(new CustomEvent('genova:data-synced',{detail:{values:{},deleted:true}}));}catch(_e){}
+    try{document.dispatchEvent(new CustomEvent('genova:subscription-changed',{detail:{subscription:null,active:false}}));}catch(_e){}
+    renderSyncPanel();
+  }
+
+  async function deleteAccount(){
+    if(!state.user||state.deleting)throw new Error('not_authenticated');
+    if(!navigator.onLine)throw new Error('offline');
+    state.deleting=true;state.busy=true;setStatus('syncing');
+    try{
+      var jwt=await token();if(!jwt)throw new Error('not_authenticated');
+      var response=await fetch(DELETE_ENDPOINT,{method:'POST',headers:{authorization:'Bearer '+jwt,'content-type':'application/json','cache-control':'no-store'},body:JSON.stringify({confirm:true})});
+      var result={};try{result=await response.json();}catch(_e){}
+      if(!response.ok)throw new Error(result.error||('http_'+response.status));
+      clearLocalAfterDeletion();
+      return result;
+    }finally{
+      state.deleting=false;state.busy=false;renderSyncPanel();
+    }
+  }
+
   function setUser(user){
     var changed=(!state.user&&user)||(state.user&&(!user||state.user.id!==user.id));state.user=user||null;
     if(!state.user){setStatus('idle');cacheSubscription(null);return;}
@@ -184,9 +236,11 @@
   }
 
   window.GenovaAccount={
-    getState:function(){return{user:state.user,record:state.record,subscription:(state.record&&state.record.subscription)||cachedSubscription(),active:!!window.isSubscribed,status:state.status};},
+    getState:function(){return{user:state.user,record:state.record,subscription:(state.record&&state.record.subscription)||cachedSubscription(),active:!!window.isSubscribed,status:state.status,deleting:state.deleting};},
     syncNow:function(){return loadAccount(true);},
-    resetPreferences:function(){return resetPreferences();}
+    resetPreferences:function(){return resetPreferences();},
+    deleteAccount:function(){return deleteAccount();},
+    clearLocalAfterDeletion:function(){clearLocalAfterDeletion();return true;}
   };
 
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();

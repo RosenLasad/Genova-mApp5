@@ -1,6 +1,7 @@
 import Stripe from "stripe";
 import {
   initialUserRecord,
+  isDeletedUser,
   json,
   readUserRecord,
   writeUserRecord,
@@ -37,6 +38,7 @@ async function userIdForSubscription(stripe, subscription) {
 async function storeSubscription(stripe, subscription, event) {
   const userId = await userIdForSubscription(stripe, subscription);
   if (!userId) throw new Error("missing_netlify_user_id");
+  if (await isDeletedUser(userId)) return;
 
   const customerId = typeof subscription.customer === "string" ? subscription.customer : subscription.customer?.id || "";
   const placeholderUser = { id: userId, email: "" };
