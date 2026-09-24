@@ -956,14 +956,14 @@
     "Profilo e acesso"
   ],
   [
-    "Le funzioni del profilo permettono di accedere al proprio account e ai servizi personali collegati a Genova mApp. Alcune funzioni richiedono l’accesso con il proprio account.",
-    "Profile features let you access your account and personal services linked to Genova mApp. Some features require you to sign in.",
-    "Las funciones del perfil permiten acceder a tu cuenta y a los servicios personales vinculados a Genova mApp. Algunas funciones requieren iniciar sesión.",
-    "Les fonctions du profil permettent d’accéder à votre compte et aux services personnels liés à Genova mApp. Certaines fonctions nécessitent une connexion.",
-    "تتيح وظائف الملف الشخصي الوصول إلى حسابك والخدمات الشخصية المرتبطة بـ Genova mApp. تتطلب بعض الوظائف تسجيل الدخول.",
-    "Функции профиля позволяют войти в аккаунт и получить доступ к персональным сервисам Genova mApp. Для некоторых функций требуется вход.",
-    "个人资料功能可让你访问账号以及与 Genova mApp 关联的个人服务。部分功能需要登录。",
-    "E fonçioin dò profilo permettan d’intrâ into teu account e inti serviçi personæ ligæ a Genova mApp. Quarche fonçion a domanda l’aceso."
+    "Quando disponibili, le funzioni relative al profilo permettono di accedere al proprio account e ai servizi personali collegati a Genova mApp. Alcune funzioni possono richiedere l’accesso con il proprio account.",
+    "When available, profile features let you access your account and personal services linked to Genova mApp. Some features may require you to sign in.",
+    "Cuando estén disponibles, las funciones del perfil permiten acceder a tu cuenta y a los servicios personales vinculados a Genova mApp. Algunas funciones pueden requerir iniciar sesión.",
+    "Lorsqu’elles sont disponibles, les fonctions du profil permettent d’accéder à votre compte et aux services personnels liés à Genova mApp. Certaines fonctions peuvent nécessiter une connexion.",
+    "عند توفرها، تتيح وظائف الملف الشخصي الوصول إلى حسابك والخدمات الشخصية المرتبطة بـ Genova mApp. قد تتطلب بعض الوظائف تسجيل الدخول.",
+    "Когда эти функции доступны, профиль позволяет войти в учётную запись и получить доступ к персональным сервисам Genova mApp. Для некоторых функций может потребоваться вход.",
+    "当相关功能可用时，你可以通过个人资料访问账号和与 Genova mApp 关联的个人服务。某些功能可能需要登录。",
+    "Quande son disponibili, e fonçioin dò profilo permettan d’intrâ into teu conto e inti serviçi personæ ligæ a Genova mApp. Quarche fonçion a peu domandâ l’aceso."
   ],
   [
     "Abbonamento",
@@ -976,24 +976,24 @@
     "Abbonamento"
   ],
   [
-    "La sezione Abbonamento permette di confrontare Visitatore, Account gratuito e Premium, attivare un piano mensile o annuale tramite Stripe e riscattare eventuali codici promozionali.",
-    "The Subscription section lets you compare Visitor, Free account and Premium, activate a monthly or yearly plan through Stripe, and redeem any promotional codes.",
-    "La sección Suscripción permite comparar Visitante, Cuenta gratuita y Premium, activar un plan mensual o anual mediante Stripe y canjear posibles códigos promocionales.",
-    "La section Abonnement permet de comparer Visiteur, Compte gratuit et Premium, d’activer une formule mensuelle ou annuelle via Stripe et d’utiliser d’éventuels codes promotionnels.",
-    "يتيح قسم الاشتراك مقارنة الزائر والحساب المجاني وPremium، وتفعيل خطة شهرية أو سنوية عبر Stripe، واستخدام أي رموز ترويجية.",
-    "Раздел Подписка позволяет сравнить уровни Гость, Бесплатный аккаунт и Premium, оформить месячный или годовой план через Stripe и активировать промокоды.",
-    "订阅部分可比较访客、免费账号和 Premium，使用 Stripe 开通月度或年度方案，并兑换促销代码。",
-    "A seçion Abbonamento a permette de confrontâ Foresto, Account gratis e Premium, ativâ un pian menscile ò annuâ con Stripe e deuviâ eventuali còdici promoçionæ."
+    "La sezione Abbonamento è dedicata alla gestione dei servizi e dei vantaggi disponibili per gli utenti abbonati.",
+    "The Subscription section is dedicated to managing services and benefits available to subscribers.",
+    "La sección Suscripción está dedicada a gestionar los servicios y ventajas disponibles para los usuarios suscritos.",
+    "La section Abonnement est consacrée à la gestion des services et des avantages disponibles pour les abonnés.",
+    "قسم الاشتراك مخصص لإدارة الخدمات والمزايا المتاحة للمشتركين.",
+    "Раздел Подписка предназначен для управления сервисами и преимуществами, доступными подписчикам.",
+    "订阅部分用于管理订阅用户可用的服务和权益。",
+    "A seçion Abbonamento a l’é dedicâ a-a gestion di serviçi e di vantaggi disponibili pe-i utenti abbonæ."
   ],
   [
-    "Dal pannello puoi verificare il tuo livello attuale e, quando hai Premium tramite Stripe, gestire il tuo abbonamento.",
-    "From the panel you can check your current access level and, when you have Premium through Stripe, manage your subscription.",
-    "Desde el panel puedes comprobar tu nivel actual y, cuando tienes Premium mediante Stripe, gestionar tu suscripción.",
-    "Depuis le panneau, vous pouvez vérifier votre niveau actuel et, lorsque vous avez Premium via Stripe, gérer votre abonnement.",
-    "من اللوحة يمكنك التحقق من مستوى الوصول الحالي، وعندما يكون لديك Premium عبر Stripe يمكنك إدارة اشتراكك.",
-    "В панели можно проверить текущий уровень доступа и, если Premium оформлен через Stripe, управлять подпиской.",
-    "你可以在面板中查看当前访问级别；通过 Stripe 开通 Premium 后，还可以管理订阅。",
-    "Dò pannello ti peu controllâ o teu livello atual e, quande ti gh’æ Premium con Stripe, gestî o teu abonamento."
+    "Alcune funzioni relative all’abbonamento sono ancora in fase di completamento e saranno rese disponibili progressivamente.",
+    "Some subscription features are still being completed and will become available progressively.",
+    "Algunas funciones de la suscripción todavía están en fase de desarrollo y estarán disponibles progresivamente.",
+    "Certaines fonctions liées à l’abonnement sont encore en cours de finalisation et seront rendues disponibles progressivement.",
+    "لا تزال بعض وظائف الاشتراك قيد الاستكمال وستتاح تدريجياً.",
+    "Некоторые функции подписки ещё находятся в разработке и будут становиться доступными постепенно.",
+    "部分订阅功能仍在完善中，将逐步开放。",
+    "Quarche fonçion de l’abbonamento a l’é ancon in fase de completamento e a saiâ disponibile pöco a-a vòtta."
   ],
   [
     "Impostazioni",
@@ -2116,24 +2116,24 @@
     "Abbonamento e vantaggi"
   ],
   [
-    "Genova mApp dispone di una sezione dedicata all’Abbonamento, dalla quale puoi confrontare i livelli di accesso e attivare Premium.",
-    "Genova mApp has a dedicated Subscription section where you can compare access levels and activate Premium.",
-    "Genova mApp dispone de una sección dedicada a la Suscripción, desde la que puedes comparar los niveles de acceso y activar Premium.",
-    "Genova mApp dispose d’une section consacrée à l’Abonnement, depuis laquelle vous pouvez comparer les niveaux d’accès et activer Premium.",
-    "يتضمن Genova mApp قسماً مخصصاً للاشتراك يمكنك من خلاله مقارنة مستويات الوصول وتفعيل Premium.",
-    "В Genova mApp есть раздел Подписка, где можно сравнить уровни доступа и активировать Premium.",
-    "Genova mApp 设有订阅专区，你可以在其中比较不同访问级别并开通 Premium。",
-    "Genova mApp a l’à unna seçion dedicâ a l’Abbonamento, da donde ti peu confrontâ i livelli d’aceso e ativâ Premium."
+    "Genova mApp prevede una sezione dedicata all’Abbonamento, attraverso la quale sarà possibile accedere ai servizi e ai vantaggi previsti per gli utenti abbonati.",
+    "Genova mApp includes a Subscription section through which users will be able to access services and benefits provided for subscribers.",
+    "Genova mApp contará con una sección dedicada a la Suscripción, a través de la cual será posible acceder a los servicios y ventajas previstos para los usuarios suscritos.",
+    "Genova mApp prévoit une section consacrée à l’Abonnement, qui permettra d’accéder aux services et avantages destinés aux utilisateurs abonnés.",
+    "يتضمن Genova mApp قسماً مخصصاً للاشتراك، يمكن من خلاله الوصول إلى الخدمات والمزايا المخصصة للمشتركين.",
+    "В Genova mApp предусмотрен раздел Подписка, через который можно будет получать доступ к сервисам и преимуществам для подписчиков.",
+    "Genova mApp 设有订阅部分，用户将可通过这里访问面向订阅用户的服务和权益。",
+    "Genova mApp a prevede unna seçion dedicâ a l’Abbonamento, da donde se poiâ intrâ inti serviçi e inti vantaggi previsti pe-i utenti abbonæ."
   ],
   [
-    "Il pannello mostra i piani disponibili, la durata, le funzioni comprese, l’eventuale codice promozionale e lo stato dell’abbonamento. I pagamenti dei piani mensile e annuale sono gestiti tramite Stripe.",
-    "The panel shows the available plans, duration, included features, any promotional code and subscription status. Payments for monthly and yearly plans are handled through Stripe.",
-    "El panel muestra los planes disponibles, la duración, las funciones incluidas, el posible código promocional y el estado de la suscripción. Los pagos de los planes mensual y anual se gestionan mediante Stripe.",
-    "Le panneau affiche les formules disponibles, leur durée, les fonctions incluses, l’éventuel code promotionnel et l’état de l’abonnement. Les paiements des formules mensuelle et annuelle sont gérés via Stripe.",
-    "تعرض اللوحة الخطط المتاحة ومدتها والوظائف المشمولة وأي رمز ترويجي وحالة الاشتراك. تتم إدارة مدفوعات الخطط الشهرية والسنوية عبر Stripe.",
-    "В панели показаны доступные планы, срок, включённые функции, промокод (если есть) и статус подписки. Оплата месячного и годового планов проходит через Stripe.",
-    "面板会显示可用方案、时长、包含的功能、促销代码（如有）以及订阅状态。月度和年度方案的付款由 Stripe 处理。",
-    "O pannello o mostra i piani disponibili, a duâ, e fonçioin compreize, l’eventuale còdice promoçionâ e o stato de l’abonamento. I pagamenti di piani menscile e annuâ son gestii con Stripe."
+    "Le informazioni relative ai diversi piani, alla durata e alle funzioni comprese saranno mostrate direttamente all’interno dell’app. Alcune parti del sistema di abbonamento sono ancora in fase di completamento e saranno rese disponibili progressivamente.",
+    "Information about the different plans, duration and included features will be shown directly in the app. Some parts of the subscription system are still being completed and will become available progressively.",
+    "La información sobre los distintos planes, la duración y las funciones incluidas se mostrará directamente en la app. Algunas partes del sistema de suscripción todavía están en fase de desarrollo y estarán disponibles progresivamente.",
+    "Les informations sur les différentes formules, leur durée et les fonctions incluses seront affichées directement dans l’application. Certaines parties du système d’abonnement sont encore en cours de finalisation et seront rendues disponibles progressivement.",
+    "ستُعرض المعلومات المتعلقة بالخطط المختلفة ومدتها والوظائف المشمولة مباشرة داخل التطبيق. ولا تزال بعض أجزاء نظام الاشتراك قيد الاستكمال وستتاح تدريجياً.",
+    "Информация о разных тарифах, сроках и включённых функциях будет показываться прямо в приложении. Некоторые части системы подписки ещё находятся в разработке и будут становиться доступными постепенно.",
+    "不同方案、订阅时长和包含功能的信息会直接显示在应用中。订阅系统的部分内容仍在完善，将逐步开放。",
+    "E informaçioin in sci diversi piani, a durâ e e fonçioin compreize saian mostræ direttamente inte l’app. Quarche parte dò sistema d’abbonamento a l’é ancon in fase de completamento e a saiâ disponibile pöco a-a vòtta."
   ],
   [
     "Noleggio auto — In arrivo.",
