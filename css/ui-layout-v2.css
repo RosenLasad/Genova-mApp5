@@ -194,11 +194,6 @@ body > #flag-switcher .flag-ico svg{
   top:auto !important;
 }
 
-/* Eventi resta disponibile nei file ma non compare nella nuova interfaccia. */
-#eventsBtn,
-#eventsPanel{
-  display:none !important;
-}
 
 /* La precedente linguetta laterale non viene più usata. */
 #ui-taccuino-edge{

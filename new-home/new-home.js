@@ -3190,6 +3190,12 @@
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, {once:true});
   else boot();
 
+  // Compatibilita con i vecchi pulsanti che emettono app:open-guide.
+  // La sola guida attiva e ora quella integrata nella New Home.
+  document.addEventListener('app:open-guide', function(){
+    try{ openGuide(document.activeElement || null); }catch(_e){}
+  });
+
   window.gmOpenNewHome = open;
   window.gmOpenNewHomeGuide = openGuide;
   window.gmCloseNewHome = close;

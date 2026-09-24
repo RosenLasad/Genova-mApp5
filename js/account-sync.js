@@ -120,7 +120,6 @@
     var stripeActive=sub.simulated===false&&sub.status==='active'&&(!sub.currentPeriodEnd||Number(sub.currentPeriodEnd)>Date.now());
     var adminActive=sub.adminOverride===true&&sub.simulated===true&&sub.status==='active';
     var active=stripeActive||adminActive;
-    try{localStorage.setItem('genovaqr_sub',active?'1':'0');}catch(_e){}
     window.isSubscribed=active;
     document.dispatchEvent(new CustomEvent('genova:subscription-changed',{detail:{subscription:sub,active:active}}));
   }
@@ -188,7 +187,7 @@
   }
   function clearLocalAfterDeletion(){
     PERSONAL_KEYS.forEach(function(key){try{localStorage.removeItem(key);}catch(_e){}});
-    try{localStorage.removeItem(BOUND_KEY);localStorage.removeItem(DIRTY_KEY);localStorage.removeItem(SUB_CACHE_KEY);localStorage.removeItem('genovaqr_sub');}catch(_e){}
+    try{localStorage.removeItem(BOUND_KEY);localStorage.removeItem(DIRTY_KEY);localStorage.removeItem(SUB_CACHE_KEY);}catch(_e){}
     state.record=null;state.lastHash=hash(snapshot());state.status='idle';state.busy=false;state.user=null;
     window.isSubscribed=false;
     try{document.dispatchEvent(new CustomEvent('genova:data-synced',{detail:{values:{},deleted:true}}));}catch(_e){}
