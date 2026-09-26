@@ -72,3 +72,13 @@
 @keyframes hatHop{from{transform:translateY(0) rotate(-1deg)}to{transform:translateY(-3px) rotate(2deg)}}
 @keyframes hatFly{from{transform:rotate(-2deg)}to{transform:rotate(3deg)}}
 @keyframes pomFly{from{transform:rotate(-8deg)}to{transform:rotate(9deg)}}
+
+/* Grifoncino assistant conversation engine v0.2 */
+#gm-griff-assistant .gm-griff-nav{display:flex;gap:7px;justify-content:flex-end;margin-top:9px;padding-top:8px;border-top:1px solid #dbe5ea}
+#gm-griff-assistant .gm-griff-nav[hidden]{display:none}
+#gm-griff-assistant .gm-griff-nav button{border:0;background:transparent;color:#42657a;font:700 12px/1.2 inherit;padding:5px 7px;border-radius:8px;cursor:pointer}
+#gm-griff-assistant .gm-griff-nav button:hover{background:#eef5f8}
+#gm-griff-assistant .gm-griff-nav button:disabled{opacity:.35;cursor:default;background:transparent}
+#gm-griff-assistant.gm-confirming .gm-griff-bubble{border-color:#7f6547;background:#fffaf2}
+#gm-griff-assistant .gm-confirm-action{ text-align:center;font-weight:800 }
+@media(max-width:680px){#gm-griff-assistant .gm-griff-nav{margin-top:6px;padding-top:6px}#gm-griff-assistant .gm-griff-nav button{font-size:11px}}
