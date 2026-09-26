@@ -1,8 +1,8 @@
 /* Genova mApp - Grifoncino assistant prototype v0.1 */
-#gm-griff-assistant{position:fixed;right:14px;bottom:12px;z-index:10040;display:flex;align-items:flex-end;gap:10px;max-width:min(620px,calc(100vw - 18px));font-family:inherit;pointer-events:none}
+#gm-griff-assistant{position:fixed;right:8px;top:62%;bottom:auto;z-index:10040;display:flex;align-items:flex-end;gap:10px;max-width:min(620px,calc(100vw - 18px));font-family:inherit;pointer-events:none;transition:left .18s ease,right .18s ease,top .18s ease}
 #gm-griff-assistant[hidden]{display:none!important}
 #gm-griff-assistant .gm-griff-character-wrap{width:150px;flex:0 0 150px;pointer-events:auto;position:relative;filter:drop-shadow(0 5px 6px rgba(24,36,45,.16))}
-#gm-griff-assistant .gm-griff-character-btn{display:block;width:100%;padding:0;border:0;background:transparent;cursor:pointer;border-radius:24px;touch-action:manipulation}
+#gm-griff-assistant .gm-griff-character-btn{display:block;width:100%;padding:0;border:0;background:transparent;cursor:pointer;border-radius:24px;touch-action:none;user-select:none;-webkit-user-select:none}
 #gm-griff-assistant .gm-griff-character-btn:focus-visible{outline:3px solid #2570a6;outline-offset:2px}
 #gm-griff-assistant .gm-griffin{--x:0px;--y:0px;--scale:1;width:100%;position:relative;transform-origin:50% 84%;will-change:transform}
 #gm-griff-assistant .gm-griffin svg{display:block;width:100%;height:auto;overflow:visible}
@@ -20,7 +20,16 @@
 #gm-griff-mini.is-visible{display:flex}
 #gm-griff-mini svg{width:42px;height:42px;display:block}
 #gm-griff-mini:focus-visible{outline:3px solid #2570a6;outline-offset:2px}
-@media(max-width:680px){#gm-griff-assistant{right:7px;bottom:8px;gap:5px;align-items:flex-end}#gm-griff-assistant .gm-griff-character-wrap{width:108px;flex-basis:108px}#gm-griff-assistant .gm-griff-bubble{width:min(250px,calc(100vw - 124px));padding:11px 11px 10px;margin-bottom:24px;border-radius:16px}#gm-griff-assistant .gm-griff-text{font-size:13px;margin-bottom:8px}#gm-griff-assistant .gm-griff-actions{grid-template-columns:1fr;gap:5px}#gm-griff-assistant .gm-griff-action{font-size:12px;min-height:35px;padding:6px 8px}#gm-griff-assistant .gm-griff-bubble::after{right:-10px;width:17px;height:17px;bottom:24px}}
+
+/* v0.3 - trascinamento, snap ai bordi e fumetto adattivo */
+#gm-griff-assistant.is-left{flex-direction:row-reverse}
+#gm-griff-assistant.is-left .gm-griff-bubble::after{right:auto;left:-13px;border-right:0;border-top:0;border-left:2px solid #38556b;border-bottom:2px solid #38556b}
+#gm-griff-assistant.is-dragging{transition:none!important}
+#gm-griff-assistant.is-dragging .gm-griff-bubble{opacity:0;pointer-events:none;transform:scale(.96);transition:opacity .12s ease,transform .12s ease}
+#gm-griff-assistant:not(.is-dragging) .gm-griff-bubble{transition:opacity .16s ease,transform .16s ease}
+#gm-griff-assistant.is-dragging .gm-griff-character-btn{cursor:grabbing}
+#gm-griff-assistant .gm-griff-character-btn{cursor:grab}
+@media(max-width:680px){#gm-griff-assistant{right:7px;gap:5px;align-items:flex-end}#gm-griff-assistant .gm-griff-character-wrap{width:108px;flex-basis:108px}#gm-griff-assistant .gm-griff-bubble{width:min(250px,calc(100vw - 124px));padding:11px 11px 10px;margin-bottom:24px;border-radius:16px}#gm-griff-assistant .gm-griff-text{font-size:13px;margin-bottom:8px}#gm-griff-assistant .gm-griff-actions{grid-template-columns:1fr;gap:5px}#gm-griff-assistant .gm-griff-action{font-size:12px;min-height:35px;padding:6px 8px}#gm-griff-assistant .gm-griff-bubble::after{right:-10px;width:17px;height:17px;bottom:24px}#gm-griff-assistant.is-left .gm-griff-bubble::after{right:auto;left:-10px}}
 @media(max-width:390px){#gm-griff-assistant .gm-griff-character-wrap{width:92px;flex-basis:92px}#gm-griff-assistant .gm-griff-bubble{width:calc(100vw - 108px)}}
 @media(prefers-reduced-motion:reduce){#gm-griff-assistant *,#gm-griff-assistant *:before,#gm-griff-assistant *:after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
 
