@@ -565,8 +565,11 @@
     var addressRow = model.address
       ? '<div class="gm-place-meta-row"><dt class="gm-place-meta-label">'+esc(tx.address)+'</dt><dd class="gm-place-meta-value">'+esc(model.address)+'</dd></div>' : '';
     var metaHtml = roomsRow || addressRow ? '<dl class="gm-place-meta">'+roomsRow+addressRow+'</dl>' : '';
-    var websiteHtml = model.website
-      ? '<div class="gm-place-actions"><a class="gm-place-link" href="'+esc(model.website)+'" target="_blank" rel="noopener noreferrer">'+esc(HERITAGE_LINK[model.lang] || HERITAGE_LINK.it)+'</a></div>' : '';
+    var curiosityHtml = curiositiesButton(model);
+    var websiteLink = model.website
+      ? '<a class="gm-place-link gm-place-link--heritage" href="'+esc(model.website)+'" target="_blank" rel="noopener noreferrer">'+esc(HERITAGE_LINK[model.lang] || HERITAGE_LINK.it)+'</a>' : '';
+    var actionsHtml = curiosityHtml || websiteLink
+      ? '<div class="gm-place-actions gm-place-actions--heritage">'+curiosityHtml+websiteLink+'</div>' : '';
 
     return '<article class="gm-place-popup gm-place-popup--heritage gm-place-popup--'+esc(model.type)+'" dir="'+model.dir+'" style="--gm-place-color:'+esc(model.color)+'">'
       + '<header class="gm-place-header">'
@@ -574,8 +577,7 @@
         + '<h3 class="gm-place-title mh-popup-title" data-popup-title>'+esc(model.name)+'</h3>'
       + '</header>'
       + '<div class="gm-place-media">'+imageHtml+'</div>'
-      + '<div class="gm-place-body">'+descriptionHtml+metaHtml+websiteHtml+'</div>'
-      + '<footer class="gm-place-footer gm-place-footer--heritage">'+curiositiesButton(model)+'</footer>'
+      + '<div class="gm-place-body">'+descriptionHtml+metaHtml+actionsHtml+'</div>'
       + '</article>';
   }
 
