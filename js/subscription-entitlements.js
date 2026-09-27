@@ -16,7 +16,8 @@
       favoritePoints:0,
       customRoutes:0,
       miniDocPreviewSeconds:10,
-      miniDocFull:false
+      miniDocFull:false,
+      curiosities:false
     },
     free:{
       code:'free',
@@ -28,7 +29,8 @@
       favoritePoints:10,
       customRoutes:1,
       miniDocPreviewSeconds:10,
-      miniDocFull:false
+      miniDocFull:false,
+      curiosities:false
     },
     premium:{
       code:'premium',
@@ -40,7 +42,8 @@
       favoritePoints:null,
       customRoutes:null,
       miniDocPreviewSeconds:null,
-      miniDocFull:true
+      miniDocFull:true,
+      curiosities:true
     }
   };
 

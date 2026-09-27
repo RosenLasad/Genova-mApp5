@@ -540,6 +540,16 @@
       + '</article>';
   }
 
+  function curiositiesButton(model){
+    var api=window.GenovaPlaceCuriosities;
+    var has=false;
+    try{has=api&&typeof api.has==='function'?api.has(model.type,model.name):!!(window.GENOVA_PLACE_CURIOSITIES&&window.GENOVA_PLACE_CURIOSITIES[model.type]&&window.GENOVA_PLACE_CURIOSITIES[model.type][model.name]);}catch(_e){}
+    if(!has)return '';
+    var label='Curiosità';
+    try{if(api&&typeof api.buttonLabel==='function')label=api.buttonLabel();}catch(_e2){}
+    return '<button class="gm-place-curiosities-btn" type="button" data-place-type="'+esc(model.type)+'" data-place-name="'+esc(model.name)+'"><span class="gm-curiosity-spark" aria-hidden="true">✦</span><span>'+esc(label)+'</span></button>';
+  }
+
   function renderHeritage(model){
     var tx = TEXT[model.lang] || TEXT.it;
     var imageHtml = model.image
@@ -565,7 +575,7 @@
       + '</header>'
       + '<div class="gm-place-media">'+imageHtml+'</div>'
       + '<div class="gm-place-body">'+descriptionHtml+metaHtml+websiteHtml+'</div>'
-      + '<footer class="gm-place-footer gm-place-footer--heritage" aria-hidden="true"></footer>'
+      + '<footer class="gm-place-footer gm-place-footer--heritage">'+curiositiesButton(model)+'</footer>'
       + '</article>';
   }
 
@@ -936,6 +946,7 @@
   }, true);
 
   document.addEventListener('app:set-lang', function(){ window.setTimeout(refreshActive,0); });
+  document.addEventListener('genova:subscription-changed', function(){ window.setTimeout(refreshActive,0); });
   try{
     new MutationObserver(function(){ window.setTimeout(refreshActive,0); })
       .observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
