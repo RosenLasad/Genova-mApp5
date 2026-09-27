@@ -50,6 +50,7 @@
   function restoreSavedPosition(){setAssistantPosition(savedSide(),savedY());}
   function finishDrag(ev){
     if(!dragging)return;
+    if(dragMoved&&ev&&ev.cancelable)ev.preventDefault();
     dragging=false;assistant.classList.remove('is-dragging');
     try{ev.currentTarget.releasePointerCapture(dragPointerId);}catch(_e){}
     var r=assistant.getBoundingClientRect();
@@ -114,10 +115,13 @@
     characterBtn.addEventListener('click',function(e){e.preventDefault();if(suppressCharacterClick||dragMoved){dragMoved=false;return;}toggleBubble();});
     characterBtn.addEventListener('pointerdown',function(e){
       if(e.button!==undefined&&e.button!==0)return;
+      // Il Grifoncino gestisce direttamente il gesto: su touch evita che la mappa
+      // interpreti la pressione come pan/scroll prima dell'inizio del trascinamento.
+      e.preventDefault();
       dragPointerId=e.pointerId;dragging=true;dragMoved=false;dragStartX=e.clientX;dragStartY=e.clientY;
       dragStartTop=assistant.getBoundingClientRect().top;previousState=currentState;lastActivity=Date.now();clearTimers();
       try{characterBtn.setPointerCapture(e.pointerId);}catch(_e){}
-    });
+    },{passive:false});
     characterBtn.addEventListener('pointermove',function(e){
       if(!dragging||e.pointerId!==dragPointerId)return;
       var dx=e.clientX-dragStartX,dy=e.clientY-dragStartY;

@@ -2,7 +2,7 @@
 #gm-griff-assistant{position:fixed;right:14px;bottom:12px;z-index:10040;display:flex;align-items:flex-end;gap:10px;max-width:min(620px,calc(100vw - 18px));font-family:inherit;pointer-events:none}
 #gm-griff-assistant[hidden]{display:none!important}
 #gm-griff-assistant .gm-griff-character-wrap{width:150px;flex:0 0 150px;pointer-events:auto;position:relative;filter:drop-shadow(0 5px 6px rgba(24,36,45,.16))}
-#gm-griff-assistant .gm-griff-character-btn{display:block;width:100%;padding:0;border:0;background:transparent;cursor:pointer;border-radius:24px;touch-action:manipulation}
+#gm-griff-assistant .gm-griff-character-btn{display:block;width:100%;padding:0;border:0;background:transparent;cursor:pointer;border-radius:24px;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
 #gm-griff-assistant .gm-griff-character-btn:focus-visible{outline:3px solid #2570a6;outline-offset:2px}
 #gm-griff-assistant .gm-griffin{--x:0px;--y:0px;--scale:1;width:100%;position:relative;transform-origin:50% 84%;will-change:transform}
 #gm-griff-assistant .gm-griffin svg{display:block;width:100%;height:auto;overflow:visible}
@@ -16,7 +16,7 @@
 #gm-griff-assistant .gm-griff-action:hover{background:#eaf4f8;border-color:#89adbf}
 #gm-griff-assistant .gm-griff-action:focus-visible{outline:3px solid #2570a6;outline-offset:1px}
 #gm-griff-assistant.is-minimized{display:none}
-#gm-griff-mini{position:fixed;z-index:10120;width:46px;height:46px;border:0;border-radius:50%;background:transparent;box-shadow:0 5px 15px rgba(20,40,55,.30);padding:0;cursor:pointer;display:none;align-items:center;justify-content:center;overflow:hidden;pointer-events:auto;touch-action:manipulation}
+#gm-griff-mini{position:fixed;z-index:10120;width:46px;height:46px;border:0;border-radius:50%;background:transparent;box-shadow:0 5px 15px rgba(20,40,55,.30);padding:0;cursor:pointer;display:none;align-items:center;justify-content:center;overflow:hidden;pointer-events:auto;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
 #gm-griff-mini.is-visible{display:flex}
 #gm-griff-mini svg{display:none}
 #gm-griff-mini .gm-griff-mini-image{width:100%;height:100%;display:block;object-fit:cover;border-radius:50%;user-select:none;-webkit-user-drag:none}
