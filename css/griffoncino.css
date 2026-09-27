@@ -1,4 +1,4 @@
-/* Genova mApp - Grifoncino assistant v0.4 */
+/* Genova mApp - Grifoncino assistant v0.4.2 */
 #gm-griff-assistant{position:fixed;right:14px;bottom:12px;z-index:10040;display:flex;align-items:flex-end;gap:10px;max-width:min(620px,calc(100vw - 18px));font-family:inherit;pointer-events:none}
 #gm-griff-assistant[hidden]{display:none!important}
 #gm-griff-assistant .gm-griff-character-wrap{width:150px;flex:0 0 150px;pointer-events:auto;position:relative;filter:drop-shadow(0 5px 6px rgba(24,36,45,.16))}
@@ -78,6 +78,15 @@
 /* v0.4 - il personaggio può restare visibile senza fumetto */
 #gm-griff-assistant.is-bubble-hidden .gm-griff-bubble{display:none}
 #gm-griff-assistant.is-bubble-hidden{gap:0}
-#gm-griff-assistant .gm-griff-hide{grid-column:1/-1;margin-top:2px;background:#eef2f4;border-style:dashed;color:#50636f;text-align:center;font-weight:700}
-#gm-griff-assistant .gm-griff-hide:hover{background:#e4eaed;border-color:#93a5af}
 #gm-griff-assistant.is-bubble-hidden .gm-griff-character-btn{filter:drop-shadow(0 4px 5px rgba(24,36,45,.12))}
+
+/* v0.4.2 - navigazione dialogo piu leggibile e Nascondi Grifoncino come ultimo comando */
+#gm-griff-assistant .gm-griff-nav{display:flex;gap:8px;margin-top:10px;align-items:stretch}
+#gm-griff-assistant .gm-griff-nav[hidden]{display:none}
+#gm-griff-assistant .gm-griff-nav button{min-height:42px;padding:8px 14px;border:1px solid #aebfc9;border-radius:10px;background:#f5f8fa;color:#2d4656;font:700 13px/1.2 inherit;cursor:pointer;flex:0 1 auto;min-width:94px}
+#gm-griff-assistant .gm-griff-nav button:hover{background:#eaf2f6;border-color:#819baa}
+#gm-griff-assistant .gm-griff-nav button:disabled{opacity:.45;cursor:default}
+#gm-griff-assistant .gm-griff-hide-row{margin-top:9px;padding-top:9px;border-top:1px solid #dbe4e9}
+#gm-griff-assistant .gm-griff-hide{width:100%;min-height:40px;padding:8px 10px;border:1px dashed #aebdc5;border-radius:11px;background:#eef2f4;color:#50636f;font:700 13px/1.2 inherit;text-align:center;cursor:pointer}
+#gm-griff-assistant .gm-griff-hide:hover{background:#e4eaed;border-color:#93a5af}
+@media (max-width:520px){#gm-griff-assistant .gm-griff-nav button{min-height:44px;min-width:100px;padding:9px 13px}}
