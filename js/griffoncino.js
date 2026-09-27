@@ -63,16 +63,31 @@
   }
   function minimize(){if(!assistant)return;assistant.classList.add('is-minimized');mini.classList.add('is-visible');mini.setAttribute('aria-hidden','false');clearTimers();positionMini();setTimeout(positionMini,80);setTimeout(positionMini,300);}
   function restore(){if(!assistant)return;assistant.classList.remove('is-minimized');mini.classList.remove('is-visible');mini.setAttribute('aria-hidden','true');renderNode(currentNode||'welcome',false);requestAnimationFrame(restoreSavedPosition);}
+  function tr(key){var i18n=window.GMGriffoncinoI18N;return i18n&&typeof i18n.t==='function'?i18n.t(key):key;}
   function renderOptions(opts){actionsEl.innerHTML='';(opts||[]).forEach(function(opt){var b=document.createElement('button');b.type='button';b.className='gm-griff-action';b.textContent=opt.label;b.dataset.next=opt.next||'';b.dataset.action=opt.action||'';actionsEl.appendChild(b);});}
   function renderNode(id,pushHistory){var nodes=window.GMGriffoncinoDialogues||{};var node=nodes[id]||nodes.welcome;if(!node)return;if(pushHistory!==false&&currentNode&&currentNode!==id)historyStack.push(currentNode);currentNode=id;textEl.textContent=node.text;renderOptions(node.options);assistant.classList.remove('gm-confirming');setState(node.tone==='curious'?'curious':'dialogue');scheduleAmbient();updateNav();}
   function updateNav(){var nav=assistant.querySelector('.gm-griff-nav');if(!nav)return;nav.querySelector('[data-nav="back"]').disabled=historyStack.length===0;nav.hidden=(currentNode==='welcome'&&historyStack.length===0);}
   function goBack(){var prev=historyStack.pop();if(prev)renderNode(prev,false);}
   function goHome(){historyStack=[];renderNode('welcome',false);}
   function runAction(name){wake();var actions=window.GMGriffoncinoActions||{};var fn=actions[name];var ok=false;try{ok=typeof fn==='function'?fn()!==false:false;}catch(_e){ok=false;}setTimeout(function(){renderNode(ok?'afterAction':'actionUnavailable',true);},120);}
-  function showMinimizeConfirm(){var nodes=window.GMGriffoncinoDialogues||{};assistant.classList.add('gm-confirming');textEl.textContent='Metti a icona il Grifoncino?';actionsEl.innerHTML='';[['Sì','yes'],['No','no']].forEach(function(it){var b=document.createElement('button');b.type='button';b.className='gm-griff-action gm-confirm-action';b.dataset.confirm=it[1];b.textContent=it[0];actionsEl.appendChild(b);});setState('curious');clearTimers();}
+  function showMinimizeConfirm(){assistant.classList.add('gm-confirming');textEl.textContent=tr('minimize_q');actionsEl.innerHTML='';[[tr('yes'),'yes'],[tr('no'),'no']].forEach(function(it){var b=document.createElement('button');b.type='button';b.className='gm-griff-action gm-confirm-action';b.dataset.confirm=it[1];b.textContent=it[0];actionsEl.appendChild(b);});setState('curious');clearTimers();}
+
+  function refreshLanguage(lang){
+    try{ if(window.GMGriffoncinoI18N&&typeof window.GMGriffoncinoI18N.apply==='function') window.GMGriffoncinoI18N.apply(lang); }catch(_e){}
+    if(!assistant)return;
+    var code=(window.GMGriffoncinoI18N&&window.GMGriffoncinoI18N.current)?window.GMGriffoncinoI18N.current():'it';
+    assistant.setAttribute('dir',code==='ar'?'rtl':'ltr');
+    assistant.setAttribute('aria-label',tr('assistant_label'));
+    if(bubble) bubble.setAttribute('aria-label',tr('message_label'));
+    var cb=assistant.querySelector('.gm-griff-character-btn');if(cb){cb.setAttribute('aria-label',tr('options_label'));cb.setAttribute('title',tr('options_label'));}
+    if(mini) mini.setAttribute('aria-label',tr('open_label'));
+    var backBtn=assistant.querySelector('[data-nav="back"]');if(backBtn)backBtn.textContent='← '+tr('back');
+    var homeBtn=assistant.querySelector('[data-nav="home"]');if(homeBtn)homeBtn.textContent='⌂ '+tr('home');
+    if(assistant.classList.contains('gm-confirming')) showMinimizeConfirm(); else renderNode(currentNode||'welcome',false);
+  }
   function positionMini(){if(!mini)return;var anchor=document.querySelector('#map > #ui-taccuino-button.ui-taccuino-edge:not([hidden])');var size=46;if(anchor){var r=anchor.getBoundingClientRect();mini.style.left=Math.max(4,Math.min(window.innerWidth-size-4,Math.round(r.left+(r.width-size)/2)))+'px';mini.style.top=Math.max(4,Math.min(window.innerHeight-size-4,Math.round(r.bottom+8)))+'px';mini.style.right='auto';mini.style.bottom='auto';return;}var map=document.getElementById('map');if(map){var mr=map.getBoundingClientRect();mini.style.left=Math.max(4,Math.round(mr.left+2))+'px';mini.style.top=Math.max(4,Math.min(window.innerHeight-size-4,Math.round(mr.top+mr.height*.5+38)))+'px';mini.style.right='auto';mini.style.bottom='auto';return;}mini.style.left='8px';mini.style.top='55%';mini.style.right='auto';mini.style.bottom='auto';}
-  function build(){if(document.getElementById('gm-griff-assistant'))return;assistant=document.createElement('section');assistant.id='gm-griff-assistant';assistant.setAttribute('aria-label','Assistente Grifoncino');assistant.innerHTML='<div class="gm-griff-bubble" role="dialog" aria-label="Messaggio del Grifoncino"><p class="gm-griff-text"></p><div class="gm-griff-actions"></div><div class="gm-griff-nav" hidden><button type="button" data-nav="back">← Indietro</button><button type="button" data-nav="home">⌂ Inizio</button></div></div><div class="gm-griff-character-wrap"><button class="gm-griff-character-btn" type="button" aria-label="Opzioni Grifoncino" title="Opzioni Grifoncino"><div class="gm-griffin" data-state="idle">'+SVG+'</div></button></div>';document.body.appendChild(assistant);
-    mini=document.createElement('button');mini.id='gm-griff-mini';mini.type='button';mini.setAttribute('aria-label','Apri il Grifoncino');mini.setAttribute('aria-hidden','true');mini.innerHTML=SVG;document.body.appendChild(mini);
+  function build(){if(document.getElementById('gm-griff-assistant'))return;assistant=document.createElement('section');assistant.id='gm-griff-assistant';assistant.setAttribute('aria-label',tr('assistant_label'));assistant.innerHTML='<div class="gm-griff-bubble" role="dialog" aria-label="'+tr('message_label')+'"><p class="gm-griff-text"></p><div class="gm-griff-actions"></div><div class="gm-griff-nav" hidden><button type="button" data-nav="back">← '+tr('back')+'</button><button type="button" data-nav="home">⌂ '+tr('home')+'</button></div></div><div class="gm-griff-character-wrap"><button class="gm-griff-character-btn" type="button" aria-label="'+tr('options_label')+'" title="'+tr('options_label')+'"><div class="gm-griffin" data-state="idle">'+SVG+'</div></button></div>';document.body.appendChild(assistant);
+    mini=document.createElement('button');mini.id='gm-griff-mini';mini.type='button';mini.setAttribute('aria-label',tr('open_label'));mini.setAttribute('aria-hidden','true');mini.innerHTML=SVG;document.body.appendChild(mini);
     griffin=assistant.querySelector('.gm-griffin');bubble=assistant.querySelector('.gm-griff-bubble');textEl=assistant.querySelector('.gm-griff-text');actionsEl=assistant.querySelector('.gm-griff-actions');
     var characterBtn=assistant.querySelector('.gm-griff-character-btn');
     characterBtn.addEventListener('click',function(e){e.preventDefault();if(suppressCharacterClick||dragMoved){dragMoved=false;return;}showMinimizeConfirm();});
@@ -98,7 +113,9 @@
     assistant.querySelector('.gm-griff-nav').addEventListener('click',function(e){var b=e.target.closest('[data-nav]');if(!b)return;if(b.dataset.nav==='back')goBack();else goHome();});
     mini.addEventListener('click',restore);window.addEventListener('resize',function(){if(mini&&mini.classList.contains('is-visible'))positionMini();else restoreSavedPosition();});var mapRoot=document.getElementById('map');if(mapRoot&&window.MutationObserver){new MutationObserver(function(){if(mini&&mini.classList.contains('is-visible'))positionMini();}).observe(mapRoot,{childList:true,subtree:false});}
     assistant.addEventListener('pointerdown',function(e){if(e.target.closest('.gm-griff-character-btn'))return;if(!assistant.classList.contains('gm-confirming'))wake();},{passive:true});
-    renderNode('welcome',false);requestAnimationFrame(restoreSavedPosition);
+    document.addEventListener('app:set-lang',function(e){refreshLanguage(e&&e.detail&&e.detail.lang);});
+    window.addEventListener('i18n:changed',function(){refreshLanguage();});
+    renderNode('welcome',false);refreshLanguage();requestAnimationFrame(restoreSavedPosition);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(build,350);},{once:true});else setTimeout(build,350);
   window.GMGriffoncino={open:restore,minimize:minimize,home:goHome,back:goBack,node:function(id){renderNode(id,true);},setState:setState};
