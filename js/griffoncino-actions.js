@@ -1,4 +1,4 @@
-/* Genova mApp - Grifoncino: azioni v0.2 */
+/* Genova mApp - Grifoncino: azioni + percorsi consigliati intelligenti v0.4 */
 (function(){
   'use strict';
   function click(sel){var el=document.querySelector(sel);if(!el)return false;el.click();return true;}
@@ -9,8 +9,30 @@
   function surprise(){closeNewHome();try{if(typeof window.__favEnhanceLists==='function')window.__favEnhanceLists();}catch(_e){}var names=[].slice.call(document.querySelectorAll('.fav-item .fav-name')).filter(function(el){return (el.textContent||'').trim();});if(!names.length)return false;names[Math.floor(Math.random()*names.length)].click();return true;}
   function routes(){closeNewHome();var b=document.getElementById('qt-cat-routes-btn');if(b){b.click();return true;}return click('#routes-btn');}
   function nearMe(){closeNewHome();var candidates=[].slice.call(document.querySelectorAll('button,[role="button"]'));var b=candidates.find(function(el){return /vicino a me|raggio/i.test((el.textContent||'')+' '+(el.getAttribute('title')||'')+' '+(el.getAttribute('aria-label')||''));});if(b){b.click();return true;}return false;}
+
+  function activateRecommendedRoute(id){
+    if(!id)return false;
+    closeNewHome();
+    var row=document.querySelector('#routes-menu .doc-row[data-route-id="'+id+'"]');
+    var checkbox=row&&row.querySelector('input.route-chk');
+    if(!checkbox)return false;
+    if(!checkbox.checked){checkbox.checked=true;checkbox.dispatchEvent(new Event('change',{bubbles:true}));}
+    setTimeout(function(){
+      try{if(window.__routesFallback&&typeof window.__routesFallback.focusStart==='function')window.__routesFallback.focusStart(id);}catch(_e){}
+    },80);
+    return true;
+  }
+  function recommendRoute(theme){
+    var profile=window.GMGriffoncinoProfile;
+    var id=profile&&typeof profile.recommendRoute==='function'?profile.recommendRoute(theme):null;
+    if(!id){var rows=[].slice.call(document.querySelectorAll('#routes-menu .doc-row[data-route-id]'));if(rows.length)id=rows[0].getAttribute('data-route-id');}
+    var ok=activateRecommendedRoute(id);
+    if(ok&&profile&&typeof profile.markRoute==='function')profile.markRoute(id);
+    return ok;
+  }
+
   window.GMGriffoncinoActions={
-    surprise:surprise,events:openEvents,openMap:function(){closeNewHome();return true;},openHome:openNewHome,routes:routes,nearMe:nearMe,
+    surprise:surprise,events:openEvents,recommendRoute:recommendRoute,openMap:function(){closeNewHome();return true;},openHome:openNewHome,routes:routes,nearMe:nearMe,
     showForti:function(){return openQuickCategory('qt-cat-passato-btn','#qt-cat-passato .qt-forti');},
     showMuseums:function(){return openQuickCategory('qt-cat-passato-btn','#qt-cat-passato .qt-museum');},
     showChurches:function(){return openQuickCategory('qt-cat-passato-btn','#qt-cat-passato .qt-chiese');},

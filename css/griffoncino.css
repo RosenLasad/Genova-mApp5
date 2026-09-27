@@ -1,4 +1,4 @@
-/* Genova mApp - Grifoncino assistant prototype v0.1 */
+/* Genova mApp - Grifoncino assistant v0.4 */
 #gm-griff-assistant{position:fixed;right:14px;bottom:12px;z-index:10040;display:flex;align-items:flex-end;gap:10px;max-width:min(620px,calc(100vw - 18px));font-family:inherit;pointer-events:none}
 #gm-griff-assistant[hidden]{display:none!important}
 #gm-griff-assistant .gm-griff-character-wrap{width:150px;flex:0 0 150px;pointer-events:auto;position:relative;filter:drop-shadow(0 5px 6px rgba(24,36,45,.16))}
@@ -73,3 +73,11 @@
 @keyframes hatHop{from{transform:translateY(0) rotate(-1deg)}to{transform:translateY(-3px) rotate(2deg)}}
 @keyframes hatFly{from{transform:rotate(-2deg)}to{transform:rotate(3deg)}}
 @keyframes pomFly{from{transform:rotate(-8deg)}to{transform:rotate(9deg)}}
+
+
+/* v0.4 - il personaggio può restare visibile senza fumetto */
+#gm-griff-assistant.is-bubble-hidden .gm-griff-bubble{display:none}
+#gm-griff-assistant.is-bubble-hidden{gap:0}
+#gm-griff-assistant .gm-griff-hide{grid-column:1/-1;margin-top:2px;background:#eef2f4;border-style:dashed;color:#50636f;text-align:center;font-weight:700}
+#gm-griff-assistant .gm-griff-hide:hover{background:#e4eaed;border-color:#93a5af}
+#gm-griff-assistant.is-bubble-hidden .gm-griff-character-btn{filter:drop-shadow(0 4px 5px rgba(24,36,45,.12))}
