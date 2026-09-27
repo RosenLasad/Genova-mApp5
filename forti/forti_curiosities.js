@@ -498,4 +498,496 @@
       'A sosta perfetta: Ancheu o l’è pubrico e o se treuva circa a metà do classico sentê di forti, ideale pe unna foto ò un picnic.'
     ]
   };
+
+  root.fort["Forte Fratello Maggiore"] = {
+  "it": [
+    "L'orfano della montagna: Sorgeva sulla cima del Monte Due Fratelli, accanto al superstite Forte Fratello Minore. Oggi il forte non esiste più; al suo posto resta un pianoro d'erba con pochi resti di pietra.",
+    "Sacrificato per gli aerei: Venne demolito intenzionalmente dai militari italiani nel 1932 per fare spazio a una moderna batteria contraerea.",
+    "L'ingresso nel vuoto: Per entrare bisognava superare un breve fossato sul crinale tramite un ponte levatoio orientato verso la Val Bisagno.",
+    "La botola dei segreti: I sotterranei della torre centrale avevano tre stanze per le munizioni, accessibili tramite una stretta botola nel pavimento.",
+    "Niente finestre: La grande torre quadrata aveva solo feritoie e piccoli fori difensivi.",
+    "Teatro di aspre battaglie: Il monte fu teatro di duri scontri nel 1747 e nel 1800.",
+    "L'invasione delle mucche: Oggi tra i resti è facile incontrare mucche e cavalli al pascolo.",
+    "Progetto lampo: Fu costruito dal Genio Militare Sabaudo tra il 1815 e il 1825.",
+    "Il record del gemello: Era quasi identico al Fratello Minore, ma leggermente più grande e voluminoso.",
+    "Il paradiso del trekking: Il pianoro offre un suggestivo itinerario tra pascoli montani e vedute sul Mar Ligure."
+  ],
+  "en": [
+    "The orphan of the mountain: It once stood on Monte Due Fratelli beside the surviving Forte Fratello Minore. Today only a grassy plateau and a few stone remains are left.",
+    "Sacrificed for aircraft defence: The Italian military deliberately demolished it in 1932 to make room for a modern anti-aircraft battery.",
+    "The entrance over the void: Access required crossing a short ridge ditch by a drawbridge facing Val Bisagno.",
+    "The secret hatch: Three underground ammunition rooms beneath the central tower could be reached only through a narrow floor hatch.",
+    "No windows: The large square tower had only narrow loopholes and firing openings.",
+    "Scene of fierce battles: The mountain saw hard fighting in 1747 and again in 1800.",
+    "The invasion of the cows: Today cattle and horses can often be seen grazing among the remains.",
+    "A rapid project: The Savoy Military Engineers built it between 1815 and 1825.",
+    "The twin record: It was almost identical to Fratello Minore, but slightly larger and bulkier.",
+    "A trekking paradise: The plateau offers a striking walk through mountain pastures with views of the Ligurian Sea."
+  ],
+  "es": [
+    "El huérfano de la montaña: Se alzaba en el Monte Due Fratelli, junto al superviviente Forte Fratello Minore. Hoy quedan una explanada de hierba y pocos restos de piedra.",
+    "Sacrificado por los aviones: Los militares italianos lo demolieron deliberadamente en 1932 para instalar una batería antiaérea moderna.",
+    "La entrada sobre el vacío: Se accedía cruzando un pequeño foso mediante un puente levadizo orientado hacia Val Bisagno.",
+    "La trampilla de los secretos: Tres salas subterráneas para municiones sólo eran accesibles por una estrecha trampilla en el suelo.",
+    "Sin ventanas: La gran torre cuadrada sólo tenía aspilleras y pequeñas aberturas defensivas.",
+    "Escenario de duras batallas: El monte vivió fuertes combates en 1747 y 1800.",
+    "La invasión de las vacas: Hoy es fácil encontrar vacas y caballos pastando entre los restos.",
+    "Proyecto relámpago: El Genio Militar Saboyano lo construyó entre 1815 y 1825.",
+    "El récord del gemelo: Era casi idéntico al Fratello Minore, pero algo mayor y más voluminoso.",
+    "Paraíso del senderismo: La meseta ofrece un recorrido entre pastos y vistas al mar de Liguria."
+  ],
+  "fr": [
+    "L’orphelin de la montagne : Il se dressait sur le Monte Due Fratelli, près du Forte Fratello Minore. Aujourd’hui subsistent un plateau herbeux et quelques pierres.",
+    "Sacrifié à la défense aérienne : L’armée italienne le démolit volontairement en 1932 pour installer une batterie antiaérienne moderne.",
+    "L’entrée au-dessus du vide : On y accédait en franchissant un petit fossé par un pont-levis tourné vers le Val Bisagno.",
+    "La trappe des secrets : Trois salles souterraines à munitions n’étaient accessibles que par une étroite trappe au sol.",
+    "Sans fenêtres : La grande tour carrée ne possédait que des meurtrières et de petites ouvertures défensives.",
+    "Théâtre de rudes combats : Le mont connut de violents affrontements en 1747 et en 1800.",
+    "L’invasion des vaches : Aujourd’hui, vaches et chevaux paissent souvent parmi les vestiges.",
+    "Projet éclair : Le Génie militaire savoyard le construisit entre 1815 et 1825.",
+    "Le record du jumeau : Presque identique au Fratello Minore, il était légèrement plus grand et massif.",
+    "Paradis du trekking : Le plateau offre une belle randonnée entre pâturages et vues sur la mer Ligure."
+  ],
+  "ar": [
+    "يتيم الجبل: كان يقوم على قمة مونتي دوي فراتيللي بجوار حصن فراتيللو مينوري. اليوم بقيت هضبة عشبية وبعض الأحجار فقط.",
+    "ضحية الدفاع الجوي: هدمه الجيش الإيطالي عمداً عام 1932 لإفساح المجال لبطارية حديثة مضادة للطائرات.",
+    "مدخل فوق الفراغ: كان الدخول يتم عبر خندق قصير وجسر متحرك باتجاه فال بيسانيو.",
+    "فتحة الأسرار: كانت ثلاث غرف ذخيرة تحت الأرض تُدخل عبر فتحة ضيقة في الأرضية.",
+    "بلا نوافذ: لم تكن للبرج المربع الكبير نوافذ، بل مزاغل وفتحات دفاعية صغيرة.",
+    "مسرح معارك قاسية: شهد الجبل قتالاً عنيفاً عامي 1747 و1800.",
+    "غزو الأبقار: اليوم يمكن رؤية الأبقار والخيول ترعى بين البقايا.",
+    "مشروع سريع: بناه سلاح الهندسة العسكري السافوي بين 1815 و1825.",
+    "رقم التوأم: كان شبيهاً جداً بفراتيللو مينوري لكنه أكبر قليلاً وأكثر ضخامة.",
+    "جنة المشي: تقدم الهضبة مساراً جميلاً بين المراعي وإطلالات البحر الليغوري."
+  ],
+  "ru": [
+    "Сирота горы: Форт стоял на Монте-Дуэ-Фрателли рядом с сохранившимся Fratello Minore. Сегодня остались травянистое плато и немного камней.",
+    "Жертва ПВО: Итальянские военные намеренно снесли его в 1932 году ради современной зенитной батареи.",
+    "Вход над пустотой: В форт попадали через небольшой ров по подъёмному мосту со стороны Валь-Бизаньо.",
+    "Тайный люк: В три подземных помещения для боеприпасов можно было попасть только через узкий люк в полу.",
+    "Без окон: Большая квадратная башня имела лишь бойницы и небольшие оборонительные отверстия.",
+    "Место жестоких боёв: На горе шли тяжёлые сражения в 1747 и 1800 годах.",
+    "Нашествие коров: Сегодня среди руин часто пасутся коровы и лошади.",
+    "Быстрый проект: Савойские военные инженеры построили форт между 1815 и 1825 годами.",
+    "Рекорд близнеца: Он был почти копией Fratello Minore, но немного крупнее и массивнее.",
+    "Рай для треккинга: Плато предлагает красивый маршрут среди пастбищ с видами на Лигурийское море."
+  ],
+  "zh": [
+    "山上的“孤儿”：它曾位于 Monte Due Fratelli 山顶，紧邻仍存的 Forte Fratello Minore。如今只剩草地平台和少量石砌遗迹。",
+    "为防空让路：1932年意大利军方主动拆除了要塞，以建设现代防空炮台。",
+    "悬空的入口：进入要塞需跨过山脊短壕沟上的吊桥，朝向 Val Bisagno。",
+    "秘密舱口：中央塔楼下有三间弹药室，只能通过地板上的狭窄舱口进入。",
+    "没有窗户：大型方塔外墙只有射孔和狭窄防御孔。",
+    "激战之地：这座山在1747年和1800年都经历了激烈战斗。",
+    "牛群“入侵”：如今遗迹附近常可见牛和马自由放牧。",
+    "快速工程：萨伏依军事工程部门在1815至1825年间建成了它。",
+    "双子纪录：它与 Fratello Minore 几乎相同，但略大、更厚重。",
+    "徒步天堂：这里可沿山地牧场行走，并欣赏利古里亚海景。"
+  ],
+  "lij": [
+    "L’orfan da montagna: O l’ea in çimma a-o Monte Due Fratelli, apreuvo a-o Fratello Minore. Ancheu restan un pian d’erba e poche prie.",
+    "Sacrificòu pe-a contraerea: I militari italiani l’han demolîo apposta into 1932 pe fâ posto a unna batteria contraerea moderna.",
+    "L’intrâ into veuoto: Pe intrâ beseugnava passâ un fosso curto con un ponte levatoio verso a Val Bisagno.",
+    "A botola di segreti: Sotta a torre gh’ea trei stanze pe-e muniçioin, raggiungibili solo da unna botola streita into pavimento.",
+    "Sensa barcoin: A grande torre quadrâ a l’aveiva solo feritoie e piccoli pertuxi difensivi.",
+    "Tæra de battagge: O monte o l’ha visto scontri duri into 1747 e into 1800.",
+    "L’invaxon de vacche: Ancheu tra i resti se incontran spesso vacche e cavalli a pascolo.",
+    "Progetto lampo: O Genio Militare Sabaudo o l’ha costruîo tra o 1815 e o 1825.",
+    "O record do gemello: O l’ea quasi identico a-o Fratello Minore, ma un pö ciù grande e massiccio.",
+    "Paradiso do trekking: O pian o l’offre un bel sentê tra pascoli e viste in sciô mâ Ligure."
+  ]
+};
+  root.fort["Forte Belvedere"] = {
+  "it": [
+    "Dal cannone al pallone: Oggi ospita il Campo Sportivo \"Giacomo Morgavi\", circondato dai bastioni sabaudi ottocenteschi.",
+    "Scorcio su Sampierdarena: Sorge a 114 metri sulle alture di Sampierdarena, con vista sul porto commerciale e sulla foce del Polcevera.",
+    "La casa-forte demolita: La torre difensiva centrale venne demolita nel 1889 per trasformare la struttura in batteria costiera.",
+    "I tunnel del cimitero: Sotto i bastioni si sviluppano casematte interrate che sfiorano l’area del cimitero della Castagna.",
+    "Superiore e Inferiore: A fine Ottocento una seconda fortificazione portò a distinguere Belvedere Superiore e Belvedere Inferiore.",
+    "Obici giganti: Come batteria costiera fu armato con sei obici da 280 mm.",
+    "Città aperta: Nel 1914 Genova venne dichiarata città aperta e il forte perse la funzione militare, venendo disarmato.",
+    "Scoperte archeologiche recenti: I lavori di restauro hanno riportato alla luce fondamenta e tracce della prima fortificazione sabauda.",
+    "La cerniera per i turisti: I progetti di riqualificazione mirano a collegare Sampierdarena con i sentieri del Parco delle Mura.",
+    "Raggiungibile in bus: È uno dei forti più facilmente raggiungibili, anche tramite Corso Belvedere."
+  ],
+  "en": [
+    "From cannon to football: Today it contains the Giacomo Morgavi sports field, surrounded by 19th-century Savoy bastions.",
+    "A view over Sampierdarena: At 114 metres above Sampierdarena, it overlooks the commercial port and the mouth of the Polcevera.",
+    "The demolished strong-house: The central defensive tower was demolished in 1889 when the site was converted into a coastal battery.",
+    "The cemetery tunnels: Underground casemates beneath the bastions run close to the Castagna cemetery area.",
+    "Upper and Lower: A second fortification built in the late 19th century led to the distinction between Upper and Lower Belvedere.",
+    "Giant howitzers: As a coastal battery it was armed with six 280 mm howitzers.",
+    "Open city: In 1914 Genoa was declared an open city and the fort lost its military role and was disarmed.",
+    "Recent archaeological finds: Restoration works brought foundations and traces of the earliest Savoy fortification back to light.",
+    "A green link for visitors: Redevelopment plans aim to connect Sampierdarena with the trails of the Parco delle Mura.",
+    "Reachable by bus: It is one of the easiest forts to approach, including via Corso Belvedere."
+  ],
+  "es": [
+    "Del cañón al balón: Hoy alberga el campo deportivo Giacomo Morgavi, rodeado por bastiones saboyanos del siglo XIX.",
+    "Vista sobre Sampierdarena: A 114 metros sobre Sampierdarena, domina el puerto comercial y la desembocadura del Polcevera.",
+    "La casa-fuerte demolida: La torre defensiva central fue demolida en 1889 al transformar el lugar en batería costera.",
+    "Los túneles del cementerio: Bajo los bastiones hay casamatas enterradas que rozan el área del cementerio de Castagna.",
+    "Superior e Inferior: Una segunda fortificación de finales del siglo XIX llevó a distinguir Belvedere Superior e Inferior.",
+    "Obuses gigantes: Como batería costera estuvo armado con seis obuses de 280 mm.",
+    "Ciudad abierta: En 1914 Génova fue declarada ciudad abierta y el fuerte perdió su función militar y fue desarmado.",
+    "Hallazgos arqueológicos recientes: Las restauraciones sacaron a la luz cimientos y restos de la primera fortificación saboyana.",
+    "Una conexión verde: Los planes de rehabilitación buscan unir Sampierdarena con los senderos del Parco delle Mura.",
+    "Accesible en autobús: Es uno de los fuertes más fáciles de alcanzar, también por Corso Belvedere."
+  ],
+  "fr": [
+    "Du canon au ballon : Aujourd’hui, le fort abrite le terrain sportif Giacomo Morgavi, entouré de bastions savoyards du XIXe siècle.",
+    "Vue sur Sampierdarena : À 114 mètres au-dessus de Sampierdarena, il domine le port commercial et l’embouchure du Polcevera.",
+    "La maison-forte démolie : La tour défensive centrale fut démolie en 1889 lors de la transformation en batterie côtière.",
+    "Les tunnels du cimetière : Des casemates enterrées sous les bastions longent la zone du cimetière de Castagna.",
+    "Supérieur et Inférieur : Une seconde fortification de la fin du XIXe siècle conduisit à distinguer Belvedere Supérieur et Inférieur.",
+    "Obusiers géants : Comme batterie côtière, il était armé de six obusiers de 280 mm.",
+    "Ville ouverte : En 1914, Gênes fut déclarée ville ouverte ; le fort perdit son rôle militaire et fut désarmé.",
+    "Découvertes archéologiques récentes : Les restaurations ont remis au jour fondations et traces de la première fortification savoyarde.",
+    "Une liaison verte : Les projets de réaménagement veulent relier Sampierdarena aux sentiers du Parco delle Mura.",
+    "Accessible en bus : C’est l’un des forts les plus faciles à rejoindre, notamment par Corso Belvedere."
+  ],
+  "ar": [
+    "من المدفع إلى كرة القدم: يضم الحصن اليوم ملعب Giacomo Morgavi داخل تحصينات سافوية من القرن التاسع عشر.",
+    "إطلالة على سامبييردارينا: يقع على ارتفاع 114 متراً ويطل على الميناء التجاري ومصب بولتشيفيرا.",
+    "البيت الحصين المهدوم: هُدم البرج الدفاعي المركزي عام 1889 عند تحويل الموقع إلى بطارية ساحلية.",
+    "أنفاق المقبرة: تمتد تحت التحصينات كازمات مدفونة قرب منطقة مقبرة Castagna.",
+    "العلوي والسفلي: أدى بناء تحصين ثانٍ أواخر القرن التاسع عشر إلى تمييز Belvedere Superiore وInferiore.",
+    "مدافع هاوتزر ضخمة: تسلح الموقع بستة مدافع هاوتزر عيار 280 مم.",
+    "مدينة مفتوحة: عام 1914 أُعلنت جنوة مدينة مفتوحة وفقد الحصن دوره العسكري ونُزع سلاحه.",
+    "اكتشافات أثرية حديثة: كشفت أعمال الترميم أساسات وآثار أول تحصين سافوي.",
+    "حلقة خضراء: تهدف مشاريع التأهيل إلى ربط سامبييردارينا بمسارات Parco delle Mura.",
+    "يمكن الوصول بالحافلة: يعد من أسهل الحصون وصولاً، بما في ذلك عبر Corso Belvedere."
+  ],
+  "ru": [
+    "От пушки к футболу: Сегодня внутри форта находится спортивное поле Giacomo Morgavi, окружённое савойскими бастионами XIX века.",
+    "Вид на Сампьердарену: С высоты 114 м открывается вид на торговый порт и устье Польчеверы.",
+    "Снесённый дом-форт: Центральную оборонительную башню снесли в 1889 году при превращении комплекса в береговую батарею.",
+    "Тоннели у кладбища: Под бастионами проходят заглублённые казематы рядом с кладбищем Castagna.",
+    "Верхний и Нижний: В конце XIX века вторая фортификация привела к разделению на Belvedere Superiore и Inferiore.",
+    "Гигантские гаубицы: Береговая батарея была вооружена шестью 280-мм гаубицами.",
+    "Открытый город: В 1914 году Геную объявили открытым городом, и форт разоружили.",
+    "Недавние археологические находки: Реставрация выявила фундаменты и следы первой савойской фортификации.",
+    "Зелёная связь: Проекты обновления должны связать Сампьердарену с тропами Parco delle Mura.",
+    "Можно доехать автобусом: Это один из самых доступных фортов, в том числе через Corso Belvedere."
+  ],
+  "zh": [
+    "从大炮到足球：如今堡内设有 Giacomo Morgavi 运动场，四周仍是19世纪萨伏依时期的堡垒工事。",
+    "俯瞰 Sampierdarena：海拔约114米，可眺望商业港和 Polcevera 河口。",
+    "被拆除的核心塔楼：1889年改建海岸炮台时，中央防御塔被拆除。",
+    "墓地附近的隧道：堡垒下方有地下炮廊，延伸至 Castagna 公墓一带。",
+    "上、下 Belvedere：19世纪末增建第二处防御设施后，形成上、下两部分的称呼。",
+    "巨型榴弹炮：作为海岸炮台时，曾装备六门280毫米榴弹炮。",
+    "开放城市：1914年热那亚被宣布为开放城市，堡垒失去军事作用并解除武装。",
+    "近期考古发现：修复工程重新发现了最早萨伏依防御工事的地基和墙体痕迹。",
+    "绿色连接点：改造计划希望把 Sampierdarena 与 Parco delle Mura 的步道连接起来。",
+    "公交可达：它是较容易接近的堡垒之一，可经 Corso Belvedere 前往。"
+  ],
+  "lij": [
+    "Do cannon a-o ballon: Ancheu o forte o l’ospita o campo sportivo Giacomo Morgavi, tra bastioin sabaudi de l’Ottocento.",
+    "Vista in sce Sampierdarena: A 114 metri o domina o porto commerciale e a foxe do Polcevera.",
+    "A casa-forte demolîa: A torre centrale a l’è stæta demolîa into 1889 pe trasformâ o complesso in batteria costiera.",
+    "I tunnel do cimitero: Sotta i bastioin gh’é casematte interræ apreuvo a-o cimitero da Castagna.",
+    "Superiore e Inferiore: A fin de l’Ottocento unna seconda fortificaçion a l’ha portòu a distingue e doe parti.",
+    "Obixi giganti: Comme batteria costiera o l’ea armòu con sei obixi da 280 mm.",
+    "Çittæ averta: Into 1914 Zêna a l’è stæta dichiarâ çittæ averta e o forte o l’è stæto disarmòu.",
+    "Scoperte archeologiche: I restauri han riportòu a-a luxe fondaçioin e tracce da primma fortificaçion sabauda.",
+    "Unna cerniera verde: I progetti veu collegâ Sampierdarena co-i sentê do Parco delle Mura.",
+    "Raggiungibile in bus: O l’è un di forti ciù façili da raggiunge, anche da Corso Belvedere."
+  ]
+};
+  root.fort["Forte Monte Guano"] = {
+  "it": [
+    "L’invisibile nella boscaglia: Sulla collina di Coronata, è quasi nascosto dalla vegetazione e in gran parte sotterraneo.",
+    "La grande esplosione del 1923: Nel novembre 1923 la cordite nei sotterranei esplose accidentalmente, danneggiando anche case vicine.",
+    "Le torrette a scomparsa: L’armamento principale era protetto da quattro cupole corazzate in acciaio retrattili.",
+    "La collina spianata: Intorno al 1888 la cima del Monte Guano fu tagliata e spianata per costruire il forte.",
+    "La guarnigione segreta: I bunker sotterranei erano progettati per ospitare fino a 70 soldati.",
+    "A difesa della via per Alessandria: Doveva proteggere il porto e ostacolare avanzate nemiche verso la strada per Alessandria.",
+    "Il labirinto di gallerie: Sotto terra resta una rete di corridoi che collegava depositi e postazioni d’artiglieria.",
+    "Vicino al Santuario: La zona può essere abbinata alla visita del Santuario di Nostra Signora Incoronata.",
+    "Oggi è privato: Il forte si trova in area privata e non è normalmente visitabile all’interno.",
+    "La Triplice del Ponente: Con Casale Erselli e Monte Croce faceva parte del sistema difensivo arretrato del Ponente."
+  ],
+  "en": [
+    "Invisible in the woods: On the Coronata hill, it is almost hidden by vegetation and is largely underground.",
+    "The great explosion of 1923: In November 1923 cordite stored underground exploded accidentally, damaging nearby houses too.",
+    "Retractable turrets: Its main armament was protected by four retractable armoured steel cupolas.",
+    "The flattened hilltop: Around 1888 the summit of Monte Guano was cut and levelled to build the fort.",
+    "The hidden garrison: The underground bunkers were designed to accommodate up to 70 soldiers.",
+    "Defending the road to Alessandria: It was meant to protect the port and hinder enemy advances toward the road to Alessandria.",
+    "A maze of tunnels: An underground network of corridors once linked stores and artillery positions.",
+    "Near the sanctuary: A visit to the area can be combined with the Sanctuary of Nostra Signora Incoronata.",
+    "Private today: The fort lies on private property and its interior is not normally open to visitors.",
+    "The western defensive trio: With Casale Erselli and Monte Croce it formed part of the rear defensive system of western Genoa."
+  ],
+  "es": [
+    "Invisible entre la maleza: En la colina de Coronata, está casi oculto por la vegetación y es en gran parte subterráneo.",
+    "La gran explosión de 1923: En noviembre de 1923 explotó accidentalmente la cordita almacenada bajo tierra, dañando también casas cercanas.",
+    "Torretas retráctiles: El armamento principal estaba protegido por cuatro cúpulas blindadas de acero retráctiles.",
+    "La colina aplanada: Hacia 1888 se cortó y niveló la cima del Monte Guano para construir el fuerte.",
+    "La guarnición oculta: Los búnkeres subterráneos estaban diseñados para alojar hasta 70 soldados.",
+    "Defensa de la ruta a Alessandria: Debía proteger el puerto y frenar avances enemigos hacia la carretera de Alessandria.",
+    "Laberinto de galerías: Bajo tierra queda una red de pasillos que unía depósitos y posiciones de artillería.",
+    "Cerca del Santuario: La zona puede combinarse con una visita al Santuario di Nostra Signora Incoronata.",
+    "Hoy es privado: El fuerte está en una propiedad privada y normalmente no se puede visitar por dentro.",
+    "La triple defensa del Poniente: Con Casale Erselli y Monte Croce formaba parte del sistema defensivo retrasado del oeste genovés."
+  ],
+  "fr": [
+    "Invisible dans les bois : Sur la colline de Coronata, il est presque caché par la végétation et largement souterrain.",
+    "La grande explosion de 1923 : En novembre 1923, la cordite stockée sous terre explosa accidentellement et endommagea aussi des maisons voisines.",
+    "Tourelles escamotables : L’armement principal était protégé par quatre coupoles blindées en acier rétractables.",
+    "La colline arasée : Vers 1888, le sommet du Monte Guano fut taillé et nivelé pour construire le fort.",
+    "La garnison cachée : Les bunkers souterrains étaient prévus pour accueillir jusqu’à 70 soldats.",
+    "Défense de la route d’Alessandria : Il devait protéger le port et freiner une avance ennemie vers la route d’Alessandria.",
+    "Labyrinthe de galeries : Un réseau souterrain reliait dépôts et positions d’artillerie.",
+    "Près du sanctuaire : La visite peut être associée au Santuario di Nostra Signora Incoronata.",
+    "Aujourd’hui privé : Le fort se trouve sur une propriété privée et l’intérieur n’est normalement pas visitable.",
+    "Le trio défensif de l’ouest : Avec Casale Erselli et Monte Croce, il faisait partie du système défensif arrière du Ponant."
+  ],
+  "ar": [
+    "المختفي في الغابة: يقع على تل Coronata ويكاد يختفي تحت النباتات، ومعظم بنيته تحت الأرض.",
+    "انفجار 1923 الكبير: في نوفمبر 1923 انفجرت مادة الكوردايت المخزنة تحت الأرض وألحقت أضراراً بمنازل قريبة.",
+    "أبراج قابلة للاختفاء: كان التسليح الرئيسي محمياً بأربع قباب فولاذية مدرعة قابلة للسحب.",
+    "قمة مسطحة: نحو 1888 جرى قطع وتسوية قمة Monte Guano لبناء الحصن.",
+    "الحامية الخفية: صُممت المخابئ تحت الأرض لاستيعاب حتى 70 جندياً.",
+    "حماية طريق Alessandria: كان الهدف حماية الميناء وعرقلة تقدم العدو نحو طريق Alessandria.",
+    "متاهة الأنفاق: ما زالت تحت الأرض شبكة ممرات كانت تصل المخازن بمواضع المدفعية.",
+    "قرب المزار: يمكن الجمع بين المنطقة وزيارة Santuario di Nostra Signora Incoronata.",
+    "ملكية خاصة اليوم: يقع الحصن داخل أرض خاصة ولا يكون داخله مفتوحاً عادة للزيارة.",
+    "ثلاثي الغرب الدفاعي: مع Casale Erselli وMonte Croce كان جزءاً من منظومة دفاعية خلفية في غرب جنوة."
+  ],
+  "ru": [
+    "Невидимый в зарослях: На холме Короната форт почти скрыт растительностью и в значительной части находится под землёй.",
+    "Большой взрыв 1923 года: В ноябре 1923 года подземные запасы кордита случайно взорвались, повредив и соседние дома.",
+    "Убирающиеся башни: Главное вооружение защищали четыре выдвижных стальных бронекупола.",
+    "Срезанная вершина: Около 1888 года вершину Монте-Гуано срезали и выровняли для строительства форта.",
+    "Скрытый гарнизон: Подземные бункеры были рассчитаны на размещение до 70 солдат.",
+    "Защита дороги на Алессандрию: Форт должен был прикрывать порт и препятствовать продвижению противника к дороге на Алессандрию.",
+    "Лабиринт галерей: Под землёй сохранилась сеть коридоров, связывавших склады и артиллерийские позиции.",
+    "Рядом со святилищем: Поездку можно совместить с посещением Santuario di Nostra Signora Incoronata.",
+    "Сегодня частный: Форт находится на частной территории и обычно закрыт для посещения внутри.",
+    "Западная тройка: Вместе с Casale Erselli и Monte Croce он входил в тыловую оборонительную систему западной части Генуи."
+  ],
+  "zh": [
+    "林中的隐形堡垒：它位于 Coronata 山丘，几乎被植被吞没，而且大部分结构在地下。",
+    "1923年大爆炸：1923年11月，地下储存的无烟火药意外爆炸，并损坏了附近房屋。",
+    "可收回炮塔：主要武器由四座可伸缩的钢制装甲穹顶保护。",
+    "被削平的山顶：约1888年，为修建要塞，Monte Guano 山顶被切削并整平。",
+    "隐藏的驻军：地下掩体设计可容纳最多70名士兵。",
+    "守卫 Alessandria 通道：其任务是保护港口并阻止敌军向 Alessandria 道路推进。",
+    "地下迷宫：地下仍有连接仓库与炮位的通道网络。",
+    "靠近圣所：游览这一地区可与 Santuario di Nostra Signora Incoronata 一并安排。",
+    "如今属私人区域：要塞位于私人土地内，内部通常不对游客开放。",
+    "西部防线三角：它与 Casale Erselli、Monte Croce 同属热那亚西部的后方防御体系。"
+  ],
+  "lij": [
+    "L’invisibile into bosco: In sciâ collinn-a de Coronata o l’è quasi tutto ascoso da vegetaçion e in gran parte sotta tæra.",
+    "A grande esploxon do 1923: A novenbre 1923 a cordite conservâ sotta tæra a l’è esplosa pe accidente, danneggiando anche case vexinn-e.",
+    "Torrette a scomparsa: L’armamento prinçipâ o l’ea protetto da quattro cupole d’aççæo corazzæ e retrattili.",
+    "A collinn-a spianâ: Intorno a-o 1888 a çimma do Monte Guano a l’è stæta taggiâ e spianâ pe costruî o forte.",
+    "A guarnixion ascoza: I bunker sotta tæra ean progettæ pe tegnî finn-a 70 sordati.",
+    "A difeiza da via pe Alessandria: O doveiva protezze o porto e fermâ avanzæ nemighe verso a strada pe Alessandria.",
+    "O labirinto de gallerie: Sotta tæra resta unna ræ de corridoi tra magazzen e postaçioin d’artiglieria.",
+    "Apreuvo a-o Santuario: A visita se peu unî a quella do Santuario di Nostra Signora Incoronata.",
+    "Ancheu o l’è privòu: O forte o l’è inte un’area privata e de norma no se peu visitâ drento.",
+    "A triplice do Ponente: Con Casale Erselli e Monte Croce o faseiva parte do sistema difensivo arretròu do Ponente."
+  ]
+};
+  root.fort["Forte Richelieu"] = {
+  "it": [
+    "Omaggio alla Francia: Prende il nome dal Duca di Richelieu, maresciallo di Francia che aiutò Genova durante l’assedio austriaco del 1747.",
+    "La collina di Menegu: Sorge a 415 metri sul colle dei Camaldoli, anticamente chiamato anche Menegu.",
+    "Costruito in tempi record: La prima ridotta fortificata fu completata in circa sette mesi nel 1747.",
+    "Inviolabile: Durante il blocco di Genova del 1800 resistette agli assalti austro-inglesi senza capitolare.",
+    "La coda di rondine: Il lato nord presenta una caratteristica geometria a coda di rondine.",
+    "Prigionieri d’Austria: Durante la Prima Guerra Mondiale ospitò prigionieri austro-ungarici.",
+    "La torre cancellata per la contraerea: Negli anni Trenta una torre storica venne demolita per installare artiglieria contraerea.",
+    "Blindato dalla TV: Oggi non è visitabile all’interno perché ospita impianti e un ripetitore RAI, in area recintata.",
+    "Lo stemma preso a pietrate: Il monumentale stemma sabaudo sopra l’ingresso è stato danneggiato da atti vandalici.",
+    "La camminata dei Camaldoli: Il sentiero offre ampie vedute dalla Valle Sturla verso il promontorio di Portofino."
+  ],
+  "en": [
+    "A tribute to France: It is named after the Duke of Richelieu, Marshal of France, who helped Genoa during the Austrian siege of 1747.",
+    "The hill of Menegu: It stands at 415 metres on the Camaldoli hill, historically also known as Menegu.",
+    "Built in record time: The first fortified redoubt was completed in about seven months in 1747.",
+    "Unconquered: During the blockade of Genoa in 1800 it resisted Austro-British attacks without capitulating.",
+    "The swallowtail: The northern side has a distinctive swallowtail geometry.",
+    "Austrian prisoners: During the First World War it housed Austro-Hungarian prisoners.",
+    "The tower removed for anti-aircraft guns: In the 1930s a historic tower was demolished to install anti-aircraft artillery.",
+    "Protected by television: Today the interior is closed because the fenced site houses RAI equipment and a transmitter.",
+    "The battered coat of arms: The monumental Savoy coat of arms above the entrance has been damaged by vandalism.",
+    "The Camaldoli walk: The path offers broad views from the Sturla valley toward the Portofino promontory."
+  ],
+  "es": [
+    "Homenaje a Francia: Toma su nombre del duque de Richelieu, mariscal de Francia que ayudó a Génova durante el asedio austríaco de 1747.",
+    "La colina de Menegu: Se alza a 415 metros en los Camaldoli, antiguamente llamados también Menegu.",
+    "Construido en tiempo récord: La primera reducción fortificada se completó en unos siete meses en 1747.",
+    "Inexpugnable: Durante el bloqueo de Génova de 1800 resistió los ataques austro-británicos sin capitular.",
+    "La cola de golondrina: El lado norte presenta una característica geometría en cola de golondrina.",
+    "Prisioneros de Austria: Durante la Primera Guerra Mundial alojó prisioneros austrohúngaros.",
+    "La torre eliminada por la defensa aérea: En los años treinta se demolió una torre histórica para instalar artillería antiaérea.",
+    "Protegido por la televisión: Hoy el interior está cerrado porque el recinto alberga equipos y un repetidor de la RAI.",
+    "El escudo apedreado: El monumental escudo saboyano sobre la entrada ha sufrido daños vandálicos.",
+    "El paseo de Camaldoli: El sendero ofrece amplias vistas desde Valle Sturla hasta el promontorio de Portofino."
+  ],
+  "fr": [
+    "Hommage à la France : Il porte le nom du duc de Richelieu, maréchal de France qui aida Gênes pendant le siège autrichien de 1747.",
+    "La colline de Menegu : Il se dresse à 415 mètres sur les Camaldoli, autrefois aussi appelés Menegu.",
+    "Construit en un temps record : La première redoute fortifiée fut achevée en environ sept mois en 1747.",
+    "Invaincu : Pendant le blocus de Gênes en 1800, il résista aux attaques austro-britanniques sans capituler.",
+    "La queue d’aronde : Le côté nord présente une géométrie caractéristique en queue d’aronde.",
+    "Prisonniers d’Autriche : Pendant la Première Guerre mondiale, il accueillit des prisonniers austro-hongrois.",
+    "La tour supprimée pour la DCA : Dans les années 1930, une tour historique fut démolie pour installer de l’artillerie antiaérienne.",
+    "Protégé par la télévision : Aujourd’hui, l’intérieur est fermé car le site clôturé abrite des équipements et un relais RAI.",
+    "Le blason lapidé : Le monumental blason savoyard au-dessus de l’entrée a été endommagé par des actes de vandalisme.",
+    "La promenade des Camaldoli : Le sentier offre de vastes vues de la vallée de Sturla au promontoire de Portofino."
+  ],
+  "ar": [
+    "تحية لفرنسا: يحمل اسم دوق Richelieu، مارشال فرنسا الذي ساعد جنوة أثناء الحصار النمساوي عام 1747.",
+    "تل Menegu: يقع على ارتفاع 415 متراً في Camaldoli، التي عُرفت قديماً أيضاً باسم Menegu.",
+    "بُني بسرعة قياسية: اكتمل أول معقل محصن خلال نحو سبعة أشهر عام 1747.",
+    "لم يستسلم: خلال حصار جنوة عام 1800 صمد أمام الهجمات النمساوية البريطانية دون استسلام.",
+    "ذيل السنونو: يتميز الجانب الشمالي بشكل هندسي خاص يشبه ذيل السنونو.",
+    "أسرى النمسا: خلال الحرب العالمية الأولى استُخدم لإيواء أسرى نمساويين مجريين.",
+    "برج أزيل للدفاع الجوي: في ثلاثينيات القرن العشرين هُدم برج تاريخي لتركيب مدفعية مضادة للطائرات.",
+    "تحميه التلفزة: اليوم يُغلق الداخل لأن الموقع المسيج يضم تجهيزات ومكرر بث تابعاً لـ RAI.",
+    "شعار تضرر بالحجارة: تعرض شعار سافوي الضخم فوق المدخل لأضرار بسبب التخريب.",
+    "نزهة Camaldoli: يوفر المسار إطلالات واسعة من Valle Sturla حتى رأس Portofino."
+  ],
+  "ru": [
+    "Дань Франции: Форт назван в честь герцога Ришельё, маршала Франции, помогавшего Генуе во время австрийской осады 1747 года.",
+    "Холм Менегу: Форт стоит на высоте 415 м на Камальдоли, которые в старых источниках также назывались Menegu.",
+    "Построен в рекордный срок: Первую укреплённую редуту завершили примерно за семь месяцев в 1747 году.",
+    "Непокорённый: Во время блокады Генуи 1800 года форт выдержал австро-британские атаки и не капитулировал.",
+    "Ласточкин хвост: Северная сторона имеет характерную геометрию в форме ласточкиного хвоста.",
+    "Австрийские пленные: В Первую мировую войну здесь содержались австро-венгерские военнопленные.",
+    "Башня ради ПВО: В 1930-х историческую башню снесли для установки зенитной артиллерии.",
+    "Под защитой телевидения: Сегодня внутренняя часть закрыта, поскольку огороженная территория занята оборудованием и ретранслятором RAI.",
+    "Повреждённый герб: Монументальный савойский герб над входом пострадал от вандализма.",
+    "Прогулка по Камальдоли: Тропа открывает широкие виды от долины Стурла до мыса Портофино."
+  ],
+  "zh": [
+    "向法国致意：要塞以 Richelieu 公爵命名，这位法国元帅曾在1747年奥地利围攻期间帮助热那亚。",
+    "Menegu 山丘：要塞位于 Camaldoli 山丘海拔415米处，古时这里也称 Menegu。",
+    "极速建成：最早的防御工事在1747年约七个月内完成。",
+    "从未屈服：1800年热那亚封锁期间，它抵御奥英军队的攻击而未投降。",
+    "燕尾形：北侧具有独特的“燕尾”几何形状。",
+    "奥地利战俘：第一次世界大战期间，这里曾关押奥匈帝国战俘。",
+    "为防空拆塔：20世纪30年代，一座历史塔楼被拆除，以安装防空火炮。",
+    "电视设施的保护：如今内部不开放，因为围栏内设有 RAI 设备和转播设施。",
+    "受损的徽章：入口上方巨大的萨伏依徽章曾遭人为破坏。",
+    "Camaldoli 徒步：沿途可从 Valle Sturla 一直眺望到 Portofino 海岬。"
+  ],
+  "lij": [
+    "Un omaggio a-a Françia: O piggia o nomme do Duca de Richelieu, maresciallo de Françia che o l’ha agiutòu Zêna into 1747.",
+    "A collinn-a de Menegu: O l’è a 415 metri in sci Camaldoli, ciamæ anticamente anche Menegu.",
+    "Costruîo in tempo record: A primma ridotta fortificâ a l’è stæta finîa in circa sette meixi into 1747.",
+    "Mai conquistòu: Into blocco de Zêna do 1800 o l’ha resistîo a-i assalti austro-ingleixi sensa capitolâ.",
+    "A coa de rondaninn-a: O lato nord o l’ha unna forma geometrica particolare a coa de rondaninn-a.",
+    "Prigionê d’Austria: Inte Primma Guæra Mondiale o l’ha ospitòu prigionê austro-ungarici.",
+    "A torre cancellâ pe-a contraerea: Inti anni Trenta unna torre storica a l’è stæta demolîa pe mette artiglieria contraerea.",
+    "Protetto da-a TV: Ancheu o drento o l’è serròu perché l’area a l’ospita impianti e un ripetitô RAI.",
+    "O stemma danneggiòu: O grande stemma sabaudo in sciô porton o l’è stæto rovinòu da atti vandalici.",
+    "A camminâ di Camaldoli: O sentê o regala viste larghe da-a Valle Sturla finn-a Portofino."
+  ]
+};
+  root.fort["Forte Monteratti"] = {
+  "it": [
+    "La caserma infinita: È una struttura lineare lunga circa 220 metri sul Monte Ratti, a 560 metri di quota.",
+    "Nessun legame con gli animali: Il nome Ratti deriva dall’antica famiglia genovese dei Ratti, proprietaria di terreni nella zona.",
+    "La torre inghiottita: Una precedente torre difensiva venne inglobata nel nuovo forte costruito dai Savoia tra 1831 e 1842.",
+    "La paura dei piemontesi: La fortezza serviva sia alla difesa esterna sia al controllo delle valli interne in caso di rivolte.",
+    "Il bastione spezza-forte: A metà della caserma un bastione ospitava servizi e feritoie per difendere separatamente le due ali.",
+    "I prigionieri della Grande Guerra: Durante la Prima Guerra Mondiale fu usato come grande campo di prigionia per soldati austriaci e tedeschi.",
+    "Le cave di pietra: Per costruirlo furono aperte cave temporanee direttamente sul dorso del monte.",
+    "Un set da film spettrale: Oggi è in rovina, con tetti crollati e vegetazione che invade gli interni.",
+    "Il vento dei Ratti: Il crinale è noto per i forti venti autunnali e invernali.",
+    "L’itinerario delle due valli: Dal forte si domina la Val Bisagno da un lato e i boschi verso Bavari e Sturla dall’altro."
+  ],
+  "en": [
+    "The endless barracks: It is a linear structure about 220 metres long on Monte Ratti, at an altitude of 560 metres.",
+    "Nothing to do with rodents: The name Ratti comes from the old Genoese Ratti family, which owned land in the area.",
+    "The swallowed tower: An earlier defensive tower was incorporated into the new Savoy fort built between 1831 and 1842.",
+    "Piedmontese fears: The fortress served both external defence and control of the inland valleys in case of uprisings.",
+    "The fort-splitting bastion: Halfway along the barracks, a bastion housed services and loopholes allowing the two wings to be defended separately.",
+    "Prisoners of the Great War: During the First World War it became a large prison camp for Austrian and German soldiers.",
+    "The stone quarries: Temporary quarries were opened directly on the mountain ridge to provide building stone.",
+    "A ghostly film set: Today it is ruined, with collapsed roofs and vegetation reclaiming the interiors.",
+    "The Ratti wind: The ridge is known for strong autumn and winter winds.",
+    "The two-valley route: From the fort you can look over Val Bisagno on one side and the woods toward Bavari and Sturla on the other."
+  ],
+  "es": [
+    "El cuartel infinito: Es una estructura lineal de unos 220 metros en Monte Ratti, a 560 metros de altitud.",
+    "Nada que ver con los animales: El nombre Ratti procede de la antigua familia genovesa Ratti, propietaria de tierras en la zona.",
+    "La torre engullida: Una torre defensiva anterior fue incorporada al nuevo fuerte saboyano construido entre 1831 y 1842.",
+    "El temor piamontés: La fortaleza servía tanto para la defensa exterior como para controlar los valles interiores en caso de revueltas.",
+    "El bastión que divide el fuerte: A mitad del cuartel, un bastión albergaba servicios y aspilleras para defender por separado las dos alas.",
+    "Prisioneros de la Gran Guerra: Durante la Primera Guerra Mundial fue un gran campo de prisioneros para soldados austríacos y alemanes.",
+    "Las canteras de piedra: Para construirlo se abrieron canteras temporales directamente en la cresta de la montaña.",
+    "Un escenario fantasmal: Hoy está en ruinas, con techos hundidos y vegetación invadiendo los interiores.",
+    "El viento de Ratti: La cresta es conocida por los fuertes vientos de otoño e invierno.",
+    "La ruta de los dos valles: Desde el fuerte se domina Val Bisagno por un lado y los bosques hacia Bavari y Sturla por el otro."
+  ],
+  "fr": [
+    "La caserne infinie : C’est une structure linéaire d’environ 220 mètres sur le Monte Ratti, à 560 mètres d’altitude.",
+    "Aucun rapport avec les animaux : Le nom Ratti vient de l’ancienne famille génoise Ratti, propriétaire de terrains dans la zone.",
+    "La tour engloutie : Une tour défensive plus ancienne fut intégrée au nouveau fort savoyard construit entre 1831 et 1842.",
+    "La crainte piémontaise : La forteresse servait à la défense extérieure mais aussi au contrôle des vallées intérieures en cas de révolte.",
+    "Le bastion qui coupe le fort : Au milieu de la caserne, un bastion abritait services et meurtrières permettant de défendre séparément les deux ailes.",
+    "Les prisonniers de la Grande Guerre : Pendant la Première Guerre mondiale, il devint un grand camp pour prisonniers autrichiens et allemands.",
+    "Les carrières de pierre : Des carrières temporaires furent ouvertes directement sur la crête pour fournir les matériaux.",
+    "Un décor de film fantomatique : Aujourd’hui en ruine, il a des toits effondrés et la végétation envahit ses intérieurs.",
+    "Le vent de Ratti : La crête est connue pour ses vents violents en automne et en hiver.",
+    "L’itinéraire des deux vallées : Du fort, on domine le Val Bisagno d’un côté et les bois vers Bavari et Sturla de l’autre."
+  ],
+  "ar": [
+    "الثكنة التي لا تنتهي: مبنى خطي بطول نحو 220 متراً على Monte Ratti وعلى ارتفاع 560 متراً.",
+    "لا علاقة بالقوارض: اسم Ratti يأتي من عائلة جنوية قديمة كانت تملك أراضي في المنطقة.",
+    "البرج المبتلع: أُدمج برج دفاعي أقدم داخل الحصن السافوي الجديد الذي بُني بين 1831 و1842.",
+    "مخاوف بييمونتي: خدم الحصن للدفاع الخارجي وللسيطرة على الوديان الداخلية في حال اندلاع تمردات.",
+    "المعقل الفاصل: في منتصف الثكنة معقل يضم خدمات ومزاغل تسمح بالدفاع عن الجناحين بشكل منفصل.",
+    "أسرى الحرب الكبرى: خلال الحرب العالمية الأولى أصبح معسكراً كبيراً لأسرى نمساويين وألمان.",
+    "محاجر الحجر: فُتحت محاجر مؤقتة مباشرة على ظهر الجبل لتوفير مواد البناء.",
+    "موقع سينمائي شبحي: اليوم هو خراب، بأسقف منهارة ونباتات تستعيد المساحات الداخلية.",
+    "رياح Ratti: تشتهر القمة برياح قوية في الخريف والشتاء.",
+    "مسار الواديين: من الحصن يمكن رؤية Val Bisagno من جهة والغابات نحو Bavari وSturla من الجهة الأخرى."
+  ],
+  "ru": [
+    "Бесконечная казарма: Линейное сооружение длиной около 220 метров стоит на Монте-Ратти на высоте 560 м.",
+    "Не про животных: Название Ratti происходит от старинной генуэзской семьи Ратти, владевшей землёй в этой местности.",
+    "Поглощённая башня: Более раннюю оборонительную башню встроили в новый савойский форт, построенный в 1831–1842 годах.",
+    "Пьемонтские опасения: Крепость предназначалась и для внешней обороны, и для контроля внутренних долин в случае восстаний.",
+    "Бастион-разделитель: В середине казармы бастион содержал службы и бойницы, позволявшие отдельно защищать два крыла.",
+    "Пленные Великой войны: В Первую мировую войну здесь действовал большой лагерь для австрийских и немецких пленных.",
+    "Каменные карьеры: Для строительства временные карьеры открыли прямо на горном хребте.",
+    "Призрачная съёмочная площадка: Сегодня форт лежит в руинах, крыши обрушены, а растительность захватывает помещения.",
+    "Ветер Ратти: Хребет известен сильными осенними и зимними ветрами.",
+    "Маршрут двух долин: С форта видна Валь-Бизаньо с одной стороны и леса к Бавари и Стурле с другой."
+  ],
+  "zh": [
+    "无尽的兵营：这是一座约220米长的线性建筑，位于海拔560米的 Monte Ratti。",
+    "与老鼠无关：Ratti 这个名字来自古老的热那亚 Ratti 家族，他们曾拥有这一带土地。",
+    "被“吞入”的塔楼：更早的一座防御塔被纳入1831至1842年间修建的萨伏依新要塞。",
+    "皮埃蒙特人的担忧：这座要塞既用于外部防御，也用于在发生叛乱时控制内陆山谷。",
+    "分隔要塞的堡垒：兵营中部的突出堡垒设有服务空间和射孔，可分别防守两翼。",
+    "一战战俘：第一次世界大战期间，这里成为关押奥地利和德国士兵的大型战俘营。",
+    "石料采石场：修建要塞时，山脊上直接开设了临时采石场。",
+    "幽灵般的电影场景：如今屋顶坍塌、建筑荒废，植被正重新占据内部空间。",
+    "Ratti 的风：这条山脊以秋冬季强风著称。",
+    "两谷路线：从要塞一侧可俯瞰 Val Bisagno，另一侧则望向 Bavari 和 Sturla 方向的树林。"
+  ],
+  "lij": [
+    "A caserma infinita: O l’è unna struttura longa circa 220 metri in sciô Monte Ratti, a 560 metri d’autessa.",
+    "Ninte a che vedde co-i animali: O nomme Ratti o ven da l’antiga famiggia zeneize Ratti, che a possedeiva tæren in zona.",
+    "A torre inghiottîa: Unna torre difensiva ciù antiga a l’è stæta inglobâ into neuvo forte sabaudo costruîo tra 1831 e 1842.",
+    "A poia piemontéize: O forte o serviva pe-a difeiza esterna e pe controllâ e vallæ interne in caxo de rivolte.",
+    "O bastion che divide: A metà da caserma un bastion o l’ospitava serviççi e feritoie pe difende separatamente e doe ae.",
+    "I prigionê da Grande Guæra: Inte Primma Guæra Mondiale o l’è diventòu un grande campo pe prigionê austriaci e tedeschi.",
+    "E cave de pria: Pe costruîlo han averto cave temporanee direttamente in sciô dorso do monte.",
+    "Un set spettrale: Ancheu o l’è in roinn-a, co-i teiti crollæ e a vegetaçion che a torna drento.",
+    "O vento di Ratti: O crinale o l’è conosciuo pe-i venti forti d’autunno e d’inverno.",
+    "O sentê de doe vallæ: Da-o forte se vedde a Val Bisagno da unna parte e i boschi verso Bavari e Sturla da l’atra."
+  ]
+};
+
 })();
