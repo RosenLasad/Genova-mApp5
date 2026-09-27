@@ -1585,4 +1585,598 @@
   ]
 };
 
+  root.fort["Forte San Giuliano"] = {
+  "it": [
+    "Il forte sulla spiaggia: A differenza delle fortezze tra le montagne, sorge direttamente sul mare nel quartiere di Albaro, lungo la celebre passeggiata di Corso Italia.",
+    "Difesa da pirati e sbarchi: Fu costruito tra il 1826 e il 1836 soprattutto per impedire sbarchi nemici dal mare sul litorale di levante.",
+    "La caserma dei Carabinieri: Dal 1995 il forte ha cambiato vita: restaurato, è diventato sede del Comando Provinciale dei Carabinieri di Genova.",
+    "I tunnel sotto Corso Italia: Sotto la strada moderna passano ancora antichi collegamenti sotterranei protetti che univano il forte alla vicina Batteria del Vagno.",
+    "Un fossato imponente: Per difendersi da terra, l’ingresso era protetto da un profondo fossato superabile soltanto tramite ponte levatoio.",
+    "Cannoni a canna rigata: Nell’Ottocento disponeva di un potente armamento, tra cui due grandi cannoni a canna rigata puntati stabilmente verso l’orizzonte marino.",
+    "Prigionieri speciali: Durante le guerre risorgimentali e i conflitti mondiali, le celle sotterranee ospitarono prigionieri politici e soldati catturati.",
+    "Il sacrificio dei partigiani: Nel 1944 il forte fu teatro della tragica fucilazione di diversi partigiani da parte dei nazi-fascisti; oggi una targa ne ricorda il sacrificio.",
+    "Modellato sulle onde: La sua forma non è regolare come molti forti di montagna, ma segue l’andamento asimmetrico della scogliera su cui poggia.",
+    "Perfetto per i turisti: È uno dei forti più facili da inserire in un itinerario cittadino, durante una passeggiata sul mare o verso Boccadasse."
+  ],
+  "en": [
+    "The fort by the beach: Unlike mountain fortresses, it stands directly by the sea in Albaro, along the famous Corso Italia promenade.",
+    "Defence against raids and landings: Built between 1826 and 1836, it was intended above all to prevent enemy landings on Genoa’s eastern shoreline.",
+    "The Carabinieri barracks: Since 1995 the fort has had a new life: after restoration it became the headquarters of Genoa’s Provincial Carabinieri Command.",
+    "Tunnels beneath Corso Italia: Protected underground passages still run beneath the modern road, once linking the fort with the nearby Vagno Battery.",
+    "An imposing moat: On the landward side, the entrance was protected by a deep moat that could only be crossed by drawbridge.",
+    "Rifled guns: In the 19th century it carried powerful artillery, including two large rifled guns permanently aimed toward the sea horizon.",
+    "Special prisoners: During the Risorgimento wars and the world conflicts, its underground cells held political prisoners and captured soldiers.",
+    "The sacrifice of the partisans: In 1944 several Resistance fighters were tragically executed here by Nazi-Fascist forces; a plaque now commemorates them.",
+    "Shaped by the coast: Its plan is less regular than that of many mountain forts because it follows the asymmetric rocky shoreline beneath it.",
+    "Ideal for visitors: It is one of Genoa’s easiest forts to include in a city itinerary, perhaps during a seaside walk toward Boccadasse."
+  ],
+  "es": [
+    "El fuerte junto a la playa: A diferencia de las fortalezas de montaña, se alza directamente frente al mar en Albaro, junto al famoso paseo de Corso Italia.",
+    "Defensa contra desembarcos: Construido entre 1826 y 1836, debía impedir sobre todo los desembarcos enemigos en la costa oriental de Génova.",
+    "El cuartel de los Carabinieri: Desde 1995, tras su restauración, el fuerte alberga el Comando Provincial de los Carabinieri de Génova.",
+    "Túneles bajo Corso Italia: Bajo la carretera moderna aún pasan antiguos corredores protegidos que unían el fuerte con la cercana Batería del Vagno.",
+    "Un foso imponente: Por el lado de tierra, la entrada estaba protegida por un profundo foso que sólo podía cruzarse mediante un puente levadizo.",
+    "Cañones de ánima rayada: En el siglo XIX disponía de potente artillería, incluidos dos grandes cañones rayados apuntados hacia el horizonte marino.",
+    "Prisioneros especiales: Durante las guerras del Risorgimento y los conflictos mundiales, sus celdas subterráneas alojaron presos políticos y soldados capturados.",
+    "El sacrificio de los partisanos: En 1944 varios partisanos fueron fusilados aquí por fuerzas nazi-fascistas; hoy una placa recuerda su sacrificio.",
+    "Moldeado por la costa: Su planta no es regular como la de muchos fuertes de montaña, sino que sigue la forma asimétrica del acantilado.",
+    "Ideal para turistas: Es uno de los fuertes más fáciles de incluir en un itinerario urbano, durante un paseo marítimo o de camino a Boccadasse."
+  ],
+  "fr": [
+    "Le fort au bord de la plage : Contrairement aux forteresses de montagne, il se dresse directement face à la mer, à Albaro, le long de la célèbre promenade de Corso Italia.",
+    "Défense contre les débarquements : Construit entre 1826 et 1836, il devait surtout empêcher les débarquements ennemis sur le littoral oriental de Gênes.",
+    "La caserne des Carabinieri : Depuis 1995, après restauration, le fort abrite le commandement provincial des Carabinieri de Gênes.",
+    "Les tunnels sous Corso Italia : Des passages souterrains protégés subsistent sous la route moderne et reliaient autrefois le fort à la batterie voisine du Vagno.",
+    "Un fossé imposant : Côté terre, l’entrée était protégée par un profond fossé que l’on ne pouvait franchir qu’au moyen d’un pont-levis.",
+    "Canons rayés : Au XIXe siècle, il possédait une puissante artillerie, dont deux grands canons rayés orientés vers l’horizon marin.",
+    "Prisonniers particuliers : Pendant les guerres du Risorgimento et les conflits mondiaux, ses cellules souterraines accueillirent prisonniers politiques et soldats capturés.",
+    "Le sacrifice des partisans : En 1944, plusieurs résistants furent tragiquement fusillés ici par les forces nazi-fascistes ; une plaque commémore aujourd’hui leur sacrifice.",
+    "Modelé par la côte : Son plan est moins régulier que celui des forts de montagne, car il suit le relief asymétrique du rivage rocheux.",
+    "Idéal pour les visiteurs : C’est l’un des forts les plus faciles à intégrer à une visite urbaine, pendant une promenade en bord de mer ou vers Boccadasse."
+  ],
+  "ar": [
+    "الحصن على الشاطئ: بخلاف حصون الجبال، يقع مباشرة على البحر في حي ألبارو بمحاذاة ممشى كورسو إيطاليا الشهير.",
+    "الدفاع ضد الإنزالات البحرية: بُني بين 1826 و1836 أساساً لمنع قوات العدو من النزول على ساحل جنوة الشرقي.",
+    "ثكنة الكارابينييري: منذ 1995، وبعد ترميمه، أصبح الحصن مقراً للقيادة الإقليمية للكارابينييري في جنوة.",
+    "أنفاق تحت كورسو إيطاليا: ما زالت ممرات محمية قديمة تمر تحت الطريق الحديث، وكانت تربط الحصن ببطارية فانيّو القريبة.",
+    "خندق مهيب: من جهة البر كان المدخل محمياً بخندق عميق لا يُعبر إلا بواسطة جسر متحرك.",
+    "مدافع محلزنة: في القرن التاسع عشر كان مزوداً بمدفعية قوية، بينها مدفعان كبيران محلزنان موجهان نحو أفق البحر.",
+    "سجناء خاصون: خلال حروب توحيد إيطاليا والحربين العالميتين، استُخدمت زنزاناته تحت الأرض لاحتجاز سجناء سياسيين وجنود أسرى.",
+    "تضحية المقاومين: في عام 1944 أُعدم هنا عدد من المقاومين على يد القوات النازية الفاشية، وتخلدهم اليوم لوحة تذكارية.",
+    "شكل تفرضه الساحل: مخططه أقل انتظاماً من كثير من حصون الجبال لأنه يتبع التكوين غير المتناظر للصخور الساحلية.",
+    "سهل للزوار: من أسهل حصون جنوة إدخاله في جولة داخل المدينة، أثناء نزهة بحرية أو في الطريق إلى بوكّاداسّي."
+  ],
+  "ru": [
+    "Форт у пляжа: В отличие от горных крепостей, он стоит прямо у моря в районе Альбаро, вдоль знаменитой набережной Корсо Италия.",
+    "Защита от высадок: Форт строили в 1826–1836 годах прежде всего для предотвращения вражеских десантов на восточном побережье Генуи.",
+    "Казармы карабинеров: С 1995 года, после реставрации, в форте размещается провинциальное командование карабинеров Генуи.",
+    "Тоннели под Корсо Италия: Под современной дорогой сохранились старые защищённые подземные ходы, соединявшие форт с батареей Ваньо.",
+    "Внушительный ров: Со стороны суши вход защищал глубокий ров, который можно было пересечь только по подъёмному мосту.",
+    "Нарезные пушки: В XIX веке форт имел мощную артиллерию, в том числе два больших нарезных орудия, постоянно направленных в сторону моря.",
+    "Особые заключённые: Во время войн Рисорджименто и мировых войн подземные камеры использовали для политических заключённых и пленных солдат.",
+    "Жертва партизан: В 1944 году здесь были расстреляны несколько участников Сопротивления; сегодня об их гибели напоминает мемориальная доска.",
+    "Форма по линии берега: План форта менее правильный, чем у многих горных крепостей, поскольку повторяет асимметричный контур скалистого побережья.",
+    "Удобен для туристов: Это один из самых доступных фортов Генуи, который легко включить в прогулку вдоль моря или маршрут к Боккадассе."
+  ],
+  "zh": [
+    "海边的要塞：不同于山地堡垒，它直接坐落在阿尔巴罗海滨，紧邻著名的 Corso Italia 海滨大道。",
+    "防御海上登陆：要塞建于1826至1836年，主要任务是阻止敌军在热那亚东部海岸登陆。",
+    "宪兵驻地：1995年修复后，这里成为热那亚省级 Carabinieri 指挥部所在地。",
+    "Corso Italia 下的隧道：现代道路下仍保留古老的防护通道，过去将要塞与附近的 Vagno 炮台相连。",
+    "巨大的壕沟：陆地方向的入口由深壕保护，只能通过吊桥进入。",
+    "线膛炮：19世纪时要塞装备强大火炮，其中包括两门大型线膛炮，长期瞄准海面。",
+    "特殊囚犯：在意大利统一战争和两次世界大战期间，地下牢房曾关押政治犯和被俘士兵。",
+    "游击队员的牺牲：1944年，多名抵抗运动成员在这里遭纳粹法西斯势力枪杀，如今有纪念牌铭记他们。",
+    "顺着海岸塑形：它不像许多山地堡垒那样规则，而是依照脚下不对称的岩岸修建。",
+    "适合游客：它是热那亚最容易纳入城市行程的要塞之一，可在海边散步或前往 Boccadasse 时顺访。"
+  ],
+  "lij": [
+    "O forte in sciâ spiaggia: A differensa di forti in sci monti, o l’è proprio in sciô mâ, in Albaro, longo a passeggiata famosa de Corso Italia.",
+    "Difesa da-i sbarchi: O l’è stæto costruïo tra o 1826 e o 1836 soprattutto pe impedî sbarchi nemixi in sciô litorâ de levante.",
+    "A caserma di Carabinieri: Da-o 1995, dòppo o restauro, o l’è diventòu a sede do Comando Provinciale di Carabinieri de Zêna.",
+    "I tunnel sotto Corso Italia: Sotto a stradda moderna gh’é ancon di passaggi protetti che collegavan o forte co-a vicinn-a Batteria do Vagno.",
+    "Un fossòu imponente: Da-a parte de tæra l’intrâ a l’ea protetta da un fossòu profondo, passabile solo co-o ponte levatoio.",
+    "Cannoin a canna rigâ: Into Ottocento o gh’aveiva artiglieria potente, con doî grandi cannoin rigæ puntæ verso o mâ.",
+    "Prigionieri speciali: Durante e guære do Risorgimento e e guære mondiali, e celle sotterranee han ospitòu prigionieri politici e sordati catturæ.",
+    "O sacrificio di partigian: Into 1944 diversi partigian en stæti fucilæ chì da-e forze nazi-fasciste; ancheu unna targa a-i ricorda.",
+    "Modellòu da-a costa: A forma a no l’è regolare comme quella de tanti forti de monte, perché a segue a scogliera asimmetrica.",
+    "Perfetto pe-i visitatoî: O l’è un di forti ciù façili da mette inte un itinerario cittadin, magari durante unna passeggiata verso Boccadasse."
+  ]
+};
+
+  root.fort["Forte San Martino"] = {
+  "it": [
+    "Il forte invisibile: Si trova nel cuore della città, sull’omonima collina, ma è in gran parte scavato nella montagna e si sviluppa verso il basso invece di svettare verso l’alto.",
+    "Circondato dalla giungla urbana: Oggi è stretto tra i palazzi e nascosto da una fitta vegetazione che ha occupato l’antico fossato.",
+    "Il più moderno per l’epoca: Quando fu completato nel 1846 era considerato uno dei forti più moderni, sofisticati e costosi della piazzaforte genovese.",
+    "I piemontesi temevano i genovesi: Oltre alla difesa esterna, i Savoia lo progettarono anche per controllare la città in caso di rivolte popolari.",
+    "Una fortezza per 400 uomini: Nonostante la struttura semi-interrata, le caserme potevano ospitare circa 400 soldati in condizioni di isolamento.",
+    "Polveriera d’emergenza: Disponeva di laboratori e magazzini speciali per preparare e conservare munizioni al riparo dal fuoco nemico.",
+    "Tragico dopoguerra: Nel dopoguerra una parte del fossato fu usata temporaneamente per alloggiare sfollati rimasti senza casa a causa dei bombardamenti.",
+    "Un’isola di mistero: Oggi appartiene al Demanio ed è chiuso al pubblico, alimentando l’interesse degli appassionati di esplorazione urbana e storia militare.",
+    "Il fossato-giardino: Il fossato è largo circa 12 metri e profondo 7; oggi la vegetazione lo ha trasformato in un insolito ecosistema urbano.",
+    "Posizione strategica: Fu collocato sulla collina di Papigliano per sorvegliare le vie d’accesso e contrastare infiltrazioni dalla Valle Sturla."
+  ],
+  "en": [
+    "The invisible fort: It stands in the heart of the city on its namesake hill, but much of it is dug into the slope and develops downward rather than rising above the skyline.",
+    "Surrounded by an urban jungle: Today it is hemmed in by buildings and hidden by dense vegetation that has taken over the old moat.",
+    "The most modern of its time: When completed in 1846, it was considered one of the most modern, sophisticated and expensive forts in Genoa’s defensive system.",
+    "The Piedmontese feared the Genoese: Besides external defence, the Savoys also designed it to control the city in the event of popular uprisings.",
+    "A fortress for 400 men: Despite being partly underground, its barracks could accommodate around 400 soldiers in isolation.",
+    "Emergency powder facilities: It had workshops and special stores where ammunition could be prepared and kept protected from enemy fire.",
+    "A tragic post-war chapter: After the war, part of the moat was temporarily used to house people displaced by bombing.",
+    "An island of mystery: Now state-owned and closed to the public, it has become a legendary place for enthusiasts of urban exploration and military history.",
+    "The moat-garden: About 12 metres wide and 7 metres deep, the moat has been transformed by vegetation into an unusual urban ecosystem.",
+    "A strategic position: It was placed on Papigliano hill to watch the access routes and counter enemy infiltration from the Sturla Valley."
+  ],
+  "es": [
+    "El fuerte invisible: Está en pleno corazón de la ciudad, en la colina homónima, pero gran parte está excavada en la montaña y se desarrolla hacia abajo.",
+    "Rodeado por la jungla urbana: Hoy está encerrado entre edificios y oculto por una espesa vegetación que ha ocupado el antiguo foso.",
+    "El más moderno de su época: Al terminarse en 1846 era considerado uno de los fuertes más modernos, sofisticados y costosos del sistema defensivo genovés.",
+    "Los piamonteses temían a los genoveses: Además de defender la ciudad de enemigos externos, los Saboya lo concibieron también para controlar posibles revueltas urbanas.",
+    "Una fortaleza para 400 hombres: Aunque está parcialmente enterrado, sus cuarteles podían alojar a unos 400 soldados en aislamiento.",
+    "Polvorín de emergencia: Disponía de talleres y almacenes especiales para preparar y guardar municiones protegidas del fuego enemigo.",
+    "Un triste capítulo de posguerra: Después de la guerra, parte del foso se utilizó temporalmente para alojar a desplazados que habían perdido su casa bajo los bombardeos.",
+    "Una isla de misterio: Hoy pertenece al Estado y está cerrado al público, lo que atrae a aficionados a la exploración urbana y la historia militar.",
+    "El foso-jardín: Tiene unos 12 metros de ancho y 7 de profundidad; hoy la vegetación lo ha convertido en un singular ecosistema urbano.",
+    "Posición estratégica: Se situó en la colina de Papigliano para vigilar las vías de acceso y frenar infiltraciones desde el valle de Sturla."
+  ],
+  "fr": [
+    "Le fort invisible : Situé au cœur de la ville sur la colline du même nom, il est en grande partie creusé dans le relief et se développe vers le bas plutôt que vers le ciel.",
+    "Entouré par la jungle urbaine : Aujourd’hui, il est encerclé par les immeubles et caché par une végétation dense qui a envahi l’ancien fossé.",
+    "Le plus moderne de son temps : Achevé en 1846, il passait pour l’un des forts les plus modernes, sophistiqués et coûteux du système défensif génois.",
+    "Les Piémontais craignaient les Génois : En plus de la défense extérieure, les Savoie le conçurent aussi pour contrôler la ville en cas de soulèvement populaire.",
+    "Une forteresse pour 400 hommes : Malgré sa structure semi-enterrée, ses casernes pouvaient accueillir environ 400 soldats en isolement.",
+    "Poudrière d’urgence : Il possédait des ateliers et des magasins spéciaux pour préparer et conserver les munitions à l’abri du feu ennemi.",
+    "Un épisode tragique de l’après-guerre : Après la guerre, une partie du fossé fut provisoirement utilisée pour loger des sinistrés privés de leur maison par les bombardements.",
+    "Une île de mystère : Aujourd’hui propriété de l’État et fermé au public, il attire les passionnés d’exploration urbaine et d’histoire militaire.",
+    "Le fossé-jardin : Large d’environ 12 mètres et profond de 7, il est aujourd’hui devenu un écosystème urbain singulier grâce à la végétation.",
+    "Position stratégique : Il fut placé sur la colline de Papigliano pour surveiller les voies d’accès et bloquer les infiltrations depuis la vallée de Sturla."
+  ],
+  "ar": [
+    "الحصن غير المرئي: يقع في قلب المدينة على التلة التي تحمل اسمه، لكن جزءاً كبيراً منه محفور في الجبل ويمتد إلى الأسفل بدلاً من الارتفاع فوق الأفق.",
+    "محاط بغابة حضرية: اليوم تحيط به المباني وتخفيه نباتات كثيفة غزت الخندق القديم.",
+    "الأكثر حداثة في زمنه: عند اكتماله عام 1846 اعتُبر من أحدث وأعقد وأغلى حصون منظومة جنوة الدفاعية.",
+    "خشية بيدمونت من أهل جنوة: إلى جانب الدفاع الخارجي، صممه آل سافويا أيضاً للسيطرة على المدينة في حال اندلاع ثورات شعبية.",
+    "حصن لـ400 رجل: رغم أنه شبه مدفون، كانت ثكناته قادرة على استيعاب نحو 400 جندي في عزلة تامة.",
+    "مخازن طوارئ للذخيرة: ضم ورشاً ومستودعات خاصة لتحضير الذخيرة وحفظها بعيداً عن نيران العدو.",
+    "فصل مؤلم بعد الحرب: بعد الحرب استُخدم جزء من الخندق مؤقتاً لإيواء النازحين الذين فقدوا منازلهم بسبب القصف.",
+    "جزيرة من الغموض: الحصن اليوم ملك للدولة ومغلق أمام الجمهور، ما يجعله مكاناً جذاباً لمحبي الاستكشاف الحضري والتاريخ العسكري.",
+    "الخندق-الحديقة: يبلغ عرضه نحو 12 متراً وعمقه 7 أمتار، وقد حولته النباتات اليوم إلى نظام بيئي حضري غير مألوف.",
+    "موقع استراتيجي: أُقيم على تلة بابيليانو لمراقبة طرق الوصول ومنع التسلل من وادي ستورلا."
+  ],
+  "ru": [
+    "Невидимый форт: Он находится в самом сердце города на одноимённом холме, но значительная часть сооружения врезана в склон и уходит вниз.",
+    "В окружении городских джунглей: Сегодня форт зажат между домами и скрыт густой растительностью, захватившей старый ров.",
+    "Самый современный для своего времени: После завершения в 1846 году его считали одним из самых современных, сложных и дорогих фортов генуэзской системы.",
+    "Пьемонтцы опасались генуэзцев: Помимо внешней обороны, Савойская династия предусматривала его и как средство контроля города в случае народных восстаний.",
+    "Крепость на 400 человек: Несмотря на полуподземную конструкцию, казармы могли разместить около 400 солдат в условиях изоляции.",
+    "Аварийные боеприпасные склады: Внутри были мастерские и специальные помещения для изготовления и хранения боеприпасов под защитой от огня противника.",
+    "Трагическая послевоенная глава: После войны часть рва временно использовали для размещения людей, потерявших жильё из-за бомбардировок.",
+    "Остров тайны: Сейчас форт принадлежит государству и закрыт для публики, что привлекает любителей урбекс-исследований и военной истории.",
+    "Ров-сад: Его ширина около 12 метров, глубина 7; растительность превратила ров в необычную городскую экосистему.",
+    "Стратегическое положение: Форт разместили на холме Папильяно для контроля путей доступа и пресечения проникновения со стороны долины Стурла."
+  ],
+  "zh": [
+    "隐形要塞：它位于城市中心的同名山丘，但大部分结构嵌入山体，并向下延伸而不是高耸于城市之上。",
+    "被城市丛林包围：如今它夹在建筑之间，旧壕沟也被茂密植被覆盖。",
+    "当时最先进：1846年完工时，它被认为是热那亚防御体系中最现代、最复杂、造价最高的要塞之一。",
+    "皮埃蒙特人也提防热那亚人：除了抵御外敌，萨伏依王朝还把它设计为在城市发生民众起义时的控制据点。",
+    "容纳400人的堡垒：尽管部分埋入地下，营房仍能在隔绝条件下容纳约400名士兵。",
+    "应急弹药设施：内部设有工坊和专门仓库，可在敌火保护下制作和储存弹药。",
+    "战后的悲剧篇章：战后，一部分壕沟曾临时用于安置因轰炸失去住所的居民。",
+    "神秘之岛：如今归国家所有并不对公众开放，因此成为城市探险和军事史爱好者心中的神秘地点。",
+    "壕沟花园：壕沟约宽12米、深7米，如今被植被改造成独特的城市生态空间。",
+    "战略位置：它建在 Papigliano 山丘，用于监控道路并阻止敌军从 Sturla 山谷渗透。"
+  ],
+  "lij": [
+    "O forte invisibile: O l’è into cheu da çittæ, in sciâ collinn-a de San Martino, ma unna grande parte a l’è scavâ into monte e a va verso o basso.",
+    "Intorno a giungla urbana: Ancheu o l’è serròu tra-i palassi e nascosto da unna vegetaçion fitta che a l’ha occupòu o vegio fossòu.",
+    "O ciù moderno pe l’epoca: Quande o l’è stæto finîo into 1846 o l’ea un di forti ciù moderni, sofisticæ e costoxi da piazzaforte de Zêna.",
+    "I piemontesi temevan i zeneixi: O no serviva solo contra i nemixi de feua, ma anche pe controllâ a çittæ in caso de sommossa.",
+    "Unna fortezza pe 400 ommi: Anche se semi-interrâ, e caserme podeivan ospitâ circa 400 sordati in isolamento.",
+    "Polverea d’emergensa: Gh’ea laboratoî e magazin speciali pe preparâ e conservâ munission protegge da-o feu nemigo.",
+    "O dopoguæra tragico: Dòppo a guæra unna parte do fossòu a l’è stæta adêuviâ pe ospitâ temporaneamente sfollæ sensa casa.",
+    "Un’isola de mistero: Ancheu o l’è do Demanio e serròu a-o pubblico, e o l’attira appassionæ de esploraçion urbana e storia militare.",
+    "O fossòu-giardin: O l’è largo circa 12 metri e fondo 7; ancheu a vegetaçion o l’ha trasformòu inte un ecosistema urbano particolare.",
+    "Posiçion strategica: O l’è stæto misso in sciâ collinn-a de Papigliano pe controllâ e vie d’accesso e e infiltraçioin da-a Val Sturla."
+  ]
+};
+
+  root.fort["Forte Casale Erselli"] = {
+  "it": [
+    "Il forte tecnologico: Sorge sulla collina degli Erzelli, oggi nota per il grande polo scientifico e tecnologico Great Campus e per la presenza dell’Istituto Italiano di Tecnologia.",
+    "Nascosto tra i rovi: È quasi invisibile per la fitta vegetazione. Ha pianta trapezoidale ed è alto circa 7,5 metri, volutamente basso per offrire un bersaglio ridotto.",
+    "Il nome del casale: Il nome “Casale Erselli” richiama un’antica casa colonica che sorgeva nei pressi della fortificazione e che in seguito scomparve.",
+    "I forti della Triplice: Faceva parte della linea difensiva costruita alla fine dell’Ottocento, nel clima di tensione seguito all’ingresso dell’Italia nella Triplice Alleanza e al timore di un attacco francese.",
+    "Ponte levatoio moderno: L’accesso superava un fossato profondo fino a circa 7 metri tramite un ponte levatoio metallico.",
+    "Un arsenale imponente: Durante la Seconda Guerra Mondiale fu potenziato come batteria contraerea e costiera, arrivando a disporre di numerose bocche da fuoco.",
+    "Proprietà privata: A differenza dei forti del Parco delle Mura, oggi si trova all’interno di un’area privata e non è normalmente visitabile.",
+    "Guerra alle spie: Nel periodo di massima operatività, l’accesso alla collina era rigidamente controllato per ragioni di sicurezza militare.",
+    "Il gemello di Monte Croce: La sua architettura era molto simile a quella del vicino Forte Monte Croce, costruito nello stesso sistema difensivo.",
+    "Un rifugio nella roccia: Sotto il forte erano presenti ambienti protetti destinati a ospitare uomini e materiali durante bombardamenti prolungati."
+  ],
+  "en": [
+    "The technological fort: It stands on the Erzelli hill, today known for the Great Campus science and technology park and the Italian Institute of Technology.",
+    "Hidden among brambles: Dense vegetation makes it hard to see. Its trapezoidal plan rises only about 7.5 metres, deliberately kept low to present a smaller target.",
+    "The farmhouse name: “Casale Erselli” recalls an old rural house that once stood near the fortification and later disappeared.",
+    "The Triple Alliance forts: It belonged to the defensive line built in the late 19th century amid tensions following Italy’s entry into the Triple Alliance and fears of a French attack.",
+    "A modern drawbridge: The entrance crossed a moat up to about 7 metres deep by means of a metal drawbridge.",
+    "An imposing arsenal: During the Second World War it was strengthened as an anti-aircraft and coastal battery, with numerous artillery positions.",
+    "Private property: Unlike the forts of the Walls Park, it now lies within private land and is not normally open to visitors.",
+    "Fear of spies: At the height of its military use, access to the Erzelli hill was tightly controlled for security reasons.",
+    "The twin of Monte Croce: Its architecture was very similar to nearby Forte Monte Croce, built as part of the same defensive system.",
+    "A shelter in the rock: Protected underground rooms were intended to house men and materials during prolonged bombardment."
+  ],
+  "es": [
+    "El fuerte tecnológico: Se alza en la colina de Erzelli, hoy conocida por el parque científico y tecnológico Great Campus y el Instituto Italiano de Tecnología.",
+    "Oculto entre zarzas: La vegetación lo hace casi invisible. Tiene planta trapezoidal y sólo unos 7,5 metros de altura, deliberadamente baja para ofrecer un blanco menor.",
+    "El nombre del caserío: “Casale Erselli” recuerda una antigua casa rural que se encontraba junto a la fortificación y que después desapareció.",
+    "Los fuertes de la Triple Alianza: Formaba parte de la línea defensiva construida a finales del siglo XIX, en el clima de tensión posterior a la entrada de Italia en la Triple Alianza y al temor de un ataque francés.",
+    "Puente levadizo moderno: La entrada salvaba un foso de hasta unos 7 metros mediante un puente levadizo metálico.",
+    "Un arsenal imponente: Durante la Segunda Guerra Mundial fue reforzado como batería antiaérea y costera, con numerosas posiciones de artillería.",
+    "Propiedad privada: A diferencia de los fuertes del Parque de las Murallas, hoy se encuentra en terreno privado y no suele ser visitable.",
+    "Guerra contra los espías: En su periodo de máxima actividad, el acceso a la colina estaba estrictamente controlado por motivos militares.",
+    "El gemelo de Monte Croce: Su arquitectura era muy parecida a la del cercano Forte Monte Croce, parte del mismo sistema defensivo.",
+    "Un refugio en la roca: Bajo el fuerte había espacios protegidos destinados a alojar hombres y materiales durante bombardeos prolongados."
+  ],
+  "fr": [
+    "Le fort technologique : Il se dresse sur la colline des Erzelli, aujourd’hui connue pour le pôle scientifique Great Campus et l’Institut italien de technologie.",
+    "Caché dans les broussailles : La végétation le rend presque invisible. Son plan trapézoïdal ne dépasse qu’environ 7,5 mètres de hauteur, volontairement bas pour offrir une cible réduite.",
+    "Le nom du domaine : « Casale Erselli » rappelle une ancienne maison rurale qui se trouvait près de la fortification et qui a ensuite disparu.",
+    "Les forts de la Triple Alliance : Il appartenait à la ligne défensive construite à la fin du XIXe siècle dans le contexte des tensions liées à l’entrée de l’Italie dans la Triple Alliance et à la crainte d’une attaque française.",
+    "Pont-levis moderne : L’entrée franchissait un fossé profond d’environ 7 mètres grâce à un pont-levis métallique.",
+    "Un arsenal imposant : Pendant la Seconde Guerre mondiale, il fut renforcé comme batterie antiaérienne et côtière avec de nombreuses pièces d’artillerie.",
+    "Propriété privée : Contrairement aux forts du Parc des Murailles, il se trouve aujourd’hui sur un terrain privé et n’est normalement pas visitable.",
+    "La peur des espions : À l’époque de son activité maximale, l’accès à la colline était strictement contrôlé pour des raisons militaires.",
+    "Le jumeau de Monte Croce : Son architecture était très proche de celle du Forte Monte Croce voisin, construit dans le même système défensif.",
+    "Un abri dans la roche : Des espaces protégés sous le fort devaient accueillir hommes et matériel pendant des bombardements prolongés."
+  ],
+  "ar": [
+    "الحصن التكنولوجي: يقع على تلة إرتسيلي، المعروفة اليوم بمجمع Great Campus العلمي والتكنولوجي وبالمعهد الإيطالي للتكنولوجيا.",
+    "مختبئ بين الشجيرات: تكاد النباتات الكثيفة تخفيه. مخططه شبه منحرف وارتفاعه نحو 7.5 أمتار فقط، وقد صُمم منخفضاً ليكون هدفاً أصغر.",
+    "اسم المنزل الريفي: يشير اسم “Casale Erselli” إلى منزل زراعي قديم كان قائماً قرب التحصين ثم اختفى لاحقاً.",
+    "حصون الحلف الثلاثي: كان جزءاً من خط دفاعي أُنشئ أواخر القرن التاسع عشر في أجواء التوتر بعد انضمام إيطاليا إلى الحلف الثلاثي والخوف من هجوم فرنسي.",
+    "جسر متحرك حديث: كان المدخل يعبر خندقاً يصل عمقه إلى نحو 7 أمتار بواسطة جسر معدني متحرك.",
+    "ترسانة كبيرة: خلال الحرب العالمية الثانية عُزز كدفاع مضاد للطائرات وساحلي، مع عدد كبير من مواقع المدفعية.",
+    "ملكية خاصة: بخلاف حصون حديقة الأسوار، يقع اليوم داخل منطقة خاصة ولا يكون مفتوحاً للزيارة عادة.",
+    "الخوف من الجواسيس: في ذروة نشاطه العسكري كان الوصول إلى تلة إرتسيلي يخضع لرقابة مشددة لأسباب أمنية.",
+    "توأم مونتي كروتشي: كان تصميمه شبيهاً جداً بتصميم Forte Monte Croce القريب، ضمن المنظومة الدفاعية نفسها.",
+    "ملجأ في الصخر: وُجدت تحت الحصن غرف محمية لإيواء الرجال والمواد خلال القصف الطويل."
+  ],
+  "ru": [
+    "Технологический форт: Он стоит на холме Эрцелли, сегодня известном научно-технологическим комплексом Great Campus и Итальянским институтом технологий.",
+    "Скрыт среди зарослей: Густая растительность почти полностью прячет его. Трапециевидная конструкция высотой около 7,5 метра специально сделана низкой, чтобы уменьшить заметность.",
+    "Название от усадьбы: Имя “Casale Erselli” напоминает о старом сельском доме, который когда-то стоял рядом с укреплением и впоследствии исчез.",
+    "Форты Тройственного союза: Он входил в оборонительную линию конца XIX века, созданную на фоне напряжённости после вступления Италии в Тройственный союз и опасений французского нападения.",
+    "Современный подъёмный мост: Вход пересекал ров глубиной до примерно 7 метров по металлическому подъёмному мосту.",
+    "Внушительный арсенал: Во Вторую мировую войну форт усилили как зенитную и береговую батарею с многочисленными артиллерийскими позициями.",
+    "Частная собственность: В отличие от фортов Парка стен, сегодня он находится на частной территории и обычно закрыт для посещения.",
+    "Борьба со шпионами: В период максимальной военной активности доступ на холм строго контролировался по соображениям безопасности.",
+    "Близнец Monte Croce: Архитектура была очень похожа на соседний Forte Monte Croce, построенный в рамках той же системы.",
+    "Укрытие в скале: Под фортом располагались защищённые помещения для людей и материалов на случай длительной бомбардировки."
+  ],
+  "zh": [
+    "科技山丘上的要塞：它坐落在 Erzelli 山丘，如今这里以 Great Campus 科技园和意大利技术研究院闻名。",
+    "隐藏在灌木中：浓密植被使其几乎不可见。要塞为梯形平面，高度仅约7.5米，刻意保持低矮以减小目标。",
+    "名字来自农舍：“Casale Erselli”让人想起曾经位于工事附近的一座老农舍，后来已经消失。",
+    "“三国同盟”时期的要塞：它属于19世纪末建立的防线，当时意大利加入三国同盟后与法国关系紧张，人们担心法国发动进攻。",
+    "现代吊桥：入口需要跨越最深约7米的壕沟，通过金属吊桥进入。",
+    "庞大的武备：第二次世界大战期间，它被加强为防空和海岸炮台，拥有多处火炮阵地。",
+    "私人区域：与城墙公园中的要塞不同，它如今位于私人土地内，通常不对外开放。",
+    "防范间谍：在军事活动最频繁时期，出入 Erzelli 山丘受到严格管控。",
+    "Monte Croce 的“孪生堡”：其建筑布局与附近的 Forte Monte Croce 非常相似，属于同一套防御体系。",
+    "岩石中的庇护所：要塞下方设有受保护空间，用于在长时间炮击中容纳人员和物资。"
+  ],
+  "lij": [
+    "O forte tecnologico: O l’è in sciâ collinn-a di Erzelli, ancheu famosa pe-o Great Campus e pe l’Istituto Italiano de Tecnologia.",
+    "Nascosto tra-i rovi: A vegetaçion o rende quasi invisibile. O l’ha unna pianta trapezoidale e o l’è basso, pe offrî un bersaglio ciù piccin.",
+    "O nomme do casâ: “Casale Erselli” o ricorda unna vegia casa de campagna che a l’ea lì da-a fortificaçion e che pöi a l’è sparîa.",
+    "I forti da Triplice: O faceiva parte de unna linia difensoiva da fin do Ottocento, into clima de tension co-a Francia e co-a Triplice Alleanza.",
+    "Ponte levatoio moderno: L’intrâ a passava un fossòu fondo fin-a circa 7 metri con un ponte levatoio metallico.",
+    "Un arsenâ imponente: Durante a Segonda Guæra Mondiale o l’è stæto potenziòu comme batteria contra-aerea e costiera, con tante bocche da feu.",
+    "Proprietæ privâ: A differensa di forti do Parco de Mûe, ancheu o l’è inte un’area privâ e normalmente o no se peu visitâ.",
+    "Guæra a-e spie: Into periodo de massima attività militare, l’accesso a-a collinn-a o l’ea streitamente controllòu.",
+    "O gemello de Monte Croce: A soa architettua a l’ea ben compagna a quella do vicino Forte Monte Croce, do mæximo sistema difensoivo.",
+    "Un rifugio inta roccia: Sotto o forte gh’ea spaçi protegæ pe ospitâ ommi e materiali durante bombardamenti lunghi."
+  ]
+};
+
+  root.fort["Forte Monte Croce"] = {
+  "it": [
+    "Il forte fantasma: È una delle fortificazioni dell’elenco che oggi non esistono più: al suo posto resta una spianata profondamente trasformata.",
+    "Sacrificato per il progresso: Fu demolito nel 1959 e la collina venne sbancata durante le grandi trasformazioni industriali del ponente genovese.",
+    "Ha contribuito all’aeroporto: Parte dei materiali provenienti dallo sbancamento fu riutilizzata nei riempimenti a mare legati alla costruzione dell’area aeroportuale di Genova-Sestri Ponente.",
+    "Gemello di Casale: Prima della demolizione era molto simile al Forte Casale Erselli, con pianta trapezoidale, fossato e spazi destinati alla guarnigione.",
+    "La batteria di bronzo: Durante la Seconda Guerra Mondiale la fortificazione venne rinforzata con ulteriori pezzi d’artiglieria, compresi cannoni in bronzo.",
+    "Il custode di Cornigliano: La posizione dominava il litorale di Sestri Ponente e l’imbocco della Val Polcevera, rendendola strategica per la difesa occidentale.",
+    "Progettato da Giuseppe Celle: Fu realizzato alla fine dell’Ottocento nell’ambito delle opere militari progettate dall’ingegnere Giuseppe Celle.",
+    "Prigionieri nella Grande Guerra: Durante la Prima Guerra Mondiale gli spazi furono utilizzati anche per prigionieri di guerra austro-ungarici.",
+    "La torre abbattuta: Negli anni Trenta alcune strutture ottocentesche vennero sacrificate per adeguare il sito alle nuove esigenze della difesa contraerea.",
+    "Un nome rimasto sulle mappe: Anche se il forte è scomparso, vecchie carte e toponimi continuano a conservarne la memoria."
+  ],
+  "en": [
+    "The ghost fort: It is one of the fortifications on the list that no longer exists; in its place is a heavily transformed open area.",
+    "Sacrificed to progress: It was demolished in 1959 and the hill was levelled during the major industrial transformation of western Genoa.",
+    "It helped build the airport: Part of the material from the excavation was reused in sea reclamation connected with the construction of Genoa-Sestri Ponente airport.",
+    "Twin of Casale: Before demolition it closely resembled Forte Casale Erselli, with a trapezoidal plan, moat and spaces for the garrison.",
+    "The bronze battery: During the Second World War the fortification was reinforced with additional artillery, including bronze guns.",
+    "Guardian of Cornigliano: Its position overlooked the Sestri Ponente coastline and the entrance to the Polcevera Valley, making it strategic for western defence.",
+    "Designed by Giuseppe Celle: It was built in the late 19th century as part of the military works designed by engineer Giuseppe Celle.",
+    "Prisoners in the Great War: During the First World War its spaces were also used for Austro-Hungarian prisoners of war.",
+    "The demolished tower: In the 1930s some 19th-century structures were sacrificed to adapt the site to new anti-aircraft requirements.",
+    "A name that survives on maps: Although the fort has disappeared, old maps and place names still preserve its memory."
+  ],
+  "es": [
+    "El fuerte fantasma: Es una de las fortificaciones de la lista que ya no existen; en su lugar queda una explanada profundamente transformada.",
+    "Sacrificado al progreso: Fue demolido en 1959 y la colina se rebajó durante las grandes transformaciones industriales del poniente genovés.",
+    "Ayudó a construir el aeropuerto: Parte del material extraído se reutilizó en rellenos marítimos relacionados con la construcción del aeropuerto de Génova-Sestri Ponente.",
+    "Gemelo de Casale: Antes de desaparecer era muy parecido al Forte Casale Erselli, con planta trapezoidal, foso y espacios para la guarnición.",
+    "La batería de bronce: Durante la Segunda Guerra Mundial la fortificación fue reforzada con más piezas de artillería, incluidos cañones de bronce.",
+    "El guardián de Cornigliano: Su posición dominaba la costa de Sestri Ponente y la entrada del valle del Polcevera, un punto estratégico para la defensa occidental.",
+    "Proyectado por Giuseppe Celle: Fue construido a finales del siglo XIX dentro del conjunto de obras militares diseñadas por el ingeniero Giuseppe Celle.",
+    "Prisioneros en la Gran Guerra: Durante la Primera Guerra Mundial sus espacios también se utilizaron para prisioneros austrohúngaros.",
+    "La torre demolida: En los años treinta algunas estructuras del siglo XIX fueron sacrificadas para adaptar el lugar a las nuevas necesidades antiaéreas.",
+    "Un nombre que sigue en los mapas: Aunque el fuerte ha desaparecido, antiguos mapas y topónimos todavía conservan su memoria."
+  ],
+  "fr": [
+    "Le fort fantôme : C’est l’une des fortifications de la liste qui n’existent plus ; à sa place subsiste une esplanade profondément transformée.",
+    "Sacrifié au progrès : Il fut démoli en 1959 et la colline fut arasée lors des grandes transformations industrielles de l’ouest génois.",
+    "Il a contribué à l’aéroport : Une partie des matériaux d’excavation fut réutilisée pour les remblais en mer liés à la construction de l’aéroport de Gênes-Sestri Ponente.",
+    "Le jumeau de Casale : Avant sa disparition, il ressemblait beaucoup au Forte Casale Erselli, avec plan trapézoïdal, fossé et espaces de garnison.",
+    "La batterie de bronze : Pendant la Seconde Guerre mondiale, la fortification fut renforcée par d’autres pièces d’artillerie, dont des canons en bronze.",
+    "Le gardien de Cornigliano : Sa position dominait le littoral de Sestri Ponente et l’entrée de la vallée du Polcevera, stratégique pour la défense occidentale.",
+    "Conçu par Giuseppe Celle : Il fut construit à la fin du XIXe siècle dans le cadre des ouvrages militaires dessinés par l’ingénieur Giuseppe Celle.",
+    "Prisonniers pendant la Grande Guerre : Durant la Première Guerre mondiale, ses espaces servirent aussi à détenir des prisonniers austro-hongrois.",
+    "La tour supprimée : Dans les années 1930, certaines structures du XIXe siècle furent sacrifiées afin d’adapter le site aux nouvelles exigences antiaériennes.",
+    "Un nom resté sur les cartes : Même disparu, le fort continue de vivre dans les anciennes cartes et les noms de lieux."
+  ],
+  "ar": [
+    "الحصن الشبح: هو أحد التحصينات في القائمة التي اختفت تماماً، ولم يبق مكانه سوى مساحة مسطحة تغيرت جذرياً.",
+    "ضحية التقدم: هُدم عام 1959 وسُويت التلة أثناء التحولات الصناعية الكبرى في غرب جنوة.",
+    "ساهم في إنشاء المطار: استُخدم جزء من مواد الحفر والردم في أعمال استصلاح البحر المرتبطة بإنشاء مطار جنوة-سيستري بونينتي.",
+    "توأم كازالي: قبل هدمه كان شديد الشبه بـ Forte Casale Erselli، بمخطط شبه منحرف وخندق ومساحات للحامية.",
+    "بطارية البرونز: خلال الحرب العالمية الثانية دُعم التحصين بقطع مدفعية إضافية، من بينها مدافع من البرونز.",
+    "حارس كورنيليانو: كان موقعه يشرف على ساحل سيستري بونينتي ومدخل وادي بولتشيفيرا، ما جعله مهماً للدفاع الغربي.",
+    "من تصميم جوزيبي تشيلّي: بُني في أواخر القرن التاسع عشر ضمن الأعمال العسكرية التي صممها المهندس Giuseppe Celle.",
+    "أسرى الحرب الكبرى: خلال الحرب العالمية الأولى استُخدمت بعض مساحاته لاحتجاز أسرى حرب نمساويين-مجريين.",
+    "البرج المهدوم: في ثلاثينيات القرن العشرين أزيلت بعض المنشآت القديمة لتكييف الموقع مع متطلبات الدفاع الجوي الجديدة.",
+    "اسم باقٍ على الخرائط: رغم اختفاء الحصن، ما زالت الخرائط القديمة وأسماء المواقع تحفظ ذكراه."
+  ],
+  "ru": [
+    "Форт-призрак: Это одно из укреплений списка, которое сегодня полностью исчезло; на его месте осталась сильно изменённая площадка.",
+    "Жертва прогресса: Его снесли в 1959 году, а холм срезали в ходе крупных промышленных преобразований западной части Генуи.",
+    "Он помог строить аэропорт: Часть грунта и камня после срезки холма использовали для морских насыпей, связанных со строительством аэропорта Генуя-Сестри Поненте.",
+    "Близнец Casale: До сноса он был очень похож на Forte Casale Erselli — трапециевидный план, ров и помещения для гарнизона.",
+    "Бронзовая батарея: Во Вторую мировую войну укрепление усилили дополнительной артиллерией, в том числе бронзовыми орудиями.",
+    "Страж Корнильяно: Отсюда контролировались побережье Сестри Поненте и вход в долину Полчевера, что делало место важным для западной обороны.",
+    "Проект Giuseppe Celle: Форт построили в конце XIX века как часть военных сооружений, разработанных инженером Джузеппе Челле.",
+    "Пленные Великой войны: В Первую мировую войну помещения использовались также для австро-венгерских военнопленных.",
+    "Снесённая башня: В 1930-е годы часть сооружений XIX века убрали, чтобы приспособить площадку к новым задачам противовоздушной обороны.",
+    "Имя осталось на картах: Хотя сам форт исчез, старые карты и топонимы по-прежнему хранят память о нём."
+  ],
+  "zh": [
+    "幽灵要塞：它是名单中如今已不复存在的防御工事之一，原址只剩下一片被彻底改造的平地。",
+    "为“进步”让路：1959年要塞被拆除，山丘也在热那亚西部的大规模工业改造中被削平。",
+    "参与了机场建设：削山产生的部分土石被用于填海工程，与热那亚-塞斯特里波嫩特机场的建设有关。",
+    "Casale 的“孪生堡”：拆除前，它与 Forte Casale Erselli 很相似，拥有梯形平面、壕沟和驻军空间。",
+    "青铜炮台：第二次世界大战期间，这里的火力得到加强，其中包括青铜火炮。",
+    "守护 Cornigliano：其位置俯瞰 Sestri Ponente 海岸和 Polcevera 山谷入口，是西部防御的重要据点。",
+    "Giuseppe Celle 的设计：它建于19世纪末，是工程师 Giuseppe Celle 设计的军事工程之一。",
+    "一战战俘：第一次世界大战期间，这里也曾用于关押奥匈帝国战俘。",
+    "被拆除的塔楼：20世纪30年代，为适应新的防空需求，一些19世纪结构被拆除。",
+    "留在地图上的名字：虽然要塞已消失，但旧地图和地名仍保存着它的记忆。"
+  ],
+  "lij": [
+    "O forte fantasma: O l’è un di forti che ancheu no gh’é ciù; a-o seu pòsto resta unna spianâ trasformâ completamente.",
+    "Sacrificòu pe-o progresso: O l’è stæto demolîo into 1959 e a collinn-a a l’è stæta sbancâ durante e grandi transformaçioin industriali do ponente.",
+    "O l’ha aiutòu l’aeroporto: Parte da tæra e da pria de-o sbancamento a l’è stæta adêuviâ pe-i riempimenti a mâ legæ a-o aeroporto de Zêna-Sestri Ponente.",
+    "Gemello de Casale: Primma de sparî o l’ea ben compagno a Forte Casale Erselli, con pianta trapezoidale, fossòu e spaçi pe-a guarnigion.",
+    "A batteria de bronzo: Durante a Segonda Guæra Mondiale o l’è stæto rinforçòu con atra artiglieria, anche cannoin de bronzo.",
+    "O custode de Cornigén: Da lì se controllava o litorâ de Sestri Ponente e l’intrâ da Val Polcevera, unna posiçion strategica pe-a difesa de ponente.",
+    "Progettòu da Giuseppe Celle: O l’è stæto costruïo a fin Ottocento inte-e opere militari progettæ da l’ingegnê Giuseppe Celle.",
+    "Prigionieri inta Grande Guæra: Durante a Primma Guæra Mondiale i spaçi en stæti adêuviæ anche pe prigionieri austro-ongareixi.",
+    "A torre abbattua: Inti anni Trenta certe strutture ottocentesche en stæte sacrificæ pe adattâ o sito a-a difesa contra-aerea.",
+    "Un nomme restòu in sce-e mappe: Anche se o forte o no gh’é ciù, mappe vegie e toponimi ne conservan a memoria."
+  ]
+};
+
+  root.fort["Forte Fratello Minore"] = {
+  "it": [
+    "La storia dei due fratelli: Sorge sul Monte Due Fratelli. Un tempo le due cime ospitavano il Fratello Maggiore e il Fratello Minore; oggi è rimasto in piedi soltanto il Minore.",
+    "Il Maggiore non c’è più: Il vicino Forte Fratello Maggiore fu demolito nel 1932 per fare spazio a una batteria contraerea.",
+    "Il mini-castello: È una struttura molto compatta, con una torre quadrata centrale e una piccola cinta muraria che ricorda un avamposto medievale.",
+    "Un cammino selvaggio: Il sentiero corre su uno spettacolare crinale montano, tra prati e pascoli, ed è particolarmente apprezzato dagli escursionisti.",
+    "La polveriera sotterranea: Nella torre si trovano ambienti inferiori protetti destinati alla conservazione delle munizioni e della polvere da sparo.",
+    "Costruito dopo Napoleone: I progetti sabaudi nacquero nel quadro del rafforzamento difensivo delle alture genovesi dopo la caduta di Napoleone.",
+    "Una piccola guarnigione: Le dimensioni ridotte richiedevano un presidio molto più contenuto rispetto ai grandi forti della linea principale.",
+    "La cisterna per l’acqua: Un sistema di raccolta convogliava l’acqua piovana verso una cisterna interna, fondamentale per l’autonomia della guarnigione.",
+    "I graffiti dei soldati: Su alcune pietre e vicino alle feritoie sono visibili incisioni e segni lasciati nel tempo dai militari di presidio.",
+    "La vista tra mare e Appennino: Da sud lo sguardo raggiunge Genova e il Mar Ligure; verso nord si apre invece sulle montagne dell’Appennino."
+  ],
+  "en": [
+    "The story of the two brothers: It stands on Monte Due Fratelli. The twin summits once held Forte Fratello Maggiore and Forte Fratello Minore; only the Minore survives.",
+    "The Maggiore is gone: The nearby Forte Fratello Maggiore was demolished in 1932 to make room for an anti-aircraft battery.",
+    "The mini-castle: It is a very compact structure, with a central square tower and a small surrounding wall that recalls a medieval outpost.",
+    "A wild approach: The path follows a spectacular mountain ridge through meadows and pasture, making it especially popular with hikers.",
+    "The underground powder store: Lower protected rooms in the tower were used to store ammunition and gunpowder.",
+    "Built after Napoleon: Savoy plans formed part of the strengthening of Genoa’s high-ground defences after the fall of Napoleon.",
+    "A small garrison: Its limited size required far fewer men than the large forts of the main defensive line.",
+    "The water cistern: A collection system channelled rainwater into an internal cistern, essential for the garrison’s autonomy.",
+    "Soldiers’ graffiti: Engravings and marks left over time by soldiers can still be seen on some stones and near the loopholes.",
+    "View between sea and Apennines: To the south the view reaches Genoa and the Ligurian Sea; to the north it opens toward the Apennine mountains."
+  ],
+  "es": [
+    "La historia de los dos hermanos: Se alza en el Monte Due Fratelli. Las dos cumbres acogían el Fratello Maggiore y el Fratello Minore; hoy sólo queda en pie el Minore.",
+    "El Maggiore ya no existe: El cercano Forte Fratello Maggiore fue demolido en 1932 para instalar una batería antiaérea.",
+    "El mini-castillo: Es una estructura muy compacta, con torre cuadrada central y un pequeño recinto amurallado que recuerda a un puesto medieval.",
+    "Un camino salvaje: El sendero recorre una espectacular cresta de montaña entre prados y pastos y es muy apreciado por los excursionistas.",
+    "El polvorín subterráneo: En la torre hay espacios inferiores protegidos destinados a guardar municiones y pólvora.",
+    "Construido después de Napoleón: Los proyectos saboyanos formaban parte del refuerzo de las alturas genovesas tras la caída de Napoleón.",
+    "Una pequeña guarnición: Sus reducidas dimensiones requerían muchos menos soldados que los grandes fuertes de la línea principal.",
+    "La cisterna de agua: Un sistema recogía el agua de lluvia y la conducía a una cisterna interior, esencial para la autonomía de la guarnición.",
+    "Los grafitos de los soldados: En algunas piedras y cerca de las troneras aún pueden verse incisiones y marcas dejadas por militares.",
+    "Vista entre el mar y los Apeninos: Hacia el sur se divisan Génova y el mar de Liguria; hacia el norte se abren las montañas de los Apeninos."
+  ],
+  "fr": [
+    "L’histoire des deux frères : Il se dresse sur le Monte Due Fratelli. Les deux sommets accueillaient autrefois le Fratello Maggiore et le Fratello Minore ; seul le Minore subsiste aujourd’hui.",
+    "Le Maggiore a disparu : Le Forte Fratello Maggiore voisin fut démoli en 1932 pour installer une batterie antiaérienne.",
+    "Le mini-château : C’est un ouvrage très compact, avec une tour carrée centrale et une petite enceinte rappelant un avant-poste médiéval.",
+    "Un chemin sauvage : Le sentier suit une spectaculaire crête de montagne entre prairies et pâturages, très appréciée des randonneurs.",
+    "La poudrière souterraine : Des pièces basses et protégées de la tour servaient à conserver munitions et poudre.",
+    "Construit après Napoléon : Les projets savoyards s’inscrivaient dans le renforcement des hauteurs de Gênes après la chute de Napoléon.",
+    "Une petite garnison : Ses dimensions réduites exigeaient beaucoup moins d’hommes que les grands forts de la ligne principale.",
+    "La citerne d’eau : Un système de collecte dirigeait l’eau de pluie vers une citerne intérieure, indispensable à l’autonomie de la garnison.",
+    "Les graffitis des soldats : Des inscriptions et marques laissées au fil du temps par les militaires restent visibles sur certaines pierres et près des meurtrières.",
+    "Vue entre mer et Apennins : Au sud, le regard porte sur Gênes et la mer Ligure ; au nord, il s’ouvre sur les montagnes des Apennins."
+  ],
+  "ar": [
+    "قصة الأخوين: يقع على جبل Due Fratelli. كانت القمتان تحملان Forte Fratello Maggiore وForte Fratello Minore؛ واليوم لم يبق قائماً سوى الأصغر.",
+    "الأكبر اختفى: هُدم Forte Fratello Maggiore القريب عام 1932 لإقامة بطارية مضادة للطائرات.",
+    "القلعة الصغيرة: بنية شديدة الاكتناز تتكون من برج مركزي مربع وسور صغير، فتشبه موقعاً عسكرياً من العصور الوسطى.",
+    "طريق بري: يسير المسار على حافة جبلية رائعة بين المروج والمراعي، لذلك يحبه المتنزهون كثيراً.",
+    "مخزن البارود تحت الأرض: في أسفل البرج غرف محمية خُصصت لحفظ الذخيرة والبارود.",
+    "بُني بعد نابليون: جاءت المشاريع السافوية ضمن خطة تقوية دفاعات مرتفعات جنوة بعد سقوط نابليون.",
+    "حامية صغيرة: بسبب حجمه المحدود كان يحتاج إلى عدد أقل بكثير من الجنود مقارنة بالحصون الكبيرة.",
+    "خزان الماء: كان نظام تجميع يوجه مياه المطر إلى خزان داخلي، وهو عنصر أساسي لاستقلال الحامية.",
+    "نقوش الجنود: ما زالت على بعض الحجارة وبالقرب من فتحات الرمي علامات وكتابات حفرها الجنود عبر الزمن.",
+    "إطلالة بين البحر والأبينيني: جنوباً تظهر جنوة والبحر الليغوري، وشمالاً تمتد جبال الأبينيني."
+  ],
+  "ru": [
+    "История двух братьев: Форт стоит на Monte Due Fratelli. Когда-то на двух вершинах находились Fratello Maggiore и Fratello Minore; сегодня сохранился только Minore.",
+    "Maggiore больше нет: Соседний Forte Fratello Maggiore снесли в 1932 году ради установки зенитной батареи.",
+    "Мини-замок: Очень компактное сооружение с центральной квадратной башней и небольшим ограждением, напоминающим средневековый форпост.",
+    "Дикий путь: Тропа проходит по живописному горному хребту среди лугов и пастбищ и особенно популярна у любителей походов.",
+    "Подземный пороховой склад: В нижних защищённых помещениях башни хранили боеприпасы и порох.",
+    "Построен после Наполеона: Савойские проекты были частью укрепления генуэзских высот после падения Наполеона.",
+    "Небольшой гарнизон: Из-за малых размеров здесь требовалось гораздо меньше солдат, чем в крупных фортах главной линии.",
+    "Цистерна для воды: Система сбора направляла дождевую воду во внутреннюю цистерну, необходимую для автономности гарнизона.",
+    "Солдатские граффити: На некоторых камнях и возле бойниц до сих пор видны надписи и знаки, оставленные военными.",
+    "Вид между морем и Апеннинами: К югу открываются Генуя и Лигурийское море, к северу — горы Апеннин."
+  ],
+  "zh": [
+    "“两兄弟”的故事：它位于 Monte Due Fratelli。过去两座山峰分别有 Fratello Maggiore 和 Fratello Minore，如今只剩 Minore。",
+    "Maggiore 已消失：附近的 Forte Fratello Maggiore 于1932年被拆除，用于建设防空炮台。",
+    "迷你城堡：结构非常紧凑，一座方形中央塔加上小型围墙，像中世纪前哨站。",
+    "野趣十足的山路：步道沿壮观山脊穿过草地和牧场，深受徒步者喜爱。",
+    "地下火药库：塔楼下方的受保护空间用于储存弹药和火药。",
+    "拿破仑之后的防御工程：萨伏依的计划属于拿破仑倒台后加强热那亚高地防御的一部分。",
+    "小型驻军：由于规模有限，所需士兵远少于主防线上的大型要塞。",
+    "雨水蓄水池：收集系统将雨水引入内部蓄水池，是驻军保持自给的重要设施。",
+    "士兵涂刻：一些石块和射孔附近仍可看到驻军留下的刻痕与文字。",
+    "海与亚平宁之间的景色：向南可见热那亚和利古里亚海，向北则望向亚平宁山脉。"
+  ],
+  "lij": [
+    "A storia di doî fræ: O l’è in sciô Monte Due Fratelli. Un tempo e doî cime gh’aveivan o Fratello Maggiore e o Fratello Minore; ancheu o resta solo o Minore.",
+    "O Maggiore o no gh’é ciù: O vicino Forte Fratello Maggiore o l’è stæto demolîo into 1932 pe mette unna batteria contra-aerea.",
+    "O mini-castello: O l’è piccin e compatto, con unna torre quadrâ into mezo e unna çinta piccinn-a, comme un avamposto medievale.",
+    "Un cammin selvaggio: O sentê o corre in sciâ cresta do monte tra prati e pascoli, e o l’è ben amòu da-i escursionisti.",
+    "A polverea sotterranea: Inte parti basse da torre gh’ea spaçi protegæ pe conservâ munission e polvere da sparo.",
+    "Costruïo dòppo Napoleone: I progetti sabaudi en nasciûi pe rinforçâ e artue de Zêna dòppo a caduta de Napoleone.",
+    "Unna guarnigion piccinn-a: Pe-e dimension ridotte o gh’aveiva bezêu de ben meno sordati che i grandi forti da linia prinçipâ.",
+    "A cisterna d’ægua: Un sistema o raccoggeiva l’ægua da ciêuva e o-a mandava inte unna cisterna interna.",
+    "I graffiti di sordati: In sce certe prie e vixin a-e feritoie se vedde ancon segni e scritte lasciæ da-i militari.",
+    "A vista tra mâ e Appennin: A sud se vedde Zêna e o Mâ Ligure; a nord se arvan e montagne de l’Appennin."
+  ]
+};
+
+  root.fort["Forte Tenaglia"] = {
+  "it": [
+    "La forma a tenaglia: Il nome deriva dalla particolare geometria dell’opera fortificata, che ricorda una tenaglia o una chela aperta verso la valle.",
+    "Sulle Mura Nuove: Sorge su strutture difensive inserite nel sistema delle Mura Nuove del Seicento.",
+    "La rinascita sociale: Dopo decenni di abbandono è stato recuperato grazie all’associazione La Piuma, che vi svolge attività sociali e di accoglienza.",
+    "L’orto nel forte: Sui terrazzamenti un tempo destinati alla difesa oggi trovano spazio orti, piante aromatiche e attività comunitarie.",
+    "I danni della guerra: Durante la Seconda Guerra Mondiale i bombardamenti colpirono duramente il complesso e danneggiarono alcune sue parti.",
+    "Il bunker tedesco: Dopo l’8 settembre 1943 il forte fu occupato da truppe tedesche e alcuni ambienti furono adattati a nuove esigenze militari.",
+    "Un panorama da cartolina: Dalle alture si osservano da vicino il porto, il Terminal Traghetti e la Lanterna, simbolo di Genova.",
+    "Dall’abbandono al recupero: Prima dei lavori di recupero molte aree erano invase da terra e vegetazione e risultavano difficilmente leggibili.",
+    "Aperto alla comunità: Oggi ospita periodicamente giornate di apertura, iniziative per famiglie, attività sociali e occasioni per conoscere la storia del luogo.",
+    "Una porta verso i forti: La posizione sulle alture di Sampierdarena lo rende un interessante punto di partenza per percorsi verso il sistema fortificato genovese."
+  ],
+  "en": [
+    "The pincer shape: The name comes from the distinctive geometry of the fortification, which recalls an open pincer or claw facing the valley.",
+    "On the New Walls: It stands on defensive works incorporated into Genoa’s 17th-century New Walls system.",
+    "A social rebirth: After decades of abandonment, it was recovered thanks to the La Piuma association, which runs social and community activities there.",
+    "The garden inside the fort: Terraces once used for defence now contain vegetable plots, aromatic plants and community activities.",
+    "Wartime damage: During the Second World War, bombing struck the complex hard and damaged parts of it.",
+    "The German bunker: After 8 September 1943, German troops occupied the fort and adapted some rooms to new military purposes.",
+    "A postcard panorama: From the heights there are close views of the harbour, ferry terminal and the Lanterna, Genoa’s lighthouse symbol.",
+    "From abandonment to recovery: Before restoration, many areas were buried under soil and vegetation and had become difficult to read.",
+    "Open to the community: Today it periodically hosts open days, family initiatives, social activities and opportunities to discover the site’s history.",
+    "A gateway to the forts: Its position above Sampierdarena makes it an interesting starting point for routes toward Genoa’s fortified system."
+  ],
+  "es": [
+    "La forma de tenaza: El nombre deriva de la peculiar geometría de la fortificación, que recuerda una tenaza o pinza abierta hacia el valle.",
+    "Sobre las Murallas Nuevas: Se levanta sobre estructuras defensivas integradas en el sistema de las Mura Nuove del siglo XVII.",
+    "El renacimiento social: Tras décadas de abandono fue recuperado gracias a la asociación La Piuma, que desarrolla allí actividades sociales y de acogida.",
+    "El huerto en el fuerte: En las terrazas antes destinadas a la defensa hoy hay huertos, plantas aromáticas y actividades comunitarias.",
+    "Los daños de la guerra: Durante la Segunda Guerra Mundial los bombardeos golpearon duramente el complejo y dañaron algunas de sus partes.",
+    "El búnker alemán: Después del 8 de septiembre de 1943, tropas alemanas ocuparon el fuerte y adaptaron algunas salas a nuevas funciones militares.",
+    "Un panorama de postal: Desde las alturas se observan de cerca el puerto, la terminal de ferris y la Lanterna, símbolo de Génova.",
+    "Del abandono a la recuperación: Antes de la restauración muchas zonas estaban invadidas por tierra y vegetación y resultaban difíciles de reconocer.",
+    "Abierto a la comunidad: Hoy acoge periódicamente jornadas abiertas, iniciativas familiares, actividades sociales y ocasiones para conocer su historia.",
+    "Una puerta hacia los fuertes: Su posición sobre Sampierdarena lo convierte en un buen punto de partida para rutas hacia el sistema fortificado genovés."
+  ],
+  "fr": [
+    "La forme en tenaille : Le nom vient de la géométrie particulière de l’ouvrage, qui rappelle une pince ou une tenaille ouverte vers la vallée.",
+    "Sur les Mura Nuove : Il s’élève sur des ouvrages défensifs intégrés au système des « Mura Nuove » du XVIIe siècle.",
+    "La renaissance sociale : Après des décennies d’abandon, il a été récupéré grâce à l’association La Piuma, qui y mène des activités sociales et d’accueil.",
+    "Le potager dans le fort : Les terrasses autrefois consacrées à la défense accueillent aujourd’hui potagers, plantes aromatiques et activités communautaires.",
+    "Les dégâts de la guerre : Pendant la Seconde Guerre mondiale, les bombardements touchèrent durement le complexe et en endommagèrent plusieurs parties.",
+    "Le bunker allemand : Après le 8 septembre 1943, des troupes allemandes occupèrent le fort et adaptèrent certains espaces à de nouveaux usages militaires.",
+    "Un panorama de carte postale : Depuis les hauteurs, on voit de près le port, le terminal des ferries et la Lanterna, symbole de Gênes.",
+    "De l’abandon à la récupération : Avant les travaux, de nombreuses zones étaient envahies par la terre et la végétation et difficiles à lire.",
+    "Ouvert à la communauté : Aujourd’hui, le fort accueille périodiquement journées portes ouvertes, activités familiales et initiatives sociales.",
+    "Une porte vers les forts : Sa position au-dessus de Sampierdarena en fait un intéressant point de départ vers le système fortifié génois."
+  ],
+  "ar": [
+    "شكل الكماشة: يأتي الاسم من الهندسة المميزة للتحصين التي تشبه كماشة أو مخلباً مفتوحاً باتجاه الوادي.",
+    "على الأسوار الجديدة: يقوم على منشآت دفاعية أُدمجت في منظومة Mura Nuove التي تعود إلى القرن السابع عشر.",
+    "نهضة اجتماعية: بعد عقود من الإهمال أُعيد إحياء الموقع بفضل جمعية La Piuma التي تنظم فيه أنشطة اجتماعية واستقبالية.",
+    "حديقة داخل الحصن: المصاطب التي كانت مخصصة للدفاع تستضيف اليوم حدائق خضروات ونباتات عطرية وأنشطة مجتمعية.",
+    "أضرار الحرب: خلال الحرب العالمية الثانية أصاب القصف المجمع بقوة وألحق الضرر ببعض أجزائه.",
+    "المخبأ الألماني: بعد 8 سبتمبر 1943 احتلت القوات الألمانية الحصن وعدلت بعض الغرف لاستخدامات عسكرية جديدة.",
+    "منظر كالبطاقة البريدية: من المرتفعات تظهر الميناء ومحطة العبارات وLanterna، منارة جنوة الشهيرة.",
+    "من الإهمال إلى الاستعادة: قبل أعمال الإنقاذ كانت مساحات كثيرة مغطاة بالتراب والنباتات ويصعب فهم معالمها.",
+    "مفتوح للمجتمع: يستضيف اليوم دورياً أياماً مفتوحة ومبادرات للعائلات وأنشطة اجتماعية وفرصاً لاكتشاف تاريخه.",
+    "بوابة نحو الحصون: موقعه فوق Sampierdarena يجعله نقطة انطلاق مثيرة للاهتمام نحو منظومة حصون جنوة."
+  ],
+  "ru": [
+    "Форма клещей: Название происходит от необычной геометрии укрепления, напоминающей раскрытые клещи или клешню, обращённую к долине.",
+    "На Новых стенах: Форт стоит на оборонительных сооружениях, включённых в систему генуэзских Mura Nuove XVII века.",
+    "Социальное возрождение: После десятилетий заброшенности форт начали восстанавливать благодаря ассоциации La Piuma, которая ведёт здесь социальные проекты.",
+    "Огород в форте: На террасах, когда-то предназначенных для обороны, сегодня находятся огороды, ароматические растения и общественные пространства.",
+    "Военные повреждения: Во Вторую мировую войну комплекс серьёзно пострадал от бомбардировок.",
+    "Немецкий бункер: После 8 сентября 1943 года форт заняли немецкие войска, приспособив часть помещений к новым военным задачам.",
+    "Панорама как на открытке: С высоты хорошо видны порт, паромный терминал и Лантерна — знаменитый символ Генуи.",
+    "От заброшенности к восстановлению: До начала работ многие участки были засыпаны землёй и заросли растительностью, из-за чего их трудно было распознать.",
+    "Открыт для сообщества: Сегодня здесь периодически проходят дни открытых дверей, семейные инициативы и социальные мероприятия.",
+    "Ворота к фортам: Положение над Сампьердареной делает его интересной отправной точкой для маршрутов по генуэзской системе укреплений."
+  ],
+  "zh": [
+    "“钳子”形状：名称来自工事独特的几何布局，像一把向山谷张开的钳子或蟹螯。",
+    "位于“新城墙”体系：它建立在17世纪热那亚 Mura Nuove 防御系统的一部分之上。",
+    "社会化重生：经历数十年废弃后，La Piuma 协会参与恢复，并在这里开展社会与接待项目。",
+    "要塞中的菜园：过去用于防御的台地，如今种有菜园、香草并用于社区活动。",
+    "战争损伤：第二次世界大战期间，轰炸严重打击了这座建筑群并破坏了部分结构。",
+    "德国掩体：1943年9月8日之后，德军占领要塞，并将一些空间改造成新的军事用途。",
+    "明信片般的景色：从高处可以近距离看到港口、渡轮码头和热那亚象征——Lanterna 灯塔。",
+    "从废弃到恢复：修复前许多区域被泥土和植被覆盖，原有结构已很难辨认。",
+    "向社区开放：如今这里会定期举办开放日、亲子活动、社会项目以及历史介绍活动。",
+    "通往要塞群的门户：它位于 Sampierdarena 上方，是探索热那亚防御体系路线的一个有趣起点。"
+  ],
+  "lij": [
+    "A forma a tenaggia: O nomme o vegne da-a geometria particolare de l’opera, che a pâ unna tenaggia averta verso a valle.",
+    "In sce-e Mûe Nêuve: O l’è in sce strutture difensoive inserîe into sistema secentesc de Mûe Nêuve.",
+    "A rinascita sociale: Dòppo decenni d’abbandon o l’è stæto recuperòu grazie a l’associaçion La Piuma, che a ghe fa attività sociali.",
+    "L’orto into forte: In sci terraççi dove un tempo gh’ea a difesa, ancheu ghe son orti, erbe aromatiche e attività pe-a comunitæ.",
+    "I danni da guæra: Durante a Segonda Guæra Mondiale i bombardamenti han colpîo forte o complesso e danneggiòu diverse parti.",
+    "O bunker tedesco: Dòppo l’8 settembre 1943 o forte o l’è stæto occupòu da truppe tedesche e certi spaçi en stæti adattæ a usi militari.",
+    "Un panorama da cartolina: Da-e artue se vedde da vixin o porto, o Terminal Traghetti e a Lanterna, simbolo de Zêna.",
+    "Da l’abbandon a-o recupero: Primma di lavori, tante zone en stæte coperte da tæra e vegetaçion e l’ea difficile leze a struttura.",
+    "Averto a-a comunitæ: Ancheu o gh’ha periodicamente giornæ averte, attività pe famigge e iniziative sociali.",
+    "Unna porta verso i forti: A posiçion in sce Sampierdarena o rende un bon ponto de partensa pe percorsi verso o sistema fortificòu zeneize."
+  ]
+};
+
 })();
