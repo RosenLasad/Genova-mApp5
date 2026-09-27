@@ -140,7 +140,18 @@
       if(b.dataset.action){runAction(b.dataset.action,b.dataset.payload||'');return;}
     });
     assistant.querySelector('.gm-griff-nav').addEventListener('click',function(e){var b=e.target.closest('[data-nav]');if(!b)return;if(b.dataset.nav==='back')goBack();else goHome();});
-    mini.addEventListener('click',restore);window.addEventListener('resize',function(){if(mini&&mini.classList.contains('is-visible'))positionMini();else restoreSavedPosition();});var mapRoot=document.getElementById('map');if(mapRoot&&window.MutationObserver){new MutationObserver(function(){if(mini&&mini.classList.contains('is-visible'))positionMini();}).observe(mapRoot,{childList:true,subtree:false});}
+    mini.addEventListener('click',restore);window.addEventListener('resize',function(){if(mini&&mini.classList.contains('is-visible'))positionMini();else restoreSavedPosition();});var mapRoot=document.getElementById('map');if(mapRoot){
+      // Un tap/click sullo sfondo libero della mappa chiude solo il fumetto, lasciando il Grifoncino visibile.
+      mapRoot.addEventListener('click',function(e){
+        if(!bubbleVisible||!isOpen())return;
+        var target=e.target;
+        if(!target||target.nodeType!==1)return;
+        // Non chiudere il fumetto quando il click serve a un controllo, marker, popup o altro elemento interattivo della mappa.
+        if(target.closest('button,a,input,select,textarea,label,[role="button"],[role="dialog"],.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-interactive,.leaflet-control,.leaflet-popup,.leaflet-tooltip,.qt-item,.qt-btn,.qt-cat-panel,#ui-taccuino-button'))return;
+        setBubbleVisible(false);
+      },false);
+      if(window.MutationObserver){new MutationObserver(function(){if(mini&&mini.classList.contains('is-visible'))positionMini();}).observe(mapRoot,{childList:true,subtree:false});}
+    }
     assistant.addEventListener('pointerdown',function(e){if(e.target.closest('.gm-griff-character-btn'))return;if(!assistant.classList.contains('gm-confirming'))wake();},{passive:true});
     document.addEventListener('app:set-lang',function(e){refreshLanguage(e&&e.detail&&e.detail.lang);});
     window.addEventListener('i18n:changed',function(){refreshLanguage();});
