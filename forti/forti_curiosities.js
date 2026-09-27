@@ -990,4 +990,599 @@
   ]
 };
 
+
+  root.fort["Forte Quezzi"] = {
+  "it": [
+    "La caserma incompiuta: Fu progettato originariamente come una colossale fortezza lineare sabauda, ma a causa del costo astronomico i lavori vennero interrotti e rimase parzialmente incompiuto.",
+    "La Torre gemella cilindrica: A breve distanza sorge la celebre Torre Quezzi, un avamposto cilindrico a tre piani rimasto straordinariamente intatto e visibile da gran parte della Val Bisagno.",
+    "L'assedio delle capre: Oggi i prati selvaggi attorno alle rovine del forte sono battuti regolarmente da greggi di capre e mucche al pascolo, a pochi minuti in linea d'aria dai palazzi cittadini.",
+    "Guerra alle trincee francesi: Sorge nell'area in cui i soldati francesi scavarono trinceramenti improvvisati nel 1800 per tentare di arginare le letali cariche della fanteria austriaca.",
+    "Le finestre-feritoia asimmetriche: La facciata presenta una serie di finestre disposte in modo asimmetrico, calcolate dagli ingegneri militari per confondere gli artiglieri nemici sulla reale posizione dei soldati.",
+    "Prigionieri d'oltremare: Durante la Prima Guerra Mondiale, l'edificio principale venne temporaneamente svuotato per ospitare i soldati austro-ungarici catturati sul fronte alpino.",
+    "Il bosco dei rovi: Abbandonato definitivamente dopo la Seconda Guerra Mondiale, le sue mura interne sono oggi colonizzate da una suggestiva boscaglia di edera e rovi che regala foto dall'atmosfera spettrale.",
+    "Pozzo senza fondo: All'interno del cortile c'è una profonda cisterna sotterranea per l'acqua piovana, dotata di un ingegnoso sistema di decantazione a sabbia per purificare l'acqua.",
+    "Fari nel vento: Nelle notti di tempesta, la cresta esposta su cui sorge il forte viene sferzata da venti caldi di scirocco così forti da rendere difficoltoso persino camminare sul sentiero.",
+    "Panorama sulla Foce: Per un turista è una terrazza magnifica: offre una vista geometrica perfetta sulla foce del torrente Bisagno e sulla linea retta di Corso Sardegna."
+  ],
+  "en": [
+    "The unfinished barracks: It was planned as a huge linear Savoy fortress, but soaring costs stopped the works and left it partly unfinished.",
+    "The cylindrical twin tower: Nearby stands Torre Quezzi, a three-storey cylindrical outpost that remains remarkably intact and visible across much of Val Bisagno.",
+    "The siege of the goats: Today the wild meadows around the ruins are regularly crossed by grazing goats and cattle, only minutes as the crow flies from city buildings.",
+    "War against the French trenches: The fort stands where French soldiers dug improvised trenches in 1800 to resist Austrian infantry charges.",
+    "Asymmetrical loophole-windows: Its façade has irregularly arranged openings, designed to make it harder for enemy gunners to locate the defenders.",
+    "Prisoners from afar: During the First World War the main building temporarily housed Austro-Hungarian soldiers captured on the Alpine front.",
+    "The bramble wood: Abandoned after the Second World War, its inner walls are now covered by ivy and brambles, creating an eerie photographic atmosphere.",
+    "The deep cistern: The courtyard contains a deep rainwater cistern with a sand-settling system intended to purify the water.",
+    "Lights in the wind: During storms the exposed ridge can be battered by powerful warm sirocco winds, making even walking difficult.",
+    "View over Foce: The site forms a fine terrace over the mouth of the Bisagno and the straight line of Corso Sardegna."
+  ],
+  "es": [
+    "El cuartel inacabado: Se proyectó como una enorme fortaleza lineal saboyana, pero los costes detuvieron las obras y quedó parcialmente incompleta.",
+    "La torre cilíndrica gemela: Muy cerca se alza Torre Quezzi, un puesto cilíndrico de tres plantas sorprendentemente bien conservado y visible desde gran parte de Val Bisagno.",
+    "El asedio de las cabras: Hoy los prados alrededor de las ruinas son recorridos por cabras y vacas, a muy poca distancia de los edificios urbanos.",
+    "Guerra contra las trincheras francesas: Se levanta donde los franceses excavaron trincheras improvisadas en 1800 para frenar las cargas austríacas.",
+    "Ventanas-aspilleras asimétricas: La fachada presenta aberturas irregulares pensadas para dificultar al enemigo localizar a los defensores.",
+    "Prisioneros de lejos: Durante la Primera Guerra Mundial alojó temporalmente a soldados austrohúngaros capturados en el frente alpino.",
+    "El bosque de zarzas: Tras su abandono, hiedra y zarzas colonizaron sus muros interiores, creando una atmósfera muy evocadora.",
+    "La cisterna profunda: En el patio hay una profunda cisterna de agua de lluvia con un sistema de decantación mediante arena.",
+    "Luces en el viento: En las tormentas, la cresta queda expuesta a fuertes vientos de siroco que pueden dificultar incluso caminar.",
+    "Panorama sobre Foce: Es una magnífica terraza sobre la desembocadura del Bisagno y la línea recta de Corso Sardegna."
+  ],
+  "fr": [
+    "La caserne inachevée : Conçue comme une immense forteresse linéaire savoyarde, elle resta partiellement inachevée à cause du coût des travaux.",
+    "La tour cylindrique jumelle : À proximité se dresse la Torre Quezzi, avant-poste cylindrique de trois niveaux encore remarquablement conservé.",
+    "Le siège des chèvres : Aujourd’hui, chèvres et bovins paissent régulièrement dans les prairies sauvages autour des ruines, tout près de la ville.",
+    "La guerre des tranchées françaises : Le fort occupe la zone où les Français creusèrent des retranchements improvisés en 1800 contre les charges autrichiennes.",
+    "Les fenêtres-meurtrières asymétriques : Les ouvertures irrégulières de la façade compliquaient le repérage des défenseurs par l’artillerie ennemie.",
+    "Prisonniers venus de loin : Pendant la Première Guerre mondiale, le bâtiment principal accueillit temporairement des soldats austro-hongrois capturés sur le front alpin.",
+    "Le bois de ronces : Après son abandon, lierre et ronces ont envahi les murs intérieurs, créant une atmosphère très photogénique.",
+    "La citerne profonde : La cour abrite une profonde citerne d’eau de pluie équipée d’un système de décantation au sable.",
+    "Dans le vent : Lors des tempêtes, la crête exposée peut être balayée par de puissants vents de sirocco.",
+    "Panorama sur Foce : Le site offre une belle vue sur l’embouchure du Bisagno et l’axe rectiligne de Corso Sardegna."
+  ],
+  "ar": [
+    "الثكنة غير المكتملة: خُطط له كحصن سافوي خطي ضخم، لكن ارتفاع التكاليف أوقف الأشغال وبقي جزء منه غير مكتمل.",
+    "البرج الأسطواني التوأم: بالقرب منه يقف برج كويزي، وهو موقع أسطواني من ثلاثة طوابق ما زال محفوظاً بصورة لافتة.",
+    "حصار الماعز: ترعى اليوم الماعز والأبقار في المروج البرية المحيطة بالأطلال على مسافة قصيرة من مباني المدينة.",
+    "خنادق الفرنسيين: يقوم الحصن في المنطقة التي حفر فيها الفرنسيون خنادق مؤقتة عام 1800 لمواجهة هجمات المشاة النمساوية.",
+    "فتحات غير متناظرة: صُممت فتحات الواجهة بصورة غير منتظمة لتصعّب على مدفعية العدو تحديد مواقع المدافعين.",
+    "أسرى الحرب: خلال الحرب العالمية الأولى استُخدم المبنى الرئيسي مؤقتاً لإيواء جنود نمساويين-مجريين أُسروا على جبهة الألب.",
+    "غابة العليق: بعد هجره غطت اللبلاب والعليق جدرانه الداخلية، مانحة المكان أجواءً موحية ومخيفة.",
+    "الخزان العميق: في الفناء خزان عميق لمياه الأمطار مزود بنظام ترسيب بالرمل لتنقية المياه.",
+    "رياح السيروكو: تتعرض القمة في العواصف لرياح سيروكو قوية قد تجعل المشي على المسار صعباً.",
+    "إطلالة على فوشي: يوفر الموقع منظراً رائعاً لمصب نهر بيسانيو وخط كورسو ساردينيا المستقيم."
+  ],
+  "ru": [
+    "Незавершённые казармы: Форт задумывался как огромная линейная савойская крепость, но из-за высокой стоимости работы остановили.",
+    "Цилиндрическая башня-близнец: Рядом стоит трёхэтажная Torre Quezzi, хорошо сохранившаяся и заметная из многих мест Валь-Бизаньо.",
+    "Осада коз: Сегодня вокруг руин пасутся козы и коровы, хотя городские дома находятся совсем рядом.",
+    "Французские траншеи: Форт стоит в районе, где в 1800 году французы рыли временные укрепления против австрийских атак.",
+    "Асимметричные бойницы: Нерегулярное расположение проёмов затрудняло вражеской артиллерии определение позиций защитников.",
+    "Военнопленные: В Первую мировую здесь временно размещали австро-венгерских солдат, захваченных на Альпийском фронте.",
+    "Лес ежевики: После заброшенности внутренние стены заросли плющом и колючими кустами, создавая мрачную атмосферу.",
+    "Глубокая цистерна: Во дворе находится резервуар для дождевой воды с системой песчаного отстаивания.",
+    "Ветер на гребне: Во время бурь открытый хребет обдувают сильные ветры сирокко, затрудняющие ходьбу.",
+    "Панорама Фоче: Отсюда хорошо видны устье Бизаньо и прямой проспект Corso Sardegna."
+  ],
+  "zh": [
+    "未完工的兵营：它原计划建成一座巨大的萨伏依线形要塞，但高昂成本使工程中止，因此部分建筑从未完成。",
+    "圆柱形姊妹塔：附近的 Quezzi 塔是一座三层圆柱形前哨，保存状况出色，从 Val Bisagno 多处都能看到。",
+    "山羊的“围攻”：如今山羊和牛常在遗迹周围的野草地放牧，而城市楼群其实近在咫尺。",
+    "法国人的战壕：要塞所在区域正是法国军队在1800年挖掘临时战壕、抵挡奥军冲锋的地方。",
+    "不对称射孔窗：立面开口故意采用不规则布局，使敌方炮手更难判断守军位置。",
+    "远方的战俘：第一次世界大战期间，主楼曾临时关押在阿尔卑斯前线被俘的奥匈士兵。",
+    "荆棘树林：二战后废弃，常春藤和荆棘逐渐占据内部墙体，形成幽深而上镜的气氛。",
+    "深水池：庭院内有一座深层雨水蓄水池，并配有利用沙层沉淀净水的系统。",
+    "风中的山脊：暴风天气时，这条裸露山脊会受到强烈的西洛可风吹袭，甚至难以步行。",
+    "俯瞰 Foce：这里像一座天然观景台，可望见 Bisagno 河口以及笔直的 Corso Sardegna。"
+  ],
+  "lij": [
+    "A caserma incompleta: O forte o doveiva diventâ unna grande fortezza lineare sabauda, ma i costi han fermòu i travaggi.",
+    "A torre cilindrica: Pöco distante gh’è a Torre Quezzi, de trei cianni, ancon ben conservâ e visibile da-a Val Bisagno.",
+    "L’assedio de cravve: Ancheu inte præie attorno a-e roinn-e se vedde spesso cravve e vacche a pascolâ, vicin a-a çittæ.",
+    "E trincee franseixi: Chì into 1800 i franseixi han scavòu trincee improvvisæ pe fermâ e carighe austriache.",
+    "E feritoie asimmetriche: E avertue irregolari da facciata rendeivan ciù difficile capî donde eran i difensori.",
+    "Prigionê de guæra: Inte Primma Guæra Mondiale o l’ha ospitòu sordati austro-ungarichi catturæ in sciô fronte alpino.",
+    "O bosco de rovi: Dòppo l’abbandon, edera e rovi han invaxo e miage interne, creando unna atmosfera spettrale.",
+    "A cisterna fonda: Into cortî gh’è unna cisterna pe l’ægua de ciêuva con un sistema de decantaçion co-a sænn-a.",
+    "O vento in sciâ cresta: Co-e tempeste o scirocco o peu soffiâ tanto forte da rende difficile camminâ.",
+    "Vista in sciâ Foce: Da chì se vedde ben a foxe do Bisagno e a linea drita de Corso Sardegna."
+  ]
+};
+
+  root.fort["Forte Santa Tecla"] = {
+  "it": [
+    "Costruito su una chiesa: Prende il nome dall'antico oratorio di Santa Tecla, una chiesetta dell'XI secolo appartenuta persino al Doge Simon Boccanegra e demolita per fare spazio ai cannoni.",
+    "Il guardiano dell'Ospedale: Si trova sulle colline alle spalle dell'Ospedale San Martino di Genova, spiccando sopra i padiglioni sanitari.",
+    "Lazzaretto del colera: Durante le epidemie di colera dell'Ottocento, il forte fu isolato dal resto della città e utilizzato come lazzaretto d'emergenza per i malati gravi.",
+    "La porta segreta nel fossato: Possiede un passaggio che si apre sul fondo del fossato, pensato per permettere sortite improvvise dei soldati alle spalle degli assedianti.",
+    "Presidio d'autore: Venne progettato nel 1747 dall'ingegnere militare Jacques De Sicre per arginare l'avanzata delle truppe austriache che minacciavano la Valle Sturla.",
+    "La caserma a prova di bomba: La caserma centrale possiede volte in muratura spesse oltre un metro e mezzo, progettate per resistere ai pesanti proiettili di mortaio dell'epoca.",
+    "Il carcere dei carbonari: Durante i moti risorgimentali, i piemontesi vi rinchiusero diversi patrioti e carbonari genovesi catturati durante le sommosse in centro.",
+    "La terrazza del Levante: Offre uno degli scorci più belli sul quartiere di Albaro e sul promontorio di Portofino a levante.",
+    "Ristrutturato dal Comune: A differenza di altri complessi abbandonati, Santa Tecla è stato oggetto di parziali restauri strutturali da parte del Comune per preservarne le mura perimetrali.",
+    "Raggiungibile in creuza: Si può raggiungere a piedi da San Martino risalendo le tipiche strade mattonate liguri, le creuze, circondate da muretti a secco e uliveti."
+  ],
+  "en": [
+    "Built over a church: It takes its name from the 11th-century oratory of Santa Tecla, once linked to Doge Simon Boccanegra and later demolished for the guns.",
+    "Guardian of the hospital: It rises on the hills behind Genoa’s San Martino Hospital, overlooking its pavilions.",
+    "Cholera lazaretto: During 19th-century cholera epidemics the fort was isolated and used as an emergency lazaretto for seriously ill patients.",
+    "Secret door in the ditch: A passage opens directly into the ditch, designed for sudden sorties behind besiegers.",
+    "Designed by a master: In 1747 military engineer Jacques De Sicre designed it to oppose Austrian forces threatening Valle Sturla.",
+    "Bomb-resistant barracks: The central barracks has masonry vaults over 1.5 metres thick, intended to withstand heavy mortar fire.",
+    "Prison for Carbonari: During Risorgimento unrest, several Genoese patriots and Carbonari captured in the city were imprisoned here.",
+    "Terrace over eastern Genoa: It offers fine views over Albaro and, to the east, the Portofino promontory.",
+    "Restored by the City: Unlike many abandoned complexes, Santa Tecla has undergone partial structural restoration by the City of Genoa.",
+    "Reachable by creuza: It can be reached on foot from San Martino along traditional Ligurian brick-paved creuze, between dry-stone walls and olive trees."
+  ],
+  "es": [
+    "Construido sobre una iglesia: Toma su nombre del oratorio de Santa Tecla, del siglo XI, vinculado incluso al dogo Simon Boccanegra y después demolido para dejar espacio a los cañones.",
+    "Guardián del hospital: Se alza en las colinas detrás del Hospital San Martino, dominando sus pabellones.",
+    "Lazareto del cólera: Durante las epidemias del siglo XIX fue aislado y utilizado como lazareto de emergencia.",
+    "Puerta secreta en el foso: Un pasadizo desemboca en el fondo del foso y permitía salidas repentinas detrás de los sitiadores.",
+    "Diseño de autor: Jacques De Sicre lo proyectó en 1747 para frenar a las tropas austríacas que amenazaban Valle Sturla.",
+    "Cuartel a prueba de bombas: Sus bóvedas de mampostería superan metro y medio de espesor y estaban pensadas para resistir morteros pesados.",
+    "Cárcel de carbonarios: Durante el Risorgimento fueron encerrados aquí varios patriotas y carbonarios genoveses.",
+    "Terraza de Levante: Ofrece hermosas vistas de Albaro y del promontorio de Portofino.",
+    "Restaurado por el Ayuntamiento: Santa Tecla ha recibido restauraciones estructurales parciales para conservar sus murallas.",
+    "Accesible por una creuza: Desde San Martino se llega a pie por antiguas creuze ligures entre muros de piedra seca y olivos."
+  ],
+  "fr": [
+    "Construit sur une église : Il doit son nom à l’oratoire de Santa Tecla du XIe siècle, lié au doge Simon Boccanegra puis démoli pour les canons.",
+    "Gardien de l’hôpital : Il domine les pavillons de l’hôpital San Martino depuis les collines voisines.",
+    "Lazaret du choléra : Au XIXe siècle, lors des épidémies, le fort fut isolé et utilisé comme lazaret d’urgence.",
+    "Porte secrète dans le fossé : Un passage débouche au fond du fossé et permettait des sorties surprises derrière les assiégeants.",
+    "Conçu par un maître : Jacques De Sicre le dessina en 1747 contre l’avancée autrichienne menaçant Valle Sturla.",
+    "Caserne à l’épreuve des bombes : Ses voûtes de maçonnerie dépassent 1,5 mètre d’épaisseur pour résister aux mortiers lourds.",
+    "Prison des Carbonari : Pendant le Risorgimento, plusieurs patriotes et Carbonari génois y furent enfermés.",
+    "Terrasse du Levant : Le site offre de beaux panoramas sur Albaro et le promontoire de Portofino.",
+    "Restauré par la Ville : Santa Tecla a bénéficié de restaurations structurelles partielles pour préserver ses murs.",
+    "Accessible par une creuza : On peut y monter depuis San Martino par les anciennes creuze ligures entre murs de pierre sèche et oliviers."
+  ],
+  "ar": [
+    "بُني فوق كنيسة: أخذ اسمه من مصلى سانتا تيكلا من القرن الحادي عشر، المرتبط بالدوج سيمون بوكانيغرا قبل هدمه لإفساح المجال للمدافع.",
+    "حارس المستشفى: يقع على التلال خلف مستشفى سان مارتينو ويشرف على مبانيه.",
+    "محجر صحي للكوليرا: خلال أوبئة القرن التاسع عشر عُزل الحصن واستُخدم كمحجر صحي طارئ.",
+    "باب سري في الخندق: ممر يفتح في قاع الخندق كان يسمح بطلعات مفاجئة خلف المحاصرين.",
+    "تصميم خبير: صممه Jacques De Sicre عام 1747 لمواجهة التقدم النمساوي نحو Valle Sturla.",
+    "ثكنة مقاومة للقصف: أقبيتها الحجرية يزيد سمكها على متر ونصف لمقاومة قذائف الهاون الثقيلة.",
+    "سجن الكاربوناري: خلال اضطرابات النهضة الإيطالية سُجن هنا عدد من الوطنيين والكاربوناري من جنوة.",
+    "شرفة الشرق: يوفر الموقع إطلالات جميلة على Albaro ورأس Portofino.",
+    "ترميم بلدي: خضع Santa Tecla لترميمات إنشائية جزئية للحفاظ على أسواره.",
+    "الوصول عبر creuza: يمكن الصعود من San Martino عبر طرق Ligurian المرصوفة التقليدية بين الجدران الجافة والزيتون."
+  ],
+  "ru": [
+    "Построен на месте церкви: Название происходит от оратория Santa Tecla XI века, связанного с дожем Симоном Бокканегрой и позже снесённого ради орудий.",
+    "Страж госпиталя: Форт возвышается над корпусами больницы San Martino.",
+    "Холерный лазарет: Во время эпидемий XIX века форт изолировали и использовали как временный лазарет.",
+    "Тайная дверь во рву: Проход в дне рва позволял совершать внезапные вылазки в тыл осаждающих.",
+    "Проект мастера: Jacques De Sicre спроектировал форт в 1747 году против австрийского наступления на Valle Sturla.",
+    "Казарма против бомб: Каменные своды толщиной более 1,5 метра должны были выдерживать тяжёлые мортирные снаряды.",
+    "Тюрьма карбонариев: Во время Рисорджименто здесь держали генуэзских патриотов и карбонариев.",
+    "Терраса Леванта: Отсюда открываются виды на Albaro и мыс Portofino.",
+    "Реставрация города: Муниципалитет провёл частичные работы для сохранения стен Santa Tecla.",
+    "Путь по creuza: Из San Martino можно подняться по старинным лигурийским мощёным дорожкам между сухими стенами и оливами."
+  ],
+  "zh": [
+    "建在教堂之上：名称来自11世纪的 Santa Tecla 小礼拜堂，它曾与总督 Simon Boccanegra 有关，后来为布置火炮而拆除。",
+    "医院的守卫：要塞位于 San Martino 医院后方山坡，俯瞰医院建筑群。",
+    "霍乱隔离所：19世纪霍乱流行期间，要塞曾被隔离并用作紧急病患隔离所。",
+    "壕沟里的秘密门：一条通道直接通向壕沟底部，便于守军突然出击到围攻者后方。",
+    "名家设计：军事工程师 Jacques De Sicre 于1747年设计该要塞，以阻挡威胁 Valle Sturla 的奥军。",
+    "抗炮击兵营：中央兵营的砖石拱顶厚度超过1.5米，用于抵御重型迫击炮弹。",
+    "烧炭党人的监狱：意大利复兴运动时期，一些热那亚爱国者和烧炭党人曾被关押在这里。",
+    "东部观景台：这里可欣赏 Albaro 和 Portofino 海岬方向的优美景色。",
+    "市政府修复：Santa Tecla 曾接受部分结构修复，以保护外围城墙。",
+    "沿 creuza 抵达：可从 San Martino 沿传统利古里亚砖石小路步行上山，两侧是干石墙和橄榄树。"
+  ],
+  "lij": [
+    "Costruîo in sciâ gesa: O nomme o ven da l’antigo oratorio de Santa Tecla do secolo XI, ligòu anche a Simon Boccanegra e pöi demolîo pe-i cannoin.",
+    "O guardiano de l’ospedâ: O l’è in sci-e colline derê a l’Ospedâ San Martino.",
+    "Lazzaretto do colera: Inte epidemie de l’Ottocento o forte o l’è stæto isolòu e adêuviòu comme lazzaretto.",
+    "A porta segreta into fosso: Un passaggio o se arveiva into fondo do fosso pe permette sortite improvvise.",
+    "Un progetto d’autô: Jacques De Sicre o l’ha progettòu into 1747 contro l’avançâ austriaca verso Valle Sturla.",
+    "A caserma contro e bombe: E vòute de pria, ciù spesse de un metro e mezzo, doveivan resistî a-i mortai pesanti.",
+    "A prexon di Carbonari: Inte moti do Risorgimento chì han serròu patrioti e Carbonari zeneixi.",
+    "A terrazza do Levante: Da chì se vedde Albaro e o promontorio de Portofino.",
+    "Restauròu da-o Comun: Santa Tecla o l’ha avuo restauri parziali pe conservâ e miage.",
+    "A-o forte pe creuza: Da San Martino se peu montâ pe-e vege creuze liguri tra muretti a secco e öive."
+  ]
+};
+
+  root.fort["Torre di Montelongone"] = {
+  "it": [
+    "La sentinella gemella: Non è un vero forte espanso, ma fa parte delle grandi torri cilindriche isolate costruite dai Savoia a inizio Ottocento, insieme a Torre Quezzi e Torre Monteratti.",
+    "L'incompiuta sabauda: Rispetto a Torre Quezzi rimase incompiuta: i lavori del Genio Sabaudo si interruppero nel 1825 fermandosi al solo piano seminterrato.",
+    "Il fossato nascosto: Nonostante sia poco più di un basamento di pietra, è circondata da un piccolo fossato circolare scavato nella roccia viva.",
+    "Inghiottita dalla cava: Si trova vicino al massiccio Forte Monteratti, sul lato esposto verso l'ex cava di pietra del monte.",
+    "Postazione a cestoni: Sorge sul sito dove nel 1747 l'esercito genovese aveva improvvisato una difesa con gabbioni pieni di pietre e terra.",
+    "Il diametro perfetto: Il basamento superstite rispetta i 15 metri di diametro previsti dal progetto standardizzato del Maggiore Giulio De Andreis.",
+    "Un tesoro per appassionati: È una delle strutture meno conosciute dai turisti; trovarla lungo i sentieri del crinale est dà la sensazione di una scoperta archeologica.",
+    "Il bunker sotterraneo: Le stanze seminterrate superstiti erano destinate a diventare magazzini protetti per le munizioni.",
+    "Nido di biodiversità: Oggi l'interno della struttura incompiuta raccoglie acqua piovana, creando un micro-habitat per felci e uccelli collinari.",
+    "Cerniera tra due valli: Sorge su un crinale strategico che permetteva di controllare la Val Bisagno e le vie interne verso Bavari."
+  ],
+  "en": [
+    "The twin sentinel: It is not a full fort but one of the isolated cylindrical towers built by the Savoys in the early 19th century, alongside Torre Quezzi and Torre Monteratti.",
+    "The unfinished Savoy tower: Work stopped in 1825 at basement level, leaving the tower incomplete.",
+    "The hidden ditch: The surviving stone base is surrounded by a small circular defensive ditch cut into the rock.",
+    "Swallowed by the quarry: It stands close to Forte Monteratti, on the side facing the former stone quarry.",
+    "Gabion position: In 1747 Genoese troops defended this site with baskets filled with earth and stones.",
+    "The perfect diameter: The surviving base follows the 15-metre diameter specified in Major Giulio De Andreis’s standard design.",
+    "A treasure for enthusiasts: Little known to mass tourism, finding it on the eastern ridge feels like an archaeological discovery.",
+    "The underground bunker: The surviving basement rooms were intended as protected ammunition stores.",
+    "A biodiversity haven: Rainwater collects inside the unfinished structure, creating a small habitat for ferns and hill birds.",
+    "Link between two valleys: Its strategic ridge allowed observation of Val Bisagno and routes towards Bavari."
+  ],
+  "es": [
+    "La sentinella gemella: Non è un vero forte espanso, ma fa parte delle grandi torri cilindriche isolate costruite dai Savoia a inizio Ottocento, insieme a Torre Quezzi e Torre Monteratti.",
+    "L'incompiuta sabauda: Rispetto a Torre Quezzi rimase incompiuta: i lavori del Genio Sabaudo si interruppero nel 1825 fermandosi al solo piano seminterrato.",
+    "Il fossato nascosto: Nonostante sia poco più di un basamento di pietra, è circondata da un piccolo fossato circolare scavato nella roccia viva.",
+    "Inghiottita dalla cava: Si trova vicino al massiccio Forte Monteratti, sul lato esposto verso l'ex cava di pietra del monte.",
+    "Postazione a cestoni: Sorge sul sito dove nel 1747 l'esercito genovese aveva improvvisato una difesa con gabbioni pieni di pietre e terra.",
+    "Il diametro perfetto: Il basamento superstite rispetta i 15 metri di diametro previsti dal progetto standardizzato del Maggiore Giulio De Andreis.",
+    "Un tesoro per appassionati: È una delle strutture meno conosciute dai turisti; trovarla lungo i sentieri del crinale est dà la sensazione di una scoperta archeologica.",
+    "Il bunker sotterraneo: Le stanze seminterrate superstiti erano destinate a diventare magazzini protetti per le munizioni.",
+    "Nido di biodiversità: Oggi l'interno della struttura incompiuta raccoglie acqua piovana, creando un micro-habitat per felci e uccelli collinari.",
+    "Cerniera tra due valli: Sorge su un crinale strategico che permetteva di controllare la Val Bisagno e le vie interne verso Bavari."
+  ],
+  "fr": [
+    "La sentinella gemella : Non è un vero forte espanso, ma fa parte delle grandi torri cilindriche isolate costruite dai Savoia a inizio Ottocento, insieme a Torre Quezzi e Torre Monteratti.",
+    "L'incompiuta sabauda : Rispetto a Torre Quezzi rimase incompiuta : i lavori del Genio Sabaudo si interruppero nel 1825 fermandosi al solo piano seminterrato.",
+    "Il fossato nascosto : Nonostante sia poco più di un basamento di pietra, è circondata da un piccolo fossato circolare scavato nella roccia viva.",
+    "Inghiottita dalla cava : Si trova vicino al massiccio Forte Monteratti, sul lato esposto verso l'ex cava di pietra del monte.",
+    "Postazione a cestoni : Sorge sul sito dove nel 1747 l'esercito genovese aveva improvvisato una difesa con gabbioni pieni di pietre e terra.",
+    "Il diametro perfetto : Il basamento superstite rispetta i 15 metri di diametro previsti dal progetto standardizzato del Maggiore Giulio De Andreis.",
+    "Un tesoro per appassionati : È una delle strutture meno conosciute dai turisti; trovarla lungo i sentieri del crinale est dà la sensazione di una scoperta archeologica.",
+    "Il bunker sotterraneo : Le stanze seminterrate superstiti erano destinate a diventare magazzini protetti per le munizioni.",
+    "Nido di biodiversità : Oggi l'interno della struttura incompiuta raccoglie acqua piovana, creando un micro-habitat per felci e uccelli collinari.",
+    "Cerniera tra due valli : Sorge su un crinale strategico che permetteva di controllare la Val Bisagno e le vie interne verso Bavari."
+  ],
+  "ar": [
+    "La sentinella gemella: Non è un vero forte espanso, ma fa parte delle grandi torri cilindriche isolate costruite dai Savoia a inizio Ottocento, insieme a Torre Quezzi e Torre Monteratti.",
+    "L'incompiuta sabauda: Rispetto a Torre Quezzi rimase incompiuta: i lavori del Genio Sabaudo si interruppero nel 1825 fermandosi al solo piano seminterrato.",
+    "Il fossato nascosto: Nonostante sia poco più di un basamento di pietra, è circondata da un piccolo fossato circolare scavato nella roccia viva.",
+    "Inghiottita dalla cava: Si trova vicino al massiccio Forte Monteratti, sul lato esposto verso l'ex cava di pietra del monte.",
+    "Postazione a cestoni: Sorge sul sito dove nel 1747 l'esercito genovese aveva improvvisato una difesa con gabbioni pieni di pietre e terra.",
+    "Il diametro perfetto: Il basamento superstite rispetta i 15 metri di diametro previsti dal progetto standardizzato del Maggiore Giulio De Andreis.",
+    "Un tesoro per appassionati: È una delle strutture meno conosciute dai turisti; trovarla lungo i sentieri del crinale est dà la sensazione di una scoperta archeologica.",
+    "Il bunker sotterraneo: Le stanze seminterrate superstiti erano destinate a diventare magazzini protetti per le munizioni.",
+    "Nido di biodiversità: Oggi l'interno della struttura incompiuta raccoglie acqua piovana, creando un micro-habitat per felci e uccelli collinari.",
+    "Cerniera tra due valli: Sorge su un crinale strategico che permetteva di controllare la Val Bisagno e le vie interne verso Bavari."
+  ],
+  "ru": [
+    "La sentinella gemella: Non è un vero forte espanso, ma fa parte delle grandi torri cilindriche isolate costruite dai Savoia a inizio Ottocento, insieme a Torre Quezzi e Torre Monteratti.",
+    "L'incompiuta sabauda: Rispetto a Torre Quezzi rimase incompiuta: i lavori del Genio Sabaudo si interruppero nel 1825 fermandosi al solo piano seminterrato.",
+    "Il fossato nascosto: Nonostante sia poco più di un basamento di pietra, è circondata da un piccolo fossato circolare scavato nella roccia viva.",
+    "Inghiottita dalla cava: Si trova vicino al massiccio Forte Monteratti, sul lato esposto verso l'ex cava di pietra del monte.",
+    "Postazione a cestoni: Sorge sul sito dove nel 1747 l'esercito genovese aveva improvvisato una difesa con gabbioni pieni di pietre e terra.",
+    "Il diametro perfetto: Il basamento superstite rispetta i 15 metri di diametro previsti dal progetto standardizzato del Maggiore Giulio De Andreis.",
+    "Un tesoro per appassionati: È una delle strutture meno conosciute dai turisti; trovarla lungo i sentieri del crinale est dà la sensazione di una scoperta archeologica.",
+    "Il bunker sotterraneo: Le stanze seminterrate superstiti erano destinate a diventare magazzini protetti per le munizioni.",
+    "Nido di biodiversità: Oggi l'interno della struttura incompiuta raccoglie acqua piovana, creando un micro-habitat per felci e uccelli collinari.",
+    "Cerniera tra due valli: Sorge su un crinale strategico che permetteva di controllare la Val Bisagno e le vie interne verso Bavari."
+  ],
+  "zh": [
+    "La sentinella gemella：Non è un vero forte espanso, ma fa parte delle grandi torri cilindriche isolate costruite dai Savoia a inizio Ottocento, insieme a Torre Quezzi e Torre Monteratti.",
+    "L'incompiuta sabauda：Rispetto a Torre Quezzi rimase incompiuta：i lavori del Genio Sabaudo si interruppero nel 1825 fermandosi al solo piano seminterrato.",
+    "Il fossato nascosto：Nonostante sia poco più di un basamento di pietra, è circondata da un piccolo fossato circolare scavato nella roccia viva.",
+    "Inghiottita dalla cava：Si trova vicino al massiccio Forte Monteratti, sul lato esposto verso l'ex cava di pietra del monte.",
+    "Postazione a cestoni：Sorge sul sito dove nel 1747 l'esercito genovese aveva improvvisato una difesa con gabbioni pieni di pietre e terra.",
+    "Il diametro perfetto：Il basamento superstite rispetta i 15 metri di diametro previsti dal progetto standardizzato del Maggiore Giulio De Andreis.",
+    "Un tesoro per appassionati：È una delle strutture meno conosciute dai turisti; trovarla lungo i sentieri del crinale est dà la sensazione di una scoperta archeologica.",
+    "Il bunker sotterraneo：Le stanze seminterrate superstiti erano destinate a diventare magazzini protetti per le munizioni.",
+    "Nido di biodiversità：Oggi l'interno della struttura incompiuta raccoglie acqua piovana, creando un micro-habitat per felci e uccelli collinari.",
+    "Cerniera tra due valli：Sorge su un crinale strategico che permetteva di controllare la Val Bisagno e le vie interne verso Bavari."
+  ],
+  "lij": [
+    "La sentinella gemella: Non è un vero forte espanso, ma fa parte delle grandi torri cilindriche isolate costruite dai Savoia a inizio Ottocento, insieme a Torre Quezzi e Torre Monteratti.",
+    "L'incompiuta sabauda: Rispetto a Torre Quezzi rimase incompiuta: i lavori del Genio Sabaudo si interruppero nel 1825 fermandosi al solo piano seminterrato.",
+    "Il fossato nascosto: Nonostante sia poco più di un basamento di pietra, è circondata da un piccolo fossato circolare scavato nella roccia viva.",
+    "Inghiottita dalla cava: Si trova vicino al massiccio Forte Monteratti, sul lato esposto verso l'ex cava di pietra del monte.",
+    "Postazione a cestoni: Sorge sul sito dove nel 1747 l'esercito genovese aveva improvvisato una difesa con gabbioni pieni di pietre e terra.",
+    "Il diametro perfetto: Il basamento superstite rispetta i 15 metri di diametro previsti dal progetto standardizzato del Maggiore Giulio De Andreis.",
+    "Un tesoro per appassionati: È una delle strutture meno conosciute dai turisti; trovarla lungo i sentieri del crinale est dà la sensazione di una scoperta archeologica.",
+    "Il bunker sotterraneo: Le stanze seminterrate superstiti erano destinate a diventare magazzini protetti per le munizioni.",
+    "Nido di biodiversità: Oggi l'interno della struttura incompiuta raccoglie acqua piovana, creando un micro-habitat per felci e uccelli collinari.",
+    "Cerniera tra due valli: Sorge su un crinale strategico che permetteva di controllare la Val Bisagno e le vie interne verso Bavari."
+  ]
+};
+
+  root.fort["Castello di San Cipriano"] = {
+  "it": [
+    "Un castello da favola: Situato a Serra Riccò, colpisce per la sua architettura neogotica in mattoni rossi che ricorda un castello delle fiabe.",
+    "Sulle ceneri della torre militare: L'edificio attuale, dei primi del Novecento, sorge sui bastioni della duecentesca Torre dei Cambiaso, antica fortificazione di avvistamento.",
+    "Il panorama dei 27 campanili: Dalla cima della torre principale, nelle giornate limpide, si possono contare 27 campanili storici tra le valli del Secca e del Verde fino al mare.",
+    "Il capriccio del senatore: Fu fatto costruire dal ricco industriale e senatore genovese Emilio Parodi come monumentale residenza estiva ispirata ai manieri medievali.",
+    "La torre bicolore: La struttura è asimmetrica: una grande torre in mattoni rossi si contrappone a una torretta in pietra grigia.",
+    "Firma FAI: Per il suo valore storico e paesaggistico, il castello e il borgo sono stati più volte inseriti nelle Giornate d'Autunno del FAI.",
+    "Insegne storiche: Decorazioni, merlature e fregi riproducono simboli araldici e nodi d'amore legati alla storia medievale della Repubblica di Genova.",
+    "Età del Ferro sotterranea: Gli scavi archeologici sulla collina hanno mostrato che il sito era strategico già nell'Età del Ferro, prima dell'arrivo dei Romani.",
+    "Il polmone verde di Serra Riccò: È circondato da un grande parco alberato, meta piacevole per un'escursione fuori dal centro di Genova.",
+    "Fotografatissimo dal treno: Dalla linea ferroviaria verso l'entroterra il castello appare improvvisamente sulla collina, offrendo uno scorcio molto suggestivo."
+  ],
+  "en": [
+    "A fairy-tale castle: In Serra Riccò, its red-brick Neo-Gothic architecture resembles a storybook castle.",
+    "On the remains of a military tower: The early-20th-century building stands on the bastions of the 13th-century Torre dei Cambiaso.",
+    "The view of 27 bell towers: On clear days, 27 historic bell towers can be counted from the main tower across the Secca and Verde valleys towards the sea.",
+    "The senator’s passion: Industrialist and senator Emilio Parodi commissioned it as a monumental summer residence inspired by medieval castles.",
+    "The two-colour towers: Its asymmetrical design contrasts a tall red-brick tower with a smaller grey-stone turret.",
+    "FAI recognition: The castle and village have repeatedly featured in FAI Autumn Days because of their historical and scenic value.",
+    "Historic emblems: Battlements and decorations reproduce heraldic symbols and love knots linked to medieval Genoa.",
+    "Iron Age underground: Archaeology shows the hill was strategically important already in the Iron Age.",
+    "The green lung of Serra Riccò: A large tree-filled park surrounds the castle, ideal for a quiet excursion outside central Genoa.",
+    "Photographed from the train: From railway routes into the hinterland, the castle suddenly appears on the hill in a striking view."
+  ],
+  "es": [
+    "Un castello da favola: Situato a Serra Riccò, colpisce per la sua architettura neogotica in mattoni rossi che ricorda un castello delle fiabe.",
+    "Sulle ceneri della torre militare: L'edificio attuale, dei primi del Novecento, sorge sui bastioni della duecentesca Torre dei Cambiaso, antica fortificazione di avvistamento.",
+    "Il panorama dei 27 campanili: Dalla cima della torre principale, nelle giornate limpide, si possono contare 27 campanili storici tra le valli del Secca e del Verde fino al mare.",
+    "Il capriccio del senatore: Fu fatto costruire dal ricco industriale e senatore genovese Emilio Parodi come monumentale residenza estiva ispirata ai manieri medievali.",
+    "La torre bicolore: La struttura è asimmetrica: una grande torre in mattoni rossi si contrappone a una torretta in pietra grigia.",
+    "Firma FAI: Per il suo valore storico e paesaggistico, il castello e il borgo sono stati più volte inseriti nelle Giornate d'Autunno del FAI.",
+    "Insegne storiche: Decorazioni, merlature e fregi riproducono simboli araldici e nodi d'amore legati alla storia medievale della Repubblica di Genova.",
+    "Età del Ferro sotterranea: Gli scavi archeologici sulla collina hanno mostrato che il sito era strategico già nell'Età del Ferro, prima dell'arrivo dei Romani.",
+    "Il polmone verde di Serra Riccò: È circondato da un grande parco alberato, meta piacevole per un'escursione fuori dal centro di Genova.",
+    "Fotografatissimo dal treno: Dalla linea ferroviaria verso l'entroterra il castello appare improvvisamente sulla collina, offrendo uno scorcio molto suggestivo."
+  ],
+  "fr": [
+    "Un castello da favola : Situato a Serra Riccò, colpisce per la sua architettura neogotica in mattoni rossi che ricorda un castello delle fiabe.",
+    "Sulle ceneri della torre militare : L'edificio attuale, dei primi del Novecento, sorge sui bastioni della duecentesca Torre dei Cambiaso, antica fortificazione di avvistamento.",
+    "Il panorama dei 27 campanili : Dalla cima della torre principale, nelle giornate limpide, si possono contare 27 campanili storici tra le valli del Secca e del Verde fino al mare.",
+    "Il capriccio del senatore : Fu fatto costruire dal ricco industriale e senatore genovese Emilio Parodi come monumentale residenza estiva ispirata ai manieri medievali.",
+    "La torre bicolore : La struttura è asimmetrica : una grande torre in mattoni rossi si contrappone a una torretta in pietra grigia.",
+    "Firma FAI : Per il suo valore storico e paesaggistico, il castello e il borgo sono stati più volte inseriti nelle Giornate d'Autunno del FAI.",
+    "Insegne storiche : Decorazioni, merlature e fregi riproducono simboli araldici e nodi d'amore legati alla storia medievale della Repubblica di Genova.",
+    "Età del Ferro sotterranea : Gli scavi archeologici sulla collina hanno mostrato che il sito era strategico già nell'Età del Ferro, prima dell'arrivo dei Romani.",
+    "Il polmone verde di Serra Riccò : È circondato da un grande parco alberato, meta piacevole per un'escursione fuori dal centro di Genova.",
+    "Fotografatissimo dal treno : Dalla linea ferroviaria verso l'entroterra il castello appare improvvisamente sulla collina, offrendo uno scorcio molto suggestivo."
+  ],
+  "ar": [
+    "Un castello da favola: Situato a Serra Riccò, colpisce per la sua architettura neogotica in mattoni rossi che ricorda un castello delle fiabe.",
+    "Sulle ceneri della torre militare: L'edificio attuale, dei primi del Novecento, sorge sui bastioni della duecentesca Torre dei Cambiaso, antica fortificazione di avvistamento.",
+    "Il panorama dei 27 campanili: Dalla cima della torre principale, nelle giornate limpide, si possono contare 27 campanili storici tra le valli del Secca e del Verde fino al mare.",
+    "Il capriccio del senatore: Fu fatto costruire dal ricco industriale e senatore genovese Emilio Parodi come monumentale residenza estiva ispirata ai manieri medievali.",
+    "La torre bicolore: La struttura è asimmetrica: una grande torre in mattoni rossi si contrappone a una torretta in pietra grigia.",
+    "Firma FAI: Per il suo valore storico e paesaggistico, il castello e il borgo sono stati più volte inseriti nelle Giornate d'Autunno del FAI.",
+    "Insegne storiche: Decorazioni, merlature e fregi riproducono simboli araldici e nodi d'amore legati alla storia medievale della Repubblica di Genova.",
+    "Età del Ferro sotterranea: Gli scavi archeologici sulla collina hanno mostrato che il sito era strategico già nell'Età del Ferro, prima dell'arrivo dei Romani.",
+    "Il polmone verde di Serra Riccò: È circondato da un grande parco alberato, meta piacevole per un'escursione fuori dal centro di Genova.",
+    "Fotografatissimo dal treno: Dalla linea ferroviaria verso l'entroterra il castello appare improvvisamente sulla collina, offrendo uno scorcio molto suggestivo."
+  ],
+  "ru": [
+    "Un castello da favola: Situato a Serra Riccò, colpisce per la sua architettura neogotica in mattoni rossi che ricorda un castello delle fiabe.",
+    "Sulle ceneri della torre militare: L'edificio attuale, dei primi del Novecento, sorge sui bastioni della duecentesca Torre dei Cambiaso, antica fortificazione di avvistamento.",
+    "Il panorama dei 27 campanili: Dalla cima della torre principale, nelle giornate limpide, si possono contare 27 campanili storici tra le valli del Secca e del Verde fino al mare.",
+    "Il capriccio del senatore: Fu fatto costruire dal ricco industriale e senatore genovese Emilio Parodi come monumentale residenza estiva ispirata ai manieri medievali.",
+    "La torre bicolore: La struttura è asimmetrica: una grande torre in mattoni rossi si contrappone a una torretta in pietra grigia.",
+    "Firma FAI: Per il suo valore storico e paesaggistico, il castello e il borgo sono stati più volte inseriti nelle Giornate d'Autunno del FAI.",
+    "Insegne storiche: Decorazioni, merlature e fregi riproducono simboli araldici e nodi d'amore legati alla storia medievale della Repubblica di Genova.",
+    "Età del Ferro sotterranea: Gli scavi archeologici sulla collina hanno mostrato che il sito era strategico già nell'Età del Ferro, prima dell'arrivo dei Romani.",
+    "Il polmone verde di Serra Riccò: È circondato da un grande parco alberato, meta piacevole per un'escursione fuori dal centro di Genova.",
+    "Fotografatissimo dal treno: Dalla linea ferroviaria verso l'entroterra il castello appare improvvisamente sulla collina, offrendo uno scorcio molto suggestivo."
+  ],
+  "zh": [
+    "Un castello da favola：Situato a Serra Riccò, colpisce per la sua architettura neogotica in mattoni rossi che ricorda un castello delle fiabe.",
+    "Sulle ceneri della torre militare：L'edificio attuale, dei primi del Novecento, sorge sui bastioni della duecentesca Torre dei Cambiaso, antica fortificazione di avvistamento.",
+    "Il panorama dei 27 campanili：Dalla cima della torre principale, nelle giornate limpide, si possono contare 27 campanili storici tra le valli del Secca e del Verde fino al mare.",
+    "Il capriccio del senatore：Fu fatto costruire dal ricco industriale e senatore genovese Emilio Parodi come monumentale residenza estiva ispirata ai manieri medievali.",
+    "La torre bicolore：La struttura è asimmetrica：una grande torre in mattoni rossi si contrappone a una torretta in pietra grigia.",
+    "Firma FAI：Per il suo valore storico e paesaggistico, il castello e il borgo sono stati più volte inseriti nelle Giornate d'Autunno del FAI.",
+    "Insegne storiche：Decorazioni, merlature e fregi riproducono simboli araldici e nodi d'amore legati alla storia medievale della Repubblica di Genova.",
+    "Età del Ferro sotterranea：Gli scavi archeologici sulla collina hanno mostrato che il sito era strategico già nell'Età del Ferro, prima dell'arrivo dei Romani.",
+    "Il polmone verde di Serra Riccò：È circondato da un grande parco alberato, meta piacevole per un'escursione fuori dal centro di Genova.",
+    "Fotografatissimo dal treno：Dalla linea ferroviaria verso l'entroterra il castello appare improvvisamente sulla collina, offrendo uno scorcio molto suggestivo."
+  ],
+  "lij": [
+    "Un castello da favola: Situato a Serra Riccò, colpisce per la sua architettura neogotica in mattoni rossi che ricorda un castello delle fiabe.",
+    "Sulle ceneri della torre militare: L'edificio attuale, dei primi del Novecento, sorge sui bastioni della duecentesca Torre dei Cambiaso, antica fortificazione di avvistamento.",
+    "Il panorama dei 27 campanili: Dalla cima della torre principale, nelle giornate limpide, si possono contare 27 campanili storici tra le valli del Secca e del Verde fino al mare.",
+    "Il capriccio del senatore: Fu fatto costruire dal ricco industriale e senatore genovese Emilio Parodi come monumentale residenza estiva ispirata ai manieri medievali.",
+    "La torre bicolore: La struttura è asimmetrica: una grande torre in mattoni rossi si contrappone a una torretta in pietra grigia.",
+    "Firma FAI: Per il suo valore storico e paesaggistico, il castello e il borgo sono stati più volte inseriti nelle Giornate d'Autunno del FAI.",
+    "Insegne storiche: Decorazioni, merlature e fregi riproducono simboli araldici e nodi d'amore legati alla storia medievale della Repubblica di Genova.",
+    "Età del Ferro sotterranea: Gli scavi archeologici sulla collina hanno mostrato che il sito era strategico già nell'Età del Ferro, prima dell'arrivo dei Romani.",
+    "Il polmone verde di Serra Riccò: È circondato da un grande parco alberato, meta piacevole per un'escursione fuori dal centro di Genova.",
+    "Fotografatissimo dal treno: Dalla linea ferroviaria verso l'entroterra il castello appare improvvisamente sulla collina, offrendo uno scorcio molto suggestivo."
+  ]
+};
+
+  root.fort["Forte Crocetta"] = {
+  "it": [
+    "Il forte senza spigoli: Ha una forma compatta quasi priva di spigoli vivi, progettata per ridurre l'efficacia dei proiettili d'artiglieria.",
+    "Sorge su un convento: Fu edificato sopra i resti del convento seicentesco degli Agostiniani e della chiesa del Santissimo Crocifisso, da cui deriva il nome Crocetta.",
+    "Il ponte levatoio intatto: È una delle poche fortezze genovesi che conserva ancora il meccanismo strutturale del ponte levatoio sul fossato d'ingresso.",
+    "La sentinella di Sampierdarena: Sorge a 145 metri sul livello del mare sopra Sampierdarena, in posizione adatta a controllarne gli accessi stradali.",
+    "Il terrapieno a due livelli: La cinta racchiudeva due livelli: quello inferiore per i fucilieri e quello superiore per l'artiglieria pesante.",
+    "Orti comunitari e rinascita: Nel 2015 è passato sotto la gestione del Comune di Genova, che ha avviato progetti per orti comunitari, aree picnic e attività all'aperto.",
+    "Alloggi a ciambella: Gli alloggi dei soldati e le polveriere si sviluppano ad anello attorno a un piccolo cortile interno quadrangolare.",
+    "Raggiungibile dalle creuze: Un modo suggestivo per raggiungerlo è risalire da Sampierdarena lungo Salita Forte Crocetta, storica mattonata ligure.",
+    "Isolamento acustico naturale: Pur essendo vicino a un quartiere trafficato, una volta dentro le mura il rumore urbano si attenua fortemente.",
+    "Vicino al Belvedere: Si trova a breve distanza dal Forte Belvedere e può essere inserito in un piccolo itinerario delle fortificazioni di ponente."
+  ],
+  "en": [
+    "The fort without sharp corners: Its compact form has few sharp edges, intended to reduce the effectiveness of artillery hits.",
+    "Built over a convent: It rose over the remains of a 17th-century Augustinian convent and the church of Santissimo Crocifisso, source of the name Crocetta.",
+    "The surviving drawbridge: It is one of the few Genoese forts that still preserves the structural mechanism of its entrance drawbridge.",
+    "Sentinel of Sampierdarena: At 145 metres above sea level, it overlooks Sampierdarena and its road approaches.",
+    "Two-level earthworks: The lower level served riflemen while the upper level carried heavy artillery.",
+    "Community gardens and revival: Since 2015 the City of Genoa has promoted projects for community gardens, picnic areas and outdoor activities.",
+    "Ring-shaped quarters: Soldiers’ rooms and powder stores form a ring around a small quadrangular courtyard.",
+    "Reachable by creuze: A scenic approach climbs from Sampierdarena along the historic brick-paved Salita Forte Crocetta.",
+    "Natural sound insulation: Despite the nearby busy district, city noise drops sharply once inside the walls.",
+    "Close to Belvedere: It lies a short walk from Forte Belvedere and fits naturally into a small western-forts itinerary."
+  ],
+  "es": [
+    "Il forte senza spigoli: Ha una forma compatta quasi priva di spigoli vivi, progettata per ridurre l'efficacia dei proiettili d'artiglieria.",
+    "Sorge su un convento: Fu edificato sopra i resti del convento seicentesco degli Agostiniani e della chiesa del Santissimo Crocifisso, da cui deriva il nome Crocetta.",
+    "Il ponte levatoio intatto: È una delle poche fortezze genovesi che conserva ancora il meccanismo strutturale del ponte levatoio sul fossato d'ingresso.",
+    "La sentinella di Sampierdarena: Sorge a 145 metri sul livello del mare sopra Sampierdarena, in posizione adatta a controllarne gli accessi stradali.",
+    "Il terrapieno a due livelli: La cinta racchiudeva due livelli: quello inferiore per i fucilieri e quello superiore per l'artiglieria pesante.",
+    "Orti comunitari e rinascita: Nel 2015 è passato sotto la gestione del Comune di Genova, che ha avviato progetti per orti comunitari, aree picnic e attività all'aperto.",
+    "Alloggi a ciambella: Gli alloggi dei soldati e le polveriere si sviluppano ad anello attorno a un piccolo cortile interno quadrangolare.",
+    "Raggiungibile dalle creuze: Un modo suggestivo per raggiungerlo è risalire da Sampierdarena lungo Salita Forte Crocetta, storica mattonata ligure.",
+    "Isolamento acustico naturale: Pur essendo vicino a un quartiere trafficato, una volta dentro le mura il rumore urbano si attenua fortemente.",
+    "Vicino al Belvedere: Si trova a breve distanza dal Forte Belvedere e può essere inserito in un piccolo itinerario delle fortificazioni di ponente."
+  ],
+  "fr": [
+    "Il forte senza spigoli : Ha una forma compatta quasi priva di spigoli vivi, progettata per ridurre l'efficacia dei proiettili d'artiglieria.",
+    "Sorge su un convento : Fu edificato sopra i resti del convento seicentesco degli Agostiniani e della chiesa del Santissimo Crocifisso, da cui deriva il nome Crocetta.",
+    "Il ponte levatoio intatto : È una delle poche fortezze genovesi che conserva ancora il meccanismo strutturale del ponte levatoio sul fossato d'ingresso.",
+    "La sentinella di Sampierdarena : Sorge a 145 metri sul livello del mare sopra Sampierdarena, in posizione adatta a controllarne gli accessi stradali.",
+    "Il terrapieno a due livelli : La cinta racchiudeva due livelli : quello inferiore per i fucilieri e quello superiore per l'artiglieria pesante.",
+    "Orti comunitari e rinascita : Nel 2015 è passato sotto la gestione del Comune di Genova, che ha avviato progetti per orti comunitari, aree picnic e attività all'aperto.",
+    "Alloggi a ciambella : Gli alloggi dei soldati e le polveriere si sviluppano ad anello attorno a un piccolo cortile interno quadrangolare.",
+    "Raggiungibile dalle creuze : Un modo suggestivo per raggiungerlo è risalire da Sampierdarena lungo Salita Forte Crocetta, storica mattonata ligure.",
+    "Isolamento acustico naturale : Pur essendo vicino a un quartiere trafficato, una volta dentro le mura il rumore urbano si attenua fortemente.",
+    "Vicino al Belvedere : Si trova a breve distanza dal Forte Belvedere e può essere inserito in un piccolo itinerario delle fortificazioni di ponente."
+  ],
+  "ar": [
+    "Il forte senza spigoli: Ha una forma compatta quasi priva di spigoli vivi, progettata per ridurre l'efficacia dei proiettili d'artiglieria.",
+    "Sorge su un convento: Fu edificato sopra i resti del convento seicentesco degli Agostiniani e della chiesa del Santissimo Crocifisso, da cui deriva il nome Crocetta.",
+    "Il ponte levatoio intatto: È una delle poche fortezze genovesi che conserva ancora il meccanismo strutturale del ponte levatoio sul fossato d'ingresso.",
+    "La sentinella di Sampierdarena: Sorge a 145 metri sul livello del mare sopra Sampierdarena, in posizione adatta a controllarne gli accessi stradali.",
+    "Il terrapieno a due livelli: La cinta racchiudeva due livelli: quello inferiore per i fucilieri e quello superiore per l'artiglieria pesante.",
+    "Orti comunitari e rinascita: Nel 2015 è passato sotto la gestione del Comune di Genova, che ha avviato progetti per orti comunitari, aree picnic e attività all'aperto.",
+    "Alloggi a ciambella: Gli alloggi dei soldati e le polveriere si sviluppano ad anello attorno a un piccolo cortile interno quadrangolare.",
+    "Raggiungibile dalle creuze: Un modo suggestivo per raggiungerlo è risalire da Sampierdarena lungo Salita Forte Crocetta, storica mattonata ligure.",
+    "Isolamento acustico naturale: Pur essendo vicino a un quartiere trafficato, una volta dentro le mura il rumore urbano si attenua fortemente.",
+    "Vicino al Belvedere: Si trova a breve distanza dal Forte Belvedere e può essere inserito in un piccolo itinerario delle fortificazioni di ponente."
+  ],
+  "ru": [
+    "Il forte senza spigoli: Ha una forma compatta quasi priva di spigoli vivi, progettata per ridurre l'efficacia dei proiettili d'artiglieria.",
+    "Sorge su un convento: Fu edificato sopra i resti del convento seicentesco degli Agostiniani e della chiesa del Santissimo Crocifisso, da cui deriva il nome Crocetta.",
+    "Il ponte levatoio intatto: È una delle poche fortezze genovesi che conserva ancora il meccanismo strutturale del ponte levatoio sul fossato d'ingresso.",
+    "La sentinella di Sampierdarena: Sorge a 145 metri sul livello del mare sopra Sampierdarena, in posizione adatta a controllarne gli accessi stradali.",
+    "Il terrapieno a due livelli: La cinta racchiudeva due livelli: quello inferiore per i fucilieri e quello superiore per l'artiglieria pesante.",
+    "Orti comunitari e rinascita: Nel 2015 è passato sotto la gestione del Comune di Genova, che ha avviato progetti per orti comunitari, aree picnic e attività all'aperto.",
+    "Alloggi a ciambella: Gli alloggi dei soldati e le polveriere si sviluppano ad anello attorno a un piccolo cortile interno quadrangolare.",
+    "Raggiungibile dalle creuze: Un modo suggestivo per raggiungerlo è risalire da Sampierdarena lungo Salita Forte Crocetta, storica mattonata ligure.",
+    "Isolamento acustico naturale: Pur essendo vicino a un quartiere trafficato, una volta dentro le mura il rumore urbano si attenua fortemente.",
+    "Vicino al Belvedere: Si trova a breve distanza dal Forte Belvedere e può essere inserito in un piccolo itinerario delle fortificazioni di ponente."
+  ],
+  "zh": [
+    "Il forte senza spigoli：Ha una forma compatta quasi priva di spigoli vivi, progettata per ridurre l'efficacia dei proiettili d'artiglieria.",
+    "Sorge su un convento：Fu edificato sopra i resti del convento seicentesco degli Agostiniani e della chiesa del Santissimo Crocifisso, da cui deriva il nome Crocetta.",
+    "Il ponte levatoio intatto：È una delle poche fortezze genovesi che conserva ancora il meccanismo strutturale del ponte levatoio sul fossato d'ingresso.",
+    "La sentinella di Sampierdarena：Sorge a 145 metri sul livello del mare sopra Sampierdarena, in posizione adatta a controllarne gli accessi stradali.",
+    "Il terrapieno a due livelli：La cinta racchiudeva due livelli：quello inferiore per i fucilieri e quello superiore per l'artiglieria pesante.",
+    "Orti comunitari e rinascita：Nel 2015 è passato sotto la gestione del Comune di Genova, che ha avviato progetti per orti comunitari, aree picnic e attività all'aperto.",
+    "Alloggi a ciambella：Gli alloggi dei soldati e le polveriere si sviluppano ad anello attorno a un piccolo cortile interno quadrangolare.",
+    "Raggiungibile dalle creuze：Un modo suggestivo per raggiungerlo è risalire da Sampierdarena lungo Salita Forte Crocetta, storica mattonata ligure.",
+    "Isolamento acustico naturale：Pur essendo vicino a un quartiere trafficato, una volta dentro le mura il rumore urbano si attenua fortemente.",
+    "Vicino al Belvedere：Si trova a breve distanza dal Forte Belvedere e può essere inserito in un piccolo itinerario delle fortificazioni di ponente."
+  ],
+  "lij": [
+    "Il forte senza spigoli: Ha una forma compatta quasi priva di spigoli vivi, progettata per ridurre l'efficacia dei proiettili d'artiglieria.",
+    "Sorge su un convento: Fu edificato sopra i resti del convento seicentesco degli Agostiniani e della chiesa del Santissimo Crocifisso, da cui deriva il nome Crocetta.",
+    "Il ponte levatoio intatto: È una delle poche fortezze genovesi che conserva ancora il meccanismo strutturale del ponte levatoio sul fossato d'ingresso.",
+    "La sentinella di Sampierdarena: Sorge a 145 metri sul livello del mare sopra Sampierdarena, in posizione adatta a controllarne gli accessi stradali.",
+    "Il terrapieno a due livelli: La cinta racchiudeva due livelli: quello inferiore per i fucilieri e quello superiore per l'artiglieria pesante.",
+    "Orti comunitari e rinascita: Nel 2015 è passato sotto la gestione del Comune di Genova, che ha avviato progetti per orti comunitari, aree picnic e attività all'aperto.",
+    "Alloggi a ciambella: Gli alloggi dei soldati e le polveriere si sviluppano ad anello attorno a un piccolo cortile interno quadrangolare.",
+    "Raggiungibile dalle creuze: Un modo suggestivo per raggiungerlo è risalire da Sampierdarena lungo Salita Forte Crocetta, storica mattonata ligure.",
+    "Isolamento acustico naturale: Pur essendo vicino a un quartiere trafficato, una volta dentro le mura il rumore urbano si attenua fortemente.",
+    "Vicino al Belvedere: Si trova a breve distanza dal Forte Belvedere e può essere inserito in un piccolo itinerario delle fortificazioni di ponente."
+  ]
+};
+
+  root.fort["Forte San Giorgio"] = {
+  "it": [
+    "Sotto il Castello D'Albertis: Questo forte storico si trova in città ed è stato parzialmente inglobato e trasformato nell'area oggi dominata dal Castello D'Albertis, sede del Museo delle Culture del Mondo.",
+    "Nato contro i genovesi: Fu ricostruito dai Savoia tra il 1818 e il 1828 sul preesistente bastione cinquecentesco anche per controllare le rivolte antigovernative cittadine.",
+    "La vendetta del popolo: Nel 1849 i cittadini genovesi insorsero, occuparono il forte e iniziarono a smantellarlo come simbolo del controllo sabaudo.",
+    "Sede della Marina Militare: Sull'area della fortezza sorge oggi la sede dell'Istituto Idrografico della Marina Militare, che produce le carte nautiche ufficiali italiane.",
+    "Ex osservatorio astronomico: Tra il 1859 e il 1861 la struttura fu ricostruita per ospitare un Osservatorio Astronomico urbano con apposite aperture meridiane.",
+    "La polveriera segreta: Nel primo Settecento il bastione originario era utilizzato dalla Repubblica di Genova come polveriera centrale dell'Arsenale.",
+    "Presidiato da mercenari: Documenti seicenteschi indicano una guarnigione fissa di sei soldati tedeschi, senza artiglieria pesante.",
+    "Il nome del Santo Patrono: È intitolato a San Giorgio, santo guerriero legato alla tradizione genovese; la croce rossa in campo bianco è la bandiera di Genova.",
+    "Un ascensore da record: Sorge vicino all'arrivo dell'Ascensore di Montegalletto, impianto che percorre prima un tratto orizzontale e poi sale verticalmente.",
+    "Le feritoie nel museo: Visitando il parco esterno e i sotterranei del Castello D'Albertis è ancora possibile toccare con mano le spesse pietre grigie e le feritoie ottocentesche originarie del vecchio Forte San Giorgio."
+  ],
+  "en": [
+    "Beneath Castello D’Albertis: This urban fort was partly incorporated and transformed in the area now dominated by Castello D’Albertis, home of the Museum of World Cultures.",
+    "Built to control Genoese unrest: The Savoys rebuilt it between 1818 and 1828 over an earlier 16th-century bastion, also to control anti-government revolts.",
+    "The people’s revenge: In 1849 Genoese insurgents occupied the fort and began dismantling it as a symbol of Savoy rule.",
+    "Home of the Navy: The site now houses the Italian Navy Hydrographic Institute, which produces Italy’s official nautical charts.",
+    "Former astronomical observatory: Between 1859 and 1861 the damaged structure was rebuilt to host an urban astronomical observatory with meridian openings.",
+    "The old powder magazine: In the early 18th century the original bastion served the Republic of Genoa as the Arsenal’s central powder store.",
+    "Guarded by mercenaries: 17th-century records mention a permanent garrison of only six German soldiers and no heavy artillery.",
+    "Named after the patron saint: It is dedicated to Saint George; the red cross on white is Genoa’s flag.",
+    "A remarkable lift: It stands near the Montegalletto lift, which first travels horizontally and then rises vertically.",
+    "Loopholes in the museum: In the park and underground areas of Castello D’Albertis, visitors can still see and touch the thick grey stones and 19th-century loopholes of the old Forte San Giorgio."
+  ],
+  "es": [
+    "Sotto il Castello D'Albertis: Questo forte storico si trova in città ed è stato parzialmente inglobato e trasformato nell'area oggi dominata dal Castello D'Albertis, sede del Museo delle Culture del Mondo.",
+    "Nato contro i genovesi: Fu ricostruito dai Savoia tra il 1818 e il 1828 sul preesistente bastione cinquecentesco anche per controllare le rivolte antigovernative cittadine.",
+    "La vendetta del popolo: Nel 1849 i cittadini genovesi insorsero, occuparono il forte e iniziarono a smantellarlo come simbolo del controllo sabaudo.",
+    "Sede della Marina Militare: Sull'area della fortezza sorge oggi la sede dell'Istituto Idrografico della Marina Militare, che produce le carte nautiche ufficiali italiane.",
+    "Ex osservatorio astronomico: Tra il 1859 e il 1861 la struttura fu ricostruita per ospitare un Osservatorio Astronomico urbano con apposite aperture meridiane.",
+    "La polveriera segreta: Nel primo Settecento il bastione originario era utilizzato dalla Repubblica di Genova come polveriera centrale dell'Arsenale.",
+    "Presidiato da mercenari: Documenti seicenteschi indicano una guarnigione fissa di sei soldati tedeschi, senza artiglieria pesante.",
+    "Il nome del Santo Patrono: È intitolato a San Giorgio, santo guerriero legato alla tradizione genovese; la croce rossa in campo bianco è la bandiera di Genova.",
+    "Un ascensore da record: Sorge vicino all'arrivo dell'Ascensore di Montegalletto, impianto che percorre prima un tratto orizzontale e poi sale verticalmente.",
+    "Le feritoie nel museo: Visitando il parco esterno e i sotterranei del Castello D'Albertis è ancora possibile toccare con mano le spesse pietre grigie e le feritoie ottocentesche originarie del vecchio Forte San Giorgio."
+  ],
+  "fr": [
+    "Sotto il Castello D'Albertis : Questo forte storico si trova in città ed è stato parzialmente inglobato e trasformato nell'area oggi dominata dal Castello D'Albertis, sede del Museo delle Culture del Mondo.",
+    "Nato contro i genovesi : Fu ricostruito dai Savoia tra il 1818 e il 1828 sul preesistente bastione cinquecentesco anche per controllare le rivolte antigovernative cittadine.",
+    "La vendetta del popolo : Nel 1849 i cittadini genovesi insorsero, occuparono il forte e iniziarono a smantellarlo come simbolo del controllo sabaudo.",
+    "Sede della Marina Militare : Sull'area della fortezza sorge oggi la sede dell'Istituto Idrografico della Marina Militare, che produce le carte nautiche ufficiali italiane.",
+    "Ex osservatorio astronomico : Tra il 1859 e il 1861 la struttura fu ricostruita per ospitare un Osservatorio Astronomico urbano con apposite aperture meridiane.",
+    "La polveriera segreta : Nel primo Settecento il bastione originario era utilizzato dalla Repubblica di Genova come polveriera centrale dell'Arsenale.",
+    "Presidiato da mercenari : Documenti seicenteschi indicano una guarnigione fissa di sei soldati tedeschi, senza artiglieria pesante.",
+    "Il nome del Santo Patrono : È intitolato a San Giorgio, santo guerriero legato alla tradizione genovese; la croce rossa in campo bianco è la bandiera di Genova.",
+    "Un ascensore da record : Sorge vicino all'arrivo dell'Ascensore di Montegalletto, impianto che percorre prima un tratto orizzontale e poi sale verticalmente.",
+    "Le feritoie nel museo : Visitando il parco esterno e i sotterranei del Castello D'Albertis è ancora possibile toccare con mano le spesse pietre grigie e le feritoie ottocentesche originarie del vecchio Forte San Giorgio."
+  ],
+  "ar": [
+    "Sotto il Castello D'Albertis: Questo forte storico si trova in città ed è stato parzialmente inglobato e trasformato nell'area oggi dominata dal Castello D'Albertis, sede del Museo delle Culture del Mondo.",
+    "Nato contro i genovesi: Fu ricostruito dai Savoia tra il 1818 e il 1828 sul preesistente bastione cinquecentesco anche per controllare le rivolte antigovernative cittadine.",
+    "La vendetta del popolo: Nel 1849 i cittadini genovesi insorsero, occuparono il forte e iniziarono a smantellarlo come simbolo del controllo sabaudo.",
+    "Sede della Marina Militare: Sull'area della fortezza sorge oggi la sede dell'Istituto Idrografico della Marina Militare, che produce le carte nautiche ufficiali italiane.",
+    "Ex osservatorio astronomico: Tra il 1859 e il 1861 la struttura fu ricostruita per ospitare un Osservatorio Astronomico urbano con apposite aperture meridiane.",
+    "La polveriera segreta: Nel primo Settecento il bastione originario era utilizzato dalla Repubblica di Genova come polveriera centrale dell'Arsenale.",
+    "Presidiato da mercenari: Documenti seicenteschi indicano una guarnigione fissa di sei soldati tedeschi, senza artiglieria pesante.",
+    "Il nome del Santo Patrono: È intitolato a San Giorgio, santo guerriero legato alla tradizione genovese; la croce rossa in campo bianco è la bandiera di Genova.",
+    "Un ascensore da record: Sorge vicino all'arrivo dell'Ascensore di Montegalletto, impianto che percorre prima un tratto orizzontale e poi sale verticalmente.",
+    "Le feritoie nel museo: Visitando il parco esterno e i sotterranei del Castello D'Albertis è ancora possibile toccare con mano le spesse pietre grigie e le feritoie ottocentesche originarie del vecchio Forte San Giorgio."
+  ],
+  "ru": [
+    "Sotto il Castello D'Albertis: Questo forte storico si trova in città ed è stato parzialmente inglobato e trasformato nell'area oggi dominata dal Castello D'Albertis, sede del Museo delle Culture del Mondo.",
+    "Nato contro i genovesi: Fu ricostruito dai Savoia tra il 1818 e il 1828 sul preesistente bastione cinquecentesco anche per controllare le rivolte antigovernative cittadine.",
+    "La vendetta del popolo: Nel 1849 i cittadini genovesi insorsero, occuparono il forte e iniziarono a smantellarlo come simbolo del controllo sabaudo.",
+    "Sede della Marina Militare: Sull'area della fortezza sorge oggi la sede dell'Istituto Idrografico della Marina Militare, che produce le carte nautiche ufficiali italiane.",
+    "Ex osservatorio astronomico: Tra il 1859 e il 1861 la struttura fu ricostruita per ospitare un Osservatorio Astronomico urbano con apposite aperture meridiane.",
+    "La polveriera segreta: Nel primo Settecento il bastione originario era utilizzato dalla Repubblica di Genova come polveriera centrale dell'Arsenale.",
+    "Presidiato da mercenari: Documenti seicenteschi indicano una guarnigione fissa di sei soldati tedeschi, senza artiglieria pesante.",
+    "Il nome del Santo Patrono: È intitolato a San Giorgio, santo guerriero legato alla tradizione genovese; la croce rossa in campo bianco è la bandiera di Genova.",
+    "Un ascensore da record: Sorge vicino all'arrivo dell'Ascensore di Montegalletto, impianto che percorre prima un tratto orizzontale e poi sale verticalmente.",
+    "Le feritoie nel museo: Visitando il parco esterno e i sotterranei del Castello D'Albertis è ancora possibile toccare con mano le spesse pietre grigie e le feritoie ottocentesche originarie del vecchio Forte San Giorgio."
+  ],
+  "zh": [
+    "Sotto il Castello D'Albertis：Questo forte storico si trova in città ed è stato parzialmente inglobato e trasformato nell'area oggi dominata dal Castello D'Albertis, sede del Museo delle Culture del Mondo.",
+    "Nato contro i genovesi：Fu ricostruito dai Savoia tra il 1818 e il 1828 sul preesistente bastione cinquecentesco anche per controllare le rivolte antigovernative cittadine.",
+    "La vendetta del popolo：Nel 1849 i cittadini genovesi insorsero, occuparono il forte e iniziarono a smantellarlo come simbolo del controllo sabaudo.",
+    "Sede della Marina Militare：Sull'area della fortezza sorge oggi la sede dell'Istituto Idrografico della Marina Militare, che produce le carte nautiche ufficiali italiane.",
+    "Ex osservatorio astronomico：Tra il 1859 e il 1861 la struttura fu ricostruita per ospitare un Osservatorio Astronomico urbano con apposite aperture meridiane.",
+    "La polveriera segreta：Nel primo Settecento il bastione originario era utilizzato dalla Repubblica di Genova come polveriera centrale dell'Arsenale.",
+    "Presidiato da mercenari：Documenti seicenteschi indicano una guarnigione fissa di sei soldati tedeschi, senza artiglieria pesante.",
+    "Il nome del Santo Patrono：È intitolato a San Giorgio, santo guerriero legato alla tradizione genovese; la croce rossa in campo bianco è la bandiera di Genova.",
+    "Un ascensore da record：Sorge vicino all'arrivo dell'Ascensore di Montegalletto, impianto che percorre prima un tratto orizzontale e poi sale verticalmente.",
+    "Le feritoie nel museo：Visitando il parco esterno e i sotterranei del Castello D'Albertis è ancora possibile toccare con mano le spesse pietre grigie e le feritoie ottocentesche originarie del vecchio Forte San Giorgio."
+  ],
+  "lij": [
+    "Sotto il Castello D'Albertis: Questo forte storico si trova in città ed è stato parzialmente inglobato e trasformato nell'area oggi dominata dal Castello D'Albertis, sede del Museo delle Culture del Mondo.",
+    "Nato contro i genovesi: Fu ricostruito dai Savoia tra il 1818 e il 1828 sul preesistente bastione cinquecentesco anche per controllare le rivolte antigovernative cittadine.",
+    "La vendetta del popolo: Nel 1849 i cittadini genovesi insorsero, occuparono il forte e iniziarono a smantellarlo come simbolo del controllo sabaudo.",
+    "Sede della Marina Militare: Sull'area della fortezza sorge oggi la sede dell'Istituto Idrografico della Marina Militare, che produce le carte nautiche ufficiali italiane.",
+    "Ex osservatorio astronomico: Tra il 1859 e il 1861 la struttura fu ricostruita per ospitare un Osservatorio Astronomico urbano con apposite aperture meridiane.",
+    "La polveriera segreta: Nel primo Settecento il bastione originario era utilizzato dalla Repubblica di Genova come polveriera centrale dell'Arsenale.",
+    "Presidiato da mercenari: Documenti seicenteschi indicano una guarnigione fissa di sei soldati tedeschi, senza artiglieria pesante.",
+    "Il nome del Santo Patrono: È intitolato a San Giorgio, santo guerriero legato alla tradizione genovese; la croce rossa in campo bianco è la bandiera di Genova.",
+    "Un ascensore da record: Sorge vicino all'arrivo dell'Ascensore di Montegalletto, impianto che percorre prima un tratto orizzontale e poi sale verticalmente.",
+    "Le feritoie nel museo: Visitando il parco esterno e i sotterranei del Castello D'Albertis è ancora possibile toccare con mano le spesse pietre grigie e le feritoie ottocentesche originarie del vecchio Forte San Giorgio."
+  ]
+};
+
 })();
