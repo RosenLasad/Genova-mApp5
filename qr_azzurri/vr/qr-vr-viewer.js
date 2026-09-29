@@ -199,12 +199,13 @@
   VRViewer.prototype.toggleMuted=function(){if(this.sourceType!=="video"||!this.source)return null;this.setMuted(!this.source.muted);return this.source.muted;};
   VRViewer.prototype.isMuted=function(){return !!(this.sourceType==="video"&&this.source&&this.source.muted);};
   VRViewer.prototype.getBackend=function(){return this.backend;};
-  VRViewer.prototype.supportsGyro=function(){return typeof DeviceOrientationEvent!=="undefined";};
+  VRViewer.prototype.supportsGyro=function(){return (typeof window!=="undefined") && ((typeof window.DeviceOrientationEvent!=="undefined") || ("ondeviceorientation" in window));};
 
   VRViewer.prototype.requestGyro=async function(){
     if(!this.supportsGyro())throw new Error("Sensore di orientamento non disponibile");
-    if(typeof DeviceOrientationEvent.requestPermission==="function"){
-      var p=await DeviceOrientationEvent.requestPermission();if(p!=="granted")throw new Error("Permesso non concesso");
+    var DOE=(typeof window!=="undefined")?window.DeviceOrientationEvent:null;
+    if(DOE && typeof DOE.requestPermission==="function"){
+      var p=await DOE.requestPermission();if(p!=="granted")throw new Error("Permesso non concesso");
     }
     this.gyroZero=null;window.addEventListener("deviceorientation",this._orientationHandler,true);this.gyro=true;this.dirty=true;
   };
