@@ -31,6 +31,7 @@
     activeQrParent = null;
     activeQrId = "";
     activeCompareSpec = null;
+    try { if (typeof window.__qrVrClear === "function") window.__qrVrClear(); } catch (_) {}
     panel.classList.remove("qr-point-panel");
     panel.style.removeProperty("--qr-panel-anchor-x");
     panel.style.removeProperty("--qr-panel-anchor-y");
@@ -1145,6 +1146,7 @@
       ensureMultimediaControls();
       prepareMiniDocForPoint(point, media);
       prepareCompareForPoint(point, parent, media, qrid);
+      try { if (typeof window.__qrVrPrepare === "function") window.__qrVrPrepare(point, parent, media, qrid); } catch (_) {}
 
       focusQrPoint(point, function () {
         preparePanel(point, parent);

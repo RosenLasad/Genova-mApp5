@@ -1,0 +1,156 @@
+/* Genova mApp - Viewer VR dei Punti QR */
+[hidden] { display: none !important; }
+
+html.qr-vr-open,
+body.qr-vr-open {
+  overflow: hidden !important;
+}
+
+.qr-vr-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100500;
+  background: #02060d;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+.qr-vr-overlay[hidden] { display: none !important; }
+
+.qr-vr-topbar {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: max(10px, env(safe-area-inset-top)) 12px 8px;
+  background: linear-gradient(to bottom, rgba(0,0,0,.72), rgba(0,0,0,0));
+  pointer-events: none;
+}
+
+.qr-vr-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font: 600 15px/1.25 system-ui, -apple-system, Segoe UI, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 3px #000;
+}
+
+.qr-vr-icon-btn {
+  pointer-events: auto;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,.34);
+  border-radius: 999px;
+  background: rgba(7,15,27,.72);
+  color: #fff;
+  display: inline-grid;
+  place-items: center;
+  font: 700 19px/1 system-ui, sans-serif;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.qr-vr-icon-btn:active { transform: scale(.96); }
+.qr-vr-icon-btn.is-active { background: rgba(29,112,184,.88); }
+
+.qr-vr-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #02060d;
+}
+
+.qr-vr-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #02060d;
+  cursor: grab;
+  touch-action: none;
+}
+
+.qr-vr-canvas:active { cursor: grabbing; }
+
+.qr-vr-loader,
+.qr-vr-error {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  text-align: center;
+  background: rgba(2,6,13,.76);
+  font: 600 15px/1.4 system-ui, -apple-system, Segoe UI, sans-serif;
+}
+
+.qr-vr-loader::before {
+  content: "";
+  width: 34px;
+  height: 34px;
+  margin-bottom: 12px;
+  border: 3px solid rgba(255,255,255,.28);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: qrVrSpin .8s linear infinite;
+}
+
+.qr-vr-loader { grid-template-rows: auto auto; }
+@keyframes qrVrSpin { to { transform: rotate(360deg); } }
+
+.qr-vr-error { color: #fff; background: rgba(45,8,8,.88); }
+
+.qr-vr-controls {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: max(14px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  pointer-events: none;
+}
+.qr-vr-controls .qr-vr-icon-btn { pointer-events: auto; }
+
+.qr-vr-hint {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: calc(max(14px, env(safe-area-inset-bottom)) + 62px);
+  transform: translateX(-50%);
+  max-width: min(88vw, 420px);
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.58);
+  color: #fff;
+  text-align: center;
+  font: 500 12px/1.35 system-ui, -apple-system, Segoe UI, sans-serif;
+  pointer-events: none;
+  transition: opacity .35s ease;
+}
+.qr-vr-hint.is-fading { opacity: 0; }
+
+/* Il comando VR appartiene alla stessa riga Oggi / Ieri / SFX. */
+#btn-vr-qr[hidden] { display: none !important; }
+
+@media (max-width: 768px) {
+  .qr-vr-topbar { min-height: 54px; }
+  .qr-vr-title { font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qr-vr-loader::before { animation-duration: 1.8s; }
+  .qr-vr-hint { transition: none; }
+}
