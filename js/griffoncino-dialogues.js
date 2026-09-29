@@ -1,4 +1,4 @@
-/* Genova mApp - Grifoncino: dialoghi guidati multilingua + percorsi intelligenti v0.4 */
+/* Genova mApp - Grifoncino: dialoghi guidati multilingua + percorsi intelligenti v0.4.1 */
 (function(){
   'use strict';
 
@@ -36,7 +36,7 @@
       plan_text:'Come vuoi organizzare la visita?', route:'Un percorso', nearby:'Vicino a me', theme:'Un tema', explore_map:'Esplora la mappa',
       after_text:'Eccoci! Vuoi che ti aiuti ancora?', yes_continue:'Sì, continua', discover_more:'Fammi scoprire altro', organize_visit:'Organizza una visita',
       unavailable_text:'Questa scorciatoia non è disponibile qui, ma posso guidarti in un altro modo.', back_choices:'Torna alle scelte',
-      back:'Indietro', home:'Inizio', minimize_q:'Metti a icona il Grifoncino?', yes:'Sì', no:'No', assistant_label:'Assistente Grifoncino', message_label:'Messaggio del Grifoncino', options_label:'Opzioni Grifoncino', open_label:'Apri il Grifoncino', hide_griffin:'Nascondi Grifoncino', smart_route:'Consigliami un percorso', route_smart_text:'Che tipo di percorso ti andrebbe?', route_sea:'Mare e porto', route_history:'Storia e personaggi', route_literature:'Poesia e cultura', route_city:'Città e palazzi', route_auto:'In base ai miei interessi', route_browse:'Vedi tutti i percorsi'
+      back:'Indietro', home:'Inizio', minimize_q:'Metti a icona il Grifoncino?', yes:'Sì', no:'No', assistant_label:'Assistente Grifoncino', message_label:'Messaggio del Grifoncino', options_label:'Opzioni Grifoncino', open_label:'Apri il Grifoncino', hide_griffin:'Nascondi Grifoncino', smart_route:'Consigliami un percorso', route_smart_text:'Che tipo di percorso ti andrebbe?', route_sea:'Mare e porto', route_history:'Storia e personaggi', route_literature:'Poesia e cultura', route_city:'Città e palazzi', route_auto:'In base ai miei interessi', route_browse:'Vedi tutti i percorsi', vr:'Esperienze VR', vr_text:'In alcuni punti QR puoi entrare nella Genova del passato con la modalità VR. Se nella scheda del luogo vedi il pulsante VR, puoi aprire una scena immersiva e guardarti intorno.', vr_how:'Come funziona?', vr_where:'Dove trovo il VR?', vr_how_text:'Su smartphone puoi usare il pulsante Movimento per attivare il giroscopio e orientare la visuale muovendo il telefono. Puoi anche trascinare con il dito. Su computer trascina la scena con il mouse.', vr_where_text:'Il pulsante VR compare solo nei punti QR che hanno una scena VR disponibile. Lo trovi nella riga delle funzioni insieme ad Audioguida, MiniDoc e Condividi.', vr_back_history:'Torna alla storia'
     },
     lij:{
       welcome_text:'Benvegnûo in Genova mApp! Cöse ti veu fâ ancheu?', discover:'Scrovî quarcösa', find:'Trovâ quarcösa', plan:'Organizzâ unna vixita', surprise:'Sorprendime',
@@ -52,7 +52,7 @@
       plan_text:'Comme ti veu organizzâ a vixita?', route:'Un percorso', nearby:'Vixin a mi', theme:'Un tema', explore_map:'Esplora a mappa',
       after_text:'Eccoci! Ti veu che te agiutte ancón?', yes_continue:'Scì, continoa', discover_more:'Famme scrovî atro', organize_visit:'Organizza unna vixita',
       unavailable_text:'Sta scorciatoia a no l’é disponibbile chi, ma posso guidâte in un atro mòddo.', back_choices:'Torna ae çernie',
-      back:'Indrê', home:'Iniçio', minimize_q:'Metto a icona o Grifoncino?', yes:'Scì', no:'No', assistant_label:'Assistente Grifoncino', message_label:'Messaggio do Grifoncino', options_label:'Opçioin Grifoncino', open_label:'Arvi o Grifoncino', hide_griffin:'Ascondi o Grifoncino', smart_route:'Conseggime un percorso', route_smart_text:'Che tipo de percorso ti veu?', route_sea:'Mâ e porto', route_history:'Stöia e personaggi', route_literature:'Poeixia e cultura', route_city:'Çittæ e palazzi', route_auto:'In baze ai mæ interessi', route_browse:'Veddi tutti i percorsi'
+      back:'Indrê', home:'Iniçio', minimize_q:'Metto a icona o Grifoncino?', yes:'Scì', no:'No', assistant_label:'Assistente Grifoncino', message_label:'Messaggio do Grifoncino', options_label:'Opçioin Grifoncino', open_label:'Arvi o Grifoncino', hide_griffin:'Ascondi o Grifoncino', smart_route:'Conseggime un percorso', route_smart_text:'Che tipo de percorso ti veu?', route_sea:'Mâ e porto', route_history:'Stöia e personaggi', route_literature:'Poeixia e cultura', route_city:'Çittæ e palazzi', route_auto:'In baze ai mæ interessi', route_browse:'Veddi tutti i percorsi', vr:'Esperiense VR', vr_text:'In quarche ponto QR ti peu intrâ inta Zena do passòu co-a modalità VR. Se inta scheda do leugo ti veddi o boton VR, ti peu arve unna scena immersiva e ammiâte in gio.', vr_how:'Comme a fonçionn-a?', vr_where:'Dove trovo o VR?', vr_how_text:'In sciô smartphone ti peu doviâ o boton Movimento pe ativâ o giroscopio e cambiâ a vista mesciando o telefono. Ti peu anche striscâ co-o dïo. In sciô computer trascin-a a scena co-o mouse.', vr_where_text:"O boton VR o compare solo inti punti QR che gh'an unna scena VR disponibile. Ti o trovi inta riga de funçioin con Audioguida, MiniDoc e Condividi.", vr_back_history:'Torna a-a stöia'
     },
     en:{
       welcome_text:'Welcome to Genova mApp! What would you like to do today?', discover:'Discover something', find:'Find something', plan:'Plan a visit', surprise:'Surprise me',
@@ -68,7 +68,7 @@
       plan_text:'How would you like to plan your visit?', route:'A route', nearby:'Near me', theme:'A theme', explore_map:'Explore the map',
       after_text:'Here we are! Would you like more help?', yes_continue:'Yes, continue', discover_more:'Show me something else', organize_visit:'Plan a visit',
       unavailable_text:'This shortcut is not available here, but I can guide you another way.', back_choices:'Back to choices',
-      back:'Back', home:'Home', minimize_q:'Minimize the Griffin?', yes:'Yes', no:'No', assistant_label:'Griffin Assistant', message_label:'Message from the Griffin', options_label:'Griffin options', open_label:'Open the Griffin', hide_griffin:'Hide the Griffin', smart_route:'Recommend a route', route_smart_text:'What kind of route would you enjoy?', route_sea:'Sea and harbour', route_history:'History and people', route_literature:'Poetry and culture', route_city:'City and palaces', route_auto:'Based on my interests', route_browse:'See all routes'
+      back:'Back', home:'Home', minimize_q:'Minimize the Griffin?', yes:'Yes', no:'No', assistant_label:'Griffin Assistant', message_label:'Message from the Griffin', options_label:'Griffin options', open_label:'Open the Griffin', hide_griffin:'Hide the Griffin', smart_route:'Recommend a route', route_smart_text:'What kind of route would you enjoy?', route_sea:'Sea and harbour', route_history:'History and people', route_literature:'Poetry and culture', route_city:'City and palaces', route_auto:'Based on my interests', route_browse:'See all routes', vr:'VR experiences', vr_text:'At some QR points you can step into Genoa’s past with VR mode. If you see the VR button in a place card, you can open an immersive scene and look around.', vr_how:'How does it work?', vr_where:'Where can I find VR?', vr_how_text:'On a smartphone, use the Motion button to enable the gyroscope and change the view by moving your phone. You can also drag with your finger. On a computer, drag the scene with the mouse.', vr_where_text:'The VR button appears only at QR points with a VR scene available. You will find it in the functions row with Audioguide, MiniDoc and Share.', vr_back_history:'Back to history'
     },
     es:{
       welcome_text:'¡Bienvenido a Genova mApp! ¿Qué te apetece hacer hoy?', discover:'Descubrir algo', find:'Encontrar algo', plan:'Organizar una visita', surprise:'Sorpréndeme',
@@ -84,7 +84,7 @@
       plan_text:'¿Cómo quieres organizar la visita?', route:'Un recorrido', nearby:'Cerca de mí', theme:'Un tema', explore_map:'Explorar el mapa',
       after_text:'¡Aquí estamos! ¿Quieres que siga ayudándote?', yes_continue:'Sí, continúa', discover_more:'Enséñame algo más', organize_visit:'Organizar una visita',
       unavailable_text:'Este acceso directo no está disponible aquí, pero puedo guiarte de otra manera.', back_choices:'Volver a las opciones',
-      back:'Atrás', home:'Inicio', minimize_q:'¿Minimizar el Grifoncino?', yes:'Sí', no:'No', assistant_label:'Asistente Grifoncino', message_label:'Mensaje del Grifoncino', options_label:'Opciones del Grifoncino', open_label:'Abrir el Grifoncino', hide_griffin:'Ocultar Grifoncino', smart_route:'Recomiéndame una ruta', route_smart_text:'¿Qué tipo de ruta te apetece?', route_sea:'Mar y puerto', route_history:'Historia y personajes', route_literature:'Poesía y cultura', route_city:'Ciudad y palacios', route_auto:'Según mis intereses', route_browse:'Ver todas las rutas'
+      back:'Atrás', home:'Inicio', minimize_q:'¿Minimizar el Grifoncino?', yes:'Sí', no:'No', assistant_label:'Asistente Grifoncino', message_label:'Mensaje del Grifoncino', options_label:'Opciones del Grifoncino', open_label:'Abrir el Grifoncino', hide_griffin:'Ocultar Grifoncino', smart_route:'Recomiéndame una ruta', route_smart_text:'¿Qué tipo de ruta te apetece?', route_sea:'Mar y puerto', route_history:'Historia y personajes', route_literature:'Poesía y cultura', route_city:'Ciudad y palacios', route_auto:'Según mis intereses', route_browse:'Ver todas las rutas', vr:'Experiencias VR', vr_text:'En algunos puntos QR puedes entrar en la Génova del pasado con el modo VR. Si ves el botón VR en la ficha del lugar, puedes abrir una escena inmersiva y mirar a tu alrededor.', vr_how:'¿Cómo funciona?', vr_where:'¿Dónde encuentro VR?', vr_how_text:'En el smartphone puedes usar el botón Movimiento para activar el giroscopio y orientar la vista moviendo el teléfono. También puedes arrastrar con el dedo. En el ordenador, arrastra la escena con el ratón.', vr_where_text:'El botón VR aparece solo en los puntos QR que tienen una escena VR disponible. Lo encontrarás en la fila de funciones junto a Audioguía, MiniDoc y Compartir.', vr_back_history:'Volver a Historia'
     },
     fr:{
       welcome_text:'Bienvenue sur Genova mApp ! Qu’aimerais-tu faire aujourd’hui ?', discover:'Découvrir quelque chose', find:'Trouver quelque chose', plan:'Organiser une visite', surprise:'Surprends-moi',
@@ -100,7 +100,7 @@
       plan_text:'Comment veux-tu organiser ta visite ?', route:'Un parcours', nearby:'Près de moi', theme:'Un thème', explore_map:'Explorer la carte',
       after_text:'Nous y voilà ! Veux-tu encore un peu d’aide ?', yes_continue:'Oui, continue', discover_more:'Fais-moi découvrir autre chose', organize_visit:'Organiser une visite',
       unavailable_text:'Ce raccourci n’est pas disponible ici, mais je peux te guider autrement.', back_choices:'Retour aux choix',
-      back:'Retour', home:'Accueil', minimize_q:'Réduire le Grifoncino en icône ?', yes:'Oui', no:'Non', assistant_label:'Assistant Grifoncino', message_label:'Message du Grifoncino', options_label:'Options du Grifoncino', open_label:'Ouvrir le Grifoncino', hide_griffin:'Masquer le Grifoncino', smart_route:'Conseille-moi un parcours', route_smart_text:'Quel type de parcours te ferait envie ?', route_sea:'Mer et port', route_history:'Histoire et personnages', route_literature:'Poésie et culture', route_city:'Ville et palais', route_auto:'Selon mes centres d’intérêt', route_browse:'Voir tous les parcours'
+      back:'Retour', home:'Accueil', minimize_q:'Réduire le Grifoncino en icône ?', yes:'Oui', no:'Non', assistant_label:'Assistant Grifoncino', message_label:'Message du Grifoncino', options_label:'Options du Grifoncino', open_label:'Ouvrir le Grifoncino', hide_griffin:'Masquer le Grifoncino', smart_route:'Conseille-moi un parcours', route_smart_text:'Quel type de parcours te ferait envie ?', route_sea:'Mer et port', route_history:'Histoire et personnages', route_literature:'Poésie et culture', route_city:'Ville et palais', route_auto:'Selon mes centres d’intérêt', route_browse:'Voir tous les parcours', vr:'Expériences VR', vr_text:'Sur certains points QR, vous pouvez entrer dans la Gênes du passé grâce au mode VR. Si le bouton VR apparaît dans la fiche du lieu, vous pouvez ouvrir une scène immersive et regarder autour de vous.', vr_how:'Comment ça marche ?', vr_where:'Où trouver la VR ?', vr_how_text:'Sur smartphone, utilisez le bouton Mouvement pour activer le gyroscope et orienter la vue en bougeant le téléphone. Vous pouvez aussi faire glisser avec le doigt. Sur ordinateur, faites glisser la scène avec la souris.', vr_where_text:'Le bouton VR apparaît uniquement pour les points QR disposant d’une scène VR. Il se trouve dans la rangée des fonctions avec Audioguide, MiniDoc et Partager.', vr_back_history:'Retour à l’histoire'
     },
     ar:{
       welcome_text:'مرحبًا بك في Genova mApp! ماذا تود أن تفعل اليوم؟', discover:'اكتشف شيئًا', find:'ابحث عن شيء', plan:'خطط لزيارة', surprise:'فاجئني',
@@ -116,7 +116,7 @@
       plan_text:'كيف تريد تنظيم زيارتك؟', route:'مسار', nearby:'بالقرب مني', theme:'موضوع', explore_map:'استكشف الخريطة',
       after_text:'ها نحن هنا! هل تريد المزيد من المساعدة؟', yes_continue:'نعم، تابع', discover_more:'أرني شيئًا آخر', organize_visit:'خطط لزيارة',
       unavailable_text:'هذا الاختصار غير متاح هنا، لكن يمكنني إرشادك بطريقة أخرى.', back_choices:'العودة إلى الخيارات',
-      back:'رجوع', home:'البداية', minimize_q:'هل تريد تصغير Grifoncino إلى أيقونة؟', yes:'نعم', no:'لا', assistant_label:'مساعد Grifoncino', message_label:'رسالة من Grifoncino', options_label:'خيارات Grifoncino', open_label:'فتح Grifoncino', hide_griffin:'إخفاء Grifoncino', smart_route:'اقترح لي مسارًا', route_smart_text:'ما نوع المسار الذي تفضله؟', route_sea:'البحر والميناء', route_history:'التاريخ والشخصيات', route_literature:'الشعر والثقافة', route_city:'المدينة والقصور', route_auto:'حسب اهتماماتي', route_browse:'عرض كل المسارات'
+      back:'رجوع', home:'البداية', minimize_q:'هل تريد تصغير Grifoncino إلى أيقونة؟', yes:'نعم', no:'لا', assistant_label:'مساعد Grifoncino', message_label:'رسالة من Grifoncino', options_label:'خيارات Grifoncino', open_label:'فتح Grifoncino', hide_griffin:'إخفاء Grifoncino', smart_route:'اقترح لي مسارًا', route_smart_text:'ما نوع المسار الذي تفضله؟', route_sea:'البحر والميناء', route_history:'التاريخ والشخصيات', route_literature:'الشعر والثقافة', route_city:'المدينة والقصور', route_auto:'حسب اهتماماتي', route_browse:'عرض كل المسارات', vr:'تجارب VR', vr_text:'في بعض نقاط QR يمكنك الدخول إلى جنوة القديمة عبر وضع VR. إذا ظهر زر VR في بطاقة المكان، يمكنك فتح مشهد غامر والنظر حولك.', vr_how:'كيف تعمل؟', vr_where:'أين أجد VR؟', vr_how_text:'على الهاتف الذكي استخدم زر الحركة لتفعيل الجيروسكوب وتغيير اتجاه الرؤية بتحريك الهاتف. ويمكنك أيضًا السحب بإصبعك. على الكمبيوتر اسحب المشهد بالماوس.', vr_where_text:'يظهر زر VR فقط في نقاط QR التي تتوفر لها تجربة VR. ستجده في صف الوظائف مع الدليل الصوتي وMiniDoc والمشاركة.', vr_back_history:'العودة إلى التاريخ'
     },
     ru:{
       welcome_text:'Добро пожаловать в Genova mApp! Чем бы вы хотели заняться сегодня?', discover:'Узнать что-нибудь', find:'Найти что-нибудь', plan:'Спланировать посещение', surprise:'Удиви меня',
@@ -132,7 +132,7 @@
       plan_text:'Как вы хотите организовать посещение?', route:'Маршрут', nearby:'Рядом со мной', theme:'Тема', explore_map:'Открыть карту',
       after_text:'Готово! Нужна ещё помощь?', yes_continue:'Да, продолжай', discover_more:'Покажи что-нибудь ещё', organize_visit:'Спланировать посещение',
       unavailable_text:'Этот ярлык здесь недоступен, но я могу помочь другим способом.', back_choices:'Вернуться к выбору',
-      back:'Назад', home:'Начало', minimize_q:'Свернуть Grifoncino в значок?', yes:'Да', no:'Нет', assistant_label:'Помощник Grifoncino', message_label:'Сообщение от Grifoncino', options_label:'Параметры Grifoncino', open_label:'Открыть Grifoncino', hide_griffin:'Скрыть Grifoncino', smart_route:'Посоветуй маршрут', route_smart_text:'Какой маршрут вам хотелось бы?', route_sea:'Море и порт', route_history:'История и личности', route_literature:'Поэзия и культура', route_city:'Город и дворцы', route_auto:'По моим интересам', route_browse:'Показать все маршруты'
+      back:'Назад', home:'Начало', minimize_q:'Свернуть Grifoncino в значок?', yes:'Да', no:'Нет', assistant_label:'Помощник Grifoncino', message_label:'Сообщение от Grifoncino', options_label:'Параметры Grifoncino', open_label:'Открыть Grifoncino', hide_griffin:'Скрыть Grifoncino', smart_route:'Посоветуй маршрут', route_smart_text:'Какой маршрут вам хотелось бы?', route_sea:'Море и порт', route_history:'История и личности', route_literature:'Поэзия и культура', route_city:'Город и дворцы', route_auto:'По моим интересам', route_browse:'Показать все маршруты', vr:'VR-впечатления', vr_text:'В некоторых QR-точках можно погрузиться в прошлое Генуи в режиме VR. Если в карточке места есть кнопка VR, вы сможете открыть иммерсивную сцену и осматриваться вокруг.', vr_how:'Как это работает?', vr_where:'Где найти VR?', vr_how_text:'На смартфоне нажмите кнопку «Движение», чтобы включить гироскоп и менять направление взгляда движением телефона. Также можно перемещать сцену пальцем. На компьютере перетаскивайте сцену мышью.', vr_where_text:'Кнопка VR появляется только у QR-точек, для которых доступна VR-сцена. Она находится в строке функций рядом с Аудиогидом, MiniDoc и Поделиться.', vr_back_history:'Назад к истории'
     },
     zh:{
       welcome_text:'欢迎使用 Genova mApp！今天你想做什么？', discover:'发现新内容', find:'查找内容', plan:'规划游览', surprise:'给我惊喜',
@@ -148,7 +148,7 @@
       plan_text:'你想怎样规划游览？', route:'一条路线', nearby:'我附近', theme:'一个主题', explore_map:'探索地图',
       after_text:'到了！还需要我继续帮你吗？', yes_continue:'好，继续', discover_more:'再推荐一些', organize_visit:'规划游览',
       unavailable_text:'这个快捷方式在这里不可用，不过我可以换一种方式帮助你。', back_choices:'返回选项',
-      back:'返回', home:'首页', minimize_q:'将 Grifoncino 缩小为图标吗？', yes:'是', no:'否', assistant_label:'Grifoncino 助手', message_label:'Grifoncino 的消息', options_label:'Grifoncino 选项', open_label:'打开 Grifoncino', hide_griffin:'隐藏 Grifoncino', smart_route:'推荐一条路线', route_smart_text:'你想体验哪种路线？', route_sea:'海洋与港口', route_history:'历史与人物', route_literature:'诗歌与文化', route_city:'城市与宫殿', route_auto:'根据我的兴趣', route_browse:'查看全部路线'
+      back:'返回', home:'首页', minimize_q:'将 Grifoncino 缩小为图标吗？', yes:'是', no:'否', assistant_label:'Grifoncino 助手', message_label:'Grifoncino 的消息', options_label:'Grifoncino 选项', open_label:'打开 Grifoncino', hide_griffin:'隐藏 Grifoncino', smart_route:'推荐一条路线', route_smart_text:'你想体验哪种路线？', route_sea:'海洋与港口', route_history:'历史与人物', route_literature:'诗歌与文化', route_city:'城市与宫殿', route_auto:'根据我的兴趣', route_browse:'查看全部路线', vr:'VR 沉浸体验', vr_text:'在部分 QR 地点中，你可以通过 VR 模式进入过去的热那亚。如果地点卡片中出现 VR 按钮，就可以打开沉浸式场景并环顾四周。', vr_how:'如何使用？', vr_where:'在哪里找到 VR？', vr_how_text:'在手机上，可以点击“移动”按钮启用陀螺仪，通过移动手机改变视角，也可以用手指拖动画面。在电脑上，用鼠标拖动场景。', vr_where_text:'VR 按钮只会出现在已经提供 VR 场景的 QR 地点中。它位于功能按钮一行，与语音导览、MiniDoc 和分享并列。', vr_back_history:'返回历史'
     }
   };
 
@@ -162,7 +162,8 @@
       {labelKey:'history',next:'history',remember:{tags:['history'],weight:3}},
       {labelKey:'places',next:'places',remember:{tags:['places'],weight:2}},
       {labelKey:'curiosities',next:'curiosities',remember:{tags:['culture'],weight:1}},
-      {labelKey:'culture',next:'culture',remember:{tags:['culture'],weight:3}}]},
+      {labelKey:'culture',next:'culture',remember:{tags:['culture'],weight:3}},
+      {labelKey:'vr',next:'vrInfo',remember:{tags:['history','vr'],weight:2}}]},
     history:{textKey:'history_text',tone:'curious',options:[
       {labelKey:'forts',action:'showForti',remember:{tags:['history','forts'],weight:2}},
       {labelKey:'museums',action:'showMuseums',remember:{tags:['history','museums'],weight:2}},
@@ -174,6 +175,16 @@
       {labelKey:'cinema',action:'showCinema',remember:{tags:['culture'],weight:1}},
       {labelKey:'exhibitions',action:'showExhibitions',remember:{tags:['culture'],weight:2}}]},
     curiosities:{textKey:'curiosities_text',tone:'curious',options:[{labelKey:'yes_surprise',action:'surprise'},{labelKey:'prefer_choose',next:'discover'}]},
+    vrInfo:{textKey:'vr_text',tone:'curious',options:[
+      {labelKey:'vr_how',next:'vrHow'},
+      {labelKey:'vr_where',next:'vrWhere'},
+      {labelKey:'vr_back_history',next:'history'}]},
+    vrHow:{textKey:'vr_how_text',tone:'friendly',options:[
+      {labelKey:'vr_where',next:'vrWhere'},
+      {labelKey:'vr_back_history',next:'history'}]},
+    vrWhere:{textKey:'vr_where_text',tone:'friendly',options:[
+      {labelKey:'vr_how',next:'vrHow'},
+      {labelKey:'vr_back_history',next:'history'}]},
     culture:{textKey:'culture_text',tone:'friendly',options:[
       {labelKey:'museums',action:'showMuseums',remember:{tags:['culture','museums'],weight:2}},
       {labelKey:'churches',action:'showChurches',remember:{tags:['culture','churches'],weight:2}},
