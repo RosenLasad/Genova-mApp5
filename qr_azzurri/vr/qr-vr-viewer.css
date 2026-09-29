@@ -35,8 +35,6 @@ body.qr-vr-open {
   pointer-events: none;
 }
 
-.qr-vr-topbar > * { pointer-events: auto; }
-
 .qr-vr-title {
   flex: 1 1 auto;
   min-width: 0;
@@ -113,17 +111,16 @@ body.qr-vr-open {
 .qr-vr-error { color: #fff; background: rgba(45,8,8,.88); }
 
 .qr-vr-controls {
-  position: relative;
-  z-index: 6;
-  display: flex;
+  position: static;
+  z-index: auto;
   flex: 0 0 auto;
+  display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
   pointer-events: auto;
 }
-.qr-vr-controls .qr-vr-icon-btn { pointer-events: auto; touch-action: manipulation; }
-.qr-vr-close-btn { flex: 0 0 auto; touch-action: manipulation; }
+.qr-vr-controls .qr-vr-icon-btn { pointer-events: auto; }
 
 .qr-vr-hint {
   position: absolute;
@@ -147,9 +144,9 @@ body.qr-vr-open {
 #btn-vr-qr[hidden] { display: none !important; }
 
 @media (max-width: 768px) {
-  .qr-vr-topbar { min-height: 54px; gap: 6px; padding-left: 8px; padding-right: 8px; }
-  .qr-vr-title { font-size: 13px; }
-  .qr-vr-controls { gap: 5px; }
+  .qr-vr-topbar { min-height: 54px; gap: 7px; padding-left: 8px; padding-right: 8px; }
+  .qr-vr-title { font-size: 14px; }
+  .qr-vr-controls { gap: 6px; }
   .qr-vr-icon-btn { width: 40px; height: 40px; font-size: 18px; }
 }
 

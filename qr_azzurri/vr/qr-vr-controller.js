@@ -11,14 +11,14 @@
   var hintTimer = 0;
 
   var I18N = {
-    it: { vr:"VR", loading:"Caricamento del video...", close:"Chiudi", gyro:"Attiva movimento", gyroOff:"Disattiva movimento", sound:"Audio", mute:"Disattiva audio", unmute:"Attiva audio", fullscreen:"Schermo intero", exitFullscreen:"Esci da schermo intero", hint:"Muovi lo smartphone per guardarti intorno oppure trascina la scena con il dito.", error:"Impossibile caricare il contenuto VR." },
-    en: { vr:"VR", loading:"Loading video...", close:"Close", gyro:"Enable motion", gyroOff:"Disable motion", sound:"Audio", mute:"Mute audio", unmute:"Enable audio", fullscreen:"Fullscreen", exitFullscreen:"Exit fullscreen", hint:"Move your phone to look around, or drag the scene with your finger.", error:"Unable to load VR content." },
-    es: { vr:"VR", loading:"Cargando vídeo...", close:"Cerrar", gyro:"Activar movimiento", gyroOff:"Desactivar movimiento", sound:"Audio", mute:"Silenciar audio", unmute:"Activar audio", fullscreen:"Pantalla completa", exitFullscreen:"Salir de pantalla completa", hint:"Mueve el teléfono para mirar alrededor o arrastra la escena con el dedo.", error:"No se puede cargar el contenido VR." },
-    fr: { vr:"VR", loading:"Chargement de la vidéo...", close:"Fermer", gyro:"Activer le mouvement", gyroOff:"Désactiver le mouvement", sound:"Audio", mute:"Couper le son", unmute:"Activer le son", fullscreen:"Plein écran", exitFullscreen:"Quitter le plein écran", hint:"Bougez le téléphone pour regarder autour de vous ou faites glisser la scène avec le doigt.", error:"Impossible de charger le contenu VR." },
-    ar: { vr:"VR", loading:"جارٍ تحميل الفيديو...", close:"إغلاق", gyro:"تفعيل الحركة", gyroOff:"إيقاف الحركة", sound:"الصوت", mute:"كتم الصوت", unmute:"تشغيل الصوت", fullscreen:"ملء الشاشة", exitFullscreen:"الخروج من ملء الشاشة", hint:"حرّك الهاتف للنظر حولك أو اسحب المشهد بإصبعك.", error:"تعذر تحميل محتوى VR." },
-    ru: { vr:"VR", loading:"Загрузка видео...", close:"Закрыть", gyro:"Включить движение", gyroOff:"Выключить движение", sound:"Звук", mute:"Выключить звук", unmute:"Включить звук", fullscreen:"На весь экран", exitFullscreen:"Выйти из полноэкранного режима", hint:"Двигайте смартфон, чтобы осматриваться, или перетаскивайте сцену пальцем.", error:"Не удалось загрузить VR-контент." },
-    zh: { vr:"VR", loading:"正在加载视频...", close:"关闭", gyro:"开启体感", gyroOff:"关闭体感", sound:"声音", mute:"静音", unmute:"开启声音", fullscreen:"全屏", exitFullscreen:"退出全屏", hint:"移动手机环顾四周，或用手指拖动场景。", error:"无法加载 VR 内容。" },
-    lij: { vr:"VR", loading:"Caregamento do video...", close:"Særa", gyro:"Attiva movimento", gyroOff:"Disattiva movimento", sound:"Audio", mute:"Disattiva audio", unmute:"Attiva audio", fullscreen:"Schermo intrego", exitFullscreen:"Sciorti da-o schermo intrego", hint:"Mescia o telefonin pe vardâse in gio oppure strascinna a scena co-o dido.", error:"No se riesce a caregâ o contegnuo VR." }
+    it: { vr:"VR", loading:"Caricamento del video...", close:"Chiudi", gyro:"Giroscopio", gyroOff:"Disattiva giroscopio", sound:"Audio", mute:"Disattiva audio", unmute:"Attiva audio", fullscreen:"Schermo intero", exitFullscreen:"Esci da schermo intero", hint:"Muovi lo smartphone per guardarti intorno oppure trascina la scena con il dito.", error:"Impossibile caricare il contenuto VR." },
+    en: { vr:"VR", loading:"Loading video...", close:"Close", gyro:"Gyroscope", gyroOff:"Disable gyroscope", sound:"Audio", mute:"Mute audio", unmute:"Enable audio", fullscreen:"Fullscreen", exitFullscreen:"Exit fullscreen", hint:"Move your phone to look around, or drag the scene with your finger.", error:"Unable to load VR content." },
+    es: { vr:"VR", loading:"Cargando vídeo...", close:"Cerrar", gyro:"Giroscopio", gyroOff:"Desactivar giroscopio", sound:"Audio", mute:"Silenciar audio", unmute:"Activar audio", fullscreen:"Pantalla completa", exitFullscreen:"Salir de pantalla completa", hint:"Mueve el teléfono para mirar alrededor o arrastra la escena con el dedo.", error:"No se puede cargar el contenido VR." },
+    fr: { vr:"VR", loading:"Chargement de la vidéo...", close:"Fermer", gyro:"Gyroscope", gyroOff:"Désactiver le gyroscope", sound:"Audio", mute:"Couper le son", unmute:"Activer le son", fullscreen:"Plein écran", exitFullscreen:"Quitter le plein écran", hint:"Bougez le téléphone pour regarder autour de vous ou faites glisser la scène avec le doigt.", error:"Impossible de charger le contenu VR." },
+    ar: { vr:"VR", loading:"جارٍ تحميل الفيديو...", close:"إغلاق", gyro:"الجيروسكوب", gyroOff:"إيقاف الجيروسكوب", sound:"الصوت", mute:"كتم الصوت", unmute:"تشغيل الصوت", fullscreen:"ملء الشاشة", exitFullscreen:"الخروج من ملء الشاشة", hint:"حرّك الهاتف للنظر حولك أو اسحب المشهد بإصبعك.", error:"تعذر تحميل محتوى VR." },
+    ru: { vr:"VR", loading:"Загрузка видео...", close:"Закрыть", gyro:"Гироскоп", gyroOff:"Выключить гироскоп", sound:"Звук", mute:"Выключить звук", unmute:"Включить звук", fullscreen:"На весь экран", exitFullscreen:"Выйти из полноэкранного режима", hint:"Двигайте смартфон, чтобы осматриваться, или перетаскивайте сцену пальцем.", error:"Не удалось загрузить VR-контент." },
+    zh: { vr:"VR", loading:"正在加载视频...", close:"关闭", gyro:"陀螺仪", gyroOff:"关闭陀螺仪", sound:"声音", mute:"静音", unmute:"开启声音", fullscreen:"全屏", exitFullscreen:"退出全屏", hint:"移动手机环顾四周，或用手指拖动场景。", error:"无法加载 VR 内容。" },
+    lij: { vr:"VR", loading:"Caregamento do video...", close:"Særa", gyro:"Giroscopio", gyroOff:"Disattiva giroscopio", sound:"Audio", mute:"Disattiva audio", unmute:"Attiva audio", fullscreen:"Schermo intrego", exitFullscreen:"Sciorti da-o schermo intrego", hint:"Mescia o telefonin pe vardâse in gio oppure strascinna a scena co-o dido.", error:"No se riesce a caregâ o contegnuo VR." }
   };
 
   function language() {
@@ -149,7 +149,7 @@
     if (kind === "close") return "×";
     if (kind === "sound") return "🔊";
     if (kind === "mute") return "🔇";
-    if (kind === "gyro") return "📱";
+    if (kind === "gyro") return "◉";
     if (kind === "fullscreen") return "⛶";
     return "•";
   }
@@ -169,70 +169,43 @@
         '<div id="qr-vr-error" class="qr-vr-error" hidden></div>' +
       '</div>' +
       '<div class="qr-vr-topbar">' +
-        '<button id="qr-vr-close" class="qr-vr-icon-btn qr-vr-close-btn" type="button">×</button>' +
+        '<button id="qr-vr-close" class="qr-vr-icon-btn" type="button">×</button>' +
         '<div id="qr-vr-title" class="qr-vr-title"></div>' +
-        '<div class="qr-vr-controls" role="toolbar" aria-label="Controlli VR">' +
+        '<div class="qr-vr-controls" role="group" aria-label="Controlli VR">' +
           '<button id="qr-vr-sound" class="qr-vr-icon-btn" type="button">🔊</button>' +
-          '<button id="qr-vr-gyro" class="qr-vr-icon-btn" type="button">📱</button>' +
+          '<button id="qr-vr-gyro" class="qr-vr-icon-btn" type="button">◉</button>' +
           '<button id="qr-vr-fullscreen" class="qr-vr-icon-btn" type="button">⛶</button>' +
         '</div>' +
       '</div>' +
       '<div id="qr-vr-hint" class="qr-vr-hint" hidden></div>';
     document.body.appendChild(overlay);
 
-    function stopControlEvent(event) {
-      if (!event) return;
-      event.stopPropagation();
-    }
-    function protectControl(element) {
-      if (!element) return;
-      ["pointerdown", "pointerup", "touchstart", "touchend", "click"].forEach(function (name) {
-        element.addEventListener(name, stopControlEvent, { passive: true });
-      });
-    }
-
-    var closeBtn = document.getElementById("qr-vr-close");
-    var soundBtn = document.getElementById("qr-vr-sound");
-    var gyroBtn = document.getElementById("qr-vr-gyro");
-    var fullscreenBtn = document.getElementById("qr-vr-fullscreen");
-    var controlsBar = overlay.querySelector(".qr-vr-controls");
-    [closeBtn, soundBtn, gyroBtn, fullscreenBtn, controlsBar].forEach(protectControl);
-
-    closeBtn.addEventListener("click", function (event) {
-      event.preventDefault();
-      event.stopPropagation();
-      closeVr(false);
+    // Keep every VR-control gesture inside the VR layer. The application has
+    // global capture listeners for outside clicks, so the main guard lives in
+    // inline part 43; these local guards also prevent bubbling to other UI.
+    var controls = overlay.querySelector(".qr-vr-controls");
+    ["pointerdown", "pointerup", "touchstart", "touchend", "click"].forEach(function (type) {
+      if (controls) controls.addEventListener(type, function (event) { event.stopPropagation(); }, { passive: type.indexOf("touch") === 0 });
     });
-    soundBtn.addEventListener("click", function (event) {
-      event.preventDefault();
-      event.stopPropagation();
+
+    document.getElementById("qr-vr-close").addEventListener("click", function (event) { event.preventDefault(); event.stopPropagation(); closeVr(false); });
+    document.getElementById("qr-vr-sound").addEventListener("click", function (event) {
+      event.preventDefault(); event.stopPropagation();
       if (!viewer) return;
       viewer.toggleMuted();
       syncControls();
     });
-    gyroBtn.addEventListener("click", async function (event) {
-      event.preventDefault();
-      event.stopPropagation();
+    document.getElementById("qr-vr-gyro").addEventListener("click", function (event) {
+      event.preventDefault(); event.stopPropagation();
       if (!viewer) return;
       if (viewer.gyro) {
         viewer.disableGyro();
         syncControls();
         return;
       }
-      try {
-        await viewer.requestGyro();
-        syncControls();
-      } catch (e) {
-        syncControls();
-        var msg = (e && e.message) ? e.message : "sensore non disponibile";
-        alert("Movimento non attivato: " + msg + ". Su smartphone apri Genova mApp tramite HTTPS e autorizza l’accesso ai sensori, se richiesto dal browser.");
-      }
+      viewer.requestGyro().then(syncControls).catch(function () { syncControls(); });
     });
-    fullscreenBtn.addEventListener("click", function (event) {
-      event.preventDefault();
-      event.stopPropagation();
-      toggleFullscreen();
-    });
+    document.getElementById("qr-vr-fullscreen").addEventListener("click", function (event) { event.preventDefault(); event.stopPropagation(); toggleFullscreen(); });
     document.addEventListener("fullscreenchange", syncControls);
     document.addEventListener("webkitfullscreenchange", syncControls);
     document.addEventListener("keydown", function (event) {
@@ -272,14 +245,8 @@
     }
     if (gyro) {
       var supported = !!(viewer && viewer.supportsGyro());
-      var coarse = false;
-      try { coarse = !!(window.matchMedia && window.matchMedia("(pointer: coarse)").matches); } catch (_) {}
-      /* Su mobile mostriamo il comando anche quando il browser non espone
-         DeviceOrientationEvent fino alla richiesta/gesto dell’utente. */
-      var showGyro = supported || coarse;
-      gyro.hidden = !showGyro;
-      gyro.style.display = showGyro ? "" : "none";
-      gyro.textContent = svgIcon("gyro");
+      gyro.hidden = !supported;
+      gyro.style.display = supported ? "" : "none";
       gyro.classList.toggle("is-active", !!(viewer && viewer.gyro));
       gyro.title = viewer && viewer.gyro ? text.gyroOff : text.gyro;
       gyro.setAttribute("aria-label", gyro.title);
