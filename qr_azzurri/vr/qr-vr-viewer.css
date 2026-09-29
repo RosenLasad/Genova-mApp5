@@ -35,6 +35,8 @@ body.qr-vr-open {
   pointer-events: none;
 }
 
+.qr-vr-topbar > * { pointer-events: auto; }
+
 .qr-vr-title {
   flex: 1 1 auto;
   min-width: 0;
@@ -111,24 +113,23 @@ body.qr-vr-open {
 .qr-vr-error { color: #fff; background: rgba(45,8,8,.88); }
 
 .qr-vr-controls {
-  position: absolute;
-  z-index: 4;
-  left: 50%;
-  bottom: max(14px, env(safe-area-inset-bottom));
-  transform: translateX(-50%);
+  position: relative;
+  z-index: 6;
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  pointer-events: none;
+  justify-content: flex-end;
+  gap: 8px;
+  pointer-events: auto;
 }
-.qr-vr-controls .qr-vr-icon-btn { pointer-events: auto; }
+.qr-vr-controls .qr-vr-icon-btn { pointer-events: auto; touch-action: manipulation; }
+.qr-vr-close-btn { flex: 0 0 auto; touch-action: manipulation; }
 
 .qr-vr-hint {
   position: absolute;
   z-index: 4;
   left: 50%;
-  bottom: calc(max(14px, env(safe-area-inset-bottom)) + 62px);
+  bottom: max(18px, env(safe-area-inset-bottom));
   transform: translateX(-50%);
   max-width: min(88vw, 420px);
   padding: 8px 12px;
@@ -146,8 +147,10 @@ body.qr-vr-open {
 #btn-vr-qr[hidden] { display: none !important; }
 
 @media (max-width: 768px) {
-  .qr-vr-topbar { min-height: 54px; }
-  .qr-vr-title { font-size: 14px; }
+  .qr-vr-topbar { min-height: 54px; gap: 6px; padding-left: 8px; padding-right: 8px; }
+  .qr-vr-title { font-size: 13px; }
+  .qr-vr-controls { gap: 5px; }
+  .qr-vr-icon-btn { width: 40px; height: 40px; font-size: 18px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

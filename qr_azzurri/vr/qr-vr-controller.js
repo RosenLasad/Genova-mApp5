@@ -169,24 +169,50 @@
         '<div id="qr-vr-error" class="qr-vr-error" hidden></div>' +
       '</div>' +
       '<div class="qr-vr-topbar">' +
-        '<button id="qr-vr-close" class="qr-vr-icon-btn" type="button">×</button>' +
+        '<button id="qr-vr-close" class="qr-vr-icon-btn qr-vr-close-btn" type="button">×</button>' +
         '<div id="qr-vr-title" class="qr-vr-title"></div>' +
+        '<div class="qr-vr-controls" role="toolbar" aria-label="Controlli VR">' +
+          '<button id="qr-vr-sound" class="qr-vr-icon-btn" type="button">🔊</button>' +
+          '<button id="qr-vr-gyro" class="qr-vr-icon-btn" type="button">📱</button>' +
+          '<button id="qr-vr-fullscreen" class="qr-vr-icon-btn" type="button">⛶</button>' +
+        '</div>' +
       '</div>' +
-      '<div id="qr-vr-hint" class="qr-vr-hint" hidden></div>' +
-      '<div class="qr-vr-controls">' +
-        '<button id="qr-vr-sound" class="qr-vr-icon-btn" type="button">🔊</button>' +
-        '<button id="qr-vr-gyro" class="qr-vr-icon-btn" type="button">📱</button>' +
-        '<button id="qr-vr-fullscreen" class="qr-vr-icon-btn" type="button">⛶</button>' +
-      '</div>';
+      '<div id="qr-vr-hint" class="qr-vr-hint" hidden></div>';
     document.body.appendChild(overlay);
 
-    document.getElementById("qr-vr-close").addEventListener("click", function () { closeVr(false); });
-    document.getElementById("qr-vr-sound").addEventListener("click", function () {
+    function stopControlEvent(event) {
+      if (!event) return;
+      event.stopPropagation();
+    }
+    function protectControl(element) {
+      if (!element) return;
+      ["pointerdown", "pointerup", "touchstart", "touchend", "click"].forEach(function (name) {
+        element.addEventListener(name, stopControlEvent, { passive: true });
+      });
+    }
+
+    var closeBtn = document.getElementById("qr-vr-close");
+    var soundBtn = document.getElementById("qr-vr-sound");
+    var gyroBtn = document.getElementById("qr-vr-gyro");
+    var fullscreenBtn = document.getElementById("qr-vr-fullscreen");
+    var controlsBar = overlay.querySelector(".qr-vr-controls");
+    [closeBtn, soundBtn, gyroBtn, fullscreenBtn, controlsBar].forEach(protectControl);
+
+    closeBtn.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      closeVr(false);
+    });
+    soundBtn.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
       if (!viewer) return;
       viewer.toggleMuted();
       syncControls();
     });
-    document.getElementById("qr-vr-gyro").addEventListener("click", async function () {
+    gyroBtn.addEventListener("click", async function (event) {
+      event.preventDefault();
+      event.stopPropagation();
       if (!viewer) return;
       if (viewer.gyro) {
         viewer.disableGyro();
@@ -202,7 +228,11 @@
         alert("Movimento non attivato: " + msg + ". Su smartphone apri Genova mApp tramite HTTPS e autorizza l’accesso ai sensori, se richiesto dal browser.");
       }
     });
-    document.getElementById("qr-vr-fullscreen").addEventListener("click", toggleFullscreen);
+    fullscreenBtn.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleFullscreen();
+    });
     document.addEventListener("fullscreenchange", syncControls);
     document.addEventListener("webkitfullscreenchange", syncControls);
     document.addEventListener("keydown", function (event) {
