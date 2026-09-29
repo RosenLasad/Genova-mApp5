@@ -49,14 +49,16 @@
 
   function ensureButton() {
     var panel = document.getElementById("panel");
+    var actions = panel && panel.querySelector(".qr-extra-actions");
     var swap = panel && panel.querySelector(".swap");
-    if (!swap) return null;
+    if (!panel || (!actions && !swap)) return null;
+
     var button = document.getElementById("btn-vr-qr");
     if (!button) {
       button = document.createElement("button");
       button.type = "button";
       button.id = "btn-vr-qr";
-      button.className = "btn";
+      button.className = "btn qr-extra-action qr-vr-action";
       button.textContent = "VR";
       button.hidden = true;
       button.setAttribute("data-qr-access", "public");
@@ -66,10 +68,23 @@
         if (!activeSpec) return;
         openVr();
       });
+    } else {
+      button.classList.add("qr-extra-action", "qr-vr-action");
     }
-    var sfx = document.getElementById("btn-sfx");
-    if (sfx && sfx.parentNode === swap) swap.insertBefore(button, sfx);
-    else if (button.parentNode !== swap) swap.appendChild(button);
+
+    /*
+     * VR apre un'esperienza immersiva separata: appartiene quindi alla
+     * fascia degli strumenti multimediali, non alla riga Oggi/Ieri/SFX.
+     * Lo inseriamo sempre come primo comando: VR / Audioguida / MiniDoc / Condividi.
+     */
+    if (actions) {
+      if (actions.firstElementChild !== button) {
+        actions.insertBefore(button, actions.firstElementChild || null);
+      }
+    } else if (swap && button.parentNode !== swap) {
+      // Fallback temporaneo se la fascia inferiore non e' ancora stata costruita.
+      swap.appendChild(button);
+    }
     return button;
   }
 

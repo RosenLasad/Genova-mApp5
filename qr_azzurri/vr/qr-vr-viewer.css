@@ -140,8 +140,19 @@ body.qr-vr-open {
 }
 .qr-vr-hint.is-fading { opacity: 0; }
 
-/* Il comando VR appartiene alla stessa riga Oggi / Ieri / SFX. */
+/* Il comando VR vive nella fascia multimediale: VR / Audioguida / MiniDoc / Condividi. */
 #btn-vr-qr[hidden] { display: none !important; }
+
+#panel.qr-point-panel .qr-extra-actions #btn-vr-qr.qr-vr-action {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-weight: 700;
+}
 
 @media (max-width: 768px) {
   .qr-vr-topbar { min-height: 54px; gap: 7px; padding-left: 8px; padding-right: 8px; }
