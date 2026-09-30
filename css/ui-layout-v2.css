@@ -107,9 +107,22 @@
   white-space:nowrap;
 }
 
-#app > header #title-btn{
+#app > header #title-btn.title-btn{
+  all:unset;
+  cursor:pointer;
   white-space:nowrap;
+  background:transparent;
+  color:inherit;
+  padding:0;
+  border-radius:0;
+  display:inline-flex;
+  align-items:center;
+  font:inherit;
+  margin-left:clamp(0px, 1.2vw, 12px);
 }
+
+#app > header #title-btn.title-btn:hover{ filter:none; }
+#app > header #title-btn.title-btn.active{ border-radius:0; outline:none; }
 
 /* Il selettore delle lingue non è più ancorato all'angolo inferiore. */
 body > #flag-switcher{
