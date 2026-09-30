@@ -61,9 +61,7 @@ html{ -webkit-text-size-adjust:100%; }
 }
 
 @media (max-width: 400px){
-.menu-home .mh-label{
-    font-size: 0.9rem;
-  }
+
 }
 
 /* Ancora più compatto se lo schermo è stretto e orizzontale */
@@ -1114,41 +1112,20 @@ header .toolbar-right .settings-dropdown{
 @media (max-width: 380px){
 
   /* Bubble generale un po' più compatto */
-  .mh-bubble{
-    font-size: 0.82rem;          /* circa -20% */
-    padding: 0.35rem 0.6rem;
-  }
+  
 
-  .mh-bubble-inner{
-    padding: 0.45rem 0.55rem;
-  }
+  
 
   /* Titoli più piccoli */
-  .mh-bubble-inner h3,
-  .mh-bubble-inner h2{
-    font-size: 1rem;
-    margin-bottom: 0.35rem;
-  }
+  
 
   /* Testo dei paragrafi e liste */
-  .mh-bubble-inner p,
-  .mh-bubble-inner li{
-    font-size: 0.84rem;
-    line-height: 1.35;
-  }
+  
 
-  .mh-bubble-inner ul{
-    padding-left: 1rem;
-    margin: 0.3rem 0;
-  }
+  
 
   /* Bottoni dentro i bubble (es. sQoRci, Storia, Intrattenimento, Info) */
-  .mh-bubble-inner button,
-  .mh-bubble-inner .btn{
-    font-size: 0.82rem;
-    padding: 0.25rem 0.5rem;
-    min-height: 30px;
-  }
+  
 }
 
 
@@ -1186,10 +1163,8 @@ header .toolbar-right .settings-dropdown{
 
 /* ==== part039.css ==== */
 
-.menu-home .mh-body{
-  width:min(82vw, 340px) !important;
-}
-.menu-home .mh-bubble{width:100% !important}
+
+
 
 
 /* ==== part041.css ==== */
@@ -1330,124 +1305,54 @@ header .toolbar-right .settings-dropdown{
 /* ==== part047.css ==== */
 
   /* Contenitore centrale del menu Home più stretto e centrato */
-  .menu-home .mh-body{
-    width: min(82vw, 340px);
-    margin: 0 auto;
-  }
+  
 
   /* La griglia resta a tutta larghezza del nuovo contenitore */
-  .menu-home .mh-grid{
-    width: 100%;
-  }
+  
 
 
 /* ==== part048.css ==== */
 
-  .menu-home .mh-header{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:0.02rem;
-    margin-bottom:0.45rem;
-  }
+  
 
-  .menu-home .mh-welcome{
-    font-size:1.1rem;
-    font-weight:500;
-    letter-spacing:0.08rem;
-    text-transform:uppercase;
-    color:#b20000;                 /* il tuo rosso */
-    
-    display:inline-block;          /* così lo sfondo segue il testo */
-    padding:0.08rem 0.55rem;       /* spazio interno */
-    border-radius:999px;           /* pillola */
-    background:#ffffff;            /* sfondo bianco pieno */
-    box-shadow:0 2px 6px rgba(0,0,0,0.35);  /* ombra per staccarla dallo sfondo scuro */
-    transform: translateY(0.40rem);
-  }
+  
 
 
 /* ==== part049.css ==== */
 
-.mh-bubble.theme-red .mh-actions .mh-btn{
-  font-size: 0.8em !important;
-  padding: .36rem .48rem !important;
-  border-radius: 8px !important;
-  gap: .35rem !important;
-}
-.mh-bubble.theme-red .mh-actions .mh-btn .mh-ico-btn{
-  width: 15px !important;
-  height: 15px !important;
-}
-.mh-bubble.theme-red .mh-actions .mh-btn span:last-child{
-  white-space: normal !important;
-  line-height: 1.15 !important;
-}
+
+
+
 
 /* Storia: barra orizzontale di chip */
-.mh-bubble.theme-red .mh-actions{
-  justify-content: center;
-  flex-wrap: wrap;
-  row-gap: .35rem;
-}
+
 
 /* Bottoni "chip" per Storia */
-.mh-bubble.theme-red .mh-actions .mh-btn{
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: .35rem .6rem !important;
-  border-radius: 999px !important;   /* effetto pillola */
-  font-size: .78em !important;
-  min-width: 82px;
-}
+
 
 /* Iconcina un po’ più protagonista */
-.mh-bubble.theme-red .mh-actions .mh-btn .mh-ico-btn{
-  width: 22px !important;
-  height: 22px !important;
-  margin-bottom: .12rem;
-}
+
 
 /* Testo in due righe max, centrato */
-.mh-bubble.theme-red .mh-actions .mh-btn span:last-child{
-  white-space: normal !important;
-  text-align: center;
-  line-height: 1.15 !important;
-}
+
 
 /* Icone dei bottoni "Storia" nel menu Home */
-.mh-bubble.theme-red .mh-actions .mh-btn{
-  color:#f9fafb;              /* testo e icona bianchi */
-}
+
 
 /* Quadrato di base delle icone (Forti, Musei, ecc.) */
-.mh-bubble.theme-red .mh-actions .mh-btn svg .sq{
-  fill:none;                   /* niente riempimento pieno nero */
-  stroke:currentColor;         /* bordo del colore del testo (bianco) */
-  stroke-width:1.6;
-}
+
 
 /* Parte "disegnata" dell’icona */
-.mh-bubble.theme-red .mh-actions .mh-btn svg .glyph{
-  fill:currentColor;           /* riempimento bianco */
-}
+
 
   /* Percorsi: giallo */
-  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="percorsi"]{
-    background-color: #facc15 !important;   /* giallo percorsi */
-  }
+  
 
   /* Acquedotti: verde acqua */
-  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="acquedotti"]{
-    background-color: #26a69a !important;   /* verde acqua */
-  }
+  
 
   /* Documentari: arancione */
-  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="documentari"]{
-    background-color: #f97316 !important;   /* arancione */
-  }
+  
 
 
 
@@ -1455,31 +1360,19 @@ header .toolbar-right .settings-dropdown{
 /* ==== part050.css ==== */
 
   /* MURA: rosso scuro, distinto dal rosso del bubble */
-  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="mura"]{
-    background-color: #7f1d1d !important;  /* rosso scuro */
-  }
+  
 
   /* FORTI: seppia abbastanza scuro per tenere testo/icona bianchi */
-  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="forti"]{
-    background-color: #a16207 !important;  /* seppia caldo */
-  }
+  
 
   /* MUSEI: viola deciso */
-  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="musei"]{
-    background-color: #6d28d9 !important;  /* viola */
-  }
+  
 
-  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="qr"]{
-    background-color: #1e90ff !important;    /* azzurro QR */
-  }
+  
 
-  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="chiese"]{
-    background-color: #a0a0a0 !important;    /* grigio Chiese */
-  }
+  
 
-  .mh-bubble.theme-red .mh-actions .mh-btn[data-shortcut="palazzi"]{
-    background-color: #0a5c0a !important;    /* verde Palazzi (esempio) */
-  }
+  
 
 
 
@@ -1487,132 +1380,52 @@ header .toolbar-right .settings-dropdown{
 /* ==== part051.css ==== */
 
   /* Layout chip anche per il bubble blu (Come muoversi) */
-  .mh-bubble.theme-blue .mh-actions{
-    justify-content: center;
-    flex-wrap: wrap;
-    row-gap: .35rem;
-  }
+  
 
-  .mh-bubble.theme-blue .mh-actions .mh-btn{
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: .35rem .6rem !important;
-    border-radius: 999px !important;
-    font-size: .78em !important;
-    min-width: 82px;
-    color:#f9fafb;   /* testo + icone bianchi */
-  }
+  
 
-  .mh-bubble.theme-blue .mh-actions .mh-btn .mh-ico-btn{
-    width: 22px !important;
-    height: 22px !important;
-    margin-bottom: .12rem;
-  }
+  
 
-  .mh-bubble.theme-blue .mh-actions .mh-btn span:last-child{
-    white-space: normal !important;
-    text-align: center;
-    line-height: 1.15 !important;
-  }
+  
 
   /* Icone dentro i bottoni: usa currentColor */
-  .mh-bubble.theme-blue .mh-actions .mh-btn svg .sq{
-    fill:none;
-    stroke:currentColor;
-    stroke-width:1.6;
-  }
-  .mh-bubble.theme-blue .mh-actions .mh-btn svg .glyph{
-    fill:currentColor;
-  }
+  
+  
 
   /* Colori personalizzati per ogni mezzo (modificabili quando ti pare) */
-  .mh-bubble.theme-blue .mh-actions .mh-btn[data-shortcut="bus"]{
-    background-color: #32c6a6 !important;   /* arancione autobus */
-  }
-  .mh-bubble.theme-blue .mh-actions .mh-btn[data-shortcut="treni"]{
-    background-color: #e0ad21 !important;   /* blu treni */
-  }
-  .mh-bubble.theme-blue .mh-actions .mh-btn[data-shortcut="metro"]{
-    background-color: #9b111e !important;   /* rosso metro */
-  }
-  .mh-bubble.theme-blue .mh-actions .mh-btn[data-shortcut="funi"]{
-    background-color: #b67a69  !important;   /* verde/teal funicolari */
-  }
+  
+  
+  
+  
 
-  .mh-bubble.theme-blue .mh-actions .mh-btn[data-shortcut="mare"]{
-    background-color: #3b82f6 !important;   /* blu mare, come il toggle */
-  }
-  .mh-bubble.theme-blue .mh-actions .mh-btn[data-shortcut="aereo"]{
-    background-color: #22c55e !important;   /* verde aereo, come il toggle */
-  }
+  
+  
 
 
 
 /* ==== part052.css ==== */
 
   /* Layout chip per il bubble giallo (Intrattenimento) */
-  .mh-bubble.theme-yellow .mh-actions{
-    justify-content: center;
-    flex-wrap: wrap;
-    row-gap: .35rem;
-  }
+  
 
-  .mh-bubble.theme-yellow .mh-actions .mh-btn{
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: .35rem .6rem !important;
-    border-radius: 999px !important;
-    font-size: .78em !important;
-    min-width: 82px;
-    color:#f9fafb;   /* testo + icone bianchi */
-  }
+  
 
-  .mh-bubble.theme-yellow .mh-actions .mh-btn .mh-ico-btn{
-    width: 22px !important;
-    height: 22px !important;
-    margin-bottom: .12rem;
-  }
+  
 
-  .mh-bubble.theme-yellow .mh-actions .mh-btn span:last-child{
-    white-space: normal !important;
-    text-align: center;
-    line-height: 1.15 !important;
-  }
+  
 
   /* Icone: usa currentColor, come negli altri bubble */
-  .mh-bubble.theme-yellow .mh-actions .mh-btn svg .sq{
-    fill:none;
-    stroke:currentColor;
-    stroke-width:1.6;
-  }
-  .mh-bubble.theme-yellow .mh-actions .mh-btn svg .glyph{
-    fill:currentColor;
-  }
+  
+  
 
   /* Colori personalizzati (modificabili quando vuoi) */
-  .mh-bubble.theme-yellow .mh-actions .mh-btn[data-shortcut="locali"]{
-    background-color: #db2777 !important;   /* rosa Locali */
-  }
-  .mh-bubble.theme-yellow .mh-actions .mh-btn[data-shortcut="parchi"]{
-    background-color: #16a34a !important;   /* verde Parchi e piazze */
-  }
-  .mh-bubble.theme-yellow .mh-actions .mh-btn[data-shortcut="sport"]{
-    background-color: #808000 !important;   /* viola Sport */
-  }
+  
+  
+  
 
-  .mh-bubble.theme-yellow .mh-actions .mh-btn[data-shortcut="cinema"]{
-    background-color: #a855f7 !important;   /* viola Cinema */
-  }
-  .mh-bubble.theme-yellow .mh-actions .mh-btn[data-shortcut="teatri"]{
-    background-color: #ef4444 !important;   /* rosso Teatri */
-  }
-  .mh-bubble.theme-yellow .mh-actions .mh-btn[data-shortcut="mostre"]{
-    background-color: #06b6d4 !important;   /* azzurro Mostre */
-  }
+  
+  
+  
 
 
 
@@ -1620,12 +1433,7 @@ header .toolbar-right .settings-dropdown{
 
 /* ==== part053.css ==== */
 
-  .menu-home .mh-bubble .mh-actions .mh-btn.mh-chip-on{
-    border: 2px solid rgba(255,255,255,0.95) !important;
-    box-shadow:
-      0 0 0 1px rgba(0,0,0,0.5),
-      0 0 10px rgba(0,0,0,0.7) !important;
-  }
+  
 
 
 /* ==== part054.css ==== */
@@ -2184,44 +1992,20 @@ margin-right: 0;
 /* ==== part086.css ==== */
 
 /* Force the Home bubble to allow inner scrolling content */
-.mh-bubble{ overflow:visible !important; max-height:none !important; }
-.mh-bubble.hidden{ display:none !important; }
+
+
 
 /* Make the search panel and list truly scrollable */
-.mh-bubble #qr-shortcuts-panel{ display:flex; flex-direction:column; min-height:0 !important; }
-.mh-bubble .qr-shortcuts{ display:flex; flex-direction:column; gap:.25rem; min-height:0 !important; }
-.mh-bubble #qr-groups-wrap{ position:relative !important; }
-.mh-bubble #qr-groups{
-  display:grid;
-  gap:.35rem;
-  overflow-y:auto !important;
-  -webkit-overflow-scrolling:touch;
-  max-height: 220px !important;
-  min-height:0 !important;
-  padding-right:.25rem;
-  scrollbar-gutter: stable both-edges;
-}
+
+
+
+
 
 /* Ensure arrows are visible and above content */
-.mh-bubble #qr-arrow-up,
-.mh-bubble #qr-arrow-down{
-  position:absolute !important;
-  right:.1rem !important;
-  padding:.15rem !important;
-  border-radius:8px !important;
-  border:1px solid rgba(0,0,0,0.12) !important;
-  background:#fff !important;
-  opacity:.95 !important;
-  z-index:9999 !important;
-  display:block !important;
-  width:28px !important;
-  height:28px !important;
-  line-height:1 !important;
-  font-size:14px !important;
-}
 
-.mh-bubble #qr-arrow-up{ top:.2rem !important; }
-.mh-bubble #qr-arrow-down{ bottom:.2rem !important; }
+
+
+
 
 
 /* ==== part087.css ==== */
@@ -2267,29 +2051,8 @@ margin-right: 0;
 
 
 /* PATCH MENU HOME: bubble accordion chiuso di default */
-.menu-home .mh-bubble {
-  position: static !important;
-  left: auto !important;
-  right: auto !important;
-  top: auto !important;
-  bottom: auto !important;
-  transform: none !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin-top: .4rem;
-  overflow: hidden !important;
-  max-height: 0;
-  transition: max-height .22s ease;
-}
-.menu-home .mh-bubble.hidden {
-  display: block !important;
-  max-height: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  border-width: 0 !important;
-  margin-top: 0 !important;
-  box-shadow: none !important;
-}
+
+
 
 /* LEGEND + TOOLBAR BUTTONS COLORI */
 #legend #legend-btn.btn {
@@ -2388,7 +2151,7 @@ header h1 .art-A {
 /* --- PATCH: Doc popup inline player --- */
 .leaflet-popup-content .doc-thumb{ position:relative; display:block; margin:.25rem 0 .35rem; border-radius:.35rem; overflow:hidden; }
 .leaflet-popup-content .doc-thumb::after{
-  content:'▶'; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  content:"▶"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
   font-size:1.8rem; line-height:1; background:linear-gradient(transparent, rgba(0,0,0,0.35));
   color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.6);
 }
@@ -2401,7 +2164,7 @@ header h1 .art-A {
 }
 .leaflet-popup-content .doc-thumb img{ display:block; width:100%; height:auto; }
 .leaflet-popup-content .doc-thumb::after{
-  content:'▶'; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  content:"▶"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
   font-size:1.8rem; line-height:1; background:linear-gradient(transparent, rgba(0,0,0,0.35));
   color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.6);
 }
@@ -2428,7 +2191,7 @@ header h1 .art-A {
 }
 .doc-thumb img{ display:block; width:100%; height:auto; }
 .doc-thumb::after{
-  content:'▶'; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  content:"▶"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
   font-size:1.8rem; line-height:1; background:linear-gradient(transparent, rgba(0,0,0,0.35));
   color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.6);
 }
@@ -2929,38 +2692,21 @@ header h1 .art-A {
     }
 
     /* Menu Home più leggero sui telefoni stretti */
-    .menu-home{
-      padding-top: 120px !important; /* invece dei 150px */
-    }
+    
 
-    .menu-home .mh-header{
-      gap: 0.16rem;
-    }
+    
 
-    .menu-home .mh-welcome{
-      font-size: 0.9rem;
-      padding: 0.04rem 0.42rem;
-    }
+    
 
-    .menu-home .mh-title{
-      font-size: 1.35rem;
-    }
+    
 
-    .menu-home .mh-grid{
-      row-gap: 0.45rem !important;
-    }
+    
 
-    .menu-home .mh-item{
-      padding: 0.45rem 0.6rem;
-    }
+    
 
-    .menu-home .mh-item .mh-label{
-      font-size: 0.9rem;
-    }
+    
 
-    .mh-bubble{
-      font-size: 0.92rem;
-    }
+    
   }
 
 
@@ -3353,27 +3099,13 @@ header h1 .art-A {
 
   /* Tema sfondo "menu" (contenuto espanso) per le voci Home.
      Serve a evitare che, dopo aver aperto Info, tutto rimanga bianco. */
-  #mh-bubble[data-key="sqorci"] .mh-bubble-inner{
-    background: linear-gradient(90deg, rgba(25,178,230,.24), rgba(11,18,34,1) 68%) !important;
-    color: #e5e7eb !important;
-  }
-  #mh-bubble[data-key="preferiti"] .mh-bubble-inner{
-    background: linear-gradient(90deg, rgba(245,158,11,.22), rgba(11,18,34,1) 68%) !important;
-    color: #e5e7eb !important;
-  }
-  #mh-bubble[data-key="storia"] .mh-bubble-inner{
-    background: linear-gradient(90deg, rgba(156,29,29,.25), rgba(11,18,34,1) 68%) !important;
-    color: #e5e7eb !important;
-  }
-  #mh-bubble[data-key="info"] .mh-bubble-inner{
-background: linear-gradient(90deg, rgba(128,128,128,.94), rgba(11,18,34,1) 68%);
-    color: #e5e7eb !important;
-  }
+  
+  
+  
+  
 
   /* Piccolo margine interno coerente, senza cambiare l'estetica finale */
-  #mh-bubble .mh-bubble-inner{
-    border-radius: 12px;
-  }
+  
 
 
 /* ==== part119.css ==== */
@@ -3420,13 +3152,9 @@ background: linear-gradient(90deg, rgba(128,128,128,.94), rgba(11,18,34,1) 68%);
 /* ==== part120.css ==== */
 
   /* Preferiti dentro Home: meno “aria” a sinistra, un filo di respiro a destra */
-  #mh-bubble[data-key="preferiti"] .mh-bubble-inner{
-    padding: .45rem .95rem .6rem .45rem !important; /* top right bottom left */
-  }
+  
   @media (max-width: 420px){
-    #mh-bubble[data-key="preferiti"] .mh-bubble-inner{
-      padding: .40rem .80rem .55rem .40rem !important;
-    }
+    
   }
 
   /* Il menu preferiti dockato deve occupare tutta la larghezza disponibile */
@@ -3954,7 +3682,7 @@ background: linear-gradient(90deg, rgba(128,128,128,.94), rgba(11,18,34,1) 68%);
 
 
 /* ==== part140.css ==== */
-.menu-home .mh-flags{display:none !important}
+
 
 
 
