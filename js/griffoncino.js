@@ -7,7 +7,20 @@
   var currentNode='welcome', historyStack=[], speechTimer=null, ambientTimer=null, sleepTimer=null, currentState='idle', bubbleVisible=true;
   var lastActivity=Date.now(), dragging=false, dragMoved=false, suppressCharacterClick=false, dragPointerId=null;
   var dragStartX=0, dragStartY=0, dragStartTop=0, previousState='idle';
-  var SIDE_KEY='gm_griff_side', Y_KEY='gm_griff_y';
+  var SIDE_KEY='gm_griff_side', Y_KEY='gm_griff_y', DISPLAY_KEY_PREFIX='gm_griff_display_v1:';
+  function authUser(){
+    try{return window.GenovaAuth&&typeof window.GenovaAuth.getUser==='function'?window.GenovaAuth.getUser():null;}catch(_e){return null;}
+  }
+  function displayKey(user){
+    var id=user&&user.id?String(user.id):'guest';
+    return DISPLAY_KEY_PREFIX+id;
+  }
+  function savedDisplay(user){
+    try{return localStorage.getItem(displayKey(user))==='minimized'?'minimized':'open';}catch(_e){return 'open';}
+  }
+  function saveDisplay(value,user){
+    try{localStorage.setItem(displayKey(user),value==='minimized'?'minimized':'open');}catch(_e){}
+  }
   function setState(state){if(!griffin)return;currentState=state;griffin.dataset.state='none';void griffin.offsetWidth;griffin.dataset.state=state;}
   function clearTimers(){clearTimeout(speechTimer);clearTimeout(ambientTimer);clearTimeout(sleepTimer);}
   function isOpen(){return assistant&&!assistant.classList.contains('is-minimized');}
@@ -62,8 +75,9 @@
     scheduleAmbient();
     if(dragMoved){suppressCharacterClick=true;setTimeout(function(){suppressCharacterClick=false;},120);}
   }
-  function minimize(){if(!assistant)return;assistant.classList.add('is-minimized');mini.classList.add('is-visible');mini.setAttribute('aria-hidden','false');clearTimers();positionMini();setTimeout(positionMini,80);setTimeout(positionMini,300);}
-  function restore(){if(!assistant)return;assistant.classList.remove('is-minimized');mini.classList.remove('is-visible');mini.setAttribute('aria-hidden','true');setBubbleVisible(true);requestAnimationFrame(restoreSavedPosition);}
+  function minimize(persist){if(!assistant)return;assistant.classList.add('is-minimized');mini.classList.add('is-visible');mini.setAttribute('aria-hidden','false');clearTimers();positionMini();setTimeout(positionMini,80);setTimeout(positionMini,300);if(persist!==false)saveDisplay('minimized',authUser());}
+  function restore(persist){if(!assistant)return;assistant.classList.remove('is-minimized');mini.classList.remove('is-visible');mini.setAttribute('aria-hidden','true');setBubbleVisible(true);requestAnimationFrame(restoreSavedPosition);if(persist!==false)saveDisplay('open',authUser());}
+  function applySavedDisplay(user){if(savedDisplay(user)==='minimized')minimize(false);else restore(false);}
   function tr(key){var i18n=window.GMGriffoncinoI18N;return i18n&&typeof i18n.t==='function'?i18n.t(key):key;}
   function renderOptions(opts){
     actionsEl.innerHTML='';
@@ -160,7 +174,11 @@
     assistant.addEventListener('pointerdown',function(e){if(e.target.closest('.gm-griff-character-btn'))return;if(!assistant.classList.contains('gm-confirming'))wake();},{passive:true});
     document.addEventListener('app:set-lang',function(e){refreshLanguage(e&&e.detail&&e.detail.lang);});
     window.addEventListener('i18n:changed',function(){refreshLanguage();});
-    renderNode('welcome',false);refreshLanguage();requestAnimationFrame(restoreSavedPosition);
+    document.addEventListener('genova:auth-changed',function(e){
+      var user=e&&e.detail?e.detail.user:null;
+      applySavedDisplay(user||null);
+    });
+    renderNode('welcome',false);refreshLanguage();applySavedDisplay(authUser());requestAnimationFrame(function(){if(isOpen())restoreSavedPosition();else positionMini();});
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(build,350);},{once:true});else setTimeout(build,350);
   window.GMGriffoncino={open:restore,minimize:minimize,toggleBubble:toggleBubble,showBubble:function(){setBubbleVisible(true);},hideBubble:function(){setBubbleVisible(false);},home:goHome,back:goBack,node:function(id){renderNode(id,true);},setState:setState,profile:function(){return window.GMGriffoncinoProfile&&window.GMGriffoncinoProfile.snapshot?window.GMGriffoncinoProfile.snapshot():{};}};
