@@ -172,22 +172,32 @@
       '<div class="qr-vr-topbar">' +
         '<button id="qr-vr-close" class="qr-vr-icon-btn" type="button">×</button>' +
         '<div id="qr-vr-title" class="qr-vr-title"></div>' +
+        '<div class="qr-vr-controls" role="group" aria-label="Controlli VR">' +
+          '<button id="qr-vr-sound" class="qr-vr-icon-btn" type="button">🔊</button>' +
+          '<button id="qr-vr-gyro" class="qr-vr-icon-btn" type="button">◉</button>' +
+          '<button id="qr-vr-fullscreen" class="qr-vr-icon-btn" type="button">⛶</button>' +
+        '</div>' +
       '</div>' +
-      '<div id="qr-vr-hint" class="qr-vr-hint" hidden></div>' +
-      '<div class="qr-vr-controls">' +
-        '<button id="qr-vr-sound" class="qr-vr-icon-btn" type="button">🔊</button>' +
-        '<button id="qr-vr-gyro" class="qr-vr-icon-btn" type="button">◉</button>' +
-        '<button id="qr-vr-fullscreen" class="qr-vr-icon-btn" type="button">⛶</button>' +
-      '</div>';
+      '<div id="qr-vr-hint" class="qr-vr-hint" hidden></div>';
     document.body.appendChild(overlay);
 
-    document.getElementById("qr-vr-close").addEventListener("click", function () { closeVr(false); });
-    document.getElementById("qr-vr-sound").addEventListener("click", function () {
+    // Keep every VR-control gesture inside the VR layer. The application has
+    // global capture listeners for outside clicks, so the main guard lives in
+    // inline part 43; these local guards also prevent bubbling to other UI.
+    var controls = overlay.querySelector(".qr-vr-controls");
+    ["pointerdown", "pointerup", "touchstart", "touchend", "click"].forEach(function (type) {
+      if (controls) controls.addEventListener(type, function (event) { event.stopPropagation(); }, { passive: type.indexOf("touch") === 0 });
+    });
+
+    document.getElementById("qr-vr-close").addEventListener("click", function (event) { event.preventDefault(); event.stopPropagation(); closeVr(false); });
+    document.getElementById("qr-vr-sound").addEventListener("click", function (event) {
+      event.preventDefault(); event.stopPropagation();
       if (!viewer) return;
       viewer.toggleMuted();
       syncControls();
     });
-    document.getElementById("qr-vr-gyro").addEventListener("click", function () {
+    document.getElementById("qr-vr-gyro").addEventListener("click", function (event) {
+      event.preventDefault(); event.stopPropagation();
       if (!viewer) return;
       if (viewer.gyro) {
         viewer.disableGyro();
@@ -196,7 +206,7 @@
       }
       viewer.requestGyro().then(syncControls).catch(function () { syncControls(); });
     });
-    document.getElementById("qr-vr-fullscreen").addEventListener("click", toggleFullscreen);
+    document.getElementById("qr-vr-fullscreen").addEventListener("click", function (event) { event.preventDefault(); event.stopPropagation(); toggleFullscreen(); });
     document.addEventListener("fullscreenchange", syncControls);
     document.addEventListener("webkitfullscreenchange", syncControls);
     document.addEventListener("keydown", function (event) {

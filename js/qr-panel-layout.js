@@ -471,8 +471,7 @@
   function setMiniDocButtonReady(docId) {
     var button = document.getElementById('btn-minidoc-qr');
     if (!button) return;
-    var hasOpener = typeof window.__gmOpenMiniDocById === 'function';
-    var ready = !!docId && hasOpener;
+    var ready = !!docId;
     button.setAttribute('data-qr-minidoc-ready', ready ? 'true' : 'false');
     button.setAttribute('data-doc-id', ready ? docId : '');
     button.setAttribute('aria-disabled', ready ? 'false' : 'true');

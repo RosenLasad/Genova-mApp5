@@ -39,9 +39,12 @@
       var panel = document.getElementById('panel');
       if(!panel) return;
       if (panel.contains(e.target)) return; // ignore clicks inside the panel
-      // Do not close when clicking a marker icon: that opens the panel
+      // The VR viewer lives outside #panel. Its controls must not be treated as
+      // an outside click, otherwise the QR panel closes before VR can handle it.
       var t = e.target;
-      if (t.closest && (t.closest('.leaflet-marker-icon') || t.closest('.leaflet-tooltip'))) return;
+      if (t && t.closest && t.closest('#qr-vr-overlay')) return;
+      // Do not close when clicking a marker icon: that opens the panel
+      if (t && t.closest && (t.closest('.leaflet-marker-icon') || t.closest('.leaflet-tooltip'))) return;
       window.__qrClosePanel && window.__qrClosePanel();
     }, true);
     // Close on ESC
