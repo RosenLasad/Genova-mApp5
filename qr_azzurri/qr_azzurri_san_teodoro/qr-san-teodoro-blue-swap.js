@@ -13,6 +13,7 @@
         lat: 44.41411680135029,
         lng: 8.912787024088976,
         media: {
+          minidoc: "san-teodoro",
           oggi: "qr_azzurri/qr_azzurri_san_teodoro/qr_azzurri_san_teodoro_chiesa_san_teodoro/qr_azzurri_san_teodoro_chiesa_san_teodoro_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_san_teodoro/qr_azzurri_san_teodoro_chiesa_san_teodoro/qr_azzurri_san_teodoro_chiesa_san_teodoro_ieri_1.mp4",
@@ -27,6 +28,7 @@
         lat: 44.41376302867822,
         lng: 8.911975948643079,
         media: {
+          minidoc: "san-teodoro",
           oggi: "qr_azzurri/qr_azzurri_san_teodoro/qr_azzurri_san_teodoro_nuova_san_teodoro/qrcode-santeodoro3-oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_san_teodoro/qr_azzurri_san_teodoro_nuova_san_teodoro/qrcode-santeodoro3-ieri_1.mp4",
@@ -40,6 +42,7 @@
         lat: 44.415425038651,
         lng: 8.915736603612464,
         media: {
+          minidoc: "san-teodoro",
           oggi: "qr_azzurri/qr_azzurri_san_teodoro/qr_azzurri_san_teodoro_via_buozzi/qrcode-santeodoro1-oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_san_teodoro/qr_azzurri_san_teodoro_via_buozzi/qrcode-santeodoro1-ieri_1.mp4",

@@ -9,6 +9,7 @@
         lng: 8.939793412221835,
         descr: "Porta degli Archi, detta anche Porta di Santo Stefano, apparteneva alle mura cinquecentesche e sorgeva dove oggi Via XX Settembre passa sotto il Ponte Monumentale. Durante la trasformazione ottocentesca della zona fu smontata e ricostruita presso le Mura del Prato, dove si trova ancora.",
         media: {
+          minidoc: "viaxxsettembre",
           oggi: "qr_azzurri/qr_azzurri_via_settembre/porta_archi_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_via_settembre/porta_archi_ieri_1.mp4",
@@ -26,6 +27,7 @@
         lng: 8.939344681323986,
         descr: "Corso Andrea Podestà corre sopra il Ponte Monumentale e collega le alture di Carignano e dell’Acquasola. La strada ricorda il sindaco Andrea Podestà, tra i principali sostenitori delle grandi trasformazioni urbanistiche che portarono alla realizzazione della nuova Via XX Settembre.",
         media: {
+          minidoc: "viaxxsettembre",
           oggi: "qr_azzurri/qr_azzurri_via_settembre/corso_podesta_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_via_settembre/corso_podesta_ieri_1.mp4",
@@ -40,6 +42,7 @@
         lng: 8.942913627227242,
         descr: "Piazza Colombo fu realizzata nel 1846 come elegante spazio ottagonale nel nuovo quartiere di San Vincenzo. Al centro si trova la fontana barocca proveniente dal Ponte Reale, trasferita nella piazza nell’Ottocento; attorno sorsero grandi edifici porticati che definirono il nuovo assetto urbano.",
         media: {
+          minidoc: "viaxxsettembre",
           oggi: "qr_azzurri/qr_azzurri_via_settembre/pzcolombo_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_via_settembre/pzcolombo_ieri_1.mp4"
@@ -54,6 +57,7 @@
         lng: 8.94034369488571,
         descr: "Il Ponte Monumentale fu costruito tra il 1893 e il 1895 su progetto dell’ingegnere Cesare Gamba, nel punto occupato in precedenza da Porta degli Archi. Scavalca Via XX Settembre e collega Carignano con l’Acquasola, diventando uno dei simboli della grande trasformazione urbana ottocentesca.",
         media: {
+          minidoc: "viaxxsettembre",
           oggi: "qr_azzurri/qr_azzurri_via_settembre/monumentale_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_via_settembre/monumentale_ieri_1.mp4",
@@ -70,6 +74,7 @@
         lng: 8.93818324486731,
         descr: "Prima della costruzione di Via XX Settembre, questo tratto era percorso dall’antica Via Giulia, più stretta e irregolare. Negli anni Novanta dell’Ottocento il vecchio tracciato fu demolito, livellato e ampliato per creare la nuova arteria, affiancata dai grandi palazzi e portici monumentali.",
         media: {
+          minidoc: "viaxxsettembre",
           oggi: "qr_azzurri/qr_azzurri_via_settembre/prima_portici_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_via_settembre/prima_portici_ieri_1.mp4"
@@ -83,6 +88,7 @@
         lng: 8.940645317984881,
         descr: "Alla fine dell’Ottocento, mentre Via XX Settembre veniva completata, furono posati anche i binari delle nuove linee tranviarie elettriche. I tram percorsero a lungo questa arteria centrale, contribuendo a farne uno dei principali assi del trasporto pubblico e della vita cittadina genovese.",
         media: {
+          minidoc: "viaxxsettembre",
           oggi: "qr_azzurri/qr_azzurri_via_settembre/lastricatura_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_via_settembre/lastricatura_ieri_1.mp4"
@@ -96,6 +102,7 @@
         lng: 8.94256969560268,
         descr: "L’incrocio tra Via XX Settembre e Via Galata nacque con la nuova sistemazione del quartiere di San Vincenzo alla fine dell’Ottocento. Via Galata collegava l’arteria principale con Piazza Colombo, diventando rapidamente un percorso frequentato tra abitazioni, attività commerciali e nuove linee di trasporto urbano.",
         media: {
+          minidoc: "viaxxsettembre",
           oggi: "qr_azzurri/qr_azzurri_via_settembre/viaxxviagalata_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_via_settembre/viaxxviagalata_ieri_1.mp4",                
@@ -111,6 +118,7 @@
         lng: 8.937407781346533,
         descr: "All’inizio del Novecento, l’accesso a Piccapietra da Via XX Settembre mostrava un forte contrasto urbano: da una parte la nuova arteria monumentale, con palazzi liberty ed eclettici; dall’altra il vecchio tessuto del colle, fatto di strade più strette e costruzioni destinate a successive trasformazioni.",
         media: {
+          minidoc: "borgo-piccapietra",
           oggi: "qr_azzurri/qr_azzurri_via_settembre/viaxxpiccapietra_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_via_settembre/viaxxpiccapietra_ieri_1.mp4",                
@@ -126,6 +134,7 @@
         lng: 8.935367720454888,
         descr: "La parte alta di Via XX Settembre, tra il Ponte Monumentale e Piazza De Ferrari, divenne uno dei tratti più rappresentativi della Genova liberty ed eclettica. I grandi portici, i mosaici pavimentali e le facciate riccamente decorate trasformarono la strada in un elegante salotto urbano.",
         media: {
+          minidoc: "viaxxsettembre",
           oggi: "qr_azzurri/qr_azzurri_via_settembre/viaxx_alta_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_via_settembre/viaxx_alta_ieri_1.mp4",
@@ -140,6 +149,7 @@
         lng: 8.94360872926891,
         descr: "La parte bassa di Via XX Settembre, verso Brignole, fu concepita come un ampio asse rettilineo fiancheggiato da grandi edifici e portici. In questo tratto si trova anche il Mercato Orientale, inaugurato nel 1899 e divenuto uno dei principali mercati coperti della città.",
         media: {
+          minidoc: "viaxxsettembre",
           oggi: "qr_azzurri/qr_azzurri_via_settembre/viaxx_bassa_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_via_settembre/viaxx_bassa_ieri_1.mp4"
@@ -263,12 +273,15 @@
       group.addLayer(m);
     });
 
+    function showBlue() { try { group.removeFrom(map); } catch (e) {} try { blue.addTo(map); } catch (e) {} }
     function showKids() { try { blue.removeFrom(map); } catch (e) {} try { group.addTo(map); } catch (e) {} }
     function hideAll()  { try { blue.removeFrom(map); } catch (e) {} try { group.removeFrom(map); } catch (e) {} }
 
+    var THRESH = 0;
     function update() {
       var on = !!(chk && chk.checked);
       if (!on) { hideAll(); return; }
+      var z = map.getZoom ? map.getZoom() : 0;
       showKids();
     }
 

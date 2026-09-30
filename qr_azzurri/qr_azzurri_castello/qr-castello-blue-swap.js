@@ -28,6 +28,7 @@
         lng: 8.9306031569551,
         descr: "Fino alla fine dell’Ottocento, in questa zona le Mura delle Grazie segnavano il limite della città verso il mare, che arrivava direttamente ai loro piedi. La costruzione della Circonvallazione a mare allontanò la linea di costa, trasformando radicalmente il rapporto tra le mura, il porto e il litorale.",
         media: {
+          minidoc: "seno-di-giano",
           oggi: "qr_azzurri/qr_azzurri_castello/qr_azzurri_castello_seno_di_giano/qr_azzurri_castello_seno_di_giano_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_castello/qr_azzurri_castello_seno_di_giano/qr_azzurri_castello_seno_di_giano_ieri_1.mp4"

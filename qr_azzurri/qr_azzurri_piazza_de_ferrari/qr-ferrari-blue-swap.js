@@ -9,6 +9,7 @@
         lng: 8.932735558901697,
         descr: "L’attuale Piazza Matteotti nacque nel Cinquecento come Piazza Nuova di Ferreria, davanti a Palazzo Ducale, e in seguito prese il nome di Piazza Umberto I. Per secoli ospitò mercati e attività commerciali, mantenendo ancora oggi il ruolo di importante spazio pubblico nel cuore della città.",
         media: {
+          minidoc: "piazza-de-ferrari",
           oggi: "qr_azzurri/qr_azzurri_piazza_de_ferrari/qr_azzurri_piazza_de_ferrari_piazza_matteotti/piazza_matteotti_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_piazza_de_ferrari/qr_azzurri_piazza_de_ferrari_piazza_matteotti/piazza_matteotti_ieri_1.mp4",
@@ -25,6 +26,7 @@
         lng: 8.933937994594435,
         descr: "Il Teatro Carlo Felice, progettato da Carlo Barabino, fu inaugurato nel 1828 nell’area dell’antico complesso di San Domenico. Davanti al teatro fu inaugurato nel 1893 il monumento equestre a Giuseppe Garibaldi. Gravemente danneggiato durante la guerra, il teatro riaprì completamente ricostruito nel 1991.",
         media: {
+          minidoc: "piazza-de-ferrari",
           oggi: "qr_azzurri/qr_azzurri_piazza_de_ferrari/qr_azzurri_piazza_de_ferrari_teatro_carlo_felice/teatro_carlo_felice_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_piazza_de_ferrari/qr_azzurri_piazza_de_ferrari_teatro_carlo_felice/teatro_carlo_felice_ieri_1.mp4",
@@ -43,6 +45,7 @@
         lng: 8.934398277618188,
         descr: "L’attuale Palazzo della Regione fu costruito come sede della Navigazione Generale Italiana e completato nel 1924 su progetto di Cesare Gamba con Giuseppe Tallero. Negli anni successivi divenne uno degli edifici simbolo della nuova Piazza De Ferrari, completata nel 1936 dalla monumentale fontana centrale.",
         media: {
+          minidoc: "piazza-de-ferrari",
           oggi: "qr_azzurri/qr_azzurri_piazza_de_ferrari/qr_azzurri_piazza_de_ferrari_palazzo_della_regione/scorci_azzurri_piazza_de_ferrari_palazzo_della_regione_oggi.mp4",
           ieri: [
             "qr_azzurri/qr_azzurri_piazza_de_ferrari/qr_azzurri_piazza_de_ferrari_palazzo_della_regione/scorci_azzurri_piazza_de_ferrari_palazzo_della_regione_ieri_1.mp4",
@@ -211,6 +214,7 @@
 
     var chk = document.getElementById("chk-qr-piazza-de-ferrari");
 
+    function showBlue() { try { group.removeFrom(map); } catch (e) {} try { blue.addTo(map); } catch (e) {} }
     function showKids() { try { blue.removeFrom(map); } catch (e) {} try { group.addTo(map); } catch (e) {} }
     function hideAll()  { try { blue.removeFrom(map); } catch (e) {} try { group.removeFrom(map); } catch (e) {} }
 
