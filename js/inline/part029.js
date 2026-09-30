@@ -1,0 +1,2 @@
+
+// removed legacy wireAcqStatic
