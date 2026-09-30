@@ -597,20 +597,6 @@ html body #ui-map-controls #ui-zoom-anchor .leaflet-control-zoom > a > span{
   border-color:rgba(255,255,255,.8) !important;
 }
 
-/* Il menu principale segue sempre il titolo centrale. */
-#menu-home:not(.hidden){
-  left:50% !important;
-  transform:translateX(-50%) !important;
-}
-
-#menu-home.menu-home .mh-body{
-  max-height:var(--ui-home-max-height, calc(100dvh - 130px)) !important;
-  overflow-x:hidden !important;
-  overflow-y:auto !important;
-  overscroll-behavior:contain;
-  scrollbar-gutter:stable;
-}
-
 @media (max-width:768px){
   :root{
     --ui-map-controls-bottom:max(12px, env(safe-area-inset-bottom));
