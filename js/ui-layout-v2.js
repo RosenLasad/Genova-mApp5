@@ -341,54 +341,6 @@
       }
     }, true);
   }
-
-  function sizeHomeMenu(){
-    var home = document.getElementById('menu-home');
-    var body = home && home.querySelector('.mh-body');
-    if(!home || !body) return;
-
-    var top = home.getBoundingClientRect().top;
-    if(!isFinite(top) || top < 1){
-      var title = document.getElementById('title-btn');
-      var titleRect = title && title.getBoundingClientRect();
-      top = titleRect ? titleRect.bottom + 8 : 60;
-    }
-
-    var bottomBar = document.getElementById('bottom-bar');
-    var barRect = bottomBar && bottomBar.getBoundingClientRect();
-    var lowerLimit = barRect && barRect.top > top
-      ? barRect.top - 12
-      : window.innerHeight - 12;
-    var available = Math.max(150, Math.floor(lowerLimit - top));
-    var value = available + 'px';
-
-    if(home.style.getPropertyValue('--ui-home-max-height') !== value){
-      home.style.setProperty('--ui-home-max-height', value);
-    }
-  }
-
-  function wireHomeMenuSizing(){
-    var title = document.getElementById('title-btn');
-    var home = document.getElementById('menu-home');
-    if(title && !title.__uiLayoutV2HomeSize){
-      title.__uiLayoutV2HomeSize = true;
-      title.addEventListener('click', function(){
-        window.setTimeout(sizeHomeMenu, 0);
-        window.setTimeout(sizeHomeMenu, 180);
-      });
-    }
-    if(home && !home.__uiLayoutV2HomeSize){
-      home.__uiLayoutV2HomeSize = true;
-      home.addEventListener('click', function(event){
-        if(event.target.closest && event.target.closest('.gm-row')){
-          window.setTimeout(sizeHomeMenu, 0);
-          window.setTimeout(sizeHomeMenu, 240);
-        }
-      });
-    }
-    sizeHomeMenu();
-  }
-
   function ensureVisualIcons(){
     var icons = {
       'help-fab':
@@ -558,7 +510,6 @@
       ensureMapControls();
       wireFlagMenu();
       wireSearch();
-      wireHomeMenuSizing();
       ensureVisualIcons();
       wire3DHomeButton();
       augmentHelpPanel();
@@ -583,7 +534,7 @@
     arrange();
     [80, 250, 600, 1100, 1800].forEach(function(delay){ window.setTimeout(arrange, delay); });
     new MutationObserver(schedule).observe(document.body, {childList:true, subtree:true});
-    window.addEventListener('resize', function(){ arrange(); positionFlagMenu(); sizeHomeMenu(); }, {passive:true});
+    window.addEventListener('resize', function(){ arrange(); positionFlagMenu(); }, {passive:true});
     window.addEventListener('orientationchange', function(){ window.setTimeout(arrange, 80); });
     document.addEventListener('app:set-lang', function(){ window.setTimeout(arrange, 0); });
     document.addEventListener('app:map-3d-change', function(){ window.setTimeout(syncHomeButton3DState, 0); });

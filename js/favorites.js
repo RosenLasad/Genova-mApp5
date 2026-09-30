@@ -3438,12 +3438,6 @@ lij:{ fav:{
   function i18nFavoritesApply(){
     var root = document.getElementById('fav-menu') || document;
 
-    // Etichetta "Preferiti" anche dentro al pannello Home
-    try{
-      var hl = document.querySelector('#menu-home .mh-item.gm-row[data-key="preferiti"] .gm-row-label, #menu-home .mh-item.gm-row[data-key="preferiti"] .mh-label');
-      if(hl) hl.textContent = t('fav.title');
-    }catch(_e){}
-
 
     // Header
     var title = root.querySelector('header h3, .fav-title, [data-role="fav-title"]');

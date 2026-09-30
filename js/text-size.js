@@ -23,7 +23,7 @@
   };
 
   var SCOPE_SELECTOR = [
-    '.leaflet-popup', '#menu-home', '#mh-bubble', '.dropdown-menu',
+    '.leaflet-popup', '.dropdown-menu',
     '#help-legend', '#info-legend', '#fav-notes-panel', '#panel',
     '#qr-child-panel', '#qr-parent-panel', '#qr-scan', '#contactPanel', '#auth-account-modal',
     '#pwa-install-modal', '#subscription-modal', '#sub-v2-modal',

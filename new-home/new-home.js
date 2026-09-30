@@ -3058,9 +3058,6 @@
     if(opener && opener.nodeType === 1) lastOpener = opener;
     else if(document.activeElement && document.activeElement.nodeType === 1) lastOpener = document.activeElement;
     closeSettings();
-    try{
-      if(window.__gmHomePanel && typeof window.__gmHomePanel.close === 'function') window.__gmHomePanel.close();
-    }catch(_){}
     updatePosition();
     renderHome();
     overlay.hidden = false;
@@ -3078,9 +3075,6 @@
     if(opener && opener.nodeType === 1) lastOpener = opener;
     else if(document.activeElement && document.activeElement.nodeType === 1) lastOpener = document.activeElement;
     closeSettings();
-    try{
-      if(window.__gmHomePanel && typeof window.__gmHomePanel.close === 'function') window.__gmHomePanel.close();
-    }catch(_){}
     updatePosition();
     renderGuide(guideSection, {preserve:false});
     overlay.hidden = false;

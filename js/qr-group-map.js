@@ -334,7 +334,7 @@
   }
 
   function observeHome() {
-    var root = document.getElementById('mh-bubble') || document.body;
+    var root = document.body;
     if (!root || typeof MutationObserver === 'undefined') return;
     try {
       var observer = new MutationObserver(scheduleEnhance);
