@@ -159,7 +159,8 @@
   grid-template-rows: auto minmax(0, auto) auto minmax(0, 1fr) auto !important;
 }
 
-/* Riga delle modalita' del riquadro media: Oggi / Ieri / SFX / Confronta. */
+/* Riga delle modalita' del riquadro media.
+ * Sinistra: Oggi / Ieri. Destra: SFX / VR / Confronta. */
 #panel.qr-point-panel .swap {
   width: 100%;
   box-sizing: border-box;
@@ -167,13 +168,31 @@
   padding: 0 .8rem .55rem;
   display: flex !important;
   align-items: center;
-  justify-content: center;
-  gap: .38rem !important;
+  justify-content: space-between;
+  gap: .55rem !important;
   flex-wrap: nowrap;
+  direction: ltr;
 }
 
-#panel.qr-point-panel .swap > .btn,
-#panel.qr-point-panel .swap > #btn-sfx {
+#panel.qr-point-panel .qr-swap-group {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: .34rem;
+  flex: 0 0 auto;
+}
+
+#panel.qr-point-panel .qr-swap-left {
+  justify-content: flex-start;
+}
+
+#panel.qr-point-panel .qr-swap-right {
+  justify-content: flex-end;
+  margin-inline-start: auto;
+}
+
+#panel.qr-point-panel .qr-swap-group > .btn,
+#panel.qr-point-panel .qr-swap-group > #btn-sfx {
   min-width: 0;
   flex: 0 1 auto;
 }
@@ -182,6 +201,51 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Le tre esperienze a destra hanno un'identita' cromatica propria. */
+#panel.qr-point-panel #btn-sfx {
+  border-color: rgba(245, 158, 11, .78) !important;
+  background: rgba(180, 83, 9, .24) !important;
+  color: #fbbf24 !important;
+}
+#panel.qr-point-panel #btn-sfx.active {
+  background: #b45309 !important;
+  color: #fff7ed !important;
+  outline: 2px solid rgba(251, 191, 36, .82) !important;
+}
+
+#panel.qr-point-panel #btn-vr-qr {
+  border-color: rgba(139, 92, 246, .82) !important;
+  background: rgba(109, 40, 217, .24) !important;
+  color: #c4b5fd !important;
+}
+#panel.qr-point-panel #btn-vr-qr.active {
+  background: #6d28d9 !important;
+  color: #f5f3ff !important;
+  outline: 2px solid rgba(167, 139, 250, .86) !important;
+}
+
+#panel.qr-point-panel #btn-compare-qr {
+  width: 36px;
+  height: 34px;
+  min-width: 36px;
+  min-height: 34px;
+  padding: 0 !important;
+  border-color: rgba(20, 184, 166, .78) !important;
+  background: rgba(13, 148, 136, .22) !important;
+  color: #5eead4 !important;
+}
+#panel.qr-point-panel #btn-compare-qr.active {
+  background: #0f766e !important;
+  color: #f0fdfa !important;
+  outline: 2px solid rgba(45, 212, 191, .84) !important;
+}
+#panel.qr-point-panel .qr-compare-mode-icon {
+  width: 19px;
+  height: 19px;
+  display: block;
+  pointer-events: none;
 }
 
 /* Placeholder: visibile per valutare il layout, ma chiaramente non attivo. */
@@ -262,6 +326,26 @@
   text-overflow: ellipsis;
 }
 
+@media (max-width: 420px) {
+  #panel.qr-point-panel .swap {
+    padding-left: .55rem;
+    padding-right: .55rem;
+    gap: .35rem !important;
+  }
+  #panel.qr-point-panel .qr-swap-group { gap: .25rem; }
+  #panel.qr-point-panel .qr-swap-group > .btn,
+  #panel.qr-point-panel .qr-swap-group > #btn-sfx {
+    padding-left: .48rem;
+    padding-right: .48rem;
+    font-size: .78rem;
+  }
+  #panel.qr-point-panel #btn-compare-qr {
+    width: 32px;
+    min-width: 32px;
+    padding: 0 !important;
+  }
+}
+
 /* Su telefoni e finestre strette la fascia inferiore diventa icon-only.
  * La scelta e' basata sulla larghezza disponibile, non sull'orientamento: un
  * telefono in landscape puo' quindi mostrare di nuovo icona + testo. */
@@ -293,8 +377,8 @@
     gap: .28rem !important;
   }
 
-  #panel.qr-point-panel .swap > .btn,
-  #panel.qr-point-panel .swap > #btn-sfx {
+  #panel.qr-point-panel .qr-swap-group > .btn,
+  #panel.qr-point-panel .qr-swap-group > #btn-sfx {
     padding: .44rem .46rem;
     font-size: .76rem;
   }
@@ -319,8 +403,8 @@
 }
 
 @media (max-width: 360px) {
-  #panel.qr-point-panel .swap > .btn,
-  #panel.qr-point-panel .swap > #btn-sfx {
+  #panel.qr-point-panel .qr-swap-group > .btn,
+  #panel.qr-point-panel .qr-swap-group > #btn-sfx {
     padding-left: .36rem;
     padding-right: .36rem;
     font-size: .72rem;

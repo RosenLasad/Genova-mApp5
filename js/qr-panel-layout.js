@@ -364,6 +364,14 @@
     return '<svg class="qr-share-ico qr-action-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11A2.99 2.99 0 0 0 18 7.91a3 3 0 1 0-3-3c0 .24.04.47.09.7L8.04 9.72A2.99 2.99 0 0 0 6 8.91a3 3 0 1 0 0 6c.96 0 1.82-.45 2.37-1.15l6.98 4.07c-.05.21-.08.43-.08.65a3 3 0 1 0 3-3z"/></svg>';
   }
 
+  function compareIcon() {
+    return '<svg class="qr-compare-mode-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+      '<rect x="3.5" y="4.5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/>' +
+      '<path d="M12 5v14" fill="none" stroke="currentColor" stroke-width="1.8"/>' +
+      '<path d="M8.7 9.2 6.4 12l2.3 2.8M15.3 9.2l2.3 2.8-2.3 2.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>' +
+    '</svg>';
+  }
+
   function ensurePlaceholderButton(id, key, className, iconMarkup) {
     var button = document.getElementById(id);
     if (!button) {
@@ -414,32 +422,123 @@
     return parentId && childId ? parentId + "/" + childId : "";
   }
 
+  function audioGuideIdFor(point, media) {
+    var value = '';
+    try {
+      value = (media && (media.audioguide || media.audioGuide)) ||
+              (point && (point.audioguide || point.audioGuide)) ||
+              (point && point.media && (point.media.audioguide || point.media.audioGuide)) || '';
+    } catch (_e) {}
+    return String(value || '').trim();
+  }
+
+  function setAudioGuideButtonReady(audioId) {
+    var button = document.getElementById('btn-audioguide-qr');
+    if (!button) return;
+    var hasOpener = typeof window.__gmOpenAudioguideById === 'function';
+    var ready = !!audioId && hasOpener;
+    button.setAttribute('data-qr-audioguide-ready', ready ? 'true' : 'false');
+    button.setAttribute('data-audioguide-id', ready ? audioId : '');
+    button.setAttribute('aria-disabled', ready ? 'false' : 'true');
+    button.classList.toggle('qr-placeholder-action', !ready);
+    if (ready) button.removeAttribute('data-qr-placeholder');
+    else button.setAttribute('data-qr-placeholder', 'true');
+    button.hidden = !ready;
+    if (ready) {
+      button.style.removeProperty('display');
+      button.removeAttribute('aria-hidden');
+    } else {
+      button.style.setProperty('display', 'none', 'important');
+      button.setAttribute('aria-hidden', 'true');
+    }
+    applyMultimediaI18n();
+  }
+
+  function prepareAudioGuideForPoint(point, media) {
+    setAudioGuideButtonReady(audioGuideIdFor(point, media));
+  }
+
   function miniDocIdFor(point, media) {
     var value = '';
-    try{
+    try {
       value = (media && media.minidoc) ||
               (point && point.minidoc) ||
               (point && point.media && point.media.minidoc) || '';
-    }catch(_e){}
+    } catch (_e) {}
     return String(value || '').trim();
   }
 
   function setMiniDocButtonReady(docId) {
     var button = document.getElementById('btn-minidoc-qr');
-    if(!button) return;
-    var ready = !!docId;
+    if (!button) return;
+    var hasOpener = typeof window.__gmOpenMiniDocById === 'function';
+    var ready = !!docId && hasOpener;
     button.setAttribute('data-qr-minidoc-ready', ready ? 'true' : 'false');
     button.setAttribute('data-doc-id', ready ? docId : '');
     button.setAttribute('aria-disabled', ready ? 'false' : 'true');
     button.classList.toggle('qr-placeholder-action', !ready);
     button.classList.toggle('qr-minidoc-ready', ready);
-    if(ready) button.removeAttribute('data-qr-placeholder');
+    if (ready) button.removeAttribute('data-qr-placeholder');
     else button.setAttribute('data-qr-placeholder','true');
+    button.hidden = !ready;
+    if (ready) {
+      button.style.removeProperty('display');
+      button.removeAttribute('aria-hidden');
+    } else {
+      button.style.setProperty('display', 'none', 'important');
+      button.setAttribute('aria-hidden', 'true');
+    }
     applyMultimediaI18n();
   }
 
   function prepareMiniDocForPoint(point, media) {
     setMiniDocButtonReady(miniDocIdFor(point, media));
+  }
+
+  function setModeButtonAvailable(button, ready) {
+    if (!button) return;
+    button.hidden = !ready;
+    button.setAttribute('aria-hidden', ready ? 'false' : 'true');
+    if (ready) button.style.removeProperty('display');
+    else button.style.setProperty('display', 'none', 'important');
+    if (!ready) button.classList.remove('active');
+  }
+
+  function syncPrimaryMediaButtons(media) {
+    media = media || {};
+    var past = Array.isArray(media.ieri) ? media.ieri : (media.ieri ? [media.ieri] : []);
+    var sfx = Array.isArray(media.sfx) ? media.sfx : (media.sfx ? [media.sfx] : []);
+    setModeButtonAvailable(document.getElementById('btn-today'), !!String(media.oggi || '').trim());
+    setModeButtonAvailable(document.getElementById('btn-past'), past.some(function (item) { return !!String(item || '').trim(); }));
+    setModeButtonAvailable(document.getElementById('btn-sfx'), sfx.some(function (item) { return !!String(item || '').trim(); }));
+  }
+
+  function ensureMediaModeGroups(swap) {
+    if (!swap) return { left: null, right: null };
+
+    var left = swap.querySelector('.qr-swap-left');
+    var right = swap.querySelector('.qr-swap-right');
+    if (!left) {
+      left = document.createElement('span');
+      left.className = 'qr-swap-group qr-swap-left';
+      swap.appendChild(left);
+    }
+    if (!right) {
+      right = document.createElement('span');
+      right.className = 'qr-swap-group qr-swap-right';
+      swap.appendChild(right);
+    }
+
+    ['btn-today', 'btn-past'].forEach(function (id) {
+      var node = document.getElementById(id);
+      if (node && node.parentNode !== left) left.appendChild(node);
+    });
+    ['btn-sfx', 'btn-vr-qr', 'btn-compare-qr', 'qr-compare-inline-controls'].forEach(function (id) {
+      var node = document.getElementById(id);
+      if (node && node.parentNode !== right) right.appendChild(node);
+    });
+
+    return { left: left, right: right };
   }
 
   function compareSpecFor(point, parent, media, qrid) {
@@ -958,7 +1057,7 @@
     var compare = document.getElementById("btn-compare-qr");
     if (compare) {
       var compareReady = compare.getAttribute("data-qr-compare-ready") === "true";
-      compare.textContent = T.compare;
+      compare.innerHTML = compareIcon();
       compare.title = compareReady ? T.compare : (T.compare + " — " + T.comingSoon);
       compare.setAttribute("aria-label", compareReady ? T.compare : (T.compare + ". " + T.comingSoon));
     }
@@ -967,8 +1066,9 @@
     if (audio) {
       var audioLabel = audio.querySelector(".qr-action-label");
       if (audioLabel) audioLabel.textContent = T.audioguide;
-      audio.title = T.audioguide + " — " + T.comingSoon;
-      audio.setAttribute("aria-label", T.audioguide + ". " + T.comingSoon);
+      var audioReady = audio.getAttribute('data-qr-audioguide-ready') === 'true';
+      audio.title = audioReady ? T.audioguide : (T.audioguide + " — " + T.comingSoon);
+      audio.setAttribute("aria-label", audioReady ? T.audioguide : (T.audioguide + ". " + T.comingSoon));
     }
 
     var miniDoc = document.getElementById("btn-minidoc-qr");
@@ -1010,28 +1110,29 @@
   /*
    * Nuova barra multimediale QR.
    *
-   * Riga 1 (subito sotto il riquadro media): Oggi / Ieri / SFX / Confronta.
+   * Riga 1 (subito sotto il riquadro media):
+   * sinistra Oggi / Ieri, destra SFX / VR / Confronta.
    * Riga 2 (sotto la descrizione): Audioguida / MiniDoc / Condividi.
    *
-   * Confronta viene mostrato automaticamente solo quando trova entrambi i video
-   * nella cartella convenzionale qr_confronta/<parent>/<child>/ (o quando il
-   * Punto QR dichiara media.confronta). Se i video non sono disponibili il
-   * bottone resta completamente nascosto. Audioguida e MiniDoc restano invece
-   * placeholder inattivi. Condividi conserva tutta la logica esistente.
+   * Oggi, Ieri e SFX compaiono soltanto quando il punto dichiara il relativo
+   * video. VR e Confronta compaiono solo dopo la verifica della risorsa reale.
+   * Audioguida e MiniDoc compaiono soltanto quando esiste un collegamento
+   * effettivamente apribile. Condividi conserva tutta la logica esistente.
    */
   function ensureMultimediaControls() {
     var swap = panel.querySelector(".swap");
     var description = document.getElementById("place-desc");
     if (!swap || !description) return;
+    var groups = ensureMediaModeGroups(swap);
 
     var compare = ensurePlaceholderButton(
       "btn-compare-qr",
       "compare",
-      "qr-compare-placeholder",
+      "qr-compare-placeholder qr-media-mode qr-media-compare",
       ""
     );
     compare.setAttribute("data-qr-access", "public");
-    if (compare.parentNode !== swap) swap.appendChild(compare);
+    if (groups.right && compare.parentNode !== groups.right) groups.right.appendChild(compare);
     if (!compare.__qrCompareBound) {
       compare.__qrCompareBound = true;
       compare.addEventListener("click", function (event) {
@@ -1042,7 +1143,7 @@
       });
     }
 
-    ensureCompareInlineControls(swap);
+    ensureCompareInlineControls(groups.right || swap);
 
     var actions = panel.querySelector(".qr-extra-actions");
     if (!actions) {
@@ -1071,6 +1172,18 @@
     actions.appendChild(audio);
     actions.appendChild(miniDoc);
 
+    if (!audio.__qrAudioGuideBound) {
+      audio.__qrAudioGuideBound = true;
+      audio.addEventListener('click', function(event){
+        if(audio.getAttribute('data-qr-audioguide-ready') !== 'true') return;
+        event.preventDefault();
+        event.stopPropagation();
+        var audioId = audio.getAttribute('data-audioguide-id') || '';
+        if(!audioId || typeof window.__gmOpenAudioguideById !== 'function') return;
+        try{ window.__gmOpenAudioguideById(audioId); }catch(_e){}
+      });
+    }
+
     if (!miniDoc.__qrMiniDocBound) {
       miniDoc.__qrMiniDocBound = true;
       miniDoc.addEventListener('click', function(event){
@@ -1098,6 +1211,7 @@
       actions.appendChild(share);
     }
 
+    ensureMediaModeGroups(swap);
     ensureCompareStage();
     wireStandardModeExit();
     applyMultimediaI18n();
@@ -1143,15 +1257,21 @@
 
       var result = original.apply(this, arguments);
       syncParentBadge(parent);
+      syncPrimaryMediaButtons(media);
       ensureMultimediaControls();
+      prepareAudioGuideForPoint(point, media);
       prepareMiniDocForPoint(point, media);
       prepareCompareForPoint(point, parent, media, qrid);
       try { if (typeof window.__qrVrPrepare === "function") window.__qrVrPrepare(point, parent, media, qrid); } catch (_) {}
+      ensureMediaModeGroups(panel.querySelector(".swap"));
 
       focusQrPoint(point, function () {
         preparePanel(point, parent);
+        syncPrimaryMediaButtons(media);
         ensureMultimediaControls();
+        prepareAudioGuideForPoint(point, media);
         prepareMiniDocForPoint(point, media);
+        ensureMediaModeGroups(panel.querySelector(".swap"));
         panel.style.visibility = previousVisibility;
         panel.style.pointerEvents = previousPointerEvents;
       });
