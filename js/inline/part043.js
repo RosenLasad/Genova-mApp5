@@ -49,7 +49,12 @@
     }, true);
     // Close on ESC
     document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape'){ window.__qrClosePanel && window.__qrClosePanel(); }
+      if (e.key !== 'Escape') return;
+      // When VR is open, ESC belongs to the VR layer: closing the QR panel here
+      // would also destroy the popup that must remain visible underneath.
+      var vr = document.getElementById('qr-vr-overlay');
+      if (vr && !vr.hidden) return;
+      window.__qrClosePanel && window.__qrClosePanel();
     });
   }
   if (document.readyState === 'complete'){ bind(); } else { window.addEventListener('load', bind); }

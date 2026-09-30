@@ -9,6 +9,9 @@
   var availabilityToken = 0;
   var availabilityCache = Object.create(null);
   var hintTimer = 0;
+  var historyActive = false;
+  var historyClosing = false;
+  var historyToken = 0;
 
   var I18N = {
     it: { vr:"VR", loading:"Caricamento del video...", close:"Chiudi", gyro:"Giroscopio", gyroOff:"Disattiva giroscopio", sound:"Audio", mute:"Disattiva audio", unmute:"Attiva audio", fullscreen:"Schermo intero", exitFullscreen:"Esci da schermo intero", hint:"Muovi lo smartphone per guardarti intorno oppure trascina la scena con il dito.", error:"Impossibile caricare il contenuto VR." },
@@ -211,6 +214,10 @@
     document.addEventListener("webkitfullscreenchange", syncControls);
     document.addEventListener("keydown", function (event) {
       if (!overlay || overlay.hidden || event.key !== "Escape") return;
+      // ESC while VR is open must behave exactly like the VR close button:
+      // close only the VR layer and leave the underlying QR popup open.
+      event.preventDefault();
+      event.stopPropagation();
       closeVr(false);
     });
     return overlay;
@@ -288,6 +295,45 @@
     });
   }
 
+
+  function pushVrHistory() {
+    if (historyActive || !window.history || typeof window.history.pushState !== "function") return;
+    try {
+      historyToken += 1;
+      window.history.pushState({ gmQrVr: true, token: historyToken }, "");
+      historyActive = true;
+    } catch (_) {
+      historyActive = false;
+    }
+  }
+
+  function releaseVrHistory(fromHistory) {
+    if (!historyActive) return;
+    historyActive = false;
+    if (fromHistory) {
+      historyClosing = false;
+      return;
+    }
+    if (!window.history || typeof window.history.back !== "function") return;
+    historyClosing = true;
+    try {
+      window.history.back();
+      setTimeout(function () { historyClosing = false; }, 700);
+    } catch (_) {
+      historyClosing = false;
+    }
+  }
+
+  function handleVrHistoryBack() {
+    if (historyClosing) {
+      historyClosing = false;
+      return;
+    }
+    if (!historyActive) return;
+    historyActive = false;
+    if (overlay && !overlay.hidden) closeVr(false, true);
+  }
+
   function openVr() {
     if (!activeSpec || !window.VRViewer) return;
     ensureOverlay();
@@ -295,6 +341,7 @@
     overlay.hidden = false;
     document.documentElement.classList.add("qr-vr-open");
     document.body.classList.add("qr-vr-open");
+    pushVrHistory();
 
     var title = document.getElementById("qr-vr-title");
     if (title) title.textContent = activeTitle || "VR";
@@ -345,7 +392,7 @@
     });
   }
 
-  function closeVr(silent) {
+  function closeVr(silent, fromHistory) {
     if (hintTimer) { clearTimeout(hintTimer); hintTimer = 0; }
     if (viewer) { try { viewer.destroy(); } catch (_) {} viewer = null; }
     if (overlay) {
@@ -359,6 +406,7 @@
     }
     document.documentElement.classList.remove("qr-vr-open");
     document.body.classList.remove("qr-vr-open");
+    releaseVrHistory(!!fromHistory);
   }
 
   window.__qrVrPrepare = prepare;
@@ -366,6 +414,7 @@
   window.__qrVrOpen = openVr;
   window.__qrVrClose = function () { closeVr(false); };
 
+  window.addEventListener("popstate", handleVrHistoryBack);
   window.addEventListener("i18n:changed", function () { setButtonVisible(!!activeSpec && !document.getElementById("btn-vr-qr")?.hidden); syncControls(); });
   document.addEventListener("app:set-lang", function () { setButtonVisible(!!activeSpec && !document.getElementById("btn-vr-qr")?.hidden); syncControls(); });
 })();
