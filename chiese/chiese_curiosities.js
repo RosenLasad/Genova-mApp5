@@ -2930,4 +2930,503 @@
     ]
 };
 
+
+  root.church["Chiesa della Santissima Concezione"] = {
+    "it": [
+      "Il cambio per curare i malati: I frati edificarono la chiesa nel 1593 per avvicinarsi al centro cittadino dal monastero di San Barnaba, desiderando servire e curare con maggiore tempestività i malati e gli appestati della città.",
+      "Il corpo intatto del Padre Santo: La navata custodisce le spoglie di San Francesco Maria da Camporosso. Il frate morì nel 1866 offrendo la vita per confortare ed assistere i genovesi colpiti dall'epidemia di colera.",
+      "La statua arrivata dall'Armenia: Una secolare tradizione dei frati narra che la splendida e preziosissima statua lignea della Vergine, che troneggia sopra l'altare maggiore, sia giunta a Genova dopo un avventuroso viaggio marittimo dall'Armenia.",
+      "Il presepe storico del 1842: Nell'oratorio si conserva un presepe molto amato dai genovesi, allestito per la prima volta nel 1842. Le raffinate statuine sono immerse in un tipico borgo ligure affacciato su uno scorcio di mare.",
+      "La lapide dell'indulgenza del 1720: Sulle pareti è incastonata un'epigrafe del 1720 che ricorda la solenne consacrazione dell'arcivescovo De Marinis. Prometteva una rarissima indulgenza plenaria a tutti coloro che avessero fatto visita alla parrocchia.",
+      "La tomba della musa di Mazzini: All'interno del complesso riposano le spoglie della nobildonna Anna Schiaffino Giustiniani. Fu l'appassionata musa ispiratrice e il grande amore giovanile del patriota Giuseppe Mazzini, morta tragicamente prematura.",
+      "Finanziata dalla banca dei Dogi: Per completare la fabbrica nel 1596, i Cappuccini ottennero finanziamenti straordinari sia da benefattori patrizi sia dal Banco di San Giorgio, la potentissima istituzione finanziaria della Repubblica.",
+      "Due volte soppressa dai soldati: La pace conventuale fu interrotta bruscamente due volte: nel 1810 dalle truppe napoleoniche e nel 1866 dalle severe leggi sabaude, che confiscarono la struttura cacciando temporaneamente i religiosi."
+    ],
+    "en": [
+      "Moving closer to care for the sick: The friars built the church in 1593 so they could be nearer the city centre than at San Barnaba monastery, allowing them to serve and treat the sick and plague victims more quickly.",
+      "The intact body of the Padre Santo: The nave preserves the remains of Saint Francesco Maria da Camporosso. The friar died in 1866 after offering his life while comforting and assisting Genoese people struck by a cholera epidemic.",
+      "The statue that came from Armenia: A centuries-old friars' tradition says the splendid wooden statue of the Virgin above the high altar reached Genoa after an adventurous sea voyage from Armenia.",
+      "The historic Nativity scene of 1842: The oratory preserves a Nativity scene much loved by Genoese people, first arranged in 1842. Its refined figurines are set in a typical Ligurian village overlooking a glimpse of the sea.",
+      "The indulgence inscription of 1720: A 1720 inscription set into the walls recalls the solemn consecration by Archbishop De Marinis. It promised a rare plenary indulgence to those who visited the parish.",
+      "The tomb of Mazzini's muse: The complex contains the remains of noblewoman Anna Schiaffino Giustiniani, Giuseppe Mazzini's passionate muse and youthful love, who died tragically at a young age.",
+      "Financed by the doges' bank: To complete the building in 1596, the Capuchins received extraordinary funding from patrician benefactors and from the Banco di San Giorgio, the Republic's powerful financial institution.",
+      "Suppressed twice by soldiers: Monastic peace was abruptly interrupted twice: in 1810 by Napoleonic forces and in 1866 by strict Savoy laws, which confiscated the complex and temporarily expelled the friars."
+    ],
+    "es": [
+      "Un traslado para cuidar a los enfermos: Los frailes construyeron la iglesia en 1593 para acercarse al centro desde el monasterio de San Barnaba y poder asistir con mayor rapidez a enfermos y apestados de la ciudad.",
+      "El cuerpo intacto del Padre Santo: La nave conserva los restos de San Francesco Maria da Camporosso. El fraile murió en 1866 ofreciendo su vida para consolar y asistir a los genoveses afectados por una epidemia de cólera.",
+      "La estatua llegada de Armenia: Una tradición secular de los frailes cuenta que la preciosa estatua de madera de la Virgen sobre el altar mayor llegó a Génova tras un aventurado viaje marítimo desde Armenia.",
+      "El belén histórico de 1842: En el oratorio se conserva un belén muy querido por los genoveses, montado por primera vez en 1842. Sus refinadas figuras aparecen dentro de un típico pueblo ligur abierto hacia una vista del mar.",
+      "La lápida de la indulgencia de 1720: En los muros se conserva una inscripción de 1720 que recuerda la solemne consagración del arzobispo De Marinis. Prometía una rarísima indulgencia plenaria a quienes visitaran la parroquia.",
+      "La tumba de la musa de Mazzini: En el complejo reposan los restos de la noble Anna Schiaffino Giustiniani, apasionada musa y gran amor juvenil del patriota Giuseppe Mazzini, fallecida trágicamente muy joven.",
+      "Financiada por el banco de los dogos: Para completar la obra en 1596, los capuchinos recibieron financiación extraordinaria de benefactores patricios y del Banco di San Giorgio, poderosa institución financiera de la República.",
+      "Suprimida dos veces por los soldados: La vida conventual fue interrumpida bruscamente en 1810 por las tropas napoleónicas y en 1866 por las leyes saboyanas, que confiscaron el complejo y expulsaron temporalmente a los religiosos."
+    ],
+    "fr": [
+      "Un déplacement pour soigner les malades : Les frères bâtirent l'église en 1593 afin de se rapprocher du centre depuis le monastère de San Barnaba et de pouvoir secourir plus rapidement les malades et victimes de la peste.",
+      "Le corps intact du Padre Santo : La nef conserve les restes de saint Francesco Maria da Camporosso. Le frère mourut en 1866 après avoir offert sa vie pour réconforter et assister les Génois frappés par une épidémie de choléra.",
+      "La statue venue d'Arménie : Une ancienne tradition des frères raconte que la précieuse statue en bois de la Vierge, placée au-dessus du maître-autel, serait arrivée à Gênes après un voyage maritime aventureux depuis l'Arménie.",
+      "La crèche historique de 1842 : L'oratoire conserve une crèche très chère aux Génois, installée pour la première fois en 1842. Ses figurines raffinées sont disposées dans un village ligure typique ouvert sur un aperçu de la mer.",
+      "La plaque de l'indulgence de 1720 : Une inscription de 1720 rappelle la consécration solennelle par l'archevêque De Marinis. Elle promettait une rare indulgence plénière à tous ceux qui visiteraient la paroisse.",
+      "La tombe de la muse de Mazzini : Le complexe abrite les restes de la noble Anna Schiaffino Giustiniani, muse passionnée et grand amour de jeunesse de Giuseppe Mazzini, morte tragiquement très jeune.",
+      "Financée par la banque des doges : Pour achever l'édifice en 1596, les Capucins reçurent des financements extraordinaires de bienfaiteurs patriciens et du Banco di San Giorgio, puissante institution financière de la République.",
+      "Supprimée deux fois par les soldats : La paix conventuelle fut brutalement interrompue en 1810 par les troupes napoléoniennes puis en 1866 par les lois savoyardes, qui confisquèrent l'ensemble et expulsèrent temporairement les religieux."
+    ],
+    "ar": [
+      "الانتقال لعلاج المرضى: بنى الرهبان الكنيسة عام 1593 ليقتربوا من مركز المدينة مقارنة بدير سان بارنابا، حتى يتمكنوا من خدمة المرضى ومصابي الأوبئة وعلاجهم بسرعة أكبر.",
+      "الجسد السليم للأب القديس: يحتفظ صحن الكنيسة برفات القديس فرانشيسكو ماريا دا كامبوروسو. توفي الراهب عام 1866 بعدما كرّس حياته لمواساة ومساعدة أهل جنوة خلال وباء الكوليرا.",
+      "التمثال القادم من أرمينيا: يروي تقليد قديم للرهبان أن تمثال العذراء الخشبي الثمين القائم فوق المذبح الرئيسي وصل إلى جنوة بعد رحلة بحرية طويلة ومغامرة من أرمينيا.",
+      "مغارة الميلاد التاريخية لعام 1842: يحتفظ المصلى بمشهد ميلاد محبوب لدى أهل جنوة، أُقيم لأول مرة عام 1842. وتنتشر تماثيله الدقيقة داخل قرية ليغورية نموذجية تطل على مشهد من البحر.",
+      "نقش الغفران لعام 1720: تتضمن الجدران نقشاً يعود إلى 1720 يخلد التكريس الرسمي على يد رئيس الأساقفة De Marinis. وكان يعد بغفران كامل نادر لكل من يزور الرعية.",
+      "قبر ملهمة ماتسيني: يرقد في المجمع جسد النبيلة Anna Schiaffino Giustiniani، التي كانت ملهمة جوزيبي ماتسيني وحبه الكبير في شبابه، قبل أن تموت بصورة مأساوية وهي ما تزال شابة.",
+      "تمويل من بنك الدوجات: لإكمال البناء سنة 1596 حصل الكبوشيون على تمويل استثنائي من محسنين أرستقراطيين ومن Banco di San Giorgio، المؤسسة المالية القوية لجمهورية جنوة.",
+      "أُغلقت مرتين بأمر الجنود: تعطلت حياة الدير مرتين بعنف، سنة 1810 بسبب القوات النابليونية وسنة 1866 بفعل قوانين سافوي الصارمة التي صادرت المجمع وأبعدت الرهبان مؤقتاً."
+    ],
+    "ru": [
+      "Переезд ради помощи больным: В 1593 году монахи построили церковь ближе к центру, чем монастырь Сан-Барнаба, чтобы быстрее помогать заболевшим и жертвам городских эпидемий.",
+      "Нетленное тело Padre Santo: В нефе покоятся останки святого Франческо Мария да Кампороссо. Монах умер в 1866 году, посвятив себя утешению и помощи генуэзцам во время эпидемии холеры.",
+      "Статуя, прибывшая из Армении: Согласно старинному преданию братии, драгоценная деревянная статуя Богородицы над главным алтарём достигла Генуи после долгого и опасного морского путешествия из Армении.",
+      "Исторический вертеп 1842 года: В оратории хранится любимый генуэзцами рождественский вертеп, впервые устроенный в 1842 году. Изящные фигурки размещены среди декораций типичной лигурийской деревни с видом на море.",
+      "Надпись об индульгенции 1720 года: В стену вмонтирована эпитафия 1720 года, напоминающая о торжественном освящении архиепископом De Marinis. Она обещала редкую полную индульгенцию всем посетителям прихода.",
+      "Гробница музы Мадзини: В комплексе покоятся останки дворянки Анны Скиаффино Джустиниани, страстной музы и большой юношеской любви Джузеппе Мадзини, трагически умершей совсем молодой.",
+      "Финансирование от банка дожей: Для завершения строительства в 1596 году капуцины получили особые средства от патрицианских благотворителей и Banco di San Giorgio, могущественного финансового института Республики.",
+      "Дважды закрытая военными: Монастырский покой дважды резко прерывался: в 1810 году наполеоновскими войсками и в 1866 году законами Савойского королевства, конфисковавшими комплекс и временно изгнавшими монахов."
+    ],
+    "zh": [
+      "为了照顾病人而迁建：1593年，修士们从较远的 San Barnaba 修道院移近市中心建造教堂，以便更迅速地照料城中的病人和瘟疫患者。",
+      "“圣父”完好保存的遗体：教堂中殿保存着圣 Francesco Maria da Camporosso 的遗骸。他于1866年去世，将生命奉献给安慰和帮助遭受霍乱疫情的热那亚人。",
+      "来自亚美尼亚的圣母像：修士们的古老传统称，主祭坛上方珍贵的木制圣母像，是经过一次充满冒险的海上旅程从亚美尼亚来到热那亚的。",
+      "1842年的历史圣诞马槽：礼拜堂保存着一组深受热那亚人喜爱的圣诞场景，最早布置于1842年。精致人物被置于典型利古里亚村落中，并面向一角海景。",
+      "1720年的大赦碑文：墙上嵌有一块1720年的铭文，纪念 De Marinis 大主教的隆重祝圣。碑文承诺，前来参拜该堂者可获得极为少见的全大赦。",
+      "马志尼缪斯的墓：贵族女子 Anna Schiaffino Giustiniani 的遗骸安葬于此。她是 Giuseppe Mazzini 青年时代热烈的灵感来源和爱情，却不幸英年早逝。",
+      "由“总督银行”资助：为在1596年完成建筑，嘉布遣会不仅得到贵族捐助者支持，也获得共和国强大的金融机构 Banco di San Giorgio 的特别资金。",
+      "两次被军政力量取缔：修道生活两度被突然打断，1810年是拿破仑军队，1866年则是萨伏依政府的严厉法令，建筑被没收，修士一度被驱离。"
+    ],
+    "lij": [
+      "O trasferimento pe curâ i malæ: Into 1593 i fræ han construto a gésa ciù vexin a-o centro che o convento de San Barnaba, pe servî e curâ ciù fito i malæ e chi o l'ea colpio da-e epidemie.",
+      "O corpo intatto do Padre Santo: Inta navata se conservan e spogge de San Francesco Maria da Camporosso. O fræ o l'é morto into 1866 dòppo avei dedicou a vitta a consolâ e agiuttâ i zeneixi colpii da-o colera.",
+      "A statoa arrivâ da l'Armenia: Una vegia tradiçion di fræ a conta che a preçioza statoa de legno da Madonna in sciô artâ maggiore a l'é arrivâ a Zêna dòppo un lungo e avventuroso viaggio pe mâ da l'Armenia.",
+      "O prexepio storico do 1842: Int'oratorio se conserva un prexepio tanto amou da-i zeneixi, preparou pe-a primma votta into 1842. E figurinn-e raffinæ son messe drento un tipico borgo ligure con un scòrso de mâ.",
+      "A lapide de l'indulgensa do 1720: Inte mænn-e gh'é unna scrita do 1720 che a ricòrda a consacraçion solenne de l'arcivescovo De Marinis. A prometteva unna rara indulgensa plenaria a chi visitava a parrocchia.",
+      "A tomba da musa de Mazzini: Into complesso riposan e spogge da nobile Anna Schiaffino Giustiniani, musa appassionâ e grande amô da zoventù de Giuseppe Mazzini, morta tragicamente troppo fito.",
+      "Finanziâ da-o banco di Dogi: Pe finî a fabrica into 1596, i Cappuccin han ricevuo dinæ straordinai da benefattoî patrissi e da-o Banco di San Giorgio, a potente istituzion finanziaria da Repubbrica.",
+      "Soppressa doe votte da-i militæ: A paxe do convento a l'é stæta spezzâ doe votte: into 1810 da-e truppe napoleoniche e into 1866 da-e leggi sabaude, che han confiscou o complesso e cacciou pe un pö i religioxi."
+    ]
+  };
+
+  root.church["Nostra Signora delle Grazie e San Gerolamo"] = {
+    "it": [
+      "Il bacio dei condannati a morte: La nuova parrocchia custodisce un antico e drammatico crocifisso in legno, proveniente dalla vecchia chiesetta quattrocentesca. Veniva storicamente portato in processione e fatto baciare ai condannati a morte prima dell'esecuzione.",
+      "La \"parrucchietta\" dei tremila abitanti: L'edificio medievale originario, in salita San Gerolamo, era soprannominato affettuosamente \"la parrucchietta\". Era talmente minuscolo da poter contenere appena 300 persone contro i 4000 residenti del quartiere collinare.",
+      "Un terreno comprato a peso d'oro: Per edificare l'imponente tempio moderno in corso Firenze, il comitato parrocchiale acquistò l'area nel 1922. Spesero la considerevole cifra di 70.000 lire dell'epoca, interamente raccolta tramite donazioni spontanee dei borghesi.",
+      "La facciata del disegnatore dei re: La maestosa facciata neogotica è un capolavoro architettonico completato da Luigi Ferrari. I fregi e le geometrie esterne riprendono i progetti monumentali studiati per le residenze reali di Casa Savoia.",
+      "Le vetrate dei santi nate a Firenze: Le grandi vetrate ogivali raffiguranti i santi Pietro e Paolo non sono di fattura ligure. Furono realizzate dal celebre maestro vetraio Guido Polloni nel suo atelier a Firenze e trasportate intatte.",
+      "Il campanile che svetta su Castelletto: La struttura è affiancata da un'imponente torre campanaria in pietra alta ben 42 metri. I suoi rintocchi scandivano le ore fungendo da orologio sonoro per tutta la Circonvallazione a Monte.",
+      "La consacrazione del Cardinale Siri: Nonostante il completamento della nuova struttura risalga al 1931, la solenne consacrazione ufficiale avvenne molti anni dopo. Fu celebrata il 29 dicembre 1951 dal famosissimo e storico Arcivescovo di Genova Giuseppe Siri.",
+      "L'inganno delle volte a crociera: L'interno a pianta basilicale stupisce per le navate separate da pilastri quadrati. La soffittatura vanta volte a crociera costolonate che ingannano magnificamente l'occhio, regalando un'illusione di straordinaria altezza."
+    ],
+    "en": [
+      "The condemned prisoners' kiss: The new parish preserves an old dramatic wooden crucifix from the 15th-century church. It was historically carried in procession and offered to prisoners sentenced to death to kiss before execution.",
+      "The tiny 'parrucchietta' for thousands of residents: The original medieval building on Salita San Gerolamo was affectionately nicknamed 'la parrucchietta'. It could hold only about 300 people despite the thousands living in the hillside district.",
+      "Land bought at a very high price: To build the imposing modern church on Corso Firenze, the parish committee bought the site in 1922 for 70,000 lire, a substantial sum raised entirely through voluntary donations from local middle-class families.",
+      "The façade by a designer for royalty: The majestic Neo-Gothic façade was completed by Luigi Ferrari. Its friezes and exterior geometry echo monumental designs associated with residences of the House of Savoy.",
+      "The saints' stained glass made in Florence: The large pointed windows depicting Saints Peter and Paul were not made in Liguria. They were produced by celebrated glassmaker Guido Polloni in his Florence workshop and transported intact to Genoa.",
+      "The bell tower above Castelletto: Beside the church rises an imposing 42-metre stone bell tower. Its chimes marked the hours and served as an audible clock for much of the Circonvallazione a Monte.",
+      "Cardinal Siri's consecration: Although the new church was completed in 1931, its solemn official consecration came much later, on 29 December 1951, celebrated by Genoa's famous archbishop Giuseppe Siri.",
+      "The illusion of the ribbed vaults: The basilica interior has aisles divided by square piers. Ribbed cross-vaults create a striking optical effect, giving visitors the impression of a far greater height than the structure actually has."
+    ],
+    "es": [
+      "El beso de los condenados a muerte: La nueva parroquia conserva un antiguo y dramático crucifijo de madera procedente de la iglesia del siglo XV. Se llevaba en procesión y era ofrecido a los condenados para besarlo antes de la ejecución.",
+      "La pequeña 'parrucchietta' de miles de habitantes: El edificio medieval de Salita San Gerolamo era llamado cariñosamente 'la parrucchietta'. Apenas podía albergar unas 300 personas pese a los miles de residentes del barrio de la colina.",
+      "Un terreno comprado a precio de oro: Para construir el gran templo moderno de Corso Firenze, el comité parroquial adquirió el solar en 1922 por 70.000 liras, una suma importante reunida íntegramente mediante donaciones voluntarias de familias burguesas.",
+      "La fachada del diseñador de los reyes: La majestuosa fachada neogótica fue completada por Luigi Ferrari. Sus frisos y geometrías exteriores evocan proyectos monumentales relacionados con las residencias de la Casa de Saboya.",
+      "Las vidrieras de santos nacidas en Florencia: Las grandes vidrieras ojivales de San Pedro y San Pablo no son ligures. Fueron realizadas por el famoso maestro Guido Polloni en su taller de Florencia y transportadas intactas.",
+      "El campanario que domina Castelletto: Junto a la iglesia se eleva una torre de piedra de 42 metros. Sus campanas marcaban las horas y funcionaban como reloj sonoro para gran parte de la Circonvallazione a Monte.",
+      "La consagración del cardenal Siri: Aunque la nueva iglesia quedó terminada en 1931, la solemne consagración oficial llegó muchos años después. Giuseppe Siri, arzobispo de Génova, la celebró el 29 de diciembre de 1951.",
+      "El engaño de las bóvedas de crucería: El interior basilical presenta naves separadas por pilares cuadrados. Las bóvedas nervadas producen un notable efecto óptico que da la impresión de una altura mucho mayor."
+    ],
+    "fr": [
+      "Le baiser des condamnés à mort : La nouvelle paroisse conserve un ancien et dramatique crucifix en bois provenant de l'église du XVe siècle. Il était porté en procession et présenté aux condamnés à mort pour qu'ils l'embrassent avant l'exécution.",
+      "La petite « parrucchietta » pour des milliers d'habitants : L'édifice médiéval de Salita San Gerolamo était affectueusement surnommé « la parrucchietta ». Il ne pouvait accueillir qu'environ 300 personnes malgré les milliers d'habitants du quartier de la colline.",
+      "Un terrain acheté à prix d'or : Pour bâtir l'imposante église moderne de Corso Firenze, le comité paroissial acheta le terrain en 1922 pour 70 000 lires, somme considérable réunie entièrement grâce aux dons volontaires des familles bourgeoises.",
+      "La façade du dessinateur des rois : La majestueuse façade néogothique fut achevée par Luigi Ferrari. Ses frises et sa géométrie extérieure rappellent des projets monumentaux liés aux résidences de la Maison de Savoie.",
+      "Les vitraux des saints nés à Florence : Les grandes verrières ogivales représentant saint Pierre et saint Paul ne sont pas ligures. Elles furent réalisées par le célèbre maître verrier Guido Polloni dans son atelier florentin puis transportées intactes.",
+      "Le clocher dominant Castelletto : Une imposante tour de pierre haute de 42 mètres flanque l'église. Ses cloches rythmaient les heures et servaient d'horloge sonore pour toute la Circonvallazione a Monte.",
+      "La consécration du cardinal Siri : Bien que la nouvelle église ait été achevée en 1931, sa consécration solennelle eut lieu bien plus tard, le 29 décembre 1951, par l'archevêque de Gênes Giuseppe Siri.",
+      "L'illusion des voûtes d'ogives : L'intérieur basilical possède des nefs séparées par des piliers carrés. Les voûtes d'ogives produisent un puissant effet de perspective et donnent l'impression d'une hauteur exceptionnelle."
+    ],
+    "ar": [
+      "قبلة المحكوم عليهم بالإعدام: تحتفظ الرعية الجديدة بصليب خشبي قديم ومؤثر من الكنيسة الصغيرة التي تعود إلى القرن الخامس عشر. وكان يُحمل في المواكب ليقبله المحكوم عليهم بالموت قبل تنفيذ الحكم.",
+      "'الكنيسة الصغيرة' لآلاف السكان: كان المبنى الوسيط في Salita San Gerolamo يُعرف بمحبة بلقب 'la parrucchietta'. لم يكن يتسع إلا لنحو 300 شخص رغم آلاف السكان في الحي المرتفع.",
+      "أرض اشتريت بثمن باهظ: لبناء الكنيسة الحديثة الكبيرة في Corso Firenze اشترت لجنة الرعية الموقع عام 1922 مقابل 70 ألف ليرة، وجُمعت القيمة كلها من تبرعات عفوية قدمتها أسر من الطبقة الوسطى.",
+      "واجهة صممها مهندس للملوك: أنجز Luigi Ferrari الواجهة النيوغوطية المهيبة. وتستعيد الزخارف والخطوط الخارجية روح المشاريع الضخمة المرتبطة بمساكن أسرة سافوي الملكية.",
+      "نوافذ القديسين القادمة من فلورنسا: الزجاج الملون الكبير الذي يصور القديسين بطرس وبولس ليس من صنع ليغوريا، بل نفذه صانع الزجاج الشهير Guido Polloni في ورشته بفلورنسا ونُقل كاملاً.",
+      "برج الأجراس فوق Castelletto: يجاور الكنيسة برج حجري مهيب يبلغ ارتفاعه 42 متراً. كانت أجراسه تعلن الساعات وتعمل كساعة مسموعة لمنطقة Circonvallazione a Monte كلها.",
+      "تكريس الكاردينال Siri: رغم اكتمال الكنيسة الحديثة عام 1931، تأخر التكريس الرسمي سنوات طويلة، وأقيم في 29 ديسمبر 1951 على يد رئيس أساقفة جنوة Giuseppe Siri.",
+      "خدعة الأقبية المتقاطعة: يتكون الداخل البازيليكي من أروقة تفصلها دعامات مربعة. وتخلق الأقبية المضلعة خداعاً بصرياً رائعاً يجعل السقف يبدو أعلى بكثير من ارتفاعه الحقيقي."
+    ],
+    "ru": [
+      "Поцелуй приговорённых к смерти: Новый приход хранит старинное деревянное распятие из церкви XV века. Его несли в процессиях и давали целовать осуждённым на смерть перед казнью.",
+      "Маленькая 'parrucchietta' для тысяч жителей: Средневековую церковь на Salita San Gerolamo ласково звали 'la parrucchietta'. Она вмещала лишь около 300 человек, хотя в холмистом квартале жили тысячи людей.",
+      "Земля, купленная за огромные деньги: Для строительства современного храма на Corso Firenze приходской комитет приобрёл участок в 1922 году за 70 000 лир — значительную сумму, полностью собранную пожертвованиями горожан.",
+      "Фасад архитектора королей: Монументальный неоготический фасад завершил Луиджи Феррари. Его фризы и внешняя геометрия напоминают проекты парадных резиденций Савойского дома.",
+      "Витражи святых из Флоренции: Большие стрельчатые витражи со святыми Петром и Павлом изготовлены не в Лигурии, а мастером Guido Polloni во Флоренции и доставлены в Геную целиком.",
+      "Колокольня над Кастеллетто: Рядом возвышается 42-метровая каменная башня. Её звон отмечал часы и служил своеобразными звуковыми часами для всей Circonvallazione a Monte.",
+      "Освящение кардиналом Сири: Хотя новое здание завершили в 1931 году, торжественное официальное освящение состоялось лишь 29 декабря 1951 года и было совершено архиепископом Генуи Джузеппе Сири.",
+      "Иллюзия крестовых сводов: Базиликальный интерьер разделён квадратными опорами. Ребристые крестовые своды создают эффект перспективы и зрительно делают пространство значительно выше."
+    ],
+    "zh": [
+      "死刑犯最后的亲吻：新教堂保存着一尊来自15世纪旧堂的古老木制苦像。历史上它会被抬入游行，并在执行死刑前让囚犯亲吻，成为极具戏剧性的最后宗教仪式。",
+      "容纳数千居民的“小教堂”：Salita San Gerolamo 的中世纪旧堂被亲切称为“la parrucchietta”。它最多只能容纳约300人，而山坡街区却有数千名居民。",
+      "高价买下的土地：为了在 Corso Firenze 建造宏伟的新堂，堂区委员会于1922年购地，花费7万里拉。这笔巨款全部来自当地市民和中产家庭的自愿捐款。",
+      "“王室设计师”的立面：雄伟的新哥特式立面由 Luigi Ferrari 完成，外部的饰带和几何处理呼应了与萨伏依王室住宅有关的宏伟建筑设计。",
+      "诞生于佛罗伦萨的圣人彩窗：描绘圣伯多禄和圣保禄的大型尖拱彩窗并非利古里亚制作，而是名匠 Guido Polloni 在佛罗伦萨工作室完成后整体运来的。",
+      "俯瞰 Castelletto 的钟楼：教堂旁立着一座42米高的石砌钟楼。钟声曾为整个 Circonvallazione a Monte 报时，像一座覆盖街区的“声音时钟”。",
+      "Siri 枢机的祝圣：虽然新建筑在1931年已经完工，但正式祝圣要到多年后的1951年12月29日，由热那亚大主教 Giuseppe Siri 主持。",
+      "交叉肋拱的视觉骗局：内部采用巴西利卡式布局，方柱分隔各中殿。带肋交叉拱顶制造出强烈的透视效果，让人感觉空间比实际高出许多。"
+    ],
+    "lij": [
+      "O baxo di condannæ a morte: A neuva parrocchia a conserva un antigo crocifisso de legno da vegia gésa do Quattrocento. O vegniva portou in procession e fæto baxâ a-i condannæ primma de l'execuçion.",
+      "A 'parrucchietta' pe miggiaia de abitanti: A vegia gésa de Salita San Gerolamo a l'ea ciamâ con affetto 'la parrucchietta'. A ghe stavan appena trexento persoñe, mentre into quartê viveivan miggiaia de gente.",
+      "Un terreno pagou carissimo: Pe construe a grande gésa moderna in Corso Firenze, o comitato parrocchiâ o comprò o terreno into 1922 pe 70.000 lire, dinæ raccolti tutti con offerte spontanee de famigge do quartê.",
+      "A façciata do disegnatô di re: A grande façciata neogotica a l'é stæta completâ da Luigi Ferrari. Fregi e geometrie esterne ricorddan i progetti monumentali studiæ pe-e residenze de Casa Savoia.",
+      "E vetræ di santi fæte a Firenze: E grande vetræ ogivali con San Pietro e San Paolo no son liguri. E son stæte realizæ da-o famoso mæstro vetraio Guido Polloni inta seu bottega de Firenze e portæ integre a Zêna.",
+      "O campanin che domina Castelletto: A gésa a gh'à a-o scianco unna torre de pria arta 42 metri. I rintocchi marcavan e oe e servivan comme un reloggio sonòro pe tutta a Circonvallazione a Monte.",
+      "A consacraçion do Cardinale Siri: Anche se a neuva gésa a l'é stæta finîa into 1931, a consacraçion ufficiale a l'é vegnua solo o 29 dexembre 1951, celebrâ da l'arcivescovo Giuseppe Siri.",
+      "L'inganno de vòtte a croxêa: L'interno a basilica o gh'à navate dividûe da pilastri quadræ. E vòtte costonæ crean un bell'efetto d'illuscion e fan pâ o spaçio ciù arto de quello che o l'é."
+    ]
+  };
+
+  root.church["San Barnaba"] = {
+    "it": [
+      "Il convento cappuccino più antico: Arroccata sulle alture tra Oregina e Castelletto, l'oasi di pace di San Barnaba detiene un primato storico. È ufficialmente il più antico insediamento dei frati Cappuccini dell'intera regione Liguria.",
+      "Il cimitero delle monache del 1252: Nel 1252 il capitolo concesse alle monache cistercensi, che gestivano l'eremo originario, un raro privilegio spirituale. Ottennero la facoltà di creare un cimitero consacrato adiacente alle mura della chiesetta.",
+      "Il tributo di cera al Duomo: Come pegno simbolico per la concessione del romitorio, i frati dovevano pagare una tassa annuale. Consisteva nel donare solennemente una libbra di cera vergine alla Cattedrale di San Lorenzo.",
+      "Il pittore cappuccino in clausura: Tra il 1597 e il 1608, all'interno del convento visse e operò il celeberrimo artista Bernardo Strozzi, detto il Cappuccino Genovese. Qui dipinse capolavori barocchi prima di fuggire a Venezia.",
+      "La facciata arretrata nel 1949: Se varchi il cancello d'ingresso, noterai una statua seicentesca sul timpano. Fino al 1949 l'effigie era incastonata direttamente sulla facciata della chiesa, poi arretrata per allargare la corte.",
+      "Il presepe permanente della costa: La chiesetta custodisce un prezioso presepe permanente con statuine attribuite alla scuola del Maragliano. Sullo sfondo spicca una scenografia mozzafiato che riproduce i gozzi e la Lanterna genovese.",
+      "La lapide gotica della domina Leona: Varcata la soglia del romitorio è visibile una lapide gotica del 1286. Testimonia la generosità della nobildonna Leona Ususmaris, che finanziò l'ampliamento delle strutture dell'eremo medievale.",
+      "La vista che stregò le coppiette: Il sagrato panoramico offre uno scorcio spettacolare a picco sul porto. Per secoli la zona è stata soprannominata il \"luogo delle promesse\", frequentata all'imbrunire per scambiarsi baci davanti al tramonto."
+    ],
+    "en": [
+      "Liguria's oldest Capuchin convent: Perched on the heights between Oregina and Castelletto, San Barnaba holds a historic record as the oldest Capuchin settlement in the entire Liguria region.",
+      "The nuns' cemetery of 1252: In 1252 the chapter granted the Cistercian nuns who ran the original hermitage a rare privilege: permission to establish a consecrated cemetery beside the little church walls.",
+      "The wax tribute to the Cathedral: As a symbolic payment for use of the hermitage, the friars owed an annual tribute: one pound of virgin wax solemnly presented to San Lorenzo Cathedral.",
+      "The Capuchin painter in seclusion: Between 1597 and 1608 the famous artist Bernardo Strozzi, known as the Genoese Capuchin, lived and worked in the convent, painting Baroque masterpieces before later fleeing to Venice.",
+      "The façade moved back in 1949: Passing through the gate, visitors can see a 17th-century statue on the pediment. Until 1949 it stood directly on the church façade, which was then set back to enlarge the courtyard.",
+      "The permanent coastal Nativity: The church preserves a permanent Nativity scene with figures attributed to Maragliano's school. Its striking setting includes traditional boats and Genoa's Lanterna in the background.",
+      "The Gothic tablet of domina Leona: Just inside the hermitage is a Gothic inscription dated 1286, recording the generosity of noblewoman Leona Ususmaris, who financed an enlargement of the medieval complex.",
+      "The view that enchanted couples: The panoramic churchyard overlooks the harbour dramatically. For centuries the area was nicknamed the 'place of promises', where couples came at dusk to kiss while watching the sunset."
+    ],
+    "es": [
+      "El convento capuchino más antiguo: En las alturas entre Oregina y Castelletto, San Barnaba posee un récord histórico: es el asentamiento de frailes capuchinos más antiguo de toda Liguria.",
+      "El cementerio de las monjas de 1252: En 1252 el capítulo concedió a las cistercienses del antiguo eremitorio un privilegio poco común: poder crear un cementerio consagrado junto a los muros de la pequeña iglesia.",
+      "El tributo de cera a la Catedral: Como pago simbólico por el eremitorio, los frailes debían entregar cada año una libra de cera virgen a la Catedral de San Lorenzo.",
+      "El pintor capuchino en clausura: Entre 1597 y 1608 vivió y trabajó aquí Bernardo Strozzi, el famoso 'Capuchino Genovés'. En el convento pintó obras barrocas antes de huir posteriormente a Venecia.",
+      "La fachada retrasada en 1949: Al cruzar la verja se observa una estatua del siglo XVII sobre el frontón. Hasta 1949 estaba colocada directamente en la fachada, que luego fue retranqueada para ampliar el patio.",
+      "El belén permanente de la costa: La iglesia conserva un valioso belén permanente con figuras atribuidas a la escuela de Maragliano. Al fondo aparecen barcos tradicionales y la Lanterna de Génova.",
+      "La lápida gótica de domina Leona: Tras la entrada se conserva una inscripción gótica de 1286 que recuerda la generosidad de la noble Leona Ususmaris, financiadora de la ampliación del eremitorio medieval.",
+      "La vista que enamoró a las parejas: El atrio panorámico domina el puerto. Durante siglos fue llamado 'el lugar de las promesas', frecuentado al atardecer por parejas que iban a besarse frente a la puesta de sol."
+    ],
+    "fr": [
+      "Le plus ancien couvent capucin de Ligurie : Perché entre Oregina et Castelletto, San Barnaba détient un record historique : il s'agit du plus ancien établissement des frères capucins de toute la Ligurie.",
+      "Le cimetière des religieuses de 1252 : En 1252, le chapitre accorda aux cisterciennes de l'ancien ermitage un rare privilège : pouvoir aménager un cimetière consacré contre les murs de la petite église.",
+      "Le tribut de cire à la cathédrale : En contrepartie symbolique de l'ermitage, les frères devaient offrir chaque année une livre de cire vierge à la cathédrale San Lorenzo.",
+      "Le peintre capucin en clôture : Entre 1597 et 1608, le célèbre Bernardo Strozzi, dit le Capucin génois, vécut et travailla dans le couvent, où il peignit des chefs-d'œuvre avant de fuir plus tard vers Venise.",
+      "La façade reculée en 1949 : Après le portail, on remarque une statue du XVIIe siècle sur le fronton. Jusqu'en 1949 elle se trouvait directement sur la façade, ensuite reculée afin d'agrandir la cour.",
+      "La crèche permanente de la côte : La petite église conserve une précieuse crèche permanente avec des statuettes attribuées à l'école de Maragliano, devant un décor représentant barques et Lanterna de Gênes.",
+      "La plaque gothique de domina Leona : Une inscription gothique datée de 1286 rappelle la générosité de la noble Leona Ususmaris, qui finança l'agrandissement de l'ermitage médiéval.",
+      "La vue qui séduisait les amoureux : Le parvis panoramique domine le port. Pendant des siècles, le lieu fut surnommé « le lieu des promesses », où les couples venaient au crépuscule échanger un baiser devant le coucher du soleil."
+    ],
+    "ar": [
+      "أقدم دير للكبوشيين في ليغوريا: يقع San Barnaba على المرتفعات بين Oregina وCastelletto ويحمل رقماً تاريخياً، إذ يعد أقدم مقر لرهبان الكبوشيين في منطقة ليغوريا كلها.",
+      "مقبرة الراهبات سنة 1252: منح الفصل الكنسي عام 1252 الراهبات السيسترسيات اللواتي كن يدبرن المحبسة القديمة امتيازاً نادراً، وهو إنشاء مقبرة مقدسة بجوار جدران الكنيسة الصغيرة.",
+      "ضريبة الشمع للكاتدرائية: مقابل منح المحبسة كان على الرهبان تقديم جزية سنوية رمزية عبارة عن رطل من الشمع النقي إلى كاتدرائية San Lorenzo.",
+      "الرسام الكبوشي في العزلة: بين 1597 و1608 عاش وعمل في الدير الرسام الشهير Bernardo Strozzi، الملقب بالكبوشي الجنوي، حيث أنجز أعمالاً باروكية قبل أن يفر لاحقاً إلى البندقية.",
+      "إرجاع الواجهة إلى الخلف سنة 1949: بعد عبور البوابة يمكن رؤية تمثال من القرن السابع عشر على الجملون. حتى 1949 كان جزءاً من الواجهة نفسها، ثم أُرجعت الواجهة لتوسيع الفناء.",
+      "مغارة الميلاد الدائمة المطلة على الساحل: تحتفظ الكنيسة بمشهد ميلاد دائم ثمين مع تماثيل منسوبة إلى مدرسة Maragliano، وخلفية تصور القوارب التقليدية وفانوس جنوة Lanterna.",
+      "لوحة domina Leona القوطية: عند مدخل المحبسة توجد لوحة قوطية مؤرخة بسنة 1286 تشهد على كرم النبيلة Leona Ususmaris التي مولت توسيع مباني المحبسة الوسيطة.",
+      "الإطلالة التي أسرت العشاق: يوفر الفناء الأمامي منظراً رائعاً فوق الميناء. ولقرون عُرف المكان بلقب 'مكان الوعود'، حيث كانت الأزواج تأتي عند الغروب لتبادل القبل أمام الشمس الغاربة."
+    ],
+    "ru": [
+      "Старейший капуцинский монастырь Лигурии: Сан-Барнаба расположен на высотах между Oregina и Castelletto и считается самым старым поселением капуцинов во всей Лигурии.",
+      "Кладбище монахинь 1252 года: В 1252 году цистерцианкам, управлявшим первоначальной обителью, дали редкую привилегию — устроить освящённое кладбище рядом со стенами маленькой церкви.",
+      "Восковая дань собору: За право пользоваться обителью монахи ежегодно платили символическую дань — торжественно передавали один фунт чистого воска кафедральному собору Сан-Лоренцо.",
+      "Капуцин-художник в затворе: Между 1597 и 1608 годами в монастыре жил и работал знаменитый Бернардо Строцци, прозванный Генуэзским капуцином. Здесь он писал барочные произведения до своего последующего бегства в Венецию.",
+      "Фасад, отодвинутый в 1949 году: За входными воротами видна статуя XVII века на фронтоне. До 1949 года она находилась прямо на фасаде, который затем отодвинули назад ради расширения двора.",
+      "Постоянный прибрежный вертеп: Церковь хранит постоянный рождественский вертеп с фигурками школы Маральяно. На фоне изображены традиционные лодки и генуэзский маяк Lanterna.",
+      "Готическая плита domina Leona: У входа находится готическая надпись 1286 года, свидетельствующая о щедрости дворянки Леоны Ususmaris, профинансировавшей расширение средневековой обители.",
+      "Вид, покорявший влюблённых: Панорамный двор открывает эффектный вид на порт. Столетиями это место называли 'местом обещаний': пары приходили сюда на закате обменяться поцелуями."
+    ],
+    "zh": [
+      "利古里亚最古老的嘉布遣会修道院：San Barnaba 坐落在 Oregina 与 Castelletto 之间的高地，被认为是整个利古里亚地区最早的嘉布遣会定居点。",
+      "1252年的修女墓地：1252年，管理原始隐修院的熙笃会修女获得一项少见特权，可在小教堂墙边建立一处祝圣墓地。",
+      "献给大教堂的蜡税：作为获得隐修院使用权的象征性回报，修士每年要向 San Lorenzo 大教堂庄严奉上一磅纯蜡。",
+      "闭居修道院的嘉布遣画家：1597至1608年间，著名画家 Bernardo Strozzi——“热那亚嘉布遣修士”——曾在此居住创作，在后来逃往威尼斯前完成多件巴洛克作品。",
+      "1949年后退的立面：穿过入口可见山墙上的17世纪雕像。直到1949年，它还直接嵌在教堂立面上；后来为扩大院落，立面整体后退。",
+      "永久的海岸圣诞马槽：教堂保存一组珍贵的永久圣诞场景，人物归于 Maragliano 学派，背景中还能看到传统小艇与热那亚 Lanterna 灯塔。",
+      "domina Leona 的哥特碑：隐修院入口内有一块1286年的哥特式铭碑，纪念贵族女子 Leona Ususmaris 的慷慨，她曾资助中世纪建筑的扩建。",
+      "让情侣着迷的景色：教堂前广场高悬港口之上，视野极佳。几个世纪以来这里被称作“许诺之地”，情侣们常在黄昏来此看日落、交换亲吻。"
+    ],
+    "lij": [
+      "O convento cappuccin ciù antigo: San Barnaba, in sce-e altue tra Oregina e Castelletto, o gh'à un primato: o l'é o ciù antigo insediamento di Cappuccin de tutta a Liguria.",
+      "O çimiteio de monexinn-e do 1252: Into 1252 e çistercensi che gestivan o vegio romitaggio han avuo o raro privilegio de fâ un çimiteio consacrou a-o scianco da gésa.",
+      "O tributo de çeia a-o Dòmmo: Comme pagamento simbolico pe-o romitaggio, i fræ doveivan portâ ogni anno unna libbra de çeia vergine a-a Cattedrale de San Lorenzo.",
+      "O pittô cappuccin in clausura: Tra 1597 e 1608 into convento o l'à vixesto e travaggiou Bernardo Strozzi, o famoso Cappuccin Zeneize. Chì o l'à dipinto òpere barocche primma de scappâ a Venexia.",
+      "A façciata arretrâ into 1949: Dòppo o cancello se vede unna statoa do Seiçento in sciô timpano. Fin-o a-o 1949 a l'ea proprio in sciâ façciata, che pö a l'é stæta arretrâ pe slargâ o cortî.",
+      "O prexepio permanente da costa: A gésa a conserva un preçiozo prexepio fisso con figurinn-e attribuîe a-a scuola do Maragliano. Drio gh'é unna bella scenografia con gozzi e a Lanterna de Zêna.",
+      "A lapide gotica da domina Leona: A l'intrâ gh'é unna lapide gotica do 1286 che a ricòrda a generositæ da nobile Leona Ususmaris, che a financiò l'ingrandimento do romitaggio medievale.",
+      "A vista che incantava e coppiette: O sagròu o domina o porto con unna vista spettacolare. Pe secoli o l'é stæto ciamou 'o pòsto de promesse', frequentou a-o tramonto da coppie che se davan un baxo."
+    ]
+  };
+
+  root.church["San Bartolomeo degli Armeni"] = {
+    "it": [
+      "La reliquia bizantina del Santo Volto: Custodisce il leggendario Santo Mandillo, una reliquia bizantina in tempera donata alla città nel 1388. Raffigura fedelmente il viso di Gesù ed è considerata uno dei ritratti cristiani più antichi al mondo.",
+      "Nascosta dietro un palazzo moderno: Camminando lungo corso Armellini si scorge soltanto il campanile. La chiesa medievale è infatti completamente racchiusa e mimetizzata all'interno di un imponente palazzo condominiale ottocentesco per ragioni di spazio urbano.",
+      "Fondata dai monaci in fuga dai turchi: L'impianto originario del 1308 fu edificato da monaci Basiliani profughi dell'Armenia meridionale. Erano fuggiti in massa in Liguria per scampare alle violente invasioni e persecuzioni delle truppe turche in Oriente.",
+      "Il furto e il riscatto diplomatico francese: Nel 1507 la preziosa reliquia del Volto Santo fu sottratta e contrabbandata in Francia. Solo l'immediato e coraggioso intervento dei diplomatici e dei mercanti genovesi permise il riscatto e il trionfale ritorno in patria.",
+      "La cupola ottagonale superstite: Della primissima struttura trecentesca crollata nei secoli resta pochissimo. Le maestranze cinquecentesche hanno però salvato e inglobato la splendida cupola ottagonale con lucernaio, visibile tuttora sopra l'altare maggiore barocco.",
+      "La navata aggiunta dopo tre secoli: L'aula che accoglie oggi i visitatori non è quella medievale. Per far fronte al boom di pellegrini attirati dal Mandillo, nel 1595 fu aggiunta una spaziosa navata unica a botte.",
+      "Le epigrafi monumentali nell'atrio: Varcata la soglia dell'atrio coperto, le pareti si presentano come un libro di pietra. Custodiscono antiche epigrafi e targhe gotiche che documentano tutte le complesse trasformazioni subite dal monastero.",
+      "La reliquia del piede del Santo: Oltre al celeberrimo Mandillo, la chiesa ospita un altro importante tesoro devozionale. In una teca protetta è conservato un frammento osseo considerato l'autentico piede dell'apostolo San Bartolomeo, protettore del tempio."
+    ],
+    "en": [
+      "The Byzantine relic of the Holy Face: The church preserves the legendary Santo Mandillo, a Byzantine tempera relic donated to Genoa in 1388. It depicts the face of Jesus and is regarded as one of the oldest Christian portraits in the world.",
+      "Hidden behind a modern building: Walking along Corso Armellini, only the bell tower is clearly visible. The medieval church is almost completely enclosed inside a large 19th-century apartment building because of the dense urban setting.",
+      "Founded by monks fleeing the Turks: The original 1308 church was built by Basilian monks who had fled southern Armenia for Liguria to escape violent invasions and persecution in the East.",
+      "The theft and diplomatic recovery in France: In 1507 the precious Holy Face relic was stolen and smuggled to France. Prompt action by Genoese diplomats and merchants secured its recovery and triumphant return home.",
+      "The surviving octagonal dome: Very little remains of the first 14th-century structure, which changed and partly collapsed over time. Renaissance builders preserved and incorporated its fine octagonal dome and lantern above the Baroque high altar.",
+      "The nave added three centuries later: Today's main worship space is not the original medieval one. In 1595 a large barrel-vaulted single nave was added to accommodate the growing number of pilgrims drawn by the Mandillo.",
+      "The monumental inscriptions in the atrium: Inside the covered entrance, the walls resemble a stone book, filled with ancient inscriptions and Gothic plaques documenting the monastery's complex transformations.",
+      "The relic of the saint's foot: Besides the famous Mandillo, the church preserves another devotional treasure: a bone fragment traditionally regarded as the authentic foot of the apostle Saint Bartholomew, patron of the church."
+    ],
+    "es": [
+      "La reliquia bizantina del Santo Rostro: La iglesia conserva el legendario Santo Mandillo, una reliquia bizantina al temple donada a Génova en 1388. Representa el rostro de Jesús y se considera uno de los retratos cristianos más antiguos del mundo.",
+      "Escondida detrás de un edificio moderno: Desde Corso Armellini apenas se distingue el campanario. La iglesia medieval quedó casi totalmente encerrada dentro de un gran edificio residencial del siglo XIX por la densidad urbana.",
+      "Fundada por monjes huidos de los turcos: La iglesia original de 1308 fue construida por monjes basilianos refugiados del sur de Armenia, que llegaron a Liguria escapando de invasiones y persecuciones en Oriente.",
+      "El robo y el rescate diplomático en Francia: En 1507 la preciosa reliquia del Santo Rostro fue robada y llevada clandestinamente a Francia. La rápida intervención de diplomáticos y comerciantes genoveses permitió recuperarla y devolverla triunfalmente.",
+      "La cúpula octogonal superviviente: De la estructura del siglo XIV queda poco, pero los maestros del XVI conservaron e integraron la magnífica cúpula octogonal con linterna que todavía se ve sobre el altar mayor barroco.",
+      "La nave añadida tres siglos después: El espacio actual no es el medieval. En 1595 se añadió una amplia nave única con bóveda de cañón para acoger al creciente número de peregrinos atraídos por el Mandillo.",
+      "Las inscripciones monumentales del atrio: Tras cruzar el vestíbulo cubierto, las paredes parecen un libro de piedra. Conservan antiguas inscripciones y placas góticas que documentan las numerosas transformaciones del monasterio.",
+      "La reliquia del pie del santo: Además del célebre Mandillo, la iglesia conserva otro tesoro devocional: un fragmento óseo considerado tradicionalmente el auténtico pie del apóstol San Bartolomé."
+    ],
+    "fr": [
+      "La relique byzantine de la Sainte Face : L'église conserve le légendaire Santo Mandillo, une relique byzantine à la tempera offerte à Gênes en 1388. Elle représente le visage de Jésus et compte parmi les plus anciens portraits chrétiens connus.",
+      "Cachée derrière un immeuble moderne : Depuis Corso Armellini, on distingue surtout le clocher. L'église médiévale est presque entièrement enclavée dans un grand immeuble d'habitation du XIXe siècle en raison de la densité urbaine.",
+      "Fondée par des moines fuyant les Turcs : L'édifice de 1308 fut construit par des moines basiliens réfugiés d'Arménie méridionale, arrivés en Ligurie pour échapper aux invasions et persécutions en Orient.",
+      "Le vol et le rachat diplomatique en France : En 1507, la précieuse relique de la Sainte Face fut volée et emportée clandestinement en France. L'intervention rapide de diplomates et marchands génois permit sa récupération et son retour triomphal.",
+      "La coupole octogonale survivante : Il reste peu de la première structure du XIVe siècle, mais les bâtisseurs du XVIe siècle conservèrent et intégrèrent sa belle coupole octogonale à lanterne, encore visible au-dessus du maître-autel baroque.",
+      "La nef ajoutée trois siècles plus tard : L'espace actuel n'est pas la nef médiévale. En 1595, une grande nef unique couverte d'une voûte en berceau fut ajoutée pour accueillir l'afflux de pèlerins attirés par le Mandillo.",
+      "Les inscriptions monumentales de l'atrium : Dans l'entrée couverte, les murs ressemblent à un livre de pierre, avec inscriptions anciennes et plaques gothiques retraçant les transformations complexes du monastère.",
+      "La relique du pied du saint : Outre le célèbre Mandillo, l'église conserve un autre trésor : un fragment osseux traditionnellement considéré comme le pied authentique de l'apôtre saint Barthélemy."
+    ],
+    "ar": [
+      "أثر الوجه المقدس البيزنطي: تحتفظ الكنيسة بـ Santo Mandillo الأسطوري، وهو أثر بيزنطي منفذ بالتيمبرا قُدم إلى جنوة سنة 1388. يصور وجه يسوع ويعد من أقدم الصور المسيحية في العالم.",
+      "مخفية خلف مبنى حديث: أثناء السير في Corso Armellini لا يكاد يظهر سوى برج الأجراس. فالكنيسة الوسيطة محاطة تقريباً بالكامل داخل مبنى سكني ضخم من القرن التاسع عشر بسبب ضيق النسيج العمراني.",
+      "أسسها رهبان فروا من الأتراك: شُيدت البنية الأصلية عام 1308 على يد رهبان باسيليين لاجئين من جنوب أرمينيا، وصلوا إلى ليغوريا هرباً من الغزوات والاضطهادات العنيفة في الشرق.",
+      "السرقة والاستعادة الدبلوماسية في فرنسا: سنة 1507 سُرقت ذخيرة الوجه المقدس وهُربت إلى فرنسا. تدخل الدبلوماسيون والتجار الجنويون سريعاً، فاستعادوها وأعادوها إلى المدينة في عودة احتفالية.",
+      "القبة المثمنة الباقية: لم يبق الكثير من مبنى القرن الرابع عشر، لكن حرفيي القرن السادس عشر حافظوا على القبة المثمنة الرائعة ذات الفانوس ودمجوها في البناء فوق المذبح الباروكي الرئيسي.",
+      "الصحن الذي أضيف بعد ثلاثة قرون: القاعة الحالية ليست هي الكنيسة الوسيطة الأصلية. ففي 1595 أُضيف صحن واحد واسع ذو قبو برميلي ليستوعب تزايد الحجاج الذين جذبهم Mandillo.",
+      "النقوش الضخمة في المدخل: بعد عبور الردهة المغطاة تبدو الجدران ككتاب من الحجر، إذ تحمل نقوشاً قديمة ولوحات قوطية توثق التحولات المعقدة التي مر بها الدير.",
+      "ذخيرة قدم القديس: إلى جانب Mandillo الشهير، تحتفظ الكنيسة بكنز تعبدي آخر، وهو قطعة عظمية يعتقد تقليدياً أنها قدم الرسول القديس برتلماوس حامي الكنيسة."
+    ],
+    "ru": [
+      "Византийская реликвия Святого Лика: Здесь хранится легендарный Santo Mandillo — византийская темперная реликвия, подаренная Генуе в 1388 году. Она изображает лицо Христа и считается одним из древнейших христианских портретов.",
+      "Спрятанная за современным домом: На Corso Armellini хорошо видна почти только колокольня. Средневековая церковь оказалась почти полностью заключена внутри большого жилого дома XIX века из-за тесной городской застройки.",
+      "Основана монахами, бежавшими от турок: Первую церковь 1308 года построили василианские монахи-беженцы из южной Армении, прибывшие в Лигурию, спасаясь от вторжений и преследований на Востоке.",
+      "Кража и дипломатическое возвращение из Франции: В 1507 году реликвию Святого Лика похитили и тайно вывезли во Францию. Быстрое вмешательство генуэзских дипломатов и купцов позволило вернуть её домой.",
+      "Сохранившийся восьмиугольный купол: От первоначального здания XIV века осталось мало, но мастера XVI столетия сохранили и встроили его красивый восьмиугольный купол с фонарём над барочным главным алтарём.",
+      "Неф, добавленный три века спустя: Современное пространство не является средневековым. В 1595 году построили просторный однонефный зал с цилиндрическим сводом, чтобы вместить паломников, привлечённых Mandillo.",
+      "Монументальные надписи в атриуме: Стены крытого входа похожи на каменную книгу: на них сохранились старые эпиграфические надписи и готические плиты, рассказывающие о сложных перестройках монастыря.",
+      "Реликвия стопы святого: Помимо знаменитого Mandillo здесь хранится ещё одна святыня — фрагмент кости, традиционно считающийся настоящей стопой апостола Варфоломея, покровителя храма."
+    ],
+    "zh": [
+      "拜占庭“圣容”圣物：教堂保存着传奇的 Santo Mandillo，一件1388年赠予热那亚的拜占庭蛋彩圣物，描绘耶稣面容，被视为世界上最古老的基督教肖像之一。",
+      "藏在现代住宅楼后：沿 Corso Armellini 行走时几乎只能看到钟楼。由于城市空间紧张，中世纪教堂被19世纪的大型住宅建筑完全包围和掩藏。",
+      "由逃离土耳其人的修士建立：1308年的原始建筑由来自南亚美尼亚的巴西略会流亡修士建造，他们为躲避东方的入侵和迫害大批来到利古里亚。",
+      "圣物被盗后从法国追回：1507年，珍贵的圣容圣物被偷运到法国。热那亚外交官和商人迅速介入，最终赎回并将其隆重迎回故乡。",
+      "幸存的八角穹顶：14世纪最早的建筑几乎没有留下，但16世纪工匠保留并整合了精美的八角形采光穹顶，如今仍可在巴洛克主祭坛上方看到。",
+      "三百年后增建的中殿：今天的礼拜空间并非中世纪原貌。1595年，为容纳被 Mandillo 吸引而来的大量朝圣者，教堂增建了一座宽敞的单中殿桶形拱顶大厅。",
+      "门厅里的纪念铭文：穿过有顶门厅后，墙面像一本石头写成的书，保存着古老铭文和哥特式石牌，记录修道院复杂的历次改建。",
+      "圣人足部圣物：除著名的 Mandillo 外，教堂还保存另一件重要圣物——一段被传统认为属于宗徒圣巴尔多禄茂脚部的骨片。"
+    ],
+    "lij": [
+      "A reliquia bizantinn-a do Santo Volto: A gésa a conserva o leggendario Santo Mandillo, unna reliquia bizantinn-a a tempera donâ a Zêna into 1388. A mostra o volto de Gesù e a l'é considerâ tra i ritratti cristian ciù antighi do mondo.",
+      "Ascosa drio un palasso moderno: Caminando pe Corso Armellini se vede quasi solo o campanin. A gésa medievale a l'é infatti serrâ drento un grande palasso d'abitaçion do Ottocento pe-a mancanza de spaçio urbano.",
+      "Fondâ da monexi scappæ da-i turchi: A strutûa do 1308 a l'é stæta construta da monexi Basilian rifugiæ da l'Armenia do sud, arrivæ in Liguria pe scappâ da invasion e persecuzioin into Levante.",
+      "O furto e o riscatto diplomatico in Fransa: Into 1507 a preçioza reliquia do Volto Santo a l'é stæta robâ e portâ de nascosto in Fransa. O intervento rapido de diplomatici e mercanti zeneixi o l'à permesso de recuperâla e riportâla a casa.",
+      "A cupola ottagonale restâ: Da primma strutûa do Trexento o resta pöco, ma i mæstri do Cinquecento han sarvou e inglobou a bella cupola ottagonale co-o lanternin, ancora visibile in sciô artâ maggiore.",
+      "A navata azonta trei secoli dòppo: O spaçio d'ancheu o no l'é quello medievale. Into 1595 a l'é stæta azonta unna grande navata a botte pe fâ intrâ i tanti pellegrin attiræ da-o Mandillo.",
+      "E epigrafi monumentali inte l'atrio: Drento l'intrâ coverta e mænn-e paian un libro de pria, con antighe epigrafi e targhe gotiche che contan tutte e trasformaçioin do monastero.",
+      "A reliquia do pê do Santo: Oltre a-o famoso Mandillo, a gésa a conserva un'atra reliquia importante: un frammento d'osso considerou o pê autentico de San Bartolomeo Apostolo, protettô do tempio."
+    ]
+  };
+
+  root.church["Santa Maria della Sanità"] = {
+    "it": [
+      "La perla barocca isolata a Castelletto: Questa splendida chiesa abbaziale sorge arroccata lungo le ripidissime creuze collinari del quartiere. Rimasta esclusa dai flussi turistici di massa, conserva intatta la magica atmosfera di silenzio e meditazione seicentesca.",
+      "Nata come voto contro i contagi: L'edificio barocco fu promosso dai cittadini e dai frati nel Seicento. Fu consacrato alla \"Sanità\" come solenne ringraziamento per aver preservato le famiglie della collina dalle grandi epidemie di peste.",
+      "La cupola che domina la circonvallazione: Osservando la collina dal basso, la grande cupola emisferica spicca tra i palazzi moderni. È interamente rivestita di scaglie di ardesia nera ligure, che la proteggono dalle intemperie e dai venti salmastri porto.",
+      "Gli affreschi scenografici dei Piola: L'interno a pianta centrale ospita una pinacoteca straordinaria. La volta e il presbiterio sono decorati da meravigliosi affreschi prospettici realizzati a gara dalla celebre dinastia dei pittori Piola.",
+      "Il monastero confiscato dai re: Con l'arrivo dei Savoia e l'applicazione delle leggi ottocentesche di soppressione dei beni ecclesiastici, l'abbazia perse la clausura. Il grande convento adiacente fu confiscato e riutilizzato come sede per uffici pubblici.",
+      "L'effetto sorpresa della facciata sobria: Come per molti tesori della Superba, l'esterno si presenta severo e spoglio per mimetizzarsi tra i muri di cinta. L'obiettivo era amplificare lo stupore del fedele davanti agli ori e marmi policromi interni.",
+      "Le cripte sotterranee per i nobili: Sotto lo sfarzoso pavimento si estende un labirinto di camere sepolcrali. Vi riposano i resti di antichi patrioti e aristocratici genovesi che finanziarono la parrocchia chiedendo di essere seppelliti vicino all'altare.",
+      "Un'acustica pulita adatta ai cori: La rigorosa geometria della pianta circolare interna elimina i problemi di rimbombo della voce. Questa ingegnosa architettura la rende una delle sedi collinari preferite dai musicisti per i concerti d'organo barocco."
+    ],
+    "en": [
+      "An isolated Baroque jewel in Castelletto: This fine abbey church stands along the steep hillside creuze. Away from mass tourism, it preserves a remarkably quiet 17th-century atmosphere of reflection and meditation.",
+      "Founded as a vow against epidemics: Citizens and friars promoted the Baroque church in the 17th century. It was dedicated to 'Health' as a solemn thanksgiving for the protection of hillside families from major plague outbreaks.",
+      "The dome dominating the ring road: Seen from below, the large hemispherical dome rises above modern buildings. It is covered in dark Ligurian slate, protecting it from bad weather and salty winds from the harbour.",
+      "The Piola family's theatrical frescoes: The centrally planned interior contains an impressive collection of paintings. Vault and presbytery are covered with illusionistic frescoes associated with the celebrated Piola dynasty of painters.",
+      "The monastery confiscated by the kings: With Savoy rule and 19th-century laws suppressing ecclesiastical property, the abbey lost its enclosed monastic status. The large adjoining convent was confiscated and reused as public offices.",
+      "The surprise behind a sober façade: Like many Genoese treasures, the exterior is austere and discreet among surrounding walls. The contrast was designed to heighten the visitor's surprise at the gold and polychrome marble inside.",
+      "Underground crypts for nobles: Beneath the ornate floor extends a network of burial chambers containing remains of old Genoese patriots and aristocrats who supported the parish and asked to be buried near the altar.",
+      "Clear acoustics suited to choirs: The rigorous geometry of the circular interior reduces troublesome echo. This makes the church a favoured hillside venue for organ and early-music performances."
+    ],
+    "es": [
+      "Una joya barroca aislada en Castelletto: Esta hermosa iglesia abacial se alza junto a las empinadas creuze de la colina. Alejada del turismo de masas, conserva una atmósfera silenciosa y meditativa propia del siglo XVII.",
+      "Nacida como voto contra las epidemias: Ciudadanos y frailes promovieron el templo barroco en el siglo XVII. Fue dedicado a la 'Salud' como solemne agradecimiento por la protección de las familias de la colina frente a grandes epidemias de peste.",
+      "La cúpula que domina la circunvalación: Vista desde abajo, la gran cúpula hemisférica sobresale entre edificios modernos. Está revestida de pizarra negra ligur, que la protege del mal tiempo y de los vientos salinos del puerto.",
+      "Los frescos escenográficos de los Piola: El interior de planta central reúne un extraordinario conjunto pictórico. La bóveda y el presbiterio están cubiertos por frescos perspectivos vinculados a la célebre dinastía de los Piola.",
+      "El monasterio confiscado por los reyes: Con la llegada de los Saboya y las leyes del siglo XIX contra los bienes eclesiásticos, la abadía perdió la clausura. El gran convento vecino fue confiscado y reutilizado como oficinas públicas.",
+      "La sorpresa de una fachada sobria: Como muchos tesoros genoveses, el exterior es severo y discreto entre muros. El contraste aumentaba el asombro del visitante ante el oro y los mármoles policromos del interior.",
+      "Las criptas subterráneas de los nobles: Bajo el suntuoso pavimento se extiende una red de cámaras funerarias donde reposan antiguos patriotas y aristócratas genoveses que financiaron la parroquia y quisieron ser enterrados cerca del altar.",
+      "Una acústica limpia para los coros: La geometría rigurosa de la planta circular reduce el eco. Esta característica convierte la iglesia en una sede muy apreciada para conciertos de órgano y música antigua."
+    ],
+    "fr": [
+      "Une perle baroque isolée à Castelletto : Cette belle église abbatiale se dresse le long des raides creuze de la colline. Éloignée du tourisme de masse, elle conserve une atmosphère silencieuse et méditative typique du XVIIe siècle.",
+      "Née d'un vœu contre les épidémies : Citoyens et frères promurent l'église baroque au XVIIe siècle. Elle fut dédiée à la « Santé » en action de grâce pour la protection des familles de la colline contre les grandes épidémies de peste.",
+      "La coupole dominant la circonvallazione : Vue depuis le bas, la grande coupole hémisphérique se détache parmi les immeubles modernes. Elle est couverte d'ardoise noire ligure, qui la protège des intempéries et des vents salins du port.",
+      "Les fresques théâtrales des Piola : L'intérieur à plan central réunit un remarquable ensemble pictural. La voûte et le presbytère sont ornés de fresques perspectivistes liées à la célèbre dynastie des peintres Piola.",
+      "Le monastère confisqué par les rois : Sous les Savoie et les lois du XIXe siècle supprimant les biens ecclésiastiques, l'abbaye perdit sa clôture. Le grand couvent voisin fut confisqué et réutilisé comme bureaux publics.",
+      "La surprise derrière une façade sobre : Comme beaucoup de trésors génois, l'extérieur reste austère et discret. Ce contraste accentuait l'émerveillement devant les ors et les marbres polychromes de l'intérieur.",
+      "Les cryptes souterraines des nobles : Sous le somptueux pavement s'étend un réseau de chambres funéraires où reposent anciens patriotes et aristocrates génois ayant financé la paroisse et souhaité être enterrés près de l'autel.",
+      "Une acoustique claire adaptée aux chœurs : La géométrie rigoureuse du plan circulaire limite les réverbérations. Cette qualité en fait un lieu apprécié pour les concerts d'orgue et de musique ancienne."
+    ],
+    "ar": [
+      "جوهرة باروكية منعزلة في Castelletto: تقف هذه الكنيسة الجميلة على المنحدرات الحادة للحي. وبعيداً عن السياحة الجماعية ما تزال تحتفظ بأجواء هادئة وتأملية تشبه أجواء القرن السابع عشر.",
+      "وُلدت كنذر ضد الأوبئة: دعم المواطنون والرهبان بناء الكنيسة الباروكية في القرن السابع عشر. وكرست لـ'الصحة' كتعبير شكر رسمي على حماية عائلات التل من موجات الطاعون الكبرى.",
+      "القبة التي تهيمن على الطريق الدائري: من أسفل التل تبدو القبة النصف كروية الكبيرة واضحة بين الأبنية الحديثة. وهي مكسوة بألواح الأردواز الليغوري الأسود لتحميها من الطقس والرياح المالحة القادمة من الميناء.",
+      "جداريات Piola المسرحية: يضم الداخل ذو المخطط المركزي مجموعة فنية رائعة. وتغطي القبو والمذبح جداريات منظورية مرتبطة بأسرة Piola الشهيرة من الرسامين.",
+      "الدير الذي صادره الملوك: مع حكم سافوي وقوانين القرن التاسع عشر التي صادرت ممتلكات الكنيسة، فقد الدير نظام العزلة. وصودر المبنى المجاور الكبير وحُول إلى مكاتب عامة.",
+      "مفاجأة خلف واجهة بسيطة: مثل كثير من كنوز جنوة، يبدو الخارج صارماً ومتقشفاً بين الجدران المحيطة. وكان هذا التباين يزيد دهشة الداخل أمام الذهب والرخام متعدد الألوان.",
+      "سراديب النبلاء تحت الأرض: تحت الأرضية الفخمة يمتد متاهة من غرف الدفن تضم رفات وطنيين وأرستقراطيين جنويين قدامى دعموا الرعية وطلبوا الدفن قرب المذبح.",
+      "صوت نقي مناسب للجوقات: تقلل هندسة المخطط الدائري الصارمة من صدى الصوت. لذلك تعد الكنيسة موقعاً جبلياً محبوباً لحفلات الأرغن والموسيقى القديمة."
+    ],
+    "ru": [
+      "Уединённая барочная жемчужина Кастеллетто: Эта красивая аббатская церковь стоит вдоль крутых холмистых creuze. В стороне от массового туризма она сохраняет редкую атмосферу тишины и сосредоточенности XVII века.",
+      "Возникла как обет против эпидемий: Жители и монахи поддержали строительство барочного храма в XVII веке. Он был посвящён 'Здоровью' как благодарность за защиту семей на холме от крупных эпидемий чумы.",
+      "Купол над окружной дорогой: Снизу большой полусферический купол заметен среди современных домов. Он покрыт тёмным лигурийским сланцем, защищающим от непогоды и солёных ветров порта.",
+      "Театральные фрески Пиола: В центрическом интерьере собрана богатая живопись. Свод и пресвитерий украшены перспективными фресками, связанными со знаменитой династией художников Пиола.",
+      "Монастырь, конфискованный королями: При Савойской власти и законах XIX века о церковной собственности аббатство утратило закрытый статус. Большой соседний монастырь конфисковали и превратили в государственные учреждения.",
+      "Сюрприз за строгим фасадом: Как многие генуэзские сокровища, снаружи храм выглядит сурово и неброско. Контраст усиливает впечатление от золота и цветного мрамора внутри.",
+      "Подземные крипты для знати: Под роскошным полом находится сеть погребальных камер с останками генуэзских патриотов и аристократов, финансировавших приход и пожелавших быть похороненными рядом с алтарём.",
+      "Чистая акустика для хоров: Строгая геометрия круглого интерьера уменьшает неприятное эхо, поэтому храм ценят как площадку для органных концертов и старинной музыки."
+    ],
+    "zh": [
+      "Castelletto 山上的隐秘巴洛克明珠：这座美丽的修道院教堂依陡峭山坡 creuze 而建，远离大众旅游，至今仍保持着17世纪般安静而适合冥想的氛围。",
+      "作为抗疫还愿而建：17世纪，市民和修士推动建造这座巴洛克教堂，并以“健康”命名，用来庄严感谢山上家庭在大瘟疫中得到保护。",
+      "俯瞰环山大道的穹顶：从山下看，巨大的半球形穹顶突出在现代建筑之间，表面覆盖利古里亚黑色板岩，可抵御风雨和港口吹来的含盐海风。",
+      "Piola 家族的舞台式壁画：中央式内部拥有丰富绘画，拱顶与司祭席饰有精巧的透视壁画，与著名的 Piola 画家家族密切相关。",
+      "被王室没收的修道院：萨伏依统治以及19世纪针对教会财产的法令实施后，修道院失去封闭生活制度，旁边的大型会院被没收并改作公共办公机构。",
+      "朴素立面后的惊喜：如同许多热那亚珍宝，外观严肃低调，几乎藏在围墙之间。这种克制反而放大了进入后面对金饰和彩色大理石时的震撼。",
+      "贵族的地下墓室：华丽地面下分布着一系列墓室，安葬着曾资助堂区的热那亚旧贵族和爱国者，他们希望死后靠近祭坛。",
+      "适合合唱的清晰声学：圆形内部的严谨几何减少了回声，使这里成为山坡上很受欢迎的管风琴与古乐演出场所。"
+    ],
+    "lij": [
+      "A perla barocca ascosa a Castelletto: Sta bella gésa abbaziale a l'é arrampigâ longo e creuze ripide do quartê. Fò do turismo de massa, a conserva ancora unna atmosfera de silençio e meditaçion do Seiçento.",
+      "Nasciua comme voto contro e epidemie: Into Seiçento cittadini e fræ han promosso a gésa e l'han dedicâ a-a 'Sanitæ' comme ringraçiamento pe-a proteçion de famigge da collinn-a da-e grandi pestilense.",
+      "A cupola che domina a circonvallaçion: Vista da sotta, a grande cupola redonda a spunta tra i palassi moderni. A l'é coverta de ciappe d'ardexia negra ligure che a protezzan da-a piêuva e da-i venti sâ de porto.",
+      "I affreschi scenografichi di Piola: L'interno a pianta centrale o l'é ricco de pittue. Vòtta e presbiterio son decoræ con affreschi prospettici ligæ a-a famosa famiggia de pittô Piola.",
+      "O monastero confiscou da-i re: Co-i Savoia e-e leggi do Ottocento contro i ben ecclesiastichi, l'abbazia a l'à perso a clausura. O grande convento vexin o l'é stæto confiscou e adêuviòu pe uffixi pubblici.",
+      "A sorpresa drio unna façciata sobria: Comme tanti tesöi de Zêna, de fò a gésa a l'é severa e discreta. O contrasto o rende ciù forte a sorpresa davanti a l'öu e a-i marmi coloræ de drento.",
+      "E cripte sotta tæra pe-i nobili: Sotta o pavimento ricco gh'é un intreccio de camere funerarie con resti de patrissi e nobili zeneixi che han sostegnûo a parrocchia e volevan riposâ vexin a l'artâ.",
+      "Un'acustica netta pe-i cori: A geometria rigorosa da pianta redonda a limita o rimbombo. Pe questo a gésa a l'é appreçâ pe concerti d'organo e de muxica antiga."
+    ]
+  };
+
+  root.church["Santuario della Madonnetta"] = {
+    "it": [
+      "Il vero nome nascosto Carbonara: Nonostante tutti la chiamino affettuosamente \"Madonnetta\", il titolo ufficiale è un altro. Si chiama Santuario di Nostra Signora Assunta di Carbonara, eretto in soli quindici mesi tra il 1695 e il 1696.",
+      "Il presepe perenne della scuola ligure: Nella cripta sotterranea è allestito uno dei presepi artistici più famosi d'Italia. È un presepe settecentesco permanente con statuine monumentali del Maragliano, immerse in una fedele ricostruzione della Genova medievale.",
+      "La statua di alabastro che dà il nome: Il vezzeggiativo \"Madonnetta\" deriva da una splendida statua in alabastro della Madonna col Bambino. Donata nel 1689, la scultura è talmente piccola, dolce e curata nei dettagli da essere chiamata affettuosamente così.",
+      "Il patto delle chiavi della città: Il santuario godeva di un prestigio politico immenso. Ogni trent'anni, le massime autorità della Repubblica di Genova salivano in processione per consegnare cerimonialmente le chiavi d'oro della città ai piedi della Vergine.",
+      "Il sagrato rissoeu geometrico in bianco e nero: Il piazzale esterno ospita uno spettacolare sagrato del 1732 realizzato da Bartolomeo Storace. È un mosaico ligure in ciottoli di mare bianchi e neri che disegna geometrie perfette, un unicum collinare.",
+      "Le 25.000 reliquie dei martiri d'Oriente: Più che una chiesa, è uno scrigno di reperti sacri. Nelle cappelle e nello scurolo sono catalogate ed esposte oltre 25.000 reliquie storiche di santi, raccolte dai frati agostiniani.",
+      "Progettata dal frate architetto Ricca: Il disegno della splendida pianta ottagonale e delle tre rampe scenografiche si deve ad Anton Maria Ricca. L'ingegnoso progettista barocco decise di farsi frate agostiniano scalzo proprio all'interno del santuario.",
+      "La vista aerea a picco sul Golfo: Situata a ridosso delle Mura Nuove, la chiesa offre un panorama mozzafiato. Nel Medioevo la sua posizione era strategica per sorvegliare l'intero arco portuale prevenendo i bombardamenti delle flotte nemiche."
+    ],
+    "en": [
+      "The hidden official name, Carbonara: Although everyone affectionately calls it the 'Madonnetta', its formal title is Santuario di Nostra Signora Assunta di Carbonara. It was built in only fifteen months between 1695 and 1696.",
+      "The permanent Ligurian-school Nativity: The underground crypt contains one of Italy's best-known artistic Nativity scenes, an 18th-century permanent display with monumental figures from Maragliano's school set in a reconstruction of medieval Genoa.",
+      "The alabaster statue that gave it its name: The nickname 'Madonnetta' comes from a small alabaster Madonna and Child donated in 1689. Its delicate scale and detail inspired the affectionate diminutive still used today.",
+      "The pact of the city's keys: The sanctuary once enjoyed immense political prestige. Every thirty years, the highest authorities of the Republic of Genoa climbed here in procession to ceremonially place the city's golden keys at the Virgin's feet.",
+      "The black-and-white geometric risseu churchyard: The outdoor forecourt preserves a spectacular 1732 pebble mosaic by Bartolomeo Storace. White and black sea stones form precise Ligurian geometric patterns.",
+      "The 25,000 relics of Eastern martyrs: More than a church, the sanctuary is a treasury of sacred objects. Over 25,000 historic relics of saints collected by Augustinian friars are catalogued in its chapels and lower shrine.",
+      "Designed by the friar-architect Ricca: Anton Maria Ricca designed the fine octagonal plan and three dramatic stairways. The gifted Baroque architect later chose to become a Discalced Augustinian friar within the sanctuary itself.",
+      "The aerial view over the Gulf: Standing near the Mura Nuove, the sanctuary commands a breathtaking view. Its elevated position offered a strategic lookout over the whole harbour arc and approaching fleets."
+    ],
+    "es": [
+      "El verdadero nombre oculto, Carbonara: Aunque todos la llaman cariñosamente 'Madonnetta', su título oficial es Santuario di Nostra Signora Assunta di Carbonara. Fue construido en solo quince meses entre 1695 y 1696.",
+      "El belén permanente de escuela ligur: La cripta alberga uno de los belenes artísticos más famosos de Italia, una instalación permanente del siglo XVIII con grandes figuras de la escuela de Maragliano en una reconstrucción de la Génova medieval.",
+      "La estatua de alabastro que le dio el nombre: El diminutivo 'Madonnetta' procede de una pequeña y delicada Virgen con el Niño de alabastro donada en 1689, cuyo tamaño y detalle inspiraron el apodo afectuoso.",
+      "El pacto de las llaves de la ciudad: El santuario tuvo enorme prestigio político. Cada treinta años, las máximas autoridades de la República subían en procesión para depositar ceremoniosamente las llaves de oro de Génova a los pies de la Virgen.",
+      "El atrio geométrico de risseu blanco y negro: El exterior conserva un espectacular mosaico de guijarros de 1732 realizado por Bartolomeo Storace, con piedras blancas y negras formando geometrías ligures muy precisas.",
+      "Las 25.000 reliquias de mártires de Oriente: Más que una iglesia, es un gran relicario. En capillas y espacios inferiores se catalogan más de 25.000 reliquias históricas de santos reunidas por los agustinos.",
+      "Diseñada por el fraile arquitecto Ricca: Anton Maria Ricca proyectó la bella planta octogonal y las tres rampas escenográficas. El brillante arquitecto barroco decidió después convertirse en agustino descalzo dentro del propio santuario.",
+      "La vista aérea sobre el Golfo: Junto a las Mura Nuove, el santuario ofrece un panorama espectacular. Su posición elevada permitía vigilar todo el arco portuario y las flotas que se acercaban."
+    ],
+    "fr": [
+      "Le vrai nom caché, Carbonara : Malgré le surnom affectueux « Madonnetta », le titre officiel est Santuario di Nostra Signora Assunta di Carbonara. L'édifice fut construit en seulement quinze mois entre 1695 et 1696.",
+      "La crèche permanente de l'école ligure : La crypte conserve l'une des crèches artistiques les plus célèbres d'Italie, un ensemble permanent du XVIIIe siècle avec de grandes statuettes de l'école de Maragliano dans une reconstitution de la Gênes médiévale.",
+      "La statue d'albâtre qui a donné son nom : Le surnom « Madonnetta » vient d'une petite et délicate Vierge à l'Enfant en albâtre, offerte en 1689. Sa taille et son raffinement ont inspiré ce diminutif affectueux.",
+      "Le pacte des clés de la ville : Le sanctuaire jouissait d'un immense prestige politique. Tous les trente ans, les plus hautes autorités de la République montaient en procession remettre symboliquement les clés d'or de Gênes aux pieds de la Vierge.",
+      "Le parvis géométrique en risseu noir et blanc : La cour extérieure conserve un spectaculaire pavement de galets de 1732 réalisé par Bartolomeo Storace, dessinant des motifs ligures précis en pierres blanches et noires.",
+      "Les 25 000 reliques des martyrs d'Orient : Plus qu'une église, le sanctuaire est un véritable trésor de reliques. Plus de 25 000 pièces historiques de saints rassemblées par les augustins sont cataloguées dans les chapelles et le sanctuaire inférieur.",
+      "Conçu par le frère architecte Ricca : Anton Maria Ricca dessina le beau plan octogonal et les trois rampes théâtrales. Ce brillant architecte baroque choisit ensuite de devenir augustin déchaussé dans le sanctuaire lui-même.",
+      "La vue aérienne sur le Golfe : Près des Mura Nuove, le sanctuaire offre un panorama saisissant. Sa position dominante permettait de surveiller tout l'arc portuaire et les flottes approchant de la ville."
+    ],
+    "ar": [
+      "الاسم الرسمي المخفي، Carbonara: رغم أن الجميع يسميه بمحبة 'Madonnetta'، فإن اسمه الرسمي هو Santuario di Nostra Signora Assunta di Carbonara. وقد بُني خلال خمسة عشر شهراً فقط بين 1695 و1696.",
+      "مغارة الميلاد الدائمة من المدرسة الليغورية: تضم السراديب أحد أشهر مشاهد الميلاد الفنية في إيطاليا، وهو عرض دائم من القرن الثامن عشر بتماثيل كبيرة من مدرسة Maragliano وسط إعادة بناء لجنوة في العصور الوسطى.",
+      "تمثال المرمر الذي أعطاه الاسم: يأتي لقب 'Madonnetta' من تمثال صغير ودقيق للعذراء والطفل من المرمر أُهدي عام 1689، وقد ألهم حجمه الرقيق الاسم التصغيري المحبب المستخدم حتى اليوم.",
+      "عهد مفاتيح المدينة: تمتع المزار بمكانة سياسية هائلة. كل ثلاثين عاماً كانت أعلى سلطات جمهورية جنوة تصعد في موكب لتضع مفاتيح المدينة الذهبية عند قدمي العذراء في احتفال رسمي.",
+      "فناء risseu الهندسي بالأبيض والأسود: يحتفظ الفناء الخارجي بفسيفساء حصوية رائعة من سنة 1732 نفذها Bartolomeo Storace، باستخدام حصى البحر الأبيض والأسود لتكوين زخارف ليغورية دقيقة.",
+      "خمسة وعشرون ألف ذخيرة لشهداء الشرق: المزار أشبه بخزانة مقدسات ضخمة. ففي المصليات والجزء السفلي أكثر من 25 ألف ذخيرة تاريخية لقديسين جمعها رهبان أغسطينيون.",
+      "صممه الراهب المعماري Ricca: وضع Anton Maria Ricca تصميم المخطط المثمن الجميل والسلالم الثلاثة المسرحية. ثم اختار هذا المعماري الباروكي المبدع أن يصبح راهباً أغسطينياً حافياً داخل المزار نفسه.",
+      "إطلالة جوية فوق الخليج: يقع المزار قرب Mura Nuove ويطل على منظر مذهل. وكان موقعه المرتفع يسمح بمراقبة كامل قوس الميناء والأساطيل القادمة نحو المدينة."
+    ],
+    "ru": [
+      "Скрытое официальное имя — Carbonara: Хотя все ласково называют храм 'Madonnetta', его официальное название — Santuario di Nostra Signora Assunta di Carbonara. Его возвели всего за пятнадцать месяцев в 1695–1696 годах.",
+      "Постоянный вертеп лигурийской школы: В подземной крипте находится один из самых известных художественных вертепов Италии — постоянная композиция XVIII века с крупными фигурами школы Маральяно на фоне средневековой Генуи.",
+      "Алебастровая статуя, давшая название: Прозвище 'Madonnetta' происходит от небольшой алебастровой Мадонны с Младенцем, подаренной в 1689 году. Её миниатюрность и тонкость породили ласковое уменьшительное имя.",
+      "Договор о ключах города: Святилище обладало огромным политическим престижем. Каждые тридцать лет высшие власти Республики поднимались сюда процессией и церемониально клали золотые ключи Генуи к ногам Богородицы.",
+      "Чёрно-белый геометрический risseu: На площади сохранилось эффектное галечное мощение 1732 года работы Bartolomeo Storace, где белые и чёрные морские камни складываются в точные лигурийские узоры.",
+      "25 000 реликвий восточных мучеников: Святилище похоже на огромную сокровищницу. В капеллах и нижнем помещении каталогизировано более 25 000 исторических реликвий святых, собранных августинцами.",
+      "Проект монаха-архитектора Ricca: Anton Maria Ricca создал прекрасный восьмиугольный план и три театральные лестницы. Позднее талантливый барочный архитектор сам стал босым августинцем в этом святилище.",
+      "Панорамный вид на залив: Расположенный рядом с Mura Nuove храм открывает потрясающий вид. Высокая позиция позволяла наблюдать всю дугу порта и приближавшиеся к Генуе флоты."
+    ],
+    "zh": [
+      "隐藏的正式名称 Carbonara：尽管大家都亲切称它为“Madonnetta”，正式名称其实是 Santuario di Nostra Signora Assunta di Carbonara。建筑在1695至1696年间仅用十五个月完成。",
+      "永久的利古里亚圣诞马槽：地下墓室内布置着意大利最著名的艺术圣诞场景之一，是一组18世纪永久展示，配有 Maragliano 学派的大型人物，并重现中世纪热那亚。",
+      "赋予昵称的雪花石膏圣母像：“Madonnetta”这一昵称来自1689年获赠的一尊小巧精致的雪花石膏圣母子像，正因体量娇小和细节柔美而得名。",
+      "城市金钥匙的仪式：这座圣所曾拥有极高政治地位。每隔三十年，共和国最高官员都会列队登山，将象征热那亚的金钥匙庄严放在圣母脚下。",
+      "黑白几何 risseu 前庭：户外广场保存着 Bartolomeo Storace 于1732年铺设的壮观鹅卵石图案，以黑白海石构成精确的利古里亚几何纹样。",
+      "来自东方殉道者的2.5万件圣物：这里更像一个巨型圣物宝库。小堂和下层圣所中登记并陈列着超过25,000件圣人圣物，由奥古斯丁会修士长期收集。",
+      "由修士建筑师 Ricca 设计：精美八角形平面和三组富有戏剧感的坡道出自 Anton Maria Ricca。后来这位才华横溢的巴洛克建筑师本人也在圣所中成为赤足奥古斯丁修士。",
+      "俯瞰海湾的高空视野：圣所紧邻 Mura Nuove，拥有震撼全景。其高位曾可观察整个港湾弧线以及接近城市的舰队。"
+    ],
+    "lij": [
+      "O vero nomme ascoso Carbonara: Anche se tutti a ciamman con affetto 'Madonnetta', o titolo ufficiale o l'é Santuario di Nostra Signora Assunta di Carbonara. O l'é stæto construto in solo chinze meixi tra 1695 e 1696.",
+      "O prexepio permanente da scuola ligure: Inta cripta gh'é un di prexepi artistichi ciù famoxi d'Italia, fisso da-o Settecento, con grande figurinn-e da scuola do Maragliano inte unna ricostruçion da Zêna medievale.",
+      "A statoa d'alabastro che a ghe dà o nomme: O nomignolo 'Madonnetta' o ven da unna piccin-a statoa d'alabastro da Madonna co-o Bambin, donâ into 1689. A l'é tanto piccin-a e delicâ che o nomme affettuoso o l'é restou.",
+      "O patto de ciævi da çittæ: O santuario o l'aveiva un grande prestigio politico. Ogni trenta anni e massime autoritæ da Repubbrica e montavan in procession pe consegnâ e ciævi d'öu de Zêna a-i pê da Madonna.",
+      "O sagròu risseu giancon e negro: Fò gh'é un spettacolare risseu do 1732 fæto da Bartolomeo Storace, con ciottoli de mâ gianchi e negri messi in geometrie perfette tipiche liguri.",
+      "E 25.000 reliquie di martiri d'Oriente: O santuario o l'é quasi un scrigno de reliquie. Inte cappelle e into scurolo se conservan ciù de 25.000 reliquie de santi raccolte da-i fræ agostinian.",
+      "Progettou da-o fræ architetto Ricca: A bella pianta ottagonale e-e trei rampe scenografiche son de Anton Maria Ricca. O bravo architetto barocco o l'à pö deciso de diventâ agostinian scalzo proprio chì.",
+      "A vista a picco in sciô Golfo: Vexin a-e Mûe Neuve, o santuario o gh'à unna vista magnifica. A posiçion arta a permetteva de controllâ tutto o porto e-e flotte che s'avexinavan a Zêna."
+    ]
+  };
+
 })();
