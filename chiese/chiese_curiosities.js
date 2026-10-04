@@ -4236,4 +4236,502 @@
   ]
   };
 
+  root.church["San Francesco da Paola"] = {
+  "it": [
+    "Il faro spirituale dei marinai: Data la posizione a 130 metri d'altezza, lo storico complesso fungeva da riferimento per i navigatori. La gente di mare salutava la sua sagoma sparando a salve per invocare protezione dalle tempeste.",
+    "La collezione degli ex-voto marittimi: Le pareti interne custodiscono centinaia di commoventi quadri, salvagenti e modellini di navi. Sono i ringraziamenti lasciati nei secoli da passeggeri e capitani scampati a naufragi terribili e tempeste oceaniche.",
+    "La profezia della collina di Caldetto: Durante il suo storico soggiorno a Genova nel 1483, San Francesco profetizzò la nascita del santuario. La struttura fu edificata subito dopo grazie alla donazione del terreno del patrizio Baldassarre Lomellini.",
+    "La campana serale per i dispersi: Ogni sera al crepuscolo, la grande torre suona la suggestiva \"Campana del mare\". I suoi rintocchi ricordano e onorano la memoria di tutti i marinai genovesi scomparsi tra i flutti del Mediterraneo.",
+    "La trincea contro l'invasione austriaca: Durante la celebre rivolta popolare del Balilla del 1746, il convento divenne una roccaforte militare. I patrioti ne fortificarono le mura per bombardare le truppe austriache che assediavano la città.",
+    "La statua d'argento nelle creuze: Per celebrare la festa patronale a maggio, una maestosa statua d'argento viene portata a spalla dai fedeli. La processione si inerpica lungo le ripidissime e caratteristiche creuze della collina di San Teodoro.",
+    "L'orologio solare dei capitani portuali: Sulla facciata della chiesa svetta un'antica meridiana, visibile perfettamente dal porto. Nei secoli passati, i capitani delle navi usavano questo quadrante solare per regolare i cronometri di bordo prima di prendere il largo.",
+    "I marmi barocchi difesi dalle guerre: I bombardamenti del porto danneggiarono pesantemente il tetto e le vetrate. I restauri del dopoguerra rimossero le pesanti aggiunte ottocentesche, restituendo all'interno la sfolgorante luminosità barocca e i preziosi altari originari dei Doria."
+  ],
+  "en": [
+    "The sailors' spiritual beacon: Standing about 130 metres above sea level, the historic complex served as a landmark for navigators. Seafarers would salute its silhouette with blank cannon shots, asking for protection from storms.",
+    "The collection of maritime ex-votos: The interior walls preserve hundreds of moving paintings, lifebuoys and model ships. They are thank-you offerings left over the centuries by passengers and captains who survived shipwrecks and violent ocean storms.",
+    "The prophecy on Caldetto hill: During his historic stay in Genoa in 1483, Saint Francis is said to have foretold the birth of the sanctuary. It was built soon afterwards thanks to land donated by the patrician Baldassarre Lomellini.",
+    "The evening bell for those lost at sea: Every evening at dusk, the great tower rings the evocative 'Bell of the Sea'. Its tolls remember and honour all Genoese sailors who disappeared among the waves of the Mediterranean.",
+    "The trench against the Austrian invasion: During the famous Balilla uprising of 1746, the convent became a military stronghold. Patriots fortified its walls and used the position against Austrian troops besieging the city.",
+    "The silver statue along the creuze: For the patronal feast in May, a majestic silver statue is carried on the shoulders of the faithful. The procession climbs the steep, characteristic creuze of the San Teodoro hillside.",
+    "The harbour captains' sundial: An old sundial stands on the church façade and is clearly visible from the port. In past centuries, ship captains used it to set their onboard chronometers before heading out to sea.",
+    "Baroque marbles defended through war: Bombing of the harbour badly damaged the roof and windows. Post-war restoration removed heavy 19th-century additions, restoring the bright Baroque character of the interior and the precious original Doria altars."
+  ],
+  "es": [
+    "El faro espiritual de los marineros: Situado a unos 130 metros de altura, el histórico complejo servía de referencia para los navegantes. La gente de mar saludaba su silueta con salvas para pedir protección contra las tempestades.",
+    "La colección de exvotos marítimos: Las paredes interiores conservan cientos de cuadros, salvavidas y maquetas de barcos. Son agradecimientos dejados durante siglos por pasajeros y capitanes que sobrevivieron a naufragios y violentas tormentas oceánicas.",
+    "La profecía de la colina de Caldetto: Durante su estancia en Génova en 1483, San Francisco habría profetizado el nacimiento del santuario. Poco después se construyó gracias a la donación del terreno del patricio Baldassarre Lomellini.",
+    "La campana vespertina por los desaparecidos: Cada tarde, al anochecer, la gran torre hace sonar la sugestiva 'Campana del mar'. Sus toques recuerdan y honran a todos los marineros genoveses desaparecidos entre las aguas del Mediterráneo.",
+    "La trinchera contra la invasión austríaca: Durante la famosa revuelta del Balilla de 1746, el convento se convirtió en una fortaleza militar. Los patriotas reforzaron sus muros para atacar a las tropas austríacas que sitiaban la ciudad.",
+    "La estatua de plata por las creuze: Para la fiesta patronal de mayo, una majestuosa estatua de plata es llevada a hombros por los fieles. La procesión asciende por las empinadísimas y características creuze de la colina de San Teodoro.",
+    "El reloj solar de los capitanes del puerto: En la fachada destaca un antiguo reloj de sol, perfectamente visible desde el puerto. Antiguamente los capitanes lo utilizaban para ajustar los cronómetros de a bordo antes de hacerse a la mar.",
+    "Los mármoles barrocos defendidos de las guerras: Los bombardeos del puerto dañaron gravemente tejado y vidrieras. La restauración de posguerra eliminó pesados añadidos del siglo XIX y devolvió al interior su luminosidad barroca y los valiosos altares originales de los Doria."
+  ],
+  "fr": [
+    "Le phare spirituel des marins : Placé à environ 130 mètres d'altitude, le complexe historique servait de repère aux navigateurs. Les gens de mer saluaient sa silhouette par des salves afin d'invoquer une protection contre les tempêtes.",
+    "La collection d'ex-voto maritimes : Les murs intérieurs conservent des centaines de tableaux, bouées et maquettes de navires. Ce sont des remerciements laissés au fil des siècles par des passagers et capitaines ayant survécu à des naufrages et tempêtes océaniques.",
+    "La prophétie de la colline de Caldetto : Lors de son séjour historique à Gênes en 1483, saint François aurait prédit la naissance du sanctuaire. Celui-ci fut construit peu après grâce au terrain offert par le patricien Baldassarre Lomellini.",
+    "La cloche du soir pour les disparus : Chaque soir au crépuscule, la grande tour fait sonner la suggestive « Cloche de la mer ». Ses coups rappellent et honorent tous les marins génois disparus dans les eaux de la Méditerranée.",
+    "La tranchée contre l'invasion autrichienne : Pendant la célèbre révolte du Balilla en 1746, le couvent devint une forteresse militaire. Les patriotes renforcèrent ses murs pour combattre les troupes autrichiennes qui assiégeaient la ville.",
+    "La statue d'argent dans les creuze : Pour la fête patronale de mai, une majestueuse statue d'argent est portée sur les épaules des fidèles. La procession gravit les très raides et caractéristiques creuze de la colline de San Teodoro.",
+    "Le cadran solaire des capitaines du port : Un ancien cadran solaire se détache sur la façade et reste parfaitement visible depuis le port. Autrefois, les capitaines l'utilisaient pour régler leurs chronomètres de bord avant de prendre la mer.",
+    "Les marbres baroques préservés des guerres : Les bombardements du port endommagèrent fortement toiture et vitraux. Les restaurations d'après-guerre supprimèrent de lourds ajouts du XIXe siècle et rendirent à l'intérieur sa luminosité baroque et ses précieux autels Doria."
+  ],
+  "ar": [
+    "المنارة الروحية للبحارة: بفضل موقع المجمع التاريخي على ارتفاع نحو 130 متراً، كان معلماً يهتدي به الملاحون. وكان البحارة يحيون ظله بإطلاق طلقات احتفالية طالبين الحماية من العواصف.",
+    "مجموعة النذور البحرية: تحتفظ الجدران الداخلية بمئات اللوحات وأطواق النجاة ونماذج السفن المؤثرة. وهي هدايا شكر تركها عبر القرون ركاب وقباطنة نجوا من حطام السفن والعواصف البحرية العنيفة.",
+    "نبوءة تل كالدِتّو: خلال إقامة القديس فرنسيس التاريخية في جنوة عام 1483، يُقال إنه تنبأ بقيام المزار. وقد شُيد بعد ذلك بقليل بفضل تبرع النبيل Baldassarre Lomellini بالأرض.",
+    "جرس المساء للمفقودين في البحر: عند الغروب كل مساء يدق البرج الكبير ما يعرف بـ«جرس البحر». وتخلد رناته ذكرى جميع البحارة الجنويين الذين اختفوا بين أمواج البحر المتوسط.",
+    "الخندق ضد الغزو النمساوي: خلال انتفاضة باليلا الشهيرة عام 1746 تحول الدير إلى موقع عسكري حصين. وقد عزز الوطنيون جدرانه واستخدموه لمواجهة القوات النمساوية التي كانت تحاصر المدينة.",
+    "التمثال الفضي في طرق الـcreuze: في عيد الشفيع خلال مايو يحمل المؤمنون تمثالاً فضياً مهيباً على أكتافهم. ويتسلق الموكب طرق الـcreuze شديدة الانحدار والمميزة على تلة San Teodoro.",
+    "المزولة الخاصة بقباطنة الميناء: تعلو واجهة الكنيسة مزولة قديمة يمكن رؤيتها بوضوح من الميناء. وكان قباطنة السفن في الماضي يستخدمونها لضبط ساعات الملاحة قبل الإبحار.",
+    "رخام الباروك الذي صمد أمام الحروب: ألحقت قنابل الميناء أضراراً جسيمة بالسقف والنوافذ. وبعد الحرب أزيلت إضافات القرن التاسع عشر الثقيلة، فعاد الداخل إلى إشراقه الباروكي وظهرت مذابح Doria الأصلية الثمينة."
+  ],
+  "ru": [
+    "Духовный маяк моряков: Исторический комплекс стоит примерно на высоте 130 метров и служил ориентиром для мореплавателей. Моряки приветствовали его силуэт холостыми залпами, прося защиты от штормов.",
+    "Коллекция морских ex-voto: Внутри хранятся сотни трогательных картин, спасательных кругов и моделей кораблей. Их оставляли пассажиры и капитаны, пережившие кораблекрушения и сильные океанские штормы.",
+    "Пророчество на холме Кальдетто: Во время пребывания в Генуе в 1483 году святой Франциск, по преданию, предсказал появление святилища. Вскоре его построили на земле, подаренной патрицием Baldassarre Lomellini.",
+    "Вечерний колокол по погибшим в море: Каждый вечер на закате большая башня звонит в так называемый «Колокол моря». Его удары напоминают обо всех генуэзских моряках, исчезнувших в волнах Средиземного моря.",
+    "Укрепление против австрийцев: Во время знаменитого восстания Балиллы 1746 года монастырь превратился в военный опорный пункт. Патриоты укрепили стены и использовали позицию против австрийских войск, осаждавших город.",
+    "Серебряная статуя на creuze: Во время майского праздника покровителя верующие несут на плечах величественную серебряную статую. Процессия поднимается по крутым характерным creuze холма San Teodoro.",
+    "Солнечные часы портовых капитанов: На фасаде церкви сохранились старинные солнечные часы, хорошо видимые из порта. В прошлые века капитаны использовали их, чтобы сверять корабельные хронометры перед выходом в море.",
+    "Барочный мрамор, переживший войны: Бомбардировки порта сильно повредили крышу и витражи. Послевоенная реставрация убрала тяжёлые добавления XIX века и вернула интерьеру барочную яркость и ценные первоначальные алтари Doria."
+  ],
+  "zh": [
+    "水手的精神灯塔：历史建筑群位于约130米高处，曾是航海者的重要视觉标志。海员们会向它的轮廓鸣放礼炮，祈求在风暴中得到庇护。",
+    "海上还愿物收藏：内部墙面保存着数百幅画作、救生圈和船模。它们是历代乘客和船长在逃过海难与猛烈远洋风暴后留下的感谢祭品。",
+    "卡尔代托山的预言：传说圣方济各1483年在热那亚停留时预言了圣所的诞生。随后不久，贵族 Baldassarre Lomellini 捐出土地，建筑由此兴建。",
+    "为海上失踪者鸣响的晚钟：每天黄昏，大钟楼都会敲响富有象征意义的“海之钟”。钟声纪念所有消失在地中海波涛中的热那亚水手。",
+    "反抗奥地利入侵的战壕：1746年著名的 Balilla 起义期间，修道院变成军事据点。爱国者加固围墙，以此对抗围困城市的奥地利军队。",
+    "穿行 creuze 的银像：每年五月主保节，一尊宏伟银像由信徒肩扛巡游。队伍沿 San Teodoro 山坡陡峭而典型的 creuze 小路向上行进。",
+    "港口船长使用的日晷：教堂立面上的古老日晷从港口就能清楚看见。过去的船长会在出海前用它校准船上的计时器。",
+    "从战争中保存下来的巴洛克大理石：港口轰炸严重损坏屋顶和窗户。战后修复拆除了沉重的19世纪增建，使内部重新呈现明亮的巴洛克风貌和珍贵的 Doria 原有祭坛。"
+  ],
+  "lij": [
+    "O fæ de spirito di marinæ: Pe-a seu posiçion a circa 130 metri d'artessa, o complesso storico o serviva comme riferimento pe-i naveganti. A gente de mâ a salutava a seu sagoma con salve, domandando proteçion contro e tempeste.",
+    "A colleçion di ex-voto do mâ: E mænn-e interne conservan çentinæ de quadri, sarvagenti e modelletti de nave. Son ringraçiamenti lasciæ pe secoli da passeggeri e capitanni sarvæ da naufragi e tempeste oceaniche.",
+    "A profeçia da collinn-a de Caldetto: Durante o soggiorno a Zêna into 1483, San Francesco o l'avieiva predixo a nascion do santuario. O complesso o l'é stæto construto pöco dòppo graçie a-o terreno donou da-o patrizio Baldassarre Lomellini.",
+    "A campann-a da seia pe-i dispersi: Ogni seia a-o tramonto a grande torre a sona a suggestiva 'Campann-a do mâ'. I seu rintocchi ricòrdan tutti i marinæ zeneixi sparîi inte onde do Mediterraneo.",
+    "A trinçea contro l'invasion austriaca: Durante a famosa rivolta do Balilla do 1746, o convento o l'é diventou unna roccaforte militare. I patrioti han fortificou e mænn-e contro e truppe austriache che assediavan a çittæ.",
+    "A statoa d'argento inte creuze: Pe-a festa patronale de maggio, unna maestosa statoa d'argento a l'é portâ in spalla da-i fedeli. A procession a monta pe-e ripidissime creuze da collinn-a de San Teodoro.",
+    "A meridiana di capitanni do porto: In sciâ façciata gh'é unna antiga meridiana, ben visibile da-o porto. Un tempo i capitanni e l'adêuviavan pe regolâ i cronometri de bordo primma de piggiâ o mâ.",
+    "I marmi barocchi sarvæ da-e guære: I bombardamenti do porto han dannezzou tetto e vetræ. I restauri do dopoguæra han levou e pesanti azonte ottocentesche, rendendo a l'interno a luxe barocca e i preçioxi artâ originâ di Doria."
+  ]
+};
+
+  root.church["San Rocco"] = {
+  "it": [
+    "L'antico monastero delle Agostiniane: L'impianto sacro originario risale al 1316 ed era intitolato a Santa Margherita. Ospitava un isolato monastero di clausura di Monache Agostiniane, molto prima del cambio di santo del Cinquecento.",
+    "Gli stucchi d'autore dello Sparzo: L'elegante apparato decorativo barocco interno vanta una firma d'eccezione. I raffinati stucchi bianchi e dorati furono plasmati da Marcello Sparzo, scultore di massima fiducia del leggendario ammiraglio Andrea Doria.",
+    "Gli affreschi della peste del Carlone: La volta della navata centrale è interamente decorata da un monumentale ciclo pittorico di Giovanni Battista Carlone. I dipinti illustrano le imprese di San Rocco contro il contagio, con straordinari effetti prospettici.",
+    "La pinacoteca nascosta del Fiasella: Oltre alle sculture dello Sparzo, le cappelle laterali contengono capolavori pittorici del Seicento ligure. Vi spiccano tele di Domenico Fiasella, detto Il Sarzana, e splendidi dipinti del maestro Giovanni Andrea De Ferrari.",
+    "Il campanile vicino alla cremagliera: La posizione della chiesa è legata a un gioiello ingegneristico. Il sagrato confina con il tracciato della storica ferrovia Principe-Granarolo, l'antichissima tranvia a cremagliera inaugurata nel 1901 che si inerpica sulla collina.",
+    "Il presepe meccanico dei vecchi mestieri: Ogni inverno la comunità si anima allestendo un celebre presepe meccanico. La ricostruzione in miniatura è diventata un culto per i bambini, mettendo in movimento statuine che riproducono i mestieri medievali genovesi.",
+    "La salita senz'auto per i caruggi: A testimonianza dell'isolamento collinare ligure originario, la chiesa detiene un piccolo record logistico. Non possiede alcun tipo di parcheggio carrabile; è raggiungibile esclusivamente a piedi salendo la ripida Salita San Rocco.",
+    "La cacciata degli Apostolini e dei francesi: Nel 1555 la chiesa passò ai padri Apostolini che ne curarono il rifacimento barocco. La pace finì nel Settecento con le invasioni napoleoniche, che confiscarono il tempio cacciando i religiosi per farne alloggi."
+  ],
+  "en": [
+    "The old Augustinian convent: The original sacred complex dates to 1316 and was dedicated to Saint Margaret. It housed an isolated cloistered convent of Augustinian nuns, long before the church changed its dedication in the 16th century.",
+    "Sparzo's signature stuccoes: The elegant Baroque interior decoration bears an exceptional name. The refined white-and-gold stuccoes were modelled by Marcello Sparzo, a sculptor highly trusted by the legendary admiral Andrea Doria.",
+    "Carlone's plague frescoes: The vault of the central nave is entirely covered by a monumental cycle by Giovanni Battista Carlone. The paintings illustrate Saint Roch's deeds against contagion with striking perspective effects.",
+    "Fiasella's hidden picture gallery: Besides Sparzo's sculpture, the side chapels contain masterpieces of 17th-century Ligurian painting. Among them are works by Domenico Fiasella, known as Il Sarzana, and fine paintings by Giovanni Andrea De Ferrari.",
+    "The bell tower beside the rack railway: The church stands next to an engineering landmark. Its forecourt borders the historic Principe-Granarolo railway, the old rack tramway opened in 1901 that climbs the hillside.",
+    "The mechanical Nativity of old trades: Every winter the community sets up a famous mechanical Nativity scene. The miniature reconstruction is especially loved by children, with moving figures reproducing traditional Genoese medieval trades.",
+    "The car-free climb through the narrow streets: A reminder of the area's original hillside isolation, the church has no vehicle parking at all. It can only be reached on foot by climbing the steep Salita San Rocco.",
+    "The expulsion of the Apostolini and the French: In 1555 the church passed to the Apostolini fathers, who oversaw its Baroque rebuilding. Peace ended with the Napoleonic invasions, when the church was confiscated and the religious expelled to make room for lodgings."
+  ],
+  "es": [
+    "El antiguo monasterio de las Agustinas: El conjunto sagrado original data de 1316 y estaba dedicado a Santa Margarita. Albergaba un aislado convento de clausura de monjas agustinas, mucho antes del cambio de advocación del siglo XVI.",
+    "Los estucos de autor de Sparzo: El elegante aparato decorativo barroco interior lleva una firma excepcional. Los refinados estucos blancos y dorados fueron modelados por Marcello Sparzo, escultor de plena confianza del legendario almirante Andrea Doria.",
+    "Los frescos de la peste de Carlone: La bóveda de la nave central está cubierta por un monumental ciclo de Giovanni Battista Carlone. Las pinturas ilustran las acciones de San Roque contra el contagio con extraordinarios efectos de perspectiva.",
+    "La pinacoteca escondida de Fiasella: Además de las esculturas de Sparzo, las capillas laterales contienen obras maestras de la pintura ligur del siglo XVII, con lienzos de Domenico Fiasella, Il Sarzana, y de Giovanni Andrea De Ferrari.",
+    "El campanario junto al tren de cremallera: La iglesia está ligada a una joya de la ingeniería. Su atrio bordea el trazado del histórico ferrocarril Principe-Granarolo, la antigua línea de cremallera inaugurada en 1901 que asciende por la colina.",
+    "El belén mecánico de los antiguos oficios: Cada invierno la comunidad monta un famoso belén mecánico. La reconstrucción en miniatura es muy querida por los niños y pone en movimiento figuras que reproducen antiguos oficios medievales genoveses.",
+    "La subida sin coches por los callejones: Como testimonio del antiguo aislamiento de la colina, la iglesia no dispone de aparcamiento para vehículos. Solo se puede llegar a pie subiendo la empinada Salita San Rocco.",
+    "La expulsión de los Apostolini y de los franceses: En 1555 la iglesia pasó a los padres Apostolini, que dirigieron su reforma barroca. La paz terminó con las invasiones napoleónicas, cuando el templo fue confiscado y los religiosos expulsados para convertirlo en alojamiento."
+  ],
+  "fr": [
+    "L'ancien monastère des Augustines : Le premier ensemble sacré remonte à 1316 et était dédié à sainte Marguerite. Il abritait un couvent isolé de religieuses augustines cloîtrées, bien avant le changement de dédicace au XVIe siècle.",
+    "Les stucs signés Sparzo : L'élégant décor baroque intérieur porte une signature prestigieuse. Les raffinés stucs blancs et dorés furent modelés par Marcello Sparzo, sculpteur particulièrement estimé du légendaire amiral Andrea Doria.",
+    "Les fresques de la peste de Carlone : La voûte de la nef centrale est entièrement couverte d'un cycle monumental de Giovanni Battista Carlone. Les peintures illustrent les actions de saint Roch contre la contagion avec de remarquables effets de perspective.",
+    "La pinacothèque cachée de Fiasella : Outre les sculptures de Sparzo, les chapelles latérales abritent des chefs-d'œuvre de la peinture ligure du XVIIe siècle, notamment des toiles de Domenico Fiasella, dit Il Sarzana, et de Giovanni Andrea De Ferrari.",
+    "Le clocher près du chemin de fer à crémaillère : L'emplacement de l'église est lié à un joyau d'ingénierie. Son parvis borde le tracé historique Principe-Granarolo, ancien chemin de fer à crémaillère inauguré en 1901 et grimpant la colline.",
+    "La crèche mécanique des anciens métiers : Chaque hiver la communauté installe une célèbre crèche mécanique. Cette reconstitution miniature, très appréciée des enfants, anime des figurines reproduisant les anciens métiers médiévaux génois.",
+    "La montée sans voiture dans les ruelles : Témoignage de l'ancien isolement de la colline, l'église ne possède aucun parking accessible aux voitures. On ne peut l'atteindre qu'à pied en gravissant la raide Salita San Rocco.",
+    "L'expulsion des Apostolini et des Français : En 1555, l'église passa aux pères Apostolini qui dirigèrent sa transformation baroque. La paix prit fin avec les invasions napoléoniennes : le temple fut confisqué et les religieux expulsés pour y installer des logements."
+  ],
+  "ar": [
+    "دير الراهبات الأوغسطينيات القديم: يعود المجمع المقدس الأصلي إلى عام 1316 وكان مكرساً للقديسة مارغريتا. وكان يضم ديراً منعزلاً لراهبات أوغسطينيات محجوبات، قبل وقت طويل من تغيير شفيع الكنيسة في القرن السادس عشر.",
+    "زخارف Sparzo الجصية: يحمل الديكور الباروكي الأنيق توقيعاً استثنائياً. فقد صنع Marcello Sparzo، النحات الموثوق لدى الأميرال Andrea Doria، الزخارف البيضاء والمذهبة الدقيقة.",
+    "جداريات الوباء لكارلوني: يغطي قبو الصحن المركزي بالكامل برنامج تصوير ضخم لِـ Giovanni Battista Carlone. وتصور اللوحات أعمال القديس روكو ضد العدوى باستخدام تأثيرات منظور لافتة.",
+    "معرض Fiasella المخفي: إلى جانب منحوتات Sparzo، تضم المصليات الجانبية روائع من الرسم الليغوري في القرن السابع عشر، بينها أعمال Domenico Fiasella المعروف باسم Il Sarzana ولوحات Giovanni Andrea De Ferrari.",
+    "برج الأجراس قرب سكة الترس: موقع الكنيسة مرتبط بتحفة هندسية. فساحتها تجاور خط Principe-Granarolo التاريخي، وهو قطار قديم ذو ترس افتتح عام 1901 ويتسلق التلة.",
+    "مغارة الميلاد الميكانيكية للمهن القديمة: كل شتاء تقيم الجماعة مشهداً ميكانيكياً شهيراً للميلاد. ويحبه الأطفال خصوصاً، إذ تتحرك فيه تماثيل صغيرة تمثل المهن الجنوية التقليدية في العصور الوسطى.",
+    "الصعود بلا سيارات عبر الأزقة: دليلاً على عزلة التلة قديماً، لا تملك الكنيسة أي موقف يمكن الوصول إليه بالسيارة. ولا يمكن بلوغها إلا سيراً على الأقدام عبر Salita San Rocco شديدة الانحدار.",
+    "طرد Apostolini والفرنسيين: انتقلت الكنيسة عام 1555 إلى آباء Apostolini الذين أشرفوا على إعادة بنائها الباروكية. وانتهى الهدوء مع الغزوات النابليونية، حين صودرت الكنيسة وطُرد الرهبان لتحويلها إلى مساكن."
+  ],
+  "ru": [
+    "Старинный монастырь августинок: Первоначальный комплекс относится к 1316 году и был посвящён святой Маргарите. Здесь находился уединённый женский монастырь августинок строгого затвора, задолго до смены посвящения в XVI веке.",
+    "Авторская лепнина Sparzo: Элегантное барочное оформление интерьера связано с выдающимся мастером. Бело-золотую лепнину создал Marcello Sparzo, скульптор, пользовавшийся особым доверием легендарного адмирала Andrea Doria.",
+    "Фрески Carlone о чуме: Свод центрального нефа полностью покрыт монументальным циклом Giovanni Battista Carlone. Картины рассказывают о деяниях святого Роха во время эпидемий и отличаются эффектной перспективой.",
+    "Скрытая пинакотека Fiasella: Помимо скульптур Sparzo, боковые капеллы хранят шедевры лигурийской живописи XVII века, включая полотна Domenico Fiasella, прозванного Il Sarzana, и Giovanni Andrea De Ferrari.",
+    "Колокольня рядом с зубчатой железной дорогой: Положение церкви связано с инженерной достопримечательностью. Её площадь граничит с исторической линией Principe-Granarolo, старой зубчатой дорогой 1901 года, поднимающейся на холм.",
+    "Механический вертеп старинных профессий: Каждую зиму община устраивает знаменитый механический вертеп. Миниатюрная сцена особенно любима детьми: фигурки двигаются и показывают традиционные средневековые генуэзские ремёсла.",
+    "Подъём без машин по переулкам: Церковь напоминает о прежней изолированности холма — автомобильной парковки здесь нет. Добраться можно только пешком по крутой Salita San Rocco.",
+    "Изгнание Apostolini и французов: В 1555 году церковь перешла к отцам Apostolini, которые провели барочную перестройку. Спокойствие закончилось при наполеоновских вторжениях: храм конфисковали, а монахов изгнали, устроив помещения для жилья."
+  ],
+  "zh": [
+    "古老的奥斯定会女修院：最初的宗教建筑可追溯到1316年，原奉圣玛格丽塔。这里曾是一座与世隔绝的奥斯定会封闭女修院，远早于16世纪改换主保圣人。",
+    "Sparzo 的名家灰泥装饰：优雅的巴洛克室内装饰出自名家之手。精致的白色与金色灰泥由 Marcello Sparzo 塑造，他也是传奇海军上将 Andrea Doria 最信任的雕塑家之一。",
+    "Carlone 的瘟疫壁画：中央中殿拱顶全部覆盖 Giovanni Battista Carlone 创作的大型绘画组画，以强烈透视效果表现圣罗科对抗疫病的事迹。",
+    "Fiasella 的隐藏画廊：除 Sparzo 的雕塑外，侧堂还收藏17世纪利古里亚绘画杰作，包括 Domenico Fiasella（Il Sarzana）以及 Giovanni Andrea De Ferrari 的作品。",
+    "靠近齿轨铁路的钟楼：教堂位置与一项工程奇迹相连。前庭紧邻历史悠久的 Principe-Granarolo 线路，这条齿轨铁路于1901年启用，沿山坡上行。",
+    "老行业机械圣诞景：每到冬季，社区都会搭建著名的机械圣诞场景。微缩景观尤其受孩子欢迎，活动小人再现热那亚中世纪的传统职业。",
+    "没有汽车的陡坡小巷：这里仍保留着山坡地区昔日的隔绝感，教堂完全没有车位，只能步行沿陡峭的 Salita San Rocco 抵达。",
+    "Apostolini 与法国人的驱逐：1555年教堂交给 Apostolini 神父，他们负责巴洛克改造。拿破仑入侵后平静结束，教堂被没收，修士被赶走，建筑改作住宿。"
+  ],
+  "lij": [
+    "O vegio convento de Agostiniane: O primmo impianto sacro o l'é do 1316 e o l'ea dedicou a Santa Margherita. O ospitava un convento isolou de monache agostiniane de clausua, ben primma do cambio de santo do Cinqueçento.",
+    "I stucchi d'autô de Sparzo: O elegante aparato barocco interno o porta unna firma importante. I stucchi gianchi e doræ son stæti fæti da Marcello Sparzo, scultô de grande fiduçia de Andrea Doria.",
+    "I affreschi da peste do Carlone: A volta da navata centrale a l'é tutta decorâ da un grande ciclo de Giovanni Battista Carlone. I dipinti mostran e imprese de San Rocco contro o contagio con forti efetti de prospettiva.",
+    "A pinacoteca ascosa do Fiasella: Oltre ae sculture de Sparzo, e cappelle laterali conservan capolavori do Seiçento ligure, con tele de Domenico Fiasella, dito Il Sarzana, e de Giovanni Andrea De Ferrari.",
+    "O campanin vexin a-a cremagliera: O sagrato da gexa o confina co-o tracciou storico Principe-Granarolo, l'antiga ferrovia a cremagliera inaugurâ into 1901 che a monta in sciâ collinn-a.",
+    "O presepio meccanico di vegi mestê: Ogni inverno a comunitæ a prepara un famoso presepio meccanico. A ricostruçion in miniatura a l'é tanto amâ da-i figgeu, con figurinn-e che mostran i mestê medievali zeneixi.",
+    "A salita sensa auto pe-i caroggi: Comme ricordo do vegio isolamento da collinn-a, a gexa a no gh'à nisciun parcheggio pe machine. Se ghe arriva solo a pê, montando a ripida Salita San Rocco.",
+    "A cacciâ di Apostolini e di francesi: Into 1555 a gexa a l'é passâ a-i padri Apostolini, che han curou o rifacimento barocco. Co-e invasion napoleoniche o tempio o l'é stæto confiscou e i religioxi cacciæ pe fanne alloggi."
+  ]
+};
+
+  root.church["San Vincenzo de' Paoli"] = {
+  "it": [
+    "La chiesa barocca \"invisibile\" sulla ferrovia: Nonostante sia un gioiello barocco del 1600 sopraelevato sulle linee ferroviarie di Principe, la struttura è quasi sconosciuta. Priva di edifici che la ostruiscono, resta un segreto per molti turisti.",
+    "L'intitolazione nata da una canonizzazione: L'edificio fu fondato dai Missionari e intitolato a San Paolo. Nel 1737, anno in cui Vincenzo de' Paoli fu proclamato solennemente santo da Papa Clemente XII, assunse l'odierno nome ufficiale.",
+    "I martiri dimenticati della peste nera: Durante la devastante epidemia di peste del 1657, i Missionari rimasero in prima linea nel porto. Sette di loro contrassero il contagio e morirono nel complesso per confortare gli appestati.",
+    "Il salone dei busti del Ponsonelli: Al piano nobile della casa adiacente si sviluppa un grande salone barocco. Ospita i monumentali busti dei massimi benefattori della chiesa, il Cardinale Durazzo e il Marchese Brignole Sale.",
+    "Lo scultore Giacomo Antonio Ponsonelli all'opera: Il ritratto in marmo del Cardinale Durazzo custodito nel complesso fu scolpito dal celebre maestro Giacomo Antonio Ponsonelli. L'opera rinascimentale è considerata una delle vette della statuaria ritrattistica ligure.",
+    "Il passato medievale del rione artigiano: Nel 1059 esisteva una chiesetta precedente nel vicino territorio di Santo Stefano. La parrocchia originaria contava oltre 200 case medievali abitate interamente da ceti artigiani e camalli genovesi.",
+    "I fedeli che pregavano all'aperto: Prima della ricostruzione barocca, la chiesa romanica era piccolissima. Durante le domeniche medievali, la folla di parrocchiani era costretta a sostare ammassata all'aperto sul sagrato per ascoltare la messa.",
+    "La nascita del Patronato scout nel 1931: Nei locali della parrocchia nacque nel 14 maggio 1931 il Patronato. Fu fondato dagli scout cattolici per assistere i bimbi poveri del porto dopo lo scioglimento forzato voluto dal regime fascista."
+  ],
+  "en": [
+    "The 'invisible' Baroque church above the railway: Although it is a 17th-century Baroque gem raised above the Principe railway lines, the church is little known. Even without buildings blocking it, it remains a secret to many visitors.",
+    "A dedication born from a canonisation: The building was founded by the Missionaries and dedicated to Saint Paul. In 1737, when Vincent de Paul was solemnly canonised by Pope Clement XII, it took its present official name.",
+    "The forgotten martyrs of the plague: During the devastating plague of 1657, the Missionaries remained on the front line in the port. Seven contracted the disease and died in the complex while comforting plague victims.",
+    "Ponsonelli's hall of busts: On the noble floor of the adjoining house is a large Baroque hall. It contains monumental busts of the church's great benefactors, Cardinal Durazzo and Marquis Brignole Sale.",
+    "Sculptor Giacomo Antonio Ponsonelli at work: The marble portrait of Cardinal Durazzo preserved in the complex was carved by the celebrated Giacomo Antonio Ponsonelli. The work is considered one of the high points of Ligurian portrait sculpture.",
+    "The medieval past of the craftsmen's district: In 1059 an earlier little church stood in the nearby territory of Santo Stefano. The original parish counted more than 200 medieval houses inhabited largely by craftsmen and Genoese dockworkers.",
+    "Worshippers praying outdoors: Before the Baroque rebuilding, the Romanesque church was extremely small. On medieval Sundays, crowds of parishioners had to remain packed outside on the forecourt to hear Mass.",
+    "The birth of the Scout Patronage in 1931: On 14 May 1931 a Patronato was founded in the parish rooms. Catholic scouts created it to assist poor children from the port after the forced dissolution imposed by the Fascist regime."
+  ],
+  "es": [
+    "La iglesia barroca 'invisible' sobre el ferrocarril: Aunque es una joya barroca del siglo XVII elevada sobre las vías de Principe, la estructura es poco conocida. Incluso sin edificios que la oculten, sigue siendo un secreto para muchos visitantes.",
+    "Una advocación nacida de una canonización: El edificio fue fundado por los Misioneros y dedicado a San Pablo. En 1737, cuando Vicente de Paúl fue canonizado solemnemente por el papa Clemente XII, adoptó su actual nombre oficial.",
+    "Los mártires olvidados de la peste: Durante la devastadora epidemia de 1657, los Misioneros permanecieron en primera línea en el puerto. Siete contrajeron la enfermedad y murieron en el complejo mientras confortaban a los apestados.",
+    "El salón de bustos de Ponsonelli: En la planta noble de la casa contigua se abre un gran salón barroco. Alberga los bustos monumentales de los grandes benefactores de la iglesia, el cardenal Durazzo y el marqués Brignole Sale.",
+    "El escultor Giacomo Antonio Ponsonelli: El retrato de mármol del cardenal Durazzo conservado en el complejo fue esculpido por el célebre Giacomo Antonio Ponsonelli. La obra se considera una de las cumbres del retrato escultórico ligur.",
+    "El pasado medieval del barrio artesano: En 1059 existía una iglesia anterior en el cercano territorio de Santo Stefano. La parroquia original reunía más de 200 casas medievales habitadas principalmente por artesanos y camalli genoveses.",
+    "Los fieles que rezaban al aire libre: Antes de la reconstrucción barroca, la iglesia románica era muy pequeña. Los domingos medievales, la multitud de parroquianos tenía que permanecer apretada en el atrio exterior para oír misa.",
+    "El nacimiento del Patronato scout en 1931: El 14 de mayo de 1931 nació en los locales parroquiales el Patronato. Lo fundaron scouts católicos para ayudar a los niños pobres del puerto tras la disolución forzosa impuesta por el régimen fascista."
+  ],
+  "fr": [
+    "L'église baroque « invisible » au-dessus du chemin de fer : Bien qu'il s'agisse d'un joyau baroque du XVIIe siècle dominant les voies de Principe, elle reste peu connue. Même sans bâtiments qui la cachent, elle demeure un secret pour de nombreux visiteurs.",
+    "Un nom né d'une canonisation : L'édifice fut fondé par les Missionnaires et dédié à saint Paul. En 1737, lorsque Vincent de Paul fut solennellement canonisé par le pape Clément XII, il prit son nom officiel actuel.",
+    "Les martyrs oubliés de la peste : Pendant la terrible épidémie de 1657, les Missionnaires restèrent en première ligne dans le port. Sept contractèrent la maladie et moururent dans le complexe en réconfortant les victimes.",
+    "Le salon des bustes de Ponsonelli : À l'étage noble de la maison voisine s'ouvre un grand salon baroque. Il abrite les bustes monumentaux des principaux bienfaiteurs, le cardinal Durazzo et le marquis Brignole Sale.",
+    "Le sculpteur Giacomo Antonio Ponsonelli à l'œuvre : Le portrait en marbre du cardinal Durazzo conservé ici fut sculpté par le célèbre Giacomo Antonio Ponsonelli. L'œuvre est considérée comme un sommet du portrait sculpté ligure.",
+    "Le passé médiéval du quartier des artisans : En 1059, une petite église antérieure existait dans le territoire voisin de Santo Stefano. La paroisse primitive comptait plus de 200 maisons médiévales habitées surtout par des artisans et des camalli génois.",
+    "Les fidèles priant dehors : Avant la reconstruction baroque, l'église romane était minuscule. Les dimanches médiévaux, la foule des paroissiens devait rester serrée à l'extérieur, sur le parvis, pour entendre la messe.",
+    "La naissance du Patronato scout en 1931 : Le 14 mai 1931, un Patronato fut fondé dans les locaux paroissiaux. Des scouts catholiques le créèrent pour aider les enfants pauvres du port après la dissolution forcée imposée par le régime fasciste."
+  ],
+  "ar": [
+    "الكنيسة الباروكية «غير المرئية» فوق السكة الحديدية: رغم أنها جوهرة باروكية من القرن السابع عشر ترتفع فوق خطوط Principe، فهي غير معروفة نسبياً. وحتى من دون مبان تحجبها تبقى سراً بالنسبة لكثير من الزوار.",
+    "اسم وُلد من إعلان القداسة: أسس المبنى المرسلون وكرسوه للقديس بولس. وفي 1737، عندما أعلن البابا كليمنت الثاني عشر قداسة Vincenzo de' Paoli، حملت الكنيسة اسمها الرسمي الحالي.",
+    "شهداء الوباء المنسيون: أثناء وباء 1657 المدمر، بقي المرسلون في الخطوط الأمامية عند الميناء. وأصيب سبعة منهم بالعدوى وماتوا داخل المجمع وهم يواسون المرضى.",
+    "قاعة تماثيل Ponsonelli: في الطابق النبيل من البيت المجاور توجد قاعة باروكية كبيرة. وتضم تماثيل نصفية ضخمة لأبرز المحسنين، الكاردينال Durazzo والماركيز Brignole Sale.",
+    "النحات Giacomo Antonio Ponsonelli في العمل: نحت Ponsonelli الشهير التمثال النصفي الرخامي للكاردينال Durazzo المحفوظ في المجمع. ويعد العمل من أبرز أمثلة فن البورتريه النحتي في ليغوريا.",
+    "الماضي الوسيط لحي الحرفيين: عام 1059 كانت هناك كنيسة أقدم في منطقة Santo Stefano القريبة. وكانت الرعية الأصلية تضم أكثر من 200 منزل من العصور الوسطى يسكنها حرفيون وعمال مرفأ جنويون.",
+    "المؤمنون يصلون في الخارج: قبل إعادة البناء الباروكية كانت الكنيسة الرومانسكية صغيرة جداً. وفي أيام الأحد كان المصلون يضطرون إلى الوقوف متزاحمين في الساحة الخارجية لسماع القداس.",
+    "ولادة Patronato الكشفي عام 1931: في 14 مايو 1931 تأسس Patronato داخل مباني الرعية. وأنشأه الكشافة الكاثوليك لمساعدة أطفال الميناء الفقراء بعد الحل القسري الذي فرضه النظام الفاشي."
+  ],
+  "ru": [
+    "«Невидимая» барочная церковь над железной дорогой: Хотя это барочный памятник XVII века, возвышающийся над путями Principe, церковь мало известна. Даже без зданий, закрывающих обзор, она остаётся тайной для многих туристов.",
+    "Название, рождённое канонизацией: Храм основали миссионеры и посвятили святому Павлу. В 1737 году, когда папа Климент XII канонизировал Викентия де Поля, церковь получила нынешнее официальное название.",
+    "Забытые мученики чумы: Во время страшной эпидемии 1657 года миссионеры оставались на передовой в порту. Семеро заразились и умерли в комплексе, продолжая утешать больных.",
+    "Зал бюстов Ponsonelli: На парадном этаже соседнего дома расположен большой барочный зал. Здесь стоят монументальные бюсты главных благотворителей церкви — кардинала Durazzo и маркиза Brignole Sale.",
+    "Скульптор Giacomo Antonio Ponsonelli: Мраморный портрет кардинала Durazzo, хранящийся в комплексе, создал знаменитый Giacomo Antonio Ponsonelli. Работа считается одной из вершин лигурийской портретной скульптуры.",
+    "Средневековое прошлое ремесленного района: В 1059 году в соседней зоне Santo Stefano уже существовала небольшая церковь. Первоначальный приход включал более 200 средневековых домов, где жили ремесленники и генуэзские портовые рабочие.",
+    "Верующие молились на улице: До барочной перестройки романская церковь была совсем маленькой. По воскресеньям толпе прихожан приходилось стоять снаружи на площади, чтобы слушать мессу.",
+    "Рождение скаутского Patronato в 1931 году: 14 мая 1931 года в приходских помещениях появился Patronato. Его создали католические скауты для помощи бедным детям порта после принудительного роспуска движения фашистским режимом."
+  ],
+  "zh": [
+    "铁路上方“隐形”的巴洛克教堂：虽然这是一座17世纪巴洛克珍品，高踞 Principe 铁路线之上，却鲜为人知。即使没有建筑遮挡，对许多游客而言仍像一个秘密。",
+    "因封圣而产生的新名称：建筑由传教士创建，最初奉圣保禄。1737年，教皇克勉十二世正式封 Vincenzo de' Paoli 为圣后，教堂采用了今天的正式名称。",
+    "被遗忘的瘟疫殉道者：1657年毁灭性瘟疫期间，传教士仍坚守港口一线。七人感染后死在建筑群内，他们一直在安慰和照顾患者。",
+    "Ponsonelli 的半身像大厅：相邻建筑的贵族层有一座大型巴洛克大厅，陈列教堂主要资助人——Durazzo 枢机与 Brignole Sale 侯爵的巨型半身像。",
+    "Giacomo Antonio Ponsonelli 的雕塑：建筑群内保存的 Durazzo 枢机大理石肖像由著名雕塑家 Giacomo Antonio Ponsonelli 创作，被视为利古里亚肖像雕塑的代表作之一。",
+    "工匠街区的中世纪过去：1059年，附近 Santo Stefano 地区已有一座更早的小教堂。最初的堂区有200多座中世纪住宅，主要居住着工匠和热那亚码头工人。",
+    "在露天祈祷的信徒：巴洛克重建前，罗曼式教堂非常狭小。中世纪的星期日，大批信徒只能挤在门前广场露天听弥撒。",
+    "1931年童军 Patronato 的诞生：1931年5月14日，堂区内成立 Patronato。天主教童军在法西斯政权强制解散之后创办它，用来帮助港口贫困儿童。"
+  ],
+  "lij": [
+    "A gexa barocca 'invisibile' in sciâ ferrovia: Anche se a l'é un gioiello do Seiçento arçòu in sci binari de Principe, a struttura a l'é pöco conosciua. Anche sensa palassi davanti, a resta un segreto pe tanti visitatoî.",
+    "O nomme nasciuo da unna canonizaçion: L'edificio o l'é stæto fondou da-i Missionari e dedicou a San Paolo. Into 1737, quande Vincenzo de' Paoli o l'é stæto proclamou santo da Papa Clemente XII, a gexa a l'à piggiou o nomme d'ancheu.",
+    "I martiri desmentegæ da peste: Durante a terribile peste do 1657, i Missionari son restæ in primma linia into porto. Sette de lori han piggiou o contagio e son morti into complesso mentre confortavan i malæ.",
+    "O salon di busti do Ponsonelli: A-o cian nobile da casa vexinn-a gh'é un grande salon barocco con i busti monumentali di benefattoî prinçipâ, o Cardinale Durazzo e o Marchese Brignole Sale.",
+    "O scultô Giacomo Antonio Ponsonelli: O ritratto de marmo do Cardinale Durazzo o l'é stæto scolpio da Giacomo Antonio Ponsonelli. L'òpera a l'é considerâ unna de vette da scultura de ritratto ligure.",
+    "O passato medievale do quartê artixan: Into 1059 gh'ea unna gexetta precedente inte terre de Santo Stefano. A parrocchia a contava ciù de 200 case medievali abitae da artixan e camalli zeneixi.",
+    "I fedeli che pregavan fêua: Primma do rifacimento barocco, a gexa romanica a l'ea piccinn-a. A-a domenega tanta gente a doveiva restâ ammuggiâ in sciô sagrato pe sentî a messa.",
+    "A nascion do Patronato scout into 1931: O 14 maggio 1931 inti locali da parrocchia o l'é nasciuo o Patronato. O l'é stæto fondou da scout cattolici pe agiuttâ i figgeu poveri do porto dòppo o scioglimento forçou do regime fascista."
+  ]
+};
+
+  root.church["San Tommaso Apostolo e San Leone Magno"] = {
+  "it": [
+    "Il paradosso del trasloco parrocchiale: L'edificio moderno sorge in via Almeria e riprende il titolo dell'antica chiesa di San Tommaso a Principe, demolita nel 1885 per far spazio all'ampliamento del porto e della Stazione Marittima.",
+    "La statua superstite di Santa Limbania: All'interno della nuova chiesa è custodito un tesoro rinascimentale scampato alle demolizioni ottocentesche: una preziosa statua cinquecentesca di Santa Limbania, venerata storicamente dai camalli e scaricatori del porto.",
+    "L'urna romana riciclata sul colle: Tra i pochi arredi originali salvati dalla vecchia abbazia marinara e trasferiti sulle alture di Oregina, spicca un'autentica ed elegantissima urna cineraria in marmo di fattura romana imperiale.",
+    "Il Cristo scolpito da Della Porta: La navata ospita un capolavoro scultoreo di immenso pregio artistico: il gruppo marmoreo cinquecentesco raffigurante Cristo e San Tommaso, scolpito dalle mani sapienti del celebre maestro Guglielmo Della Porta.",
+    "Le colonne medievali esposte al museo: Sebbene la chiesa medievale sia scomparsa sotto i binari, le sue preziose colonne e i capitelli romanici del chiostro del X secolo furono salvati e sono oggi esposti al Museo di Sant'Agostino.",
+    "Nata da un'aula paleocristiana segreta: Gli scavi ottocenteschi prima della distruzione svelarono le radici millenarie del culto: sotto le navate medievali riaffiorarono i resti di una piccola aula monoabsidata risalente al VI-VII secolo d.C..",
+    "La porta difensiva degli ingegneri militari: L'antico complesso sorgeva sul promontorio del Caput Arenae e fungeva da bastione portuale, dando il nome alla celebre Porta San Tommaso incastonata nelle mura difensive della Repubblica.",
+    "Lo slancio neo-romanico nascosto dai palazzi: Il progetto novecentesco dell'architetto Giacomo Misuraca spicca per la suggestiva facciata in mattoni rossi; purtroppo è difficile osservarlo da vicino perché compresso e circondato dall'edilizia residenziale moderna."
+  ],
+  "en": [
+    "The paradox of the parish move: The modern building stands in Via Almeria and carries on the title of the old San Tommaso at Principe, demolished in 1885 to make way for expansion of the harbour and Maritime Station.",
+    "The surviving statue of Saint Limbania: The new church preserves a Renaissance treasure saved from the 19th-century demolitions: a precious 16th-century statue of Saint Limbania, historically venerated by dockworkers and port labourers.",
+    "The reused Roman urn on the hill: Among the few original furnishings saved from the old maritime abbey and moved to the Oregina heights is an elegant marble cinerary urn of Imperial Roman workmanship.",
+    "The Christ sculpted by Della Porta: The nave houses a sculpture of great artistic value: the 16th-century marble group of Christ and Saint Thomas carved by the celebrated master Guglielmo Della Porta.",
+    "The medieval columns displayed in the museum: Although the medieval church disappeared beneath the railway, its valuable columns and Romanesque capitals from the 10th-century cloister were saved and are now displayed in the Museo di Sant'Agostino.",
+    "Born from a hidden early-Christian hall: 19th-century excavations before demolition revealed the site's ancient roots. Beneath the medieval naves emerged remains of a small single-apse hall dating to the 6th-7th centuries AD.",
+    "The defensive gate of the military engineers: The old complex stood on the Caput Arenae promontory and functioned as a harbour bastion, giving its name to the famous Porta San Tommaso set into the Republic's defensive walls.",
+    "Neo-Romanesque upward thrust hidden by buildings: Giacomo Misuraca's 20th-century design is marked by a striking red-brick façade, but it is difficult to appreciate up close because modern residential buildings tightly surround it."
+  ],
+  "es": [
+    "La paradoja del traslado parroquial: El edificio moderno se alza en Via Almeria y conserva el título de la antigua San Tommaso de Principe, demolida en 1885 para permitir la ampliación del puerto y de la Estación Marítima.",
+    "La estatua superviviente de Santa Limbania: La nueva iglesia conserva un tesoro renacentista salvado de las demoliciones del siglo XIX: una valiosa estatua del siglo XVI de Santa Limbania, venerada históricamente por camalli y trabajadores del puerto.",
+    "La urna romana reutilizada en la colina: Entre los pocos muebles originales salvados de la antigua abadía marinera y trasladados a las alturas de Oregina destaca una elegante urna cineraria de mármol de época romana imperial.",
+    "El Cristo esculpido por Della Porta: La nave alberga una obra escultórica de gran valor: el grupo de mármol del siglo XVI con Cristo y Santo Tomás, tallado por el célebre maestro Guglielmo Della Porta.",
+    "Las columnas medievales expuestas en el museo: Aunque la iglesia medieval desapareció bajo las vías, sus valiosas columnas y capiteles románicos del claustro del siglo X fueron salvados y hoy se exponen en el Museo di Sant'Agostino.",
+    "Nacida de un aula paleocristiana oculta: Las excavaciones del siglo XIX antes de la demolición revelaron raíces milenarias. Bajo las naves medievales aparecieron restos de una pequeña aula de un solo ábside de los siglos VI-VII d.C.",
+    "La puerta defensiva de los ingenieros militares: El antiguo complejo se alzaba en el promontorio de Caput Arenae y funcionaba como bastión portuario, dando nombre a la célebre Porta San Tommaso integrada en las murallas defensivas de la República.",
+    "El impulso neorrománico oculto por los edificios: El proyecto del siglo XX de Giacomo Misuraca destaca por su sugestiva fachada de ladrillo rojo, difícil de contemplar de cerca porque está comprimida entre construcciones residenciales modernas."
+  ],
+  "fr": [
+    "Le paradoxe du déménagement paroissial : L'édifice moderne se trouve Via Almeria et reprend le titre de l'ancienne San Tommaso de Principe, démolie en 1885 pour permettre l'agrandissement du port et de la gare maritime.",
+    "La statue rescapée de sainte Limbania : La nouvelle église conserve un trésor Renaissance sauvé des démolitions du XIXe siècle : une précieuse statue du XVIe siècle de sainte Limbania, historiquement vénérée par les dockers et manutentionnaires du port.",
+    "L'urne romaine réutilisée sur la colline : Parmi les rares objets d'origine sauvés de l'ancienne abbaye maritime et transférés sur les hauteurs d'Oregina se trouve une élégante urne cinéraire en marbre de facture romaine impériale.",
+    "Le Christ sculpté par Della Porta : La nef abrite un chef-d'œuvre sculpté de grande valeur : le groupe en marbre du XVIe siècle représentant le Christ et saint Thomas, œuvre du célèbre Guglielmo Della Porta.",
+    "Les colonnes médiévales exposées au musée : Bien que l'église médiévale ait disparu sous les voies ferrées, ses précieuses colonnes et chapiteaux romans du cloître du Xe siècle furent sauvés et sont aujourd'hui exposés au Museo di Sant'Agostino.",
+    "Née d'une salle paléochrétienne cachée : Les fouilles du XIXe siècle avant la destruction révélèrent des racines millénaires. Sous les nefs médiévales apparurent les restes d'une petite salle à abside unique des VIe-VIIe siècles apr. J.-C.",
+    "La porte défensive des ingénieurs militaires : L'ancien complexe s'élevait sur le promontoire de Caput Arenae et servait de bastion portuaire, donnant son nom à la célèbre Porta San Tommaso intégrée aux murailles défensives de la République.",
+    "L'élan néo-roman caché par les immeubles : Le projet du XXe siècle de Giacomo Misuraca se distingue par sa belle façade en briques rouges, malheureusement difficile à observer de près car serrée entre les constructions résidentielles modernes."
+  ],
+  "ar": [
+    "مفارقة نقل الرعية: يقع المبنى الحديث في Via Almeria ويحمل اسم كنيسة San Tommaso القديمة في Principe، التي هُدمت عام 1885 لإفساح المجال لتوسيع الميناء والمحطة البحرية.",
+    "تمثال القديسة Limbania الناجي: تحتفظ الكنيسة الجديدة بكنز من عصر النهضة نجا من هدم القرن التاسع عشر، وهو تمثال ثمين من القرن السادس عشر للقديسة Limbania التي كان عمال الميناء يجلونها.",
+    "الجرّة الرومانية المعاد استخدامها على التلة: من بين القطع القليلة التي أُنقذت من الدير البحري القديم ونُقلت إلى مرتفعات Oregina جرّة جنائزية رخامية أنيقة من العصر الروماني الإمبراطوري.",
+    "المسيح المنحوت بيد Della Porta: يضم صحن الكنيسة مجموعة رخامية ثمينة من القرن السادس عشر تمثل المسيح والقديس توما، نحتها المعلم الشهير Guglielmo Della Porta.",
+    "الأعمدة الوسيطة المعروضة في المتحف: رغم اختفاء الكنيسة القديمة تحت السكك الحديدية، أُنقذت أعمدتها وتيجان الدير الرومانسكية من القرن العاشر، وهي معروضة اليوم في Museo di Sant'Agostino.",
+    "ولدت فوق قاعة مسيحية مبكرة مخفية: كشفت حفريات القرن التاسع عشر قبل الهدم جذور الموقع القديمة. تحت الصحن الوسيط ظهرت بقايا قاعة صغيرة ذات حنية واحدة ترجع إلى القرنين السادس والسابع الميلاديين.",
+    "البوابة الدفاعية للمهندسين العسكريين: كان المجمع القديم قائماً على نتوء Caput Arenae ويعمل كحصن للميناء، ومنه أخذت Porta San Tommaso الشهيرة اسمها داخل أسوار الجمهورية.",
+    "الاندفاع النيو-رومانسكي المخفي بين المباني: يتميز تصميم Giacomo Misuraca في القرن العشرين بواجهة جميلة من الطوب الأحمر، لكن رؤيتها عن قرب صعبة لأنها محاصرة بالمباني السكنية الحديثة."
+  ],
+  "ru": [
+    "Парадокс переноса прихода: Современная церковь стоит на Via Almeria и унаследовала название старой San Tommaso в Principe, снесённой в 1885 году ради расширения порта и Морского вокзала.",
+    "Сохранившаяся статуя святой Limbania: В новой церкви хранится ренессансное сокровище, спасённое от сноса XIX века: ценная статуя XVI века святой Limbania, которую особенно почитали портовые рабочие и camalli.",
+    "Римская урна, перенесённая на холм: Среди немногих подлинных предметов старого морского аббатства, перевезённых на высоты Oregina, выделяется изящная мраморная погребальная урна императорской римской эпохи.",
+    "Христос работы Della Porta: В нефе находится скульптурный шедевр — мраморная группа XVI века с Христом и святым Фомой, созданная знаменитым мастером Guglielmo Della Porta.",
+    "Средневековые колонны в музее: Хотя старая церковь исчезла под железной дорогой, её ценные колонны и романские капители клуатра X века были спасены и сегодня выставлены в Museo di Sant'Agostino.",
+    "Храм над скрытым раннехристианским залом: Раскопки XIX века перед сносом выявили древнейшие слои. Под средневековыми нефами обнаружили остатки небольшого одноапсидного помещения VI-VII веков н. э.",
+    "Оборонительные ворота военных инженеров: Старый комплекс стоял на мысе Caput Arenae и служил портовым бастионом, дав имя знаменитым Porta San Tommaso, встроенным в оборонительные стены Республики.",
+    "Неороманский взлёт, скрытый домами: Проект Giacomo Misuraca XX века выделяется выразительным фасадом из красного кирпича, но рассмотреть его трудно из-за плотной современной жилой застройки."
+  ],
+  "zh": [
+    "堂区搬迁的悖论：现代教堂位于 Via Almeria，继承了 Principe 老 San Tommaso 教堂的名号。后者1885年因港口和海运码头扩建而被拆除。",
+    "幸存的圣 Limbania 雕像：新教堂保存着一件躲过19世纪拆迁的文艺复兴珍品——16世纪圣 Limbania 雕像，历史上深受码头工人和装卸工敬奉。",
+    "移到山上的罗马骨灰瓮：从旧海滨修道院抢救并迁往 Oregina 高地的少数原物中，有一件优雅的帝国罗马时期大理石骨灰瓮。",
+    "Della Porta 雕刻的基督像：中殿保存一组极具艺术价值的16世纪大理石雕塑，表现基督与圣多默，由著名大师 Guglielmo Della Porta 创作。",
+    "博物馆中的中世纪柱子：虽然中世纪教堂已消失在铁路下方，但10世纪回廊的珍贵柱子和罗曼式柱头被保存下来，如今陈列在 Museo di Sant'Agostino。",
+    "诞生于隐藏的早期基督教礼拜厅之上：19世纪拆除前的考古发掘揭示了千年根基。中世纪中殿下发现了一座6至7世纪单后殿小厅的遗迹。",
+    "军事工程师的防御城门：旧建筑群位于 Caput Arenae 岬角，并兼作港口堡垒，因此共和国城墙中的著名 Porta San Tommaso 也以它命名。",
+    "被住宅遮住的新罗曼式气势：Giacomo Misuraca 的20世纪设计以红砖立面十分醒目，但现代住宅把它紧紧包围，因此近距离很难完整欣赏。"
+  ],
+  "lij": [
+    "O paradosso do trasloco da parrocchia: L'edificio moderno o l'é in Via Almeria e o ripiggia o titolo da vegia San Tommaso a Principe, demolîa into 1885 pe slargâ o porto e a Staçion Marittima.",
+    "A statoa sarvâ de Santa Limbania: Inta neuva gexa gh'é un tesòu rinascimentale sarvou da-e demolizioin ottocentesche: unna preçioza statoa do Cinqueçento de Santa Limbania, venerâ da-i camalli e scaricatoî do porto.",
+    "L'urna romana riciclâ in sciâ collinn-a: Tra i pöchi arredi sarvæ da vegia abbazia marinara e portæ in sciâ Oregina spicca unna elegante urna cineraria de marmo de epoca romana imperiale.",
+    "O Cristo scolpio da Della Porta: A navata a conserva un grande capolavoro: o gruppo de marmo do Cinqueçento con Cristo e San Tommaso, scolpio da-o celebre Guglielmo Della Porta.",
+    "E colonne medievali a-o museo: Anche se a gexa medievale a l'é sparîa sotta i binari, e colonne e i capitelli romanici do chiostro do X secolo son stæti sarvæ e ancheu son esposti a-o Museo di Sant'Agostino.",
+    "Nasciua in sciô resto d'un'aula paleocristiana: I scavi ottocenteschi primma da distruçion han trovou sotta e navate medievali i resti d'un piccin ambiente con unn-a abside do VI-VII secolo d.C.",
+    "A porta difensiva di ingegneri militari: O vegio complesso o l'ea in sciô promontorio do Caput Arenae e o serviva da bastion do porto, dando o nomme a-a famosa Porta San Tommaso inte mûe da Repubbrica.",
+    "O slancio neo-romanico ascoso da-i palassi: O progetto novecentesco de Giacomo Misuraca o spicca pe-a façciata de matoin rosci, ma a l'é diffiçile da vedde ben perché a l'é strenta tra i palassi moderni."
+  ]
+};
+
+  root.church["Santuario di N.S. di Loreto"] = {
+  "it": [
+    "La culla storica dell'Inno d'Italia: Il piazzale alberato detiene un primato patriottico immenso: il 10 dicembre 1847 vi debuttò pubblicamente Il Canto degli Italiani di Goffredo Mameli e Michele Novaro, futuro inno nazionale italiano.",
+    "La copia perfetta della Santa Casa: Il santuario nacque nel 1634 per mano di una congregazione di eremiti che edificarono una copia esatta e fedele della celebre Santa Casa di Nazaret custodita a Loreto.",
+    "Il miracolo della nuvola contro gli austriaci: Nel dicembre 1746, durante i duri combattimenti contro gli invasori, un frate vide tra le nuvole la figura della Vergine; la vittoria genovese spinse il Senato ad attribuire a Maria la salvezza dello Stato.",
+    "La lapide legata a Santa Maria Maggiore: Sulla bellissima facciata barocca è incastonata un'antica targa marmorea che testimonia un raro privilegio spirituale: il santuario di Oregina è ufficialmente aggregato alla Basilica di Santa Maria Maggiore a Roma.",
+    "Il bastione in asse con Forte Sperone: Edificato sulle alture a ridosso delle imponenti Mura Nuove seicentesche, il complesso fu progettato in perfetto asse visivo e militare con il soprastante Forte Sperone, dominando l'intero arco portuale.",
+    "La cupola Liberty in cemento armato: Nonostante la splendida facciata settecentesca inganni l'occhio dei passanti, la grande cupola crollata in passato fu interamente ricostruita nel Novecento utilizzando moderne tecnologie strutturali in calcestruzzo.",
+    "La cripta-rifugio per gli sfollati del porto: Durante i devastanti bombardamenti navali che colpirono le banchine sottostanti, i frati aprirono i locali sotterranei del convento, offrendo un rifugio sicuro a centinaia di famiglie rimaste senza casa.",
+    "I secolari alberi protetti dal Senato: L'ampio e panoramico piazzale antistante la chiesa è caratterizzato da alberi maestosi; nel Settecento la Repubblica decretò pesanti sanzioni per chiunque avesse osato tagliare i rami che ombreggiavano i patrioti."
+  ],
+  "en": [
+    "The historic cradle of Italy's national anthem: The tree-lined square holds a major patriotic distinction. On 10 December 1847, Goffredo Mameli and Michele Novaro's Il Canto degli Italiani, the future national anthem, was performed publicly here.",
+    "A faithful copy of the Holy House: The sanctuary was founded in 1634 by a congregation of hermits who built an exact replica of the famous Holy House of Nazareth preserved at Loreto.",
+    "The miracle of the cloud against the Austrians: In December 1746, during fierce fighting, a friar reportedly saw the Virgin in the clouds. Genoa's victory led the Senate to credit Mary with saving the State.",
+    "The plaque linked to Santa Maria Maggiore: An old marble plaque set into the beautiful Baroque façade records a rare spiritual privilege: the Oregina sanctuary is officially affiliated with the Basilica of Santa Maria Maggiore in Rome.",
+    "The bastion aligned with Forte Sperone: Built on the heights beside the imposing 17th-century New Walls, the complex was laid out on a precise visual and military axis with Forte Sperone above, overlooking the whole harbour arc.",
+    "The reinforced-concrete Liberty dome: Despite the elegant 18th-century façade, the large dome that had collapsed was entirely rebuilt in the 20th century using modern structural concrete technology.",
+    "The crypt shelter for displaced port families: During devastating naval bombardments of the docks below, the friars opened the underground rooms of the convent, giving safe shelter to hundreds of families who had lost their homes.",
+    "The centuries-old trees protected by the Senate: The broad panoramic square in front of the church is marked by majestic trees. In the 18th century, the Republic imposed heavy penalties on anyone who dared cut branches that shaded the gathering place."
+  ],
+  "es": [
+    "La cuna histórica del Himno de Italia: La plaza arbolada posee un enorme primado patriótico. El 10 de diciembre de 1847 se interpretó aquí públicamente Il Canto degli Italiani de Goffredo Mameli y Michele Novaro, futuro himno nacional.",
+    "La copia perfecta de la Santa Casa: El santuario nació en 1634 gracias a una congregación de ermitaños que construyó una copia exacta y fiel de la célebre Santa Casa de Nazaret conservada en Loreto.",
+    "El milagro de la nube contra los austríacos: En diciembre de 1746, durante duros combates, un fraile afirmó ver a la Virgen entre las nubes. La victoria genovesa llevó al Senado a atribuir a María la salvación del Estado.",
+    "La lápida vinculada a Santa Maria Maggiore: En la bella fachada barroca se conserva una antigua placa de mármol que documenta un raro privilegio espiritual: el santuario de Oregina está oficialmente agregado a la basílica romana de Santa Maria Maggiore.",
+    "El bastión alineado con Forte Sperone: Construido en las alturas junto a las imponentes Mura Nuove del siglo XVII, el complejo quedó dispuesto en un eje visual y militar con Forte Sperone, dominando todo el arco portuario.",
+    "La cúpula Liberty de hormigón armado: Aunque la elegante fachada del siglo XVIII engaña a la vista, la gran cúpula que había colapsado fue reconstruida por completo en el siglo XX utilizando modernas técnicas estructurales de hormigón.",
+    "La cripta-refugio para los desplazados del puerto: Durante los devastadores bombardeos navales sobre los muelles, los frailes abrieron los espacios subterráneos del convento y dieron refugio seguro a cientos de familias sin hogar.",
+    "Los árboles centenarios protegidos por el Senado: La amplia plaza panorámica está marcada por grandes árboles. En el siglo XVIII la República estableció fuertes sanciones para quien se atreviera a cortar las ramas que daban sombra al lugar."
+  ],
+  "fr": [
+    "Le berceau historique de l'hymne italien : La place arborée possède un immense prestige patriotique. Le 10 décembre 1847 y fut exécuté publiquement Il Canto degli Italiani de Goffredo Mameli et Michele Novaro, futur hymne national.",
+    "La copie parfaite de la Sainte Maison : Le sanctuaire naquit en 1634 grâce à une congrégation d'ermites qui construisit une copie exacte de la célèbre Sainte Maison de Nazareth conservée à Lorette.",
+    "Le miracle du nuage contre les Autrichiens : En décembre 1746, pendant de violents combats, un frère aurait vu la Vierge dans les nuages. La victoire génoise poussa le Sénat à attribuer à Marie le salut de l'État.",
+    "La plaque liée à Santa Maria Maggiore : Une ancienne plaque de marbre enchâssée dans la belle façade baroque rappelle un rare privilège spirituel : le sanctuaire d'Oregina est officiellement affilié à la basilique Santa Maria Maggiore de Rome.",
+    "Le bastion aligné sur Forte Sperone : Édifié sur les hauteurs près des imposantes Mura Nuove du XVIIe siècle, le complexe fut placé sur un axe visuel et militaire précis avec Forte Sperone, dominant tout l'arc portuaire.",
+    "La coupole Liberty en béton armé : Malgré la belle façade du XVIIIe siècle, la grande coupole effondrée fut entièrement reconstruite au XXe siècle avec des techniques modernes de structure en béton.",
+    "La crypte-refuge pour les familles du port : Lors des bombardements navals dévastateurs des quais, les frères ouvrirent les salles souterraines du couvent, offrant un abri sûr à des centaines de familles privées de logement.",
+    "Les arbres séculaires protégés par le Sénat : La vaste place panoramique devant l'église est marquée par de grands arbres. Au XVIIIe siècle, la République prévoyait de lourdes sanctions contre quiconque aurait osé couper leurs branches."
+  ],
+  "ar": [
+    "المهد التاريخي للنشيد الإيطالي: تحمل الساحة المشجرة مكانة وطنية كبيرة. ففي 10 ديسمبر 1847 قُدم فيها علناً لأول مرة Il Canto degli Italiani من تأليف Goffredo Mameli وMichele Novaro، الذي أصبح لاحقاً النشيد الوطني.",
+    "نسخة مطابقة من البيت المقدس: تأسس المزار عام 1634 على يد جماعة من النساك الذين شيدوا نسخة دقيقة من البيت المقدس الشهير في الناصرة والمحفوظ في Loreto.",
+    "معجزة السحابة ضد النمساويين: في ديسمبر 1746، أثناء القتال العنيف، قال أحد الرهبان إنه رأى صورة العذراء بين السحب. وبعد انتصار جنوة نسب مجلس الشيوخ خلاص الدولة إلى مريم.",
+    "اللوحة المرتبطة بسانتا ماريا ماجوري: على الواجهة الباروكية الجميلة لوحة رخامية قديمة تسجل امتيازاً روحياً نادراً: مزار Oregina مرتبط رسمياً ببازيليكا Santa Maria Maggiore في روما.",
+    "الحصن المصطف مع Forte Sperone: بُني المجمع على المرتفعات قرب Mura Nuove الضخمة في القرن السابع عشر، ووضع على محور بصري وعسكري مباشر مع Forte Sperone المطل على كامل قوس الميناء.",
+    "القبة الليبرتي من الخرسانة المسلحة: رغم الواجهة الجميلة من القرن الثامن عشر، فإن القبة الكبيرة التي انهارت سابقاً أعيد بناؤها بالكامل في القرن العشرين باستخدام تقنيات حديثة من الخرسانة المسلحة.",
+    "السرداب ملجأ لمهجري الميناء: أثناء القصف البحري المدمر الذي أصاب الأرصفة في الأسفل، فتح الرهبان الغرف تحت الأرض، فوفرت ملجأ آمناً لمئات العائلات التي فقدت منازلها.",
+    "الأشجار العتيقة المحمية من مجلس الشيوخ: تتميز الساحة الواسعة أمام الكنيسة بأشجار مهيبة. وفي القرن الثامن عشر فرضت الجمهورية عقوبات شديدة على من يجرؤ على قطع الأغصان التي كانت تظلل المكان."
+  ],
+  "ru": [
+    "Историческая колыбель гимна Италии: У обсаженной деревьями площади есть выдающееся патриотическое значение. 10 декабря 1847 года здесь публично прозвучала Il Canto degli Italiani Мамели и Новаро — будущий национальный гимн.",
+    "Точная копия Святого Дома: Святилище возникло в 1634 году благодаря общине отшельников, построивших точную копию знаменитого Святого Дома из Назарета, хранящегося в Лорето.",
+    "Чудо облака против австрийцев: В декабре 1746 года, во время тяжёлых боёв, один монах, по преданию, увидел Деву Марию среди облаков. После победы Генуи Сенат приписал Марии спасение государства.",
+    "Плита, связанная с Santa Maria Maggiore: На красивом барочном фасаде находится старинная мраморная плита, свидетельствующая о редкой духовной привилегии: святилище Oregina официально связано с базиликой Santa Maria Maggiore в Риме.",
+    "Бастион на одной оси с Forte Sperone: Комплекс построили на высотах рядом с мощными Mura Nuove XVII века и расположили на точной визуальной и военной оси с Forte Sperone, господствующим над всем портом.",
+    "Купол Liberty из железобетона: Несмотря на фасад XVIII века, большой купол, разрушенный ранее, был полностью восстановлен в XX веке с применением современных железобетонных конструкций.",
+    "Крипта-убежище для семей порта: Во время тяжёлых морских бомбардировок доков монахи открыли подземные помещения монастыря и предоставили безопасное убежище сотням семей, оставшихся без дома.",
+    "Вековые деревья под защитой Сената: Просторная панорамная площадь перед церковью украшена большими деревьями. В XVIII веке Республика ввела суровые наказания за попытки обрезать ветви, дававшие тень площади."
+  ],
+  "zh": [
+    "意大利国歌的历史摇篮：绿树成荫的广场拥有重要爱国意义。1847年12月10日，Goffredo Mameli 与 Michele Novaro 的《Il Canto degli Italiani》首次在这里公开演出，后来成为意大利国歌。",
+    "圣家的精确复制：圣所由一群隐修士于1634年创建，他们建造了与 Loreto 保存的著名拿撒勒“圣家”完全对应的复制建筑。",
+    "云中圣母与抗奥奇迹：1746年12月激战期间，一名修士据说在云层中看到圣母。热那亚获胜后，参议院把国家得救归功于圣母玛利亚。",
+    "与 Santa Maria Maggiore 相连的铭牌：美丽的巴洛克立面嵌有一块古老大理石铭牌，记录一项罕见宗教特权：Oregina 圣所正式隶属罗马 Santa Maria Maggiore 大殿。",
+    "与 Forte Sperone 对齐的堡垒位置：建筑群位于17世纪宏伟 Mura Nuove 附近高地，与上方 Forte Sperone 形成精准的视觉和军事轴线，俯瞰整个港湾。",
+    "钢筋混凝土重建的 Liberty 穹顶：尽管18世纪立面给人古老印象，曾经坍塌的大穹顶其实在20世纪使用现代混凝土结构技术完全重建。",
+    "港口灾民的地下避难所：港区遭受猛烈海上炮击时，修士开放修道院地下空间，为数百个失去住所的家庭提供安全避难。",
+    "受参议院保护的百年古树：教堂前宽阔观景广场以高大古树闻名。18世纪共和国规定，任何擅自砍伐遮荫树枝的人都会受到严厉处罚。"
+  ],
+  "lij": [
+    "A culla storica de l'Inno d'Italia: O piazzâ con-i erboi o gh'à un grande primato patriottico: o 10 dicembre 1847 o l'é stæto sonou in pubblico Il Canto degli Italiani de Mameli e Novaro, futuro inno nazionale.",
+    "A copia perfetta da Santa Casa: O santuario o l'é nasciuo into 1634 da unna congregaçion d'eremiti che han construto unna copia fedele da famosa Santa Casa de Nazaret conservâ a Loreto.",
+    "O miracolo da nuvia contro i austriaci: Into dicembre 1746, durante e battagge, un fræ o l'avieiva visto a Vergine inte nuvie. Dòppo a vittöia zeneize, o Senato o l'à attribuio a Maria a sarvezza do Stato.",
+    "A lapide ligâ a Santa Maria Maggiore: In sciâ façciata barocca gh'é unna antiga targa de marmo che ricòrda un privilegio raro: o santuario de Oregina o l'é ufficialmente agregou a-a Basilica de Santa Maria Maggiore a Roma.",
+    "O bastion in asse con Forte Sperone: Construto in sci-e artue vexin ae Mura Neuve do Seiçento, o complesso o l'é in asse visivo e militare co-o Forte Sperone, dominando tutto o porto.",
+    "A cupola Liberty de cemento armou: Anche se a façciata settecentesca a inganna, a grande cupola crollâ a l'é stæta reconstruta into Növeçento con moderne tecniche de cemento armou.",
+    "A cripta-rifugio pe-i sfollæ do porto: Durante i bombardamenti navali in sci-e banchinn-e, i fræ han averto i locali sotta tæra do convento, dando rifugio a çentinæ de famigge sensa casa.",
+    "I erboi secolari protezûi da-o Senato: O grande piazzâ panoramico o gh'à erboi maestoxi. Into Setteçento a Repubbrica a dava sanzioin pesanti a chi o osava taggiâ i rami che davan ombra."
+  ]
+};
+
+  root.church["Basilica di Santa Maria Immacolata"] = {
+  "it": [
+    "La prima al mondo dopo il dogma: Il monumentale tempio di via Assarotti detiene un primato globale: fu la primissima chiesa edificata e dedicata all'Immacolata Concezione dopo la proclamazione del dogma da parte di Papa Pio IX nel 1854.",
+    "Una risposta artistica al filosofo Renan: La fondazione del gigantesco cantiere neorinascimentale fu promossa nel 1864 dal teologo Pietro Gambaro come fiera reazione cattolica alla pubblicazione della dissacrante \"Vita di Gesù\" dello scrittore francese Ernest Renan.",
+    "La cupola con la Vergine d'oro zecchino: La maestosa cupola, completata nel 1882, è coronata all'esterno da una colossale statua in bronzo dorato dell'Immacolata, scolpita da Scanzi e Pelleas, che brilla visibile da molti quartieri collinari.",
+    "La facciata gioiello annerita dallo smog: La monumentale facciata è un capolavoro neorinascimentale rivestito da marmi policromi e mosaici lucenti; purtroppo i flussi di traffico di via Assarotti hanno causato nel tempo un diffuso annerimento delle pietre.",
+    "Il mega-organo da record del maestro Trice: Sulla maestosa cantoria è installato uno degli organi storici più complessi della Liguria, costruito nel 1890 dall'organaro inglese William George Trice e dotato di migliaia di canne purissime.",
+    "La Cappella d'oro dei tre patriarchi: La spettacolare Cappella di San Giuseppe, disegnata da Dufour, è una sfolgorante esplosione di ori e bassorilievi che ospita le splendide statue di San Giuseppe, Abramo e del Re Davide.",
+    "Il doppio ingegno dei architetti rivali: La basilica unisce la genialità di due famosi progettisti ottocenteschi: fu disegnata nel 1856 da Domenico Cervetto e completata alla sua morte dal celebre architetto Maurizio Dufour.",
+    "Le Giornate FAI nel gioiello neorinascimentale: Per via della ricchezza mozzafiato dei suoi affreschi e del coro ligneo Gaolio, la basilica è diventata una tappa di punta celebrata nelle rassegne nazionali delle Giornate FAI d'Autunno."
+  ],
+  "en": [
+    "The first in the world after the dogma: The monumental church in Via Assarotti claims a global distinction: it was the first church built and dedicated to the Immaculate Conception after Pope Pius IX proclaimed the dogma in 1854.",
+    "An artistic answer to philosopher Renan: The vast Neo-Renaissance project was promoted in 1864 by theologian Pietro Gambaro as a proud Catholic response to the publication of French writer Ernest Renan's controversial Life of Jesus.",
+    "The dome with the gold Virgin: The majestic dome, completed in 1882, is crowned by a colossal gilded-bronze statue of the Immaculate Virgin by Scanzi and Pelleas, visible shining from many hillside districts.",
+    "The jewel façade darkened by smog: The monumental façade is a Neo-Renaissance masterpiece faced with polychrome marble and bright mosaics. Over time, heavy traffic on Via Assarotti has caused widespread darkening of the stone.",
+    "Master Trice's record-sized organ: One of Liguria's most complex historic organs stands on the grand choir loft. Built in 1890 by English organ maker William George Trice, it contains thousands of pipes.",
+    "The golden chapel of the three patriarchs: Dufour's spectacular Chapel of Saint Joseph is a blaze of gold and relief sculpture, housing fine statues of Saint Joseph, Abraham and King David.",
+    "The double talent of two rival architects: The basilica brings together two celebrated 19th-century designers. It was designed in 1856 by Domenico Cervetto and, after his death, completed by the renowned Maurizio Dufour.",
+    "FAI Days in the Neo-Renaissance jewel: Thanks to its breathtaking frescoes and carved wooden choir, the basilica has become a highlighted destination in the national FAI Autumn Days programme."
+  ],
+  "es": [
+    "La primera del mundo después del dogma: El monumental templo de Via Assarotti ostenta un primado mundial: fue la primera iglesia construida y dedicada a la Inmaculada Concepción tras la proclamación del dogma por Pío IX en 1854.",
+    "Una respuesta artística al filósofo Renan: El enorme proyecto neorrenacentista fue promovido en 1864 por el teólogo Pietro Gambaro como firme respuesta católica a la publicación de la polémica Vida de Jesús del escritor francés Ernest Renan.",
+    "La cúpula con la Virgen de oro: La majestuosa cúpula, terminada en 1882, está coronada por una colosal estatua de bronce dorado de la Inmaculada, obra de Scanzi y Pelleas, visible desde numerosos barrios de las colinas.",
+    "La fachada joya ennegrecida por el smog: La monumental fachada es una obra maestra neorrenacentista revestida de mármoles policromos y mosaicos brillantes. Con el tiempo, el intenso tráfico de Via Assarotti ha ennegrecido ampliamente la piedra.",
+    "El megaórgano del maestro Trice: En la gran tribuna se encuentra uno de los órganos históricos más complejos de Liguria, construido en 1890 por el organero inglés William George Trice y dotado de miles de tubos.",
+    "La capilla dorada de los tres patriarcas: La espectacular capilla de San José, diseñada por Dufour, es una explosión de dorados y bajorrelieves que alberga magníficas estatuas de San José, Abraham y el rey David.",
+    "El doble ingenio de dos arquitectos rivales: La basílica reúne el talento de dos célebres proyectistas del siglo XIX. Fue diseñada en 1856 por Domenico Cervetto y completada tras su muerte por el famoso Maurizio Dufour.",
+    "Las Jornadas FAI en la joya neorrenacentista: Por la extraordinaria riqueza de sus frescos y del coro de madera, la basílica se ha convertido en una etapa destacada de las jornadas nacionales FAI de Otoño."
+  ],
+  "fr": [
+    "La première au monde après le dogme : Le monumental sanctuaire de Via Assarotti revendique un primat mondial : ce fut la première église construite et dédiée à l'Immaculée Conception après la proclamation du dogme par Pie IX en 1854.",
+    "Une réponse artistique au philosophe Renan : L'immense chantier néo-Renaissance fut lancé en 1864 par le théologien Pietro Gambaro comme réponse catholique affirmée à la publication de la controversée Vie de Jésus de l'écrivain français Ernest Renan.",
+    "La coupole avec la Vierge dorée : La majestueuse coupole, achevée en 1882, est couronnée d'une statue colossale en bronze doré de l'Immaculée, œuvre de Scanzi et Pelleas, visible depuis de nombreux quartiers des collines.",
+    "La façade-bijou noircie par la pollution : La façade monumentale est un chef-d'œuvre néo-Renaissance revêtu de marbres polychromes et de mosaïques brillantes. Avec le temps, le trafic de Via Assarotti a fortement noirci la pierre.",
+    "Le grand orgue record du maître Trice : La tribune accueille l'un des orgues historiques les plus complexes de Ligurie, construit en 1890 par le facteur anglais William George Trice et doté de milliers de tuyaux.",
+    "La chapelle dorée des trois patriarches : La spectaculaire chapelle Saint-Joseph dessinée par Dufour déploie ors et bas-reliefs et abrite de belles statues de saint Joseph, Abraham et du roi David.",
+    "Le double génie de deux architectes rivaux : La basilique réunit le talent de deux grands architectes du XIXe siècle. Elle fut dessinée en 1856 par Domenico Cervetto puis achevée après sa mort par le célèbre Maurizio Dufour.",
+    "Les Journées FAI dans le joyau néo-Renaissance : Grâce à la richesse spectaculaire de ses fresques et de son chœur en bois, la basilique est devenue une étape phare des Journées FAI d'Automne."
+  ],
+  "ar": [
+    "الأولى في العالم بعد إعلان العقيدة: تحمل الكنيسة الضخمة في Via Assarotti مكانة عالمية، إذ كانت أول كنيسة تُبنى وتُكرس للحبل بلا دنس بعد إعلان البابا بيوس التاسع العقيدة عام 1854.",
+    "رد فني على الفيلسوف Renan: أطلق اللاهوتي Pietro Gambaro عام 1864 المشروع النيو-نهضوي الضخم بوصفه رداً كاثوليكياً قوياً على نشر الكاتب الفرنسي Ernest Renan كتابه المثير للجدل «حياة يسوع».",
+    "القبة والعذراء الذهبية: تعلو القبة المهيبة، المكتملة عام 1882، تمثال ضخم من البرونز المذهب للعذراء الطاهرة نحته Scanzi وPelleas، ويمكن رؤيته لامعاً من عدة أحياء على التلال.",
+    "واجهة جوهرة اسودت بفعل التلوث: الواجهة الضخمة تحفة نيو-نهضوية مكسوة برخام متعدد الألوان وفسيفساء لامعة، لكن حركة المرور الكثيفة في Via Assarotti تسببت مع الزمن في اسوداد واسع للحجر.",
+    "الأورغن الضخم للمعلم Trice: فوق منصة الجوقة يوجد أحد أعقد الأورغنات التاريخية في ليغوريا، بناه صانع الأورغن الإنجليزي William George Trice عام 1890 ويضم آلاف الأنابيب.",
+    "الكنيسة الذهبية للبطاركة الثلاثة: صمم Dufour كنيسة القديس يوسف الداخلية، وهي انفجار بصري من الذهب والنقوش البارزة وتضم تماثيل رائعة للقديس يوسف وإبراهيم والملك داود.",
+    "عبقرية مهندسين متنافسين: تجمع البازيليكا موهبة مهندسين مشهورين من القرن التاسع عشر؛ صممها Domenico Cervetto عام 1856 وأكملها بعد وفاته المعماري الشهير Maurizio Dufour.",
+    "أيام FAI في جوهرة النيو-نهضة: بفضل ثراء جدارياتها المذهل وجوقتها الخشبية، أصبحت البازيليكا محطة بارزة ضمن فعاليات أيام FAI الخريفية الوطنية."
+  ],
+  "ru": [
+    "Первая в мире после провозглашения догмата: Монументальный храм на Via Assarotti считается первым, построенным и посвящённым Непорочному Зачатию после провозглашения догмата папой Пием IX в 1854 году.",
+    "Художественный ответ философу Renan: Огромный неоренессансный проект был начат в 1864 году богословом Pietro Gambaro как решительный католический ответ на публикацию спорной «Жизни Иисуса» французского писателя Ernest Renan.",
+    "Купол с золотой Девой: Величественный купол, завершённый в 1882 году, венчает колоссальная позолоченная бронзовая статуя Непорочной Девы работы Scanzi и Pelleas, хорошо видимая из многих холмистых районов.",
+    "Фасад-драгоценность, потемневший от смога: Монументальный неоренессансный фасад облицован разноцветным мрамором и яркими мозаиками. Однако интенсивное движение на Via Assarotti со временем сильно затемнило камень.",
+    "Гигантский орган мастера Trice: На большой хорах установлен один из самых сложных исторических органов Лигурии, построенный в 1890 году английским мастером William George Trice и имеющий тысячи труб.",
+    "Золотая капелла трёх патриархов: Эффектная капелла Святого Иосифа по проекту Dufour сияет золотом и рельефами и хранит статуи святого Иосифа, Авраама и царя Давида.",
+    "Двойной талант двух архитекторов-соперников: Базилика объединяет работу двух известных архитекторов XIX века. Её спроектировал в 1856 году Domenico Cervetto, а после его смерти завершил Maurizio Dufour.",
+    "Дни FAI в неоренессансной жемчужине: Благодаря богатству фресок и деревянного хора базилика стала одной из заметных остановок национальной программы осенних Дней FAI."
+  ],
+  "zh": [
+    "教义公布后的世界第一座：Via Assarotti 的宏伟教堂拥有一项世界纪录——1854年教皇庇护九世宣布无原罪始胎教义后，它是最早兴建并以此奉献的教堂。",
+    "对哲学家 Renan 的艺术回应：1864年，神学家 Pietro Gambaro 推动庞大的新文艺复兴工程，作为天主教方面对法国作家 Ernest Renan 争议著作《耶稣生平》的鲜明回应。",
+    "穹顶上的金色圣母：1882年完工的大穹顶顶部矗立着 Scanzi 与 Pelleas 创作的巨型镀金青铜无原罪圣母像，从许多山坡街区都能看到它闪耀。",
+    "被烟尘熏黑的宝石立面：宏伟立面是新文艺复兴杰作，饰以彩色大理石和明亮马赛克。遗憾的是 Via Assarotti 的长期车流使石材逐渐大面积发黑。",
+    "Trice 大师的巨型管风琴：宏伟唱经楼上安装着利古里亚最复杂的历史管风琴之一，由英国制琴师 William George Trice 于1890年制造，拥有数千根音管。",
+    "三位先祖的金色小堂：Dufour 设计的圣若瑟小堂金碧辉煌，布满浮雕，并安置圣若瑟、亚伯拉罕和大卫王的精美雕像。",
+    "两位建筑师的双重才华：这座大殿汇集两位19世纪著名建筑师的构想。Domenico Cervetto 于1856年设计，去世后由 Maurizio Dufour 完成。",
+    "FAI 秋季开放日的新文艺复兴珍宝：由于壁画和木制唱经席极为丰富壮丽，这座大殿已成为意大利全国 FAI 秋季开放日的重要参观点。"
+  ],
+  "lij": [
+    "A primma a-o mondo dòppo o dogma: O grande tempio de Via Assarotti o l'é stæto a primma gexa construta e dedicâ a l'Immacolata Conceçion dòppo o dogma proclamou da Papa Pio IX into 1854.",
+    "Una risposta artistica a-o filosofo Renan: O grande cantê neo-rinascimentale o l'é stæto promosso into 1864 da-o teologo Pietro Gambaro comme risposta cattolica a-a 'Vita de Gesù' do scritô françeize Ernest Renan.",
+    "A cupola co-a Vergine d'öu: A maestosa cupola, finîa into 1882, a l'é coronâ da unna grande statoa de bronzo dorou de l'Immacolata, de Scanzi e Pelleas, visibile da tanti quartê in sci-e collinn-e.",
+    "A façciata-gioiello annerîa da-o smog: A façciata monumentale a l'é un capolavoro neo-rinascimentale de marmi policromi e mosaichi, ma o traffico de Via Assarotti co-o tempo o l'à annerio e prie.",
+    "O mega-organo do maestro Trice: In sciâ grande cantoria gh'é un di organi storichi ciù complessi da Liguria, construto into 1890 da l'inglese William George Trice e con miggiaia de canne.",
+    "A Cappella d'öu di trei patriarchi: A Cappella de San Giuseppe progettâ da Dufour a l'é pien-a d'öu e bassorilievi e a conserva e statoe de San Giuseppe, Abramo e Re Davide.",
+    "O doppio ingegno de doi architetti: A basilica a mette assieme doi grandi progettisti do Ottocento: a l'é stæta disegnâ into 1856 da Domenico Cervetto e completâ dòppo a seu mòrte da Maurizio Dufour.",
+    "E Giornate FAI into gioiello neo-rinascimentale: Pe-a ricchezza di affreschi e do coro de legno, a basilica a l'é diventâ unna tappa importante de Giornate FAI d'Autunno."
+  ]
+};
+
 })();
