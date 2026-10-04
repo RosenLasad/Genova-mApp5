@@ -2432,4 +2432,502 @@
     ]
 };
 
+  root.church["Sant'Agostino"] = {
+    "it": [
+        "Il rarissimo chiostro triangolare: A causa dell'andamento irregolare dei vicoli medievali, i frati non potettero creare un cortile quadrato. Realizzarono così un bizzarro chiostro a pianta perfettamente triangolare, un vero unicum geometrico in Europa.",
+        "Le piastrelle mediorientali sul campanile: La splendida ed elevata cuspide gotica della torre è interamente rivestita da mattonelle in maiolica policroma smaltata. Questa tecnica decorativa fu importata direttamente dai monaci dai loro viaggi in Oriente.",
+        "Da chiesa gotica a deposito rifiuti: Sconsacrato nel 1798 per i decreti napoleonici, l'immenso tempio visse un secolo di degrado profano. Le navate gotiche vennero riciclate come officina di fabbri e deposito dei carri della nettezza urbana.",
+        "Il primo Doge sepolto all'interno: Il complesso, oggi trasformato in splendido museo scultoreo ligure, custodisce la monumentale tomba di Simone Boccanegra, il leggendario primo Doge della Repubblica di Genova eletto a vita dal popolo.",
+        "La firma dell'architetto del 1282: Durante i restauri della torre campanaria, gli storici hanno scoperto un'epigrafe gotica intatta. Reca il nome di Pietro Bono, Magister de Antelamo, svelando l'autore della mitica dinastia di costruttori.",
+        "La ricostruzione moderna di Franco Albini: Sventrato dai bombardamenti bellici, il riscatto del complesso avvenne grazie ai maestri dell'architettura moderna Franco Albini e Franca Helg, che progettarono un allestimento museale in ferro e vetro celebrato internamente.",
+        "Le reliquie dell'autore della Legenda Aurea: All'interno del museo riposano le spoglie dell'arcivescovo medievale Jacopo da Varagine, celeberrimo scrittore della Legenda Aurea, la raccolta di vite di santi più letta e famosa di tutto il Medioevo.",
+        "La mostra temporanea delle pietre: Fino al 31 dicembre 2026, lo spazio ospita l'evento “Le pietre parlano 2026”, che espone sculture medievali inedite solitamente nascoste nei magazzini segreti dei musei civici genovesi."
+    ],
+    "en": [
+        "The exceptionally rare triangular cloister: Because the medieval lanes followed an irregular layout, the friars could not build a square courtyard. They created instead a perfectly triangular cloister, an extraordinary geometric solution and a true rarity in Europe.",
+        "Middle Eastern tiles on the bell tower: The tall Gothic spire is entirely covered with glazed polychrome majolica tiles. Tradition links this unusual decorative technique to models and influences brought back by monks from journeys to the East.",
+        "From Gothic church to rubbish depot: Deconsecrated in 1798 under Napoleonic decrees, the huge church endured a century of secular decline. Its Gothic aisles were reused as blacksmith workshops and as a depot for municipal refuse carts.",
+        "The first Doge buried inside: The complex, now a major museum of Ligurian sculpture, contains the monumental tomb of Simone Boccanegra, remembered as the first Doge of the Republic of Genoa and elected for life by the people.",
+        "The architect's signature from 1282: During restoration of the bell tower, historians discovered an intact Gothic inscription bearing the name Pietro Bono, Magister de Antelamo, revealing the identity of a master linked to the celebrated dynasty of builders.",
+        "The modern reconstruction by Franco Albini: Devastated by wartime bombing, the complex was reborn thanks to modern architects Franco Albini and Franca Helg, who designed the celebrated museum layout using iron, glass and carefully controlled spatial solutions.",
+        "The relics of the author of the Golden Legend: The museum preserves the remains of medieval archbishop Jacopo da Varagine, famous author of the Legenda Aurea, one of the most widely read collections of saints' lives in the Middle Ages.",
+        "The temporary exhibition of stones: Until 31 December 2026, the site hosts “Le pietre parlano 2026”, displaying previously unseen medieval sculptures that are normally kept in the storage rooms of Genoa's civic museums."
+    ],
+    "es": [
+        "El rarísimo claustro triangular: Debido al trazado irregular de los callejones medievales, los frailes no pudieron crear un patio cuadrado. Construyeron así un claustro de planta perfectamente triangular, una solución geométrica extraordinaria y prácticamente única en Europa.",
+        "Las baldosas orientales del campanario: La elevada aguja gótica está completamente revestida de azulejos de mayólica policroma esmaltada. La tradición relaciona esta técnica decorativa con modelos e influencias traídos por los monjes de sus viajes a Oriente.",
+        "De iglesia gótica a depósito de basura: Desacralizado en 1798 por los decretos napoleónicos, el enorme templo vivió un siglo de decadencia profana. Sus naves góticas fueron reutilizadas como talleres de herreros y depósito de carros de la limpieza urbana.",
+        "El primer Dux enterrado en su interior: El complejo, hoy convertido en un importante museo de escultura ligur, conserva la tumba monumental de Simone Boccanegra, recordado como el primer Dux de la República de Génova elegido de por vida por el pueblo.",
+        "La firma del arquitecto de 1282: Durante la restauración del campanario se descubrió una inscripción gótica intacta con el nombre Pietro Bono, Magister de Antelamo, que reveló la identidad de un maestro ligado a la célebre tradición de constructores.",
+        "La reconstrucción moderna de Franco Albini: Devastado por los bombardeos, el complejo renació gracias a los arquitectos Franco Albini y Franca Helg, autores de un célebre montaje museístico basado en hierro, vidrio y una cuidada organización del espacio.",
+        "Las reliquias del autor de la Leyenda Dorada: En el museo reposan los restos del arzobispo medieval Jacopo da Varagine, célebre autor de la Legenda Aurea, una de las colecciones de vidas de santos más leídas de toda la Edad Media.",
+        "La exposición temporal de las piedras: Hasta el 31 de diciembre de 2026, el espacio acoge “Le pietre parlano 2026”, con esculturas medievales inéditas que normalmente permanecen guardadas en los depósitos de los museos cívicos genoveses."
+    ],
+    "fr": [
+        "Le très rare cloître triangulaire : À cause du tracé irrégulier des ruelles médiévales, les frères ne purent aménager une cour carrée. Ils réalisèrent donc un cloître parfaitement triangulaire, une solution géométrique exceptionnelle et pratiquement unique en Europe.",
+        "Les carreaux orientaux du clocher : La haute flèche gothique est entièrement revêtue de carreaux de majolique polychrome vernissée. La tradition rattache cette technique décorative inhabituelle aux influences rapportées par les moines de leurs voyages en Orient.",
+        "D'église gothique à dépôt d'ordures : Désacralisé en 1798 par les décrets napoléoniens, l'immense édifice connut un siècle de déclin profane. Ses nefs gothiques furent réutilisées comme ateliers de forgerons et dépôt pour les véhicules de la voirie.",
+        "Le premier Doge enterré à l'intérieur : Le complexe, aujourd'hui important musée de sculpture ligure, conserve le tombeau monumental de Simone Boccanegra, considéré comme le premier Doge de la République de Gênes, élu à vie par le peuple.",
+        "La signature de l'architecte de 1282 : Lors des restaurations du clocher, une inscription gothique intacte portant le nom de Pietro Bono, Magister de Antelamo, fut découverte, révélant l'identité d'un maître lié à la célèbre tradition des bâtisseurs.",
+        "La reconstruction moderne de Franco Albini : Ravagé par les bombardements, le complexe retrouva une nouvelle vie grâce aux architectes Franco Albini et Franca Helg, auteurs d'une scénographie muséale en fer et en verre devenue une référence internationale.",
+        "Les reliques de l'auteur de la Légende dorée : Le musée conserve les restes de l'archevêque médiéval Jacopo da Varagine, célèbre auteur de la Legenda Aurea, l'un des recueils de vies de saints les plus lus de tout le Moyen Âge.",
+        "L'exposition temporaire des pierres : Jusqu'au 31 décembre 2026, le site accueille “Le pietre parlano 2026”, qui présente des sculptures médiévales inédites habituellement conservées dans les réserves des musées civiques génois."
+    ],
+    "ar": [
+        "الدير المثلث النادر جداً: بسبب المسار غير المنتظم للأزقة في العصور الوسطى لم يتمكن الرهبان من إنشاء فناء مربع. فبنوا بدلاً منه ديراً ذا مخطط مثلث تماماً، في حل هندسي استثنائي ونادر جداً في أوروبا.",
+        "بلاطات شرقية على برج الأجراس: تغطي قمة البرج القوطية العالية بالكامل بلاطات خزفية متعددة الألوان ومزججة. وتربط التقاليد هذه التقنية الزخرفية غير المعتادة بالتأثيرات التي حملها الرهبان من رحلاتهم إلى الشرق.",
+        "من كنيسة قوطية إلى مستودع نفايات: نُزعت صفة القداسة عن المبنى سنة 1798 بقرارات نابليونية، فعاش قرناً من التدهور المدني. وتحولت أروقته القوطية إلى ورش حدادة ومستودع لعربات تنظيف المدينة.",
+        "أول دوج مدفون في الداخل: المجمع، الذي أصبح اليوم متحفاً مهماً للنحت الليغوري، يحتفظ بالقبر الضخم لسيموني بوكانيغرا، الذي يُذكر بوصفه أول دوج لجمهورية جنوة وانتُخب مدى الحياة من قبل الشعب.",
+        "توقيع المعماري من عام 1282: خلال ترميم برج الأجراس اكتُشفت كتابة قوطية سليمة تحمل اسم Pietro Bono ولقب Magister de Antelamo، ما كشف هوية أحد الأساتذة المرتبطين بسلالة البنّائين الشهيرة.",
+        "إعادة البناء الحديثة لفرانكو ألبيني: بعد أن دمرته الغارات الحربية، نهض المجمع بفضل المعماريين Franco Albini وFranca Helg، اللذين صمما عرضاً متحفياً شهيراً يعتمد على الحديد والزجاج وتنظيم دقيق للفراغ.",
+        "رفات مؤلف الأسطورة الذهبية: يحتفظ المتحف برفات رئيس الأساقفة في العصور الوسطى Jacopo da Varagine، مؤلف Legenda Aurea الشهير، إحدى أكثر مجموعات سير القديسين قراءة وانتشاراً في القرون الوسطى.",
+        "معرض الحجارة المؤقت: حتى 31 ديسمبر 2026 يستضيف الموقع فعالية “Le pietre parlano 2026”، التي تعرض منحوتات من العصور الوسطى لم تُعرض من قبل وعادة ما تبقى محفوظة في مخازن متاحف جنوة المدنية."
+    ],
+    "ru": [
+        "Редчайший треугольный клуатр: Из-за неправильной планировки средневековых переулков монахи не могли создать квадратный двор. Поэтому они построили клуатр идеальной треугольной формы — необычное геометрическое решение и почти уникальный пример в Европе.",
+        "Восточные изразцы на колокольне: Высокий готический шпиль полностью покрыт полихромной глазурованной майоликой. Традиция связывает эту необычную декоративную технику с восточными влияниями, которые монахи привозили из путешествий.",
+        "От готической церкви до мусорного склада: В 1798 году, после наполеоновских декретов, храм был десакрализован и целый век использовался в светских целях. Готические нефы превратили в кузницы и склад телег городской уборочной службы.",
+        "Первый дож, похороненный внутри: Комплекс, ныне важный музей лигурийской скульптуры, хранит монументальную гробницу Симоне Бокканегры, которого считают первым дожем Генуэзской республики, избранным народом пожизненно.",
+        "Подпись архитектора 1282 года: Во время реставрации колокольни нашли прекрасно сохранившуюся готическую надпись с именем Pietro Bono и титулом Magister de Antelamo, раскрывшую личность мастера, связанного со знаменитой строительной традицией.",
+        "Современное восстановление Франко Альбини: Разрушенный военными бомбардировками комплекс возродился благодаря архитекторам Franco Albini и Franca Helg, создавшим знаменитую музейную экспозицию из железа, стекла и тщательно выстроенных пространств.",
+        "Реликвии автора «Золотой легенды»: В музее покоятся останки средневекового архиепископа Jacopo da Varagine, автора знаменитой Legenda Aurea, одного из самых читаемых сборников житий святых Средневековья.",
+        "Временная выставка камней: До 31 декабря 2026 года здесь проходит выставка “Le pietre parlano 2026”, где представлены ранее не экспонировавшиеся средневековые скульптуры, обычно хранящиеся в запасниках городских музеев Генуи."
+    ],
+    "zh": [
+        "极为罕见的三角形回廊：由于中世纪小巷布局不规则，修士无法建造传统方形庭院，于是形成了一个近乎完美的三角形回廊。这种几何处理十分罕见，被视为欧洲少有的特殊案例。",
+        "钟楼上的东方彩釉砖：高耸的哥特式尖顶完全覆盖着多彩釉面陶砖。传统认为，这种不同寻常的装饰技法与修士们从东方旅行中带回的样式和影响有关。",
+        "从哥特式教堂到垃圾车仓库：1798年因拿破仑法令失去宗教功能后，这座巨大教堂经历了一个世纪的世俗化衰败。哥特式中殿曾被改作铁匠作坊和城市清洁车辆的存放地。",
+        "第一位总督的墓葬：如今这里是一座重要的利古里亚雕塑博物馆，并保存着 Simone Boccanegra 的纪念性墓葬。他被视为热那亚共和国第一位由人民选出的终身总督。",
+        "1282年的建筑师签名：修复钟楼时，研究人员发现一块保存完整的哥特式铭文，上面刻有 Pietro Bono 和 Magister de Antelamo 的名字，揭示了与著名建筑师传统有关的一位大师。",
+        "Franco Albini 的现代重建：战争轰炸重创建筑群后，Franco Albini 与 Franca Helg 负责其复兴。他们以铁、玻璃和严谨空间设计打造的博物馆陈列，后来成为现代博物馆设计的经典案例。",
+        "《黄金传奇》作者的遗骨：博物馆保存着中世纪大主教 Jacopo da Varagine 的遗骨。他是著名《Legenda Aurea》的作者，这部圣徒传记集是整个中世纪最广为阅读的作品之一。",
+        "“石头会说话”临时展：截至2026年12月31日，这里举办“Le pietre parlano 2026”，展出通常收藏在热那亚市立博物馆库房中、平时少见的中世纪雕塑。"
+    ],
+    "lij": [
+        "O rariscimo chiostro triangolâ: Pe-a forma irregolare di caroggi medievali, i fræ no podeivan fâ un cortî quadròu. Han fæto coscì un chiostro perfettamente triangolâ, unna soluçion geometrica ben strana e quasi unica in Europa.",
+        "E piastrelle orientali in sciô campanin: A guglia gotica, erta e elegante, a l'é tutta coverta de maioliche policrome smaltæ. A tradiçion a liga sta tecnica decorativa a influense portæ da-i monexi di seu viaggi in Oriente.",
+        "Da gésa gotica a deposito da nettezza: Sconsacrâ into 1798 pe-i decreti napoleonici, a grande gésa a l'à passòu un secolo de degrado. E navate gotiche son stæte adêuviæ comme officinn-e de feræ e deposito di carri da nettezza urbana.",
+        "O primmo Doxe sepellio drento: O complesso, ancheu museo importante de scultura ligure, o conserva a tomba monumentale de Simone Boccanegra, ricòrdou comme o primmo Doxe da Repubbrica de Zêna, eletto a vitta da-o pòpolo.",
+        "A firma de l'architetto do 1282: Durante i restauri do campanin l'é stæta trovâ unna epigrafe gotica intatta co-o nomme de Pietro Bono, Magister de Antelamo, che a mostra l'autô ligou a-a famosa tradiçion di costruttoî.",
+        "A reconstrucion moderna de Franco Albini: Devastou da-e bombe, o complesso o l'é rinascio grazie a Franco Albini e Franca Helg, che han progettou un allestimento museale de fero e veddo diventou famoso anche fò d'Italia.",
+        "E reliquie de l'autô da Legenda Aurea: Into museo reposan e spogge de l'arcivescovo medievale Jacopo da Varagine, famoso autô da Legenda Aurea, unna de colleçioin de vite di santi ciù lette de tutto o Medioevo.",
+        "A mostra temporanea de prie: Fin-o a-o 31 dexembre 2026 o spaçio o ospita “Le pietre parlano 2026”, con sculture medievali inedite che normalmente son ascose inti magazzen di musei civici zeneixi."
+    ]
+};
+
+  root.church["Santa Maria di Castello"] = {
+    "it": [
+        "Fondata sopra la fortezza romana: Il promontorio su cui sorge la parrocchia è il nucleo antico di Genova. Sotto il pavimento gli archeologi hanno scoperto il castrum romano del II secolo a.C. e il palazzo dei re longobardi.",
+        "Le colonne rubate nel Mediterraneo: Le dieci monumentali colonne interne che sorreggono le navate non sono uguali. Sono autentici pezzi di spoglio di templi romani, caricati dai marinai genovesi sulle navi e riciclati come trofei di viaggio.",
+        "Il miracolo del Cristo Nero: Nella navata sinistra è custodito un crocifisso ligneo bizantino del XII secolo. La leggenda popolare narra che, dopo essere stato colpito da un uomo adirato, il volto di legno abbia iniziato a sanguinare miracolosamente.",
+        "L'Annunciazione che stregò il Grand Tour: Il loggiato del secondo chiostro ospita il meraviglioso affresco dipinto nel 1451 dal tedesco Giusto di Ravensburg. Questo angolo silenzioso divenne una meta obbligata per i poeti europei dell'Ottocento in viaggio in Italia.",
+        "I cappelli cardinalizi appesi nel vuoto: Alzando lo sguardo sopra il coro, noterai vecchi cappelli in tessuto sospesi nel vuoto. La tradizione vuole che rimangano appesi finché il tempo non li consuma, simboleggiando la caducità dei titoli e delle glorie terrene.",
+        "La pala monumentale con cento personaggi: Tra i tesori rinascimentali spicca il polittico di Ognissanti, dipinto nel 1513 da Ludovico Brea. L'opera è un prodigio di precisione: racchiude più di cento figure diverse, ognuna dotata di un'espressione unica.",
+        "La cassaforte segreta contro Napoleone: Durante i bombardamenti navali francesi e le spoliazioni napoleoniche, i frati Domenicani trasformarono i sotterranei in una cassaforte segreta, murando codici miniati e argenti per salvarli dal saccheggio dei soldati.",
+        "Un'acustica perfetta per i canti gregoriani: La curvatura dell'abside medievale dietro l'altare fu progettata per amplificare la voce dei monaci. La pietra riflette il suono consentendo alla voce di espandersi senza eco, rendendo la chiesa sede di importanti festival musicali."
+    ],
+    "en": [
+        "Founded above the Roman fortress: The hill on which the church stands forms part of Genoa's oldest urban core. Archaeological work beneath the floor has revealed remains identified with a Roman castrum of the 2nd century BC and a Lombard royal residence.",
+        "Columns taken from around the Mediterranean: The ten monumental columns supporting the aisles are not identical. They are reused ancient elements from Roman buildings, traditionally said to have been brought back by Genoese sailors and incorporated like trophies into the church.",
+        "The miracle of the Black Christ: The left aisle preserves a 12th-century Byzantine wooden crucifix. Popular legend says that after an angry man struck it, the wooden face began to bleed miraculously, turning the image into an object of special devotion.",
+        "The Annunciation that enchanted the Grand Tour: The loggia of the second cloister contains the splendid Annunciation painted in 1451 by Justus of Ravensburg. In the 19th century this quiet corner became a celebrated stop for European writers and travellers visiting Italy.",
+        "Cardinals' hats hanging in mid-air: Looking above the choir, old fabric hats can be seen suspended overhead. Tradition says they should remain there until time consumes them, as a symbol of the fleeting nature of titles, honour and worldly glory.",
+        "The monumental altarpiece with a hundred figures: Among the Renaissance treasures is the All Saints polyptych painted in 1513 by Ludovico Brea. The work is remarkable for its precision and contains more than one hundred distinct figures, each with an individual expression.",
+        "The secret strongbox against Napoleon: During French naval attacks and Napoleonic confiscations, Dominican friars reportedly turned underground rooms into a hidden strongbox, walling up illuminated manuscripts and silver objects to keep them from soldiers and looters.",
+        "Perfect acoustics for Gregorian chant: The curve of the medieval apse behind the altar helps project the monks' voices. Stone surfaces carry the sound clearly through the space, a quality that has also made the church suitable for important musical events."
+    ],
+    "es": [
+        "Fundada sobre la fortaleza romana: El promontorio donde se alza la iglesia forma parte del núcleo más antiguo de Génova. Bajo el pavimento, las excavaciones han identificado restos vinculados a un castrum romano del siglo II a. C. y a una residencia real lombarda.",
+        "Las columnas traídas del Mediterráneo: Las diez columnas monumentales que sostienen las naves no son iguales. Son piezas antiguas reutilizadas, procedentes de construcciones romanas y tradicionalmente asociadas a materiales traídos por marineros genoveses y usados como trofeos arquitectónicos.",
+        "El milagro del Cristo Negro: En la nave izquierda se conserva un crucifijo bizantino de madera del siglo XII. La leyenda popular cuenta que, después de ser golpeado por un hombre enfurecido, el rostro de madera comenzó a sangrar milagrosamente.",
+        "La Anunciación que fascinó al Grand Tour: La galería del segundo claustro alberga el magnífico fresco pintado en 1451 por Justo de Ravensburg. En el siglo XIX este rincón silencioso se convirtió en una parada célebre para escritores y viajeros europeos de paso por Italia.",
+        "Los sombreros cardenalicios suspendidos en el aire: Sobre el coro cuelgan antiguos sombreros de tela. La tradición quiere que permanezcan allí hasta que el tiempo los consuma, simbolizando la fragilidad de los títulos, los honores y la gloria terrenal.",
+        "El retablo monumental con cien personajes: Entre los tesoros renacentistas destaca el políptico de Todos los Santos, pintado en 1513 por Ludovico Brea. La obra reúne más de cien figuras diferentes, cada una con expresión propia y extraordinaria precisión de detalle.",
+        "La caja fuerte secreta contra Napoleón: Durante los ataques navales franceses y las expoliaciones napoleónicas, los dominicos habrían convertido los sótanos en escondite, tapiando códices iluminados y objetos de plata para salvarlos del saqueo de los soldados.",
+        "Una acústica perfecta para el canto gregoriano: La curvatura del ábside medieval ayuda a proyectar la voz. Las superficies de piedra distribuyen el sonido con claridad por el espacio, cualidad que también ha favorecido la celebración de importantes eventos musicales."
+    ],
+    "fr": [
+        "Fondée au-dessus de la forteresse romaine : Le promontoire où se dresse l'église appartient au noyau le plus ancien de Gênes. Sous le sol, les fouilles ont mis au jour des vestiges associés à un castrum romain du IIe siècle av. J.-C. et à une résidence royale lombarde.",
+        "Les colonnes venues de Méditerranée : Les dix colonnes monumentales qui soutiennent les nefs ne sont pas identiques. Il s'agit d'éléments antiques remployés, issus de constructions romaines et traditionnellement associés à des matériaux rapportés par les marins génois.",
+        "Le miracle du Christ noir : La nef gauche conserve un crucifix byzantin en bois du XIIe siècle. La légende populaire raconte qu'après avoir été frappé par un homme furieux, le visage de bois se serait mis à saigner miraculeusement.",
+        "L'Annonciation qui séduisit le Grand Tour : La galerie du second cloître abrite la splendide fresque peinte en 1451 par Justus de Ravensburg. Au XIXe siècle, ce lieu silencieux devint une étape appréciée des écrivains et voyageurs européens visitant l'Italie.",
+        "Les chapeaux de cardinaux suspendus dans le vide : Au-dessus du chœur pendent de vieux chapeaux en tissu. La tradition veut qu'ils y restent jusqu'à leur disparition naturelle, rappelant la fragilité des titres, des honneurs et de la gloire terrestre.",
+        "Le retable monumental aux cent personnages : Parmi les trésors de la Renaissance se distingue le polyptyque de la Toussaint peint en 1513 par Ludovico Brea. L'œuvre réunit plus de cent figures différentes, chacune avec une expression propre et un grand raffinement de détail.",
+        "Le coffre-fort secret contre Napoléon : Lors des attaques navales françaises et des spoliations napoléoniennes, les Dominicains auraient utilisé les souterrains comme cache, murant manuscrits enluminés et objets d'argent pour les soustraire aux pillages.",
+        "Une acoustique parfaite pour le chant grégorien : La courbure de l'abside médiévale aide à projeter la voix des moines. La pierre diffuse clairement le son dans l'espace, une qualité qui a aussi favorisé l'organisation de grands événements musicaux."
+    ],
+    "ar": [
+        "أقيمت فوق القلعة الرومانية: التل الذي تقوم عليه الكنيسة جزء من أقدم نواة عمرانية في جنوة. وقد كشفت الحفريات تحت الأرضية عن بقايا مرتبطة بمعسكر روماني من القرن الثاني قبل الميلاد وبمقر ملكي لومباردي.",
+        "أعمدة جاءت من البحر المتوسط: الأعمدة العشرة الضخمة التي تحمل الأروقة ليست متطابقة. إنها عناصر أثرية معاد استخدامها من منشآت رومانية، ويربطها التقليد بمواد جلبها البحارة الجنويون وأدمجوها في الكنيسة كأنها غنائم معمارية.",
+        "معجزة المسيح الأسود: يحتفظ الرواق الأيسر بصليب خشبي بيزنطي من القرن الثاني عشر. وتروي الأسطورة الشعبية أن رجلاً غاضباً ضربه، فبدأ وجه المسيح الخشبي ينزف بصورة معجزية.",
+        "البشارة التي سحرت رحلات Grand Tour: في رواق الدير الثاني توجد لوحة البشارة الرائعة التي رسمها Justus of Ravensburg سنة 1451. وفي القرن التاسع عشر أصبح هذا الركن الهادئ محطة شهيرة للكتاب والمسافرين الأوروبيين في إيطاليا.",
+        "قبعات الكرادلة المعلقة في الهواء: فوق الجوقة يمكن رؤية قبعات قماشية قديمة معلقة. وتقول التقاليد إنها يجب أن تبقى حتى يبليها الزمن، رمزاً لزوال الألقاب والشرف والمجد الدنيوي.",
+        "لوحة ضخمة تضم مئة شخصية: من كنوز عصر النهضة بوليبتيك جميع القديسين الذي رسمه Ludovico Brea سنة 1513. يتميز بدقة مذهلة ويضم أكثر من مئة شخصية مختلفة، لكل واحدة منها تعبير مستقل.",
+        "الخزنة السرية في مواجهة نابليون: أثناء الهجمات البحرية الفرنسية ومصادرات العصر النابليوني، يُقال إن الدومينيكان حولوا السراديب إلى مخبأ، فسوروا المخطوطات المزخرفة والفضيات لحمايتها من النهب.",
+        "صوتيات مثالية للترتيل الغريغوري: يساعد انحناء الحنية الوسطى خلف المذبح على إسقاط أصوات الرهبان. تعكس الأسطح الحجرية الصوت بوضوح عبر المكان، وهي خاصية جعلت الكنيسة مناسبة أيضاً للفعاليات الموسيقية المهمة."
+    ],
+    "ru": [
+        "Основана над римской крепостью: Холм, на котором стоит церковь, относится к древнейшему ядру Генуи. Под полом археологи обнаружили остатки, связываемые с римским каструмом II века до н. э. и с королевской резиденцией лангобардов.",
+        "Колонны, привезённые из Средиземноморья: Десять монументальных колонн внутри не одинаковы. Это повторно использованные античные элементы из римских сооружений, которые традиция связывает с материалами, привезёнными генуэзскими моряками как архитектурные трофеи.",
+        "Чудо Чёрного Христа: В левом нефе хранится византийское деревянное распятие XII века. По народной легенде, разгневанный человек ударил его, после чего деревянное лицо Христа чудесным образом начало кровоточить.",
+        "Благовещение, покорившее путешественников Grand Tour: Во втором клуатре находится великолепная фреска, написанная в 1451 году Justus of Ravensburg. В XIX веке этот тихий уголок стал известной остановкой для европейских писателей и путешественников по Италии.",
+        "Кардинальские шляпы, висящие в воздухе: Над хором можно увидеть старые тканевые шляпы, подвешенные высоко над головой. По традиции они должны оставаться там, пока не истлеют, напоминая о бренности титулов и земной славы.",
+        "Монументальный алтарь со ста персонажами: Среди сокровищ Ренессанса выделяется полиптих Всех Святых, написанный Ludovico Brea в 1513 году. В нём более ста разных фигур, каждая с собственным выражением и тщательно проработанными деталями.",
+        "Тайный сейф от Наполеона: Во время французских обстрелов и наполеоновских конфискаций доминиканцы, по преданию, превратили подземелья в тайник, замуровав иллюминированные рукописи и серебро, чтобы спасти их от разграбления.",
+        "Идеальная акустика для григорианского пения: Изогнутая средневековая апсида помогает усиливать голос. Каменные поверхности равномерно разносят звук по пространству, благодаря чему церковь подходит и для крупных музыкальных мероприятий."
+    ],
+    "zh": [
+        "建在罗马要塞之上：教堂所在的高地属于热那亚最古老的城市核心。考古人员在地板下发现了与公元前2世纪罗马军营以及伦巴第王室居所有关的遗迹。",
+        "来自地中海的古代石柱：支撑中殿的十根大型石柱并不完全相同，它们是从罗马时期建筑中再利用的古代构件。传统认为，部分材料由热那亚水手从海上带回，并像战利品一样嵌入教堂。",
+        "“黑色基督”的奇迹：左侧中殿保存着一尊12世纪拜占庭木制十字架。民间传说称，一名愤怒男子击打圣像后，木制面庞竟奇迹般开始流血。",
+        "让 Grand Tour 旅人着迷的《圣母领报》：第二回廊的楼廊保存着 Justus of Ravensburg 于1451年绘制的精美壁画。19世纪时，这个安静角落成为欧洲作家和旅行者游历意大利时喜爱的停留点。",
+        "悬在空中的枢机帽：抬头看唱诗班上方，可以看到老旧布帽悬挂空中。传统认为，它们应一直挂到被时间侵蚀殆尽，以象征头衔、荣誉和世俗荣耀终将消逝。",
+        "拥有上百人物的纪念性祭坛画：文艺复兴珍宝中有 Ludovico Brea 于1513年绘制的《诸圣》多联画。作品细节极其精密，包含一百多位人物，而且每个人都有独特表情。",
+        "躲避拿破仑掠夺的秘密保险库：法国海军袭击与拿破仑时期征用期间，多明我会修士据说把地下空间变成藏匿处，将彩饰手抄本和银器封进墙内，以免被士兵掠走。",
+        "适合格里高利圣咏的声学效果：祭坛后的中世纪后殿曲面有助于放大和传播人声。石材表面让声音在空间中清晰扩散，这也使教堂后来适合举办重要音乐活动。"
+    ],
+    "lij": [
+        "Fondâ in sciâ fortezza romana: O promontöio donde a s'addrissa a gésa o l'é parte do nùcleo ciù antigo de Zêna. Sotta o pavimento son vegnui fòa resti ligæ a un castrum romano do II secolo a.C. e a unna residenza reale longobarda.",
+        "E colonne vegnue do Mediterraneo: E diexe grande colonne che tegnan e navate no son tutte compagne. Son peççi antighi riadêuviæ, ligæ a edifizi romani e, segondo a tradiçion, portæ da-i marinæ zeneixi comme trofei de viaggio.",
+        "O miracolo do Cristo Neigro: Inta navata a mancina gh'é un crocifisso de legno bizantin do XII secolo. A legenda a conta che un òmmo arraggiou o l'abbia colpio e che a façça de legno a l'aggia comensou a sanguinâ miracolosamente.",
+        "L'Annunciaçion che a incantava o Grand Tour: Inta loggia do segondo chiostro gh'é o bello affresco fæto into 1451 da Giusto di Ravensburg. Into Ottocento sto cantun tranquillo o l'é diventou unna tappa famosa pe scritoî e viaggiatoî europei in Italia.",
+        "I cappelli cardinalizi appesi into veuo: In sciô coro se vedan vegi cappelli de stoffa appesi. A tradiçion a veu che restan lì finché o tempo no-i consuma, comme segno che titoli, onô e gloria terrena pasan.",
+        "A pala monumentale con çento personaggi: Tra i tesori rinascimentali gh'é o polittico de Tutti i Santi, pintou into 1513 da Ludovico Brea. O l'é pien de detaggi e o mostra ciù de çento figure diverse, ognidunn-a co-a seu esprescion.",
+        "A cassaforte segreta contro Napoleone: Durante i attacchi françeixi e e requisizioin napoleoniche, i Domenicani avieivan trasformou i sotterranei in un ascondiglio, murando codici miniæ e argento pe sarvâli da-o saccheggio.",
+        "Un'acustica perfetta pe-i canti gregorian: A curva de l'abside medievale a agiutta a spande a voxe di monexi. A pria a porta o son ciaro pe tutto o spaçio, qualità che a l'à fæto da gésa anche un bon pòsto pe eventi musicali."
+    ]
+};
+
+  root.church["Santa Maria in Passione"] = {
+    "it": [
+        "Costruita sulla torre degli Embriaci: Il convento quattrocentesco fu edificato sulla collina del Molo inglobando le strutture medievali preesistenti della famiglia nobile degli Embriaci, i temuti signori della guerra che dominarono le prime storiche Crociate in Terrasanta.",
+        "I ruderi provocati da due bombe: La chiesa si presenta oggi sotto forma di suggestivi ruderi a cielo aperto. Il tetto e le volte crollarono a causa di due pesantissimi raid aerei britannici nel 1942 e nel 1944, lasciando intatto solo il campanile.",
+        "La pinacoteca barocca andata perduta: Prima dei crolli bellici, la chiesa era considerata un capolavoro decorativo. Le sue pareti ospitavano meravigliosi affreschi di Valerio Castello e Domenico Piola, purtroppo andati interamente sbriciolati e distrutti sotto le macerie delle bombe.",
+        "La trasformazione in caserma militare: A causa delle leggi ottocentesche sulla soppressione degli ordini religiosi, il complesso fu tolto alle monache agostiniane e visse una totale metamorfosi profana, diventando una caserma per le Guardie di città.",
+        "Il deposito privato del formaggiaio: Durante gli anni dell'abbandono post-bellico, lo scheletro della navata barocca sfondata fu occupato abusivamente. La tradizione ricorda che i locali seminterrati divennero il deposito fresco per le forme di un povero formaggiaio della zona.",
+        "La rinascita come Libera Collina: Sottratto al degrado, il sito archeologico è rinato il 5 ottobre 2014 come parco culturale urbano. Oggi la struttura ospita regolarmente lezioni all'aperto, concerti acustici, mostre d'arte contemporanea e spettacoli teatrali nel cuore dei caruggi.",
+        "Le camere sepolcrali scoperte nel 2018: Durante recenti scavi di consolidamento, gli archeologi hanno scoperto tombe gentilizie intatte sotto il transetto. Al loro interno sono riaffiorati gioielli e tessuti preziosi appartenenti a nobili che avevano pagato ingenti somme per riposarvi.",
+        "Le piante rare censite dai botanici: L'interno rimasto senza tetto per decenni ha favorito la crescita di vegetazione spontanea. Un'equipe universitaria ha censito tra le rovine decine di specie vegetali diverse, alcune rarissime in città, nate grazie al particolare microclima umido."
+    ],
+    "en": [
+        "Built over the Embriaci tower: The 15th-century convent rose on the Molo hill by incorporating medieval structures belonging to the noble Embriaci family, the formidable Genoese warlords linked to the earliest Crusades in the Holy Land.",
+        "Ruins created by two bombings: Today the church survives as atmospheric open-air ruins. The roof and vaults collapsed after two heavy British air raids in 1942 and 1944, while the bell tower remained standing.",
+        "The lost Baroque picture gallery: Before the wartime destruction, the church was considered a decorative masterpiece. Its walls carried important frescoes by Valerio Castello and Domenico Piola, which were shattered and lost beneath the rubble of the bombed building.",
+        "Its transformation into a military barracks: After 19th-century laws suppressing religious orders, the complex was taken from the Augustinian nuns and underwent a complete secular transformation, becoming barracks for the city guards.",
+        "The cheesemaker's private storehouse: During the years of post-war abandonment, the shell of the ruined Baroque nave was occupied informally. Local memory says the cool basement rooms were used to store wheels of cheese by a poor cheesemaker from the neighbourhood.",
+        "Reborn as the Libera Collina: Rescued from decline, the archaeological site reopened on 5 October 2014 as an urban cultural park. It now hosts open-air lessons, acoustic concerts, contemporary art exhibitions and theatrical performances in the heart of the old lanes.",
+        "Burial chambers discovered in 2018: During recent consolidation work, archaeologists found intact elite tombs beneath the transept. Jewellery and precious textiles reportedly emerged from the graves of nobles who had paid large sums to be buried there.",
+        "Rare plants catalogued by botanists: Decades without a roof encouraged spontaneous vegetation to grow inside the ruins. A university team recorded dozens of different species, including some rarely found in the city, favoured by the site's humid microclimate."
+    ],
+    "es": [
+        "Construida sobre la torre de los Embriaci: El convento del siglo XV se levantó en la colina del Molo incorporando estructuras medievales de la noble familia Embriaci, poderosos guerreros genoveses ligados a las primeras Cruzadas en Tierra Santa.",
+        "Las ruinas causadas por dos bombardeos: Hoy la iglesia se presenta como un sugestivo conjunto de ruinas al aire libre. El techo y las bóvedas se derrumbaron tras dos fuertes ataques aéreos británicos en 1942 y 1944, mientras el campanario permaneció en pie.",
+        "La pinacoteca barroca perdida: Antes de la destrucción bélica, la iglesia era considerada una joya decorativa. Sus paredes albergaban importantes frescos de Valerio Castello y Domenico Piola, destruidos y pulverizados bajo los escombros del edificio bombardeado.",
+        "La transformación en cuartel militar: Las leyes del siglo XIX que suprimieron órdenes religiosas retiraron el complejo a las monjas agustinas. El edificio sufrió una completa transformación profana y se convirtió en cuartel de los guardias urbanos.",
+        "El almacén privado del quesero: Durante el abandono de posguerra, el esqueleto de la nave barroca fue ocupado de forma informal. La memoria local recuerda que los sótanos frescos se utilizaron para guardar quesos de un humilde comerciante del barrio.",
+        "El renacimiento como Libera Collina: Rescatado del abandono, el sitio arqueológico reabrió el 5 de octubre de 2014 como parque cultural urbano. Hoy acoge clases al aire libre, conciertos acústicos, exposiciones de arte contemporáneo y espectáculos teatrales entre los caruggi.",
+        "Las cámaras funerarias descubiertas en 2018: Durante recientes trabajos de consolidación, los arqueólogos hallaron tumbas nobiliarias intactas bajo el transepto. De ellas reaparecieron joyas y tejidos preciosos pertenecientes a familias que habían pagado grandes sumas por ser enterradas allí.",
+        "Las plantas raras catalogadas por botánicos: Décadas sin techo favorecieron el crecimiento espontáneo de vegetación. Un equipo universitario registró entre las ruinas decenas de especies diferentes, algunas muy raras en la ciudad, gracias al particular microclima húmedo del lugar."
+    ],
+    "fr": [
+        "Construite sur la tour des Embriaci : Le couvent du XVe siècle fut édifié sur la colline du Molo en incorporant des structures médiévales appartenant à la famille noble des Embriaci, puissants seigneurs de guerre génois liés aux premières Croisades en Terre sainte.",
+        "Les ruines provoquées par deux bombardements : L'église se présente aujourd'hui comme de suggestives ruines à ciel ouvert. Le toit et les voûtes s'effondrèrent après deux violents raids aériens britanniques en 1942 et 1944, tandis que le clocher resta debout.",
+        "La pinacothèque baroque disparue : Avant les destructions de guerre, l'église était considérée comme un chef-d'œuvre décoratif. Ses murs portaient d'importantes fresques de Valerio Castello et Domenico Piola, totalement détruites sous les décombres des bombardements.",
+        "La transformation en caserne militaire : Les lois du XIXe siècle supprimant les ordres religieux retirèrent le complexe aux Augustines. L'édifice connut alors une complète métamorphose profane et devint une caserne pour les gardes de la ville.",
+        "L'entrepôt privé du fromager : Pendant les années d'abandon d'après-guerre, la carcasse de la nef baroque fut occupée de manière informelle. La mémoire locale raconte que les caves fraîches servirent de dépôt aux meules de fromage d'un modeste commerçant du quartier.",
+        "La renaissance comme Libera Collina : Sauvé de l'abandon, le site archéologique rouvrit le 5 octobre 2014 comme parc culturel urbain. Il accueille aujourd'hui cours en plein air, concerts acoustiques, expositions d'art contemporain et spectacles au cœur des ruelles.",
+        "Les chambres funéraires découvertes en 2018 : Lors de récents travaux de consolidation, des archéologues ont mis au jour des tombes aristocratiques intactes sous le transept. Bijoux et tissus précieux auraient été retrouvés dans ces sépultures coûteuses.",
+        "Les plantes rares recensées par les botanistes : Des décennies sans toiture ont favorisé une végétation spontanée. Une équipe universitaire a recensé dans les ruines des dizaines d'espèces, dont certaines très rares en ville, favorisées par le microclimat humide du site."
+    ],
+    "ar": [
+        "بُنيت فوق برج عائلة Embriaci: شُيد دير القرن الخامس عشر على تل المولو مع دمج منشآت تعود إلى عائلة Embriaci النبيلة، وهم من كبار القادة الجنويين المرتبطين بالحملات الصليبية الأولى في الأرض المقدسة.",
+        "أطلال سببتها غارتان: تبدو الكنيسة اليوم كأطلال مفتوحة للسماء ذات جو مميز. انهار السقف والقبوات بعد غارتين جويتين بريطانيتين عنيفتين في 1942 و1944، بينما بقي برج الأجراس قائماً.",
+        "المعرض الباروكي المفقود: قبل دمار الحرب كانت الكنيسة تُعد تحفة زخرفية. وكانت جدرانها تحمل جداريات مهمة لـ Valerio Castello وDomenico Piola، لكنها تحطمت وضاعت بالكامل تحت أنقاض القصف.",
+        "التحول إلى ثكنة عسكرية: بعد قوانين القرن التاسع عشر التي ألغت بعض الرهبنات، نُزع المجمع من الراهبات الأوغسطينيات وتحول تماماً إلى استخدام دنيوي، إذ أصبح ثكنة لحرس المدينة.",
+        "مخزن صانع الجبن: خلال سنوات الإهمال بعد الحرب، شُغلت بقايا صحن الكنيسة الباروكي بصورة غير رسمية. وتذكر الروايات المحلية أن الأقبية الباردة استُخدمت لتخزين قوالب الجبن الخاصة بتاجر فقير من الحي.",
+        "الولادة الجديدة باسم Libera Collina: بعد إنقاذه من التدهور، أعيد افتتاح الموقع الأثري في 5 أكتوبر 2014 كحديقة ثقافية حضرية. ويستضيف اليوم دروساً مفتوحة وحفلات صوتية ومعارض فنية وعروضاً مسرحية وسط الأزقة القديمة.",
+        "غرف دفن اكتُشفت عام 2018: أثناء أعمال تدعيم حديثة عثر علماء الآثار على قبور أرستقراطية سليمة تحت الجناح العرضي. وظهرت منها مجوهرات وأقمشة ثمينة تعود إلى نبلاء دفعوا مبالغ كبيرة ليدفنوا هناك.",
+        "نباتات نادرة أحصاها علماء النبات: بقاء الداخل بلا سقف لعقود شجع نمو نباتات عفوية. وقد سجل فريق جامعي عشرات الأنواع بين الأطلال، بعضها نادر جداً في المدينة بفضل المناخ الرطب الخاص بالموقع."
+    ],
+    "ru": [
+        "Построена над башней Эмбриачи: Монастырь XV века возвели на холме Моло, включив в него средневековые постройки знатной семьи Embriaci — могущественных генуэзских военных, связанных с ранними крестовыми походами в Святую землю.",
+        "Руины после двух бомбардировок: Сегодня церковь представляет собой атмосферные руины под открытым небом. Крыша и своды рухнули после двух тяжёлых британских авианалётов 1942 и 1944 годов, а колокольня уцелела.",
+        "Утраченная барочная картинная галерея: До военных разрушений церковь считалась декоративным шедевром. Её стены украшали важные фрески Valerio Castello и Domenico Piola, полностью уничтоженные под обломками после бомбардировок.",
+        "Превращение в военную казарму: После законов XIX века о ликвидации религиозных орденов комплекс отобрали у августинок. Здание полностью утратило монастырскую функцию и стало казармой городской стражи.",
+        "Личный склад сыровара: В годы послевоенного запустения руины барочного нефа использовали самовольно. Местная память рассказывает, что прохладные подвалы служили складом для головок сыра бедного торговца из квартала.",
+        "Возрождение как Libera Collina: Спасённый от упадка археологический участок открылся 5 октября 2014 года как городской культурный парк. Здесь проходят занятия на открытом воздухе, акустические концерты, выставки современного искусства и спектакли.",
+        "Погребальные камеры, найденные в 2018 году: Во время недавних укрепительных работ археологи обнаружили под трансептом нетронутые аристократические захоронения. В них нашли украшения и дорогие ткани, принадлежавшие состоятельным погребённым.",
+        "Редкие растения, учтённые ботаниками: Десятилетия без крыши позволили внутри разрастись дикой растительности. Университетская команда зарегистрировала среди руин десятки видов, некоторые из которых редко встречаются в городе благодаря влажному микроклимату."
+    ],
+    "zh": [
+        "建在 Embriaci 家族塔楼之上：15世纪修道院建于 Molo 山丘，并吸收了贵族 Embriaci 家族的中世纪建筑。他们是热那亚早期著名军事家族，与最初几次圣地十字军东征密切相关。",
+        "两次轰炸留下的露天遗迹：如今教堂以极具氛围的露天废墟形式存在。1942年和1944年两次猛烈的英国空袭导致屋顶与拱顶坍塌，只有钟楼仍然保存下来。",
+        "消失的巴洛克绘画宝库：战争毁坏前，这座教堂曾被视为装饰艺术杰作，墙面有 Valerio Castello 与 Domenico Piola 的重要壁画。它们最终在轰炸和倒塌中全部毁失。",
+        "改作军营：19世纪镇压修会的法律实施后，建筑群被从奥斯定会修女手中收走，宗教用途完全改变，后来成为城市卫队使用的军营。",
+        "奶酪商的私人仓库：战后长期废弃时期，破损的巴洛克中殿曾被人私自占用。当地记忆说，凉爽的地下空间一度被附近一位贫穷奶酪商用来存放整轮奶酪。",
+        "以 Libera Collina 身份重生：遗址摆脱衰败后，于2014年10月5日作为城市文化公园重新开放。如今这里定期举行露天课程、不插电音乐会、当代艺术展和戏剧演出。",
+        "2018年发现的墓室：近期加固工程中，考古人员在耳堂下发现保存完整的贵族墓葬，并出土珠宝和珍贵织物，据说属于曾支付高额费用在此安葬的家族。",
+        "植物学家记录的稀有植物：内部数十年没有屋顶，促使自然植被大量生长。大学团队在废墟中记录了数十种植物，其中一些在城市中非常罕见，得益于特殊潮湿小气候。"
+    ],
+    "lij": [
+        "Construta in sciâ torre di Embriaci: O convento do Quattroçento o l'é stæto fæto in sciâ collinn-a do Molo, inglobbando struttue medievali da famiggia nobile Embriaci, famoxi guerriei zeneixi ligæ a-e primme Croxiæ in Terrasanta.",
+        "I ruderi fæti da doe bombe: Ancheu a gésa a se presenta comme ruderi a çê avertou. O tetto e-e volte son crollæ dòppo doi pesanti bombardamenti britanneghi into 1942 e 1944, mentre o campanin o l'é restou in pê.",
+        "A pinacoteca barocca perdùa: Primma da guæra a gésa a l'ea un capolavoro decorativo. E mænn-e aveivan affreschi de Valerio Castello e Domenico Piola, ma son andæti persi e destruti sotta e macerie di bombardamenti.",
+        "A transformaçion in caserma: Co-e lezzi do Ottocento contro i ordini religioxi, o complesso o l'é stæto levòu ae monexin agostiniane e trasformou in caserma pe-e guardie da çittæ.",
+        "O deposito do formaggiâ: Inti anni d'abbandono dòppo a guæra, o scheletro da navata barocca o l'é stæto occupou abusivamente. A tradiçion a ricòrda che i sotterranei freschi servivan pe conservâ e forme de un povero formaggiâ da zona.",
+        "A rinascita comme Libera Collina: Sarvou da-o degrado, o sito archeologico o l'é rinascio o 5 ottobre 2014 comme parco culturale urbano. Ancheu o ospita leçioin a l'averto, concerti acustici, mostre contemporanee e teatro inti caroggi.",
+        "E camere sepulcrali trovæ into 2018: Durante lavori recenti de consolidamento, son vegnue fòa tombe nobiliari intatte sotta o transetto, con gioielli e tessui preçioxi de famigge che aveivan pagou tanto pe riposâ lì.",
+        "E piante rare censîe da-i botanici: Essendo restou sensa tetto pe decenni, l'interno o l'à fæto cresce vegetaçion spontanea. Un gruppo universitario o l'à contòu decinn-e de specie, alcune ben rare in çittæ, grazie a-o microclima umido."
+    ]
+};
+
+  root.church["Santi Cosma e Damiano"] = {
+    "it": [
+        "La misteriosa scomparsa di Damiano: Nella toponomastica genovese e nella lingua parlata quotidiana, il povero San Damiano è stato quasi dimenticato. I cittadini indicano da secoli la parrocchia e i vicoli circostanti chiamandoli semplicemente Chiesa di San Cosimo.",
+        "L'unica con absidi intatte dell'XI secolo: Rispetto alla quasi totalità delle chiese del centro storico, pesantemente stravolte nei secoli dalle espansioni barocche, questo tempio custodisce l'eccezionale primato di aver mantenuto intatte le absidi romaniche originarie dell'XI secolo.",
+        "La parrocchia dei barbieri e dei chirurghi: Cosma e Damiano erano antichi medici orientali. Per questo motivo, nel 1476 l'edificio divenne la sede ufficiale a Genova della corporazione dei barbieri e dei chirurghi, che qui tenevano le assemblee.",
+        "Le colonne zebrate in pietra del Promontorio: Le splendide navate interne sono sorrette da sei massicce colonne medievali costruite a rocchi alternati in marmo bianco e pietra nera del Promontorio, il calcare grigio-scuro estratto storicamente sulle colline della Lanterna.",
+        "Le reliquie donate come bottino d'Oriente: La svolta nel culto avvenne nel 1296, quando le storiche famiglie Spinola e Mallone donarono alla parrocchia autentici frammenti ossei dei santi medici, prelevati a Costantinopoli durante i fruttuosi traffici commerciali marinari genovesi.",
+        "I monumentali sarcofagi incastonati nella facciata: La facciata in pietra rustica custodisce importanti testimonianze patrizie. Mette in mostra alcune splendide arche sepolcrali ad arcosolio, tra cui spicca la celebre Tomba di Barisone, ornata da un elegantissimo arco acuto medievale.",
+        "La resistenza ai bombardamenti del Re Sole: La solidità delle pietre ha salvato la struttura da due guerre. Il tetto in legno fu quasi interamente distrutto nel terribile attacco navale francese del 1684 e nei raid del 1942, ma le mura resistettero.",
+        "L'organo acustico dei maestri d'ascia ticinesi: Nella cantoria si conserva uno strumento musicale di grande pregio, costruito a metà Settecento da Filippo Piccaluga. Grazie a una cassa armonica intagliata con precisione millimetrica, la chiesa ospita rinomate rassegne di musica antica."
+    ],
+    "en": [
+        "The mysterious disappearance of Damian: In Genoese place names and everyday speech, poor Saint Damian has almost vanished. For centuries locals have referred to the parish and surrounding lanes simply as the church of San Cosimo.",
+        "The church with intact 11th-century apses: Unlike most churches in the historic centre, heavily altered by later Baroque enlargements, this building preserves its original Romanesque apses from the 11th century to an exceptional degree.",
+        "The parish of barbers and surgeons: Cosmas and Damian were revered as physicians. In 1476 the church therefore became the official Genoese seat of the guild of barbers and surgeons, who held their meetings here.",
+        "Striped columns of Promontorio stone: The interior aisles are supported by six massive medieval columns built in alternating drums of white marble and dark Promontorio stone, the grey-black limestone historically quarried on the hills near the Lanterna.",
+        "Relics donated as treasures from the East: In 1296 the Spinola and Mallone families donated bone relics of the physician saints to the parish, traditionally linked to Genoese trade with Constantinople and the wider eastern Mediterranean.",
+        "Monumental sarcophagi set into the façade: The rough stone façade preserves important patrician memorials, including elegant arcosolium tombs. The celebrated Tomb of Barisone stands out with its refined medieval pointed arch.",
+        "Surviving the bombardments of the Sun King: The strength of the masonry helped the church endure two major conflicts. The wooden roof was almost entirely destroyed in the French naval attack of 1684 and again damaged in 1942, but the walls survived.",
+        "The organ of the Ticinese craftsmen: The choir loft preserves a valuable instrument built in the mid-18th century by Filippo Piccaluga. Its finely carved resonating case contributes to the church's reputation as a venue for early-music performances."
+    ],
+    "es": [
+        "La misteriosa desaparición de Damián: En la toponimia genovesa y en el habla cotidiana, el pobre San Damián casi ha desaparecido. Desde hace siglos los habitantes llaman a la parroquia y a los callejones cercanos simplemente iglesia de San Cosimo.",
+        "La única con ábsides intactos del siglo XI: A diferencia de la mayoría de iglesias del centro histórico, muy transformadas por ampliaciones barrocas, este templo conserva de forma excepcional sus ábsides románicos originales del siglo XI.",
+        "La parroquia de barberos y cirujanos: Cosme y Damián eran venerados como médicos. Por ello, en 1476 el edificio se convirtió en la sede oficial en Génova de la corporación de barberos y cirujanos, que celebraba aquí sus reuniones.",
+        "Las columnas a franjas de piedra de Promontorio: Las naves se sostienen sobre seis robustas columnas medievales formadas por tambores alternos de mármol blanco y piedra oscura de Promontorio, la caliza gris-negra extraída históricamente en las colinas de la Lanterna.",
+        "Las reliquias donadas como tesoro de Oriente: En 1296 las familias Spinola y Mallone donaron a la parroquia reliquias óseas de los santos médicos, vinculadas tradicionalmente a los intercambios comerciales genoveses con Constantinopla y el Mediterráneo oriental.",
+        "Los sarcófagos monumentales incrustados en la fachada: La rústica fachada de piedra conserva importantes memorias patricias, entre ellas elegantes sepulcros en arcosolio. Destaca la célebre tumba de Barisone, adornada con un refinado arco apuntado medieval.",
+        "La resistencia a los bombardeos del Rey Sol: La solidez de la piedra ayudó a salvar la estructura en dos guerras. El tejado de madera quedó casi destruido por el ataque naval francés de 1684 y sufrió nuevos daños en 1942, pero los muros resistieron.",
+        "El órgano de los maestros artesanos ticineses: En el coro se conserva un valioso instrumento construido a mediados del siglo XVIII por Filippo Piccaluga. Su caja de resonancia finamente tallada contribuye a la fama de la iglesia como sede de conciertos de música antigua."
+    ],
+    "fr": [
+        "La mystérieuse disparition de Damien : Dans la toponymie génoise et le langage quotidien, saint Damien a presque disparu. Depuis des siècles, les habitants désignent la paroisse et les ruelles voisines simplement comme l'église de San Cosimo.",
+        "La seule aux absides intactes du XIe siècle : Contrairement à la plupart des églises du centre historique, profondément transformées par les agrandissements baroques, celle-ci conserve de façon exceptionnelle ses absides romanes originelles du XIe siècle.",
+        "La paroisse des barbiers et chirurgiens : Côme et Damien étaient vénérés comme médecins. En 1476, l'église devint donc le siège officiel à Gênes de la corporation des barbiers et chirurgiens, qui y tenait ses assemblées.",
+        "Les colonnes rayées en pierre du Promontorio : Les nefs reposent sur six puissantes colonnes médiévales faites de tambours alternant marbre blanc et pierre sombre du Promontorio, le calcaire gris-noir historiquement extrait sur les collines près de la Lanterna.",
+        "Les reliques offertes comme trésor d'Orient : En 1296, les familles Spinola et Mallone offrirent à la paroisse des reliques osseuses des saints médecins, traditionnellement liées aux échanges génois avec Constantinople et la Méditerranée orientale.",
+        "Les sarcophages monumentaux incrustés dans la façade : La façade rustique en pierre conserve d'importants monuments patriciens, notamment d'élégantes tombes en arcosolium. La célèbre tombe de Barisone se distingue par son bel arc brisé médiéval.",
+        "La résistance aux bombardements du Roi-Soleil : La solidité de la maçonnerie sauva la structure lors de deux guerres. Le toit en bois fut presque entièrement détruit pendant l'attaque navale française de 1684 puis de nouveau endommagé en 1942, mais les murs tinrent bon.",
+        "L'orgue des artisans tessinois : La tribune conserve un précieux instrument construit au milieu du XVIIIe siècle par Filippo Piccaluga. Sa caisse de résonance finement sculptée contribue à la réputation de l'église comme lieu de concerts de musique ancienne."
+    ],
+    "ar": [
+        "الاختفاء الغامض للقديس دميان: في أسماء الأماكن في جنوة وفي الكلام اليومي كاد اسم القديس دميان أن يختفي. فمنذ قرون يطلق السكان على الرعية والأزقة المحيطة ببساطة اسم كنيسة San Cosimo.",
+        "الكنيسة ذات الحنيات الأصلية من القرن الحادي عشر: بخلاف معظم كنائس المركز التاريخي التي غيّرتها التوسعات الباروكية، تحتفظ هذه الكنيسة بصورة استثنائية بحنياتها الرومانسكية الأصلية من القرن الحادي عشر.",
+        "رعية الحلاقين والجراحين: كان قزمان ودميان يُبجلان بوصفهما طبيبين. لذلك أصبحت الكنيسة سنة 1476 المقر الرسمي في جنوة لنقابة الحلاقين والجراحين، الذين كانوا يعقدون اجتماعاتهم هنا.",
+        "أعمدة مخططة من حجر Promontorio: تحمل الأروقة ستة أعمدة ضخمة من العصور الوسطى مكوّنة من قطع متناوبة من الرخام الأبيض وحجر Promontorio الداكن، وهو الحجر الجيري الرمادي الأسود المستخرج تاريخياً من تلال Lanterna.",
+        "رفات قادمة من الشرق: سنة 1296 قدمت عائلتا Spinola وMallone للرعية رفاتاً عظمية للقديسين الطبيبين، ويربطها التقليد بتجارة جنوة مع القسطنطينية وشرق البحر المتوسط.",
+        "توابيت ضخمة مثبتة في الواجهة: تحتفظ الواجهة الحجرية الخشنة بآثار جنائزية مهمة لعائلات أرستقراطية، بينها قبور مقوسة أنيقة. ويبرز قبر Barisone بقوسه المدبب القوطي الرشيق.",
+        "الصمود أمام قصف ملك الشمس: أنقذت صلابة الجدران المبنى في حربين. فقد دُمر السقف الخشبي تقريباً في الهجوم البحري الفرنسي سنة 1684 وتضرر من جديد عام 1942، لكن الجدران بقيت قائمة.",
+        "آلة الأرغن التي صنعها حرفيو تيتشينو: يحتفظ الجناح العلوي بآلة ثمينة بناها Filippo Piccaluga في منتصف القرن الثامن عشر. وصندوقها الصوتي المنحوت بدقة يساهم في شهرة الكنيسة كمكان لعروض الموسيقى القديمة."
+    ],
+    "ru": [
+        "Таинственное исчезновение Дамиана: В генуэзской топонимике и повседневной речи имя святого Дамиана почти исчезло. Уже много веков жители называют приход и соседние переулки просто церковью Сан-Козимо.",
+        "Церковь с сохранившимися апсидами XI века: В отличие от большинства храмов исторического центра, сильно изменённых барочными перестройками, здесь исключительно хорошо сохранились первоначальные романские апсиды XI века.",
+        "Приход цирюльников и хирургов: Косма и Дамиан почитались как врачи. Поэтому в 1476 году церковь стала официальной генуэзской резиденцией корпорации цирюльников и хирургов, проводившей здесь свои собрания.",
+        "Полосатые колонны из камня Promontorio: Нефы поддерживают шесть массивных средневековых колонн, сложенных из чередующихся блоков белого мрамора и тёмного камня Promontorio — серо-чёрного известняка, добывавшегося на холмах у Лантерны.",
+        "Реликвии как дар с Востока: В 1296 году семьи Spinola и Mallone подарили приходу костные реликвии святых врачей, традиционно связываемые с генуэзской торговлей с Константинополем и восточным Средиземноморьем.",
+        "Монументальные саркофаги в фасаде: Грубый каменный фасад хранит важные памятники патрицианских семей, включая изящные аркосолии. Особенно выделяется знаменитая гробница Barisone с тонким средневековым стрельчатым завершением.",
+        "Стойкость перед обстрелами Короля-Солнце: Прочность каменной кладки спасла здание в двух войнах. Деревянная крыша почти полностью погибла при французской атаке 1684 года и вновь пострадала в 1942-м, но стены выстояли.",
+        "Орган мастеров из Тичино: На хорах хранится ценный инструмент, построенный в середине XVIII века Filippo Piccaluga. Тщательно вырезанный резонаторный корпус помогает формировать звучание и делает церковь известной площадкой для старинной музыки."
+    ],
+    "zh": [
+        "“消失”的达米安：在热那亚地名和日常口语中，圣达米安的名字几乎被遗忘。几个世纪以来，当地人往往把这座堂区和周围小巷简单称作“San Cosimo 教堂”。",
+        "保存完整的11世纪后殿：与历史中心许多后来被巴洛克改建大幅改变的教堂不同，这里异常完整地保留了11世纪原始罗曼式后殿，是极为珍贵的建筑遗存。",
+        "理发师与外科医生的堂区：Cosma 与 Damiano 在传统中被视为医者。因此1476年，这座教堂成为热那亚理发师和外科医生行会的正式所在地，成员会在此召开会议。",
+        "Promontorio 石与白色大理石相间的条纹柱：中殿由六根粗壮的中世纪柱子支撑，以白色大理石和深色 Promontorio 石交替叠砌。后者是历史上在 Lanterna 附近山丘开采的灰黑色石灰岩。",
+        "作为“东方珍宝”捐赠的圣髑：1296年，Spinola 与 Mallone 家族向堂区赠送两位圣医的骨骼圣髑。传统将这些遗物与热那亚在君士坦丁堡及东地中海的贸易联系起来。",
+        "嵌入立面的纪念性石棺：粗砺石立面保存着重要的贵族墓葬，包括优雅的壁龛式墓穴。其中最著名的是 Barisone 墓，以精致的中世纪尖拱装饰最为醒目。",
+        "抵御“太阳王”炮击：坚固石墙帮助教堂度过两场战争。木制屋顶在1684年法国海军袭击中几乎完全毁坏，1942年又遭损伤，但主体墙体仍然保存。",
+        "提契诺工匠制作的历史管风琴：唱诗楼保存着 Filippo Piccaluga 于18世纪中叶建造的重要乐器。其精细雕刻的共鸣箱令音色出色，也使教堂成为举办古乐演出的知名场所。"
+    ],
+    "lij": [
+        "A misteriosa spariçion de Damiano: Inta toponomastica zeneize e into parlâ de tutti i giorni, o povero San Damiano o l'é quasi spario. Da secoli a gente a ciæma a parrocchia e i caroggi intorno semplicemente gésa de San Cosimo.",
+        "L'unica co-e absidi intatte do XI secolo: A differensa de tante gésge do centro storico, trasformæ da-o barocco, questa a conserva in mòddo ecceçionale e absidi romaniche originæ do XI secolo.",
+        "A parrocchia di barbê e di cirurghi: Cosma e Damiano ean veneræ comme medici. Pe questo into 1476 a gésa a l'é diventâ a sede ufficiale zeneize da corporaçion di barbê e cirurghi, che se riunivan chì.",
+        "E colonne zebrâ de pria do Promontöio: E navate son tegnue da sei grosse colonne medievali fæte con rocchi alternæ de marmo gianco e pria scua do Promontöio, o calcare grigio-neigro cacciou da-e collinn-e da Lanterna.",
+        "E reliquie donate comme tesòu d'Oriente: Into 1296 e famigge Spinola e Mallone han donou a-a parrocchia frammenti de ossa di santi medici, ligæ da-a tradiçion a-i traffichi zeneixi con Costantinopoli e l'Oriente mediterraneo.",
+        "I sarcofaghi monumentali inta façciata: A façciata de pria conserva tombe nobili importanti, con arche a arcosolio. Tra tutte spicca a Tomba de Barisone, con un elegante arco ogivale medievale.",
+        "A resistenza a-e bombe do Re Sole: A soliditæ da pria a l'à sarvou a struttura in doe guære. O tetto de legno o l'é stæto quasi tutto destruto into 1684 e pö dannezzou anche into 1942, ma e mænn-e han resistio.",
+        "L'organo di maestri ticineixi: In sciâ cantoria gh'é un instrumento importante, fæto a metà do Settecento da Filippo Piccaluga. A cassa armonica finemente intagliâ a dà un son ciaro e a rende a gésa adatta a rassegne de muxica antiga."
+    ]
+};
+
+  root.church["SS. Madre di Dio"] = {
+    "it": [
+        "Schiacciata sotto l'immenso Ponte di Carignano: La particolarità visiva più celebre della chiesa era la sua collocazione. Sorgeva sul fondo del vicolo, letteralmente sovrastata dalle gigantesche arcate in pietra del seicentesco Ponte di Carignano, che collegava le due colline cittadine.",
+        "La culla natale di Niccolò Paganini: Il borgo popolare che circondava l'oratorio era intriso di musica. A pochissimi passi dall'ingresso, nell'antico Passo di Gattamora, nacque nel 1782 il leggendario violinista Niccolò Paganini, che crebbe ascoltando le campane della parrocchia.",
+        "Il borgo operaio dei lanaiuoli genovesi: La struttura sorse nel Seicento come centro spirituale e di mutuo soccorso del Borgo dei Lanaiuoli. La zona ospitava decine di artigiani che tessevano la lana sfruttando le acque del sotterraneo Rivo Torbido.",
+        "La facciata nascosta dai fili dei panni: I fotografi dell'Ottocento adoravano immortalare questo scorcio. La sobria facciata barocca appariva perennemente incorniciata da decine di fili di panni stesi ad asciugare tra le finestre degli altissimi palazzi d'abitazione circostanti.",
+        "Le canzoni e i vicoli di Fabrizio De André: Via Madre di Dio e le osterie dei bassifondi adiacenti formavano un intricato labirinto umano di pietra. Questo universo di emarginati e scaricatori fu la principale fonte d'ispirazione per le prime poesie di Fabrizio De André.",
+        "Sacrificata sull'altare della speculazione moderna: A decretare la distruzione della chiesa fu il Piano Regolatore del dopoguerra. Tra la fine degli anni '60 e il 1973, l'intero borgo venne completamente rasato al suolo per fare spazio al moderno Centro dei Liguri.",
+        "I preziosi arredi barocchi salvati dalla dinamite: Prima che le ruspe e le cariche demolissero i muri perimetrali, la Soprintendenza si attivò per salvarne l'arte. Gli altari marmorei e le tele vennero smontati e trasferiti nei magazzini civici e in altre parrocchie.",
+        "Una fontana superstite nei Giardini di Plastica: Se oggi cammini nei moderni Giardini Baltimora, ti trovi esattamente dove sorgeva la navata. L'unico elemento antico risparmiato è una secolare fontana in pietra, rimasta intatta a testimoniare il borgo medievale cancellato."
+    ],
+    "en": [
+        "Crushed beneath the enormous Carignano Bridge: The church's most striking feature was its setting. It stood at the bottom of the lane, literally overshadowed by the gigantic 17th-century stone arches of the Ponte di Carignano linking the two hills.",
+        "The birthplace of Niccolò Paganini: The working-class neighbourhood around the oratory was steeped in music. Only a few steps from the entrance, in old Passo di Gattamora, violinist Niccolò Paganini was born in 1782 and grew up hearing the parish bells.",
+        "The workers' district of Genoese wool makers: The church developed in the 17th century as the spiritual and mutual-aid centre of the Borgo dei Lanaiuoli. Dozens of artisans worked wool here using water from the underground Rivo Torbido.",
+        "A façade hidden by washing lines: 19th-century photographers loved this view. The sober Baroque façade was almost permanently framed by lines of laundry stretched between windows of the very tall surrounding houses.",
+        "Fabrizio De André's songs and alleys: Via Madre di Dio and the taverns of the surrounding lower district formed a dense human labyrinth of stone. This world of dockworkers and marginal lives became an important source of inspiration for Fabrizio De André's early poetry and songs.",
+        "Sacrificed to modern redevelopment: The post-war city plan ultimately condemned the church. Between the late 1960s and 1973 the entire district was demolished to make way for the modern Centro dei Liguri complex.",
+        "Baroque furnishings saved before demolition: Before bulldozers and demolition charges brought down the perimeter walls, heritage officials removed valuable works. Marble altars and paintings were dismantled and transferred to civic stores and other parish churches.",
+        "A surviving fountain in the Giardini Baltimora: Walking through today's Giardini Baltimora means crossing the site of the former nave. A centuries-old stone fountain is remembered as one of the few old elements left to evoke the vanished district."
+    ],
+    "es": [
+        "Aplastada bajo el enorme Puente de Carignano: La característica visual más llamativa de la iglesia era su ubicación. Se encontraba al fondo del callejón, literalmente dominada por los gigantescos arcos de piedra del Ponte di Carignano, construido en el siglo XVII.",
+        "La cuna de Niccolò Paganini: El barrio popular alrededor del oratorio estaba lleno de música. A pocos pasos de la entrada, en el antiguo Passo di Gattamora, nació en 1782 el violinista Niccolò Paganini, que creció escuchando las campanas de la parroquia.",
+        "El barrio obrero de los laneros genoveses: La iglesia nació en el siglo XVII como centro espiritual y de ayuda mutua del Borgo dei Lanaiuoli. Decenas de artesanos trabajaban aquí la lana aprovechando el agua del subterráneo Rivo Torbido.",
+        "La fachada escondida por los tendederos: A los fotógrafos del siglo XIX les encantaba este rincón. La sobria fachada barroca aparecía casi siempre enmarcada por decenas de cuerdas con ropa tendida entre las ventanas de las altas viviendas circundantes.",
+        "Las canciones y callejones de Fabrizio De André: Via Madre di Dio y las tabernas del barrio bajo formaban un denso laberinto humano de piedra. Este mundo de trabajadores del puerto y marginados se convirtió en una importante fuente de inspiración para las primeras obras de Fabrizio De André.",
+        "Sacrificada al desarrollo urbano moderno: El plan regulador de posguerra condenó finalmente la iglesia. Entre finales de los años sesenta y 1973 todo el barrio fue demolido para dejar espacio al moderno Centro dei Liguri.",
+        "Los muebles barrocos salvados antes de la demolición: Antes de que las excavadoras y las cargas derribaran los muros, las autoridades patrimoniales retiraron las obras valiosas. Altares de mármol y pinturas fueron desmontados y trasladados a depósitos y otras parroquias.",
+        "Una fuente superviviente en los Giardini Baltimora: Quien camina hoy por los Giardini Baltimora atraviesa exactamente el lugar de la antigua nave. Una fuente de piedra centenaria quedó como uno de los pocos elementos antiguos que recuerdan el barrio desaparecido."
+    ],
+    "fr": [
+        "Écrasée sous l'immense pont de Carignano : La caractéristique visuelle la plus frappante de l'église était sa position. Elle se trouvait au fond de la ruelle, littéralement dominée par les gigantesques arches en pierre du Ponte di Carignano du XVIIe siècle.",
+        "Le berceau de Niccolò Paganini : Le quartier populaire autour de l'oratoire baignait dans la musique. À quelques pas de l'entrée, dans l'ancien Passo di Gattamora, naquit en 1782 le violoniste Niccolò Paganini, qui grandit au son des cloches paroissiales.",
+        "Le quartier ouvrier des lainiers génois : L'édifice naquit au XVIIe siècle comme centre spirituel et d'entraide du Borgo dei Lanaiuoli. Des dizaines d'artisans y travaillaient la laine en utilisant l'eau du Rivo Torbido souterrain.",
+        "La façade cachée par les fils à linge : Les photographes du XIXe siècle aimaient particulièrement cette vue. La sobre façade baroque apparaissait presque toujours encadrée par des dizaines de cordes à linge tendues entre les fenêtres des hauts immeubles voisins.",
+        "Les chansons et ruelles de Fabrizio De André : Via Madre di Dio et les tavernes des bas quartiers formaient un dense labyrinthe humain de pierre. Ce monde de dockers et de vies marginales fut une source importante d'inspiration pour les premières œuvres de Fabrizio De André.",
+        "Sacrifiée à la rénovation urbaine moderne : Le plan d'urbanisme d'après-guerre condamna finalement l'église. Entre la fin des années 1960 et 1973, tout le quartier fut rasé pour laisser place au moderne Centro dei Liguri.",
+        "Les précieux décors baroques sauvés avant la démolition : Avant l'arrivée des bulldozers et des charges de démolition, les services du patrimoine retirèrent les œuvres les plus précieuses. Autels de marbre et tableaux furent transférés vers des dépôts et d'autres paroisses.",
+        "Une fontaine rescapée dans les Giardini Baltimora : Se promener aujourd'hui dans les Giardini Baltimora revient à traverser l'emplacement de l'ancienne nef. Une vieille fontaine en pierre subsiste comme l'un des rares témoins du quartier disparu."
+    ],
+    "ar": [
+        "مضغوطة تحت جسر Carignano الضخم: أشهر ما كان يميز الكنيسة بصرياً هو موقعها. فقد قامت في أسفل الزقاق، تحت الأقواس الحجرية الهائلة لجسر Ponte di Carignano الذي شُيد في القرن السابع عشر لربط التلتين.",
+        "مسقط رأس Niccolò Paganini: كان الحي الشعبي المحيط بالمصلى غنياً بالموسيقى. وعلى بعد خطوات من المدخل، في Passo di Gattamora القديم، وُلد عازف الكمان Niccolò Paganini سنة 1782 ونشأ على صوت أجراس الرعية.",
+        "حي عمال الصوف الجنويين: نشأ المبنى في القرن السابع عشر كمركز ديني وتعاوني لـ Borgo dei Lanaiuoli. وكان عشرات الحرفيين يعملون بالصوف مستفيدين من مياه Rivo Torbido الجارية تحت الأرض.",
+        "واجهة تخفيها حبال الغسيل: أحب مصورو القرن التاسع عشر هذا المشهد كثيراً. كانت الواجهة الباروكية البسيطة محاطة باستمرار بعشرات حبال الغسيل الممتدة بين نوافذ المباني السكنية العالية المحيطة.",
+        "أغاني وأزقة Fabrizio De André: شكّلت Via Madre di Dio والحانات الفقيرة المحيطة بها متاهة بشرية من الحجر. وأصبح عالم عمال الميناء والمهمشين هذا مصدراً مهماً لإلهام أعمال Fabrizio De André الأولى.",
+        "ضُحيت بها من أجل التطوير الحديث: حسم مخطط المدينة بعد الحرب مصير الكنيسة. فبين أواخر الستينيات و1973 هُدم الحي بالكامل لإفساح المجال لمجمع Centro dei Liguri الحديث.",
+        "زخارف باروكية أُنقذت قبل الهدم: قبل وصول الجرافات والمتفجرات، تدخلت سلطات التراث لإنقاذ الأعمال المهمة. ففُككت المذابح الرخامية واللوحات ونُقلت إلى المخازن المدنية وإلى رعايا أخرى.",
+        "نافورة نجت في Giardini Baltimora: من يمشي اليوم في Giardini Baltimora يمر فوق موضع صحن الكنيسة القديمة. وما زالت نافورة حجرية عتيقة تُذكر كأحد العناصر القديمة القليلة التي بقيت شاهدة على الحي المفقود."
+    ],
+    "ru": [
+        "Под огромным мостом Кариньяно: Самой поразительной особенностью церкви было её положение. Она стояла внизу переулка, буквально под гигантскими каменными арками Ponte di Carignano XVII века, соединявшего два городских холма.",
+        "Место рождения Никколо Паганини: Рабочий квартал вокруг оратория был тесно связан с музыкой. Всего в нескольких шагах, в старом Passo di Gattamora, в 1782 году родился Никколо Паганини и рос под звон приходских колоколов.",
+        "Рабочий район генуэзских шерстяников: В XVII веке церковь стала духовным и взаимопомощным центром Borgo dei Lanaiuoli. Десятки ремесленников обрабатывали здесь шерсть, используя воду подземного Rivo Torbido.",
+        "Фасад, скрытый бельевыми верёвками: Фотографы XIX века любили этот вид. Сдержанный барочный фасад почти постоянно был обрамлён десятками верёвок с бельём, натянутых между окнами высоких жилых домов.",
+        "Песни и переулки Fabrizio De André: Via Madre di Dio и таверны соседнего бедного района образовывали тесный человеческий лабиринт. Мир докеров и маргинальных судеб стал важным источником вдохновения для ранних произведений Fabrizio De André.",
+        "Принесена в жертву современной перестройке: Послевоенный генеральный план обрёк церковь на уничтожение. С конца 1960-х до 1973 года весь квартал был снесён ради строительства современного комплекса Centro dei Liguri.",
+        "Барочные убранства, спасённые до взрывов: До начала сноса службы охраны наследия сняли наиболее ценные произведения. Мраморные алтари и картины разобрали и перевезли в городские хранилища и другие приходы.",
+        "Уцелевший фонтан в Giardini Baltimora: Сегодня прогулка по Giardini Baltimora проходит по месту бывшего нефа. Старый каменный фонтан сохранился как один из немногих напоминаний о полностью исчезнувшем квартале."
+    ],
+    "zh": [
+        "被巨大的 Carignano 大桥压在下方：这座教堂最著名的视觉特点就是位置。它位于小巷底部，头顶是17世纪 Ponte di Carignano 巨大的石拱，后者连接城市两座山丘。",
+        "Niccolò Paganini 的出生地：教堂周围的平民街区充满音乐气息。距离入口仅几步之遥的旧 Passo di Gattamora，1782年诞生了传奇小提琴家 Niccolò Paganini，他在堂区钟声中长大。",
+        "热那亚羊毛工人的街区：17世纪，这里成为 Borgo dei Lanaiuoli 的宗教和互助中心。几十名工匠利用地下 Rivo Torbido 的水源进行羊毛加工。",
+        "被晾衣绳遮住的立面：19世纪摄影师很喜欢这个角度。朴素的巴洛克立面常常被高层住宅之间纵横的晾衣绳围住，形成极具生活气息的城市景象。",
+        "Fabrizio De André 的歌与小巷：Via Madre di Dio 和附近低洼街区的酒馆构成密集的人间迷宫。码头工人和边缘人物的生活世界，成为 Fabrizio De André 早期创作的重要灵感来源。",
+        "为现代城市改造而牺牲：战后城市规划最终决定了教堂命运。20世纪60年代末至1973年，整个街区被彻底拆除，为现代 Centro dei Liguri 建筑群让路。",
+        "爆破前抢救出的巴洛克艺术：推土机和爆破开始前，文保部门先行拆下重要艺术品。大理石祭坛和绘画被转移到市政仓库以及其他堂区保存。",
+        "Giardini Baltimora 中幸存的喷泉：今天走在 Giardini Baltimora，实际上正穿过旧教堂中殿所在地。一座古老石喷泉仍被视为消失街区少数留下的历史见证。"
+    ],
+    "lij": [
+        "Schiacciâ sotta o grande Ponte de Carignano: A cosa ciù impressionante da gésa a l'ea o pòsto. A stava in fondo a-o caroggio, proprio sotta e enorme arcæ de pria do Ponte de Carignano do Seiçento che collegava e doe collinn-e.",
+        "A culla de Niccolò Paganini: O borgo popolare intorno a l'oratorio o l'ea pien de muxica. A pochi passi, into vegio Passo de Gattamora, o l'é nasciuo into 1782 Niccolò Paganini, cresciuo sentindo e campann-e da parrocchia.",
+        "O borgo di lanæ zeneixi: Into Seiçento a struttura a l'é diventâ centro spirituale e de mutuo agiutto do Borgo di Lanaiuoli. Decinn-e de artixan lavoravan a lann-a adêuviando l'ægua do sotterraneo Rivo Torbido.",
+        "A façciata ascosa da-i panni stæxi: I fotografi do Ottocento amavan sto scorcio. A façciata barocca, sobria, a l'ea quasi sempre incorniciâ da tante corde de panni stæxi tra e barconæ di palassi erti intorno.",
+        "E cançoin e i caroggi de Fabrizio De André: Via Madre di Dio e-e osterie di bassifondi formavan un labirinto uman de pria. Sto mondo de scaricatoî e gente ai margini o l'é stæto unna grande fonte d'inspiraçion pe-e primme òpere de Fabrizio De André.",
+        "Sacrificâ a-a modernizaçion: O Piano Regolatore do dòppo-guæra o l'à condannou a gésa. Tra a fin di anni Sessanta e o 1973 tutto o borgo o l'é stæto raso pe fâ spaçio a-o moderno Centro dei Liguri.",
+        "I arredi barocchi sarvæ primma da demoliçion: Primma de ruspe e carighe, a Soprintendenza a l'à desmontou i peççi ciù preçioxi. Altæ de marmo e quadri son stæti portæ inti magazzen civici e in atre parrocchie.",
+        "Una fontann-a sarvâ inti Giardini Baltimora: Ancheu, caminando inti Giardini Baltimora, ti passi proprio donde a l'ea a navata. Una vegia fontann-a de pria a resta comme un di pochi segni do borgo spario."
+    ]
+};
+
+  root.church["San Benedetto al Porto"] = {
+    "it": [
+        "La casa degli ultimi di Don Andrea Gallo: Nella storia contemporanea l'edificio è legato al celeberrimo \"prete di strada\". Nei locali della canonica nacque il 8 dicembre 1970 la Comunità San Benedetto al Porto, storica realtà di base per il recupero dei più emarginati.",
+        "La missione diplomatica del riscatto degli schiavi: Nel Cinquecento la parrocchia fu affidata ai frati Trinitari. L'ordine aveva un compito umanitario epico: raccoglieva le donazioni patrizie per pagare il riscatto dei marinai liguri rapiti e resi schiavi dai pirati saraceni.",
+        "La cappella gentilizia dell'ammiraglio Doria: La metamorfosi barocca della originaria chiesetta romanica del 1129 si deve alla potente dinastia dei Doria. Gianandrea Doria finanziò il restauro per trasformarla nella sontuosa cappella privata del vicino e maestoso Palazzo del Principe.",
+        "Il voto d'amore di Zenobia del Carretto: A spingere per l'insediamento dei frati fu una nobildonna carismatica, Zenobia del Carretto, moglie di Gianandrea Doria. Molto devota, volle che il tempio diventasse il quartiere generale ligure per il supporto alle famiglie dei portuali prigionieri.",
+        "La firma architettonica del mitico Vannone: Per ridisegnare la chiesa nelle eleganti forme attuali, la famiglia Doria scelse Andrea Ceresola, detto il Vannone. Il celebre architetto lavorò al cantiere conferendogli una spaziosa e geometrica armonia tardo-rinascimentale.",
+        "Il monastero secolare demolito per la viabilità: Fino al secolo scorso la chiesa era affiancata da un grande monastero cistercense. Nel 1928, le esigenze commerciali del porto ne decretarono il sacrificio: il convento venne abbattuto per consentire l'apertura della nuova Via Adua.",
+        "La Madonna del Rimedio e l'arte barocca: All'interno delle navate si conservano pregevoli tesori. Spicca la secentesca statua lignea della Madonna del Rimedio, protettrice dell'ordine, affiancata da splendide tele dei maestri Domenico Passignano e del ligure Giovanni Andrea De Ferrari.",
+        "Set d'eccezione per il cinema noir ligure: Grazie alla sua atmosfera severa e alla fortissima identità legata al porto, la chiesa è uscita dai confini religiosi. Tra i suoi altari è stata infatti girata una delle scene madri del film noir \"Senza perdono\"."
+    ],
+    "en": [
+        "Don Andrea Gallo's home for society's outsiders: In recent history the church is closely linked to the famous “street priest”. On 8 December 1970, rooms in the rectory became the birthplace of the Comunità San Benedetto al Porto, dedicated to helping marginalised people.",
+        "The mission to ransom enslaved sailors: In the 16th century the parish was entrusted to the Trinitarian friars. Their humanitarian mission included collecting donations to pay ransoms for Ligurian sailors captured and enslaved by Mediterranean raiders.",
+        "Admiral Doria's noble chapel: The Baroque transformation of the original Romanesque church of 1129 was promoted by the powerful Doria family. Gianandrea Doria financed major work to turn it into an elegant private chapel connected with the nearby Palazzo del Principe.",
+        "Zenobia del Carretto's devotional vow: Zenobia del Carretto, wife of Gianandrea Doria, strongly supported the arrival of the friars. Deeply religious, she wanted the church to become a Ligurian centre for helping the families of captured seafarers.",
+        "The architectural signature of Vannone: The Doria family commissioned Andrea Ceresola, known as Vannone, to reshape the church. The celebrated architect gave the building its balanced late-Renaissance character, marked by clear geometry and spacious proportions.",
+        "The monastery demolished for new roads: Until the 20th century a large monastery stood beside the church. In 1928 port-related traffic needs led to its demolition so that the new Via Adua could be opened.",
+        "The Madonna del Rimedio and Baroque art: The interior preserves important works, including a 17th-century wooden statue of the Madonna del Rimedio, patron of the order, together with paintings linked to Domenico Passignano and Giovanni Andrea De Ferrari.",
+        "A striking set for Ligurian noir cinema: Its austere atmosphere and strong harbour identity have also brought the church into film culture. One of the key scenes of the noir film “Senza perdono” was shot among its altars."
+    ],
+    "es": [
+        "La casa de los últimos de Don Andrea Gallo: En la historia reciente, la iglesia está estrechamente ligada al famoso “cura de la calle”. El 8 de diciembre de 1970 nació en la rectoría la Comunità San Benedetto al Porto, dedicada a apoyar a personas marginadas.",
+        "La misión de rescatar marineros esclavizados: En el siglo XVI la parroquia fue confiada a los Trinitarios. Su misión humanitaria incluía recoger donaciones para pagar el rescate de marineros ligures capturados y esclavizados por piratas y corsarios del Mediterráneo.",
+        "La capilla nobiliaria del almirante Doria: La transformación barroca de la antigua iglesia románica de 1129 fue impulsada por la poderosa familia Doria. Gianandrea Doria financió importantes obras para convertirla en elegante capilla privada vinculada al cercano Palazzo del Principe.",
+        "El voto devocional de Zenobia del Carretto: Zenobia del Carretto, esposa de Gianandrea Doria, apoyó firmemente la llegada de los frailes. Muy devota, quiso que el templo se convirtiera en centro ligur de ayuda a las familias de los marineros prisioneros.",
+        "La firma arquitectónica de Vannone: La familia Doria eligió a Andrea Ceresola, llamado Vannone, para rediseñar la iglesia. El célebre arquitecto le dio un armonioso carácter tardorrenacentista basado en proporciones amplias y geometría clara.",
+        "El monasterio demolido por la nueva viabilidad: Hasta el siglo XX un gran monasterio se alzaba junto a la iglesia. En 1928 las necesidades del tráfico portuario llevaron a su demolición para permitir la apertura de la nueva Via Adua.",
+        "La Madonna del Rimedio y el arte barroco: El interior conserva importantes tesoros, entre ellos una estatua de madera del siglo XVII de la Madonna del Rimedio, protectora de la orden, junto a pinturas vinculadas a Domenico Passignano y Giovanni Andrea De Ferrari.",
+        "Un escenario especial para el cine negro ligur: Su atmósfera austera y fuerte identidad portuaria también llevaron la iglesia al cine. Entre sus altares se rodó una de las escenas principales de la película noir “Senza perdono”."
+    ],
+    "fr": [
+        "La maison des exclus de Don Andrea Gallo : Dans l'histoire récente, l'église est étroitement liée au célèbre « prêtre de rue ». Le 8 décembre 1970 naquit dans le presbytère la Comunità San Benedetto al Porto, consacrée à l'accueil des personnes marginalisées.",
+        "La mission de rachat des marins réduits en esclavage : Au XVIe siècle, la paroisse fut confiée aux Trinitaires. Leur mission humanitaire consistait notamment à recueillir des dons pour payer la rançon de marins ligures capturés et réduits en esclavage en Méditerranée.",
+        "La chapelle noble de l'amiral Doria : La transformation baroque de l'ancienne église romane de 1129 fut soutenue par la puissante famille Doria. Gianandrea Doria finança d'importants travaux pour en faire une élégante chapelle privée liée au voisin Palazzo del Principe.",
+        "Le vœu pieux de Zenobia del Carretto : Zenobia del Carretto, épouse de Gianandrea Doria, soutint fortement l'installation des frères. Très dévote, elle voulut que le sanctuaire devienne un centre ligure d'aide aux familles des marins capturés.",
+        "La signature architecturale de Vannone : La famille Doria choisit Andrea Ceresola, dit Vannone, pour redessiner l'église. Le célèbre architecte lui donna un caractère harmonieux de la fin de la Renaissance, fondé sur des proportions vastes et une géométrie claire.",
+        "Le monastère démoli pour la circulation : Jusqu'au XXe siècle, un grand monastère jouxtait l'église. En 1928, les besoins de circulation liés au port entraînèrent sa démolition afin d'ouvrir la nouvelle Via Adua.",
+        "La Madonna del Rimedio et l'art baroque : L'intérieur conserve d'importants trésors, dont une statue en bois du XVIIe siècle de la Madonna del Rimedio, protectrice de l'ordre, ainsi que des peintures liées à Domenico Passignano et Giovanni Andrea De Ferrari.",
+        "Un décor d'exception pour le film noir ligure : Son atmosphère austère et son identité portuaire très forte ont aussi attiré le cinéma. L'une des scènes principales du film noir “Senza perdono” fut tournée parmi ses autels."
+    ],
+    "ar": [
+        "بيت المهمشين مع Don Andrea Gallo: في التاريخ المعاصر ترتبط الكنيسة ارتباطاً وثيقاً بـ«كاهن الشارع» الشهير. ففي 8 ديسمبر 1970 وُلدت داخل مباني الكاهن رعية Comunità San Benedetto al Porto المكرسة لدعم الأشخاص الأكثر تهميشاً.",
+        "مهمة فداء البحارة المستعبدين: في القرن السادس عشر أُسندت الرعية إلى رهبان الثالوثيين. وكانت مهمتهم الإنسانية تشمل جمع التبرعات لدفع فدية البحارة الليغوريين الذين أُسروا واستُعبدوا في البحر المتوسط.",
+        "مصلى الأدميرال Doria النبيل: التحول الباروكي للكنيسة الرومانسكية الأصلية من سنة 1129 ارتبط بعائلة Doria القوية. موّل Gianandrea Doria الأعمال الكبرى لجعلها مصلى خاصاً أنيقاً مرتبطاً بـ Palazzo del Principe القريب.",
+        "نذر Zenobia del Carretto: دعمت Zenobia del Carretto، زوجة Gianandrea Doria، وصول الرهبان بقوة. وبسبب تدينها أرادت أن تصبح الكنيسة مركزاً ليغورياً لمساعدة عائلات البحارة الأسرى.",
+        "بصمة Vannone المعمارية: اختارت عائلة Doria المعماري Andrea Ceresola المعروف باسم Vannone لإعادة تصميم الكنيسة. ومنحها طابعاً متناغماً من أواخر عصر النهضة، يقوم على الهندسة الواضحة والفراغ الرحب.",
+        "الدير الذي هُدم من أجل الطرق: حتى القرن العشرين كان دير كبير يجاور الكنيسة. وفي 1928 أدت احتياجات المرور المرتبطة بالميناء إلى هدمه لفتح Via Adua الجديدة.",
+        "Madonna del Rimedio والفن الباروكي: يحتفظ الداخل بأعمال مهمة، منها تمثال خشبي من القرن السابع عشر لـ Madonna del Rimedio، حامية الرهبنة، إلى جانب لوحات مرتبطة بـ Domenico Passignano وGiovanni Andrea De Ferrari.",
+        "موقع تصوير مميز لسينما النوار الليغورية: أجواء الكنيسة الصارمة وهويتها المرتبطة بالميناء جذبت السينما أيضاً. فقد صُورت بين مذابحها إحدى المشاهد الأساسية من فيلم النوار “Senza perdono”."
+    ],
+    "ru": [
+        "Дом для отверженных Дона Андреа Галло: В современной истории церковь тесно связана со знаменитым «уличным священником». 8 декабря 1970 года в приходских помещениях возникла Comunità San Benedetto al Porto, помогающая людям на обочине общества.",
+        "Миссия по выкупу моряков из рабства: В XVI веке приход передали тринитариям. Их гуманитарная задача включала сбор пожертвований на выкуп лигурийских моряков, захваченных и обращённых в рабство в Средиземноморье.",
+        "Дворянская часовня адмирала Дориа: Барочная перестройка романской церкви 1129 года связана с могущественной семьёй Doria. Gianandrea Doria профинансировал работы, превратив храм в изящную частную часовню рядом с Palazzo del Principe.",
+        "Обет Zenobia del Carretto: Zenobia del Carretto, жена Gianandrea Doria, активно поддерживала приход монахов. Будучи глубоко верующей, она хотела, чтобы церковь стала лигурийским центром помощи семьям пленных моряков.",
+        "Архитектурная подпись Vannone: Семья Doria поручила перестройку Andrea Ceresola, известному как Vannone. Архитектор придал храму гармоничный позднеренессансный облик с ясной геометрией и просторными пропорциями.",
+        "Монастырь, снесённый ради дороги: До XX века рядом с церковью стоял большой монастырь. В 1928 году его разобрали из-за транспортных потребностей порта, чтобы открыть новую Via Adua.",
+        "Madonna del Rimedio и барочное искусство: Внутри сохранились ценные произведения, включая деревянную статую Madonna del Rimedio XVII века, покровительницы ордена, а также картины, связанные с Domenico Passignano и Giovanni Andrea De Ferrari.",
+        "Необычная площадка для лигурийского нуара: Строгая атмосфера и сильная портовая идентичность привлекли кинематограф. Среди алтарей церкви была снята одна из ключевых сцен нуар-фильма “Senza perdono”."
+    ],
+    "zh": [
+        "Don Andrea Gallo 的“弱者之家”：在当代历史中，这座教堂与著名“街头神父”密切相连。1970年12月8日，Comunità San Benedetto al Porto 在堂区建筑内成立，长期致力于帮助社会边缘人群。",
+        "赎回被奴役水手的使命：16世纪堂区交给圣三一会管理。该修会的重要人道任务之一，是募集捐款，为被地中海海盗俘获并奴役的利古里亚水手支付赎金。",
+        "Doria 海军将领的贵族小堂：1129年罗曼式旧教堂的巴洛克改造与强大的 Doria 家族有关。Gianandrea Doria 出资大修，使其成为与附近 Palazzo del Principe 相联系的豪华私人礼拜空间。",
+        "Zenobia del Carretto 的虔诚信愿：Gianandrea Doria 的妻子 Zenobia del Carretto 积极推动修士入住。她希望教堂成为利古里亚地区帮助被俘港口工人和水手家庭的重要中心。",
+        "Vannone 的建筑印记：Doria 家族请来 Andrea Ceresola，即 Vannone，重新设计教堂。他以清晰几何和宽阔比例，塑造出优雅和谐的晚期文艺复兴风格。",
+        "为道路而拆除的修道院：直到20世纪，教堂旁还有一座大型修道院。1928年，由于港口交通需求，它被拆除，以便开辟新的 Via Adua。",
+        "Madonna del Rimedio 与巴洛克艺术：内部保存重要艺术品，包括17世纪木雕 Madonna del Rimedio——修会的保护者，以及与 Domenico Passignano 和 Giovanni Andrea De Ferrari 有关的绘画。",
+        "利古里亚黑色电影的特殊片场：教堂严肃的气氛和强烈港口身份也吸引了电影制作。黑色电影《Senza perdono》的一场重要戏就在教堂祭坛之间拍摄。"
+    ],
+    "lij": [
+        "A casa di urtimi de Don Andrea Gallo: Inta stöia recente a gésa a l'é ligâ a-o famoso “præve de stradda”. O 8 dexembre 1970, inti locali da canonica, a l'é nasciua a Comunità San Benedetto al Porto pe agiuttâ chi vive ai margini.",
+        "A mission pe rescattâ i marinæ schiavi: Into Cinquecento a parrocchia a l'é stæta affidâ a-i Trinitæ. I raccoglieivan offerte pe pagâ o riscatto di marinæ liguri rapî e fæti schiavi da-i corsari into Mediterraneo.",
+        "A cappella nobile de l'ammiraglio Doria: A transformaçion barocca da vegia gésa romanica do 1129 a l'é ligâ a-a potente famiggia Doria. Gianandrea Doria o finanziò i lavori pe trasformâla in unna bella cappella privata vexin a-o Palazzo do Principe.",
+        "O voto de Zenobia del Carretto: Zenobia del Carretto, moggê de Gianandrea Doria, a l'à sostegnûo forte l'arrivo di fræ. A volea che o tempio o diventasse un centro ligure de agiutto pe-e famigge di marinæ prigioniei.",
+        "A firma architettonica do Vannone: A famiggia Doria a çernî Andrea Ceresola, dito o Vannone, pe ridisegnâ a gésa. O celebre architetto o ghe l'à dæ armonia tardo-rinascimentale, con geometrie ciæe e spaçi larghi.",
+        "O monastero demolio pe-a viabilitæ: Fin-o a-o secolo scorso gh'ea un grande monastero vexin a-a gésa. Into 1928 o l'é stæto abbattuo pe-e esigenze do porto e pe aprî a neuva Via Adua.",
+        "A Madonna do Rimedio e l'arte barocca: Drento se conservan òpere importante, comme a statoa de legno do Seiçento da Madonna do Rimedio e quadri ligæ a Domenico Passignano e Giovanni Andrea De Ferrari.",
+        "Un set speciale pe-o noir ligure: A atmosfera severa e l'identitæ do porto han portou a gésa anche into cinema. Tra i seu altæ a l'é stæta girâ unna scena importante do film noir “Senza perdono”."
+    ]
+};
+
 })();
