@@ -96,3 +96,8 @@
     padding:23px 18px 18px;
   }
 }
+
+/* Spazi Sponsor disponibili: icone leggermente piu grandi (+~18%). */
+#sponsor-strip .sp.sp-available .ico{
+  font-size:13px;
+}
