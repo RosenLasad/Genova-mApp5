@@ -1933,4 +1933,503 @@
         "O grande restauro do Novecento: Into Novecento infiltraçioin e problemi strutturali han domandou longhi restauri. I travaggi han consolidou a volta, recuperou marmo e decoraçioin e sarvou un di complessi religioxi ciù caratteristici do centro storico."
     ]
 };
+
+  root.church["San Donato"] = {
+    "it": [
+        "La torre ottagonale nata per scopi militari: Il campanile ottagonale, con più ordini di bifore e trifore, è uno degli elementi più riconoscibili di San Donato. La posizione sopraelevata sul colle di Sarzano gli avrebbe consentito anche di funzionare come punto di osservazione sul porto e sulla costa.",
+        "La pala del fiammingo Joos van Cleve: La chiesa conserva un celebre Trittico dell'Adorazione dei Magi attribuito a Joos van Cleve. L'opera colpisce per la minuzia dei dettagli, i tessuti preziosi e i volti, elementi tipici della raffinata pittura fiamminga del primo Cinquecento.",
+        "Il furto di Napoleone e il riscatto dei parrocchiani: Una tradizione racconta che durante il periodo napoleonico il trittico fosse destinato alla requisizione. I parrocchiani avrebbero raccolto denaro per impedirne la partenza, riuscendo a mantenere l'opera a Genova e legandola ancora più profondamente alla comunità.",
+        "I bollettini della battaglia della Meloria: Sulle murature della chiesa sono state interpretate alcune iscrizioni medievali come ricordi delle imprese militari genovesi. La tradizione le collega anche alla vittoria della Meloria del 1284, uno degli episodi più celebrati della storia marittima cittadina.",
+        "I capitelli romani riciclati all'interno: Alcune colonne e capitelli della chiesa provengono da materiali di epoca più antica, riutilizzati nella costruzione medievale. Questa pratica, comune nel Medioevo, permette ancora oggi di osservare elementi romani inseriti direttamente nell'architettura cristiana successiva e ancora riconoscibili tra le navate.",
+        "La Madonna del Latte di Nicolò da Voltri: La chiesa conserva una delicata Madonna del Latte attribuita a Nicolò da Voltri. L'immagine della Vergine che allatta il Bambino ebbe grande fortuna devozionale e fu particolarmente amata dalle madri che chiedevano protezione per i propri figli.",
+        "Sopravvissuta miracolosamente alle bombe: I bombardamenti della Seconda Guerra Mondiale devastarono il quartiere attorno a Sarzano. San Donato subì gravi danni, soprattutto alle coperture, ma le robuste murature medievali e il campanile riuscirono a resistere, consentendo il successivo recupero dell'edificio.",
+        "Il restauro filologico del dopoguerra: Nel dopoguerra la chiesa fu restaurata eliminando molte aggiunte più tarde e mettendo nuovamente in evidenza la muratura romanica. L'intervento cercò di restituire all'edificio un aspetto più vicino alla sua struttura medievale originaria, oggi nuovamente leggibile nella pietra."
+    ],
+    "en": [
+        "The octagonal tower with a military role: The octagonal bell tower, with several tiers of double and triple windows, is one of San Donato's most recognisable features. Its elevated position on the Sarzano hill may also have made it a lookout over the harbour and coast.",
+        "The Flemish altarpiece by Joos van Cleve: The church preserves a celebrated Triptych of the Adoration of the Magi attributed to Joos van Cleve. Its minute details, precious fabrics and expressive faces are typical of refined early-16th-century Flemish painting.",
+        "Napoleon's seizure and the parishioners' ransom: Tradition says that during the Napoleonic period the triptych was marked for requisition. Parishioners supposedly raised money to prevent its removal, keeping the work in Genoa and strengthening its bond with the local community.",
+        "The 'bulletins' of the Battle of Meloria: Some medieval inscriptions on the church walls have been interpreted as memories of Genoese military exploits. Tradition also links them to the 1284 victory at Meloria, one of the most celebrated episodes in Genoa's maritime history.",
+        "Roman capitals recycled inside: Some columns and capitals come from older materials reused in the medieval construction. This common medieval practice still allows visitors to see Roman elements directly incorporated into later Christian architecture and recognisable among the church's aisles.",
+        "Nicolò da Voltri's Madonna of the Milk: The church preserves a delicate Madonna of the Milk attributed to Nicolò da Voltri. The image of the Virgin nursing the Child became highly devotional and was especially cherished by mothers seeking protection for their children.",
+        "Miraculously surviving the bombs: Second World War bombing devastated the district around Sarzano. San Donato suffered serious damage, especially to its roofs, but its sturdy medieval walls and bell tower endured, allowing the building to be recovered after the war.",
+        "The post-war philological restoration: After the war the church was restored by removing many later additions and revealing the Romanesque masonry again. The project aimed to return the building to an appearance closer to its original medieval structure, now clearly visible in the stonework."
+    ],
+    "es": [
+        "La torre octogonal nacida con función militar: El campanario octogonal, con varios órdenes de bíforas y tríforas, es uno de los elementos más reconocibles de San Donato. Su posición elevada sobre la colina de Sarzano también pudo servir como punto de observación del puerto y la costa.",
+        "El retablo del flamenco Joos van Cleve: La iglesia conserva un célebre Tríptico de la Adoración de los Magos atribuido a Joos van Cleve. Destaca por la minuciosidad de los detalles, los tejidos preciosos y los rostros, rasgos típicos de la refinada pintura flamenca de comienzos del siglo XVI.",
+        "El expolio napoleónico y el rescate de los feligreses: Una tradición cuenta que durante el periodo napoleónico el tríptico iba a ser requisado. Los parroquianos habrían reunido dinero para impedir su salida, logrando conservar la obra en Génova y reforzando aún más su vínculo con la comunidad.",
+        "Los 'boletines' de la batalla de Meloria: Algunas inscripciones medievales de los muros han sido interpretadas como recuerdos de hazañas militares genovesas. La tradición las relaciona también con la victoria de Meloria de 1284, uno de los episodios más celebrados de la historia marítima de la ciudad.",
+        "Los capiteles romanos reutilizados en el interior: Algunas columnas y capiteles proceden de materiales más antiguos reutilizados en la construcción medieval. Esta práctica, común en la Edad Media, permite todavía hoy observar elementos romanos incorporados directamente a la arquitectura cristiana posterior entre las naves.",
+        "La Madonna del Latte de Nicolò da Voltri: La iglesia conserva una delicada Madonna del Latte atribuida a Nicolò da Voltri. La imagen de la Virgen amamantando al Niño tuvo gran fortuna devocional y fue especialmente querida por las madres que pedían protección para sus hijos.",
+        "Superviviente milagrosa de las bombas: Los bombardeos de la Segunda Guerra Mundial devastaron el barrio de Sarzano. San Donato sufrió graves daños, sobre todo en las cubiertas, pero los robustos muros medievales y el campanario resistieron, permitiendo la posterior recuperación del edificio.",
+        "La restauración filológica de posguerra: Después de la guerra la iglesia fue restaurada eliminando muchas añadiduras posteriores y devolviendo protagonismo a la fábrica románica. La intervención buscó acercar el edificio a su estructura medieval original, hoy de nuevo claramente legible en la piedra."
+    ],
+    "fr": [
+        "La tour octogonale née avec une fonction militaire : Le clocher octogonal, rythmé par plusieurs niveaux de baies doubles et triples, est l'un des éléments les plus reconnaissables de San Donato. Sa position élevée sur la colline de Sarzano aurait aussi permis de surveiller le port et la côte.",
+        "Le retable du Flamand Joos van Cleve : L'église conserve un célèbre Triptyque de l'Adoration des Mages attribué à Joos van Cleve. La finesse des détails, les étoffes précieuses et les visages sont caractéristiques de la peinture flamande raffinée du début du XVIe siècle.",
+        "La saisie napoléonienne et la rançon des paroissiens : Une tradition raconte que le triptyque devait être réquisitionné à l'époque napoléonienne. Les paroissiens auraient réuni de l'argent pour empêcher son départ, conservant ainsi l'œuvre à Gênes et renforçant son lien avec la communauté.",
+        "Les 'bulletins' de la bataille de la Meloria : Certaines inscriptions médiévales des murs ont été interprétées comme des souvenirs d'exploits militaires génois. La tradition les relie aussi à la victoire de la Meloria en 1284, l'un des épisodes les plus célèbres de l'histoire maritime de la ville.",
+        "Les chapiteaux romains réemployés à l'intérieur : Certaines colonnes et certains chapiteaux proviennent de matériaux plus anciens réutilisés dans la construction médiévale. Cette pratique courante au Moyen Âge permet encore aujourd'hui d'observer des éléments romains directement intégrés à l'architecture chrétienne ultérieure.",
+        "La Madonna del Latte de Nicolò da Voltri : L'église conserve une délicate Madonna del Latte attribuée à Nicolò da Voltri. L'image de la Vierge allaitant l'Enfant connut une grande dévotion et fut particulièrement chère aux mères qui demandaient protection pour leurs enfants.",
+        "Miraculeusement rescapée des bombes : Les bombardements de la Seconde Guerre mondiale dévastèrent le quartier autour de Sarzano. San Donato subit de graves dégâts, surtout aux toitures, mais ses solides murs médiévaux et son clocher résistèrent, permettant la restauration de l'édifice après la guerre.",
+        "La restauration philologique de l'après-guerre : Après le conflit, l'église fut restaurée en supprimant de nombreux ajouts tardifs et en remettant en valeur la maçonnerie romane. L'intervention cherchait à rendre au bâtiment un aspect plus proche de sa structure médiévale d'origine."
+    ],
+    "ar": [
+        "البرج المثمن ذو الوظيفة العسكرية: برج الأجراس المثمن، بطبقاته المتعددة من النوافذ المزدوجة والثلاثية، من أبرز معالم سان دوناتو. وكان موقعه المرتفع فوق تل سارزانو يسمح له على الأرجح أيضاً بمراقبة الميناء والساحل.",
+        "مذبح الفلمنكي يوس فان كليف: تحتفظ الكنيسة بثلاثية شهيرة لعبادة المجوس تُنسب إلى Joos van Cleve. وتتميز بدقة التفاصيل والأقمشة الثمينة والوجوه، وهي سمات نموذجية للرسم الفلمنكي الراقي في أوائل القرن السادس عشر.",
+        "مصادرة نابليون وفدية أبناء الرعية: تروي التقاليد أن الثلاثية كانت مهددة بالمصادرة في العصر النابليوني. ويقال إن أبناء الرعية جمعوا المال لمنع نقلها، فبقيت في جنوة وتعزز ارتباطها بالمجتمع المحلي.",
+        "'بيانات' معركة ميلوريا: فُسرت بعض النقوش الوسطى على جدران الكنيسة باعتبارها ذكريات للانتصارات العسكرية الجنوية. وتربطها التقاليد أيضاً بانتصار ميلوريا عام 1284، أحد أشهر أحداث التاريخ البحري للمدينة.",
+        "تيجان رومانية أُعيد استخدامها في الداخل: تعود بعض الأعمدة والتيجان إلى مواد أقدم أعيد استعمالها في البناء الوسيط. وكانت هذه الممارسة شائعة في العصور الوسطى، وما زالت تسمح برؤية عناصر رومانية مدمجة مباشرة في العمارة المسيحية اللاحقة بين الأروقة.",
+        "مادونا الحليب لنيكولو دا فولتري: تحتفظ الكنيسة بصورة رقيقة لمادونا الحليب تُنسب إلى Nicolò da Voltri. وقد حظيت صورة العذراء وهي ترضع الطفل بشعبية تعبدية كبيرة، خصوصاً بين الأمهات اللواتي طلبن الحماية لأطفالهن.",
+        "نجت بأعجوبة من القصف: دمرت غارات الحرب العالمية الثانية الحي المحيط بسارزانو. تعرضت سان دوناتو لأضرار كبيرة، خاصة في الأسقف، لكن الجدران الوسطى القوية وبرج الأجراس صمدا، ما أتاح ترميم المبنى لاحقاً.",
+        "الترميم التاريخي بعد الحرب: بعد الحرب رُممت الكنيسة بإزالة كثير من الإضافات المتأخرة وإبراز البناء الرومانسكي من جديد. وسعى المشروع إلى إعادة مظهر أقرب إلى البنية الوسطى الأصلية، التي أصبحت اليوم واضحة في الحجر."
+    ],
+    "ru": [
+        "Восьмиугольная башня с военной функцией: Восьмиугольная колокольня с несколькими ярусами двойных и тройных окон — одна из самых узнаваемых частей Сан-Донато. Её возвышенное положение на холме Сарцано позволяло, вероятно, также наблюдать за портом и побережьем.",
+        "Алтарный образ фламандца Йоса ван Клеве: В церкви хранится знаменитый Триптих Поклонения волхвов, приписываемый Joos van Cleve. Он поражает тонкостью деталей, дорогими тканями и выразительными лицами — характерными чертами утончённой фламандской живописи начала XVI века.",
+        "Наполеоновская конфискация и выкуп прихожан: По преданию, в наполеоновское время триптих собирались реквизировать. Прихожане якобы собрали деньги, чтобы не допустить его вывоза, сохранив произведение в Генуе и ещё сильнее связав его с местной общиной.",
+        "'Сводки' битвы при Мелории: Некоторые средневековые надписи на стенах трактуются как память о военных подвигах генуэзцев. Традиция связывает их и с победой при Мелории в 1284 году — одним из самых прославленных эпизодов морской истории города.",
+        "Римские капители, использованные повторно: Часть колонн и капителей происходит из более древних сооружений и была повторно использована при средневековом строительстве. Такая практика была обычной и сегодня позволяет увидеть римские элементы, включённые прямо в более позднюю христианскую архитектуру.",
+        "Madonna del Latte Никколо да Вольтри: В церкви хранится нежная Madonna del Latte, приписываемая Nicolò da Voltri. Образ Богородицы, кормящей Младенца, пользовался большой популярностью и особенно почитался матерями, просившими защиты для своих детей.",
+        "Чудом пережила бомбардировки: Бомбардировки Второй мировой войны опустошили район вокруг Сарцано. Сан-Донато сильно пострадала, особенно крыши, однако массивные средневековые стены и колокольня устояли, что позволило позднее восстановить храм.",
+        "Филологическая реставрация после войны: В послевоенные годы церковь восстановили, удалив многие поздние добавления и вновь открыв романскую кладку. Реставрация стремилась приблизить облик здания к его первоначальной средневековой структуре, сегодня хорошо читаемой в камне."
+    ],
+    "zh": [
+        "兼具军事功能的八角钟楼：八角形钟楼拥有多层双联窗和三联窗，是圣多纳托最醒目的部分之一。它位于萨尔扎诺山丘高处，因此过去很可能还兼具观察港口和海岸的作用。",
+        "佛兰德画家 Joos van Cleve 的祭坛画：教堂保存着一幅归于 Joos van Cleve 的著名《三王来朝》三联画。细密的细节、华丽织物与人物面孔，都体现了16世纪初佛兰德绘画精致典雅的特点。",
+        "拿破仑时期的征收与教友“赎回”：传统认为，拿破仑时期这幅三联画一度面临被征收。教友据说筹集资金阻止作品外运，使它得以留在热那亚，也让它与当地社区的联系更加深厚。",
+        "梅洛里亚海战的“战报”：教堂墙上的一些中世纪铭文被解释为纪念热那亚军事功绩。传统还把它们与1284年梅洛里亚胜利联系起来，这是热那亚海洋史上最受颂扬的事件之一。",
+        "在教堂内被再次利用的古罗马柱头：部分柱子和柱头来自更早时期的建筑材料，在中世纪建造时被重新使用。这种做法当时十分常见，因此今天仍能在后来的基督教建筑中直接看到可辨认的罗马构件。",
+        "Nicolò da Voltri 的《哺乳圣母》：教堂保存着一幅归于 Nicolò da Voltri 的精美《哺乳圣母》。圣母哺乳圣婴的形象长期深受信徒喜爱，尤其受到祈求孩子平安的母亲们敬仰。",
+        "从轰炸中奇迹般幸存：第二次世界大战轰炸摧毁了萨尔扎诺周边街区。圣多纳托教堂也严重受损，尤其是屋顶，但坚固的中世纪墙体和钟楼仍然屹立，为战后修复提供了基础。",
+        "战后的考古式修复：战后修复移除了许多后期增建部分，并重新显露罗曼式石墙。工程力求让建筑恢复到更接近原始中世纪结构的面貌，如今石材本身再次清楚展示出这种历史层次。"
+    ],
+    "lij": [
+        "A torre ottagonale con funçion militare: O campanin ottagonale, con ciù ordini de bifore e trifore, o l'é un di elementi ciù riconoscibili de San Donato. A posiçion in erto in sciô colle de Sarzano a ghe permetteva anche de controllâ o porto e a costa.",
+        "A pala do fiammingo Joos van Cleve: A gésa a conserva o celebre Trittico de l'Adoraçion di Magi attribuio a Joos van Cleve. O colpisce pe-a precision di detaggi, i tessui preçioxi e i voti, tipici da pittua fiamminga raffinâ do prinçipio do Cinqueçento.",
+        "A requisizion napoleonica e o riscatto di parrocchian: A tradiçion a conta che into periodo napoleonico o trittico o dovesse ëse requisio. I parrocchian avieivan raccolto dinæ pe impedî che o partisse, riuscendo a tegnî l'òpera a Zêna e ligandla ancora ciù a-a comunitæ.",
+        "I 'bollettin' da battaggia da Meloria: Quarche iscriçion medievale in sci-e mænn-e a l'é stæta interpretâ comme ricòrdo de imprese militari zeneixi. A tradiçion a-i liga anche a-a vittöia da Meloria do 1284, un di episòdi ciù famoxi da stöia marittima da çittæ.",
+        "I capitelli romani adêuviæ torna: Quarche colonna e capitello vegnan da materiali ciù antighi, reutilizæ inta costruzion medievale. Sta pratica, comune into Medioevo, a permette ancora ancheu de vedde elementi romani inglobæ direttamente inte l'architettua cristian-a sucessiva.",
+        "A Madonna do Læte de Nicolò da Voltri: A gésa a conserva unna delicâ Madonna do Læte attribuîa a Nicolò da Voltri. L'immagine da Madonna che a dà o læte a-o Bambin a l'é stæta tanto venerâ, specialmente da-e moæ che domandavan proteçion pe-i figgi.",
+        "Sarvâ miracolosamente da-e bombe: I bombardamenti da Seconda Guæra Mondiâ han devastou o quartê de Sarzano. San Donato a l'à avuo danni gravi, soprattutto a-i tetti, ma e solide mænn-e medievali e o campanin han resistio, permettendo o restauro dòppo a guæra.",
+        "O restauro filologico do dopoguæra: Dòppo a guæra a gésa a l'é stæta restaurâ levando tante azonte ciù tarde e facendo torna visibile a muratua romanica. L'intervento o volevia restituî un aspetto ciù vexin a-a strutûa medievale originâ."
+    ]
+};
+
+  root.church["San Giorgio"] = {
+    "it": [
+        "Il tempio del Santo Protettore dello Stato: San Giorgio fu uno dei principali simboli della Repubblica di Genova e della sua tradizione militare. La chiesa richiamava il santo raffigurato sulla celebre croce rossa in campo bianco, emblema che accompagnò a lungo le navi e i vessilli genovesi.",
+        "Fondata sopra il Foro Romano: La zona di San Giorgio coincide con uno dei nuclei più antichi della città. Secondo gli studi storici, la chiesa medievale sarebbe sorta nell'area dell'antico foro romano, vicino a importanti percorsi che collegavano il porto con l'entroterra urbano.",
+        "La cupola a padiglione che inganna la prospettiva: La struttura barocca utilizza una cupola dalla forma particolare, arricchita da decorazioni prospettiche. Pittura e architettura collaborano per creare l'impressione di uno spazio più alto e profondo, tipico gusto scenografico delle chiese genovesi del Seicento.",
+        "La facciata ruotata per i vicoli: L'orientamento della chiesa si adatta alla trama irregolare del centro storico. Facciata e accessi furono organizzati in modo da convivere con strade e piazze preesistenti, producendo un rapporto molto stretto tra edificio religioso e tessuto dei caruggi.",
+        "Il miracolo di San Gaetano Thiene: San Giorgio fu legata ai Padri Teatini, ordine fondato da San Gaetano Thiene. La tradizione ricorda il suo impegno nell'assistenza ai poveri e ai malati, attività che contribuì a rafforzare la funzione sociale della comunità religiosa nel quartiere.",
+        "I quadri salvati dal fuoco francese: Nel bombardamento del 1684 la zona fu colpita da incendi e distruzioni. Religiosi e abitanti cercarono di mettere in salvo opere e arredi della chiesa, permettendo la sopravvivenza di parte del patrimonio pittorico nonostante i gravi danni.",
+        "Il rifugio sotterraneo dei mercanti: La vicinanza con Piazza Banchi e la Loggia della Mercanzia alimentò il rapporto tra la chiesa e il mondo degli affari. Secondo la tradizione, alcuni ambienti sotterranei furono utilizzati anche come luoghi sicuri per documenti e valori durante periodi di disordine.",
+        "Il restauro post-bellico che ha svelato il Medioevo: Dopo i bombardamenti della Seconda Guerra Mondiale, i restauri misero in luce parti murarie più antiche nascoste dagli interventi barocchi. Alcune porzioni medievali vennero lasciate visibili, trasformando le ferite della guerra in occasione di riscoperta archeologica."
+    ],
+    "en": [
+        "The church of the State's protecting saint: Saint George was one of the principal symbols of the Republic of Genoa and its military tradition. The church evoked the saint represented by the famous red cross on white, an emblem long carried by Genoese ships and banners.",
+        "Founded above the Roman Forum: The San Giorgio area lies within one of Genoa's oldest urban nuclei. Historical studies suggest that the medieval church rose in the area of the ancient Roman forum, near important routes linking the harbour with the inner city.",
+        "The pavilion dome that tricks perspective: The Baroque building uses a dome of unusual shape enriched with perspective decoration. Painting and architecture work together to create the impression of greater height and depth, a theatrical effect typical of 17th-century Genoese churches.",
+        "The façade turned to fit the alleys: The church's orientation adapts to the irregular fabric of the historic centre. Façade and entrances were arranged around pre-existing streets and squares, creating an unusually close relationship between the sacred building and Genoa's narrow alleys.",
+        "The miracle of Saint Cajetan of Thiene: San Giorgio was connected with the Theatine Fathers, the order founded by Saint Cajetan. Tradition recalls his dedication to helping the poor and sick, an activity that strengthened the religious community's social role in the district.",
+        "Paintings saved from the French fire: During the 1684 bombardment the area suffered fires and destruction. Clergy and residents tried to rescue artworks and furnishings from the church, allowing part of its painted heritage to survive despite the severe damage.",
+        "The merchants' underground refuge: Proximity to Piazza Banchi and the Merchants' Loggia tied the church closely to the world of commerce. Tradition says some underground rooms were also used as secure places for documents and valuables during periods of unrest.",
+        "The post-war restoration that revealed the Middle Ages: After Second World War bombing, restoration exposed older masonry hidden beneath Baroque alterations. Some medieval sections were deliberately left visible, turning wartime damage into an opportunity for archaeological rediscovery."
+    ],
+    "es": [
+        "El templo del santo protector del Estado: San Jorge fue uno de los grandes símbolos de la República de Génova y de su tradición militar. La iglesia evocaba al santo representado por la famosa cruz roja sobre fondo blanco, emblema que durante siglos acompañó naves y estandartes genoveses.",
+        "Fundada sobre el Foro Romano: La zona de San Giorgio coincide con uno de los núcleos más antiguos de la ciudad. Según los estudios históricos, la iglesia medieval habría surgido en el área del antiguo foro romano, cerca de importantes recorridos que conectaban el puerto con el interior urbano.",
+        "La cúpula de pabellón que engaña la perspectiva: La estructura barroca utiliza una cúpula de forma particular enriquecida con decoraciones en perspectiva. Pintura y arquitectura colaboran para crear la impresión de mayor altura y profundidad, un gusto escenográfico típico de las iglesias genovesas del siglo XVII.",
+        "La fachada girada para adaptarse a los callejones: La orientación de la iglesia se adapta al trazado irregular del centro histórico. Fachada y accesos se organizaron alrededor de calles y plazas preexistentes, creando una relación muy estrecha entre el edificio religioso y el tejido de los caruggi.",
+        "El milagro de San Cayetano de Thiene: San Giorgio estuvo vinculada a los Padres Teatinos, orden fundada por San Cayetano. La tradición recuerda su dedicación a pobres y enfermos, actividad que reforzó la función social de la comunidad religiosa dentro del barrio.",
+        "Los cuadros salvados del fuego francés: En el bombardeo de 1684 la zona sufrió incendios y destrucciones. Religiosos y vecinos intentaron salvar obras y mobiliario de la iglesia, permitiendo que parte de su patrimonio pictórico sobreviviera pese a los graves daños.",
+        "El refugio subterráneo de los mercaderes: La cercanía de Piazza Banchi y la Loggia della Mercanzia estrechó la relación de la iglesia con los negocios. Según la tradición, algunos espacios subterráneos también se usaron para proteger documentos y valores durante periodos de desorden.",
+        "La restauración de posguerra que reveló la Edad Media: Tras los bombardeos de la Segunda Guerra Mundial, las restauraciones sacaron a la luz muros más antiguos ocultos por reformas barrocas. Algunas partes medievales se dejaron visibles, convirtiendo las heridas de la guerra en ocasión de redescubrimiento arqueológico."
+    ],
+    "fr": [
+        "Le temple du saint protecteur de l'État : Saint Georges fut l'un des grands symboles de la République de Gênes et de sa tradition militaire. L'église rappelait le saint associé à la célèbre croix rouge sur fond blanc, emblème longtemps porté par les navires et bannières génois.",
+        "Fondée au-dessus du Forum romain : Le quartier de San Giorgio correspond à l'un des noyaux les plus anciens de la ville. Selon les études historiques, l'église médiévale aurait été bâtie dans la zone de l'ancien forum romain, près d'axes reliant le port à l'intérieur de la cité.",
+        "La coupole en pavillon qui trompe la perspective : L'édifice baroque possède une coupole de forme particulière enrichie de décors perspectifs. Peinture et architecture s'associent pour donner une impression de plus grande hauteur et profondeur, dans le goût théâtral des églises génoises du XVIIe siècle.",
+        "La façade tournée pour s'adapter aux ruelles : L'orientation de l'église s'adapte au tissu irrégulier du centre historique. Façade et accès ont été organisés autour des rues et places préexistantes, créant une relation particulièrement étroite entre l'édifice religieux et les caruggi.",
+        "Le miracle de saint Gaétan de Thiene : San Giorgio fut liée aux Théatins, ordre fondé par saint Gaétan. La tradition retient son engagement auprès des pauvres et des malades, activité qui renforça le rôle social de la communauté religieuse dans le quartier.",
+        "Les tableaux sauvés du feu français : Lors du bombardement de 1684, le secteur fut ravagé par les incendies et les destructions. Religieux et habitants tentèrent de sauver œuvres et mobilier, permettant à une partie du patrimoine pictural de survivre malgré les graves dommages.",
+        "Le refuge souterrain des marchands : La proximité de Piazza Banchi et de la Loggia della Mercanzia liait l'église au monde des affaires. Selon la tradition, certains espaces souterrains servirent aussi à protéger documents et objets précieux durant les périodes de trouble.",
+        "La restauration d'après-guerre qui révéla le Moyen Âge : Après les bombardements de la Seconde Guerre mondiale, les restaurations mirent au jour des maçonneries plus anciennes cachées par les transformations baroques. Certaines parties médiévales furent laissées visibles, transformant les blessures de guerre en redécouverte archéologique."
+    ],
+    "ar": [
+        "معبد قديس الدولة الحامي: كان القديس جورج أحد أبرز رموز جمهورية جنوة وتقاليدها العسكرية. وكانت الكنيسة تستحضر القديس المرتبط بالصليب الأحمر الشهير على خلفية بيضاء، وهو الشعار الذي رافق طويلاً السفن والرايات الجنوية.",
+        "مبنية فوق المنتدى الروماني: تقع منطقة سان جورجيو ضمن أقدم نوى المدينة. وتشير الدراسات التاريخية إلى أن الكنيسة الوسطى شُيدت في منطقة المنتدى الروماني القديم، قرب طرق مهمة كانت تربط الميناء بداخل المدينة.",
+        "قبة خيمية تخدع المنظور: تستخدم البنية الباروكية قبة ذات شكل مميز مزينة بخدع منظور. ويتعاون الرسم والعمارة لخلق إحساس بارتفاع وعمق أكبر، وهو تأثير مسرحي نموذجي لكنائس جنوة في القرن السابع عشر.",
+        "واجهة دارت لتتلاءم مع الأزقة: يتكيف اتجاه الكنيسة مع النسيج غير المنتظم للمدينة القديمة. فقد نُظمت الواجهة والمداخل بما يتعايش مع الشوارع والساحات القائمة، فنتجت علاقة وثيقة جداً بين المبنى الديني وأزقة جنوة.",
+        "معجزة القديس غايتانو تييني: ارتبطت سان جورجيو بآباء التياتين، الرهبنة التي أسسها القديس غايتانو. وتذكر التقاليد التزامه بمساعدة الفقراء والمرضى، وهو نشاط عزز الدور الاجتماعي للجماعة الدينية في الحي.",
+        "لوحات أُنقذت من النار الفرنسية: خلال قصف عام 1684 تعرضت المنطقة للحرائق والدمار. حاول رجال الدين والسكان إنقاذ الأعمال الفنية والأثاث، فنجا جزء من التراث التصويري للكنيسة رغم الخسائر الكبيرة.",
+        "ملجأ التجار تحت الأرض: قرب الكنيسة من Piazza Banchi وLoggia della Mercanzia ربطها بعالم التجارة. وتقول التقاليد إن بعض الغرف السفلية استُخدمت أيضاً لحماية الوثائق والأشياء الثمينة في أوقات الاضطراب.",
+        "ترميم ما بعد الحرب الذي كشف العصور الوسطى: بعد قصف الحرب العالمية الثانية كشفت أعمال الترميم عن جدران أقدم كانت مخفية تحت التعديلات الباروكية. وتُركت بعض الأجزاء الوسطى ظاهرة، فتحولت أضرار الحرب إلى فرصة لاكتشاف أثري جديد."
+    ],
+    "ru": [
+        "Храм святого покровителя государства: Святой Георгий был одним из главных символов Генуэзской республики и её военной традиции. Церковь напоминала о святом, связанном со знаменитым красным крестом на белом поле — эмблемой генуэзских кораблей и знамён.",
+        "Построена над Римским форумом: Район Сан-Джорджо находится в одном из древнейших городских ядер. Историки считают, что средневековая церковь возникла в зоне древнеримского форума, рядом с важными путями, связывавшими порт с внутренними кварталами.",
+        "Павильонный купол, обманывающий перспективу: Барочное здание имеет купол необычной формы, украшенный перспективными эффектами. Живопись и архитектура вместе создают впечатление большей высоты и глубины — характерный театральный приём генуэзских церквей XVII века.",
+        "Фасад, повернутый ради переулков: Ориентация церкви подчинена нерегулярной структуре исторического центра. Фасад и входы приспособили к существующим улицам и площадям, создав теснейшую связь между храмом и плотной сетью генуэзских каруджи.",
+        "Чудо святого Каэтана Тиенского: Сан-Джорджо была связана с театинцами, орденом, основанным святым Каэтаном. Традиция напоминает о его заботе о бедных и больных, которая усилила социальную роль религиозной общины в квартале.",
+        "Картины, спасённые от французского огня: Во время бомбардировки 1684 года район пострадал от пожаров и разрушений. Священнослужители и жители старались вынести произведения и церковную утварь, благодаря чему часть живописного наследия уцелела.",
+        "Подземное убежище купцов: Близость Piazza Banchi и Торговой лоджии связывала церковь с деловым миром. По преданию, некоторые подземные помещения служили безопасным местом для документов и ценностей в периоды беспорядков.",
+        "Послевоенная реставрация, открывшая Средневековье: После бомбардировок Второй мировой войны реставрация выявила более древние стены, скрытые барочными переделками. Некоторые средневековые участки оставили открытыми, превратив военные повреждения в возможность археологического открытия."
+    ],
+    "zh": [
+        "国家守护圣人的教堂：圣乔治曾是热那亚共和国及其军事传统的重要象征之一。教堂让人联想到白底红十字上的圣人形象，这一标志长期出现在热那亚船只和旗帜上。",
+        "建在古罗马广场之上：圣乔治一带位于热那亚最古老的城市核心之一。根据历史研究，中世纪教堂很可能建在古罗马论坛所在地附近，周围曾有连接港口与城市内部的重要道路。",
+        "制造透视错觉的亭式穹顶：巴洛克建筑采用形状独特的穹顶，并配合透视装饰。绘画与建筑共同营造出更高、更深的视觉效果，这是17世纪热那亚教堂常见的戏剧化审美。",
+        "为适应小巷而“转向”的立面：教堂朝向顺应老城不规则的街巷格局。立面和入口根据原有道路与广场进行安排，使宗教建筑与热那亚狭窄的 caruggi 形成非常紧密的关系。",
+        "圣卡耶坦·蒂耶内的奇迹：圣乔治与圣卡耶坦创立的戴蒂尼会关系密切。传统特别记住他对穷人和病人的照顾，这种服务也加强了宗教团体在街区中的社会作用。",
+        "从法国炮火中抢救出的画作：1684年炮击给这一带带来火灾和破坏。修士与居民努力抢救教堂内的艺术品和陈设，使部分绘画遗产在严重损失中得以保存。",
+        "商人的地下保险库：靠近 Piazza Banchi 和商业交易所，使教堂与商业世界联系紧密。传统认为，一些地下空间在动荡时期还被用于安全存放文件和贵重物品。",
+        "战后修复重新发现中世纪：第二次世界大战轰炸后，修复工程显露出被巴洛克改造覆盖的更古老墙体。部分中世纪结构被保留下来直接展示，使战争留下的创伤转化为考古重新发现的机会。"
+    ],
+    "lij": [
+        "O tempio do Santo protettô do Stato: San Giorgio o l'é stæto un di prinçipæ simbolli da Repubbrica de Zêna e da seu tradiçion militare. A gésa a richiamava o santo da famosa croxe rossa in campo gianco, emblema de nave e vessilli zeneixi.",
+        "Fondâ in sciô Foro Roman: A zona de San Giorgio a l'é un di nuclei ciù antighi da çittæ. Segondo i studi, a gésa medievale a saieiva nasciua inta zona do vegio foro roman, vixin a percorsi importanti tra o porto e l'interno urbano.",
+        "A cupola che a inganna a prospettiva: A strutûa barocca a gh'à unna cupola de forma particolare con decoraçioin prospettiche. Pittua e architettua travaggan assieme pe fæ pâ o spaçio ciù erto e profondo, comme inte scenografie do Seiçento zeneize.",
+        "A façciata girâ pe-i caroggi: L'orientamento da gésa o s'adatta a-a trama irregolare do centro storico. Façciata e intræ son stæte organizæ pe convivve con stradde e ciassette za presenti, ligando strettamente a gésa a-i caroggi.",
+        "O miracolo de San Gaetano Thiene: San Giorgio a l'é stæta ligâ a-i Padri Teatin, ordine fondou da San Gaetano. A tradiçion a ricorda o seu impegno pe-i pövei e i mæi, attività che a l'à rinforçou o ruolo sociale da comunitæ religiosa.",
+        "I quadri sarvæ da-o fögo françeize: Into bombardamento do 1684 a zona a l'é stæta colpîa da incendi e destruçioin. Religioxi e abitanti han cercou de sarvâ òpere e arredi, permettendo a unna parte do patrimonio pittorico de sopravvive.",
+        "O rifugio sotterraneo di mercanti: A vexinansa a Piazza Banchi e a-a Loggia da Mercançia a l'à ligou a gésa a-o mondo di affæ. Segondo a tradiçion, quarche locale de sotta o serviva pe mette a-o seguo documenti e valori inti periodi de disordine.",
+        "O restauro do dopoguæra che o l'à mostrou o Medioevo: Dòppo e bombe da Seconda Guæra Mondiâ, i restauri han portou a lùxe mænn-e ciù antighe ascose da-e trasformaçioin barocche. Quarche parte medievale a l'é stæta lasciâ visibile."
+    ]
+};
+
+  root.church["San Marco al Molo"] = {
+    "it": [
+        "Un tributo a San Marco... per fare un torto a Venezia: La dedicazione a San Marco, patrono di Venezia, è curiosa in una città storicamente rivale della Serenissima. La tradizione collega la scelta alle alleanze medievali, ma anche all'orgoglio genovese di mostrare il santo veneziano proprio nel cuore del proprio porto.",
+        "La parrocchia dei Camalli e dei doganieri: Per secoli San Marco fu la chiesa dei lavoratori del porto. Camalli, doganieri e marinai la frequentavano prima e dopo le attività sulle banchine, affidando al santo la sicurezza dei viaggi, del lavoro e dei commerci marittimi.",
+        "La statua con la catena di Porto Pisano: Una tradizione lega la chiesa ai trofei sottratti a Pisa dopo le vittorie navali genovesi. Pezzi delle catene che proteggevano Porto Pisano furono portati a Genova e distribuiti in diversi luoghi simbolici, compresi edifici religiosi del porto.",
+        "Incastrata nelle mura difensive: San Marco è strettamente legata alle fortificazioni del Molo. Vista dal lato del porto, la chiesa appare quasi fusa con le antiche murature difensive, testimonianza di un'epoca in cui edifici religiosi, magazzini e strutture militari condividevano lo stesso fronte marittimo.",
+        "Il capolavoro ligneo di Anton Maria Maragliano: Tra le opere più importanti figura un gruppo ligneo raffigurante San Marco con il leone, legato alla scuola di Anton Maria Maragliano. Movimento delle vesti, espressioni e dettagli dell'animale mostrano la grande teatralità della scultura barocca ligure.",
+        "Gli affreschi di Domenico Fiasella: La chiesa conserva opere legate a Domenico Fiasella, detto il Sarzana, protagonista della pittura genovese del Seicento. Le sue scene religiose uniscono monumentalità e realismo, risultando particolarmente adatte a un luogo frequentato tradizionalmente da marinai e lavoratori.",
+        "Scampata all'abbattimento della Sopraelevata: La costruzione della Sopraelevata negli anni Sessanta trasformò radicalmente il fronte del porto e comportò molte demolizioni. San Marco rimase però al suo posto: oggi l'edificio storico convive a pochi metri con pilastri e strutture della grande arteria moderna.",
+        "I sotterranei allagati dal mare: La vicinanza all'antica linea di costa rendeva le parti sotterranee vulnerabili alle infiltrazioni. Durante le mareggiate più forti l'acqua poteva penetrare nelle cripte e nei locali ipogei, costringendo a periodici interventi di drenaggio e manutenzione."
+    ],
+    "en": [
+        "A tribute to Saint Mark... to annoy Venice: Dedicating a Genoese church to Saint Mark, patron of rival Venice, is striking. Tradition links the choice to medieval alliances, but also to Genoese pride in displaying Venice's saint at the very heart of its own harbour.",
+        "The parish of dockers and customs officers: For centuries San Marco was the church of harbour workers. Dockers, customs officials and sailors visited before and after work on the quays, entrusting to the saint the safety of voyages, labour and maritime trade.",
+        "The statue and the chain of Porto Pisano: Tradition links the church to trophies taken from Pisa after Genoese naval victories. Pieces of the chains that defended Porto Pisano were carried to Genoa and displayed in symbolic places, including religious buildings near the harbour.",
+        "Built into the defensive walls: San Marco is closely tied to the fortifications of the Molo. Seen from the harbour, the church appears almost fused with the old defensive walls, recalling a time when churches, warehouses and military structures shared the same waterfront.",
+        "Anton Maria Maragliano's wooden masterpiece: Among the church's most important works is a wooden group of Saint Mark and the lion linked to Anton Maria Maragliano's school. Flowing drapery, expressive faces and animal details show the theatrical power of Ligurian Baroque sculpture.",
+        "The frescoes of Domenico Fiasella: The church preserves works connected with Domenico Fiasella, known as il Sarzana, a major 17th-century Genoese painter. His religious scenes combine monumentality and realism, particularly fitting for a church traditionally frequented by sailors and workers.",
+        "Escaping demolition for the elevated road: Construction of Genoa's Sopraelevata in the 1960s radically changed the waterfront and caused many demolitions. San Marco survived in place; today the historic church stands only metres from the pillars and structures of the modern elevated artery.",
+        "Basements flooded by the sea: Proximity to the old shoreline made the underground areas vulnerable to infiltration. During the strongest storms, seawater could enter crypts and underground rooms, forcing periodic drainage and maintenance work."
+    ],
+    "es": [
+        "Un homenaje a San Marcos... para molestar a Venecia: Dedicar una iglesia genovesa a San Marcos, patrón de la rival Venecia, resulta curioso. La tradición relaciona la elección con antiguas alianzas, pero también con el orgullo genovés de mostrar al santo veneciano en pleno corazón de su propio puerto.",
+        "La parroquia de los camalli y los aduaneros: Durante siglos San Marco fue la iglesia de los trabajadores del puerto. Camalli, aduaneros y marineros la frecuentaban antes y después del trabajo en los muelles, confiando al santo la seguridad de viajes, labores y comercios marítimos.",
+        "La estatua con la cadena de Porto Pisano: Una tradición vincula la iglesia con trofeos arrebatados a Pisa tras las victorias navales genovesas. Fragmentos de las cadenas que defendían Porto Pisano fueron llevados a Génova y distribuidos en lugares simbólicos, incluidos edificios religiosos del puerto.",
+        "Encajada en las murallas defensivas: San Marco está estrechamente unida a las fortificaciones del Molo. Vista desde el puerto, la iglesia parece casi fusionarse con los antiguos muros defensivos, recuerdo de una época en que templos, almacenes y estructuras militares compartían el mismo frente marítimo.",
+        "La obra maestra de madera de Anton Maria Maragliano: Entre las piezas más importantes figura un grupo de San Marcos con el león vinculado a la escuela de Anton Maria Maragliano. Movimiento de las telas, expresiones y detalles del animal muestran la teatralidad de la escultura barroca ligur.",
+        "Los frescos de Domenico Fiasella: La iglesia conserva obras relacionadas con Domenico Fiasella, llamado il Sarzana, protagonista de la pintura genovesa del siglo XVII. Sus escenas religiosas combinan monumentalidad y realismo, especialmente apropiadas para un lugar frecuentado tradicionalmente por marineros y trabajadores.",
+        "Salvada de la demolición por la Sopraelevata: La construcción de la carretera elevada en los años sesenta transformó radicalmente el frente portuario y provocó muchas demoliciones. San Marco permaneció en su lugar: hoy el edificio histórico convive a pocos metros con pilares y estructuras de la gran arteria moderna.",
+        "Los sótanos inundados por el mar: La cercanía de la antigua línea de costa hacía vulnerables los espacios subterráneos. Durante los temporales más fuertes el agua podía entrar en criptas y locales hipogeos, obligando a realizar periódicamente trabajos de drenaje y mantenimiento."
+    ],
+    "fr": [
+        "Un hommage à saint Marc... pour narguer Venise : Dédier une église génoise à saint Marc, patron de la rivale Venise, est surprenant. La tradition relie ce choix aux alliances médiévales, mais aussi à la fierté génoise d'exhiber le saint vénitien au cœur même de son propre port.",
+        "La paroisse des dockers et des douaniers : Pendant des siècles, San Marco fut l'église des travailleurs du port. Dockers, douaniers et marins la fréquentaient avant et après leur travail sur les quais, confiant au saint la sécurité des voyages, du travail et du commerce maritime.",
+        "La statue avec la chaîne de Porto Pisano : Une tradition relie l'église aux trophées pris à Pise après les victoires navales génoises. Des morceaux des chaînes protégeant Porto Pisano furent rapportés à Gênes et exposés dans plusieurs lieux symboliques, notamment des édifices religieux du port.",
+        "Enchâssée dans les murailles défensives : San Marco est étroitement liée aux fortifications du Molo. Vue du port, l'église semble presque fondue dans les anciens murs défensifs, souvenir d'une époque où édifices religieux, entrepôts et ouvrages militaires partageaient le même front maritime.",
+        "Le chef-d'œuvre en bois d'Anton Maria Maragliano : Parmi les œuvres principales figure un groupe en bois représentant saint Marc avec le lion, lié à l'école d'Anton Maria Maragliano. Mouvement des drapés, expressions et détails de l'animal illustrent la théâtralité de la sculpture baroque ligure.",
+        "Les fresques de Domenico Fiasella : L'église conserve des œuvres liées à Domenico Fiasella, dit il Sarzana, figure majeure de la peinture génoise du XVIIe siècle. Ses scènes religieuses associent monumentalité et réalisme, en accord avec un lieu historiquement fréquenté par marins et travailleurs.",
+        "Épargnée par les démolitions de la voie surélevée : La construction de la Sopraelevata dans les années 1960 transforma profondément le front portuaire et provoqua de nombreuses démolitions. San Marco resta cependant en place, à quelques mètres seulement des piliers de la grande artère moderne.",
+        "Les souterrains envahis par la mer : La proximité de l'ancienne ligne de côte rendait les parties souterraines vulnérables aux infiltrations. Lors des plus fortes tempêtes, l'eau de mer pouvait pénétrer dans les cryptes et salles hypogées, imposant des travaux réguliers de drainage et d'entretien."
+    ],
+    "ar": [
+        "تحية للقديس مرقس... ونكاية بفينيسيا: إن تكريس كنيسة جنوية للقديس مرقس، شفيع فينيسيا المنافسة، أمر لافت. وتربط التقاليد الاختيار بتحالفات العصور الوسطى، وبفخر جنوي في إظهار قديس البندقية داخل قلب ميناء جنوة نفسه.",
+        "رعية الحمّالين وموظفي الجمارك: لقرون كانت سان ماركو كنيسة عمال الميناء. كان الحمّالون وموظفو الجمارك والبحارة يزورونها قبل العمل وبعده، طالبين من القديس حماية الرحلات والعمل والتجارة البحرية.",
+        "التمثال وسلسلة Porto Pisano: تربط رواية الكنيسة بالغنائم المأخوذة من بيزا بعد الانتصارات البحرية الجنوية. فقد نُقلت أجزاء من السلاسل التي كانت تحمي Porto Pisano إلى جنوة وعُرضت في أماكن رمزية عدة، منها مبان دينية قرب الميناء.",
+        "مدمجة في الأسوار الدفاعية: ترتبط سان ماركو ارتباطاً وثيقاً بتحصينات المولو. ومن جهة الميناء تبدو الكنيسة شبه مندمجة في الأسوار القديمة، شاهدة على زمن كانت فيه الكنائس والمخازن والمنشآت العسكرية تشترك في الواجهة البحرية نفسها.",
+        "تحفة خشبية من مدرسة أنطون ماريا ماراليانو: من أهم الأعمال مجموعة خشبية للقديس مرقس مع الأسد مرتبطة بمدرسة Anton Maria Maragliano. حركة الثياب وتعبيرات الوجوه وتفاصيل الحيوان تجسد الطابع المسرحي للنحت الباروكي الليغوري.",
+        "جداريات دومينيكو فياسيلا: تحتفظ الكنيسة بأعمال مرتبطة بـ Domenico Fiasella، المعروف بـ il Sarzana، أحد كبار رسامي جنوة في القرن السابع عشر. تجمع مشاهده الدينية بين الضخامة والواقعية، وتناسب كنيسة ارتادها تقليدياً البحارة والعمال.",
+        "نجت من الهدم بسبب الطريق المرتفع: غيّر بناء Sopraelevata في الستينيات واجهة الميناء جذرياً وتسبب في هدم مبان كثيرة. لكن سان ماركو بقيت في مكانها؛ واليوم تقف الكنيسة التاريخية على بعد أمتار من أعمدة الطريق الحديث.",
+        "سراديب تغمرها مياه البحر: جعل قرب الكنيسة من خط الساحل القديم الأجزاء السفلية عرضة للتسرب. وخلال العواصف القوية كان ماء البحر يدخل إلى السراديب والغرف تحت الأرض، ما استدعى أعمال تصريف وصيانة دورية."
+    ],
+    "ru": [
+        "Посвящение святому Марку... назло Венеции: Посвятить генуэзскую церковь святому Марку, покровителю соперницы Венеции, довольно необычно. Традиция связывает это и со средневековыми союзами, и с генуэзской гордостью — показать венецианского святого в самом сердце собственного порта.",
+        "Приход портовых грузчиков и таможенников: Веками Сан-Марко была церковью работников порта. Камалли, таможенники и моряки заходили сюда до и после работы на причалах, поручая святому безопасность путешествий, труда и морской торговли.",
+        "Статуя с цепью Porto Pisano: Предание связывает церковь с трофеями, захваченными у Пизы после генуэзских морских побед. Части цепей, защищавших Porto Pisano, привезли в Геную и разместили в знаковых местах, включая религиозные здания в портовой зоне.",
+        "Встроена в оборонительные стены: Сан-Марко тесно связана с укреплениями Моло. Со стороны порта церковь кажется почти слитой со старыми оборонительными стенами, напоминая о времени, когда храмы, склады и военные сооружения делили одну набережную.",
+        "Деревянный шедевр Антона Марии Маральяно: Среди главных произведений — деревянная группа святого Марка со львом, связанная со школой Anton Maria Maragliano. Движение складок, выражения лиц и детали животного демонстрируют театральность лигурийской барочной скульптуры.",
+        "Фрески Доменико Фиаселлы: В церкви есть произведения, связанные с Domenico Fiasella, прозванным il Sarzana, одним из ведущих генуэзских художников XVII века. Его религиозные сцены сочетают монументальность и реализм, особенно уместные в церкви моряков и рабочих.",
+        "Уцелела при строительстве эстакады: Строительство Sopraelevata в 1960-е годы радикально изменило портовый фронт и привело к многочисленным сносам. Сан-Марко сохранилась; сегодня историческая церковь стоит всего в нескольких метрах от опор современной дороги.",
+        "Подземелья, затопляемые морем: Близость старой береговой линии делала подземные помещения уязвимыми для воды. Во время сильных штормов море могло проникать в крипты и подвалы, поэтому требовались регулярные работы по осушению и обслуживанию."
+    ],
+    "zh": [
+        "献给圣马可……也是对威尼斯的一点“挑衅”：在历史上与威尼斯长期竞争的热那亚，一座教堂却奉献给威尼斯守护圣人圣马可。传统既把它与中世纪联盟联系起来，也体现热那亚人在自己港口中心展示“威尼斯圣人”的自豪感。",
+        "码头工人与海关人员的教堂：几个世纪里，圣马可一直是港口劳动者的教堂。码头工、海关人员和水手在上下工前后来此祈祷，把航行、工作和海上贸易的安全托付给圣人。",
+        "与 Porto Pisano 铁链有关的雕像：传统把教堂与热那亚海战胜利后从比萨带回的战利品联系起来。曾守卫 Porto Pisano 的铁链碎片被带到热那亚，分置在多个象征性地点，其中包括港区宗教建筑。",
+        "嵌在防御城墙中的教堂：圣马可与 Molo 的防御工事关系紧密。从港口方向看，教堂几乎与古老城墙融为一体，让人想起宗教建筑、仓库和军事设施曾共同占据同一片海岸线的时代。",
+        "Anton Maria Maragliano 学派的木雕杰作：教堂重要作品之一，是与 Anton Maria Maragliano 学派有关的圣马可与狮子木雕群。衣褶的运动、人物表情和动物细节展现出利古里亚巴洛克雕塑强烈的戏剧性。",
+        "Domenico Fiasella 的壁画：教堂保存着与 Domenico Fiasella（绰号 il Sarzana）有关的作品，他是17世纪热那亚绘画的重要人物。其宗教场景兼具宏伟与写实，很适合这座传统上由水手和工人频繁出入的教堂。",
+        "躲过高架道路拆迁：20世纪60年代修建 Sopraelevata 高架道路，彻底改变了港口沿线并造成大量拆除。圣马可却留在原地；如今这座历史教堂距离现代高架道路的支柱仅几米。",
+        "会被海水淹没的地下空间：靠近旧海岸线，使教堂地下部分容易渗水。强烈风暴期间，海水可能进入地下室和墓穴，因此过去必须定期进行排水和维护。"
+    ],
+    "lij": [
+        "Un tributo a San Marco... pe fæ dispeto a Venezia: Dedicâ unna gésa zeneize a San Marco, patron de Venezia, a l'é curiosa inta çittæ rivâ da Serenissima. A tradiçion a liga a çernia a alleanse medievali e a l'orgoggio zeneize de mostrâ o santo venezian into seu porto.",
+        "A parrocchia di camalli e di doganê: Pe secoli San Marco a l'é stæta a gésa di travaggiatoî do porto. Camalli, doganê e marinæ ghe vegnivan primma e dòppo o travaggio in sci moli, affidando a-o santo viaggi, travaggio e commeçio marittimo.",
+        "A statoa co-a cadeia de Porto Pisano: Una tradiçion a liga a gésa a-i trofei piggiæ a Pisa dòppo e vittöie navali zeneixi. Pezzi de cadeia che serravan Porto Pisano son stæti portæ a Zêna e distribuii in diversi pòsti simbolici do porto.",
+        "Incastrâ inte mænn-e de difeiza: San Marco a l'é strettamente ligâ a-e fortificaçioin do Molo. Vista da-o porto, a gésa a pâ quasi fuxa co-e antighe mænn-e, ricòrdo de quande gésge, magazzen e opere militari condivideivan o mæximo fronte de mâ.",
+        "O capolavô de legno de Anton Maria Maragliano: Tra e òpere ciù importanti gh'é un gruppo de legno con San Marco e o leon, ligou a-a scöa de Maragliano. Movimento di vestii, esprescioin e detaggi mostrano tutta a teatralitæ da scultura barocca ligure.",
+        "I affreschi de Domenico Fiasella: A gésa a conserva òpere ligæ a Domenico Fiasella, dito o Sarzana, protagonista da pittua zeneize do Seiçento. E seu scene religioze uniscian monumentalitæ e realismo, adatte a unna gésa de marinæ e travaggiatoî.",
+        "Sarvâ da-o abbattimento da Sopraelevata: A costruzion da Sopraelevata inti anni Sessanta a l'à cambiou tutto o fronte do porto e provocou tante demoliçioin. San Marco a l'é restâ a-o seu pòsto, ancheu a pochi metri da-i pilastri da stradda moderna.",
+        "I sotterranei allagæ da-o mâ: A vexinansa a l'antiga costa a rendeiva i locali de sotta vulnerabili a l'ægua. Inte marezæ ciù forti o mâ o podeiva intrâ inte cripte e inti sotterranei, obrigando a fæ drenaggi e manutençion."
+    ]
+};
+
+  root.church["San Pietro in Banchi"] = {
+    "it": [
+        "La chiesa costruita sui negozi per ragioni di bilancio: Quando la Repubblica decise di ricostruire San Pietro, le risorse economiche erano limitate. La soluzione fu ingegnosa: edificare il tempio sopra una serie di botteghe, utilizzando gli affitti commerciali per contribuire direttamente al finanziamento dei lavori.",
+        "La finanza sopra la fede: La particolare struttura della chiesa, costruita letteralmente sopra negozi e attività commerciali, generò battute popolari rimaste famose. I genovesi ironizzavano sul fatto che a Banchi fosse la finanza a sostenere fisicamente la fede e il culto.",
+        "La loggia adibita a borsa valori: Piazza Banchi era uno dei cuori economici della città. Sotto portici e logge mercanti e banchieri concludevano affari, fissavano prezzi, cambiavano monete e stipulavano assicurazioni marittime, creando un ambiente che anticipava il funzionamento di una vera borsa commerciale.",
+        "Un voto solenne per la fine della peste: La ricostruzione della chiesa ebbe anche un forte significato religioso. La comunità legò il nuovo tempio alla fine di una grave epidemia di peste, trasformando l'edificio in un segno pubblico di ringraziamento e memoria collettiva.",
+        "Progettata dall'architetto dei palazzi reali: Il progetto venne affidato a Bernardino Cantone, architetto attivo anche nei grandi interventi urbanistici e nobiliari genovesi. La sfida consisteva nel creare un edificio sacro monumentale sopra spazi commerciali aperti, mantenendo stabilità e armonia architettonica.",
+        "Gli stucchi scenografici di Marcello Sparzo: L'interno a pianta centrale è arricchito da stucchi e figure decorative attribuite a Marcello Sparzo. Le forme leggere e scenografiche contrastano con la massa dell'edificio e contribuiscono a trasformare l'aula in un raffinato spazio tardo-rinascimentale e barocco.",
+        "La cupola rivestita di ardesia: Cupola e coperture utilizzano l'ardesia, la caratteristica pietra scura ligure. Oltre a creare un forte effetto visivo nel panorama dei tetti genovesi, il materiale offre una buona protezione dalle piogge e dall'ambiente marittimo vicino al porto.",
+        "La facciata affrescata sbiadita dal tempo: Le superfici esterne un tempo erano molto più colorate di oggi. Affreschi e decorazioni architettoniche dipinte coprivano parti della facciata e del portico, ma secoli di pioggia, vento, salsedine e inquinamento ne hanno cancellato quasi completamente le tracce."
+    ],
+    "en": [
+        "The church built above shops to balance the budget: When the Republic decided to rebuild San Pietro, money was scarce. The ingenious solution was to place the church above a row of shops, using commercial rents to contribute directly to the cost of construction.",
+        "Finance supporting faith: The unusual structure, literally built above shops and businesses, inspired famous local jokes. Genoese people liked to remark that at Banchi finance physically supported faith and worship, turning the building itself into a witty symbol of the city's commercial spirit.",
+        "The loggia used as a stock exchange: Piazza Banchi was one of Genoa's economic hearts. Under porticoes and loggias merchants and bankers closed deals, set prices, exchanged currencies and arranged marine insurance, creating an environment that anticipated the workings of a true commercial exchange.",
+        "A solemn vow for the end of the plague: Rebuilding the church also carried strong religious meaning. The community linked the new temple to the end of a severe plague outbreak, turning the building into a public sign of gratitude and collective memory.",
+        "Designed by an architect of noble palaces: The project was entrusted to Bernardino Cantone, active in major Genoese urban and aristocratic works. The challenge was to create a monumental sacred building above open commercial spaces while preserving structural stability and architectural harmony.",
+        "Marcello Sparzo's theatrical stuccoes: The centrally planned interior is enriched with stuccoes and decorative figures attributed to Marcello Sparzo. Their light, theatrical forms contrast with the building's mass and help turn the church into a refined late-Renaissance and Baroque space.",
+        "The slate-covered dome: The dome and roofs use slate, Liguria's characteristic dark stone. Besides creating a strong visual effect among Genoa's rooftops, the material provides effective protection from rain and the maritime environment close to the harbour.",
+        "The frescoed façade faded by time: The exterior was once far more colourful than today. Frescoes and painted architectural decoration covered parts of the façade and portico, but centuries of rain, wind, salt air and pollution have almost entirely erased them."
+    ],
+    "es": [
+        "La iglesia construida sobre tiendas por razones de presupuesto: Cuando la República decidió reconstruir San Pietro, los recursos eran limitados. La solución fue ingeniosa: levantar el templo sobre una serie de comercios y utilizar los alquileres para contribuir directamente a financiar las obras.",
+        "Las finanzas sobre la fe: La peculiar estructura, literalmente construida sobre tiendas y actividades comerciales, generó bromas populares todavía recordadas. Los genoveses ironizaban diciendo que en Banchi eran las finanzas las que sostenían físicamente la fe y el culto.",
+        "La logia utilizada como bolsa de valores: Piazza Banchi era uno de los corazones económicos de la ciudad. Bajo pórticos y logias mercaderes y banqueros cerraban negocios, fijaban precios, cambiaban monedas y contrataban seguros marítimos, anticipando el funcionamiento de una verdadera bolsa comercial.",
+        "Un voto solemne por el fin de la peste: La reconstrucción tuvo también un fuerte significado religioso. La comunidad vinculó el nuevo templo con el final de una grave epidemia, convirtiendo el edificio en signo público de agradecimiento y memoria colectiva.",
+        "Diseñada por el arquitecto de los palacios nobiliarios: El proyecto fue confiado a Bernardino Cantone, activo también en grandes intervenciones urbanas y aristocráticas de Génova. El reto consistía en crear un edificio sagrado monumental sobre espacios comerciales abiertos, manteniendo estabilidad y armonía arquitectónica.",
+        "Los estucos escenográficos de Marcello Sparzo: El interior de planta central está enriquecido con estucos y figuras atribuidos a Marcello Sparzo. Sus formas ligeras y teatrales contrastan con la masa del edificio y ayudan a convertir el espacio en un refinado ambiente tardorrenacentista y barroco.",
+        "La cúpula revestida de pizarra: La cúpula y las cubiertas usan pizarra, la característica piedra oscura de Liguria. Además de destacar entre los tejados genoveses, el material ofrece buena protección frente a la lluvia y al ambiente marítimo cercano al puerto.",
+        "La fachada pintada descolorida por el tiempo: Las superficies exteriores fueron mucho más coloridas que hoy. Frescos y decoraciones arquitectónicas pintadas cubrían partes de la fachada y el pórtico, pero siglos de lluvia, viento, salitre y contaminación han borrado casi por completo sus huellas."
+    ],
+    "fr": [
+        "L'église construite sur des boutiques pour équilibrer le budget : Lorsque la République décida de reconstruire San Pietro, les moyens étaient limités. La solution fut ingénieuse : bâtir le sanctuaire au-dessus de boutiques et utiliser leurs loyers pour contribuer directement au financement des travaux.",
+        "La finance au-dessus de la foi : Cette structure particulière, littéralement bâtie au-dessus de commerces, inspira des plaisanteries populaires restées célèbres. Les Génois ironisaient en disant qu'à Banchi, la finance soutenait physiquement la foi et le culte.",
+        "La loggia transformée en bourse : Piazza Banchi était l'un des cœurs économiques de la ville. Sous portiques et loggias, marchands et banquiers concluaient des affaires, fixaient les prix, changeaient les monnaies et souscrivaient des assurances maritimes, préfigurant une véritable bourse commerciale.",
+        "Un vœu solennel pour la fin de la peste : La reconstruction de l'église eut aussi une forte signification religieuse. La communauté relia le nouveau temple à la fin d'une grave épidémie de peste, en faisant un signe public de gratitude et de mémoire collective.",
+        "Conçue par l'architecte des palais nobles : Le projet fut confié à Bernardino Cantone, également actif dans de grands chantiers urbains et aristocratiques. Il fallait créer un édifice sacré monumental au-dessus d'espaces commerciaux ouverts tout en conservant stabilité et harmonie architecturale.",
+        "Les stucs théâtraux de Marcello Sparzo : L'intérieur à plan central est enrichi de stucs et de figures attribués à Marcello Sparzo. Leurs formes légères et scénographiques contrastent avec la masse de l'édifice et transforment l'espace en un raffiné décor de la fin de la Renaissance et du Baroque.",
+        "La coupole couverte d'ardoise : La coupole et les toitures utilisent l'ardoise, pierre sombre typique de Ligurie. Outre son fort effet visuel parmi les toits génois, ce matériau protège efficacement de la pluie et de l'environnement maritime proche du port.",
+        "La façade peinte effacée par le temps : Les surfaces extérieures étaient autrefois bien plus colorées. Fresques et décors architecturaux peints couvraient une partie de la façade et du portique, mais des siècles de pluie, vent, embruns et pollution en ont presque entièrement effacé les traces."
+    ],
+    "ar": [
+        "كنيسة بُنيت فوق المتاجر لأسباب مالية: عندما قررت الجمهورية إعادة بناء سان بيترو كانت الموارد محدودة. فجاء الحل مبتكراً: تشييد الكنيسة فوق صف من المتاجر واستخدام الإيجارات التجارية للمساهمة مباشرة في تمويل أعمال البناء.",
+        "المال فوق الإيمان: أثارت البنية الفريدة للكنيسة، المبنية حرفياً فوق المحال والأنشطة التجارية، نكات شعبية شهيرة. وكان أهل جنوة يمزحون بأن المال في Banchi هو الذي يحمل الإيمان والعبادة فعلياً.",
+        "اللوجيا التي عملت كبورصة: كانت Piazza Banchi من أهم المراكز الاقتصادية للمدينة. تحت الأروقة كان التجار والمصرفيون يعقدون الصفقات ويحددون الأسعار ويبدلون العملات ويبرمون التأمين البحري، في بيئة سبقت مفهوم البورصة التجارية الحديثة.",
+        "نذر رسمي لانتهاء الطاعون: حملت إعادة بناء الكنيسة معنى دينياً قوياً أيضاً. فقد ربطت الجماعة المعبد الجديد بانتهاء وباء خطير، وحولته إلى علامة عامة للشكر والذاكرة الجماعية.",
+        "صممها مهندس القصور النبيلة: أُسند المشروع إلى Bernardino Cantone، الذي عمل أيضاً في مشروعات حضرية وأرستقراطية كبرى في جنوة. وكان التحدي إنشاء مبنى ديني ضخم فوق فضاءات تجارية مفتوحة مع الحفاظ على الثبات والانسجام المعماري.",
+        "زخارف Marcello Sparzo الجصية المسرحية: يثري الداخل المركزي جص وتماثيل زخرفية تُنسب إلى Marcello Sparzo. وتتباين خفتها وطابعها المسرحي مع كتلة البناء، فتمنح الفضاء مظهراً راقياً بين أواخر عصر النهضة والباروك.",
+        "قبة مكسوة بالأردواز: تستخدم القبة والأسقف الأردواز، الحجر الليغوري الداكن المميز. وإلى جانب أثره البصري القوي بين أسطح جنوة، يوفر هذا الحجر حماية جيدة من المطر والبيئة البحرية القريبة من الميناء.",
+        "واجهة مزخرفة محا الزمن ألوانها: كانت الواجهات الخارجية أكثر ألواناً بكثير من اليوم. فقد غطت الجداريات والزخارف المعمارية المرسومة أجزاء من الواجهة والرواق، لكن قروناً من المطر والرياح والملوحة والتلوث أزالت معظم آثارها."
+    ],
+    "ru": [
+        "Церковь над магазинами ради бюджета: Когда Республика решила перестроить Сан-Пьетро, денег было мало. Нашли остроумное решение: возвести храм над рядом лавок и направлять арендную плату от коммерческих помещений непосредственно на финансирование строительства.",
+        "Финансы над верой: Необычная конструкция, буквально стоящая над магазинами и торговыми помещениями, породила знаменитые народные шутки. Генуэзцы иронизировали, что в Banchi именно финансы физически поддерживают веру и богослужение.",
+        "Лоджия как биржа: Piazza Banchi была одним из экономических центров города. Под портиками и лоджиями купцы и банкиры заключали сделки, устанавливали цены, меняли валюту и оформляли морское страхование, предвосхищая работу настоящей торговой биржи.",
+        "Торжественный обет в честь окончания чумы: Перестройка церкви имела и сильный религиозный смысл. Община связала новый храм с окончанием тяжёлой эпидемии, превратив здание в публичный знак благодарности и коллективной памяти.",
+        "Проект архитектора дворцов: Работу поручили Bernardino Cantone, участвовавшему и в крупных генуэзских городских и дворцовых проектах. Задача состояла в том, чтобы создать монументальный храм над открытыми торговыми пространствами, сохранив устойчивость и архитектурную гармонию.",
+        "Театральная лепнина Marcello Sparzo: Центрический интерьер украшен лепниной и декоративными фигурами, приписываемыми Marcello Sparzo. Их лёгкие, сценографические формы контрастируют с массой здания и превращают пространство в изысканный ансамбль позднего Ренессанса и Барокко.",
+        "Купол, покрытый сланцем: Купол и крыши покрыты сланцем — характерным тёмным камнем Лигурии. Помимо выразительного вида среди генуэзских крыш, материал хорошо защищает от дождя и морского воздуха близкого порта.",
+        "Расписной фасад, стёртый временем: Внешние поверхности когда-то были гораздо ярче. Фрески и нарисованные архитектурные украшения покрывали части фасада и портика, но века дождя, ветра, соли и загрязнения почти полностью уничтожили их следы."
+    ],
+    "zh": [
+        "因预算问题而建在商铺之上的教堂：共和国决定重建圣彼得教堂时资金有限，于是采用了巧妙方案：把教堂建在一排商铺之上，再用商业租金直接补贴工程费用。",
+        "金融托起信仰：教堂真正建在商铺和商业活动之上，这种特殊结构催生了许多流传至今的民间笑话。热那亚人打趣说，在 Banchi，是“金融”从物理上支撑着信仰和宗教活动。",
+        "充当交易所的拱廊：Piazza Banchi 曾是城市经济核心之一。商人与银行家在门廊和拱廊下谈生意、定价格、兑换货币、签订海上保险，这种环境已经很像后来真正的商业交易所。",
+        "为瘟疫结束而许下的庄严誓愿：重建教堂不仅有现实意义，也承载强烈宗教含义。社区把新教堂与一场严重瘟疫的结束联系起来，使建筑成为公共感恩和集体记忆的象征。",
+        "由贵族宫殿建筑师设计：工程交给 Bernardino Cantone，他也参与过热那亚重要城市和贵族建筑项目。最大挑战是在开放商业空间之上建造宏伟圣堂，同时保证结构稳定与建筑和谐。",
+        "Marcello Sparzo 的戏剧化灰泥装饰：中央平面内部装饰着归于 Marcello Sparzo 的灰泥和人物造型。轻盈而富有舞台感的形式与建筑体量形成反差，使空间呈现出晚期文艺复兴与巴洛克交融的精致效果。",
+        "覆盖板岩的穹顶：穹顶和屋面采用利古里亚典型的深色板岩。它不仅在热那亚屋顶景观中形成强烈视觉效果，也能很好抵御雨水与靠近港口的海洋环境。",
+        "被时间冲淡的彩绘立面：教堂外部过去比今天鲜艳得多。立面和门廊曾覆盖壁画与建筑装饰画，但数百年的雨水、海风、盐分和污染几乎完全抹去了这些痕迹。"
+    ],
+    "lij": [
+        "A gésa construta in sci negoççi pe questioin de bilancio: Quande a Repubbrica a l'à deciso de reconstrue San Pietro, i dinæ eran pochi. A soluçion a l'é stæta ingegnosa: mette a gésa in sci botteghe e adêuviâ i affitti pe financiâ i travaggi.",
+        "A finansa in sciâ fede: A strutûa particolare da gésa, letteralmente in sci negoççi, a l'à fæto nasce tante battue popolari. I zeneixi dixevan che a Banchi a l'ea proprio a finansa a sostegnî fisicamente a fede e o culto.",
+        "A loggia adêuviâ comme borsa: Piazza Banchi a l'ea un di cöi economichi da çittæ. Sotta portici e logge mercanti e banchê concludeivan affæ, fixavan prezzi, cambiavan monæ e faceivan assicuraçioin marittime, quasi comme unna vera borsa commerciale.",
+        "Un voto solenne pe-a fin da peste: A reconstruxion da gésa a l'à avuo anche un forte significou religioso. A comunitæ a l'à ligou o neuvo tempio a-a fin de unna grave epidemia, facendone un segno pubblico de ringraçiamento e memoria coletiva.",
+        "Progettâ da l'architetto di palassi: O progetto o l'é stæto affidou a Bernardino Cantone, attivo anche inti grandi interventi urban e nobiliari. A sfida a l'ea construe un edificio sacro monumentale in sci spaçi commerciali aperti, tegnendo stabilitæ e armonia.",
+        "I stucchi scenografici de Marcello Sparzo: L'interno a pianta centrale o l'é arricchîo da stucchi e figure attribuîe a Marcello Sparzo. E forme leggere e teatrali contrastan co-a massa de l'edificio e fan do spaçio un ambiente raffinou tra Rinascimento e Barocco.",
+        "A cupola coverta d'ardesia: Cupola e tetti adêuvian l'ardesia, a pria scua tipica ligure. O materiale o crea un forte effetto inti tetti zeneixi e o protegge ben da-a ciêuva e da l'ambiente de mâ do porto.",
+        "A façciata affrescâ scolorîa da-o tempo: E superfici esterne un tempo eran ben ciù coloræ. Affreschi e decoraçioin pittæ coverzivan parte da façciata e do portico, ma secoli de ciêuva, vento, salsedine e inquinamento han quasi cancellou tutto."
+    ]
+};
+
+  root.church["San Salvatore"] = {
+    "it": [
+        "I sotterranei-rifugio della guerra: Le robuste cripte barocche e i locali sotterranei della chiesa salvarono centinaia di cittadini, venendo usati come rifugio antiaereo salvavita durante i devastanti raid aerei del 1942.",
+        "Le giostre cavalleresche sul sagrato: Piazza Sarzano era l'unica vera spianata medievale della città; le finestre di San Salvatore facevano da tribuna d'onore per i nobili che assistevano a tornei e giostre cavalleresche.",
+        "La cupola ricostruita in cemento: Nel pionieristico restauro moderno degli anni '90, l'ossatura della cupola barocca crollata sotto le bombe è stata interamente ricostruita utilizzando una modernissima e invisibile struttura in cemento armato.",
+        "Il chiostro riciclato dai monaci: Il piccolo chiostro adiacente alla parrocchia, dopo la sconsacrazione ottocentesca, perse la sua sacralità e venne ironicamente riciclato come officina meccanica e deposito per i carri della nettezza urbana.",
+        "Le condotte d'acqua medievali: Sotto il pavimento gli archeologi hanno scoperto condotte in cotto del XII secolo; raccoglievano l'acqua piovana convogliandola in enormi cisterne per garantire l'autonomia idrica durante gli assedi.",
+        "La pinacoteca barocca distrutta: Prima delle bombe, le pareti ospitavano un ciclo di affreschi di immenso valore di Piola e Valerio Castello, purtroppo andato interamente polverizzato e perduto nel crollo del soffitto.",
+        "Il leone veneziano come trofeo: I marinai della parrocchia, di ritorno dalle guerre d'Oriente, murarono sul fianco della chiesa un Leone di San Marco in pietra, esposto come trofeo militare contro la rivale Venezia.",
+        "La cura dei malati di peste: Durante la catastrofica epidemia del 1656, i sacerdoti di San Salvatore non fuggirono, trasformando la navata in un lazzaretto provvisorio per curare e confortare i malati del quartiere."
+    ],
+    "en": [
+        "The wartime underground shelters: The church's sturdy Baroque crypts and underground rooms saved hundreds of residents, serving as life-saving air-raid shelters during the devastating bombing raids of 1942.",
+        "Knightly tournaments on the church square: Piazza Sarzano was the city's only true medieval open ground. The windows of San Salvatore served as privileged viewing boxes for nobles watching tournaments and mounted jousts held in the square.",
+        "The dome rebuilt in concrete: During the pioneering modern restoration of the 1990s, the framework of the Baroque dome destroyed by bombing was completely reconstructed using a modern, invisible reinforced-concrete structure.",
+        "The cloister recycled after deconsecration: After the church was deconsecrated in the 19th century, the small adjoining cloister lost its sacred role and was rather ironically reused as a mechanical workshop and storage area for municipal refuse carts.",
+        "The medieval water pipes: Archaeologists discovered 12th-century terracotta conduits beneath the floor. They collected rainwater and channelled it into large cisterns, helping guarantee an independent water supply during sieges.",
+        "The destroyed Baroque picture gallery: Before the bombing, the walls carried a highly valuable fresco cycle by Piola and Valerio Castello. Tragically, it was completely shattered and lost when the ceiling collapsed.",
+        "The Venetian lion as a trophy: Sailors from the parish, returning from wars in the East, supposedly set a stone Lion of Saint Mark into the church wall and displayed it as a military trophy against rival Venice.",
+        "Caring for plague victims: During the catastrophic epidemic of 1656, San Salvatore's priests did not flee. They turned the nave into a temporary lazaretto to treat and comfort sick residents of the surrounding district."
+    ],
+    "es": [
+        "Los refugios subterráneos de la guerra: Las robustas criptas barrocas y los espacios subterráneos de la iglesia salvaron a cientos de ciudadanos al utilizarse como refugios antiaéreos durante los devastadores bombardeos de 1942.",
+        "Las justas caballerescas en la plaza: Piazza Sarzano era la única gran explanada medieval de la ciudad. Las ventanas de San Salvatore servían como tribuna de honor para los nobles que contemplaban torneos y justas ecuestres celebrados en la plaza.",
+        "La cúpula reconstruida en hormigón: Durante la pionera restauración moderna de los años noventa, la estructura de la cúpula barroca destruida por las bombas fue reconstruida por completo mediante un moderno e invisible armazón de hormigón armado.",
+        "El claustro reciclado tras la desacralización: Después de la desacralización decimonónica, el pequeño claustro adyacente perdió su función religiosa y fue reutilizado, de forma bastante insólita, como taller mecánico y depósito para carros de limpieza urbana.",
+        "Las conducciones medievales de agua: Bajo el pavimento los arqueólogos descubrieron tuberías de terracota del siglo XII. Recogían el agua de lluvia y la conducían a grandes cisternas, garantizando una reserva autónoma durante los asedios.",
+        "La pinacoteca barroca destruida: Antes de las bombas, las paredes albergaban un valiosísimo ciclo de frescos de Piola y Valerio Castello. Lamentablemente quedó pulverizado y perdido por completo cuando se derrumbó el techo.",
+        "El león veneciano como trofeo: Marineros de la parroquia, al regresar de guerras de Oriente, habrían empotrado en un lateral de la iglesia un León de San Marcos de piedra, expuesto como trofeo militar frente a la rival Venecia.",
+        "La atención a los enfermos de peste: Durante la catastrófica epidemia de 1656, los sacerdotes de San Salvatore no huyeron. Convirtieron la nave en un lazareto provisional para cuidar y consolar a los enfermos del barrio."
+    ],
+    "fr": [
+        "Les souterrains-refuges de la guerre : Les solides cryptes baroques et locaux souterrains de l'église sauvèrent des centaines d'habitants, servant d'abris antiaériens pendant les raids dévastateurs de 1942.",
+        "Les joutes chevaleresques sur la place : Piazza Sarzano était la seule véritable grande esplanade médiévale de la ville. Les fenêtres de San Salvatore servaient de tribunes d'honneur aux nobles venus assister aux tournois et joutes équestres.",
+        "La coupole reconstruite en béton : Lors de la restauration pionnière des années 1990, l'ossature de la coupole baroque détruite par les bombardements fut entièrement reconstruite au moyen d'une structure moderne et invisible en béton armé.",
+        "Le cloître recyclé après la désacralisation : Après la désacralisation au XIXe siècle, le petit cloître voisin perdit son rôle sacré et fut curieusement réutilisé comme atelier mécanique et dépôt pour les véhicules de la voirie municipale.",
+        "Les conduites d'eau médiévales : Sous le sol, les archéologues ont découvert des canalisations en terre cuite du XIIe siècle. Elles recueillaient l'eau de pluie et l'acheminaient vers de grandes citernes afin d'assurer l'autonomie en eau pendant les sièges.",
+        "La pinacothèque baroque détruite : Avant les bombardements, les murs portaient un cycle de fresques de très grande valeur de Piola et Valerio Castello. Il fut malheureusement entièrement pulvérisé et perdu lors de l'effondrement du plafond.",
+        "Le lion vénitien comme trophée : Des marins de la paroisse, revenus des guerres d'Orient, auraient scellé sur le flanc de l'église un Lion de Saint-Marc en pierre, exposé comme trophée militaire contre la rivale Venise.",
+        "Les soins aux malades de la peste : Pendant la terrible épidémie de 1656, les prêtres de San Salvatore ne s'enfuirent pas. Ils transformèrent la nef en lazaret provisoire pour soigner et réconforter les malades du quartier."
+    ],
+    "ar": [
+        "ملاجئ الحرب تحت الأرض: أنقذت السراديب الباروكية القوية والغرف السفلية للكنيسة مئات السكان، إذ استُخدمت كملاجئ من الغارات الجوية خلال القصف المدمر عام 1942.",
+        "مبارزات الفرسان في الساحة: كانت Piazza Sarzano الساحة المفتوحة الحقيقية الوحيدة في جنوة الوسطى. وكانت نوافذ سان سالفاتوري بمثابة منصة شرف يشاهد منها النبلاء البطولات ومبارزات الفرسان المقامة في الساحة.",
+        "قبة أُعيد بناؤها بالخرسانة: خلال ترميم حديث رائد في التسعينيات، أُعيد بناء الهيكل الداخلي للقبة الباروكية التي دمرها القصف بالكامل، باستخدام هيكل حديث وغير ظاهر من الخرسانة المسلحة.",
+        "دير أُعيد استخدامه بعد نزع القداسة: بعد نزع الصفة الدينية في القرن التاسع عشر، فقد الفناء الرهباني الصغير وظيفته المقدسة وأُعيد استخدامه بصورة غريبة كورشة ميكانيكية ومستودع لعربات تنظيف المدينة.",
+        "قنوات المياه الوسطى: اكتشف علماء الآثار تحت الأرض قنوات فخارية من القرن الثاني عشر. كانت تجمع مياه الأمطار وتنقلها إلى صهاريج كبيرة، ما يضمن احتياطياً مستقلاً من المياه خلال فترات الحصار.",
+        "معرض اللوحات الباروكي المدمر: قبل القصف كانت الجدران تحمل دورة جدارية ثمينة جداً لبـ Piola وValerio Castello. وللأسف دُمرت بالكامل وفُقدت عندما انهار السقف.",
+        "أسد فينيسي كغنيمة: تروي التقاليد أن بحارة الرعية العائدين من حروب الشرق ثبتوا على جانب الكنيسة أسداً حجرياً للقديس مرقس، وعرضوه كغنيمة عسكرية في مواجهة فينيسيا المنافسة.",
+        "رعاية مرضى الطاعون: أثناء وباء 1656 الكارثي لم يهرب كهنة سان سالفاتوري، بل حولوا صحن الكنيسة إلى محجر صحي مؤقت لعلاج مرضى الحي ومواساتهم."
+    ],
+    "ru": [
+        "Подземные убежища во время войны: Прочные барочные крипты и подземные помещения церкви спасли сотни жителей, служа бомбоубежищами во время разрушительных авианалётов 1942 года.",
+        "Рыцарские турниры на площади: Piazza Sarzano была единственной настоящей средневековой открытой площадью города. Окна Сан-Сальваторе становились почётной трибуной для знати, наблюдавшей за турнирами и конными поединками.",
+        "Купол, восстановленный в бетоне: Во время новаторской реставрации 1990-х годов каркас барочного купола, разрушенного бомбами, полностью восстановили с помощью современной и скрытой железобетонной конструкции.",
+        "Клуатр, получивший новое назначение: После десакрализации в XIX веке небольшой монастырский двор утратил священную функцию и был довольно иронично превращён в механическую мастерскую и склад для телег городской уборки.",
+        "Средневековые водопроводы: Под полом археологи обнаружили терракотовые трубы XII века. Они собирали дождевую воду и направляли её в большие цистерны, обеспечивая автономный запас на случай осады.",
+        "Уничтоженная барочная галерея: До бомбардировок стены украшал чрезвычайно ценный цикл фресок Piola и Valerio Castello. К сожалению, он был полностью уничтожен при обрушении потолка.",
+        "Венецианский лев как трофей: По преданию, моряки прихода, вернувшись с войн на Востоке, вмуровали в боковую стену каменного Льва святого Марка и выставили его как военный трофей против Венеции.",
+        "Помощь больным во время чумы: Во время катастрофической эпидемии 1656 года священники Сан-Сальваторе не бежали. Они превратили неф во временный лазарет, где лечили и утешали больных жителей квартала."
+    ],
+    "zh": [
+        "战争时期的地下避难所：坚固的巴洛克墓穴和地下空间曾救下数百名市民，在1942年毁灭性空袭期间被用作重要防空避难所。",
+        "教堂前广场上的骑士比武：Piazza Sarzano 是城市中真正的大型中世纪开阔地。圣萨尔瓦托雷的窗户成为贵族观看比武大会和骑士马上竞技的“荣誉看台”。",
+        "用钢筋混凝土重建的穹顶：20世纪90年代一次开创性的现代修复中，被轰炸摧毁的巴洛克穹顶骨架被完整重建，内部采用现代而不可见的钢筋混凝土结构。",
+        "失去宗教功能后被再利用的回廊：19世纪教堂失去宗教用途后，相邻小回廊也不再神圣，后来颇具反差地被用作机械维修间和城市清洁车辆的存放处。",
+        "中世纪供水管道：考古学家在地板下发现了12世纪陶制水管。它们收集雨水并输送到大型蓄水池，在围城时为建筑提供相对独立的水源。",
+        "被摧毁的巴洛克绘画长廊：轰炸前，墙面拥有 Piola 和 Valerio Castello 创作的珍贵壁画系列。遗憾的是，随着屋顶坍塌，这些作品被彻底摧毁并永久失去。",
+        "作为战利品的威尼斯狮：传统称，教区水手从东方战争归来后，把一只石雕圣马可狮嵌在教堂侧墙上，作为面对宿敌威尼斯的军事战利品展示。",
+        "照顾瘟疫病人：1656年灾难性瘟疫期间，圣萨尔瓦托雷的神父没有逃离，而是把中殿临时改成隔离治疗场所，照顾并安慰街区里的病患。"
+    ],
+    "lij": [
+        "I sotterranei-rifugio da guæra: E robuste cripte barocche e i locali de sotta han sarvou çentinæ de çittadin, adêuviæ comme rifugi antiaerei durante i devastanti bombardamenti do 1942.",
+        "E giostre cavalleresche in sciâ ciassa: Piazza Sarzano a l'ea l'unica vera grande spianâ medievale da çittæ. E finestre de San Salvatore servivan da tribunn-a d'onô pe-i nobili che guardavan tornei e giostre a cavallo.",
+        "A cupola reconstruta in cemento: Into restauro moderno di anni Novanta, l'ossatua da cupola barocca destruta da-e bombe a l'é stæta reconstruta tutta con unna strutûa moderna e invisibile de cemento armou.",
+        "O chiostro ricicclou dòppo a sconsacraçion: Dòppo a sconsacraçion ottocentesca, o piccin chiostro vexin o l'à perso a funçion sacra e o l'é stæto adêuviou comme officinn-a meccanica e deposito pe-i carri da neteza urbana.",
+        "E condotte d'ægua medievali: Sotta o pavimento i archeologi han trovou condotte de terracotta do XII secolo. Raccoggeivan l'ægua da ciêuva e a portavan inte grandi cisterne pe garantî autonomia durante i assedi.",
+        "A pinacoteca barocca destruta: Primma de-e bombe, e mænn-e ospitavan un ciclo de affreschi de grandissimo valore de Piola e Valerio Castello. Purtroppo o l'é stæto tutto destruto into crollo do soffitto.",
+        "O leon venezian comme trofeo: I marinæ da parrocchia, tornæ da-e guære d'Oriente, avieivan murou in sciô fianco da gésa un Leon de San Marco de pria, mostròu comme trofeo militare contra Venezia.",
+        "A cura di mæi de peste: Durante a terribile epidemia do 1656, i prævi de San Salvatore no son scappæ. Han trasformou a navata in un lazzaretto provisòio pe curâ e confortâ i mæi do quartê."
+    ]
+};
+
+  root.church["San Torpete"] = {
+    "it": [
+        "Il legame con Saint-Tropez: Il corpo del santo, decapitato a Pisa, andò alla deriva nel Mediterraneo e si arenò sulla costa francese. Quel luogo fu ribattezzato Saint-Tropez in suo onore.",
+        "La chiesa della nazione pisana: Fondata nel XII secolo, nacque per ospitare i mercanti e marinai provenienti da Pisa. Fungeva da parrocchia autonoma per la loro ricca colonia commerciale residente a Genova.",
+        "Il giuspatronato della famiglia Cattaneo: Quando i rapporti con Pisa crollarono, la gestione passò alla potentissima dinastia nobile dei Cattaneo. Il clan scelse e finanziò i sacerdoti e le opere d'arte per secoli.",
+        "La cupola ellittica anti-spazio: L'architetto Giovanni Antonio Ricca progettò una splendida cupola a pianta ellittica. Questo stratagemma geometrico regala all'interno un'illusione di monumentale altezza, nonostante lo spazio ridottissimo dei vicoli.",
+        "La scuola serale per i portuali: Nell'Ottocento, la parrocchia istituì una delle prime scuole primarie serali e festive. Era nata per dare un'istruzione di base ai giovani artigiani e ai lavoratori del porto.",
+        "Gli affreschi prospettici del Carlone: Il presbiterio ospita lo spettacolare ciclo di affreschi di Giovanni Battista Carlone. I dipinti stupiscono per i colori vividi e l'uso teatrale della prospettiva, che amplia visivamente le pareti.",
+        "La cripta rifugio delle bombe: Sotto il pavimento marmoreo si estende una solida cripta medievale. Durante la Seconda Guerra Mondiale, le sue spesse fondamenta in pietra offrirono un rifugio sicuro a decine di famiglie sfollate.",
+        "L'acustica perfetta della musica barocca: Un accurato restauro contemporaneo ha rivelato un'acustica straordinariamente pulita e priva di eco. Oggi la chiesa è una delle sedi genovesi più apprezzate per concerti di musica antica."
+    ],
+    "en": [
+        "The link with Saint-Tropez: According to tradition, the saint's body, after his beheading in Pisa, drifted across the Mediterranean and washed ashore on the French coast. The place was later named Saint-Tropez in his honour.",
+        "The church of the Pisan nation: Founded in the 12th century, it served merchants and sailors arriving from Pisa. It functioned as an autonomous parish for their wealthy commercial colony living and working in Genoa.",
+        "The Cattaneo family's patronage rights: When relations with Pisa collapsed, control passed to the powerful Cattaneo noble dynasty. For centuries the family selected and financed priests as well as important artworks for the church.",
+        "The space-defying elliptical dome: Architect Giovanni Antonio Ricca designed a splendid elliptical dome. This geometric device gives the interior an illusion of monumental height despite the extremely limited space available among the surrounding narrow streets.",
+        "The evening school for port workers: In the 19th century the parish established one of the city's early evening and Sunday primary schools. It was intended to provide basic education for young artisans and harbour workers.",
+        "Carlone's perspective frescoes: The presbytery contains a spectacular fresco cycle by Giovanni Battista Carlone. The paintings stand out for vivid colours and theatrical use of perspective, which visually expands the surrounding walls.",
+        "The crypt as a wartime shelter: Beneath the marble floor lies a sturdy medieval crypt. During the Second World War, its thick stone foundations provided a safe refuge for dozens of displaced families.",
+        "Perfect acoustics for Baroque music: Careful contemporary restoration revealed exceptionally clear acoustics with little echo. Today the church is one of Genoa's most appreciated venues for concerts of early and Baroque music."
+    ],
+    "es": [
+        "El vínculo con Saint-Tropez: Según la tradición, el cuerpo del santo, tras ser decapitado en Pisa, quedó a la deriva por el Mediterráneo y llegó a la costa francesa. Aquel lugar acabaría recibiendo el nombre de Saint-Tropez en su honor.",
+        "La iglesia de la nación pisana: Fundada en el siglo XII, nació para atender a comerciantes y marineros procedentes de Pisa. Funcionaba como parroquia autónoma para la rica colonia comercial pisana residente en Génova.",
+        "El patronato de la familia Cattaneo: Cuando las relaciones con Pisa se deterioraron, la gestión pasó a la poderosa dinastía nobiliaria Cattaneo. Durante siglos la familia eligió y financió sacerdotes y obras de arte para la iglesia.",
+        "La cúpula elíptica que vence al espacio: El arquitecto Giovanni Antonio Ricca diseñó una espléndida cúpula de planta elíptica. Este recurso geométrico crea dentro una ilusión de altura monumental pese al espacio muy reducido de los callejones circundantes.",
+        "La escuela nocturna para los portuarios: En el siglo XIX la parroquia creó una de las primeras escuelas primarias nocturnas y dominicales. Estaba pensada para ofrecer una educación básica a jóvenes artesanos y trabajadores del puerto.",
+        "Los frescos perspectivos de Carlone: El presbiterio alberga un espectacular ciclo de frescos de Giovanni Battista Carlone. Las pinturas sorprenden por sus colores vivos y el uso teatral de la perspectiva, que amplía visualmente las paredes.",
+        "La cripta como refugio de las bombas: Bajo el pavimento de mármol se extiende una sólida cripta medieval. Durante la Segunda Guerra Mundial, sus gruesos cimientos de piedra ofrecieron refugio seguro a decenas de familias desplazadas.",
+        "La acústica perfecta para la música barroca: Una cuidada restauración contemporánea reveló una acústica extraordinariamente limpia y casi sin eco. Hoy la iglesia es una de las sedes genovesas más apreciadas para conciertos de música antigua y barroca."
+    ],
+    "fr": [
+        "Le lien avec Saint-Tropez : Selon la tradition, le corps du saint, après sa décapitation à Pise, dériva en Méditerranée avant de s'échouer sur la côte française. Le lieu aurait ensuite pris le nom de Saint-Tropez en son honneur.",
+        "L'église de la nation pisane : Fondée au XIIe siècle, elle naquit pour accueillir les marchands et marins venus de Pise. Elle servait de paroisse autonome à leur riche colonie commerciale installée à Gênes.",
+        "Le patronage de la famille Cattaneo : Lorsque les relations avec Pise se dégradèrent, la gestion passa à la puissante dynastie noble des Cattaneo. Pendant des siècles, la famille choisit et finança prêtres et œuvres d'art de l'église.",
+        "La coupole elliptique qui défie l'espace : L'architecte Giovanni Antonio Ricca conçut une splendide coupole de plan elliptique. Ce dispositif géométrique donne à l'intérieur une illusion de hauteur monumentale malgré l'espace extrêmement réduit des ruelles voisines.",
+        "L'école du soir pour les travailleurs du port : Au XIXe siècle, la paroisse créa l'une des premières écoles primaires du soir et du dimanche. Elle visait à offrir une instruction de base aux jeunes artisans et ouvriers du port.",
+        "Les fresques en perspective de Carlone : Le presbytère abrite un spectaculaire cycle de fresques de Giovanni Battista Carlone. Les peintures se distinguent par leurs couleurs vives et leur usage théâtral de la perspective, qui agrandit visuellement les parois.",
+        "La crypte-refuge pendant les bombardements : Sous le sol de marbre s'étend une solide crypte médiévale. Pendant la Seconde Guerre mondiale, ses épaisses fondations de pierre offrirent un refuge sûr à des dizaines de familles déplacées.",
+        "Une acoustique parfaite pour la musique baroque : Une restauration contemporaine soignée a révélé une acoustique exceptionnellement claire, presque sans écho. Aujourd'hui, l'église est l'un des lieux génois les plus appréciés pour les concerts de musique ancienne."
+    ],
+    "ar": [
+        "الصلة بمدينة Saint-Tropez: تقول التقاليد إن جسد القديس بعد قطع رأسه في بيزا انجرف في البحر المتوسط حتى وصل إلى الساحل الفرنسي. ويقال إن المكان حمل لاحقاً اسم Saint-Tropez تكريماً له.",
+        "كنيسة الجالية البيزية: تأسست في القرن الثاني عشر لخدمة التجار والبحارة القادمين من بيزا. وكانت تعمل كرعية مستقلة للجالية التجارية البيزية الثرية المقيمة في جنوة.",
+        "حق الرعاية لعائلة Cattaneo: عندما انهارت العلاقات مع بيزا انتقلت إدارة الكنيسة إلى أسرة Cattaneo النبيلة القوية. وعلى مدى قرون اختارت العائلة الكهنة ومولت أعمالاً فنية مهمة للكنيسة.",
+        "قبة إهليلجية تتحدى ضيق المكان: صمم المعماري Giovanni Antonio Ricca قبة جميلة ذات مخطط إهليلجي. وتمنح هذه الحيلة الهندسية الداخل إحساساً بارتفاع هائل رغم المساحة الضيقة جداً بين الأزقة المحيطة.",
+        "المدرسة المسائية لعمال الميناء: في القرن التاسع عشر أنشأت الرعية واحدة من أوائل المدارس الابتدائية المسائية والأحدية. وكان هدفها تقديم تعليم أساسي للشباب الحرفيين وعمال الميناء.",
+        "جداريات كارلوني المنظورية: يضم presbytery دورة رائعة من جداريات Giovanni Battista Carlone. وتتميز بألوان قوية واستخدام مسرحي للمنظور، ما يجعل الجدران تبدو أوسع وأكثر عمقاً.",
+        "القبو كملجأ من القصف: تحت الأرضية الرخامية يمتد قبو وسطي متين. وخلال الحرب العالمية الثانية وفرت أساساته الحجرية السميكة ملجأ آمناً لعشرات العائلات النازحة.",
+        "صوت مثالي للموسيقى الباروكية: كشف ترميم حديث دقيق عن نقاء صوتي استثنائي وقلة كبيرة في الصدى. واليوم تُعد الكنيسة من أكثر مواقع جنوة تقديراً لإقامة حفلات الموسيقى القديمة والباروكية."
+    ],
+    "ru": [
+        "Связь с Сен-Тропе: По преданию, тело святого после казни в Пизе дрейфовало по Средиземному морю и было выброшено на французский берег. Позднее это место якобы получило название Saint-Tropez в его честь.",
+        "Церковь пизанской нации: Основанная в XII веке, она предназначалась для купцов и моряков из Пизы. Храм служил автономным приходом для их богатой торговой колонии, жившей и работавшей в Генуе.",
+        "Патронат семьи Cattaneo: Когда отношения с Пизой ухудшились, управление перешло к могущественной дворянской династии Cattaneo. Веками семья выбирала и содержала священников, а также финансировала произведения искусства для церкви.",
+        "Эллиптический купол, побеждающий тесноту: Архитектор Giovanni Antonio Ricca создал великолепный купол эллиптического плана. Этот геометрический приём даёт внутри иллюзию монументальной высоты, несмотря на крайне ограниченное пространство окружающих переулков.",
+        "Вечерняя школа для портовых рабочих: В XIX веке приход открыл одну из первых вечерних и воскресных начальных школ. Она должна была дать базовое образование молодым ремесленникам и работникам порта.",
+        "Перспективные фрески Карлоне: Пресбитерий украшает впечатляющий цикл фресок Giovanni Battista Carlone. Яркие цвета и театральное использование перспективы зрительно расширяют стены и пространство.",
+        "Крипта как убежище от бомб: Под мраморным полом находится прочная средневековая крипта. Во время Второй мировой войны её толстые каменные основания стали безопасным убежищем для десятков перемещённых семей.",
+        "Идеальная акустика для барочной музыки: Тщательная современная реставрация выявила удивительно чистую акустику почти без эха. Сегодня церковь считается одной из наиболее любимых генуэзских площадок для концертов старинной и барочной музыки."
+    ],
+    "zh": [
+        "与 Saint-Tropez 的联系：传统认为，圣人在比萨被斩首后，遗体漂流过地中海并冲上法国海岸。后来那处地方据说为了纪念他而被称为 Saint-Tropez。",
+        "比萨商人社群的教堂：教堂建于12世纪，最初服务来自比萨的商人与水手。它相当于热那亚富裕比萨商业侨民的独立堂区。",
+        "Cattaneo 家族的 patronato：与比萨关系破裂后，教堂管理权转到强大的 Cattaneo 贵族家族。几个世纪里，他们负责选择和资助神职人员，也出资订制艺术作品。",
+        "对抗狭小空间的椭圆穹顶：建筑师 Giovanni Antonio Ricca 设计了优美的椭圆形穹顶。这个几何手法让内部即使身处狭窄街巷之间，也能产生宏伟高耸的空间错觉。",
+        "为港口工人开设的夜校：19世纪，堂区创办了城市较早的夜间和周日小学之一，目的在于为年轻工匠和港口劳动者提供基本教育。",
+        "Carlone 的透视壁画：祭坛区保存着 Giovanni Battista Carlone 创作的壮观壁画系列。鲜艳色彩与戏剧化透视手法让墙面在视觉上显得更开阔。",
+        "作为空袭避难所的地下墓穴：大理石地面下有坚固的中世纪墓穴。第二次世界大战期间，厚重石质基础为数十户流离失所的家庭提供了安全避难处。",
+        "适合巴洛克音乐的完美声学：细致的现代修复发现这里拥有异常清晰、几乎没有回声的声学效果。如今教堂是热那亚举办古乐与巴洛克音乐会很受欢迎的场所之一。"
+    ],
+    "lij": [
+        "O legamme con Saint-Tropez: Segondo a tradiçion, o corpo do santo, dòppo a decapitaçion a Pisa, o l'é andæto a-a deriva into Mediterraneo e o l'é arrivou in sciâ costa françeize. O pòsto o l'é pö stæto ciamou Saint-Tropez in seu onô.",
+        "A gésa da naçion pisan-a: Fondâ into XII secolo, a l'é nasciua pe mercanti e marinæ che vegnivan da Pisa. A funzionava comme parrocchia autonoma pe-a ricca colonia commerciale pisan-a residente a Zêna.",
+        "O giuspatronato da famiggia Cattaneo: Quande i rapporti con Pisa son crollæ, a gestion a l'é passâ a-a potente famiggia Cattaneo. Pe secoli o clan o l'à çernuo e finanziou prævi e òpere d'arte da gésa.",
+        "A cupola ellittica contro o spaçio: L'architetto Giovanni Antonio Ricca o l'à progettou unna bella cupola ellittica. Sto trucco geometrico o fæ pâ l'interno ben ciù erto e monumentale, anche se o spaçio inti caroggi o l'é piccinissimo.",
+        "A scöa de seia pe-i portuali: Into Ottocento a parrocchia a l'à avertou unna de primme scöe elementari de seia e festive. A l'ea pensâ pe dæ unna instruçion de baze a-i zoveni artixan e travaggiatoî do porto.",
+        "I affreschi prospettici do Carlone: O presbiterio o conserva o spettacolare ciclo de affreschi de Giovanni Battista Carlone. I colori vivi e a prospettiva teatrale fan pâ e mænn-e ciù larghe e o spaçio ciù profondo.",
+        "A cripta-rifugio da-e bombe: Sotta o pavimento de marmo gh'é unna solida cripta medievale. Durante a Seconda Guæra Mondiâ, e seu grosse fondaçioin de pria han dæto rifugio seguo a decinn-e de famigge sfollæ.",
+        "L'acustica perfetta pe-a muxica barocca: Un restauro moderno accurou o l'à mostrou unna acustica ben netta e quasi sensa eco. Ancheu a gésa a l'é un di pòsti ciù apprezzæ a Zêna pe concerti de muxica antiga e barocca."
+    ]
+};
+
 })();
