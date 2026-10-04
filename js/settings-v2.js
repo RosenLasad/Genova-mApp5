@@ -352,6 +352,13 @@
     refs.reset.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();openReset();});
     refs.data.list.appendChild(refs.reset);
 
+    refs.visitors=document.createElement('button');
+    refs.visitors.type='button';
+    refs.visitors.className='settings-v2-action settings-v2-visitors';
+    refs.visitors.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();if(window.GenovaVisitorsAdmin&&typeof window.GenovaVisitorsAdmin.refresh==='function')window.GenovaVisitorsAdmin.refresh(true);});
+    refs.admin.list.appendChild(refs.visitors);
+    if(window.GenovaVisitorsAdmin&&typeof window.GenovaVisitorsAdmin.attach==='function')window.GenovaVisitorsAdmin.attach(refs.visitors);
+
     refs.coupon=document.createElement('button');
     refs.coupon.type='button';
     refs.coupon.className='settings-v2-action';
@@ -499,6 +506,10 @@
     decorateExisting(refs.guide,d.guide,'guide');
     decorateExisting(refs.contact,d.contact,'contact');
     makeActionContent(refs.reset,d.reset,'reset');
+    if(window.GenovaVisitorsAdmin&&typeof window.GenovaVisitorsAdmin.attach==='function'){
+      window.GenovaVisitorsAdmin.attach(refs.visitors);
+      if(isAdmin()&&typeof window.GenovaVisitorsAdmin.refresh==='function')window.GenovaVisitorsAdmin.refresh(false);
+    }
     makeActionContent(refs.coupon,'Coupon','coupon');
     makeActionContent(refs.subscribers,'Iscritti e abbonati','users');
     makeActionContent(refs.about,d.about,'info');

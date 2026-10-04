@@ -391,3 +391,29 @@ html[dir="rtl"] .settings-confirm{text-align:right}
 .subscribers-admin-detail-list{display:grid;grid-template-columns:minmax(130px,.7fr) minmax(0,1.3fr);gap:0;margin:0;border:1px solid rgba(148,163,184,.14);border-radius:10px;overflow:hidden}.subscribers-admin-detail-list dt,.subscribers-admin-detail-list dd{margin:0;padding:9px 11px;border-top:1px solid rgba(148,163,184,.1);font:600 12px/1.35 Arial,sans-serif}.subscribers-admin-detail-list dt:nth-of-type(1),.subscribers-admin-detail-list dd:nth-of-type(1){border-top:0}.subscribers-admin-detail-list dt{color:#94a3b8;background:rgba(255,255,255,.025);font-weight:700}.subscribers-admin-detail-list dd{color:#e2e8f0;overflow-wrap:anywhere}.subscribers-admin-mono{font-family:Consolas,Monaco,monospace!important;color:#fff!important}
 @media(max-width:880px){.subscribers-admin-stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:620px){.subscribers-admin-content{padding:13px}.subscribers-admin-stats{grid-template-columns:1fr 1fr}.subscribers-admin-list-head{display:grid}.subscribers-admin-secondary{width:100%}.subscribers-admin-filters{grid-template-columns:1fr}.subscribers-admin-inline-detail-head{align-items:flex-start}.subscribers-admin-detail-list{grid-template-columns:1fr}.subscribers-admin-detail-list dt{padding-bottom:4px}.subscribers-admin-detail-list dd{padding-top:4px;border-top:0}.subscribers-admin-detail-list dt:nth-of-type(n+2){border-top:1px solid rgba(148,163,184,.1)}}
+
+/* Visitatori Admin v1 */
+.settings-v2-action.settings-v2-visitors{
+  grid-template-columns:30px minmax(0,1fr);
+  min-height:66px;
+}
+.visitors-admin-copy{
+  display:grid;
+  gap:2px;
+  min-width:0;
+}
+.visitors-admin-label{
+  color:#f8fafc;
+  font:800 14px/1.2 Arial,"Helvetica Neue",sans-serif;
+}
+.visitors-admin-stats{
+  color:#dbeafe;
+  font:700 12px/1.25 Arial,"Helvetica Neue",sans-serif;
+}
+.visitors-admin-updated{
+  color:#94a3b8;
+  font:600 10px/1.25 Arial,"Helvetica Neue",sans-serif;
+}
+.settings-v2-visitors.is-loading .visitors-admin-stats{color:#bfdbfe}
+.settings-v2-visitors.is-error .visitors-admin-stats{color:#fecaca}
+.settings-v2-visitors.is-error .visitors-admin-updated{color:#fca5a5}
