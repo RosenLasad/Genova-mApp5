@@ -3913,4 +3913,327 @@
   ]
 };
 
+  root.church["Nostra Signora del Rimedio"] = {
+    "it": [
+      "Il cambio per la Foce: Il titolo e i tesori della storica parrocchia un tempo situata in via Giulia sono stati trasferiti nel 1904 nel moderno quartiere residenziale della Foce, in piazza Alimonda.",
+      "L'appellativo della Confraternita: La chiesa è storicamente conosciuta dai parrocchiani anche come chiesa dell'Angelo, poiché dal 1712 l'edificio fu officiato dalla Confraternita intitolata all'Angelo Custode.",
+      "Il testamento del mercante: La fondazione originale del 1650 fu promossa grazie alle imponenti ricchezze del marchese Giovanni Tomaso Invrea, ricco commerciante di tessuti che viveva a Napoli ma legatissimo a Genova.",
+      "Il riscatto dei prigionieri: Le rendite del patrimonio dell'Invrea costituirono il \"Monte del Rimedio\", una fondazione gestita dai frati per pagare il riscatto dei marinai liguri ridotti in schiavitù dai pirati.",
+      "I marmi barocchi traslocati: Durante lo sventramento di via Giulia per tracciare via XX Settembre, gli altari barocchi e i preziosi arredi interni furono numerati, smontati e rimontati fedelmente alla Foce.",
+      "La tela salvata del Fiasella: Tra i capolavori scampati alle demolizioni ottocentesche spicca la splendida pala d'altare di Domenico Fiasella, raffigurante la Madonna del Rimedio, oggetto di una secolare devozione popolare.",
+      "La cripta per i bisognosi: Sotto il pavimento della nuova struttura della Foce, i frati ricavarono vasti locali sotterranei che durante la guerra funsero da rifugio antiaereo e mensa per gli sfollati del quartiere.",
+      "Un'acustica da rassegna corale: I restauri moderni hanno consolidato le volte danneggiate dal traffico, svelando un'acustica straordinariamente pulita e priva di eco, motivo per cui la parrocchia ospita rinomati concerti d'organo."
+  ],
+    "en": [
+      "The move to Foce: The title and treasures of the historic parish once located in Via Giulia were transferred in 1904 to the modern residential district of Foce, in Piazza Alimonda.",
+      "The confraternity's nickname: Parishioners have also long known the church as the Church of the Angel, because from 1712 it was served by the Confraternity dedicated to the Guardian Angel.",
+      "The merchant's bequest: The original foundation of 1650 was made possible by the great wealth of Marquis Giovanni Tomaso Invrea, a rich textile merchant who lived in Naples but remained deeply attached to Genoa.",
+      "Ransoming prisoners: Income from the Invrea estate created the 'Monte del Rimedio', a foundation managed by the friars to pay ransoms for Ligurian sailors enslaved by pirates.",
+      "The relocated Baroque marbles: When Via Giulia was demolished to create Via XX Settembre, the Baroque altars and precious furnishings were numbered, dismantled and faithfully reassembled in Foce.",
+      "Fiasella's saved painting: Among the masterpieces rescued from the 19th-century demolitions is Domenico Fiasella's splendid altarpiece of the Madonna del Rimedio, an object of centuries-old popular devotion.",
+      "The crypt for people in need: Beneath the new church in Foce, the friars created large underground rooms that served during the war as an air-raid shelter and canteen for displaced residents.",
+      "Acoustics suited to choral concerts: Modern restoration strengthened vaults damaged by traffic vibrations and revealed remarkably clear, echo-free acoustics, helping make the parish a valued venue for organ concerts."
+  ],
+    "es": [
+      "El traslado a la Foce: El título y los tesoros de la histórica parroquia situada antiguamente en Via Giulia fueron trasladados en 1904 al moderno barrio residencial de la Foce, en Piazza Alimonda.",
+      "El apodo de la cofradía: Los feligreses también conocen históricamente el templo como iglesia del Ángel, porque desde 1712 estuvo atendido por la Cofradía dedicada al Ángel de la Guarda.",
+      "El testamento del mercader: La fundación original de 1650 fue posible gracias a la enorme fortuna del marqués Giovanni Tomaso Invrea, rico comerciante de tejidos que vivía en Nápoles pero permanecía muy unido a Génova.",
+      "El rescate de los prisioneros: Las rentas del patrimonio Invrea crearon el 'Monte del Rimedio', una fundación gestionada por los frailes para pagar el rescate de marineros ligures esclavizados por piratas.",
+      "Los mármoles barrocos trasladados: Durante la demolición de Via Giulia para abrir Via XX Settembre, los altares barrocos y los valiosos muebles fueron numerados, desmontados y reconstruidos fielmente en la Foce.",
+      "El cuadro salvado de Fiasella: Entre las obras rescatadas de las demoliciones del siglo XIX destaca el espléndido retablo de Domenico Fiasella con la Madonna del Rimedio, objeto de una devoción popular secular.",
+      "La cripta para los necesitados: Bajo el suelo del nuevo edificio de la Foce, los frailes habilitaron amplios espacios subterráneos que durante la guerra sirvieron de refugio antiaéreo y comedor para desplazados del barrio.",
+      "Una acústica para conciertos corales: Las restauraciones modernas consolidaron las bóvedas dañadas por el tráfico y revelaron una acústica extraordinariamente limpia y sin eco, por lo que la parroquia acoge apreciados conciertos de órgano."
+  ],
+    "fr": [
+      "Le transfert à la Foce : Le titre et les trésors de l'ancienne paroisse autrefois située Via Giulia furent transférés en 1904 dans le quartier résidentiel moderne de la Foce, Piazza Alimonda.",
+      "Le surnom de la confrérie : Les paroissiens connaissent aussi historiquement l'église sous le nom d'église de l'Ange, car à partir de 1712 elle fut desservie par la confrérie dédiée à l'Ange gardien.",
+      "Le testament du marchand : La fondation d'origine, en 1650, fut rendue possible par l'immense fortune du marquis Giovanni Tomaso Invrea, riche négociant en tissus vivant à Naples mais profondément attaché à Gênes.",
+      "Le rachat des prisonniers : Les revenus du patrimoine Invrea constituèrent le 'Monte del Rimedio', une fondation gérée par les frères pour payer la rançon des marins ligures réduits en esclavage par les pirates.",
+      "Les marbres baroques déménagés : Lors du percement de Via XX Settembre à travers Via Giulia, les autels baroques et les précieux décors furent numérotés, démontés puis fidèlement remontés à la Foce.",
+      "Le tableau de Fiasella sauvé : Parmi les chefs-d'œuvre épargnés par les démolitions du XIXe siècle se distingue le magnifique retable de Domenico Fiasella représentant la Madonna del Rimedio, objet d'une dévotion populaire séculaire.",
+      "La crypte pour les nécessiteux : Sous la nouvelle église de la Foce, les frères aménagèrent de vastes locaux souterrains qui servirent pendant la guerre d'abri antiaérien et de cantine aux habitants déplacés.",
+      "Une acoustique idéale pour les chœurs : Les restaurations modernes ont consolidé les voûtes endommagées par le trafic et révélé une acoustique remarquablement nette, presque sans écho, qui favorise aujourd'hui les concerts d'orgue."
+  ],
+    "ar": [
+      "الانتقال إلى حي فوتشه: نُقل اسم الرعية التاريخية وكنوزها، التي كانت تقع سابقاً في Via Giulia، عام 1904 إلى الحي السكني الحديث في فوتشه، في Piazza Alimonda.",
+      "لقب الأخوية: عُرفت الكنيسة تاريخياً بين أبناء الرعية أيضاً باسم كنيسة الملاك، لأن أخوية مكرسة للملاك الحارس تولت خدمتها منذ عام 1712.",
+      "وصية التاجر: تحقق التأسيس الأصلي عام 1650 بفضل الثروة الكبيرة للماركيز Giovanni Tomaso Invrea، وهو تاجر أقمشة ثري عاش في نابولي لكنه ظل شديد الارتباط بجنوة.",
+      "فداء الأسرى: شكّلت عائدات أملاك Invrea ما عُرف باسم 'Monte del Rimedio'، وهي مؤسسة أدارها الرهبان لدفع فدية البحارة الليغوريين الذين استعبدهم القراصنة.",
+      "الرخام الباروكي المنقول: عند هدم Via Giulia لشق Via XX Settembre، رُقمت المذابح الباروكية والأثاث الثمين وفُككت ثم أُعيد تركيبها بأمانة في حي فوتشه.",
+      "لوحة فيازيلا التي نجت: من روائع الفن التي نجت من هدم القرن التاسع عشر لوحة مذبح رائعة لدومينيكو فيازيلا تصور Madonna del Rimedio، وظلت موضع عبادة شعبية لقرون.",
+      "القبو لخدمة المحتاجين: تحت مبنى الكنيسة الجديد في فوتشه أنشأ الرهبان مساحات واسعة تحت الأرض استُخدمت أثناء الحرب ملجأً من الغارات الجوية ومطعماً للنازحين من الحي.",
+      "صوتيات مناسبة للحفلات الكورالية: دعمت أعمال الترميم الحديثة الأقبية المتضررة من حركة المرور وكشفت عن صوتيات شديدة الصفاء وقليلة الصدى، لذلك تستضيف الرعية حفلات أورغن معروفة."
+  ],
+    "ru": [
+      "Переезд в Фоче: Название и сокровища исторического прихода, прежде находившегося на Via Giulia, в 1904 году перенесли в современный жилой район Фоче, на Piazza Alimonda.",
+      "Название от братства: Прихожане издавна знали церковь и как церковь Ангела, поскольку с 1712 года её обслуживало братство, посвящённое Ангелу-хранителю.",
+      "Завещание купца: Основание 1650 года стало возможным благодаря огромному состоянию маркиза Giovanni Tomaso Invrea, богатого торговца тканями, жившего в Неаполе, но тесно связанного с Генуей.",
+      "Выкуп пленников: Доходы от имущества Invrea образовали 'Monte del Rimedio' — фонд, которым управляли монахи и из которого оплачивали выкуп лигурийских моряков, обращённых пиратами в рабство.",
+      "Переехавшие барочные мраморы: Когда Via Giulia сносили ради строительства Via XX Settembre, барочные алтари и ценное убранство пронумеровали, разобрали и затем точно собрали заново в Фоче.",
+      "Спасённая картина Фиазеллы: Среди шедевров, переживших снос XIX века, выделяется великолепный алтарный образ Domenico Fiasella с Madonna del Rimedio, веками почитаемый горожанами.",
+      "Крипта для нуждающихся: Под новой церковью в Фоче монахи устроили большие подземные помещения, которые во время войны служили бомбоубежищем и столовой для жителей, лишившихся жилья.",
+      "Акустика для хоровых программ: Современная реставрация укрепила своды, страдавшие от вибрации транспорта, и выявила удивительно чистую акустику почти без эха, благодаря чему здесь проводят органные концерты."
+  ],
+    "zh": [
+      "迁往 Foce：原位于 Via Giulia 的历史堂区，其名号和珍贵物品于1904年迁至现代住宅区 Foce 的 Piazza Alimonda。",
+      "兄弟会留下的别称：当地教友历史上也把这里称为“天使教堂”，因为自1712年起，教堂由奉献给守护天使的兄弟会负责宗教活动。",
+      "商人的遗嘱：1650年的最初建堂得到侯爵 Giovanni Tomaso Invrea 巨额财富的支持。他是居住在那不勒斯的富裕纺织商，却始终与热那亚保持深厚联系。",
+      "赎回被俘水手：Invrea 遗产收益建立了“Monte del Rimedio”基金，由修士管理，用于支付赎金，解救被海盗掳走并沦为奴隶的利古里亚水手。",
+      "搬迁的巴洛克大理石：为开辟 Via XX Settembre 拆除 Via Giulia 时，巴洛克祭坛和珍贵陈设被逐件编号、拆卸，之后在 Foce 忠实重组。",
+      "获救的 Fiasella 画作：躲过19世纪拆迁的杰作中，有 Domenico Fiasella 绘制的 Madonna del Rimedio 祭坛画，数百年来一直是民间敬礼的对象。",
+      "为困难居民准备的地下空间：Foce 新教堂地面下，修士开辟了宽阔地下室。战争期间，这里既是防空洞，也是为失去住所的居民提供食物的食堂。",
+      "适合合唱与管风琴的声学：现代修复加固了受交通震动影响的拱顶，同时发现这里声学非常清晰、几乎没有回声，因此教堂常举办知名管风琴音乐会。"
+  ],
+    "lij": [
+      "O trasloco a-a Foce: O titolo e i tesori da storica parrocchia che a l'ea in Via Giulia son stæti trasferii into 1904 into neuvo quartê residenziale da Foce, in Piazza Alimonda.",
+      "O nomme da confraternita: I parrocchian a conoxan da tempo anche comme gexa de l'Angelo, perché da-o 1712 l'edificio o l'ea officiou da-a Confraternita dedicâ a l'Angelo Custode.",
+      "O testamento do mercante: A fondaçion originâ do 1650 a l'é stæta possibile graçie a-e grande ricchesse do marchese Giovanni Tomaso Invrea, ricco mercante de tessiäi che viveiva a Napoli ma o l'ea ligou forte a Zêna.",
+      "O rescato di prigioniei: E rendite do patrimonio Invrea han creou o 'Monte del Rimedio', fondaçion gestîa da-i fræ pe pagâ o rescato di marinæ liguri fæti scciavi da-i pirati.",
+      "I marmi barocchi traslocæ: Quande Via Giulia a l'é stæta sventrâ pe tracciâ Via XX Settembre, i artâ barocchi e i arredi preçioxi son stæti numeræ, desmontæ e rimontæ fedelmente a-a Foce.",
+      "A tela sarvâ do Fiasella: Tra e òpere sarvæ da-e demolizioin ottocentesche spicca a bella pala de Domenico Fiasella co-a Madonna do Rimedio, oggetto de devoçion popolare da secoli.",
+      "A cripta pe chi gh'à bezêu: Sotta a neuva gexa da Foce i fræ han ricavou grandi locali sotta tæra, adêuviæ durante a guæra comme rifugio antiaereo e mensa pe-i sfollæ do quartê.",
+      "Un'acustica da concerto: I restauri moderni han consolidou e volte dannezzæ da-o traffico e han mostròu un'acustica netta e sensa eco, tanto che a parrocchia ospita conosciui concerti d'organo."
+  ]
+  };
+
+
+  root.church["Santa Maria dei Servi"] = {
+    "it": [
+      "Rifondata alla Foce: Come per il Rimedio, anche questa parrocchia trecentesca ha vissuto un trasloco: completamente distrutta dalle bombe in via dei Servi, è rinata in stile moderno alla Foce nel 1972.",
+      "Il nido d'origine a Carignano: I padri Serviti di Maria furono introdotti a Genova dal cardinale Ottobono Fieschi (futuro papa Adriano V), che li sistemò in una piccola cappella alle pendici di Carignano.",
+      "Nata sul Rivo Torbido: La vecchia struttura medievale del 1327 sorgeva all'incrocio tra via Rivotorbido e salita San Leonardo, motivo per cui inizialmente era chiamata Santa Maria in via Lata.",
+      "L'affresco del Santo Amore: All'interno della nuova chiesa moderna della Foce è stato riposizionato un prezioso frammento superstite della vecchia basilica: l'affresco quattrocentesco della Madonna del Santo Amore.",
+      "Il quadro contro la peste: Tra le opere d'arte salvate dalle macerie spicca la tela di Barnaba da Modena raffigurante la Madonna della Misericordia, dipinta come voto collettivo durante la terribile peste del 1372.",
+      "Il blocco lapideo medievale: Sopra il portale principale esterno dell'edificio moderno è visibile un prezioso reperto antico scampato ai bombardamenti: un antico Agnus Dei in pietra di epoca medievale.",
+      "La prima pietra di Siri: La costruzione della imponente struttura in largo Santa Maria dei Servi iniziò ufficialmente il 26 maggio 1965 con la posa della prima pietra benedetta dal Cardinale Giuseppe Siri.",
+      "La galleria dei maestri liguri: All'interno del nuovo tempio gli architetti hanno integrato splendidi dipinti seicenteschi salvati dalle distruzioni, firmati da maestri del calibro di Domenico Piola, Bernardo Castello e Carlone."
+  ],
+    "en": [
+      "Re-founded in Foce: Like the Rimedio, this 14th-century parish also moved. Completely destroyed by bombing in Via dei Servi, it was reborn in modern form in Foce in 1972.",
+      "Its original home at Carignano: The Servite Fathers were brought to Genoa by Cardinal Ottobono Fieschi, the future Pope Adrian V, who settled them in a small chapel on the slopes of Carignano.",
+      "Born beside the Rivo Torbido: The medieval church of 1327 stood at the junction of Via Rivotorbido and Salita San Leonardo, which is why it was initially known as Santa Maria in Via Lata.",
+      "The fresco of the Holy Love: Inside the modern church in Foce is a precious surviving fragment of the old basilica, the 15th-century fresco of the Madonna del Santo Amore.",
+      "The painting against the plague: Among the works rescued from the ruins is Barnaba da Modena's Madonna della Misericordia, painted as a collective vow during the terrible plague of 1372.",
+      "The medieval stone block: Above the main entrance of the modern building is a precious relic that survived the bombing: an old medieval stone Agnus Dei.",
+      "Siri's foundation stone: Construction of the imposing church in Largo Santa Maria dei Servi officially began on 26 May 1965 with the laying of the first stone blessed by Cardinal Giuseppe Siri.",
+      "A gallery of Ligurian masters: The new church incorporates splendid 17th-century paintings saved from destruction, by masters such as Domenico Piola, Bernardo Castello and members of the Carlone family."
+  ],
+    "es": [
+      "Refundada en la Foce: Como el Rimedio, esta parroquia del siglo XIV también se trasladó. Destruida por completo por las bombas en Via dei Servi, renació con formas modernas en la Foce en 1972.",
+      "Su origen en Carignano: Los Padres Siervos de María llegaron a Génova por iniciativa del cardenal Ottobono Fieschi, futuro papa Adriano V, que los instaló en una pequeña capilla de las laderas de Carignano.",
+      "Nacida junto al Rivo Torbido: La antigua estructura medieval de 1327 se encontraba en el cruce de Via Rivotorbido y Salita San Leonardo, por lo que inicialmente se llamó Santa Maria in Via Lata.",
+      "El fresco del Santo Amor: En la iglesia moderna de la Foce se recolocó un valioso fragmento superviviente de la antigua basílica: el fresco del siglo XV de la Madonna del Santo Amore.",
+      "El cuadro contra la peste: Entre las obras salvadas de los escombros destaca la Madonna della Misericordia de Barnaba da Modena, pintada como voto colectivo durante la terrible peste de 1372.",
+      "El bloque pétreo medieval: Sobre el portal principal del edificio moderno puede verse una valiosa pieza antigua que sobrevivió a los bombardeos: un Agnus Dei medieval tallado en piedra.",
+      "La primera piedra de Siri: La construcción del gran edificio de Largo Santa Maria dei Servi comenzó oficialmente el 26 de mayo de 1965 con la colocación de la primera piedra bendecida por el cardenal Giuseppe Siri.",
+      "La galería de maestros ligures: En el nuevo templo se integraron espléndidas pinturas del siglo XVII salvadas de la destrucción, firmadas por maestros como Domenico Piola, Bernardo Castello y los Carlone."
+  ],
+    "fr": [
+      "Refondée à la Foce : Comme le Rimedio, cette paroisse du XIVe siècle a elle aussi déménagé. Entièrement détruite par les bombardements Via dei Servi, elle renaquit sous des formes modernes à la Foce en 1972.",
+      "Son berceau à Carignano : Les Servites de Marie furent introduits à Gênes par le cardinal Ottobono Fieschi, futur pape Adrien V, qui les installa dans une petite chapelle sur les pentes de Carignano.",
+      "Née sur le Rivo Torbido : L'ancienne église médiévale de 1327 se trouvait au croisement de Via Rivotorbido et Salita San Leonardo, d'où son premier nom de Santa Maria in Via Lata.",
+      "La fresque du Saint Amour : Dans la nouvelle église de la Foce a été replacé un précieux fragment de l'ancienne basilique, la fresque du XVe siècle de la Madonna del Santo Amore.",
+      "Le tableau contre la peste : Parmi les œuvres sauvées des ruines se distingue la Madonna della Misericordia de Barnaba da Modena, peinte comme vœu collectif pendant la terrible peste de 1372.",
+      "Le bloc de pierre médiéval : Au-dessus du portail principal du bâtiment moderne apparaît un précieux vestige épargné par les bombardements : un ancien Agnus Dei médiéval sculpté dans la pierre.",
+      "La première pierre de Siri : La construction de l'imposant édifice de Largo Santa Maria dei Servi commença officiellement le 26 mai 1965 avec la pose de la première pierre bénie par le cardinal Giuseppe Siri.",
+      "La galerie des maîtres ligures : Le nouveau sanctuaire intègre de magnifiques peintures du XVIIe siècle sauvées de la destruction, signées par des maîtres tels que Domenico Piola, Bernardo Castello et les Carlone."
+  ],
+    "ar": [
+      "إعادة التأسيس في فوتشه: مثل كنيسة Rimedio، انتقلت هذه الرعية التي تعود للقرن الرابع عشر أيضاً. فقد دمرتها القنابل بالكامل في Via dei Servi، ثم وُلدت من جديد بطراز حديث في فوتشه عام 1972.",
+      "البداية في كاريغنانو: أدخل الكاردينال Ottobono Fieschi، الذي أصبح لاحقاً البابا أدريان الخامس، رهبان خدام مريم إلى جنوة وأسكنهم في كنيسة صغيرة على منحدرات كاريغنانو.",
+      "ولدت قرب Rivo Torbido: كانت البنية الوسيطة القديمة لعام 1327 عند تقاطع Via Rivotorbido وSalita San Leonardo، ولهذا عُرفت في البداية باسم Santa Maria in Via Lata.",
+      "جداريّة الحب المقدس: داخل الكنيسة الحديثة في فوتشه أُعيد وضع جزء ثمين نجا من البازيليكا القديمة، وهو رسم Madonna del Santo Amore من القرن الخامس عشر.",
+      "لوحة ضد الطاعون: من الأعمال التي نجت من الأنقاض لوحة Madonna della Misericordia لبرنابا دا مودينا، وقد رُسمت كنذر جماعي أثناء طاعون 1372 الرهيب.",
+      "القطعة الحجرية من العصور الوسطى: فوق المدخل الرئيسي للمبنى الحديث تظهر قطعة أثرية ثمينة نجت من القصف، وهي نقش حجري قديم لـ Agnus Dei من العصور الوسطى.",
+      "حجر الأساس الذي باركه سيري: بدأ بناء الكنيسة الكبيرة في Largo Santa Maria dei Servi رسمياً في 26 مايو 1965 بوضع حجر الأساس الذي باركه الكاردينال Giuseppe Siri.",
+      "معرض لأساتذة ليغوريا: دمج المعماريون في الكنيسة الجديدة لوحات رائعة من القرن السابع عشر نجت من الدمار، لفنانين مثل Domenico Piola وBernardo Castello وعائلة Carlone."
+  ],
+    "ru": [
+      "Новое рождение в Фоче: Как и Rimedio, этот приход XIV века тоже переехал. Полностью разрушенный бомбами на Via dei Servi, он возродился в современном облике в Фоче в 1972 году.",
+      "Первый приют в Кариньяно: Сервитов Марии привёл в Геную кардинал Ottobono Fieschi, будущий папа Адриан V, поселив их в небольшой часовне на склонах Кариньяно.",
+      "Рождение у Rivo Torbido: Средневековая церковь 1327 года стояла на перекрёстке Via Rivotorbido и Salita San Leonardo, поэтому первоначально называлась Santa Maria in Via Lata.",
+      "Фреска Святой Любви: В современной церкви Фоче вновь установили драгоценный фрагмент старой базилики — фреску XV века Madonna del Santo Amore.",
+      "Картина против чумы: Среди спасённых из руин произведений выделяется Madonna della Misericordia Барнабы да Модена, написанная как общий обет во время страшной чумы 1372 года.",
+      "Средневековый каменный блок: Над главным порталом современного здания виден ценный древний фрагмент, переживший бомбардировки, — средневековый каменный Agnus Dei.",
+      "Первый камень Сири: Строительство большого здания на Largo Santa Maria dei Servi официально началось 26 мая 1965 года с закладки первого камня, благословлённого кардиналом Giuseppe Siri.",
+      "Галерея лигурийских мастеров: В новом храме архитекторы разместили великолепные картины XVII века, спасённые от разрушения, работы Domenico Piola, Bernardo Castello и мастеров Carlone."
+  ],
+    "zh": [
+      "在 Foce 重建：和 Rimedio 一样，这座14世纪堂区也经历了迁移。Via dei Servi 的旧教堂被轰炸彻底摧毁后，1972年在 Foce 以现代建筑形式重生。",
+      "Carignano 的最初据点：未来的教皇亚德五世、枢机 Ottobono Fieschi 把圣母忠仆会带到热那亚，并安排他们住在 Carignano 山坡的一座小堂中。",
+      "诞生于 Rivo Torbido：1327年的中世纪旧建筑位于 Via Rivotorbido 与 Salita San Leonardo 交会处，因此最初被称为 Santa Maria in Via Lata。",
+      "“圣爱圣母”壁画：Foce 的现代新堂内重新安置了一件旧巴西利卡幸存的珍贵遗物，即15世纪的 Madonna del Santo Amore 壁画。",
+      "对抗瘟疫的画作：从废墟中救出的艺术品里，有 Barnaba da Modena 的 Madonna della Misericordia。它是在1372年严重瘟疫期间作为集体还愿作品绘制的。",
+      "中世纪石雕：现代建筑主入口上方可以看到一件躲过轰炸的古老遗物——一块中世纪石制 Agnus Dei。",
+      "Siri 主持的奠基：Largo Santa Maria dei Servi 的大型新堂于1965年5月26日正式开工，第一块基石由枢机 Giuseppe Siri 祝福。",
+      "利古里亚大师画廊：新教堂把从毁灭中救出的17世纪绘画重新整合进空间，其中包括 Domenico Piola、Bernardo Castello 和 Carlone 家族等大师作品。"
+  ],
+    "lij": [
+      "Rifondâ a-a Foce: Comme o Rimedio, anche sta parrocchia do Trexento a l'à dovuo traslocâ. Destruta da-e bombe in Via dei Servi, a l'é renasciua in forme moderne a-a Foce into 1972.",
+      "O nìo d'origine a Carignano: I Serviti de Maria son stæti portæ a Zêna da-o cardinale Ottobono Fieschi, futuro Papa Adriano V, che o-i sistemòu inte unna piccin-a capella in sci pendii de Carignano.",
+      "Nasciua in sciô Rivo Torbido: A vegia struttura medievale do 1327 a l'ea a l'incroxo tra Via Rivotorbido e Salita San Leonardo, pe questo in prinçipio a l'ea ciamâ Santa Maria in Via Lata.",
+      "L'affresco do Santo Amore: Inte neuva gexa moderna da Foce l'é stæto rimesso un frammento preçiozo sarvou da vegia basilica: l'affresco do Quattroçento da Madonna do Santo Amore.",
+      "O quadro contro a peste: Tra e òpere sarvæ da-e macerie gh'é a tela de Barnaba da Modena co-a Madonna da Misericordia, pittâ comme voto collettivo durante a terribile peste do 1372.",
+      "O blocco de pria medievale: In sciô portâ prinçipâ esterno da neuva gexa se vede un reperto antigo sarvou da-e bombe: un Agnus Dei de pria de l'epoca medievale.",
+      "A primma pria de Siri: A costruçion do grande edificio in Largo Santa Maria dei Servi a l'é comensâ ufficialmente o 26 maggio 1965 co-a posa da primma pria benedetta da-o cardinale Giuseppe Siri.",
+      "A galleria di maestri liguri: Inte neuvo tempio son stæti integræ bei quadri do Seiçento sarvæ da destruçion, de maestri comme Domenico Piola, Bernardo Castello e i Carlone."
+  ]
+  };
+
+
+  root.church["Maria Santissima della Misericordia e Santa Fede"] = {
+    "it": [
+      "L'eredità dell'antico tempio di Prè: Questa maestosa struttura, edificata nel 1932 nel quartiere di San Fruttuoso, nacque per raccogliere i fedeli, il titolo parrocchiale e i tesori scampati alla sconsacrazione della millenaria chiesa di Santa Fede.",
+      "Gli uffici anagrafici del centro: Mentre i tesori si spostavano in corso Sardegna, la vecchia sede di via delle Fontane visse una metamorfosi profana: oggi ospita incredibilmente gli uffici anagrafici del Municipio I Centro Est.",
+      "Il disastroso incendio della cupola: Negli anni '80, la nuova chiesa di San Fruttuoso subì un gravissimo dramma strutturale. Un violentissimo incendio avvolse il tetto, arrivando a distruggere la grande cupola che caratterizzava lo skyline.",
+      "L'archeologia sotto il pavimento di vetro: Durante i restauri della sede originaria, gli archeologi scoprirono fondamenta medievali intatte. Per valorizzarle, l'architetto ha inserito un pavimento trasparente su cui gli impiegati camminano ogni giorno."
+  ],
+    "en": [
+      "The legacy of the old church in Prè: This imposing building, erected in 1932 in San Fruttuoso, was created to receive the congregation, parish title and treasures saved after the deconsecration of the thousand-year-old church of Santa Fede.",
+      "Registry offices in the old church: While the treasures moved to Corso Sardegna, the former site in Via delle Fontane underwent a secular transformation. Today it unexpectedly houses the registry offices of Municipio I Centro Est.",
+      "The disastrous dome fire: In the 1980s the new church in San Fruttuoso suffered a severe structural disaster. A violent fire swept across the roof and destroyed the great dome that had marked the local skyline.",
+      "Archaeology beneath a glass floor: During restoration of the original site, archaeologists uncovered intact medieval foundations. To preserve and display them, a transparent floor was installed, and office workers now walk above the remains every day."
+  ],
+    "es": [
+      "La herencia del antiguo templo de Prè: Este imponente edificio, levantado en 1932 en San Fruttuoso, nació para acoger a los fieles, el título parroquial y los tesoros salvados tras la desacralización de la milenaria Santa Fede.",
+      "Oficinas del registro civil en el centro: Mientras los tesoros se trasladaban a Corso Sardegna, la antigua sede de Via delle Fontane sufrió una transformación profana. Hoy alberga sorprendentemente las oficinas del registro del Municipio I Centro Est.",
+      "El desastroso incendio de la cúpula: En los años ochenta, la nueva iglesia de San Fruttuoso sufrió un gravísimo problema estructural. Un violento incendio envolvió el tejado y destruyó la gran cúpula que caracterizaba el perfil urbano.",
+      "Arqueología bajo el suelo de cristal: Durante la restauración de la sede original aparecieron cimientos medievales intactos. Para valorizarlos se instaló un pavimento transparente sobre el que hoy caminan a diario los empleados."
+  ],
+    "fr": [
+      "L'héritage de l'ancien temple de Prè : Ce vaste édifice construit en 1932 à San Fruttuoso fut créé pour accueillir les fidèles, le titre paroissial et les trésors sauvés après la désacralisation de l'église millénaire de Santa Fede.",
+      "Les bureaux d'état civil du centre : Tandis que les trésors partaient vers Corso Sardegna, l'ancien site de Via delle Fontane connut une transformation profane. Il abrite aujourd'hui, de façon étonnante, les bureaux d'état civil du Municipio I Centro Est.",
+      "Le désastreux incendie de la coupole : Dans les années 1980, la nouvelle église de San Fruttuoso subit un grave sinistre. Un violent incendie ravagea la toiture et détruisit la grande coupole qui caractérisait la silhouette du quartier.",
+      "L'archéologie sous le plancher de verre : Lors de la restauration du site d'origine, les archéologues mirent au jour des fondations médiévales intactes. Un sol transparent fut installé afin de les montrer, et les employés marchent aujourd'hui quotidiennement au-dessus de ces vestiges."
+  ],
+    "ar": [
+      "إرث كنيسة Prè القديمة: شُيد هذا المبنى المهيب عام 1932 في حي San Fruttuoso ليستقبل المؤمنين واسم الرعية والكنوز التي نجت بعد نزع الصفة الدينية عن كنيسة Santa Fede العريقة التي يعود تاريخها لألف عام.",
+      "مكاتب السجل المدني في المركز: بينما انتقلت الكنوز إلى Corso Sardegna، تحولت الكنيسة القديمة في Via delle Fontane إلى استخدام مدني. واليوم تضم بشكل لافت مكاتب السجل المدني التابعة لـ Municipio I Centro Est.",
+      "حريق القبة الكارثي: في ثمانينيات القرن العشرين تعرضت الكنيسة الجديدة في San Fruttuoso لكارثة إنشائية خطيرة. اجتاح حريق عنيف السقف ودمر القبة الكبيرة التي كانت تميز أفق الحي.",
+      "الآثار تحت أرضية زجاجية: أثناء ترميم الموقع الأصلي اكتشف علماء الآثار أساسات من العصور الوسطى بقيت سليمة. ولإظهارها وُضعت أرضية شفافة يسير فوقها الموظفون كل يوم."
+  ],
+    "ru": [
+      "Наследие старого храма Прэ: Монументальное здание, построенное в 1932 году в Сан-Фруттуозо, предназначалось для прихожан, титула прихода и сокровищ, спасённых после десакрализации тысячелетней церкви Santa Fede.",
+      "ЗАГС в старом храме: Пока ценности переносили на Corso Sardegna, старое здание на Via delle Fontane получило совсем светскую функцию. Сегодня в нём неожиданно размещены регистрационные службы Municipio I Centro Est.",
+      "Разрушительный пожар купола: В 1980-е годы новая церковь в Сан-Фруттуозо пережила серьёзную катастрофу. Сильный пожар охватил крышу и уничтожил большой купол, прежде заметно формировавший силуэт района.",
+      "Археология под стеклянным полом: Во время реставрации первоначального здания археологи нашли хорошо сохранившиеся средневековые фундаменты. Чтобы оставить их на виду, устроили прозрачный пол, по которому сотрудники ходят каждый день."
+  ],
+    "zh": [
+      "Prè 古老教堂的遗产：这座宏伟建筑1932年建于 San Fruttuoso，用来接纳原 Santa Fede 千年古堂失去宗教功能后迁来的教友、堂区名号以及获救的珍贵物品。",
+      "市中心的户籍办公室：珍贵物品迁往 Corso Sardegna 后，Via delle Fontane 的旧址经历了世俗化改造。如今这里竟成为 Municipio I Centro Est 的户籍登记办公室。",
+      "穹顶的大火灾：20世纪80年代，San Fruttuoso 的新教堂遭遇严重结构灾难。一场猛烈火灾吞噬屋顶，并烧毁了曾经构成当地天际线的重要大穹顶。",
+      "玻璃地板下的考古遗迹：修复原址时，考古学家发现了保存完好的中世纪地基。为了展示这些遗迹，建筑师铺设透明地板，如今工作人员每天都从其上走过。"
+  ],
+    "lij": [
+      "L'ereditæ do vegio tempio de Prè: Sta grande struttura, construta into 1932 a San Fruttuoso, a l'é nasciua pe accoglie i fedeli, o titolo parrocchiâ e i tesori sarvæ da sconsacraçion da millenaria Santa Fede.",
+      "I uffici anagrafici into centro: Mentre i tesori se trasferivan in Corso Sardegna, a vegia sede de Via delle Fontane a l'à cambiou completamente funzione: ancheu a ospita i uffici anagrafici do Municipio I Centro Est.",
+      "O disastroso incendio da cupola: Inti anni Ottanta a neuva gexa de San Fruttuoso a l'à avuo un grave problema strutturale. Un incendio violentissimo o l'à piggiou o tetto e o l'à destruto a grande cupola do profilo do quartê.",
+      "L'archeologia sotta o pavimento de veddo: Durante i restauri da sede originâ son vegnuî fòa fondamenti medievali intatti. Pe valorizzâli l'architetto o l'à misso un pavimento trasparente, in sciô quæ i impiegæ camminan tutti i giorni."
+  ]
+  };
+
+
+  root.church["Monastero di Santa Chiara"] = {
+    "it": [
+      "Arroccato tra le ville nobiliari: Fondato nel 1299 nella splendida ed elegante collina di Albaro, questo monastero medievale nacque come oasi protetta per le suore Clarisse, figlie delle più potenti dinastie patrizie.",
+      "La clausura violata dai picconi moderni: Per secoli il convento godette di una pace assoluta. Questo isolamento terminò bruscamente a inizio Novecento, quando la creazione di via Rosselli tagliò a metà gli storici orti.",
+      "La chiesa gotica con navata a botte: L'edificio sacro conserva un impianto trecentesco puro di rara bellezza. L'interno presenta una struttura a navata unica con una imponente volta a botte in pietra nera, eccezionale per l'epoca.",
+      "Il rifugio contemporaneo della cultura: Sconsacrato in seguito alle soppressioni dei beni ecclesiastici, il monumentale complesso è stato sottratto al degrado. Oggi gli antichi chiostri e le celle ospitano importanti mostre d'arte e associazioni culturali."
+  ],
+    "en": [
+      "Perched among aristocratic villas: Founded in 1299 on the elegant hill of Albaro, this medieval monastery was created as a protected retreat for Poor Clare nuns, many of them daughters of Genoa's most powerful patrician families.",
+      "The enclosure broken by modern roadworks: For centuries the convent enjoyed almost complete isolation. That peace ended abruptly in the early 20th century when the construction of Via Rosselli cut the historic gardens in two.",
+      "The Gothic church with a barrel-vaulted nave: The sacred building preserves a remarkably pure 14th-century layout. Inside is a single nave covered by an imposing barrel vault of dark stone, an unusual solution for its period.",
+      "A modern refuge for culture: Deconsecrated after the suppression of ecclesiastical property, the monumental complex was rescued from decay. Today its ancient cloisters and cells host important art exhibitions and cultural associations."
+  ],
+    "es": [
+      "Encaramado entre villas nobiliarias: Fundado en 1299 en la elegante colina de Albaro, este monasterio medieval nació como refugio protegido para las monjas clarisas, muchas de ellas hijas de las familias patricias más poderosas.",
+      "La clausura rota por las obras modernas: Durante siglos el convento disfrutó de un aislamiento casi absoluto. Esa tranquilidad terminó bruscamente a comienzos del siglo XX, cuando la apertura de Via Rosselli cortó en dos los antiguos huertos.",
+      "La iglesia gótica con nave de bóveda de cañón: El edificio conserva un trazado del siglo XIV de rara pureza. El interior tiene una sola nave cubierta por una imponente bóveda de cañón en piedra oscura, excepcional para su época.",
+      "El refugio contemporáneo de la cultura: Desacralizado tras las supresiones de bienes eclesiásticos, el complejo monumental fue salvado del abandono. Hoy los antiguos claustros y celdas albergan importantes exposiciones de arte y asociaciones culturales."
+  ],
+    "fr": [
+      "Perché parmi les villas patriciennes : Fondé en 1299 sur l'élégante colline d'Albaro, ce monastère médiéval fut conçu comme un refuge protégé pour les Clarisses, souvent issues des plus puissantes dynasties patriciennes.",
+      "La clôture brisée par les travaux modernes : Pendant des siècles, le couvent vécut dans un isolement presque absolu. Cette paix prit brutalement fin au début du XXe siècle lorsque la création de Via Rosselli coupa en deux les anciens jardins.",
+      "L'église gothique à nef voûtée en berceau : L'édifice conserve un plan du XIVe siècle d'une rare pureté. L'intérieur présente une nef unique couverte d'une imposante voûte en berceau de pierre sombre, exceptionnelle pour son époque.",
+      "Un refuge contemporain pour la culture : Désacralisé après les suppressions des biens ecclésiastiques, le complexe monumental fut sauvé de la dégradation. Aujourd'hui, anciens cloîtres et cellules accueillent d'importantes expositions d'art et des associations culturelles."
+  ],
+    "ar": [
+      "دير فوق تلة بين الفيلات النبيلة: تأسس عام 1299 على تلة Albaro الأنيقة، ليكون ملاذاً محمياً لراهبات كلاريسا، وكثير منهن كن بنات أقوى العائلات الأرستقراطية في جنوة.",
+      "العزلة التي قطعتها الأعمال الحديثة: عاش الدير قروناً في هدوء وعزلة شبه كاملة. وانتهى ذلك فجأة في مطلع القرن العشرين عندما شُق Via Rosselli فقسم الحدائق التاريخية إلى نصفين.",
+      "كنيسة قوطية بقبو برميلي: يحتفظ المبنى الديني بتخطيط من القرن الرابع عشر نادر الصفاء. ويتكون الداخل من صحن واحد تعلوه قنطرة برميلية ضخمة من الحجر الداكن، وهو حل استثنائي لعصره.",
+      "ملجأ معاصر للثقافة: بعد نزع الصفة الدينية عنه في أعقاب مصادرة الأملاك الكنسية، أُنقذ المجمع الضخم من التدهور. واليوم تستضيف الأروقة والخلايا القديمة معارض فنية مهمة وجمعيات ثقافية."
+  ],
+    "ru": [
+      "Среди аристократических вилл: Основанный в 1299 году на элегантном холме Альбаро, средневековый монастырь стал защищённым убежищем для кларисс, многие из которых происходили из самых влиятельных патрицианских семей.",
+      "Затвор нарушили современные работы: На протяжении веков монастырь жил почти в полной изоляции. Она резко закончилась в начале XX века, когда прокладка Via Rosselli рассекла старинные монастырские сады пополам.",
+      "Готическая церковь с цилиндрическим сводом: Здание сохраняет редкий по чистоте план XIV века. Внутри находится один неф под мощным цилиндрическим сводом из тёмного камня — необычное для своего времени решение.",
+      "Современное убежище культуры: После десакрализации и изъятия церковного имущества комплекс удалось спасти от упадка. Сегодня старые клуатры и монашеские кельи принимают художественные выставки и культурные объединения."
+  ],
+    "zh": [
+      "坐落在贵族别墅之间：这座中世纪修道院1299年建于优雅的 Albaro 山丘，最初是贫穷修女会修女的受保护居所，其中许多人来自热那亚最有权势的贵族家族。",
+      "现代道路打破修院封闭生活：几个世纪里，修道院几乎完全与外界隔绝。20世纪初修建 Via Rosselli 时，这种宁静突然终止，历史悠久的菜园被道路一分为二。",
+      "拥有筒形拱顶的哥特式教堂：建筑保留了非常纯粹的14世纪格局。内部只有一个中殿，上覆巨大的深色石材筒形拱顶，在当时是一种少见的结构。",
+      "如今的文化空间：教会财产被没收后，建筑失去宗教功能，但后来从衰败中获救。今天，古老回廊和修女小室用于举办重要艺术展览并容纳文化协会。"
+  ],
+    "lij": [
+      "Arroccou tra e ville nobiliari: Fondou into 1299 in sciâ bella collinn-a d'Albaro, sto monastero medievale o l'é nasciuo comme òasi protetta pe-e monache Clarisse, figgie de famigge patrizie tra e ciù potenti.",
+      "A clausua violâ da-i piccon moderni: Pe secoli o convento o l'à avuo unna paxe quasi assoluta. L'isolamento o l'é finio a l'inissio do Novecento, quande a costruçion de Via Rosselli a l'à taggiou in due i orti storici.",
+      "A gexa gotica co-a navata a botte: L'edificio sacro o conserva un impianto do Trexento de rara bellesa. L'interno o gh'à unna navata sola con unna grande volta a botte de pria neigra, eccezionale pe l'epoca.",
+      "O rifugio moderno da cultura: Sconsacrou dòppo e soppression di beni ecclesiastici, o grande complesso o l'é stæto sarvou da-o degrado. Ancheu i antighi chiostri e e celle ospitan mostre d'arte e associaçioin culturali."
+  ]
+  };
+
+
+  root.church["Santa Maria delle Grazie - la Nuova"] = {
+    "it": [
+      "La straordinaria metamorfosi contemporanea: Situata sulla collina di Castello, la ex chiesa fu espropriata da Napoleone nel 1810. Dopo un lungo restauro terminato nel 2004, oggi i suoi spazi barocchi ospitano ufficialmente il centro studi musicale \"Casa Paganini\".",
+      "Il terreno comprato dai signori crociati: Nel Quattrocento, le monache agostiniane acquistarono l'area per edificare il convento. Il lotto apparteneva alla potente famiglia degli Embriaci e comprendeva antiche torri difensive e tratti di mura pre-romane.",
+      "Un educandato per le figlie dei Dogi: Oltre alle celle di clausura, il maestoso complesso monastico ospitava una struttura d'eccellenza. Era un rinomato educandato protetto destinato esclusivamente all'istruzione delle fanciulle delle famiglie più facoltose e potenti della Repubblica.",
+      "Il passato profano come sala da ballo: Prima del recupero universitario, la struttura visse un secolo di incredibile degrado profano. Sconsacrata, fu riutilizzata dai cittadini come deposito di legname, caserma militare, tipografia, palestra e persino sala da ballo."
+  ],
+    "en": [
+      "An extraordinary modern transformation: On the Castello hill, the former church was confiscated under Napoleon in 1810. After a long restoration completed in 2004, its Baroque spaces now officially house the 'Casa Paganini' music research centre.",
+      "Land bought from crusader lords: In the 15th century Augustinian nuns purchased the site for their convent. The property belonged to the powerful Embriaci family and included ancient defensive towers and stretches of pre-Roman walls.",
+      "A boarding school for the doges' daughters: Besides the cloistered cells, the grand monastery housed an elite educational institution. It was a renowned protected boarding school reserved for girls from the wealthiest and most powerful families of the Republic.",
+      "Its secular past as a dance hall: Before university restoration, the building endured a century of remarkable secular decline. Deconsecrated, it was reused as a timber store, military barracks, printing shop, gymnasium and even a dance hall."
+  ],
+    "es": [
+      "Una extraordinaria metamorfosis contemporánea: Situada en la colina de Castello, la antigua iglesia fue expropiada por Napoleón en 1810. Tras una larga restauración concluida en 2004, sus espacios barrocos albergan oficialmente el centro de estudios musicales 'Casa Paganini'.",
+      "El terreno comprado a los señores cruzados: En el siglo XV las monjas agustinas compraron el solar para construir el convento. Pertenecía a la poderosa familia Embriaci e incluía antiguas torres defensivas y tramos de murallas prerromanas.",
+      "Un internado para las hijas de los Dogos: Además de las celdas de clausura, el gran complejo monástico albergaba una institución educativa de élite. Era un prestigioso internado protegido destinado a las hijas de las familias más ricas y poderosas de la República.",
+      "Su pasado profano como sala de baile: Antes de la recuperación universitaria, el edificio pasó un siglo de sorprendente decadencia secular. Desacralizado, fue utilizado como almacén de madera, cuartel, imprenta, gimnasio e incluso sala de baile."
+  ],
+    "fr": [
+      "Une extraordinaire métamorphose contemporaine : Située sur la colline de Castello, l'ancienne église fut confisquée sous Napoléon en 1810. Après une longue restauration achevée en 2004, ses espaces baroques abritent officiellement le centre d'études musicales 'Casa Paganini'.",
+      "Le terrain acheté aux seigneurs croisés : Au XVe siècle, les religieuses augustines achetèrent le terrain pour bâtir le couvent. Il appartenait à la puissante famille Embriaci et comprenait d'anciennes tours défensives ainsi que des portions de murailles préromaines.",
+      "Un pensionnat pour les filles des Doges : Outre les cellules de clôture, le grand ensemble monastique accueillait un établissement d'excellence. Ce pensionnat réputé était réservé aux jeunes filles des familles les plus riches et les plus puissantes de la République.",
+      "Un passé profane comme salle de bal : Avant sa restauration universitaire, le bâtiment connut un siècle d'étonnante dégradation profane. Désacralisé, il servit d'entrepôt de bois, de caserne, d'imprimerie, de gymnase et même de salle de danse."
+  ],
+    "ar": [
+      "تحول معاصر استثنائي: تقع الكنيسة السابقة على تلة Castello وقد صودرت في عهد نابليون عام 1810. وبعد ترميم طويل اكتمل عام 2004، أصبحت فضاءاتها الباروكية مقراً رسمياً لمركز الدراسات الموسيقية 'Casa Paganini'.",
+      "أرض اشتريت من سادة الحملات الصليبية: في القرن الخامس عشر اشترت الراهبات الأوغسطينيات الموقع لبناء الدير. وكانت الأرض ملكاً لعائلة Embriaci القوية وتضم أبراجاً دفاعية قديمة وأجزاء من أسوار تعود إلى ما قبل العصر الروماني.",
+      "مدرسة داخلية لبنات الدوجات: إلى جانب خلايا العزلة، كان المجمع الرهباني الضخم يضم مؤسسة تعليمية راقية. وكانت مدرسة داخلية محمية مخصصة لبنات أكثر عائلات الجمهورية ثراءً ونفوذاً.",
+      "ماضٍ مدني كقاعة رقص: قبل الترميم الجامعي عاش المبنى قرناً من الاستخدامات الدنيوية المتنوعة. وبعد نزع صفته الدينية استُخدم مخزناً للأخشاب وثكنة ومطبعة وصالة رياضية وحتى قاعة للرقص."
+  ],
+    "ru": [
+      "Необычное современное превращение: Бывшая церковь на холме Castello была конфискована при Наполеоне в 1810 году. После долгой реставрации, завершённой в 2004-м, её барочные помещения официально занимает музыкальный исследовательский центр 'Casa Paganini'.",
+      "Земля, купленная у потомков крестоносцев: В XV веке августинские монахини приобрели участок для монастыря. Он принадлежал влиятельной семье Embriaci и включал древние оборонительные башни и участки доримских стен.",
+      "Пансион для дочерей дожей: Помимо монашеских келий, большой комплекс включал престижное учебное заведение. Это был охраняемый пансион исключительно для девушек из самых богатых и влиятельных семей Республики.",
+      "Светское прошлое как танцевальный зал: До университетской реставрации здание пережило целый век необычного светского использования. После десакрализации здесь были склад леса, казарма, типография, спортзал и даже танцевальный зал."
+  ],
+    "zh": [
+      "当代的惊人转变：这座位于 Castello 山丘的旧教堂1810年在拿破仑时期被没收。经过漫长修复并于2004年完成后，如今巴洛克空间正式成为音乐研究中心“Casa Paganini”。",
+      "从十字军贵族手中买来的土地：15世纪，奥斯定会修女购买这片土地兴建修道院。地块原属于强大的 Embriaci 家族，包含古老防御塔和部分前罗马时代城墙。",
+      "为总督之女开设的寄宿学校：除封闭修院的房间外，宏伟建筑群还设有一所精英教育机构。这所受保护的寄宿学校专门教育共和国最富有、最有权势家族的女儿。",
+      "曾经作为舞厅的世俗时期：在大学系统修复之前，这座建筑经历了一个世纪的世俗化衰败。失去宗教功能后，它先后被用作木材仓库、军营、印刷厂、体育馆，甚至舞厅。"
+  ],
+    "lij": [
+      "A straordinaria metamorfosi moderna: In sciâ collinn-a de Castello, l'ex gexa a l'é stæta espropriâ da Napoleone into 1810. Dòppo un lungo restauro finio into 2004, ancheu i spaçi barocchi ospitan ufficialmente o centro musicale 'Casa Paganini'.",
+      "O terreno accattou da-i signori croxiæ: Into Quattroçento e monache agostiniane han accattou l'area pe construe o convento. O lotto o l'ea da potente famiggia Embriaci e o comprendeiva torre difensive e tratti de mûe pre-romane.",
+      "Un educandato pe-e figgie di Dogi: Oltre ae celle de clausua, o grande complesso o ospitava unna scuola d'eccellenza. L'ea un educandato protetto riservou ae figge de famigge ciù ricche e potenti da Repubbrica.",
+      "O passato profano comme sala da ballo: Primma do recupero universitario, a struttura a l'à vissuo un secolo de adêuvi profani. Sconsacrâ, a l'é stæta magazzen de legname, caserma, tipografia, palestra e perfinn-a sala da ballo."
+  ]
+  };
+
 })();
