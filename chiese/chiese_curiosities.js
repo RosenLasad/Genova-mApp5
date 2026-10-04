@@ -3428,5 +3428,489 @@
       "A vista a picco in sciô Golfo: Vexin a-e Mûe Neuve, o santuario o gh'à unna vista magnifica. A posiçion arta a permetteva de controllâ tutto o porto e-e flotte che s'avexinavan a Zêna."
     ]
   };
+  root.church["Chiesa dello Spirito Santo"] = {
+  "it": [
+    "Il rifugio internazionale dei residenti inglesi: Situata in Piazza Marsala, la chiesa fu fondata nel XIX secolo. Nacque per offrire un punto di riferimento e una casa spirituale alla ricca comunità britannica e anglofona residente a Genova.",
+    "Un'architettura neogotica insolita per la città: L'edificio stupisce i passanti per le sue forme architettoniche rigorosamente neogotiche. Presenta linee geometriche e vetrate ad arco acuto che ricordano i tipici templi della campagna inglese, un contrasto unico tra i palazzi.",
+    "L'oasi multietnica e inclusiva contemporanea: Oggi la parrocchia anglicana ha ampliato la sua storica missione di accoglienza. È diventata una comunità internazionale aperta che unisce fedeli da tutto il mondo, celebrando funzioni interamente in lingua inglese.",
+    "Il mercatino d'autunno per beneficenza: Ogni anno, la comunità dello Spirito Santo si anima con eventi tradizionali anglosassoni. Il celebre “Autumn Bazaar” attira i genovesi nei cortili offrendo tè pomeridiano e dolci inglesi per raccogliere fondi assistenziali."
+  ],
+  "en": [
+    "An international refuge for English residents: Located in Piazza Marsala, the church was founded in the 19th century to provide a spiritual home and meeting place for Genoa's prosperous British and English-speaking community.",
+    "Unusual Neo-Gothic architecture for Genoa: The building surprises passers-by with its distinctly Neo-Gothic forms. Geometric lines and pointed-arch windows recall English country churches, creating a striking contrast with the surrounding urban palaces.",
+    "A contemporary multicultural and inclusive oasis: Today the Anglican parish has expanded its historic welcoming role. It has become an open international community bringing together worshippers from around the world, with services celebrated entirely in English.",
+    "The autumn charity bazaar: Every year the Holy Ghost community comes alive with traditional British events. The well-known Autumn Bazaar attracts Genoese visitors with afternoon tea and English cakes while raising funds for charitable activities."
+  ],
+  "es": [
+    "Refugio internacional de los residentes ingleses: Situada en Piazza Marsala, la iglesia fue fundada en el siglo XIX para ofrecer un punto de referencia y un hogar espiritual a la próspera comunidad británica y anglófona residente en Génova.",
+    "Una arquitectura neogótica insólita para la ciudad: El edificio sorprende por sus formas claramente neogóticas. Las líneas geométricas y las ventanas de arco apuntado recuerdan a las iglesias rurales inglesas y crean un contraste singular entre los palacios circundantes.",
+    "Un oasis contemporáneo multiétnico e inclusivo: Hoy la parroquia anglicana ha ampliado su histórica misión de acogida. Se ha convertido en una comunidad internacional abierta que reúne a fieles de todo el mundo y celebra sus oficios íntegramente en inglés.",
+    "El mercadillo de otoño benéfico: Cada año la comunidad del Espíritu Santo organiza eventos de tradición anglosajona. El conocido Autumn Bazaar atrae a los genoveses con té de la tarde y dulces ingleses para recaudar fondos destinados a obras asistenciales."
+  ],
+  "fr": [
+    "Le refuge international des résidents anglais : Située Piazza Marsala, l'église fut fondée au XIXe siècle afin d'offrir un repère et un foyer spirituel à la prospère communauté britannique et anglophone installée à Gênes.",
+    "Une architecture néogothique insolite pour la ville : L'édifice surprend par ses formes résolument néogothiques. Ses lignes géométriques et ses baies en arc brisé évoquent les églises de campagne anglaises, créant un contraste singulier avec les palais alentour.",
+    "Une oasis contemporaine multiculturelle et inclusive : Aujourd'hui, la paroisse anglicane a élargi sa mission historique d'accueil. Elle est devenue une communauté internationale ouverte réunissant des fidèles du monde entier, avec des offices célébrés entièrement en anglais.",
+    "Le marché d'automne caritatif : Chaque année, la communauté du Saint-Esprit organise des événements de tradition anglo-saxonne. Le célèbre Autumn Bazaar attire les Génois avec thé de l'après-midi et pâtisseries anglaises afin de recueillir des fonds pour des œuvres caritatives."
+  ],
+  "ar": [
+    "ملجأ دولي للمقيمين الإنجليز: تقع الكنيسة في ساحة Piazza Marsala وقد تأسست في القرن التاسع عشر لتكون مرجعاً وبيتاً روحياً للجالية البريطانية والناطقة بالإنجليزية المقيمة في جنوة.",
+    "عمارة قوطية جديدة غير مألوفة في المدينة: يلفت المبنى الأنظار بأشكاله القوطية الجديدة الواضحة. فالخطوط الهندسية والنوافذ ذات الأقواس المدببة تذكّر بكنائس الريف الإنجليزي وتخلق تبايناً فريداً مع القصور المحيطة.",
+    "واحة معاصرة متعددة الثقافات وشاملة: وسّعت الرعية الأنغليكانية اليوم مهمتها التاريخية في الاستقبال. وأصبحت جماعة دولية مفتوحة تجمع مؤمنين من أنحاء العالم وتقام صلواتها بالكامل باللغة الإنجليزية.",
+    "سوق الخريف الخيري: في كل عام تنشط جماعة الروح القدس بفعاليات من التقاليد الأنغلو‑ساكسونية. ويجذب Autumn Bazaar الشهير سكان جنوة بالشاي بعد الظهر والحلويات الإنجليزية لجمع الأموال للأعمال الخيرية."
+  ],
+  "ru": [
+    "Международное убежище для английских жителей: Церковь на Piazza Marsala была основана в XIX веке как духовный дом и место встречи для состоятельной британской и англоязычной общины Генуи.",
+    "Необычная для города неоготика: Здание удивляет строгими неоготическими формами. Геометрические линии и стрельчатые окна напоминают английские сельские церкви и создают редкий контраст с окружающими дворцами.",
+    "Современный многонациональный и открытый оазис: Сегодня англиканский приход расширил свою историческую миссию гостеприимства. Он стал международной общиной, объединяющей верующих со всего мира, а богослужения проходят полностью на английском языке.",
+    "Осенняя благотворительная ярмарка: Каждый год община Святого Духа проводит традиционные англосаксонские мероприятия. Знаменитый Autumn Bazaar привлекает генуэзцев послеобеденным чаем и английской выпечкой, собирая средства на благотворительность."
+  ],
+  "zh": [
+    "英国居民的国际精神家园：教堂位于 Piazza Marsala，建于19世纪，最初是为了给居住在热那亚的富裕英国及英语社群提供聚会地点和宗教生活中心。",
+    "城市中少见的新哥特式建筑：建筑以鲜明的新哥特式风格令人意外。几何线条和尖拱窗让人联想到英国乡村教堂，与周围的城市宫殿形成独特反差。",
+    "当代多元而包容的社区：如今这座圣公会教堂延续并扩大了传统的接纳使命，成为开放的国际社群，聚集来自世界各地的信徒，并以英语举行全部礼拜。",
+    "秋季慈善集市：每年圣灵堂社区都会举办传统英式活动。著名的 Autumn Bazaar 以英式下午茶和甜点吸引热那亚市民，同时为慈善项目募集资金。"
+  ],
+  "lij": [
+    "O rifugio internazionale di residenti ingleixi: A gexa, in Piazza Marsala, a l'é nasciua into Ottocento pe dâ un pòsto de riferimento e unna casa spirituale a-a ricca comunitæ britannega e anglofona che viveiva a Zêna.",
+    "Un'architettua neogotica ben insolita pe Zêna: L'edificio o stupisce pe-e forme neogotiche nette. Linie geometriche e finestroun a arco aguzzo fan vegnî in mente e gexe da campagna ingleize, in forte contrasto co-i palassi vexin.",
+    "Un'oasi moderna multietnica e inclusiva: Ancheu a parrocchia anglicann-a a l'à allargou a seu antiga mission d'accoglienza. A l'é diventâ unna comunitæ internazionale averta, con fedeli da tutto o mondo e funçioin celebrate tutte in ingleize.",
+    "O mercatin d'outunno pe beneficensa: Ogni anno a comunitæ do Spirito Santo a organizza eventi da tradiçion anglosassone. O famoso Autumn Bazaar o ciama tanti zeneixi con tè do pomeriggio e döçi ingleixi pe raccoglie dinæ pe beneficensa."
+  ]
+};
+
+  root.church["Nostra Signora della Consolazione"] = {
+  "it": [
+    "Incastonata sotto il livello stradale moderno: Chi cammina nei portici Liberty di via XX Settembre la incontra quasi all'improvviso. La chiesa barocca appare schiacciata e ribassata rispetto al moderno piano stradale, svelando l'antico livello della città.",
+    "Il chiostro medievale nascosto dal mercato: Sul retro della basilica si sviluppa lo splendido chiostro cinquecentesco. Questo gioiello, originariamente adibito alla preghiera dei monaci agostiniani, è oggi incredibilmente integrato e fuso con le bancarelle del Mercato Orientale.",
+    "Il frammento autentico della vera Croce: Tra i tesori d'arte custoditi nei preziosi altari barocchi, la chiesa vanta un primato devozionale. Ospita una teca protetta contenente un frammento di legno ritenuto l'autentica reliquia della Croce di Gesù.",
+    "Scampata miracolosamente al grande sventramento: Quando a fine Ottocento i picconi demolitori cancellarono l'antico rione di San Vincenzo per tracciare via XX Settembre, la chiesa rischiò la demolizione. I progettisti scelsero di risparmiarla, edificandovi i palazzi attorno."
+  ],
+  "en": [
+    "Set below the modern street level: Walking beneath the Liberty-style arcades of Via XX Settembre, the church appears almost suddenly. The Baroque building sits noticeably lower than today's roadway, revealing the former level of the city.",
+    "The medieval cloister hidden by the market: Behind the basilica lies a beautiful 16th-century cloister. Originally a place of prayer for Augustinian monks, this historic space is now remarkably integrated with the stalls of the Mercato Orientale.",
+    "A fragment of the True Cross: Among the treasures preserved in the rich Baroque altars is a protected reliquary containing a piece of wood traditionally believed to be an authentic fragment of the Cross of Christ.",
+    "Miraculously spared from the great redevelopment: When late-19th-century demolitions cleared the old San Vincenzo district for Via XX Settembre, the church also risked destruction. The planners chose to preserve it and built the new blocks around it."
+  ],
+  "es": [
+    "Encajada bajo el nivel de la calle moderna: Quien recorre los pórticos modernistas de Via XX Settembre se encuentra con ella casi de repente. La iglesia barroca queda claramente más baja que la calzada actual, revelando el antiguo nivel de la ciudad.",
+    "El claustro medieval escondido por el mercado: Detrás de la basílica se abre un hermoso claustro del siglo XVI. Antiguamente destinado a la oración de los agustinos, hoy está sorprendentemente integrado entre los puestos del Mercato Orientale.",
+    "Un fragmento de la Vera Cruz: Entre los tesoros conservados en sus ricos altares barrocos destaca un relicario protegido con un fragmento de madera que la tradición considera auténtica reliquia de la Cruz de Cristo.",
+    "Salvada milagrosamente del gran derribo: A finales del siglo XIX, las demoliciones que borraron el antiguo barrio de San Vincenzo para abrir Via XX Settembre amenazaron también la iglesia. Los proyectistas decidieron conservarla y construir los nuevos edificios a su alrededor."
+  ],
+  "fr": [
+    "Enchâssée sous le niveau de la rue moderne : En parcourant les arcades Liberty de Via XX Settembre, on la découvre presque soudainement. L'église baroque paraît nettement plus basse que la chaussée actuelle, révélant l'ancien niveau de la ville.",
+    "Le cloître médiéval caché par le marché : Derrière la basilique s'étend un beau cloître du XVIe siècle. Jadis réservé à la prière des Augustins, ce joyau est aujourd'hui étonnamment intégré aux étals du Mercato Orientale.",
+    "Un fragment de la Vraie Croix : Parmi les trésors conservés dans les riches autels baroques se trouve un reliquaire protégé contenant un morceau de bois traditionnellement considéré comme un authentique fragment de la Croix du Christ.",
+    "Miraculeusement épargnée par le grand percement : À la fin du XIXe siècle, les démolitions qui effacèrent l'ancien quartier de San Vincenzo pour tracer Via XX Settembre menacèrent aussi l'église. Les urbanistes décidèrent finalement de la préserver et de bâtir autour d'elle."
+  ],
+  "ar": [
+    "محصورة تحت مستوى الشارع الحديث: من يسير تحت أروقة Via XX Settembre ذات الطابع الليبرتي يكتشف الكنيسة فجأة تقريباً. فهي تبدو منخفضة بوضوح عن مستوى الطريق الحالي، كاشفة مستوى المدينة القديم.",
+    "الدير المخفي خلف السوق: خلف البازيليكا يمتد دير جميل من القرن السادس عشر. كان في الأصل مكان صلاة للرهبان الأوغسطينيين، وهو اليوم مندمج بشكل لافت مع أكشاك Mercato Orientale.",
+    "قطعة من الصليب الحقيقي: بين كنوز المذابح الباروكية الثمينة تحتفظ الكنيسة بوعاء محمي يحتوي قطعة خشب يُعتقد تقليدياً أنها جزء أصيل من صليب المسيح.",
+    "نجت بأعجوبة من إعادة التطوير الكبرى: عندما هُدم حي San Vincenzo القديم في أواخر القرن التاسع عشر لشق Via XX Settembre، كادت الكنيسة أن تُزال أيضاً. لكن المخططين قرروا الإبقاء عليها وبناء العمارات الجديدة حولها."
+  ],
+  "ru": [
+    "Ниже уровня современной улицы: Идя под аркадами Via XX Settembre в стиле либерти, церковь замечаешь почти внезапно. Барочное здание расположено заметно ниже нынешней дороги и тем самым показывает старый уровень города.",
+    "Средневековый клуатр, скрытый рынком: Позади базилики находится красивый клуатр XVI века. Когда-то он служил местом молитвы августинцев, а сегодня удивительным образом слился с торговыми рядами Mercato Orientale.",
+    "Фрагмент Истинного Креста: Среди сокровищ богато украшенных барочных алтарей хранится защищённый реликварий с кусочком дерева, который традиция считает подлинной частью Креста Христова.",
+    "Чудом пережила большую перестройку: В конце XIX века старый квартал San Vincenzo сносили ради прокладки Via XX Settembre, и церковь тоже оказалась под угрозой. Архитекторы решили сохранить её и возвести новые здания вокруг."
+  ],
+  "zh": [
+    "低于现代街道的教堂：沿 Via XX Settembre 的自由风格拱廊行走时，人们几乎会突然遇见它。巴洛克教堂明显低于今天的路面，直接显示出城市过去的地面高度。",
+    "被市场包围的古老回廊：大殿后方保存着一座美丽的16世纪回廊，最初供奥古斯丁修士祈祷。如今它竟与 Mercato Orientale 的摊位和市场空间紧密交织。",
+    "“真十字架”的木片：华丽的巴洛克祭坛间保存着一件重要圣物：受保护的圣物匣内放有一小块木片，传统上被认为来自耶稣受难时的真十字架。",
+    "大拆迁中奇迹般幸存：19世纪末，为修建 Via XX Settembre，旧 San Vincenzo 街区遭到大规模拆除，教堂也一度面临消失。最终规划者决定保留它，并让新楼宇环绕而建。"
+  ],
+  "lij": [
+    "Incastonâ sotta o livello da stradda moderna: Chi o cammina sotta i portici Liberty de Via XX Settembre a-a trova quasi de colpo. A gexa barocca a resta ciù bassa da-o piano stradale d'ancheu e a mostra o livello antigo da çittæ.",
+    "O chiostro ascoso da-o mercato: Derê da basilica gh'é o bello chiostro do Cinquecento. Un tempo o serviva pe-a preghêa di agostinian; ancheu o l'é incredibilmente mesciou co-e bancarelle do Mercato Orientale.",
+    "Un frammento da Vera Croxe: Tra i tesori di artâ barocchi a gexa a conserva unna teca protetta con un tòcco de legno che a tradiçion a considera parte autentica da Croxe de Cristo.",
+    "Sarvâ quasi pe miracolo da-o grande sventramento: A-a fin do Ottocento, quande o quartê de San Vincenzo o l'é stæto demolio pe fâ Via XX Settembre, anche a gexa a rischiava de sparî. I progettisti han deciso de sarvâla e de costrue i palassi intorno."
+  ]
+};
+
+  root.church["Santa Croce e San Camillo de Lellis"] = {
+  "it": [
+    "Soffocata dai grattacieli di Piccapietra: Edificata nel XVII secolo, la splendida chiesa barocca a croce greca subì un isolamento moderno. Negli anni '50 lo sventramento del quartiere la lasciò soffocata ed incastrata tra enormi palazzi di cemento.",
+    "Nata dal voto per i malati di peste: La struttura sorse nel 1667 grazie alle donazioni dei nobili. Vollero ringraziare i padri Camilliani che si erano spesi eroicamente curando gli appestati nel vicino ospedale di Pammatone.",
+    "La cupola affrescata a quattro mani: Il soffitto ottagonale ospita lo spettacolare ciclo del Trittico della Croce. Fu iniziato dal grande maestro Gregorio De Ferrari e completato filologicamente dal figlio Lorenzo dopo la sua morte.",
+    "La croce rossa simbolo dei medici: Varcando lo storico portale d'ingresso, l'elemento che salta all'occhio è una grande croce rossa. Fu scelta da San Camillo de Lellis nel Seicento, anticipando di secoli il famoso simbolo medico internazionale."
+  ],
+  "en": [
+    "Hemmed in by Piccapietra's high-rises: Built in the 17th century, this beautiful Greek-cross Baroque church later became isolated by modern redevelopment. In the 1950s the district was radically cleared, leaving it squeezed between large concrete buildings.",
+    "Born from a vow for plague victims: The church was built in 1667 thanks to donations from noble families who wished to thank the Camillian Fathers for their heroic work caring for plague victims in the nearby Pammatone hospital.",
+    "A dome painted by two generations: The octagonal ceiling carries the spectacular cycle known as the Trittico della Croce. It was begun by Gregorio De Ferrari and carefully completed after his death by his son Lorenzo.",
+    "The red cross as a medical symbol: Passing through the historic portal, a large red cross immediately stands out. Saint Camillus de Lellis adopted the emblem in the 17th century, centuries before it became an internationally recognised medical symbol."
+  ],
+  "es": [
+    "Atrapada entre los rascacielos de Piccapietra: Construida en el siglo XVII, esta bella iglesia barroca de cruz griega quedó aislada por la renovación moderna. En los años cincuenta, la demolición del barrio la dejó encajada entre grandes edificios de hormigón.",
+    "Nacida de un voto por los enfermos de peste: La iglesia surgió en 1667 gracias a donaciones de familias nobles que quisieron agradecer a los Padres Camilos su heroica labor asistiendo a los apestados del cercano hospital de Pammatone.",
+    "Una cúpula pintada a cuatro manos: El techo octogonal alberga el espectacular ciclo del Trittico della Croce. Gregorio De Ferrari inició la obra y, tras su muerte, su hijo Lorenzo la completó respetando el proyecto original.",
+    "La cruz roja como símbolo médico: Al atravesar el histórico portal destaca una gran cruz roja. San Camilo de Lelis eligió este emblema en el siglo XVII, adelantándose varios siglos al famoso símbolo médico internacional."
+  ],
+  "fr": [
+    "Étouffée par les immeubles de Piccapietra : Construite au XVIIe siècle, cette belle église baroque en croix grecque fut isolée par les transformations modernes. Dans les années 1950, la démolition du quartier la laissa coincée entre de grands bâtiments de béton.",
+    "Née d'un vœu pour les victimes de la peste : L'église fut bâtie en 1667 grâce aux dons de familles nobles souhaitant remercier les Pères Camilliens pour leur dévouement héroïque auprès des malades du proche hôpital de Pammatone.",
+    "Une coupole peinte à quatre mains : Le plafond octogonal porte le spectaculaire cycle du Trittico della Croce. Il fut commencé par Gregorio De Ferrari puis achevé avec fidélité après sa mort par son fils Lorenzo.",
+    "La croix rouge, symbole des médecins : Dès le portail franchi, une grande croix rouge attire le regard. Saint Camille de Lellis adopta ce signe au XVIIe siècle, plusieurs siècles avant qu'il ne devienne un emblème médical international."
+  ],
+  "ar": [
+    "محاصرة بناطحات Piccapietra: شُيدت الكنيسة الباروكية ذات المخطط الصليبي اليوناني في القرن السابع عشر. لكن إعادة تطوير الحي في خمسينيات القرن العشرين تركتها معزولة ومحشورة بين كتل خرسانية ضخمة.",
+    "نشأت من نذر من أجل مرضى الطاعون: بُنيت الكنيسة عام 1667 بفضل تبرعات النبلاء الذين أرادوا شكر آباء الكاميليين على تفانيهم البطولي في رعاية المصابين بالطاعون في مستشفى Pammatone القريب.",
+    "قبة رسمها فنانان من عائلة واحدة: يحمل السقف المثمن الدورة الرائعة المعروفة باسم Trittico della Croce. بدأها Gregorio De Ferrari ثم أكملها ابنه Lorenzo بعد وفاته مع احترام أسلوب المشروع الأصلي.",
+    "الصليب الأحمر كرمز طبي: عند عبور المدخل التاريخي يلفت النظر صليب أحمر كبير. اختار القديس Camillo de Lellis هذا الرمز في القرن السابع عشر، قبل قرون من تحوله إلى الشعار الطبي الدولي المعروف."
+  ],
+  "ru": [
+    "Зажата высотками Piccapietra: Красивая барочная церковь XVII века в форме греческого креста оказалась изолирована современной застройкой. В 1950-е годы масштабный снос квартала оставил её буквально зажатой между крупными бетонными зданиями.",
+    "Возникла из обета ради больных чумой: Церковь построили в 1667 году на пожертвования знати, желавшей отблагодарить отцов-камиллианцев за героическую помощь больным чумой в соседнем госпитале Pammatone.",
+    "Купол, расписанный в две руки и два поколения: Восьмиугольный потолок украшает эффектный цикл Trittico della Croce. Его начал Gregorio De Ferrari, а после смерти мастера работу бережно завершил его сын Lorenzo.",
+    "Красный крест как символ врачей: За историческим порталом сразу заметен большой красный крест. Святой Camillo de Lellis выбрал этот знак ещё в XVII веке, за столетия до появления знаменитого международного медицинского символа."
+  ],
+  "zh": [
+    "被 Piccapietra 高楼“挤住”的教堂：这座17世纪希腊十字形巴洛克教堂后来因现代城市改造而显得孤立。20世纪50年代街区大拆迁后，它被夹在巨大的混凝土建筑之间。",
+    "因瘟疫病人而许愿兴建：教堂于1667年靠贵族捐款建成，用来感谢 Camilliani 修会神父在附近 Pammatone 医院中英勇照料瘟疫患者的奉献。",
+    "父子接力完成的穹顶壁画：八角形顶棚保存着壮观的 Trittico della Croce 绘画系列，由 Gregorio De Ferrari 开始创作，去世后由儿子 Lorenzo 按原有风格继续完成。",
+    "作为医护象征的红十字：穿过历史门户，一枚巨大的红十字十分醒目。San Camillo de Lellis 在17世纪便采用这一标志，比后来著名的国际医疗标志早了几个世纪。"
+  ],
+  "lij": [
+    "Strenzâ tra i grattacieli de Piccapietra: A bella gexa barocca a croxe greca, construta into Seicento, a l'é restâ isolâ da-e trasformaçioin moderne. Inti anni Cinquanta o sventramento do quartê a l'à lasciâ incastrâ tra grandi palassi de cemento.",
+    "Nasciua da un voto pe-i malæ de peste: A gexa a l'é stæta construta into 1667 con e offerte di nobili, che volevan ringraçiâ i Padri Camilliani pe-o seu coraggio inta cura di appestæ into vexin ospedâ de Pammatone.",
+    "A cupola affrescâ a quattro man: O soffitto ottagonale o conserva o spettacolare Trittico della Croce. O l'é stæto comensou da Gregorio De Ferrari e finio, dòppo a seu morte, da-o figgio Lorenzo rispettando o progetto originâ.",
+    "A croxe rossa comme simbolo di medici: Passou o portâ antigo, a prima cosa che se nota a l'é unna grande croxe rossa. San Camillo de Lellis a l'aveiva çernua za into Seicento, secoli primma do famoso simbolo medico internazionale."
+  ]
+};
+
+  root.church["Santa Marta"] = {
+  "it": [
+    "Nascondino tra i palazzi moderni: La chiesa di fine '500 sorge in piazza Santa Marta. Esternamente appare completamente invisibile, mimetizzata e nascosta dietro un palazzo condominiale di via Roma che ne ostruisce la vista diretta.",
+    "Il matroneo segreto delle suore: Progettata per le monache di clausura, la chiesa possiede un matroneo sospeso. Le religiose vi accedevano in alto per assistere alla messa senza essere viste dai fedeli radunati in navata.",
+    "La galleria dei frescanti barocchi: L'interno è un sfolgorante scrigno rococò decorato tra il '600 e il '700. Ospita opere dipinte a gara da colossi del barocco ligure, come Domenico Piola, Carlone e Valerio Castello.",
+    "La statua d'altare del Parodi: L'altar maggiore custodisce un pezzo scultoreo di immenso pregio, la Santa Marta in gloria. La statua in marmo fu scolpita dal celebre maestro Filippo Parodi nel 1665.",
+    "Il custode dell'opera evangelica: All'interno del complesso riposano le spoglie dell'abate Paolo Gerolamo Franzoni. Fu il fondatore della storica Biblioteca Franzoniana e della Congregazione degli Operai Evangelici nel 1751.",
+    "La rinascita patrizia del 1826: A causa delle soppressioni napoleoniche, il tempio visse anni di degrado. Nel 1826 la congregazione del Franzoni ne ottenne la riapertura, finanziando restauri complessi per restituirlo alla città.",
+    "Le formelle scolpite dell'Orsolino: Nei pilastri del presbiterio sono incastonate grandi nicchie d'autore; ospitano splendide sculture marmoree di santi realizzate dallo scultore Tommaso Orsolino, caratterizzate da una straordinaria forza espressiva e anatomica.",
+    "L'inganno prospettico della controfacciata: Il coro superiore poggia sopra un imponente porticato interno a tre fornici. I maestri quadraturisti lo decorarono con stucchi che regalano un'illusione di straordinaria profondità spaziale."
+  ],
+  "en": [
+    "Hidden among modern buildings: The late-16th-century church stands in Piazza Santa Marta, yet from outside it is almost invisible, concealed behind a residential building on Via Roma that blocks any direct view of its façade.",
+    "The nuns' secret matroneum: Designed for cloistered nuns, the church includes a suspended upper gallery. The sisters could attend Mass from above without being seen by the congregation gathered in the nave below.",
+    "A gallery of Baroque fresco masters: The interior is a dazzling Rococo treasure chest decorated between the 17th and 18th centuries. Works by major Ligurian Baroque painters such as Domenico Piola, Carlone and Valerio Castello fill the space.",
+    "Parodi's altar statue: The high altar contains a sculpture of exceptional value, Santa Marta in gloria. The marble figure was carved in 1665 by the celebrated Genoese master Filippo Parodi.",
+    "The guardian of the evangelical work: The remains of Abbot Paolo Gerolamo Franzoni rest within the complex. In 1751 he founded the historic Biblioteca Franzoniana and the Congregazione degli Operai Evangelici.",
+    "The patrician revival of 1826: After the Napoleonic suppressions the church endured years of decline. In 1826 Franzoni's congregation secured its reopening and financed extensive restoration to return it to the city.",
+    "Orsolino's sculpted panels: Large niches set into the presbytery piers contain fine marble statues of saints by Tommaso Orsolino, works noted for their powerful expression and carefully modelled anatomy.",
+    "The perspective illusion of the counter-façade: The upper choir rests above an imposing three-arched internal portico. Specialist quadratura artists decorated it with stucco, creating a striking illusion of exceptional spatial depth."
+  ],
+  "es": [
+    "Escondida entre edificios modernos: La iglesia de finales del siglo XVI se encuentra en Piazza Santa Marta, pero desde fuera resulta casi invisible, oculta tras un edificio residencial de Via Roma que impide verla directamente.",
+    "El matroneo secreto de las monjas: Diseñada para religiosas de clausura, la iglesia posee una tribuna elevada. Las monjas podían asistir a misa desde arriba sin ser vistas por los fieles reunidos en la nave.",
+    "Una galería de maestros del fresco barroco: El interior es un brillante cofre rococó decorado entre los siglos XVII y XVIII. Alberga obras de grandes pintores del barroco ligur como Domenico Piola, Carlone y Valerio Castello.",
+    "La estatua de altar de Parodi: El altar mayor conserva una escultura de enorme valor, Santa Marta en gloria. La figura de mármol fue realizada en 1665 por el célebre maestro Filippo Parodi.",
+    "El custodio de la obra evangélica: En el complejo reposan los restos del abad Paolo Gerolamo Franzoni, fundador en 1751 de la histórica Biblioteca Franzoniana y de la Congregazione degli Operai Evangelici.",
+    "El renacimiento patricio de 1826: Tras las supresiones napoleónicas, el templo vivió años de abandono. En 1826 la congregación de Franzoni consiguió reabrirlo y financió complejas restauraciones para devolverlo a la ciudad.",
+    "Los relieves esculpidos de Orsolino: Grandes nichos en los pilares del presbiterio albergan espléndidas esculturas de santos en mármol de Tommaso Orsolino, caracterizadas por una extraordinaria fuerza expresiva y anatómica.",
+    "El engaño perspectivo de la contrafachada: El coro alto descansa sobre un imponente pórtico interior de tres arcos. Los maestros de la quadratura lo decoraron con estucos que crean una sorprendente ilusión de profundidad espacial."
+  ],
+  "fr": [
+    "Cachée parmi les immeubles modernes : L'église de la fin du XVIe siècle se trouve Piazza Santa Marta, mais reste presque invisible de l'extérieur, dissimulée derrière un immeuble résidentiel de Via Roma qui en bloque la vue directe.",
+    "La tribune secrète des religieuses : Conçue pour des moniales cloîtrées, l'église possède une galerie supérieure suspendue. Les religieuses pouvaient y assister à la messe sans être vues par les fidèles rassemblés dans la nef.",
+    "Une galerie des maîtres fresquistes baroques : L'intérieur est un éblouissant écrin rococo décoré aux XVIIe et XVIIIe siècles. Il réunit des œuvres de grands peintres du baroque ligure tels que Domenico Piola, Carlone et Valerio Castello.",
+    "La statue d'autel de Parodi : Le maître-autel conserve une sculpture d'une valeur exceptionnelle, Santa Marta in gloria. Cette statue en marbre fut réalisée en 1665 par le célèbre Filippo Parodi.",
+    "Le gardien de l'œuvre évangélique : Le complexe abrite les restes de l'abbé Paolo Gerolamo Franzoni, fondateur en 1751 de la Biblioteca Franzoniana et de la Congregazione degli Operai Evangelici.",
+    "La renaissance patricienne de 1826 : Après les suppressions napoléoniennes, le sanctuaire connut des années de déclin. En 1826, la congrégation de Franzoni obtint sa réouverture et finança d'importants travaux pour le rendre à la ville.",
+    "Les sculptures d'Orsolino : De grandes niches des piliers du presbytère accueillent de splendides statues de saints en marbre réalisées par Tommaso Orsolino, remarquables par leur puissance expressive et anatomique.",
+    "L'illusion perspectiviste de la contre-façade : Le chœur supérieur repose sur un imposant portique intérieur à trois arcades. Les maîtres de la quadratura l'ornèrent de stucs créant une impression saisissante de profondeur."
+  ],
+  "ar": [
+    "مختبئة بين المباني الحديثة: تقع كنيسة أواخر القرن السادس عشر في Piazza Santa Marta، لكنها تكاد تكون غير مرئية من الخارج بسبب مبنى سكني في Via Roma يحجب الواجهة عن النظر المباشر.",
+    "شرفة الراهبات السرية: صُممت الكنيسة لراهبات محجبات وتضم رواقاً علوياً معلقاً. كانت الراهبات يحضرن القداس من الأعلى من دون أن يراهن المؤمنون المجتمعون في الصحن.",
+    "معرض لأساتذة الفريسكو الباروكي: الداخل جوهرة روكوكو لامعة زُينت بين القرنين السابع عشر والثامن عشر، وتضم أعمالاً لكبار فناني الباروك الليغوري مثل Domenico Piola وCarlone وValerio Castello.",
+    "تمثال المذبح لبارودي: يحتفظ المذبح الرئيسي بعمل نحتي نفيس هو Santa Marta in gloria. نحت التمثال الرخامي الأستاذ الشهير Filippo Parodi عام 1665.",
+    "حارس العمل الإنجيلي: داخل المجمع ترقد رفات الأب Paolo Gerolamo Franzoni، مؤسس Biblioteca Franzoniana التاريخية وCongregazione degli Operai Evangelici سنة 1751.",
+    "النهضة الأرستقراطية عام 1826: بعد الإلغاءات النابليونية عاشت الكنيسة سنوات من التدهور. وفي 1826 حصلت جماعة Franzoni على إعادة فتحها ومولت أعمال ترميم واسعة لإعادتها إلى المدينة.",
+    "منحوتات أورسولينو: في أعمدة المذبح توجد كوات كبيرة تضم تماثيل رخامية رائعة لقديسين من عمل Tommaso Orsolino، وتتميز بقوة تعبيرية وتشريحية لافتة.",
+    "خدعة المنظور في الواجهة الداخلية: يستند الجوق العلوي إلى رواق داخلي ضخم بثلاثة أقواس. وزينه فنانو المنظور المعماري بالجص لتكوين وهم مدهش بعمق فضائي كبير."
+  ],
+  "ru": [
+    "Спрятана среди современных домов: Церковь конца XVI века стоит на Piazza Santa Marta, но снаружи почти не видна — её скрывает жилой дом на Via Roma, полностью перекрывающий прямой обзор.",
+    "Тайная галерея монахинь: Храм проектировали для затворниц, поэтому в нём устроена подвесная верхняя галерея. Сёстры могли присутствовать на мессе сверху, оставаясь невидимыми для прихожан в нефе.",
+    "Галерея мастеров барочной фрески: Интерьер напоминает сияющую рокайльную шкатулку, украшенную в XVII–XVIII веках. Здесь представлены работы таких мастеров лигурийского барокко, как Domenico Piola, Carlone и Valerio Castello.",
+    "Алтарная статуя Пароди: Главный алтарь хранит выдающуюся мраморную скульптуру Santa Marta in gloria, созданную знаменитым мастером Filippo Parodi в 1665 году.",
+    "Хранитель евангельского дела: В комплексе покоятся останки аббата Paolo Gerolamo Franzoni, основавшего в 1751 году историческую Biblioteca Franzoniana и Congregazione degli Operai Evangelici.",
+    "Аристократическое возрождение 1826 года: После наполеоновских закрытий храм пережил годы упадка. В 1826 году община Franzoni добилась его повторного открытия и оплатила сложную реставрацию.",
+    "Скульптуры Орсолино: В крупных нишах пилонов пресбитерия размещены великолепные мраморные фигуры святых работы Tommaso Orsolino, отличающиеся сильной экспрессией и тщательной анатомической моделировкой.",
+    "Перспективная иллюзия контрфасада: Верхний хор опирается на массивный внутренний портик с тремя арками. Мастера квадратуры украсили его лепниной, создающей впечатление необычайной пространственной глубины."
+  ],
+  "zh": [
+    "藏在现代楼宇之间：这座16世纪末教堂位于 Piazza Santa Marta，但从外部几乎看不见，因为 Via Roma 的一栋住宅楼遮挡了对教堂的直接视线。",
+    "修女的秘密楼廊：教堂原为隐修修女设计，因此设有悬空的上层楼廊。修女们可从高处参加弥撒，而不会被中殿中的普通信徒看到。",
+    "巴洛克湿壁画大师画廊：内部像一只耀眼的洛可可宝盒，装饰形成于17至18世纪，汇集 Domenico Piola、Carlone 和 Valerio Castello 等利古里亚巴洛克大师的作品。",
+    "Parodi 的祭坛雕像：主祭坛保存着极为珍贵的《荣耀中的圣玛尔大》大理石雕像，由著名雕塑家 Filippo Parodi 于1665年完成。",
+    "福音事业的守护者：建筑群内安葬着修院长 Paolo Gerolamo Franzoni。他于1751年创立历史悠久的 Biblioteca Franzoniana 和 Congregazione degli Operai Evangelici。",
+    "1826年的贵族式复兴：拿破仑时期修会被取缔后，教堂经历长期衰败。1826年 Franzoni 的团体争取到重新开放，并资助复杂修复工程，使其重新回归城市生活。",
+    "Orsolino 的雕刻作品：圣所柱体上的大型壁龛里安置着 Tommaso Orsolino 创作的精美圣人大理石雕像，具有强烈的表情和出色的人体塑造。",
+    "反立面的透视幻觉：上层唱诗席建立在三拱内部柱廊之上。透视装饰大师利用灰泥塑造出惊人的空间纵深错觉。"
+  ],
+  "lij": [
+    "Ascosa tra i palassi moderni: A gexa da fin do Cinquecento a l'é in Piazza Santa Marta, ma da fòa a pâ quasi invisibile, ascosa derê a un palasso de Via Roma che a ghe tapa completamente a vista.",
+    "O matroneo segreto de monexie: Pensâ pe monexie de clausua, a gexa a gh'à un matroneo sospeso. E religioze ghe montavan pe sentî a messa da d'ato sensa esse viste da-i fedeli inta navata.",
+    "A galleria di maestri do fresco barocco: L'interno o l'é un scrigno rococò luminoso decorou tra Sei e Settecento. O conserva òpere de grandi pittô do barocco ligure comme Domenico Piola, Carlone e Valerio Castello.",
+    "A statoa d'artâ do Parodi: L'artâ maggiore o conserva a preçioza Santa Marta in gloria, unna statoa de marmo scolpîa da-o famoso Filippo Parodi into 1665.",
+    "O custode de l'òpera evangelica: Into complesso ripòsan e spoglie de l'abate Paolo Gerolamo Franzoni, fondatô into 1751 da Biblioteca Franzoniana e da Congregazione degli Operai Evangelici.",
+    "A rinascita patrizia do 1826: Dòppo e soppression napoleoniche a gexa a l'é andæta in degrado. Into 1826 a congregaçion do Franzoni a l'à ottenûo de riavîla e a l'à pagou restauri importanti pe restituila a-a çittæ.",
+    "E sculture de l'Orsolino: Inti pilastri do presbiterio gh'é grande nicce con belle statoe de santi in marmo de Tommaso Orsolino, conosciue pe-a forza espressiva e anatomica.",
+    "L'inganno prospettico da controfaçciata: O coro de d'ato o sta in sciô un grande porticato interno a trei archi. I maestri da quadratua o l'han decorou con stucchi che fan sembrâ o spaçio molto ciù profondo."
+  ]
+};
+
+  root.church["Santo Stefano"] = {
+  "it": [
+    "La culla di Cristoforo Colombo: Il monumentale tempio romanico custodisce un tesoro devozionale inestimabile: l'antico fonte battesimale medievale originale presso il quale, nell'autunno del 1451, fu solennemente battezzato il navigatore Cristoforo Colombo.",
+    "Il campanile sospeso sul ponte: Osservando la torre a strisce bianche e nere da via XX Settembre, noterai un prodigio ingegneristico: la base del campanile medievale scavalca letteralmente il vuoto, poggiando sul fornice del colossale Ponte Monumentale.",
+    "Tagliata e accorciata per la via: A fine Ottocento, per tracciare i portici Liberty di via XX Settembre, l'intera parte anteriore del tempio fu demolita e arretrata, ricostruendone la facciata filologicamente con le antiche pietre medievali.",
+    "La tomba del Papa guerriero: All'interno del complesso abbaziale riposano le spoglie di una delle figure più potenti del Medioevo ligure: Papa Innocenzo IV Fieschi, celebre per lo scontro epico con l'imperatore Federico II.",
+    "La cripta paleocristiana del V secolo: Sotto la navata si nasconde la cripta di San Michele Arcangelo; si tratta di un ambiente ipogeo risalente al V-VI secolo d.C., antico sepolcreto dei primi cristiani fuori dalle mura.",
+    "I monaci dello sciroppo medicinale: L'abbazia fu retta dai monaci Olivetani, che coltivavano grandi orti collinari. Vi producevano il celebre sciroppo di rose genovese, rimedio terapeutico naturale invidiato in tutte le corti d'Europa.",
+    "Il dipinto del grande allievo di Raffaello: Tra i capolavori scampati alle guerre spicca la Lapidazione di santo Stefano, tela del 1521 dipinta dal geniale artista Giulio Romano, il più famoso allievo di Raffaello.",
+    "Sventrata dal bombardamento del 1942: Durante la guerra, la notte del 22 ottobre 1942, un raid aereo britannico colpì il tempio, causandone il crollo totale della navata centrale e del tetto, fedelmente ricostruiti nel 1955."
+  ],
+  "en": [
+    "The baptismal cradle of Christopher Columbus: This monumental Romanesque church preserves an invaluable devotional treasure: the original medieval baptismal font at which Christopher Columbus was solemnly baptised in the autumn of 1451.",
+    "The bell tower suspended over the bridge: Seen from Via XX Settembre, the black-and-white striped tower reveals an engineering surprise: the base of the medieval bell tower literally spans open space above an arch of the enormous Ponte Monumentale.",
+    "Cut back to make way for the avenue: At the end of the 19th century, construction of Via XX Settembre and its Liberty arcades required the entire front of the church to be demolished and moved back, then carefully rebuilt with old medieval stones.",
+    "The tomb of the warrior pope: Within the abbey complex rest the remains of one of medieval Liguria's most powerful figures, Pope Innocent IV Fieschi, famous for his epic conflict with Emperor Frederick II.",
+    "The 5th-century early Christian crypt: Beneath the nave lies the crypt of San Michele Arcangelo, an underground space dating to the 5th–6th centuries AD and once a burial area for the earliest Christians outside the city walls.",
+    "The monks and medicinal rose syrup: The abbey was run by Olivetan monks who cultivated large hillside gardens. They produced the famous Genoese rose syrup, a natural medicinal remedy reputedly prized in courts across Europe.",
+    "A painting by Raphael's great pupil: Among the masterpieces to survive war is The Stoning of Saint Stephen, painted in 1521 by Giulio Romano, the brilliant artist and most famous pupil of Raphael.",
+    "Gutted by the bombing of 1942: On the night of 22 October 1942 a British air raid struck the church, causing the complete collapse of the central nave and roof. They were faithfully rebuilt in 1955."
+  ],
+  "es": [
+    "La cuna bautismal de Cristóbal Colón: El monumental templo románico conserva un tesoro devocional excepcional: la antigua pila bautismal medieval donde, en el otoño de 1451, fue solemnemente bautizado Cristóbal Colón.",
+    "El campanario suspendido sobre el puente: Desde Via XX Settembre, la torre de franjas blancas y negras revela un prodigio de ingeniería: la base del campanario medieval salva literalmente el vacío apoyándose sobre un arco del enorme Ponte Monumentale.",
+    "Recortada para abrir la avenida: A finales del siglo XIX, la construcción de Via XX Settembre y sus pórticos modernistas obligó a demoler y retranquear toda la parte delantera del templo, reconstruyendo después la fachada con las antiguas piedras medievales.",
+    "La tumba del papa guerrero: En el complejo abacial reposan los restos de una de las figuras más poderosas de la Liguria medieval, el papa Inocencio IV Fieschi, célebre por su enfrentamiento con el emperador Federico II.",
+    "La cripta paleocristiana del siglo V: Bajo la nave se encuentra la cripta de San Michele Arcangelo, un espacio subterráneo de los siglos V-VI d.C. que fue antiguo cementerio de los primeros cristianos fuera de las murallas.",
+    "Los monjes del jarabe medicinal: La abadía estuvo regida por los monjes olivetanos, que cultivaban grandes huertos en la colina. Allí producían el famoso jarabe de rosas genovés, un remedio natural apreciado en las cortes europeas.",
+    "La pintura del gran discípulo de Rafael: Entre las obras maestras salvadas de las guerras destaca La lapidación de san Esteban, lienzo de 1521 de Giulio Romano, genial artista y discípulo más famoso de Rafael.",
+    "Devastada por el bombardeo de 1942: La noche del 22 de octubre de 1942 un ataque aéreo británico golpeó el templo y provocó el derrumbe total de la nave central y del techo, reconstruidos fielmente en 1955."
+  ],
+  "fr": [
+    "Le baptême de Christophe Colomb : Le monumental édifice roman conserve un trésor dévotionnel exceptionnel, les anciens fonts baptismaux médiévaux où Christophe Colomb fut solennellement baptisé à l'automne 1451.",
+    "Le clocher suspendu au-dessus du pont : Depuis Via XX Settembre, la tour rayée de noir et blanc révèle une prouesse d'ingénierie : la base du clocher médiéval franchit littéralement le vide au-dessus d'une arche de l'immense Ponte Monumentale.",
+    "Raccourcie pour laisser place à l'avenue : À la fin du XIXe siècle, l'aménagement de Via XX Settembre et de ses arcades Liberty imposa de démolir puis reculer toute la partie antérieure du temple, avant de reconstruire la façade avec les anciennes pierres médiévales.",
+    "La tombe du pape guerrier : Le complexe abbatial conserve les restes de l'une des figures les plus puissantes de la Ligurie médiévale, le pape Innocent IV Fieschi, célèbre pour son affrontement avec l'empereur Frédéric II.",
+    "La crypte paléochrétienne du Ve siècle : Sous la nef se cache la crypte de San Michele Arcangelo, un espace souterrain des Ve-VIe siècles qui servit de cimetière aux premiers chrétiens hors des murailles.",
+    "Les moines du sirop médicinal : L'abbaye fut dirigée par les Olivétains, qui cultivaient de grands jardins sur la colline. Ils produisaient le fameux sirop de roses génois, remède naturel apprécié dans les cours européennes.",
+    "Le tableau du grand élève de Raphaël : Parmi les chefs-d'œuvre rescapés des guerres figure La Lapidation de saint Étienne, peinte en 1521 par Giulio Romano, brillant artiste et plus célèbre élève de Raphaël.",
+    "Éventrée par le bombardement de 1942 : Dans la nuit du 22 octobre 1942, un raid aérien britannique frappa l'église et provoqua l'effondrement complet de la nef centrale et du toit, fidèlement reconstruits en 1955."
+  ],
+  "ar": [
+    "موضع عماد كريستوف كولومبوس: تحتفظ الكنيسة الرومانسكية الضخمة بكنز تعبدي مهم هو جرن المعمودية الوسيط الأصلي الذي عُمّد عنده كريستوف كولومبوس رسمياً في خريف 1451.",
+    "برج الأجراس المعلق فوق الجسر: عند النظر إلى البرج المخطط بالأبيض والأسود من Via XX Settembre يظهر إنجاز هندسي مدهش، إذ تعبر قاعدة البرج الوسيط فوق الفراغ مستندة إلى قوس من Ponte Monumentale الضخم.",
+    "قُصرت لإفساح الطريق: في أواخر القرن التاسع عشر أدى إنشاء Via XX Settembre وأروقتها إلى هدم الجزء الأمامي كله من الكنيسة وإرجاعه إلى الخلف، ثم أعيد بناء الواجهة بعناية باستخدام الحجارة الوسيطة القديمة.",
+    "قبر البابا المحارب: داخل مجمع الدير ترقد رفات أحد أقوى شخصيات ليغوريا في العصور الوسطى، البابا Innocenzo IV Fieschi، الشهير بصراعه الكبير مع الإمبراطور Federico II.",
+    "سرداب مسيحي مبكر من القرن الخامس: تحت الصحن يوجد سرداب San Michele Arcangelo، وهو فضاء تحت الأرض يعود إلى القرنين الخامس والسادس الميلاديين وكان مقبرة للمسيحيين الأوائل خارج الأسوار.",
+    "رهبان شراب الورد الطبي: أدار الدير رهبان Olivetani الذين زرعوا حدائق واسعة على التلال. وكانوا يصنعون شراب الورد الجنوي الشهير، وهو علاج طبيعي ذاع صيته في بلاطات أوروبا.",
+    "لوحة لتلميذ رافائيل الكبير: من الأعمال التي نجت من الحروب لوحة رجم القديس اسطفانوس، رسمها Giulio Romano عام 1521، وهو الفنان اللامع وأشهر تلاميذ رافائيل.",
+    "دمرها قصف 1942: ليلة 22 أكتوبر 1942 أصابت غارة بريطانية الكنيسة فتسببت في انهيار كامل للصحن الأوسط والسقف، قبل أن يعادا بدقة عام 1955."
+  ],
+  "ru": [
+    "Крещальная купель Христофора Колумба: Монументальный романский храм хранит бесценную святыню — древнюю средневековую купель, у которой осенью 1451 года был торжественно крещён Христофор Колумб.",
+    "Колокольня, зависшая над мостом: Если смотреть с Via XX Settembre, чёрно-белая башня демонстрирует инженерное чудо: основание средневековой колокольни буквально перекрывает пустоту над аркой огромного Ponte Monumentale.",
+    "Укорочена ради новой улицы: В конце XIX века прокладка Via XX Settembre и её аркад потребовала разобрать и отодвинуть назад всю переднюю часть храма. Фасад затем аккуратно восстановили из старого средневекового камня.",
+    "Гробница папы-воина: В аббатском комплексе покоятся останки одной из самых могущественных фигур средневековой Лигурии — папы Иннокентия IV Фиески, известного противостоянием с императором Фридрихом II.",
+    "Раннехристианская крипта V века: Под нефом скрывается крипта San Michele Arcangelo, подземное помещение V–VI веков н.э., служившее кладбищем первых христиан за пределами городских стен.",
+    "Монахи и лечебный розовый сироп: Аббатством управляли оливетанцы, возделывавшие большие сады на холмах. Здесь они готовили знаменитый генуэзский сироп из роз — природное средство, ценившееся при европейских дворах.",
+    "Картина великого ученика Рафаэля: Среди шедевров, переживших войны, выделяется «Побиение камнями святого Стефана» 1521 года работы Giulio Romano, выдающегося художника и самого знаменитого ученика Рафаэля.",
+    "Разрушена бомбардировкой 1942 года: В ночь на 22 октября 1942 года британский авианалёт вызвал полное обрушение центрального нефа и крыши. Их тщательно восстановили в 1955 году."
+  ],
+  "zh": [
+    "哥伦布的洗礼地点：这座宏伟的罗曼式教堂保存着极珍贵的宗教遗物——原始的中世纪洗礼池。传统记载克里斯托弗·哥伦布于1451年秋天在这里接受庄严洗礼。",
+    "悬在桥上的钟楼：从 Via XX Settembre 望向黑白相间的塔楼，可以看到一项工程奇观：中世纪钟楼的底部跨越空隙，直接架在巨大的 Ponte Monumentale 拱洞之上。",
+    "为新大道而被“截短”：19世纪末修建 Via XX Settembre 及其自由风格拱廊时，教堂整个前部被拆除并后移，随后又用原有的中世纪石材按历史样式重新构筑立面。",
+    "“战斗教皇”的墓葬：修道院建筑群内安葬着中世纪利古里亚最有权势的人物之一——教皇 Innocenzo IV Fieschi，他因与皇帝 Federico II 的激烈冲突而闻名。",
+    "5世纪的早期基督教地下室：中殿下方隐藏着 San Michele Arcangelo 地下室，年代可追溯至公元5至6世纪，曾是城墙外早期基督徒的墓地。",
+    "制作药用糖浆的修士：修道院由 Olivetani 修士管理，他们在山坡上经营大面积花园，并制作著名的热那亚玫瑰糖浆，这种天然药物据说在欧洲宫廷中也广受赞誉。",
+    "拉斐尔名徒的杰作：幸存于战争的艺术品中，包括 Giulio Romano 于1521年绘制的《圣斯德望被石击》，作者是才华横溢的画家，也是拉斐尔最著名的学生。",
+    "1942年轰炸重创：1942年10月22日夜，英国空袭击中教堂，中央中殿和屋顶完全坍塌，后来于1955年按原貌重建。"
+  ],
+  "lij": [
+    "O battesimo de Cristoforo Colombo: A grande gexa romanica a conserva o antigo fonte battesimale medievale dove, inte l'outunno do 1451, Cristoforo Colombo o l'é stæto battezzou solennemente.",
+    "O campanin sospeso in sciô ponte: Guardando a torre a righe gianche e negre da Via XX Settembre se vede un prodigio: a base do campanin medievale a passa letteralmente in sciô veuo, appoggiâ in sciô arco do grande Ponte Monumentale.",
+    "Taggiâ e accorciâ pe fâ a stradda: A-a fin do Ottocento, pe fâ Via XX Settembre e-i seu portici, tutta a parte davanti da gexa a l'é stæta demolîa e arretrâ; a façciata a l'é pö stæta reconstruta co-e antighe prie medievali.",
+    "A tomba do Papa guerriero: Into complesso abbaziale ripòsan e spoglie de Papa Innocenzo IV Fieschi, unna de figure ciù potenti da Liguria medievale, famoso pe-o grande scontro con l'imperatô Federico II.",
+    "A cripta paleocristiann-a do V secolo: Sotta a navata gh'é a cripta de San Michele Arcangelo, un ambiente sotterraneo do V-VI secolo, antico sepolcreto di primmi cristian fò d'e mûe.",
+    "I monexi do sciroppo medicinale: L'abbazia a l'ea retta da-i Olivetan, che coltivavan grandi orti in sciâ collinn-a. Ghe preparavan o famoso sciroppo de reuza zeneize, rimedio naturale apprezzou anche inte corti d'Europa.",
+    "O quadro do grande allievo de Raffaello: Tra i capolavori sarvæ da-e guære gh'é a Lapidaçion de Santo Stefano, dipinta into 1521 da Giulio Romano, o ciù famoso allievo de Raffaello.",
+    "Sventrâ da-o bombardamento do 1942: A neutte do 22 ottobre 1942 un raid britannego o colpì a gexa, facendo crollâ completamente a navata centrale e o tetto, pö reconstruti fedelmente into 1955."
+  ]
+};
+
+  root.church["Basilica di Santa Maria Assunta"] = {
+  "it": [
+    "Nata da una vendetta araldica: La monumentale basilica fu commissionata nel 1549 dalla famiglia Sauli. Nacque per fare un torto ai rivali Fieschi, che avevano negato l'accesso alla loro vicina cappella privata.",
+    "Il tocco del maestro Alessi: Per disegnare questo gioiello rinascimentale, i Sauli assunsero Galeazzo Alessi nel 1549. L'architetto perugino si ispirò ai disegni del Bramante per la Basilica di San Pietro.",
+    "La silhouette dal mare con quattro torri: L'Alessi progettò un impianto geometrico a croce greca sormontato da una gigantesca cupola centrale. Doveva essere affiancata da ben quattro campanili angolari, di cui solo due completati.",
+    "Un cantiere durato mezzo secolo: La costruzione della imponente struttura in pietra di Finale fu lunghissima. La prima pietra fu posata il 10 marzo 1552 e la cupola fu terminata solo nel 1602.",
+    "Il ponte monumentale per raggiungerla: Per consentire ai fedeli e ai Sauli di raggiungere la parrocchia aggirando i ripidi valloni collinari, nel 1718 fu edificato il colossale e panoramico Ponte di Carignano.",
+    "I giganti in marmo di Pierre Puget: L'interno ospita quattro colossali statue nelle nicchie dei pilastri centrali. Spiccano i capolavori barocchi del francese Pierre Puget, tra cui il drammatico San Sebastiano.",
+    "La consacrazione del Cardinale Siri: La basilica di Carignano fu elevata a basilica minore in tempi moderni. La solenne cerimonia fu celebrata il 14 agosto 1951 dallo storico Arcivescovo Giuseppe Siri.",
+    "I camminamenti panoramici aperti: Grazie a recenti interventi conservativi, oggi è possibile accedere ai tetti. I visitatori possono percorrere gli antichi camminamenti interni ammirando Genova a 360 gradi, dalla Lanterna fino a Portofino."
+  ],
+  "en": [
+    "Born from an heraldic vendetta: The monumental basilica was commissioned by the Sauli family in 1549, according to tradition after their Fieschi rivals had denied them access to a nearby private chapel.",
+    "The touch of master Alessi: To design this Renaissance jewel, the Sauli hired Galeazzo Alessi in 1549. The architect from Perugia drew inspiration from Bramante's designs for St Peter's Basilica in Rome.",
+    "A sea-view silhouette planned with four towers: Alessi designed a geometric Greek-cross plan crowned by a huge central dome. Four corner bell towers were intended to frame it, but only two were ultimately completed.",
+    "A building site lasting half a century: Construction of the imposing Finale-stone structure took decades. The foundation stone was laid on 10 March 1552 and the dome was not completed until 1602.",
+    "The monumental bridge built to reach it: In 1718 the enormous panoramic Ponte di Carignano was built to let worshippers and the Sauli family reach the church while bypassing the steep ravines of the hill.",
+    "Pierre Puget's marble giants: Four colossal statues occupy niches in the central piers. Among them are Baroque masterpieces by French sculptor Pierre Puget, including the dramatic Saint Sebastian.",
+    "Cardinal Siri's consecration: In modern times the church of Carignano was raised to the rank of minor basilica. The solemn ceremony took place on 14 August 1951 under Genoa's historic archbishop Giuseppe Siri.",
+    "Panoramic walkways open to visitors: Recent conservation work has made the roofs accessible. Visitors can follow the old internal walkways and enjoy a 360-degree view of Genoa, from the Lanterna towards Portofino."
+  ],
+  "es": [
+    "Nacida de una venganza heráldica: La monumental basílica fue encargada por la familia Sauli en 1549. Según la tradición, nació como respuesta a sus rivales Fieschi, que les habían negado el acceso a una capilla privada cercana.",
+    "El toque del maestro Alessi: Para diseñar esta joya renacentista, los Sauli contrataron a Galeazzo Alessi en 1549. El arquitecto de Perugia se inspiró en los proyectos de Bramante para la basílica de San Pedro.",
+    "La silueta desde el mar con cuatro torres: Alessi proyectó una planta geométrica de cruz griega coronada por una enorme cúpula central, que debía estar flanqueada por cuatro campanarios angulares; solo dos llegaron a completarse.",
+    "Una obra que duró medio siglo: La construcción de la imponente estructura de piedra de Finale fue larguísima. La primera piedra se colocó el 10 de marzo de 1552 y la cúpula no quedó terminada hasta 1602.",
+    "El puente monumental para llegar a ella: En 1718 se construyó el enorme y panorámico Ponte di Carignano para permitir a los fieles y a los Sauli alcanzar la iglesia evitando los pronunciados barrancos de la colina.",
+    "Los gigantes de mármol de Pierre Puget: El interior alberga cuatro estatuas colosales en los nichos de los pilares centrales. Destacan obras barrocas del francés Pierre Puget, entre ellas el dramático San Sebastián.",
+    "La consagración del cardenal Siri: En época moderna la iglesia de Carignano fue elevada a basílica menor. La solemne ceremonia tuvo lugar el 14 de agosto de 1951 y fue presidida por el arzobispo Giuseppe Siri.",
+    "Los pasadizos panorámicos abiertos: Gracias a recientes trabajos de conservación hoy se puede acceder a los tejados. Los visitantes recorren antiguos pasos interiores con una vista de 360 grados sobre Génova, desde la Lanterna hasta Portofino."
+  ],
+  "fr": [
+    "Née d'une vengeance héraldique : La monumentale basilique fut commandée en 1549 par la famille Sauli. Selon la tradition, elle devait répondre aux rivaux Fieschi, qui leur avaient refusé l'accès à une chapelle privée voisine.",
+    "La touche du maître Alessi : Pour concevoir ce joyau Renaissance, les Sauli engagèrent Galeazzo Alessi en 1549. L'architecte de Pérouse s'inspira des projets de Bramante pour la basilique Saint-Pierre.",
+    "Une silhouette maritime prévue avec quatre tours : Alessi dessina un plan géométrique en croix grecque dominé par une immense coupole centrale, qui devait être encadrée de quatre clochers d'angle ; seuls deux furent achevés.",
+    "Un chantier d'un demi-siècle : La construction de l'imposante structure en pierre de Finale fut très longue. La première pierre fut posée le 10 mars 1552 et la coupole ne fut achevée qu'en 1602.",
+    "Le pont monumental pour y accéder : En 1718 fut édifié l'immense Ponte di Carignano, offrant un panorama spectaculaire et permettant aux fidèles ainsi qu'aux Sauli de rejoindre l'église en évitant les ravins escarpés de la colline.",
+    "Les géants de marbre de Pierre Puget : Quatre statues colossales occupent les niches des piliers centraux. Parmi elles se trouvent des chefs-d'œuvre baroques du Français Pierre Puget, dont le dramatique Saint Sébastien.",
+    "La consécration par le cardinal Siri : À l'époque moderne, l'église de Carignano fut élevée au rang de basilique mineure. La cérémonie solennelle se déroula le 14 août 1951 sous l'archevêque Giuseppe Siri.",
+    "Les cheminements panoramiques ouverts : Grâce à de récents travaux de conservation, les toitures sont aujourd'hui accessibles. Les visiteurs peuvent parcourir d'anciens passages et admirer Gênes à 360 degrés, de la Lanterna jusqu'à Portofino."
+  ],
+  "ar": [
+    "نشأت من انتقام رمزي بين العائلات: كلفت عائلة Sauli ببناء البازيليكا الضخمة عام 1549. ووفق الرواية، جاءت كرد على عائلة Fieschi المنافسة التي كانت قد منعتهم من دخول مصلى خاص قريب.",
+    "لمسة المعلم Alessi: استعانت عائلة Sauli عام 1549 بالمعماري Galeazzo Alessi لتصميم هذا الجوهرة النهضوية، وقد استلهم المعماري القادم من بيروجيا من مخططات Bramante لكاتدرائية القديس بطرس.",
+    "هيئة بحرية بأربعة أبراج مخططة: صمم Alessi مخططاً هندسياً على شكل صليب يوناني تعلوه قبة مركزية ضخمة، وكان يفترض أن تحيط بها أربعة أبراج أجراس عند الزوايا، لكن اثنين فقط اكتمل بناؤهما.",
+    "ورشة استمرت نصف قرن: استغرق بناء الهيكل الضخم من حجر Finale زمناً طويلاً. وُضع حجر الأساس في 10 مارس 1552 ولم تكتمل القبة إلا سنة 1602.",
+    "الجسر الضخم للوصول إليها: شُيد Ponte di Carignano عام 1718 ليسمح للمؤمنين وعائلة Sauli بالوصول إلى الكنيسة من دون عبور المنحدرات والأودية الحادة على التلة.",
+    "عمالقة Pierre Puget من الرخام: يضم الداخل أربعة تماثيل هائلة في كوات الأعمدة المركزية. ومن أبرزها روائع باروكية للنحات الفرنسي Pierre Puget، ومنها تمثال القديس سباستيان الدرامي.",
+    "تكريس الكاردينال Siri: في العصر الحديث رُفعت كنيسة Carignano إلى مرتبة بازيليكا صغرى. وأقيمت المراسم الرسمية في 14 أغسطس 1951 برئاسة رئيس الأساقفة Giuseppe Siri.",
+    "الممرات البانورامية المفتوحة: بفضل أعمال الحفظ الحديثة بات من الممكن الوصول إلى الأسطح. ويمكن للزوار السير في الممرات القديمة والتمتع بمشهد دائري لجنوة يمتد من Lanterna حتى Portofino."
+  ],
+  "ru": [
+    "Возникла из геральдической мести: Монументальную базилику заказала семья Sauli в 1549 году. По преданию, это стало ответом соперникам Fieschi, которые прежде отказали им в доступе к соседней частной капелле.",
+    "Почерк мастера Alessi: Для проектирования этого шедевра Ренессанса Sauli пригласили Galeazzo Alessi в 1549 году. Архитектор из Перуджи вдохновлялся проектами Браманте для собора Святого Петра.",
+    "Силуэт с моря и четыре задуманные башни: Alessi создал геометрический план в форме греческого креста с огромным центральным куполом. Его должны были окружать четыре угловые колокольни, но завершили только две.",
+    "Стройка длиною в полвека: Возведение массивной конструкции из камня Finale заняло десятилетия. Первый камень заложили 10 марта 1552 года, а купол закончили лишь в 1602 году.",
+    "Монументальный мост для доступа к церкви: В 1718 году построили огромный панорамный Ponte di Carignano, чтобы прихожане и семья Sauli могли добираться до храма, обходя крутые овраги холма.",
+    "Мраморные гиганты Pierre Puget: В нишах центральных пилонов стоят четыре колоссальные статуи. Среди них — барочные шедевры французского скульптора Pierre Puget, включая драматического Святого Себастьяна.",
+    "Освящение кардиналом Siri: В современную эпоху храм Carignano получил статус малой базилики. Торжественная церемония состоялась 14 августа 1951 года при архиепископе Giuseppe Siri.",
+    "Открытые панорамные переходы: После недавних реставрационных работ крыши стали доступны посетителям. По старым внутренним проходам можно увидеть Геную на 360 градусов — от Lanterna до Portofino."
+  ],
+  "zh": [
+    "源于家族“纹章式复仇”：这座宏伟大殿由 Sauli 家族于1549年委托兴建。传统认为，它带有向 Fieschi 对手示威的意味，因为后者曾拒绝他们进入附近的私人礼拜堂。",
+    "大师 Alessi 的手笔：Sauli 家族于1549年聘请 Galeazzo Alessi 设计这座文艺复兴杰作。来自佩鲁贾的建筑师从 Bramante 为圣伯多禄大殿所作的设计中汲取灵感。",
+    "从海上可见的四塔构想：Alessi 设计了几何化的希腊十字平面和巨大的中央穹顶，原计划四角各建一座钟楼，但最终只有两座完工。",
+    "持续半个世纪的工地：这座以 Finale 石材建成的宏伟建筑施工极其漫长。第一块基石于1552年3月10日铺设，直到1602年穹顶才完成。",
+    "为了抵达教堂而建的纪念桥：1718年建成巨大的 Ponte di Carignano，让信徒和 Sauli 家族能够绕过陡峭山谷前往教堂，同时也形成壮观景观。",
+    "Pierre Puget 的大理石巨像：内部中央柱体的壁龛中设有四尊巨型雕像，其中包括法国雕塑家 Pierre Puget 的巴洛克杰作，例如极富戏剧性的圣塞巴斯蒂安。",
+    "Siri 枢机的祝圣：近现代时期，Carignano 教堂被升格为小宗座圣殿。庄严仪式于1951年8月14日举行，由热那亚大主教 Giuseppe Siri 主持。",
+    "开放的全景步道：经过近年的保护工程，如今可以登上屋顶。游客可沿古老内部通道行走，以360度视角眺望热那亚，从 Lanterna 一直到 Portofino。"
+  ],
+  "lij": [
+    "Nasciua da unna vendetta araldica: A grande basilica a l'é stæta ordinâ da-a famiggia Sauli into 1549. Segondo a tradiçion, a voxeiva anche fâ dispetto a-i Fieschi, che ghe aveivan negou l'accesso a-a seu capella privata vexinn-a.",
+    "O tocco do maestro Alessi: Pe disegnâ sto gioiello do Rinascimento, i Sauli han ciamou Galeazzo Alessi into 1549. L'architetto de Perugia o s'é ispirou a-i progetti do Bramante pe San Pietro.",
+    "A silhouette da-o mâ con quattro torri: Alessi o l'à progettou unna pianta a croxe greca con unna grande cupola centrale. Intorno ghe doveivan esse quattro campanin d'angolo, ma solo doi son stæti finii.",
+    "Un cantiere longo mezzo secolo: A construçion da grande struttura de pria de Finale a l'é durâ tantiscimo. A primma pria a l'é stæta missa o 10 marzo 1552 e a cupola a l'é stæta finîa solo into 1602.",
+    "O ponte monumentale pe arrivâghe: Into 1718 o l'é stæto construto o grande Ponte di Carignano, pe permette a-i fedeli e a-i Sauli de arrivâ a-a gexa sensa passâ pe-i ripidi valloin da collinn-a.",
+    "I giganti de marmo de Pierre Puget: L'interno o gh'à quattro statoe colossali inte nicce di pilastri centrali. Tra e ciù belle gh'é i capolavori barocchi do francese Pierre Puget, comme o drammatico San Sebastiano.",
+    "A consacraçion do Cardinale Siri: In epoca moderna a gexa de Carignano a l'é diventâ basilica minore. A cerimònia solenne a l'é stæta celebrâ o 14 agosto 1951 da l'Arcivescovo Giuseppe Siri.",
+    "I camminamenti panoramici averti: Graçie a-i restauri recenti ancheu se peu montâ in sci tetti. I visitatoî peuan camminâ inti antighi passaggi e vedde Zêna a 360 gradi, da-a Lanterna fin a Portofino."
+  ]
+};
+
+  root.church["Santa Maria in Via Lata"] = {
+  "it": [
+    "La sfortuna dei Fieschi: Edificata nel 1340 in stile gotico per la potente famiglia Fieschi, la chiesa divenne il nucleo del loro sfarzoso insediamento patrizio sul panoramico colle di Carignano.",
+    "Cancellata per vendetta: Dopo la fallita e celebre congiura di Gianluigi Fieschi contro l'ammiraglio Andrea Doria nel 1547, la Repubblica espropriò il colle, radendo al suolo il maestoso palazzo nobiliare confinante.",
+    "Stemmi scalpellati via: Per punire duramente il tradimento della casata, i soldati dei Doria danneggiarono la facciata medievale della chiesa, scalpellando e distruggendo ogni singola epigrafe e stemma araldico dei Fieschi.",
+    "Da abbazia a mobilificio: Sconsacrata nel 1858 a causa della decadenza dell'ordine, l'antica struttura medievale visse un'incredibile metamorfosi profana, venendo riutilizzata dai cittadini come fabbrica e deposito di mobili.",
+    "Il campanile sacrificato: Per via delle pessime condizioni strutturali della muratura e del rischio crolli, nel 1859 lo storico campanile gotico fu interamente demolito e rasato al suolo.",
+    "La rinascita dei casanti: Nel 1911 il complesso fu acquistato dalla Confraternita di Sant'Antonio Abate, che ne curò il recupero salvando le caratteristiche mura esterne a fasce alternate in marmo bianco.",
+    "Sventrata dalle bombe alleate: Durante la Seconda Guerra Mondiale, un pesantissimo raid aereo il 7 agosto 1943 distrusse gli arredi e i dipinti barocchi interni, lasciando in piedi solo lo scheletro dei muri.",
+    "Laboratorio di restauro odierno: Dopo una complessa e lunghissima ricostruzione terminata negli anni '80, oggi la ex chiesa gotica ha trovato una nuova vita, ospitando un rinomato laboratorio civico di restauro."
+  ],
+  "en": [
+    "The Fieschi family's bad fortune: Built in 1340 in Gothic style for the powerful Fieschi family, the church became the centre of their lavish patrician settlement on the panoramic hill of Carignano.",
+    "Erased in revenge: After Gianluigi Fieschi's famous failed conspiracy against Admiral Andrea Doria in 1547, the Republic confiscated the hill and demolished the magnificent neighbouring family palace.",
+    "Coats of arms chiselled away: To punish the family's betrayal, Doria's soldiers damaged the medieval church façade, chiselling away and destroying the Fieschi inscriptions and heraldic emblems.",
+    "From abbey to furniture workshop: Deconsecrated in 1858 after the decline of the order, the old medieval complex underwent an extraordinary secular transformation and was reused as a furniture factory and warehouse.",
+    "The sacrificed bell tower: Because the masonry was in very poor condition and at risk of collapse, the historic Gothic bell tower was completely demolished in 1859.",
+    "The revival under the confraternity: In 1911 the complex was purchased by the Confraternita di Sant'Antonio Abate, which restored it and preserved the characteristic exterior walls with alternating bands of white marble.",
+    "Gutted by Allied bombing: During the Second World War, a heavy air raid on 7 August 1943 destroyed the furnishings and Baroque paintings inside, leaving only the shell of the walls standing.",
+    "A restoration workshop today: After a long and complex reconstruction completed in the 1980s, the former Gothic church found a new life as the home of a respected civic restoration workshop."
+  ],
+  "es": [
+    "La mala suerte de los Fieschi: Construida en 1340 en estilo gótico para la poderosa familia Fieschi, la iglesia se convirtió en el núcleo de su suntuoso asentamiento patricio en la panorámica colina de Carignano.",
+    "Borrada por venganza: Tras la famosa y fallida conjura de Gianluigi Fieschi contra el almirante Andrea Doria en 1547, la República expropió la colina y arrasó el magnífico palacio nobiliario contiguo.",
+    "Escudos arrancados a cincel: Para castigar la traición de la familia, los soldados de los Doria dañaron la fachada medieval de la iglesia, picando y destruyendo las inscripciones y emblemas heráldicos de los Fieschi.",
+    "De abadía a fábrica de muebles: Desacralizada en 1858 por la decadencia de la orden, la antigua estructura medieval sufrió una sorprendente transformación profana y fue reutilizada como fábrica y almacén de muebles.",
+    "El campanario sacrificado: Debido al grave deterioro de la mampostería y al peligro de derrumbe, el histórico campanario gótico fue demolido por completo en 1859.",
+    "El renacimiento de la cofradía: En 1911 el complejo fue adquirido por la Confraternita di Sant'Antonio Abate, que dirigió su recuperación y salvó los característicos muros exteriores con bandas alternas de mármol blanco.",
+    "Devastada por las bombas aliadas: Durante la Segunda Guerra Mundial, un fuerte ataque aéreo el 7 de agosto de 1943 destruyó los muebles y las pinturas barrocas interiores, dejando en pie solo el esqueleto de los muros.",
+    "Taller de restauración actual: Tras una larguísima y compleja reconstrucción terminada en los años ochenta, la antigua iglesia gótica encontró una nueva vida como sede de un prestigioso taller cívico de restauración."
+  ],
+  "fr": [
+    "La malchance des Fieschi : Construite en 1340 en style gothique pour la puissante famille Fieschi, l'église devint le cœur de leur somptueux établissement patricien sur la colline panoramique de Carignano.",
+    "Effacée par vengeance : Après la célèbre conjuration manquée de Gianluigi Fieschi contre l'amiral Andrea Doria en 1547, la République confisqua la colline et rasa le magnifique palais familial voisin.",
+    "Des armoiries martelées : Pour punir la trahison de la famille, les soldats des Doria endommagèrent la façade médiévale de l'église en martelant et détruisant inscriptions et emblèmes héraldiques des Fieschi.",
+    "D'abbaye à fabrique de meubles : Désacralisée en 1858 à la suite du déclin de l'ordre, l'ancienne structure médiévale connut une étonnante transformation profane et servit de fabrique ainsi que d'entrepôt de meubles.",
+    "Le clocher sacrifié : En raison du très mauvais état de la maçonnerie et du risque d'effondrement, le clocher gothique historique fut entièrement démoli en 1859.",
+    "La renaissance grâce à la confrérie : En 1911, le complexe fut acheté par la Confraternita di Sant'Antonio Abate, qui entreprit sa restauration et sauva les murs extérieurs caractéristiques à bandes alternées de marbre blanc.",
+    "Éventrée par les bombes alliées : Pendant la Seconde Guerre mondiale, un violent raid aérien du 7 août 1943 détruisit le mobilier et les peintures baroques intérieures, ne laissant debout que l'ossature des murs.",
+    "Un atelier de restauration aujourd'hui : Après une longue et complexe reconstruction achevée dans les années 1980, l'ancienne église gothique a trouvé une nouvelle vie en accueillant un réputé atelier civique de restauration."
+  ],
+  "ar": [
+    "سوء حظ عائلة Fieschi: شُيدت الكنيسة عام 1340 بالطراز القوطي لعائلة Fieschi القوية، وأصبحت مركز تجمعهم الأرستقراطي الفخم على تلة Carignano البانورامية.",
+    "مُحيت بدافع الانتقام: بعد فشل مؤامرة Gianluigi Fieschi الشهيرة ضد الأميرال Andrea Doria عام 1547، صادرت الجمهورية التلة وهدمت القصر النبيل الكبير المجاور.",
+    "شعارات أزيلت بالإزميل: لمعاقبة العائلة على الخيانة ألحق جنود Doria الضرر بالواجهة الوسيطة للكنيسة، ونحتوا وأزالوا النقوش والشعارات النبيلة الخاصة بعائلة Fieschi.",
+    "من دير إلى مصنع أثاث: بعد نزع صفتها الدينية عام 1858 بسبب تراجع الرهبنة، عاشت البنية الوسيطة تحولاً دنيوياً غريباً واستُخدمت كمصنع ومستودع للأثاث.",
+    "برج الأجراس المُضحى به: بسبب سوء حالة البناء وخطر الانهيار، هُدم برج الأجراس القوطي التاريخي بالكامل عام 1859.",
+    "النهضة على يد الأخوية: في 1911 اشترت Confraternita di Sant'Antonio Abate المجمع وتولت ترميمه، محافظة على الجدران الخارجية المميزة ذات الشرائط المتناوبة من الرخام الأبيض.",
+    "دمرها قصف الحلفاء: خلال الحرب العالمية الثانية، دمرت غارة جوية شديدة في 7 أغسطس 1943 الأثاث واللوحات الباروكية الداخلية، ولم يبق قائماً سوى هيكل الجدران.",
+    "مختبر ترميم اليوم: بعد إعادة بناء طويلة ومعقدة اكتملت في ثمانينيات القرن العشرين، وجدت الكنيسة القوطية السابقة وظيفة جديدة كمقر لمختبر مدني معروف للترميم."
+  ],
+  "ru": [
+    "Неудача семьи Fieschi: Построенная в 1340 году в готическом стиле для могущественных Fieschi, церковь стала центром их роскошного аристократического квартала на панорамном холме Carignano.",
+    "Уничтожена из мести: После знаменитого провала заговора Gianluigi Fieschi против адмирала Andrea Doria в 1547 году Республика конфисковала холм и снесла великолепный соседний дворец семьи.",
+    "Гербы сбиты зубилами: Наказывая семейство за измену, солдаты Doria повредили средневековый фасад церкви, соскоблив и уничтожив надписи и геральдические знаки Fieschi.",
+    "Из аббатства в мебельную фабрику: После десакрализации в 1858 году из-за упадка ордена средневековый комплекс пережил необычное светское превращение и стал мебельной мастерской и складом.",
+    "Принесённая в жертву колокольня: Из-за аварийного состояния кладки и риска обрушения историческую готическую колокольню полностью снесли в 1859 году.",
+    "Возрождение под опекой братства: В 1911 году комплекс приобрела Confraternita di Sant'Antonio Abate, организовавшая восстановление и сохранившая характерные наружные стены с чередующимися полосами белого мрамора.",
+    "Разрушена союзнической бомбардировкой: 7 августа 1943 года тяжёлый авианалёт уничтожил внутреннее убранство и барочные картины, оставив стоять лишь каркас стен.",
+    "Современная реставрационная мастерская: После долгой и сложной реконструкции, завершённой в 1980-е годы, бывшая готическая церковь получила новую жизнь как известная городская реставрационная мастерская."
+  ],
+  "zh": [
+    "Fieschi 家族的厄运：教堂于1340年以哥特式风格为强大的 Fieschi 家族兴建，后来成为他们在 Carignano 山丘上奢华贵族聚落的核心。",
+    "因复仇而被抹去：1547年 Gianluigi Fieschi 针对 Andrea Doria 海军上将的著名阴谋失败后，共和国没收山丘，并夷平邻近的宏伟贵族宫殿。",
+    "被凿掉的家徽：为了严惩家族的背叛，Doria 的士兵破坏教堂中世纪立面，把属于 Fieschi 的铭文和纹章逐一凿除。",
+    "从修道院到家具工厂：1858年因修会衰落而失去宗教用途后，这座中世纪建筑经历了离奇的世俗化转型，被市民用作家具工厂和仓库。",
+    "被牺牲的钟楼：由于砌体状况恶化且存在坍塌危险，历史悠久的哥特式钟楼于1859年被彻底拆除。",
+    "兄弟会带来的复兴：1911年，Confraternita di Sant'Antonio Abate 买下建筑群并主持修复，保住了外墙上具有特色的白色大理石交替带状装饰。",
+    "遭盟军轰炸重创：第二次世界大战期间，1943年8月7日的一次猛烈空袭摧毁内部家具和巴洛克绘画，只留下墙体骨架仍然站立。",
+    "如今的修复实验室：经过漫长而复杂的重建工程，直到20世纪80年代才完成。今天这座旧哥特式教堂以新的身份存在，成为知名的市政修复工作室。"
+  ],
+  "lij": [
+    "A sfortunn-a di Fieschi: Construta into 1340 in stile gotico pe-a potente famiggia Fieschi, a gexa a l'é diventâ o centro do seu grande insediamento patrizio in sciâ collinn-a panoramica de Carignano.",
+    "Scancellâ pe vendetta: Dòppo a famosa congiua fallîa de Gianluigi Fieschi contro l'ammiraggio Andrea Doria into 1547, a Repubbrica a l'à espropriou a collinn-a e fæto demolî o grande palasso vexin.",
+    "Stemmi scalpellæ via: Pe punî a famiggia, i sordati di Doria han dannezzou a façciata medievale da gexa, levando a colpi de scalpello e scrite e i stemmi di Fieschi.",
+    "Da abbazia a mobilificio: Sconsacrâ into 1858 pe-a decadenza de l'ordine, a vegia struttura medievale a l'é stæta adêuviâ comme fabbrica e magazzen de mobili.",
+    "O campanin sacrificou: Pe-o pessimo stato de mænn-e e o rischio de crollo, into 1859 o storico campanin gotico o l'é stæto demolio tutto.",
+    "A rinascita da confraternita: Into 1911 o complesso o l'é stæto accattou da-a Confraternita di Sant'Antonio Abate, che a l'à curou o recupero e sarvou e caratteristiche mænn-e esterne a fasce de marmo giancon.",
+    "Sventrâ da-e bombe alleæ: O 7 agosto 1943 un forte raid aereo o l'à destruto arredi e quadri barocchi interni, lasciando in pê quasi solo o scheletro de mænn-e.",
+    "Laboratorio de restauro d'ancheu: Dòppo unna reconstrucion longa e complessa finîa inti anni Ottanta, l'ex gexa gotica a l'à trovou unna neuva vitta comme sede de un conosciuo laboratorio civico de restauro."
+  ]
+};
 
 })();
