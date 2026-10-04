@@ -1436,4 +1436,501 @@
       "Un òrgan che peu sonâ solo poca gente: A gésa a conserva un preçiozo òrgan do Setteçento. Una tradiçion locale a conta che, pe protezze a delicatezza e o valore, solo pochiscimi organisti autorizzæ o pòssan sonâ."
     ]
   };
+  root.church["San Nicolosio"] = {
+    "it": [
+        "Nata da un voto contro la peste: La fondazione del complesso è legata alla devozione verso San Nicola da Tolentino e alle epidemie che colpivano periodicamente la città. Secondo la tradizione, la costruzione fu favorita da un voto con cui i genovesi invocarono la protezione del santo contro la peste.",
+        "La \"Clausura\" violata da Napoleone: Per secoli il monastero ospitò monache agostiniane in stretta clausura. Con le trasformazioni politiche dell'età napoleonica il complesso venne requisito, le religiose allontanate e alcuni spazi convertiti ad usi militari, depositi e locali logistici al servizio delle truppe francesi.",
+        "La metamorfosi barocca di Corradi: L'aspetto attuale deriva soprattutto dalla grande ricostruzione seicentesca progettata da Pietro Antonio Corradi. L'intervento trasformò la precedente struttura in un ambiente barocco ricco di marmi, stucchi e decorazioni, molto diverso dall'edificio medievale originario che lo aveva preceduto.",
+        "I versi dedicati dal poeta Giorgio Caproni: La salita di San Nicolosio e l'atmosfera di questo angolo di Castelletto entrarono nell'immaginario poetico di Giorgio Caproni. La verticalità, la luce e i percorsi in salita della zona sono elementi ricorrenti nelle sue pagine dedicate a Genova.",
+        "La statua del Santo che guarisce i malati: Una venerata statua lignea di San Nicola fu per secoli meta di fedeli e malati. La tradizione popolare attribuiva all'effigie proprietà miracolose e molti salivano fino alla chiesa per toccarne la base o lasciare piccoli ex-voto.",
+        "Una facciata sobria che nasconde l'oro: Dall'esterno San Nicolosio appare relativamente semplice e discreta, quasi confusa tra gli edifici circostanti. L'interno, invece, sorprende per marmi policromi, stucchi e decorazioni barocche, creando un forte contrasto tra sobrietà esterna e ricchezza interna, tipico di molte chiese genovesi.",
+        "Gli affreschi di Giovanni Battista Carlone: La volta conserva un importante ciclo pittorico attribuito a Giovanni Battista Carlone, protagonista del Seicento genovese. Colori vivaci, prospettive e scene religiose avvolgono lo spazio e raccontano episodi legati alla figura e ai miracoli di San Nicola.",
+        "Il campanile che svetta sui tetti di Castelletto: Il campanile fu progettato per emergere sopra gli edifici circostanti. Prima della grande espansione edilizia ottocentesca di Castelletto, il suo profilo e il suono delle campane erano punti di riferimento visivi e sonori per un'ampia parte della città."
+    ],
+    "en": [
+        "Born from a vow against the plague: The foundation of the complex is linked to devotion to Saint Nicholas of Tolentino and to the epidemics that periodically struck the city. Tradition says its construction was encouraged by a vow asking the saint to protect Genoa from the plague.",
+        "The cloister broken by Napoleon: For centuries the monastery housed Augustinian nuns under strict enclosure. During the Napoleonic era the complex was requisitioned, the nuns expelled and some rooms converted to military uses, stores and logistical spaces serving French troops.",
+        "Corradi's Baroque transformation: The present appearance mainly comes from the major 17th-century rebuilding designed by Pietro Antonio Corradi. The intervention turned the earlier structure into a richly Baroque interior of marble, stucco and decoration, very different from the medieval building that preceded it.",
+        "Verses by the poet Giorgio Caproni: The climb to San Nicolosio and the atmosphere of this corner of Castelletto entered Giorgio Caproni's poetic imagination. The area's verticality, light and uphill routes recur in his writings devoted to Genoa.",
+        "The saint's statue that heals the sick: For centuries a venerated wooden statue of Saint Nicholas drew worshippers and the ill. Popular tradition credited it with miraculous powers, and many climbed to the church to touch its base or leave small ex-votos.",
+        "A sober façade hiding gold: From outside San Nicolosio looks relatively simple and discreet, almost lost among the surrounding buildings. Inside, coloured marbles, stuccoes and Baroque decoration create a striking contrast between exterior restraint and interior richness, typical of many Genoese churches.",
+        "The frescoes of Giovanni Battista Carlone: The vault preserves an important painted cycle attributed to Giovanni Battista Carlone, a leading figure of 17th-century Genoa. Vivid colours, perspective effects and religious scenes surround the space and recount episodes linked to Saint Nicholas and his miracles.",
+        "The bell tower above Castelletto's roofs: The bell tower was designed to rise above the surrounding buildings. Before Castelletto's great 19th-century expansion, its silhouette and bells served as visual and acoustic landmarks for a wide area of the city."
+    ],
+    "es": [
+        "Nacida de un voto contra la peste: La fundación del complejo está ligada a la devoción por San Nicolás de Tolentino y a las epidemias que golpeaban periódicamente la ciudad. Según la tradición, su construcción fue favorecida por un voto que pedía al santo proteger Génova de la peste.",
+        "La clausura violada por Napoleón: Durante siglos el monasterio acogió monjas agustinas en estricta clausura. En época napoleónica el complejo fue requisado, las religiosas expulsadas y algunos espacios convertidos en usos militares, almacenes y locales logísticos al servicio de las tropas francesas.",
+        "La metamorfosis barroca de Corradi: El aspecto actual procede sobre todo de la gran reconstrucción del siglo XVII diseñada por Pietro Antonio Corradi. La intervención transformó la estructura anterior en un ambiente barroco rico en mármoles, estucos y decoración, muy distinto del edificio medieval precedente.",
+        "Los versos dedicados por Giorgio Caproni: La subida de San Nicolosio y la atmósfera de este rincón de Castelletto entraron en el imaginario poético de Giorgio Caproni. La verticalidad, la luz y los caminos en pendiente aparecen repetidamente en sus páginas dedicadas a Génova.",
+        "La estatua del santo que cura a los enfermos: Durante siglos una venerada estatua de madera de San Nicolás atrajo fieles y enfermos. La tradición popular le atribuía poderes milagrosos y muchos subían a la iglesia para tocar su base o dejar pequeños exvotos.",
+        "Una fachada sobria que esconde oro: Desde fuera San Nicolosio parece relativamente sencilla y discreta, casi confundida entre los edificios cercanos. El interior, en cambio, sorprende con mármoles policromos, estucos y decoración barroca, creando el típico contraste genovés entre sobriedad exterior y riqueza interna.",
+        "Los frescos de Giovanni Battista Carlone: La bóveda conserva un importante ciclo pictórico atribuido a Giovanni Battista Carlone, figura destacada del siglo XVII genovés. Colores vivos, perspectivas y escenas religiosas envuelven el espacio y narran episodios relacionados con San Nicolás y sus milagros.",
+        "El campanario sobre los tejados de Castelletto: El campanario fue diseñado para sobresalir sobre los edificios vecinos. Antes de la gran expansión urbana del siglo XIX, su perfil y el sonido de sus campanas eran referencias visuales y sonoras para una amplia parte de la ciudad."
+    ],
+    "fr": [
+        "Née d'un vœu contre la peste : La fondation du complexe est liée à la dévotion envers saint Nicolas de Tolentino et aux épidémies qui frappaient périodiquement la ville. Selon la tradition, sa construction fut favorisée par un vœu demandant au saint de protéger Gênes de la peste.",
+        "La clôture violée par Napoléon : Pendant des siècles, le monastère abrita des augustines vivant en stricte clôture. À l'époque napoléonienne, le complexe fut réquisitionné, les religieuses expulsées et certains espaces transformés en locaux militaires, dépôts et installations logistiques pour les troupes françaises.",
+        "La métamorphose baroque de Corradi : L'aspect actuel vient surtout de la grande reconstruction du XVIIe siècle conçue par Pietro Antonio Corradi. L'intervention transforma la structure précédente en un intérieur baroque riche de marbres, stucs et décors, très différent de l'édifice médiéval d'origine.",
+        "Les vers du poète Giorgio Caproni : La montée de San Nicolosio et l'atmosphère de ce coin de Castelletto entrèrent dans l'imaginaire poétique de Giorgio Caproni. La verticalité, la lumière et les parcours en pente reviennent dans ses pages consacrées à Gênes.",
+        "La statue du saint qui guérit les malades : Pendant des siècles, une statue en bois très vénérée de saint Nicolas attira fidèles et malades. La tradition populaire lui attribuait des pouvoirs miraculeux, et beaucoup montaient à l'église pour toucher son socle ou déposer de petits ex-voto.",
+        "Une façade sobre qui cache l'or : De l'extérieur, San Nicolosio paraît relativement simple et discrète, presque confondue avec les bâtiments voisins. À l'intérieur, marbres polychromes, stucs et décors baroques créent un fort contraste entre sobriété extérieure et richesse intérieure, typique de nombreuses églises génoises.",
+        "Les fresques de Giovanni Battista Carlone : La voûte conserve un important cycle peint attribué à Giovanni Battista Carlone, grande figure du XVIIe siècle génois. Couleurs vives, perspectives et scènes religieuses enveloppent l'espace et racontent des épisodes liés à saint Nicolas et à ses miracles.",
+        "Le clocher au-dessus des toits de Castelletto : Le clocher fut conçu pour émerger au-dessus des bâtiments voisins. Avant la grande expansion urbaine du XIXe siècle, sa silhouette et le son de ses cloches constituaient des repères visuels et sonores pour une vaste partie de la ville."
+    ],
+    "ar": [
+        "نشأت من نذر ضد الطاعون: يرتبط تأسيس المجمع بالتعبد للقديس نيقولا من تولنتينو وبالأوبئة التي كانت تضرب المدينة دورياً. وتقول التقاليد إن البناء شُجع بنذر طلب فيه أهل جنوة حماية القديس من الطاعون.",
+        "خرق العزلة الرهبانية في زمن نابليون: لقرون ضم الدير راهبات أغسطينيات في عزلة صارمة. وخلال العصر النابليوني صودر المجمع وأُبعدت الراهبات، وحُولت بعض المساحات إلى استخدامات عسكرية ومخازن ومرافق لوجستية تخدم القوات الفرنسية.",
+        "التحول الباروكي على يد Corradi: يعود المظهر الحالي أساساً إلى إعادة البناء الكبرى في القرن السابع عشر التي صممها Pietro Antonio Corradi. وقد حولت الأعمال البنية السابقة إلى فضاء باروكي غني بالرخام والجص والزخارف، مختلف جداً عن المبنى الوسيط الأقدم.",
+        "أبيات الشاعر Giorgio Caproni: دخل صعود San Nicolosio وأجواء هذا الركن من Castelletto في المخيلة الشعرية لـGiorgio Caproni. فالعمودية والضوء والمسارات الصاعدة في المنطقة عناصر تتكرر في صفحاته المكرسة لجنوة.",
+        "تمثال القديس الذي يشفي المرضى: ظل تمثال خشبي موقر للقديس نيقولا لقرون مقصداً للمؤمنين والمرضى. وكانت التقاليد الشعبية تنسب إليه قوى معجزية، فيصعد كثيرون إلى الكنيسة للمس قاعدته أو ترك نذور صغيرة.",
+        "واجهة متقشفة تخفي الذهب: تبدو San Nicolosio من الخارج بسيطة وهادئة، تكاد تختلط بالمباني المحيطة. أما الداخل فيفاجئ بالرخام متعدد الألوان والجص والزخارف الباروكية، في تناقض واضح بين بساطة الخارج وثراء الداخل، وهو أمر شائع في كنائس جنوة.",
+        "جداريات Giovanni Battista Carlone: تحتفظ القبة الداخلية بدورة تصويرية مهمة منسوبة إلى Giovanni Battista Carlone، أحد أبرز فناني جنوة في القرن السابع عشر. الألوان الزاهية والمنظور والمشاهد الدينية تملأ المكان وتروي قصصاً مرتبطة بالقديس نيقولا ومعجزاته.",
+        "برج الأجراس فوق أسطح Castelletto: صُمم البرج ليبرز فوق المباني المحيطة. وقبل التوسع العمراني الكبير في Castelletto خلال القرن التاسع عشر، كان شكله وصوت أجراسه علامتين بصريتين وسمعيتين لجزء واسع من المدينة."
+    ],
+    "ru": [
+        "Возникла из обета против чумы: Основание комплекса связано с почитанием святого Николая Толентинского и эпидемиями, регулярно поражавшими город. По преданию, строительство поддержал обет, которым генуэзцы просили святого защитить их от чумы.",
+        "Монастырская затворённость, нарушенная Наполеоном: Веками здесь жили августинки в строгом затворе. В Наполеоновскую эпоху комплекс реквизировали, монахинь удалили, а часть помещений приспособили под военные нужды, склады и логистические службы французских войск.",
+        "Барочная метаморфоза Корради: Современный облик в основном связан с большой перестройкой XVII века по проекту Pietro Antonio Corradi. Старую структуру превратили в богатый барочный интерьер с мрамором, лепниной и декором, сильно отличающийся от прежнего средневекового здания.",
+        "Стихи Джорджо Капрони: Подъём к San Nicolosio и атмосфера этого уголка Castelletto вошли в поэтический мир Giorgio Caproni. Вертикальность, свет и дороги в гору часто появляются в его текстах, посвящённых Генуе.",
+        "Статуя святого, исцеляющая больных: Веками почитаемая деревянная статуя святого Николая привлекала верующих и больных. Народная традиция приписывала ей чудесные свойства, и многие поднимались к церкви, чтобы коснуться основания или оставить небольшой вотивный дар.",
+        "Сдержанный фасад, скрывающий золото: Снаружи San Nicolosio выглядит сравнительно просто и незаметно, почти сливаясь с соседними зданиями. Внутри же полихромный мрамор, лепнина и барочный декор создают характерный для Генуи контраст между внешней строгостью и внутренней роскошью.",
+        "Фрески Giovanni Battista Carlone: Свод хранит важный живописный цикл, приписываемый Giovanni Battista Carlone, одному из ведущих мастеров генуэзского XVII века. Яркие краски, перспективные эффекты и религиозные сцены рассказывают истории святого Николая и его чудес.",
+        "Колокольня над крышами Castelletto: Башню спроектировали так, чтобы она возвышалась над окружающей застройкой. До масштабного расширения Castelletto в XIX веке её силуэт и звон колоколов служили заметными зрительными и звуковыми ориентирами для большой части города."
+    ],
+    "zh": [
+        "因抗击瘟疫的誓愿而诞生：建筑群的建立与人们对托伦蒂诺圣尼各老的敬仰，以及周期性侵袭城市的瘟疫有关。传统认为，热那亚人曾立誓祈求圣人庇护，推动了这里的建设。",
+        "被拿破仑时代打破的封闭生活：几个世纪里，修道院内的奥斯定会修女严格遵守隐修制度。拿破仑时期，建筑群被征用，修女被迫离开，一些空间改作军用设施、仓库和法军后勤场所。",
+        "Corradi 带来的巴洛克变身：今天的面貌主要源于17世纪 Pietro Antonio Corradi 设计的大规模重建。工程把早期结构改造成充满彩色大理石、灰泥和装饰的巴洛克空间，与原来的中世纪建筑大不相同。",
+        "Giorgio Caproni 笔下的诗意坡道：San Nicolosio 的上坡路和 Castelletto 这一角落的氛围进入了 Giorgio Caproni 的诗歌世界。当地的垂直感、光线和不断上升的道路，常出现在他描写热那亚的文字中。",
+        "会治病的圣人木像：几个世纪以来，一尊备受敬仰的圣尼各老木像吸引着信徒和病人。民间认为它具有神奇力量，许多人专程爬上山来触摸底座，或留下小型还愿物。",
+        "朴素立面里藏着金碧辉煌：从外观看，San Nicolosio 相当简洁低调，几乎融入周围建筑。进入内部，却能看到彩色大理石、灰泥和巴洛克装饰，形成热那亚许多教堂常见的外简内华对比。",
+        "Giovanni Battista Carlone 的壁画：穹顶保存着一组重要绘画，归于17世纪热那亚名家 Giovanni Battista Carlone。鲜艳色彩、透视效果和宗教场景包围整个空间，讲述圣尼各老及其奇迹。",
+        "高出 Castelletto 屋顶的钟楼：钟楼从设计上就要高于周围建筑。19世纪 Castelletto 大规模扩建之前，它的轮廓和钟声都是城市大片区域重要的视觉与听觉地标。"
+    ],
+    "lij": [
+        "Nata da un voto contra a peste: A fondaçion do complesso a l'é ligâ a-a devoçion pe San Nicola da Tolentino e ae epidemie che toccavan spesso a çittæ. Segondo a tradiçion, a costruçion a l'é stæta favorita da un voto pe domandâ proteçion contra a peste.",
+        "A clausura violâ da Napoleone: Pe secoli o monastero o l'à ospitou monexeghe agostiniane in stretta clausura. Inte l'etæ napoleonica o complesso o l'é stæto requisio, e religiose mandæ via e quarche spaçio trasformou in magazzen e locali militari pe-e truppe françeixi.",
+        "A metamorfosi barocca de Corradi: L'aspetto d'ancheu o deriva soprattutto da grande reconstrucçion do Seiçento progettâ da Pietro Antonio Corradi. A struttura ciù antiga a l'é diventâ un ambiente barocco ricco de marmo, stucchi e decoraçioin, ben diverso da gésa medievale originâ.",
+        "I versi de Giorgio Caproni: A salita de San Nicolosio e l'atmosfera de sto canton de Castelletto son intræ into mondo poetico de Giorgio Caproni. A verticalitæ, a luxe e i percorsi in salita tornan spesso inte seu pagine dedicæ a Zêna.",
+        "A statoa do Santo che guarisce i mæi: Pe secoli unna statoa de legno venerâ de San Nicola a l'é stæta meta de fedeli e mæi. A tradiçion ghe dava virtù miracolose, e tanti montavan fin a-a gésa pe toccâ a baze ò lasciâ piccin ex-voto.",
+        "Una façciata semplice che a asconde l'öu: Da fêua San Nicolosio a pâ discreta e quasi confusa co-i palassi vexin. Drento invece marmo de tanti colori, stucchi e decoraçioin barocche crean un forte contrasto tra sobrietæ esterna e ricchezza interna, tipico de tante gésge zeneixi.",
+        "I affreschi de Giovanni Battista Carlone: A volta a conserva un importante ciclo pittorico attribuio a Giovanni Battista Carlone, protagonista do Seiçento zeneize. Coî vivi, prospettive e scene religioze avvolzan o spaçio e contan episodi de San Nicola e di seu miracoli.",
+        "O campanin in sci tetti de Castelletto: O campanin o l'é stæto progettou pe spuntâ in sci edifixi intorno. Primma da grande espansion edilizia do Ottocento, o seu profilo e o sòn de campann-e eran riferimenti pe unna larga parte da çittæ."
+    ]
+};
+
+  root.church["San Pancrazio"] = {
+    "it": [
+        "La facciata a semicerchio (o concava): La facciata di San Pancrazio non è piatta, ma leggermente concava. Questa soluzione barocca, attribuita ad Antonio Maria Ricca, serviva ad adattare l'edificio allo spazio molto ristretto e irregolare della piazzetta, creando comunque un effetto monumentale.",
+        "La caserma generale dei Cavalieri di Malta: La grande croce ottagonale ricorda il legame moderno con il Sovrano Militare Ordine di Malta. La chiesa è diventata sede genovese dell'ordine, che nei locali vicini svolge anche attività assistenziali e sanitarie rivolte alle persone in difficoltà.",
+        "Rasa al suolo dal Re Sole: L'antica chiesa medievale venne distrutta durante il bombardamento francese del 1684 ordinato da Luigi XIV. L'edificio attuale nacque quindi da una ricostruzione quasi completa, finanziata negli anni immediatamente successivi alla devastazione dalle famiglie legate alla parrocchia.",
+        "Un patto di famiglia tra 24 nobili: Dopo il bombardamento del 1684, la famiglia Pallavicini si mobilitò per ricostruire San Pancrazio. Secondo le fonti, numerosi membri del casato deliberarono insieme importanti finanziamenti privati, trasformando la rinascita della chiesa in una vera impresa dinastica.",
+        "Il capolavoro fiammingo \"tagliato\" in due: Il Trittico di San Pancrazio, attribuito ad Adriaen Isenbrant, venne modificato per adattarlo al nuovo altare barocco. Le ante laterali furono separate e rimaneggiate, mentre pittori locali integrarono alcune parti per armonizzare l'opera con la nuova sistemazione.",
+        "Un mostriciattolo in fuga dietro l'altare: In una scena del trittico compare San Giovanni con una coppa da cui fugge un piccolo essere mostruoso. Il dettaglio richiama una leggenda medievale secondo cui il santo avrebbe neutralizzato con una benedizione il veleno contenuto nel calice.",
+        "L'imperatore prostrato ai piedi del Santo: Nel dipinto d'altare San Pancrazio è rappresentato sopra la figura umiliata dell'imperatore Diocleziano. L'immagine non vuole raccontare un episodio realistico, ma simboleggiare la vittoria spirituale del giovane martire cristiano sulla persecuzione dell'Impero romano e sul potere terreno.",
+        "La firma barocca di Filippo Parodi: L'altare maggiore conserva una statua marmorea di San Pancrazio attribuita a Filippo Parodi. La figura, circondata da putti e decorazioni dinamiche, mostra la grazia e il movimento tipici della grande scultura barocca genovese del Seicento."
+    ],
+    "en": [
+        "The semicircular, or concave, façade: San Pancrazio's façade is not flat but gently concave. This Baroque solution, attributed to Antonio Maria Ricca, adapted the building to the tiny, irregular square while still creating a monumental visual effect.",
+        "Headquarters of the Knights of Malta: The large eight-pointed cross recalls the church's modern link with the Sovereign Military Order of Malta. San Pancrazio became the Genoese seat of the order, which also runs charitable and healthcare activities for people in difficulty in nearby rooms.",
+        "Destroyed by the Sun King: The medieval church was destroyed during the French bombardment of 1684 ordered by Louis XIV. Today's building therefore arose from an almost complete reconstruction financed in the years immediately after the devastation by families connected with the parish.",
+        "A family pact among 24 nobles: After the 1684 bombardment, the Pallavicini family mobilised to rebuild San Pancrazio. Sources say numerous members of the dynasty jointly approved major private funding, turning the church's rebirth into a true family undertaking.",
+        "The Flemish masterpiece cut in two: The San Pancrazio Triptych, attributed to Adriaen Isenbrant, was altered to fit the new Baroque altar. Its side panels were separated and reworked, while local painters added elements to harmonise the work with its new setting.",
+        "A little monster escaping behind the altar: One scene in the triptych shows Saint John holding a cup from which a small monstrous creature escapes. The detail refers to a medieval legend in which the saint neutralised poison in the chalice simply by blessing it.",
+        "The emperor humbled at the saint's feet: In the altarpiece Saint Pancras appears above the humiliated figure of Emperor Diocletian. The image is symbolic rather than realistic, representing the young Christian martyr's spiritual victory over Roman persecution and earthly power.",
+        "Filippo Parodi's Baroque signature: The high altar preserves a marble statue of Saint Pancras attributed to Filippo Parodi. Surrounded by putti and lively decoration, the figure displays the grace and movement typical of Genoa's great 17th-century Baroque sculpture."
+    ],
+    "es": [
+        "La fachada semicircular o cóncava: La fachada de San Pancrazio no es plana, sino ligeramente cóncava. Esta solución barroca, atribuida a Antonio Maria Ricca, permitía adaptar el edificio a la pequeña e irregular plaza sin renunciar a un efecto monumental.",
+        "La sede de los Caballeros de Malta: La gran cruz octogonal recuerda el vínculo moderno con la Soberana Orden Militar de Malta. La iglesia se convirtió en sede genovesa de la orden, que en locales cercanos desarrolla también actividades asistenciales y sanitarias para personas necesitadas.",
+        "Arrasada por el Rey Sol: La antigua iglesia medieval fue destruida durante el bombardeo francés de 1684 ordenado por Luis XIV. El edificio actual nació de una reconstrucción casi completa, financiada poco después de la devastación por familias vinculadas a la parroquia.",
+        "Un pacto familiar entre 24 nobles: Tras el bombardeo de 1684, la familia Pallavicini se movilizó para reconstruir San Pancrazio. Según las fuentes, numerosos miembros del linaje aprobaron juntos importantes financiaciones privadas, convirtiendo el renacimiento de la iglesia en una verdadera empresa dinástica.",
+        "La obra maestra flamenca cortada en dos: El Tríptico de San Pancrazio, atribuido a Adriaen Isenbrant, fue modificado para adaptarlo al nuevo altar barroco. Las hojas laterales se separaron y retocaron, mientras pintores locales añadieron partes para armonizarlo con la nueva disposición.",
+        "Un pequeño monstruo que huye detrás del altar: En una escena del tríptico aparece San Juan con una copa de la que escapa una criatura monstruosa. El detalle recuerda una leyenda medieval según la cual el santo neutralizó con una bendición el veneno contenido en el cáliz.",
+        "El emperador postrado a los pies del santo: En el retablo San Pancracio aparece sobre la figura humillada del emperador Diocleciano. La escena no pretende ser realista, sino simbolizar la victoria espiritual del joven mártir cristiano sobre la persecución romana y el poder terrenal.",
+        "La firma barroca de Filippo Parodi: El altar mayor conserva una estatua de mármol de San Pancracio atribuida a Filippo Parodi. Rodeada de putti y decoración dinámica, la figura muestra la gracia y el movimiento característicos de la gran escultura barroca genovesa del siglo XVII."
+    ],
+    "fr": [
+        "La façade en demi-cercle, ou concave : La façade de San Pancrazio n'est pas plane mais légèrement concave. Cette solution baroque, attribuée à Antonio Maria Ricca, permettait d'adapter l'édifice à la petite place irrégulière tout en conservant un effet monumental.",
+        "Le siège des Chevaliers de Malte : La grande croix octogonale rappelle le lien moderne avec l'Ordre souverain militaire de Malte. L'église est devenue le siège génois de l'ordre, qui mène aussi dans les locaux voisins des activités sociales et sanitaires pour les personnes en difficulté.",
+        "Rasée par le Roi-Soleil : L'ancienne église médiévale fut détruite lors du bombardement français de 1684 ordonné par Louis XIV. L'édifice actuel résulte donc d'une reconstruction presque totale, financée dans les années suivant immédiatement la destruction par les familles liées à la paroisse.",
+        "Un pacte familial entre 24 nobles : Après le bombardement de 1684, la famille Pallavicini se mobilisa pour reconstruire San Pancrazio. Selon les sources, de nombreux membres du lignage votèrent ensemble d'importants financements privés, transformant la renaissance de l'église en véritable entreprise dynastique.",
+        "Le chef-d'œuvre flamand coupé en deux : Le Triptyque de San Pancrazio, attribué à Adriaen Isenbrant, fut modifié pour s'adapter au nouvel autel baroque. Les volets latéraux furent séparés et remaniés, tandis que des peintres locaux complétèrent certaines parties pour harmoniser l'ensemble.",
+        "Un petit monstre en fuite derrière l'autel : Dans une scène du triptyque, saint Jean tient une coupe d'où s'échappe une petite créature monstrueuse. Le détail renvoie à une légende médiévale selon laquelle le saint neutralisa par une bénédiction le poison contenu dans le calice.",
+        "L'empereur prosterné aux pieds du saint : Dans le retable, saint Pancrace domine la figure humiliée de l'empereur Dioclétien. L'image est symbolique : elle représente la victoire spirituelle du jeune martyr chrétien sur la persécution romaine et le pouvoir terrestre.",
+        "La signature baroque de Filippo Parodi : Le maître-autel conserve une statue en marbre de saint Pancrace attribuée à Filippo Parodi. Entourée de putti et d'un décor dynamique, la figure montre la grâce et le mouvement caractéristiques de la grande sculpture baroque génoise du XVIIe siècle."
+    ],
+    "ar": [
+        "واجهة نصف دائرية أو مقعرة: واجهة San Pancrazio ليست مسطحة بل مقعرة قليلاً. هذا الحل الباروكي، المنسوب إلى Antonio Maria Ricca، سمح بتكييف المبنى مع الساحة الصغيرة وغير المنتظمة مع الحفاظ على تأثير بصري مهيب.",
+        "مقر فرسان مالطة: تذكّر الصليب الثماني الكبير بالصلة الحديثة مع منظمة فرسان مالطة ذات السيادة. أصبحت الكنيسة مقر المنظمة في جنوة، وتقام في المباني المجاورة أيضاً أنشطة اجتماعية وصحية لخدمة المحتاجين.",
+        "دمرها ملك الشمس: دُمّرت الكنيسة الوسيطة القديمة في القصف الفرنسي لجنوة سنة 1684 بأمر لويس الرابع عشر. لذلك نشأ المبنى الحالي من إعادة بناء شبه كاملة، مولتها في السنوات التالية مباشرة عائلات مرتبطة بالرعية.",
+        "ميثاق عائلي بين 24 نبيلاً: بعد قصف 1684 تحركت عائلة Pallavicini لإعادة بناء San Pancrazio. وتذكر المصادر أن عدداً كبيراً من أفراد الأسرة أقروا معاً تمويلاً خاصاً مهماً، فتحولت ولادة الكنيسة من جديد إلى مشروع عائلي حقيقي.",
+        "تحفة فلمنكية قُطعت إلى قسمين: عُدّل ثلاثي San Pancrazio المنسوب إلى Adriaen Isenbrant ليتلاءم مع المذبح الباروكي الجديد. فُصل الجناحان الجانبيان وأُعيد العمل فيهما، وأضاف رسامون محليون أجزاء لتنسجم اللوحة مع ترتيبها الجديد.",
+        "وحش صغير يهرب خلف المذبح: في إحدى لوحات الثلاثي يظهر القديس يوحنا ممسكاً كأساً يخرج منه مخلوق صغير غريب. ويشير التفصيل إلى أسطورة من العصور الوسطى تقول إن القديس أبطل السم في الكأس بمجرد أن باركه.",
+        "الإمبراطور منحنٍ عند قدمي القديس: في لوحة المذبح يظهر القديس بانكراس فوق صورة الإمبراطور دقلديانوس مذلولاً. المشهد رمزي لا واقعي، ويعبّر عن انتصار الشهيد المسيحي الشاب روحياً على الاضطهاد الروماني والسلطة الدنيوية.",
+        "بصمة Filippo Parodi الباروكية: يحفظ المذبح الرئيسي تمثالاً رخامياً للقديس بانكراس منسوباً إلى Filippo Parodi. تحيط به putti وزخارف حركية، ويجسد الرشاقة والحركة المميزتين للنحت الباروكي الجنوي الكبير في القرن السابع عشر."
+    ],
+    "ru": [
+        "Полукруглый, или вогнутый, фасад: Фасад San Pancrazio не плоский, а слегка вогнутый. Это барочное решение, приписываемое Antonio Maria Ricca, помогло вписать церковь в тесную и неправильную площадь, сохранив при этом монументальный эффект.",
+        "Штаб-квартира рыцарей Мальты: Большой восьмиконечный крест напоминает о современной связи с Суверенным Мальтийским орденом. Церковь стала генуэзской резиденцией ордена, который в соседних помещениях также ведёт благотворительную и медицинскую деятельность для нуждающихся.",
+        "Уничтожена Королём-Солнцем: Средневековую церковь разрушили во время французского обстрела 1684 года по приказу Людовика XIV. Современное здание возникло в результате почти полной реконструкции, профинансированной вскоре после разрушений семьями, связанными с приходом.",
+        "Семейный договор 24 дворян: После бомбардировки 1684 года семья Pallavicini организовала восстановление San Pancrazio. По источникам, многие представители рода совместно одобрили крупное частное финансирование, превратив возрождение церкви в настоящее династическое предприятие.",
+        "Фламандский шедевр, разрезанный надвое: Триптих San Pancrazio, приписываемый Adriaen Isenbrant, изменили для нового барочного алтаря. Боковые створки разделили и переработали, а местные художники дополнили отдельные части, чтобы вписать произведение в новую композицию.",
+        "Маленький монстр, убегающий за алтарём: На одной сцене триптиха святой Иоанн держит чашу, из которой вырывается маленькое чудовище. Деталь отсылает к средневековой легенде: святой якобы обезвредил яд в чаше одним благословением.",
+        "Император у ног святого: На алтарной картине святой Панкратий изображён над униженной фигурой императора Диоклетиана. Сцена не историческая, а символическая: она показывает духовную победу юного христианского мученика над римскими гонениями и земной властью.",
+        "Барочная подпись Filippo Parodi: Главный алтарь хранит мраморную статую святого Панкратия, приписываемую Filippo Parodi. Фигура в окружении путти и динамичного декора демонстрирует грацию и движение, характерные для генуэзской скульптуры XVII века."
+    ],
+    "zh": [
+        "半圆形、微微内凹的立面：San Pancrazio 的立面并非平直，而是略带内凹。这个归于 Antonio Maria Ricca 的巴洛克方案，使建筑能适应狭小而不规则的广场，同时仍保持庄严的视觉效果。",
+        "马耳他骑士团的热那亚据点：醒目的八角十字标志着这里与马耳他主权骑士团的现代联系。教堂成为该骑士团在热那亚的驻地，附近空间还开展面向困难人群的慈善和医疗活动。",
+        "被“太阳王”摧毁：中世纪老教堂在1684年路易十四下令的法国炮击中被毁。今天的建筑因此来自几乎彻底的重建，由与堂区关系密切的家族在灾难后的几年里出资完成。",
+        "24位贵族的家族协定：1684年炮击后，Pallavicini 家族动员起来重建 San Pancrazio。资料记载，许多家族成员共同决定提供大笔私人资金，使教堂复兴成为真正的家族事业。",
+        "被“切成两半”的佛兰德三联画：归于 Adriaen Isenbrant 的 San Pancrazio 三联画，为适应新巴洛克祭坛而被改造。两侧画翼被拆开并重做，当地画家还补绘部分内容，使整件作品与新布局协调。",
+        "祭坛后逃跑的小怪物：三联画的一幕里，圣若望手持一只杯子，一个小怪物正从杯中逃出。这个细节源自中世纪传说：圣人仅凭祝福便消除了杯中毒药的力量。",
+        "跪伏在圣人脚下的皇帝：祭坛画里，圣庞加爵高居被羞辱的戴克里先皇帝之上。画面并非历史写实，而是象征这位年轻基督徒殉道者在精神上战胜罗马迫害和世俗权力。",
+        "Filippo Parodi 的巴洛克印记：主祭坛保存着一尊归于 Filippo Parodi 的圣庞加爵大理石像。雕像被小天使和富有动感的装饰包围，体现17世纪热那亚巴洛克雕塑典型的优雅与运动感。"
+    ],
+    "lij": [
+        "A façciata a semicerchio, ò concava: A façciata de San Pancrazio a no l'é drita, ma un pö concava. Sta soluçion barocca attribuîa a Antonio Maria Ricca a serviva pe adattâ a gésa a-a piazzetta streita e irregolare, mantenendo un effetto monumentale.",
+        "A sede di Cavaliei de Malta: A grande croxe ottagonale a ricorda o legamme moderno co-o Sovrano Militare Ordine de Malta. A gésa a l'é diventâ a sede zeneize de l'ordine, che inti locali vexin o porta avanti anche attivitæ assistensiali e sanitarie.",
+        "Rasâ da-o Re Sole: L'antiga gésa medievale a l'é stæta destruta into bombardamento françeize do 1684 ordinou da Luigi XIV. L'edificio d'ancheu o nasce quindi da unna reconstrucçion quasi completa, finanziâ da-e famigge ligæ a-a parrocchia.",
+        "Un patto de famiggia tra 24 nobili: Dòppo o bombardamento do 1684, a famiggia Pallavicini a s'é mobilitâ pe reconstrue San Pancrazio. E fonte contan che tanti membri do casato han deciso inscémme importanti finanziamenti privæ, facendo da rinascita unna vera impresa dinastica.",
+        "O capolavoro fiammingo taggiou in doe: O Trittico de San Pancrazio, attribuio a Adriaen Isenbrant, o l'é stæto modificou pe adattalo a-o neuvo artâ barocco. E ante laterali son stæte separæ e rimaneggiæ, con azonte de pittori locali.",
+        "Un mostriciattolo in fugga derê a l'artâ: Inte unna scena do trittico San Zuan o tegne unna coppa da donde scappa un piccin mostro. O dettaggio o richiama unna legenda medievale: o santo o l'avieiva neutralizou o veleno do calice co-a sola benediçion.",
+        "L'imperatô ai pê do Santo: Into dipinto d'artâ San Pancrazio o l'é rappresentou sopra l'imperatô Diocleziano umiliou. A scena a no l'é realistica, ma a simbolizza a vittöia spirituâ do giovane martire cristian contra a persecuçion romana e o potere terreno.",
+        "A firma barocca de Filippo Parodi: L'artâ maggiore o conserva unna statoa de marmo de San Pancrazio attribuîa a Filippo Parodi. Tra putti e decoraçioin in movimento, a figura a mostra a graçia tipica da grande scultura barocca zeneize do Seiçento."
+    ]
+};
+
+  root.church["Santa Maria delle Vigne"] = {
+    "it": [
+        "Il campanile medievale \"sopravvissuto\": Mentre l'interno fu profondamente trasformato in epoca barocca, il campanile romanico-gotico conservò gran parte del suo carattere medievale. La torre, con la sua cuspide e gli elementi in pietra, rimane una delle testimonianze più antiche del complesso.",
+        "Il fantasma della \"Dama Bianca\": Una leggenda del centro storico racconta che nei pressi della chiesa appaia una misteriosa figura femminile vestita di bianco. Lo spettro, legato secondo la tradizione a una giovane nobildonna, sarebbe considerato una presenza benevola e protettiva.",
+        "Il sarcofago romano \"riciclato\" di un medico: All'esterno della chiesa è murato un antico sarcofago romano decorato con scene mitologiche. Nel Medioevo venne riutilizzato per una sepoltura cristiana, esempio di come materiali e opere dell'antichità venissero recuperati e integrati negli edifici successivi.",
+        "La \"festa del vino\" dei caruggi: Il nome stesso della chiesa ricorda l'antica presenza di vigne nella zona. Per secoli la parrocchia mantenne un legame con la vendemmia attraverso benedizioni e feste autunnali dedicate all'uva, molto partecipate da contadini e abitanti del quartiere.",
+        "Il Papa che la elevò a Basilica: In età contemporanea Santa Maria delle Vigne ha ricevuto il titolo di basilica minore. Il riconoscimento ha consolidato il prestigio storico e religioso della chiesa, già da secoli tra i principali luoghi di culto del centro antico genovese.",
+        "Gli affreschi monumentali di Domenico Piola: La volta conserva un vasto ciclo pittorico legato a Domenico Piola e alla sua bottega. Le scene mariane, inserite in elaborate quadrature prospettiche, trasformano il soffitto in una grande scenografia barocca ricca di movimento e colore.",
+        "L'organo da record di Lingiardi: Sulla controfacciata si trova un grande organo ottocentesco costruito dalla celebre ditta Lingiardi. Per dimensioni, complessità e qualità sonora è considerato uno degli strumenti storici più importanti del patrimonio musicale religioso genovese ancora conservato nelle chiese del centro storico.",
+        "Il rifugio sotterraneo dei secoli bui: Sotto il pavimento si estendono ambienti funerari e cripte utilizzati nel corso dei secoli. Durante periodi di guerra e bombardamenti, questi spazi protetti servirono anche come rifugio temporaneo per abitanti del quartiere e persone rimaste senza casa."
+    ],
+    "en": [
+        "The surviving medieval bell tower: While the interior was deeply transformed in the Baroque period, the Romanesque-Gothic bell tower retained much of its medieval character. With its stone elements and pointed top, it remains one of the oldest surviving parts of the complex.",
+        "The ghost of the White Lady: A legend of Genoa's old town tells of a mysterious woman dressed in white appearing near the church. Tradition links the ghost to a young noblewoman and regards her as a benevolent, protective presence.",
+        "The recycled Roman sarcophagus of a doctor: An ancient Roman sarcophagus decorated with mythological scenes is built into the church exterior. In the Middle Ages it was reused for a Christian burial, showing how ancient materials and artworks were incorporated into later buildings.",
+        "The narrow streets' wine festival: The church's name recalls the vineyards that once filled the area. For centuries the parish maintained a link with the grape harvest through blessings and autumn celebrations devoted to wine and grapes, attended by farmers and local residents.",
+        "The Pope who made it a basilica: In modern times Santa Maria delle Vigne received the title of minor basilica. The recognition strengthened the historical and religious prestige of a church already counted for centuries among the principal places of worship in Genoa's old centre.",
+        "Domenico Piola's monumental frescoes: The vault preserves a broad painted cycle associated with Domenico Piola and his workshop. Marian scenes framed by elaborate illusionistic architecture turn the ceiling into a grand Baroque stage full of movement and colour.",
+        "Lingiardi's record-breaking organ: The counter-façade holds a large 19th-century organ built by the celebrated Lingiardi firm. For its scale, complexity and sound quality it is considered among the most important historic instruments still preserved in the churches of Genoa's old centre.",
+        "The underground refuge of dark times: Burial rooms and crypts extend beneath the floor and were used over the centuries. During wars and bombardments these protected spaces also served as temporary shelters for residents of the district and people who had lost their homes."
+    ],
+    "es": [
+        "El campanario medieval superviviente: Mientras el interior se transformó profundamente en época barroca, el campanario románico-gótico conservó gran parte de su carácter medieval. La torre, con su cúspide y sus elementos de piedra, sigue siendo uno de los testimonios más antiguos del conjunto.",
+        "El fantasma de la Dama Blanca: Una leyenda del centro histórico cuenta que cerca de la iglesia aparece una misteriosa mujer vestida de blanco. Según la tradición, el espectro estaría ligado a una joven noble y sería considerado una presencia benévola y protectora.",
+        "El sarcófago romano reciclado de un médico: En el exterior de la iglesia está empotrado un antiguo sarcófago romano decorado con escenas mitológicas. En la Edad Media se reutilizó para un enterramiento cristiano, ejemplo de cómo materiales antiguos se integraban en edificios posteriores.",
+        "La fiesta del vino de los callejones: El propio nombre de la iglesia recuerda las antiguas viñas de la zona. Durante siglos la parroquia mantuvo vínculos con la vendimia mediante bendiciones y fiestas otoñales dedicadas a la uva, muy frecuentadas por campesinos y vecinos.",
+        "El Papa que la elevó a basílica: En época contemporánea Santa Maria delle Vigne recibió el título de basílica menor. El reconocimiento reforzó el prestigio histórico y religioso de una iglesia que desde hacía siglos era uno de los principales lugares de culto del casco antiguo.",
+        "Los frescos monumentales de Domenico Piola: La bóveda conserva un amplio ciclo pictórico relacionado con Domenico Piola y su taller. Las escenas marianas, enmarcadas por elaboradas arquitecturas fingidas, convierten el techo en una gran escenografía barroca llena de movimiento y color.",
+        "El órgano de récord de Lingiardi: En la contrafachada hay un gran órgano del siglo XIX construido por la célebre firma Lingiardi. Por su tamaño, complejidad y calidad sonora se considera uno de los instrumentos históricos más importantes conservados en las iglesias del centro genovés.",
+        "El refugio subterráneo de los tiempos oscuros: Bajo el suelo se extienden criptas y espacios funerarios usados durante siglos. En periodos de guerra y bombardeos, estos ambientes protegidos sirvieron también como refugio temporal para vecinos y personas que habían perdido sus casas."
+    ],
+    "fr": [
+        "Le clocher médiéval survivant : Alors que l'intérieur fut profondément transformé à l'époque baroque, le clocher romano-gothique conserva une grande partie de son caractère médiéval. Avec sa flèche et ses éléments en pierre, il reste l'un des témoignages les plus anciens du complexe.",
+        "Le fantôme de la Dame Blanche : Une légende du centre historique raconte qu'une mystérieuse femme vêtue de blanc apparaît près de l'église. La tradition la relie à une jeune noble et considère ce spectre comme une présence bienveillante et protectrice.",
+        "Le sarcophage romain recyclé d'un médecin : Un ancien sarcophage romain décoré de scènes mythologiques est encastré à l'extérieur de l'église. Au Moyen Âge, il fut réutilisé pour une sépulture chrétienne, exemple du remploi d'œuvres antiques dans des constructions postérieures.",
+        "La fête du vin des ruelles : Le nom même de l'église rappelle les anciennes vignes de la zone. Pendant des siècles, la paroisse conserva un lien avec les vendanges à travers bénédictions et fêtes d'automne consacrées au raisin, très fréquentées par paysans et habitants du quartier.",
+        "Le pape qui l'éleva au rang de basilique : À l'époque contemporaine, Santa Maria delle Vigne reçut le titre de basilique mineure. Cette reconnaissance renforça le prestige historique et religieux d'une église déjà depuis des siècles parmi les principaux lieux de culte du vieux Gênes.",
+        "Les fresques monumentales de Domenico Piola : La voûte conserve un vaste cycle peint lié à Domenico Piola et à son atelier. Les scènes mariales, inscrites dans de savantes architectures en trompe-l'œil, transforment le plafond en une grande scène baroque riche de mouvement et de couleur.",
+        "L'orgue remarquable de Lingiardi : La contre-façade accueille un grand orgue du XIXe siècle construit par la célèbre maison Lingiardi. Par ses dimensions, sa complexité et sa qualité sonore, il compte parmi les instruments historiques les plus importants conservés dans les églises du centre génois.",
+        "Le refuge souterrain des temps sombres : Sous le sol s'étendent des cryptes et espaces funéraires utilisés au fil des siècles. Pendant les guerres et bombardements, ces lieux protégés servirent aussi de refuges temporaires aux habitants du quartier et aux personnes sans logement."
+    ],
+    "ar": [
+        "برج الأجراس الوسيط الذي نجا: بينما تغير داخل الكنيسة كثيراً في العصر الباروكي، احتفظ برج الأجراس الرومانسكي القوطي بجزء كبير من طابعه الوسيط. وبرأسه المدبب وعناصره الحجرية، ما زال من أقدم أجزاء المجمع الباقية.",
+        "شبح السيدة البيضاء: تحكي أسطورة من المدينة القديمة عن امرأة غامضة ترتدي الأبيض وتظهر قرب الكنيسة. وتربط التقاليد هذا الطيف بشابة نبيلة، وتعده حضوراً خيراً وحامياً.",
+        "تابوت روماني أُعيد استخدامه لطبيب: يوجد خارج الكنيسة تابوت روماني قديم مزين بمشاهد أسطورية. وفي العصور الوسطى استُخدم من جديد لدفن مسيحي، مثالاً على دمج مواد وآثار قديمة في مبانٍ لاحقة.",
+        "عيد النبيذ في الأزقة: يذكّر اسم الكنيسة نفسه بكروم العنب التي كانت موجودة في المنطقة. ولقرون حافظت الرعية على صلة بموسم القطاف عبر البركات والاحتفالات الخريفية بالعنب، التي شارك فيها المزارعون وسكان الحي بكثرة.",
+        "البابا الذي رفعها إلى مرتبة بازيليك: في العصر الحديث حصلت Santa Maria delle Vigne على لقب بازيليك صغرى. وقد عزز هذا الاعتراف المكانة التاريخية والدينية لكنيسة كانت منذ قرون من أهم أماكن العبادة في قلب جنوة القديم.",
+        "جداريات Domenico Piola الضخمة: تحتفظ القبة الداخلية بدورة تصويرية واسعة مرتبطة بـDomenico Piola وورشته. مشاهد العذراء داخل عمارة وهمية معقدة تحول السقف إلى مسرح باروكي كبير مليء بالحركة والألوان.",
+        "أورغن Lingiardi الاستثنائي: على الواجهة الداخلية الخلفية يوجد أورغن كبير من القرن التاسع عشر صنعته دار Lingiardi الشهيرة. وبفضل حجمه وتعقيده وجودة صوته يُعد من أهم الآلات التاريخية الباقية في كنائس مركز جنوة القديم.",
+        "ملجأ تحت الأرض في الأزمنة الصعبة: تمتد تحت الأرض غرف دفن وأقبية استُخدمت على مدى القرون. وخلال الحروب والقصف تحولت هذه المساحات المحمية أيضاً إلى ملاجئ مؤقتة لسكان الحي ولمن فقدوا منازلهم."
+    ],
+    "ru": [
+        "Сохранившаяся средневековая колокольня: Интерьер сильно изменился в эпоху барокко, но романско-готическая колокольня сохранила большую часть средневекового характера. Башня с каменными деталями и шпилем остаётся одним из древнейших элементов комплекса.",
+        "Призрак Белой Дамы: Легенда старого города рассказывает о загадочной женщине в белом, появляющейся возле церкви. По преданию, призрак связан с молодой дворянкой и считается доброй, покровительственной фигурой.",
+        "Римский саркофаг, повторно использованный для врача: Снаружи церкви в стену встроен древнеримский саркофаг с мифологическими сценами. В Средние века его использовали для христианского захоронения, показывая, как античные предметы включали в более поздние здания.",
+        "Праздник вина в переулках: Само название церкви напоминает о виноградниках, когда-то окружавших это место. Веками приход сохранял связь со сбором винограда через осенние благословения и праздники, привлекавшие крестьян и жителей квартала.",
+        "Папа, сделавший её базиликой: В Новейшее время Santa Maria delle Vigne получила титул малой базилики. Это признание укрепило исторический и религиозный престиж церкви, которая уже веками была одним из главных храмов старого центра Генуи.",
+        "Монументальные фрески Domenico Piola: Свод украшает большой живописный цикл, связанный с Domenico Piola и его мастерской. Сцены из жизни Богоматери, включённые в сложные перспективные архитектуры, превращают потолок в грандиозную барочную сцену, полную движения и цвета.",
+        "Выдающийся орган Lingiardi: На контрфасаде находится большой орган XIX века знаменитой фирмы Lingiardi. Благодаря размерам, сложности и качеству звучания он считается одним из важнейших исторических инструментов, сохранившихся в церквях старого центра Генуи.",
+        "Подземное убежище тёмных времён: Под полом находятся крипты и погребальные помещения, использовавшиеся веками. Во время войн и бомбардировок эти защищённые пространства служили временными убежищами для жителей квартала и людей, потерявших дома."
+    ],
+    "zh": [
+        "幸存的中世纪钟楼：虽然教堂内部在巴洛克时期经历了巨大改造，罗曼—哥特式钟楼却保留了相当多的中世纪特征。尖顶和石构细节使它成为整个建筑群最古老的遗存之一。",
+        "“白衣女士”的幽灵：老城有传说称，教堂附近会出现一名身穿白衣的神秘女子。传统把这位幽灵与一名年轻贵族女子联系起来，并认为她是一种善意而具有保护意味的存在。",
+        "被“再利用”的罗马医生石棺：教堂外墙嵌着一具带神话浮雕的古罗马石棺。中世纪时，它被重新用于基督教墓葬，是古代材料和艺术品被后世建筑重新利用的典型例子。",
+        "小巷里的“葡萄酒节”：教堂名称本身就让人想起这一带曾经的葡萄园。几个世纪里，堂区一直通过葡萄祝福和秋季庆典保持与采收季的联系，农民和当地居民都会踊跃参加。",
+        "将它提升为宗座圣殿的教宗：近现代时期，Santa Maria delle Vigne 获得了小型宗座圣殿称号。这一认可进一步巩固了它的历史和宗教地位，而它本就早已是热那亚老城最重要的礼拜场所之一。",
+        "Domenico Piola 的大型壁画：穹顶保存着与 Domenico Piola 及其工作室有关的大型绘画周期。圣母题材场景置于复杂的透视建筑中，把天花板变成充满运动和色彩的巴洛克舞台。",
+        "Lingiardi 的大型历史管风琴：教堂后墙设有一架19世纪由著名 Lingiardi 公司制造的大型管风琴。凭借规模、复杂性和音色，它被视为热那亚老城教堂中最重要的历史乐器之一。",
+        "黑暗年代的地下避难所：地板下分布着墓室和地下空间，几个世纪以来一直被使用。战争和轰炸时期，这些受保护的地方还曾临时收容街区居民以及失去住所的人们。"
+    ],
+    "lij": [
+        "O campanin medievale sarvou: Mentre l'interno o l'é stæto trasformou tanto into barocco, o campanin romanico-gotico o l'à conservou gran parte do seu carattere medievale. Co-a cuspide e-e prie, o resta un di testimoni ciù antighi do complesso.",
+        "O fantasma da Damma Gianca: Una legenda do centro storico a conta che vexin a-a gésa apparia unna misteriosa donna vestîa de gianco. Segondo a tradiçion, o fantasma o l'é ligou a unna zovena nobildonna e o saieiva unna presensa benigna e protettrice.",
+        "O sarcofago roman recicclou de un medico: Fêua da gésa gh'é murou un antigo sarcofago roman con scene mitologiche. Into Medioevo o l'é stæto riutilizou pe unna sepultura cristiana, esempio de comme i materiali antighi vegnivan integræ inte costruzioin successive.",
+        "A festa do vin di caroggi: O nomme da gésa o ricorda e antighe vigne da zona. Pe secoli a parrocchia a l'à tegnuo o legamme co-a vendemmia con benediçioin e feste d'autunno dedicate a l'ûga, partecipæ da contadin e abitanti do quartê.",
+        "O Papa che a l'à fæta Basilica: Inte l'etæ contemporanea Santa Maria delle Vigne a l'à ricevuo o titolo de basilica minore. O riconoscimento o l'à rinforçou o prestixio storico e religioso de unna gésa za da secoli importante into centro antigo de Zêna.",
+        "I affreschi monumentali de Domenico Piola: A volta a conserva un grande ciclo pittorico ligou a Domenico Piola e a-a seu bottega. E scene mariane, inte quadrature prospettiche elaborate, trasforman o soffitto in unna grande scenografia barocca pien-a de movimento e coî.",
+        "L'organo de Lingiardi: In sciâ controfaçciata gh'é un grande organo do Ottocento construto da-a celebre ditta Lingiardi. Pe dimenscioin, complessitæ e qualitæ do sòn o l'é considerou un di strumenti storici ciù importanti de gésge do centro storico.",
+        "O rifugio sotta tæra di tempi scui: Sotta o pavimento gh'é cripte e ambienti funerari adêuviæ pe secoli. Inte guære e bombardamenti sti spaçi protetti han servio anche comme rifugio temporaneo pe abitanti do quartê e gente restâ sensa casa."
+    ]
+};
+
+  root.church["Santa Maria Maddalena e San Girolamo Emiliani"] = {
+    "it": [
+        "Nata fuori dalle mura come stazione stradale: La prima cappella sorgeva lungo un'antica via di attraversamento della città, inizialmente fuori dal nucleo fortificato. Con l'ampliamento medievale delle mura, l'area venne inglobata nella città e divenne parte stabile del tessuto urbano dei caruggi.",
+        "L'intitolazione sdoppiata e i Padri Somaschi: Il nome unisce Santa Maria Maddalena e San Girolamo Emiliani perché la parrocchia venne affidata ai Padri Somaschi. L'ordine, fondato dal santo veneziano e particolarmente attivo nell'assistenza agli orfani, ne inserì la memoria nel titolo ufficiale.",
+        "Le statue \"parlanti\" sulla facciata: La facciata ospita statue dedicate alla Vergine, ai santi titolari e alle Virtù teologali. L'insieme trasforma il fronte esterno in una sorta di racconto scolpito, pensato per comunicare un messaggio religioso anche ai passanti dei vicoli circostanti.",
+        "La cupola del Paradiso di Galeotti: La cupola è decorata da Sebastiano Galeotti con una scena dedicata alla gloria della Maddalena. L'uso della prospettiva e della luce crea un effetto teatrale che sembra aprire la volta verso uno spazio celeste più profondo.",
+        "La battaglia dipinta contro i sette Vizi Capitali: Nella volta della navata compare una complessa allegoria morale in cui virtù e vizi vengono messi simbolicamente a confronto. Le figure dinamiche e teatrali trasformano il soffitto in una vera rappresentazione visiva della lotta tra bene e male.",
+        "La cappella del Crocifisso e la scultura lignea: Una delle cappelle conserva un importante Crocifisso ligneo legato alla scultura genovese. L'opera colpisce per il forte realismo anatomico e per l'intensità espressiva, caratteristiche tipiche della produzione devozionale genovese tra Sei e Settecento, particolarmente diffusa nelle chiese della città.",
+        "La pala d'altare \"romana\" copiata: Una pala della chiesa riprende un celebre modello romano dedicato a San Girolamo Emiliani e agli orfani. La versione genovese venne adattata aumentando la presenza dei fanciulli, per sottolineare maggiormente la missione assistenziale dei Padri Somaschi.",
+        "Una galleria dei maestri del barocco genovese: Nonostante le dimensioni relativamente contenute, la chiesa raccoglie opere di numerosi protagonisti della pittura barocca ligure. Tra gli artisti ricordati figurano Bernardo Castello, Paolo Gerolamo Piola, Domenico Parodi e Giacomo Antonio Boni, riuniti in uno spazio relativamente raccolto."
+    ],
+    "en": [
+        "Born outside the walls as a roadside station: The first chapel stood along an old route crossing the city, initially outside the fortified core. With the medieval expansion of the walls, the area was absorbed into Genoa and became a permanent part of the urban fabric of the narrow streets.",
+        "A double dedication and the Somaschi Fathers: The name combines Saint Mary Magdalene and Saint Jerome Emiliani because the parish was entrusted to the Somaschi Fathers. Their order, founded by the Venetian saint and especially devoted to caring for orphans, added his memory to the official title.",
+        "The speaking statues on the façade: The façade carries statues of the Virgin, the titular saints and the Theological Virtues. Together they turn the exterior into a kind of sculpted story designed to communicate a religious message even to people passing through the surrounding alleys.",
+        "Galeotti's dome of Paradise: Sebastiano Galeotti decorated the dome with a scene devoted to the glory of Mary Magdalene. Perspective and light create a theatrical effect that makes the vault seem to open onto a deeper heavenly space.",
+        "The painted battle against the Seven Deadly Sins: The nave vault contains a complex moral allegory in which virtues and vices are symbolically opposed. Dynamic, theatrical figures transform the ceiling into a vivid visual representation of the struggle between good and evil.",
+        "The Crucifix chapel and its wooden sculpture: One chapel preserves an important wooden Crucifix linked to Genoese sculpture. Its strong anatomical realism and expressive intensity are typical of devotional art in Genoa between the 17th and 18th centuries, widely found in the city's churches.",
+        "The copied Roman altarpiece: One altarpiece follows a famous Roman model devoted to Saint Jerome Emiliani and orphans. The Genoese version was adapted by increasing the number of children, making the charitable mission of the Somaschi Fathers even more explicit.",
+        "A gallery of Genoese Baroque masters: Despite its relatively modest size, the church contains works by many leading Ligurian Baroque painters. Artists represented include Bernardo Castello, Paolo Gerolamo Piola, Domenico Parodi and Giacomo Antonio Boni, all gathered in a compact space."
+    ],
+    "es": [
+        "Nacida fuera de las murallas como estación de camino: La primera capilla estaba junto a una antigua vía de paso, inicialmente fuera del núcleo fortificado. Con la ampliación medieval de las murallas, la zona quedó incorporada a la ciudad y pasó a formar parte estable del tejido de los callejones.",
+        "La doble advocación y los Padres Somascos: El nombre une a Santa María Magdalena y San Jerónimo Emiliani porque la parroquia fue confiada a los Padres Somascos. La orden, fundada por el santo veneciano y dedicada especialmente a los huérfanos, incorporó su memoria al título oficial.",
+        "Las estatuas parlantes de la fachada: La fachada reúne estatuas de la Virgen, los santos titulares y las Virtudes Teologales. El conjunto convierte el exterior en una especie de relato esculpido, pensado para transmitir un mensaje religioso incluso a quienes pasan por los callejones vecinos.",
+        "La cúpula del Paraíso de Galeotti: Sebastiano Galeotti decoró la cúpula con una escena dedicada a la gloria de la Magdalena. La perspectiva y la luz crean un efecto teatral que hace parecer que la bóveda se abre hacia un espacio celestial más profundo.",
+        "La batalla pintada contra los siete Pecados Capitales: En la bóveda de la nave aparece una compleja alegoría moral que enfrenta simbólicamente virtudes y vicios. Las figuras dinámicas y teatrales convierten el techo en una representación visual de la lucha entre el bien y el mal.",
+        "La capilla del Crucifijo y la escultura de madera: Una capilla conserva un importante Crucifijo de madera ligado a la escultura genovesa. Su intenso realismo anatómico y expresivo es típico del arte devocional de los siglos XVII y XVIII, muy difundido en las iglesias de la ciudad.",
+        "El retablo romano copiado: Un retablo reproduce un célebre modelo romano dedicado a San Jerónimo Emiliani y a los huérfanos. La versión genovesa se adaptó aumentando la presencia de niños para subrayar aún más la misión asistencial de los Padres Somascos.",
+        "Una galería de maestros del barroco genovés: Aunque la iglesia es relativamente pequeña, reúne obras de numerosos protagonistas del barroco ligur. Entre ellos se recuerdan Bernardo Castello, Paolo Gerolamo Piola, Domenico Parodi y Giacomo Antonio Boni, concentrados en un espacio recogido."
+    ],
+    "fr": [
+        "Née hors des murs comme étape routière : La première chapelle se trouvait le long d'un ancien axe traversant la ville, d'abord hors du noyau fortifié. Avec l'extension médiévale des murailles, le secteur fut intégré à Gênes et devint partie stable du tissu urbain des ruelles.",
+        "Une double dédicace et les Pères Somasques : Le nom associe sainte Marie-Madeleine et saint Jérôme Émilien parce que la paroisse fut confiée aux Pères Somasques. L'ordre, fondé par le saint vénitien et très engagé auprès des orphelins, ajouta sa mémoire au titre officiel.",
+        "Les statues parlantes de la façade : La façade présente des statues de la Vierge, des saints titulaires et des Vertus théologales. L'ensemble transforme l'extérieur en récit sculpté, conçu pour transmettre un message religieux même aux passants des ruelles voisines.",
+        "La coupole du Paradis de Galeotti : Sebastiano Galeotti décora la coupole d'une scène consacrée à la gloire de Marie-Madeleine. Perspective et lumière produisent un effet théâtral donnant l'impression que la voûte s'ouvre sur un espace céleste plus profond.",
+        "La bataille peinte contre les sept Péchés capitaux : La voûte de la nef présente une complexe allégorie morale opposant symboliquement vertus et vices. Les figures dynamiques et théâtrales transforment le plafond en véritable représentation visuelle du combat entre le bien et le mal.",
+        "La chapelle du Crucifix et sa sculpture en bois : Une chapelle conserve un important Crucifix en bois lié à la sculpture génoise. Son fort réalisme anatomique et son intensité expressive caractérisent l'art dévotionnel génois des XVIIe et XVIIIe siècles, très présent dans les églises de la ville.",
+        "Le retable romain copié : Un retable reprend un célèbre modèle romain consacré à saint Jérôme Émilien et aux orphelins. La version génoise fut adaptée en augmentant le nombre d'enfants, afin de souligner davantage la mission charitable des Pères Somasques.",
+        "Une galerie de maîtres du baroque génois : Malgré ses dimensions relativement réduites, l'église réunit des œuvres de nombreux protagonistes du baroque ligure, dont Bernardo Castello, Paolo Gerolamo Piola, Domenico Parodi et Giacomo Antonio Boni, concentrés dans un espace intime."
+    ],
+    "ar": [
+        "نشأت خارج الأسوار كمحطة على الطريق: أقيمت أول كنيسة صغيرة على طريق قديم يعبر المنطقة، وكانت في البداية خارج النواة المحصنة. ومع توسيع الأسوار في العصور الوسطى دخلت المنطقة ضمن المدينة وأصبحت جزءاً ثابتاً من نسيج الأزقة.",
+        "تسمية مزدوجة وآباء Somaschi: يجمع الاسم بين مريم المجدلية والقديس Girolamo Emiliani لأن الرعية أُسندت إلى آباء Somaschi. والنظام الذي أسسه القديس الفينيسي واهتم خصوصاً بالأيتام أضاف ذكره إلى الاسم الرسمي للكنيسة.",
+        "تماثيل تتكلم على الواجهة: تضم الواجهة تماثيل للعذراء والقديسين أصحاب الاسم والفضائل اللاهوتية. والمجموعة تحول الخارج إلى قصة منحوتة صُممت لتوصل رسالة دينية حتى للمارة في الأزقة المحيطة.",
+        "قبة الجنة لـGaleotti: زيّن Sebastiano Galeotti القبة بمشهد يمجد مريم المجدلية. ويخلق استخدام المنظور والضوء أثراً مسرحياً يجعل السقف يبدو كأنه ينفتح على فضاء سماوي أعمق.",
+        "معركة مصورة ضد الخطايا السبع: تظهر في سقف الصحن استعارة أخلاقية معقدة تقابل رمزياً بين الفضائل والرذائل. الشخصيات المتحركة والمسرحية تحول السقف إلى تمثيل بصري حقيقي للصراع بين الخير والشر.",
+        "مصلى الصليب والنحت الخشبي: يحفظ أحد المصليات صليباً خشبياً مهماً مرتبطاً بالنحت الجنوي. ويتميز بواقعية تشريحية قوية وكثافة تعبيرية، وهما من سمات الفن التعبدي في جنوة بين القرنين السابع عشر والثامن عشر.",
+        "نسخة جنوية من لوحة مذبح رومانية: تستلهم إحدى لوحات المذبح نموذجاً رومانياً شهيراً عن القديس Girolamo Emiliani والأيتام. وعدلت النسخة الجنوية بإضافة مزيد من الأطفال لإبراز الرسالة الخيرية لآباء Somaschi.",
+        "معرض لأساتذة الباروك الجنوي: رغم حجم الكنيسة المحدود نسبياً، تضم أعمالاً لعدد من كبار رسامي الباروك الليغوري، بينهم Bernardo Castello وPaolo Gerolamo Piola وDomenico Parodi وGiacomo Antonio Boni، مجتمعين في فضاء صغير."
+    ],
+    "ru": [
+        "Возникла за стенами как придорожная остановка: Первая капелла стояла у старинной дороги, первоначально вне укреплённого ядра. После средневекового расширения стен район оказался внутри города и стал постоянной частью плотной сети генуэзских переулков.",
+        "Двойное посвящение и отцы-сомаски: Название объединяет Марию Магдалину и святого Иеронима Эмилиани, потому что приход передали отцам-сомаскам. Орден, основанный венецианским святым и особенно занимавшийся сиротами, включил его память в официальное посвящение.",
+        "Говорящие статуи на фасаде: Фасад украшен статуями Богоматери, святых-покровителей и богословских добродетелей. Вместе они превращают внешнюю стену в своеобразный скульптурный рассказ, обращённый даже к прохожим в соседних переулках.",
+        "Райский купол Galeotti: Sebastiano Galeotti украсил купол сценой прославления Марии Магдалины. Перспектива и свет создают театральный эффект, будто свод открывается в более глубокое небесное пространство.",
+        "Нарисованная битва против семи смертных грехов: На своде нефа разворачивается сложная моральная аллегория, где добродетели символически противостоят порокам. Динамичные театральные фигуры превращают потолок в наглядное представление борьбы добра и зла.",
+        "Капелла Распятия и деревянная скульптура: В одной из капелл хранится важное деревянное Распятие генуэзской традиции. Сильный анатомический реализм и выразительность характерны для местного религиозного искусства XVII–XVIII веков, широко представленного в городских церквях.",
+        "Скопированный римский алтарный образ: Один алтарный образ повторяет известный римский сюжет со святым Иеронимом Эмилиани и сиротами. Генуэзскую версию изменили, увеличив число детей, чтобы сильнее подчеркнуть благотворительную миссию отцов-сомасков.",
+        "Галерея мастеров генуэзского барокко: Несмотря на сравнительно небольшие размеры, церковь хранит работы многих мастеров лигурийского барокко, включая Bernardo Castello, Paolo Gerolamo Piola, Domenico Parodi и Giacomo Antonio Boni, собранных в компактном пространстве."
+    ],
+    "zh": [
+        "作为城外道路驿站而诞生：最早的小堂建在一条古老通道旁，起初位于城市防御核心之外。中世纪城墙扩建后，这一地区被纳入城内，逐渐成为热那亚小巷城市肌理的一部分。",
+        "双重奉献与 Somaschi 会士：教堂名称同时纪念圣玛利亚·玛达肋纳和圣 Girolamo Emiliani，因为堂区后来交给 Somaschi 会管理。这个由威尼斯圣人创建、特别照顾孤儿的修会，把他的名字加入正式称号。",
+        "立面上“会说话”的雕像：外墙设有圣母、主保圣人以及三超德的雕像。整组作品像一段雕刻出来的故事，让经过周围小巷的路人也能直接读到宗教信息。",
+        "Galeotti 的“天堂穹顶”：Sebastiano Galeotti 在穹顶绘制了玛利亚·玛达肋纳得荣的场景。透视和光线营造出强烈戏剧效果，让人仿佛看到穹顶向更深远的天国空间打开。",
+        "与七宗罪作战的天花板：中殿穹顶有一幅复杂的道德寓意画，把美德与罪恶象征性地对立起来。富有动作感和戏剧性的形象，把天花板变成善恶斗争的视觉舞台。",
+        "十字架小堂与木雕：一座小堂保存着重要的热那亚木制苦像。强烈的解剖写实和情感表现，是17至18世纪热那亚宗教木雕的典型特征，这类作品在当地教堂中十分常见。",
+        "“复制”的罗马祭坛画：教堂一幅祭坛画借鉴罗马著名作品，主题为圣 Girolamo Emiliani 与孤儿。热那亚版本特别增加了儿童数量，以更突出 Somaschi 会照顾弱势儿童的慈善使命。",
+        "热那亚巴洛克名家画廊：虽然教堂规模不大，却汇集多位利古里亚巴洛克重要画家的作品，包括 Bernardo Castello、Paolo Gerolamo Piola、Domenico Parodi 和 Giacomo Antonio Boni。"
+    ],
+    "lij": [
+        "Nata fò d'e mûe comme staçion de stradda: A primma cappella a l'ea longo unna antiga via de passaggio, in prinçipio fò do centro fortificou. Co-o slargamento medievale d'e mûe, a zona a l'é intrâ inta çittæ e inta rete di caroggi.",
+        "L'intitolaçion doppia e i Padri Somaschi: O nomme o mette assieme Santa Maria Maddalena e San Girolamo Emiliani perché a parrocchia a l'é stæta affidâ a-i Padri Somaschi. L'ordine, fondou da-o santo venexian e attivo co-i òrfani, o l'à azonto o seu nomme.",
+        "E statue parlanti in sciâ façciata: A façciata a gh'à statue da Madonna, di santi titolari e d'e Virtù teologali. L'insieme o transforma o fronte in unna specie de racconto scolpio, pensou pe parlâ anche a chi passa inti caroggi intorno.",
+        "A cupola do Paradiso de Galeotti: A cupola a l'é decorâ da Sebastiano Galeotti con unna scena da glöia da Maddalena. Prospettiva e luxe crean un effetto teatrale che o fa pâ che a volta a se avieiva verso un spaçio celeste ciù fondo.",
+        "A battaggia dipinta contra i sette Viççi Capitali: Inta volta da navata gh'é unna allegoria morale dove virtù e viççi se affrontan simbolicamente. Figure dinamiche e teatrali trasforman o soffitto in unna vera rappresentaçion da lotta tra ben e mâ.",
+        "A cappella do Crocifisso e a scultura de legno: Una cappella a conserva un importante Crocifisso ligneo ligou a-a scultura zeneize. O forte realismo anatomico e l'intensitæ espressiva son tipici da produçion devoçionale zeneize tra Sei e Setteçento.",
+        "A pala romana coppiâ: Una pala da gésa a ripiggia un modello roman dedicou a San Girolamo Emiliani e a-i òrfani. A version zeneize a l'é stæta adattâ con ciù figgeu, pe mette in evidensa a mission assistensiale di Padri Somaschi.",
+        "Una galleria di maestri do barocco zeneize: Anche se a gésa a no l'é grande, a raccogge òpere de tanti protagonisti do barocco ligure, comme Bernardo Castello, Paolo Gerolamo Piola, Domenico Parodi e Giacomo Antonio Boni."
+    ]
+};
+
+  root.church["Chiesa del Gesù, di Sant’Ambrogio e Sant’Andrea"] = {
+    "it": [
+        "Fondata dai milanesi in fuga (e il nome \"S. Ambrogio\"): Le origini della chiesa sono legate alla presenza a Genova di religiosi milanesi fuggiti dalle invasioni longobarde. Da questa tradizione deriva l'intitolazione a Sant'Ambrogio, rimasta accanto a quella gesuitica e agli altri santi collegati al complesso.",
+        "Due capolavori assoluti di Pieter Paul Rubens: La chiesa conserva due importanti tele di Rubens: la Circoncisione e il Miracolo di sant'Ignazio. La presenza di questi dipinti rende il Gesù uno dei luoghi fondamentali per comprendere il rapporto tra Genova e la grande pittura europea del Seicento.",
+        "Il quadro \"coperto\" per fare una sorpresa al Doge: Una tradizione racconta che la Circoncisione di Rubens venne tenuta coperta fino a una solenne cerimonia pubblica. Il dipinto sarebbe stato svelato all'improvviso davanti al Doge e alle autorità, trasformando la presentazione in un vero evento spettacolare.",
+        "Guido Reni e l'Assunta \"rubata\" con lo sguardo: Tra i capolavori della chiesa figura anche un'Assunzione della Vergine di Guido Reni. Secondo la tradizione, i pittori genovesi studiarono attentamente l'opera per comprenderne lo stile elegante e luminoso, traendone idee per la propria produzione.",
+        "La cupola dipinta dal Carlone \"a testa in giù\": La decorazione delle volte richiese lunghi lavori su impalcature sospese molto in alto. Giovanni Battista Carlone e i suoi collaboratori dipinsero ampie superfici in posizioni difficili, trasformando la copertura della chiesa in una spettacolare macchina pittorica barocca.",
+        "Finanziata dai fratelli del Doge Pallavicino: La trasformazione monumentale della chiesa fu sostenuta da membri della potente famiglia Pallavicino. Le loro ricchezze, legate alla finanza internazionale e ai rapporti con la Spagna, contribuirono a finanziare uno dei più sontuosi interni gesuitici della città.",
+        "Il passaggio segreto verso il Collegio: Il complesso era collegato agli ambienti del vicino Collegio dei Gesuiti. Attraverso corridoi e passaggi interni, i religiosi potevano raggiungere la chiesa dalle proprie stanze senza uscire sulla strada, mantenendo separati gli spazi comunitari da quelli pubblici.",
+        "Le facciate \"rifatte\" nell'Ottocento: L'interno conserva soprattutto l'impronta barocca, ma la facciata visibile su Piazza Matteotti fu completata molto più tardi. Nell'Ottocento venne ripensata seguendo modelli storicizzanti e arricchita con statue che ne accentuano il carattere monumentale verso la piazza."
+    ],
+    "en": [
+        "Founded by Milanese refugees, and the name Saint Ambrose: The church's origins are linked to Milanese clergy who took refuge in Genoa during the Lombard invasions. This tradition explains the dedication to Saint Ambrose, preserved alongside the Jesuit identity and the other saints associated with the complex.",
+        "Two masterpieces by Peter Paul Rubens: The church preserves two major Rubens paintings, the Circumcision and the Miracle of Saint Ignatius. Their presence makes the Gesù essential for understanding Genoa's relationship with the great European painting of the 17th century.",
+        "The painting kept covered to surprise the Doge: Tradition says Rubens's Circumcision remained hidden until a solemn public ceremony. It was supposedly unveiled suddenly before the Doge and the authorities, turning the presentation itself into a spectacular event.",
+        "Guido Reni and the Assumption stolen with the eyes: Another masterpiece is Guido Reni's Assumption of the Virgin. Tradition says Genoese painters studied it closely to understand its elegant, luminous style and drew ideas from it for their own work.",
+        "Carlone painting upside down beneath the dome: Decorating the vaults required long work on scaffolding suspended high above the floor. Giovanni Battista Carlone and his assistants painted vast surfaces in difficult positions, turning the church ceiling into a spectacular Baroque pictorial machine.",
+        "Financed by the Pallavicino brothers: The monumental transformation of the church was supported by members of the powerful Pallavicino family. Their wealth, linked to international finance and ties with Spain, helped fund one of Genoa's most sumptuous Jesuit interiors.",
+        "The secret passage to the College: The church complex was linked to the nearby Jesuit College. Through internal corridors and passages, the fathers could move from their rooms directly into the church without going outside, keeping community spaces separate from public ones.",
+        "The façade remade in the 19th century: The interior remains predominantly Baroque, but the façade facing Piazza Matteotti was completed much later. In the 19th century it was redesigned in a historicist spirit and enriched with statues that reinforced its monumental presence on the square."
+    ],
+    "es": [
+        "Fundada por milaneses huidos, y el nombre de San Ambrosio: Los orígenes están ligados a religiosos milaneses refugiados en Génova durante las invasiones lombardas. De esa tradición deriva la advocación de San Ambrosio, conservada junto a la identidad jesuita y a los otros santos del complejo.",
+        "Dos obras maestras de Pieter Paul Rubens: La iglesia conserva dos grandes lienzos de Rubens, la Circuncisión y el Milagro de san Ignacio. Su presencia convierte al Gesù en un lugar fundamental para comprender la relación entre Génova y la gran pintura europea del siglo XVII.",
+        "El cuadro cubierto para sorprender al Dux: Una tradición cuenta que la Circuncisión de Rubens permaneció tapada hasta una solemne ceremonia pública. La obra habría sido descubierta de repente ante el Dux y las autoridades, transformando su presentación en un auténtico espectáculo.",
+        "Guido Reni y la Asunción robada con la mirada: Entre las obras maestras figura una Asunción de la Virgen de Guido Reni. Según la tradición, los pintores genoveses la estudiaron atentamente para comprender su estilo elegante y luminoso y extraer ideas para sus propias obras.",
+        "La cúpula pintada por Carlone cabeza abajo: La decoración de las bóvedas exigió largos trabajos sobre andamios suspendidos a gran altura. Giovanni Battista Carlone y sus ayudantes pintaron grandes superficies en posiciones difíciles, convirtiendo la cubierta en una espectacular máquina pictórica barroca.",
+        "Financiada por los hermanos Pallavicino: La transformación monumental fue sostenida por miembros de la poderosa familia Pallavicino. Sus riquezas, ligadas a las finanzas internacionales y a sus relaciones con España, ayudaron a financiar uno de los interiores jesuitas más suntuosos de Génova.",
+        "El pasadizo secreto hacia el Colegio: El complejo estaba conectado con el cercano Colegio de los Jesuitas. Mediante corredores y pasos interiores, los religiosos podían llegar a la iglesia desde sus habitaciones sin salir a la calle, separando los espacios comunitarios de los públicos.",
+        "La fachada rehecha en el siglo XIX: El interior conserva sobre todo su impronta barroca, pero la fachada hacia Piazza Matteotti se terminó mucho más tarde. En el siglo XIX fue rediseñada con criterios historicistas y enriquecida con estatuas que reforzaron su carácter monumental."
+    ],
+    "fr": [
+        "Fondée par des Milanais en fuite, et le nom de saint Ambroise : Les origines sont liées à des religieux milanais réfugiés à Gênes lors des invasions lombardes. Cette tradition explique la dédicace à saint Ambroise, conservée avec l'identité jésuite et les autres saints associés au complexe.",
+        "Deux chefs-d'œuvre de Pieter Paul Rubens : L'église conserve deux grandes toiles de Rubens, la Circoncision et le Miracle de saint Ignace. Leur présence fait du Gesù un lieu essentiel pour comprendre les liens entre Gênes et la grande peinture européenne du XVIIe siècle.",
+        "Le tableau couvert pour surprendre le Doge : Une tradition raconte que la Circoncision de Rubens resta cachée jusqu'à une cérémonie publique solennelle. Elle aurait été dévoilée soudainement devant le Doge et les autorités, transformant sa présentation en véritable spectacle.",
+        "Guido Reni et l'Assomption volée du regard : Parmi les chefs-d'œuvre figure une Assomption de la Vierge de Guido Reni. Selon la tradition, les peintres génois l'étudièrent attentivement pour comprendre son style élégant et lumineux et en tirer des idées pour leurs propres œuvres.",
+        "La coupole peinte par Carlone la tête en bas : La décoration des voûtes exigea de longs travaux sur des échafaudages suspendus très haut. Giovanni Battista Carlone et ses collaborateurs peignirent de vastes surfaces dans des positions difficiles, transformant le plafond en spectaculaire machine baroque.",
+        "Financée par les frères Pallavicino : La transformation monumentale fut soutenue par des membres de la puissante famille Pallavicino. Leurs richesses, liées à la finance internationale et aux relations avec l'Espagne, contribuèrent à financer l'un des intérieurs jésuites les plus somptueux de Gênes.",
+        "Le passage secret vers le Collège : Le complexe était relié au Collège des Jésuites voisin. Des couloirs et passages intérieurs permettaient aux religieux de rejoindre l'église directement depuis leurs chambres sans sortir dans la rue, séparant espaces communautaires et publics.",
+        "La façade refaite au XIXe siècle : L'intérieur conserve surtout son caractère baroque, mais la façade sur Piazza Matteotti fut achevée bien plus tard. Au XIXe siècle, elle fut repensée dans un esprit historiciste et enrichie de statues renforçant son aspect monumental."
+    ],
+    "ar": [
+        "أسسها ميلانيون فارون واسم القديس أمبروز: ترتبط أصول الكنيسة برجال دين من ميلانو لجأوا إلى جنوة زمن الغزوات اللومباردية. ومن هذا التقليد جاءت تسمية القديس أمبروز التي بقيت إلى جانب الهوية اليسوعية والقديسين الآخرين المرتبطين بالمجمع.",
+        "تحفتان لـPieter Paul Rubens: تحفظ الكنيسة لوحتين مهمتين لروبنس، الختان ومعجزة القديس إغناطيوس. وجودهما يجعل كنيسة Gesù مكاناً أساسياً لفهم العلاقة بين جنوة والرسم الأوروبي الكبير في القرن السابع عشر.",
+        "لوحة ظلت مغطاة لمفاجأة الدوج: تقول رواية إن لوحة الختان لروبنس بقيت مغطاة حتى احتفال رسمي كبير. ثم كُشف عنها فجأة أمام الدوج والسلطات، فتحولت عملية تقديمها نفسها إلى حدث مسرحي مذهل.",
+        "Guido Reni ولوحة الصعود التي سرقها الفنانون بنظراتهم: تضم الكنيسة أيضاً صعود العذراء لـGuido Reni. وتقول التقاليد إن رسامي جنوة درسوا اللوحة بدقة لفهم أسلوبها الأنيق والمضيء واستلهام أفكار منها لأعمالهم.",
+        "Carlone يرسم القبة في أوضاع صعبة: تطلب تزيين السقوف عملاً طويلاً فوق سقالات معلقة على ارتفاع كبير. رسم Giovanni Battista Carlone ومساعدوه مساحات واسعة في أوضاع مرهقة، محولين سقف الكنيسة إلى آلة تصويرية باروكية مدهشة.",
+        "مولها إخوة Pallavicino: دعم أعضاء من عائلة Pallavicino القوية التحول الضخم للكنيسة. وثرواتهم المرتبطة بالتمويل الدولي والعلاقات مع إسبانيا ساعدت على تمويل واحد من أفخم التصميمات الداخلية اليسوعية في جنوة.",
+        "الممر السري إلى الكلية: كان المجمع متصلاً بكلية اليسوعيين القريبة. عبر ممرات داخلية كان الرهبان يستطيعون الوصول من غرفهم إلى الكنيسة من دون الخروج إلى الشارع، مع إبقاء المساحات الخاصة منفصلة عن العامة.",
+        "الواجهة التي أُعيدت في القرن التاسع عشر: يحتفظ الداخل أساساً بطابعه الباروكي، لكن الواجهة المطلة على Piazza Matteotti اكتملت لاحقاً بكثير. وفي القرن التاسع عشر أعيد تصميمها بأسلوب تاريخي وزُينت بالتماثيل لتعزيز حضورها المهيب في الساحة."
+    ],
+    "ru": [
+        "Основана миланскими беженцами и имя святого Амвросия: Истоки церкви связывают с миланскими клириками, нашедшими убежище в Генуе во время лангобардских нашествий. Отсюда посвящение святому Амвросию, сохранившееся рядом с иезуитской традицией и другими святыми комплекса.",
+        "Два шедевра Pieter Paul Rubens: В церкви находятся две важные картины Рубенса — «Обрезание» и «Чудо святого Игнатия». Благодаря им Gesù является ключевым местом для понимания связей Генуи с великой европейской живописью XVII века.",
+        "Картина, скрытая ради сюрприза дожу: По преданию, «Обрезание» Рубенса держали закрытым до торжественной публичной церемонии. Затем полотно внезапно открыли перед дожем и властями, превратив сам показ в эффектное событие.",
+        "Guido Reni и «украденное глазами» Вознесение: Среди шедевров есть «Вознесение Богоматери» Guido Reni. По традиции, генуэзские художники внимательно изучали его элегантный и светлый стиль, заимствуя идеи для собственных работ.",
+        "Carlone, расписывающий своды в неудобных позах: Декор сводов потребовал долгой работы на высоких лесах. Giovanni Battista Carlone и его помощники расписывали огромные поверхности в сложных положениях, превращая перекрытие церкви в грандиозную барочную живописную машину.",
+        "Финансирование братьев Pallavicino: Монументальную перестройку поддержали представители могущественной семьи Pallavicino. Их богатство, связанное с международными финансами и отношениями с Испанией, помогло создать один из самых роскошных иезуитских интерьеров Генуи.",
+        "Тайный переход в Коллегию: Комплекс был соединён с соседним иезуитским Коллегиумом. По внутренним коридорам монахи могли попадать из своих комнат прямо в церковь, не выходя на улицу, сохраняя разделение между общинными и публичными пространствами.",
+        "Фасад, переделанный в XIX веке: Интерьер в основном сохраняет барочный характер, но фасад на Piazza Matteotti завершили гораздо позже. В XIX веке его переосмыслили в историзирующем стиле и дополнили статуями, усилив монументальность со стороны площади."
+    ],
+    "zh": [
+        "由逃难的米兰教士奠定起源，也解释了“圣盎博罗削”之名：传统认为，伦巴第人入侵时，一批米兰神职人员逃到热那亚。由此形成对圣盎博罗削的奉献，并与后来耶稣会传统及其他主保圣人并存。",
+        "Pieter Paul Rubens 的两幅杰作：教堂保存鲁本斯的重要作品《割礼》和《圣依纳爵的奇迹》。这些画使 Gesù 教堂成为理解17世纪热那亚与欧洲顶级绘画交流的关键地点。",
+        "为了给总督惊喜而“遮住”的画：传统称，鲁本斯《割礼》在一次隆重公共仪式前一直被遮盖。到了总督和官员面前才突然揭幕，使作品亮相本身变成一场极具戏剧性的活动。",
+        "Guido Reni 与“用眼睛偷走”的《圣母升天》：教堂还收藏 Guido Reni 的《圣母升天》。据说热那亚画家反复研究它优雅明亮的风格，并从中吸收灵感用于自己的创作。",
+        "Carlone 在高空脚手架上绘制穹顶：穹顶装饰需要长期在高处脚手架上作业。Giovanni Battista Carlone 与助手们在艰难姿势下绘制大片表面，把整个天花板变成一座壮观的巴洛克绘画机器。",
+        "由 Pallavicino 家族成员出资：教堂的宏伟改造得到强大的 Pallavicino 家族支持。他们通过国际金融和与西班牙的关系积累财富，帮助资助了热那亚最华丽的耶稣会室内空间之一。",
+        "通往学院的秘密通道：教堂建筑群与附近耶稣会学院相连。修士可以通过内部走廊从自己的房间直接进入教堂，无需走上街道，从而把团体生活空间与公共区域分开。",
+        "19世纪才完成的立面：内部主要保持巴洛克风格，而 Piazza Matteotti 一侧的立面完成得晚得多。19世纪它按历史主义思路重新设计，并增加雕像，强化了面向广场的纪念性。"
+    ],
+    "lij": [
+        "Fondâ da milaneixi in fugga e o nomme de Sant'Ambrogio: E origini da gésa son ligæ a religioxi de Milan fuggii a Zêna durante e invasion longobarde. Da sta tradiçion o deriva o titolo de Sant'Ambrogio, restou assieme a-o legamme gesuita e a-i atri santi.",
+        "Doi capolavori de Pieter Paul Rubens: A gésa a conserva doe grandi tele de Rubens, a Circoncision e o Miracolo de Sant'Ignazio. A seu presensa a rende o Gesù un pòsto fondamentale pe capî o rapporto tra Zêna e a grande pittua europea do Seiçento.",
+        "O quadro coverto pe sorprende o Duxe: Una tradiçion a conta che a Circoncision de Rubens a l'é restâ coverta fin a unna cerimonia solenne. O dipinto o saieiva stæto scoverto all'improvviso davanti a-o Duxe e ae autoritæ, trasformando a presentaçion in spettacolo.",
+        "Guido Reni e l'Assunta rubâ co-i euggi: Tra i capolavori gh'é anche unna Assunçion da Vergine de Guido Reni. Segondo a tradiçion, i pittori zeneixi a studiavan pe capî o seu stile elegante e luminoxo e tirâ fêua idee pe-e seu òpere.",
+        "A cupola dipinta da Carlone in posiçioin diffiçili: A decoraçion d'e volte a l'à domandou longhi travaggi in sci impalcature ben in erto. Giovanni Battista Carlone e i seu collaboratoî han dipinto grande superfici, trasformando o tetto in unna spettacolare macchina barocca.",
+        "Finanziâ da-i Pallavicino: A trasformaçion monumentale da gésa a l'é stæta sostegnûa da membri da potente famiggia Pallavicino. E seu ricchezze, ligæ a finansa internaçionale e a-i rapporti con Spagna, han finanziou un di interni gesuiti ciù ricchi de Zêna.",
+        "O passaggio segreto verso o Collegio: O complesso o l'ea collegou a-o vexin Collegio di Gesuiti. Con corridoi e passaggi interni, i religioxi podeivan arrivâ da-e seu stanse a-a gésa sensa sciortî in stradda.",
+        "A façciata rifæta into Ottocento: L'interno o conserva soprattutto l'impronta barocca, ma a façciata verso Piazza Matteotti a l'é stæta completâ tanto ciù tardi. Into Ottocento a l'é stæta ridisegnâ con gusto storico e arricchîa de statue."
+    ]
+};
+
+  root.church["Chiesa delle Scuole Pie"] = {
+    "it": [
+        "Nata per l'istruzione gratuita dei ragazzi poveri: Il complesso nacque grazie ai Padri Scolopi, ordine dedicato all'educazione popolare. Le scuole offrivano istruzione gratuita ai figli delle famiglie meno abbienti, rappresentando una delle prime esperienze cittadine organizzate di insegnamento accessibile anche ai bambini poveri.",
+        "Una facciata che \"spinge\" i vicoli: La chiesa si affaccia su uno spazio molto ristretto. La facciata leggermente convessa fu pensata per creare maggiore movimento e monumentalità, compensando la piccolezza della piazzetta e dando l'impressione che l'edificio si allarghi verso chi lo osserva.",
+        "I bassorilievi capolavoro di Francesco Maria Schiaffino: L'interno conserva un importante ciclo di bassorilievi marmorei attribuiti a Francesco Maria Schiaffino. Le scene dedicate alla Vergine e all'infanzia di Gesù uniscono eleganza, movimento e grande capacità narrativa, tipiche della scultura genovese del Settecento.",
+        "La pala dei Re Magi sopravvissuta: Sull'altare maggiore si trova un'Adorazione dei Magi di Domenico Fiasella. Secondo la tradizione, durante le requisizioni napoleoniche l'opera sarebbe stata nascosta per impedirne il sequestro, permettendo al dipinto di rimanere nella chiesa e di arrivare fino a noi.",
+        "L'effetto \"scenografia teatrale\" degli stucchi: Stucchi bianchi e dorati incorniciano finestre e volte con effetti molto scenografici. Le decorazioni, legate alla cultura barocca e alle maestranze specializzate dell'epoca, trasformano l'aula in uno spazio quasi teatrale, pensato per stupire e coinvolgere.",
+        "La tomba segreta dei benefattori: La scuola gratuita viveva anche grazie alle donazioni di famiglie e mercanti. Alcuni benefattori ottennero il diritto di essere sepolti nel complesso, lasciando beni e denaro destinati a sostenere libri, pasti e istruzione per gli allievi più poveri.",
+        "Un'acustica nata per la predicazione: La forma dell'interno favorisce la diffusione della voce. Una buona acustica era essenziale per i Padri Scolopi, che dovevano farsi ascoltare sia durante le funzioni religiose sia nell'attività educativa rivolta a gruppi numerosi di giovani.",
+        "Il mega-restauro salvavita del Novecento: Nel Novecento infiltrazioni e problemi strutturali resero necessari lunghi interventi di restauro. I lavori consolidarono la volta, recuperarono marmi e decorazioni e permisero di conservare uno dei complessi religiosi più raccolti e caratteristici del centro storico."
+    ],
+    "en": [
+        "Born to provide free education for poor children: The complex was created by the Piarist Fathers, an order devoted to popular education. Their schools offered free teaching to children from poorer families, among Genoa's earliest organised experiences of education accessible to the disadvantaged.",
+        "A façade that pushes into the alleys: The church faces a very confined space. Its slightly convex façade was designed to create movement and monumentality, compensating for the tiny square and making the building seem to expand toward the viewer.",
+        "Francesco Maria Schiaffino's masterpiece reliefs: The interior preserves an important cycle of marble bas-reliefs attributed to Francesco Maria Schiaffino. Scenes of the Virgin and Christ's childhood combine elegance, movement and strong narrative skill, hallmarks of 18th-century Genoese sculpture.",
+        "The surviving Adoration of the Magi: The high altar holds an Adoration of the Magi by Domenico Fiasella. Tradition says that during Napoleonic confiscations the painting was hidden to prevent its seizure, allowing it to remain in the church and survive to the present.",
+        "The theatrical scenery effect of the stuccoes: White and gilded stuccoes frame windows and vaults with highly scenic effects. Rooted in Baroque culture and the skills of specialised craftsmen, they turn the interior into an almost theatrical space designed to amaze and involve the viewer.",
+        "The secret tomb of the benefactors: The free school also relied on donations from families and merchants. Some benefactors obtained burial rights in the complex, leaving property and money to support books, meals and education for the poorest pupils.",
+        "Acoustics designed for preaching: The shape of the interior helps carry the voice. Good acoustics were essential to the Piarists, who needed to be heard both during religious services and in educational activities involving large groups of young people.",
+        "The life-saving 20th-century restoration: In the 20th century leaks and structural problems required long restoration campaigns. The work reinforced the vault, recovered marbles and decoration and preserved one of the old centre's most intimate and characteristic religious complexes."
+    ],
+    "es": [
+        "Nacida para la educación gratuita de los niños pobres: El complejo nació gracias a los Padres Escolapios, dedicados a la educación popular. Sus escuelas ofrecían enseñanza gratuita a los hijos de familias humildes, una de las primeras experiencias organizadas de instrucción accesible también a los niños pobres.",
+        "Una fachada que empuja los callejones: La iglesia se abre a un espacio muy reducido. La fachada ligeramente convexa fue pensada para crear movimiento y monumentalidad, compensando la pequeñez de la plaza y dando la impresión de que el edificio se expande hacia el espectador.",
+        "Los bajorrelieves de Francesco Maria Schiaffino: El interior conserva un importante ciclo de bajorrelieves de mármol atribuidos a Francesco Maria Schiaffino. Las escenas de la Virgen y la infancia de Jesús combinan elegancia, movimiento y gran capacidad narrativa, típicas de la escultura genovesa del siglo XVIII.",
+        "La Adoración de los Magos superviviente: En el altar mayor se encuentra una Adoración de los Magos de Domenico Fiasella. Según la tradición, durante las requisas napoleónicas la obra fue escondida para evitar su confiscación, permitiendo que permaneciera en la iglesia hasta hoy.",
+        "El efecto de escenografía teatral de los estucos: Estucos blancos y dorados enmarcan ventanas y bóvedas con efectos muy escenográficos. Las decoraciones, ligadas a la cultura barroca y a artesanos especializados, convierten el interior en un espacio casi teatral pensado para sorprender e implicar.",
+        "La tumba secreta de los benefactores: La escuela gratuita vivía también de donaciones de familias y comerciantes. Algunos benefactores obtuvieron el derecho de ser enterrados en el complejo, dejando bienes y dinero para libros, comidas y educación de los alumnos más pobres.",
+        "Una acústica nacida para la predicación: La forma del interior favorece la difusión de la voz. Una buena acústica era esencial para los Escolapios, que necesitaban ser escuchados tanto en las funciones religiosas como en las actividades educativas con numerosos jóvenes.",
+        "La gran restauración salvadora del siglo XX: En el siglo XX, filtraciones y problemas estructurales obligaron a largas restauraciones. Los trabajos consolidaron la bóveda, recuperaron mármoles y decoraciones y permitieron conservar uno de los complejos religiosos más íntimos y característicos del centro histórico."
+    ],
+    "fr": [
+        "Née pour l'instruction gratuite des enfants pauvres : Le complexe fut créé par les Pères Piaristes, ordre voué à l'éducation populaire. Leurs écoles offraient un enseignement gratuit aux enfants des familles modestes, parmi les premières expériences génoises d'instruction organisée accessible aux plus pauvres.",
+        "Une façade qui pousse dans les ruelles : L'église donne sur un espace très étroit. Sa façade légèrement convexe fut conçue pour créer mouvement et monumentalité, compensant la petitesse de la place et donnant l'impression que l'édifice s'avance vers le spectateur.",
+        "Les bas-reliefs de Francesco Maria Schiaffino : L'intérieur conserve un important cycle de bas-reliefs en marbre attribués à Francesco Maria Schiaffino. Les scènes de la Vierge et de l'enfance de Jésus associent élégance, mouvement et grand talent narratif, typiques de la sculpture génoise du XVIIIe siècle.",
+        "L'Adoration des Mages qui a survécu : Le maître-autel conserve une Adoration des Mages de Domenico Fiasella. Selon la tradition, l'œuvre fut cachée pendant les saisies napoléoniennes pour éviter sa confiscation, ce qui lui permit de rester dans l'église jusqu'à aujourd'hui.",
+        "L'effet de décor théâtral des stucs : Des stucs blancs et dorés encadrent fenêtres et voûtes avec des effets très scénographiques. Liés à la culture baroque et au savoir-faire d'artisans spécialisés, ils transforment l'intérieur en espace presque théâtral conçu pour surprendre et impliquer.",
+        "La tombe secrète des bienfaiteurs : L'école gratuite vivait aussi des dons de familles et marchands. Certains bienfaiteurs obtinrent le droit d'être enterrés dans le complexe en laissant biens et argent pour financer livres, repas et instruction des élèves les plus pauvres.",
+        "Une acoustique conçue pour la prédication : La forme de l'intérieur favorise la diffusion de la voix. Une bonne acoustique était essentielle aux Piaristes, qui devaient être entendus pendant les offices comme lors des activités éducatives réunissant de nombreux jeunes.",
+        "La grande restauration salvatrice du XXe siècle : Au XXe siècle, infiltrations et problèmes structurels imposèrent de longs travaux. Ils consolidèrent la voûte, restaurèrent marbres et décors et permirent de préserver l'un des complexes religieux les plus intimes du centre historique."
+    ],
+    "ar": [
+        "نشأت لتعليم الأطفال الفقراء مجاناً: أسس المجمع آباء Piarists، وهم نظام مكرس للتعليم الشعبي. قدمت مدارسهم تعليماً مجانياً لأبناء الأسر محدودة الدخل، وكانت من أوائل التجارب المنظمة في جنوة التي أتاحت الدراسة للأطفال الفقراء.",
+        "واجهة تدفع نفسها نحو الأزقة: تطل الكنيسة على مساحة ضيقة جداً. صُممت الواجهة المحدبة قليلاً لإضفاء الحركة والهيبة، فتعوض صغر الساحة وتعطي الانطباع بأن المبنى يتقدم ويتسع نحو من ينظر إليه.",
+        "روائع Francesco Maria Schiaffino البارزة: يحفظ الداخل دورة مهمة من النقوش الرخامية البارزة المنسوبة إلى Francesco Maria Schiaffino. مشاهد العذراء وطفولة يسوع تجمع بين الأناقة والحركة والقدرة السردية، وهي سمات بارزة للنحت الجنوي في القرن الثامن عشر.",
+        "لوحة المجوس التي نجت: يوجد على المذبح الرئيسي مشهد عبادة المجوس لـDomenico Fiasella. وتقول التقاليد إن العمل أُخفي خلال المصادرات النابليونية لمنع الاستيلاء عليه، فتمكن من البقاء في الكنيسة حتى اليوم.",
+        "تأثير الديكور المسرحي للجص: يحيط الجص الأبيض والمذهب بالنوافذ والقبوات بتأثيرات شديدة المسرحية. وترتبط الزخارف بالثقافة الباروكية ومهارة الحرفيين المتخصصين، فتحول القاعة إلى فضاء شبه مسرحي صُمم للإدهاش وجذب الانتباه.",
+        "القبر السري للمحسنين: اعتمدت المدرسة المجانية أيضاً على تبرعات العائلات والتجار. وحصل بعض المحسنين على حق الدفن في المجمع مقابل ترك أموال وممتلكات لتمويل الكتب والطعام وتعليم التلاميذ الأكثر فقراً.",
+        "صوتيات خُلقت للوعظ: يساعد شكل الداخل على انتشار الصوت. وكانت الصوتيات الجيدة ضرورية لآباء Piarists حتى يسمعهم الناس بوضوح في القداسات وفي الأنشطة التعليمية التي تضم مجموعات كبيرة من الشباب.",
+        "الترميم الكبير المنقذ في القرن العشرين: فرضت تسربات المياه والمشكلات الإنشائية أعمال ترميم طويلة خلال القرن العشرين. قوّت الأعمال القبة، واستعادت الرخام والزخارف، وحافظت على أحد أكثر المجمعات الدينية حميمية وتميزاً في المركز التاريخي."
+    ],
+    "ru": [
+        "Создана ради бесплатного обучения бедных детей: Комплекс основали отцы-пиаристы, посвятившие себя народному образованию. Их школы бесплатно учили детей из малоимущих семей и стали одним из ранних организованных примеров доступного образования для бедных в Генуе.",
+        "Фасад, выдвигающийся в переулки: Церковь выходит в очень тесное пространство. Слегка выпуклый фасад задуман так, чтобы добавить движения и монументальности, компенсировать маленькую площадь и создать впечатление, будто здание расширяется к зрителю.",
+        "Шедевральные рельефы Francesco Maria Schiaffino: Интерьер хранит важный цикл мраморных барельефов, приписываемых Francesco Maria Schiaffino. Сцены с Богоматерью и детством Иисуса соединяют изящество, движение и яркое повествование, характерные для генуэзской скульптуры XVIII века.",
+        "Уцелевшее «Поклонение волхвов»: На главном алтаре находится «Поклонение волхвов» Domenico Fiasella. По преданию, во время наполеоновских конфискаций картину спрятали, чтобы спасти от изъятия, благодаря чему она осталась в церкви.",
+        "Театральный эффект лепнины: Белая и золочёная лепнина обрамляет окна и своды с выразительным сценическим эффектом. Барочная декорация и работа специализированных мастеров превращают интерьер почти в театральное пространство, рассчитанное на удивление и вовлечение зрителя.",
+        "Тайная могила благотворителей: Бесплатная школа существовала и на пожертвования семей и купцов. Некоторые благотворители получали право быть похороненными в комплексе, оставляя средства на книги, питание и образование самых бедных учеников.",
+        "Акустика для проповеди: Форма интерьера помогает голосу распространяться по залу. Хорошая акустика была важна пиаристам как во время служб, так и при занятиях с большими группами молодых людей.",
+        "Большая спасительная реставрация XX века: В XX веке протечки и конструктивные проблемы потребовали длительных работ. Реставрация укрепила свод, восстановила мрамор и декор и сохранила один из самых камерных и характерных религиозных комплексов старого центра."
+    ],
+    "zh": [
+        "为穷孩子提供免费教育而建立：建筑群由专注大众教育的 Piarist 会士创建。学校免费教授贫困家庭的孩子，是热那亚较早有组织、面向弱势儿童开放的教育实践之一。",
+        "向小巷“推出去”的立面：教堂面对的空间非常狭小。略微凸出的立面用来制造运动感和纪念性，弥补小广场尺度不足，也让建筑看起来仿佛朝观者方向展开。",
+        "Francesco Maria Schiaffino 的浮雕杰作：内部保存一组重要大理石浮雕，归于 Francesco Maria Schiaffino。圣母和耶稣童年场景兼具优雅、动作感和叙事性，是18世纪热那亚雕塑的典型特点。",
+        "幸存的《三王来朝》：主祭坛保存 Domenico Fiasella 的《三王来朝》。传统认为，拿破仑时期征收艺术品时，这幅画曾被藏起来以免遭没收，因此得以一直留在教堂。",
+        "灰泥营造的“剧场布景”效果：白色和金色灰泥围绕窗户与穹顶，形成很强的舞台感。巴洛克装饰和专业工匠的技艺把教堂内部变成近似剧场的空间，目的就是让人惊叹并投入其中。",
+        "捐助者的秘密墓葬：免费学校也依靠家族和商人的捐款维持。一些赞助者获得在建筑群内安葬的权利，并留下财产和资金，用于贫困学生的书籍、餐食和教育。",
+        "为讲道而生的声学：内部形态有利于声音传播。良好声学对 Piarist 会士很重要，因为无论举行宗教仪式还是面对大量年轻人进行教学，都需要让声音清楚传到每个角落。",
+        "20世纪的“救命”大修：20世纪，渗水和结构问题迫使这里进行长期修复。工程加固穹顶、恢复大理石和装饰，使这座老城中最精致、最有特色的宗教建筑群之一得以保存。"
+    ],
+    "lij": [
+        "Nata pe l'istruçion gratis di figgeu pövei: O complesso o nasce grazie a-i Padri Scolopi, dedicæ a l'educaçion popolare. E scoe davan instruçion gratis a-i figgeu d'e famigge meno ricche, unna de primme esperiense zeneixi de ensino accessibile anche a-i pövei.",
+        "Una façciata che a spinge inti caroggi: A gésa a dà in sciô un spaçio piccin. A façciata un pö convessa a l'é stæta pensâ pe creâ movimento e monumentalitæ, compensando a piazzetta streita e facendo pâ che l'edificio o se slarghe verso chi o guarda.",
+        "I bassorilievi de Francesco Maria Schiaffino: L'interno o conserva un importante ciclo de bassorilievi de marmo attribuîi a Francesco Maria Schiaffino. E scene da Madonna e de l'infançia de Gesù mettan assieme elegansa, movimento e grande capacità de contâ.",
+        "A pala di Re Magi sarvâ: In sciô artâ maggiore gh'é unna Adoraçion di Magi de Domenico Fiasella. Segondo a tradiçion, inte requisçioin napoleoniche l'òpera a l'é stæta ascosa pe no fâla portâ via, e coscì a l'é restâ inta gésa.",
+        "L'efetto da scenografia teatrale di stucchi: Stucchi gianchi e doræ incornixan finestre e volte con grandi effetti scenografici. E decoraçioin barocche trasforman l'aula in un spaçio quasi teatrale, pensou pe stupî e coinvolze.",
+        "A tomba segreta di benefattoî: A scöa gratis a viveiva anche de donaçioin de famigge e mercanti. Quarche benefattô o l'à avuo o drito de esse sepellio into complesso, lasciando dinæ pe libri, mangiâ e instruçion di figgeu ciù pövei.",
+        "Un'acustica nata pe-a predicaçion: A forma de l'interno a l'agiutta a voce a spargise. Una bon-a acustica a l'ea fondamentale pe-i Padri Scolopi, che doveivan fâse sentî tanto inte funçioin quanto inte attivitæ educative con tanti zoveni.",
+        "O grande restauro do Novecento: Into Novecento infiltraçioin e problemi strutturali han domandou longhi restauri. I travaggi han consolidou a volta, recuperou marmo e decoraçioin e sarvou un di complessi religioxi ciù caratteristici do centro storico."
+    ]
+};
 })();
