@@ -932,4 +932,508 @@
         "L'estaxi da raggiera d'öu: Drento a gésa spicca un gruppo da Madonna con angeli e putti. A grande raggiera dorâ a crea un effetto scenografico forte, in contrasto co-a sobrietæ e a severitæ de l'architettua esterna do convento."
     ]
 };
+
+  root.church["San Teodoro"] = {
+    "it": [
+      "La basilica nata sugli scogli: L'antica San Teodoro sorgeva nel borgo di Fassolo, molto vicina alla costa. Un lato dell'edificio guardava direttamente verso il mare e la chiesa costituiva un punto di riferimento visivo per marinai e pescatori che si avvicinavano al porto.",
+      "Abbattuta per far spazio al porto moderno: Nel 1870 l'antica chiesa fu demolita durante le grandi trasformazioni del fronte portuale. L'espansione dei magazzini e delle nuove infrastrutture rese necessario liberare l'area, cancellando un edificio che per secoli aveva caratterizzato il paesaggio costiero.",
+      "Un unicum neogotico a Genova: Dopo la demolizione, la parrocchia venne ricostruita più a monte e inaugurata nel 1876. Il nuovo edificio adottò uno stile neogotico, scelta piuttosto rara a Genova, città dominata soprattutto da architetture romaniche, rinascimentali e barocche.",
+      "Le colonne \"zebrate\" all'interno: L'interno della nuova chiesa riprende volutamente alcuni motivi medievali genovesi. Pilastri e archi presentano alternanze cromatiche che ricordano le tipiche fasce bianche e nere di molti edifici religiosi della città, creando un forte richiamo alla tradizione locale.",
+      "Le razzie di Napoleone e il dipinto salvato: Durante il periodo napoleonico il complesso fu spogliato di diversi beni. Si salvò invece il celebre Martirio di San Sebastiano di Filippino Lippi, un'opera legata alla vecchia San Teodoro e oggi conservata nei Musei di Strada Nuova.",
+      "Le violente mareggiate che la minacciavano: La posizione della chiesa originaria, vicinissima alla costa, la esponeva alle mareggiate. Nel corso dei secoli l'acqua e la salsedine danneggiarono più volte le strutture, contribuendo a rendere sempre più difficile la conservazione dell'antico edificio.",
+      "Il sestiere dei pescatori: Prima dell'industrializzazione, San Teodoro era un borgo marinaro ai margini della città. Pescatori, barcaioli e lavoratori legati al mare costituivano gran parte della popolazione locale, e la chiesa rappresentava il principale centro religioso e sociale della comunità.",
+      "Tredici cappelle ricche di tesori: La nuova parrocchia ospita numerose cappelle laterali, molte delle quali furono arredate recuperando marmi, altari e opere provenienti dall'antica San Teodoro. In questo modo parte della memoria artistica dell'edificio demolito è sopravvissuta nella chiesa moderna."
+    ],
+    "en": [
+      "The basilica born on the rocks: Old San Teodoro stood in the village of Fassolo, very close to the coast. One side faced directly toward the sea, and the church served as a visual landmark for sailors and fishermen approaching Genoa's harbour.",
+      "Demolished for the modern port: In 1870 the old church was pulled down during the major transformation of the waterfront. Expanding warehouses and new infrastructure required the area to be cleared, erasing a building that had shaped the coastal landscape for centuries.",
+      "A rare Neo-Gothic church in Genoa: After demolition, the parish was rebuilt farther uphill and inaugurated in 1876. The new building adopted a Neo-Gothic style, an unusual choice in Genoa, a city better known for Romanesque, Renaissance and Baroque architecture.",
+      "The striped columns inside: The new church deliberately echoes medieval Genoese motifs. Pillars and arches alternate light and dark tones recalling the characteristic black-and-white bands of many local religious buildings, creating a strong visual link with the city's architectural tradition.",
+      "Napoleonic seizures and the painting that survived: During the Napoleonic period the complex lost several possessions. The celebrated Martyrdom of Saint Sebastian by Filippino Lippi survived, however; once linked to old San Teodoro, it is now kept in the Musei di Strada Nuova.",
+      "The violent storms that threatened it: The original church stood extremely close to the shoreline and was repeatedly exposed to heavy seas. Over the centuries water and salt damaged the structure several times, making preservation of the old building increasingly difficult.",
+      "The fishermen's district: Before industrialisation, San Teodoro was a maritime village on the edge of the city. Fishermen, boatmen and other workers connected with the sea made up much of the population, and the church was the community's main religious and social centre.",
+      "Thirteen chapels full of treasures: The newer parish contains many side chapels, several furnished with marble, altars and artworks recovered from old San Teodoro. In this way part of the artistic memory of the demolished church survived within its modern successor."
+    ],
+    "es": [
+      "La basílica nacida sobre las rocas: La antigua San Teodoro se alzaba en el borgo de Fassolo, muy cerca de la costa. Uno de sus lados miraba directamente al mar y la iglesia servía como referencia visual para marineros y pescadores que se acercaban al puerto.",
+      "Derribada para dejar paso al puerto moderno: En 1870 la antigua iglesia fue demolida durante las grandes transformaciones del frente portuario. La expansión de almacenes y nuevas infraestructuras obligó a liberar la zona, borrando un edificio que durante siglos había marcado el paisaje costero.",
+      "Un caso neogótico único en Génova: Tras la demolición, la parroquia fue reconstruida más arriba e inaugurada en 1876. El nuevo edificio adoptó un estilo neogótico, bastante raro en Génova, ciudad dominada sobre todo por arquitecturas románicas, renacentistas y barrocas.",
+      "Las columnas 'cebradas' del interior: La nueva iglesia retoma deliberadamente motivos medievales genoveses. Pilares y arcos alternan tonos claros y oscuros que recuerdan las típicas franjas blancas y negras de muchos edificios religiosos de la ciudad, reforzando el vínculo con la tradición local.",
+      "Los saqueos napoleónicos y el cuadro salvado: Durante el periodo napoleónico el complejo perdió varios bienes. En cambio sobrevivió el célebre Martirio de San Sebastián de Filippino Lippi, obra vinculada a la antigua San Teodoro y hoy conservada en los Musei di Strada Nuova.",
+      "Las violentas marejadas que la amenazaban: La iglesia original estaba muy cerca de la costa y sufría directamente las marejadas. A lo largo de los siglos, el agua y la sal dañaron repetidamente sus estructuras, haciendo cada vez más difícil conservar el antiguo edificio.",
+      "El barrio de los pescadores: Antes de la industrialización, San Teodoro era un borgo marinero en los límites de la ciudad. Pescadores, barqueros y trabajadores ligados al mar formaban buena parte de la población, y la iglesia era el principal centro religioso y social de la comunidad.",
+      "Trece capillas llenas de tesoros: La nueva parroquia alberga numerosas capillas laterales, muchas decoradas con mármoles, altares y obras recuperadas de la antigua San Teodoro. Así, parte de la memoria artística del edificio demolido sobrevivió dentro de la iglesia moderna."
+    ],
+    "fr": [
+      "La basilique née sur les rochers : L'ancienne San Teodoro se dressait dans le bourg de Fassolo, tout près de la côte. Un côté regardait directement la mer et l'église servait de repère visuel aux marins et pêcheurs approchant du port.",
+      "Démolie pour faire place au port moderne : En 1870, l'ancienne église fut détruite lors des grandes transformations du front portuaire. L'expansion des entrepôts et des nouvelles infrastructures imposa de libérer la zone, effaçant un édifice qui avait marqué le littoral pendant des siècles.",
+      "Un rare exemple néogothique à Gênes : Après la démolition, la paroisse fut reconstruite plus haut et inaugurée en 1876. Le nouvel édifice adopta le style néogothique, choix assez rare à Gênes, ville surtout marquée par le roman, la Renaissance et le baroque.",
+      "Les colonnes rayées de l'intérieur : La nouvelle église reprend volontairement certains motifs médiévaux génois. Piliers et arcs alternent des tons clairs et foncés rappelant les bandes blanches et noires typiques de nombreux édifices religieux locaux, créant un fort lien avec la tradition urbaine.",
+      "Les saisies napoléoniennes et le tableau sauvé : Durant la période napoléonienne, le complexe fut dépouillé de plusieurs biens. Le célèbre Martyre de saint Sébastien de Filippino Lippi fut toutefois sauvé ; lié à l'ancienne San Teodoro, il est aujourd'hui conservé aux Musei di Strada Nuova.",
+      "Les violentes tempêtes qui la menaçaient : La proximité extrême de la côte exposait l'ancienne église aux fortes houles. Au fil des siècles, l'eau et le sel endommagèrent plusieurs fois les structures, rendant toujours plus difficile la conservation de l'édifice historique.",
+      "Le quartier des pêcheurs : Avant l'industrialisation, San Teodoro était un bourg maritime aux marges de la ville. Pêcheurs, bateliers et travailleurs de la mer formaient une grande partie de la population, et l'église représentait le principal centre religieux et social de la communauté.",
+      "Treize chapelles riches en trésors : La nouvelle paroisse compte de nombreuses chapelles latérales, dont plusieurs furent aménagées avec des marbres, autels et œuvres récupérés de l'ancienne San Teodoro. Une partie de la mémoire artistique de l'édifice disparu survit ainsi dans l'église moderne."
+    ],
+    "ar": [
+      "بازيليك نشأت على الصخور: كانت كنيسة سان تيودورو القديمة قائمة في حي فاسولو قريباً جداً من الساحل. كان أحد جوانبها يطل مباشرة على البحر، فكانت معلماً بصرياً للبحارة والصيادين القادمين نحو ميناء جنوة.",
+      "هُدمت لإفساح المجال للميناء الحديث: عام 1870 هُدمت الكنيسة القديمة خلال التحولات الكبرى للواجهة البحرية. فرض توسع المخازن والبنى التحتية الجديدة إخلاء المنطقة، فاختفى مبنى كان جزءاً من المشهد الساحلي لقرون.",
+      "حالة نادرة من الطراز القوطي الجديد في جنوة: بعد الهدم أُعيد بناء الرعية في موقع أعلى وافتُتحت عام 1876. اختير لها طراز قوطي جديد، وهو أمر نادر نسبياً في مدينة تشتهر أكثر بالعمارة الرومانسكية وعصر النهضة والباروك.",
+      "الأعمدة المخططة في الداخل: يستعيد داخل الكنيسة الجديدة عمداً بعض الزخارف الجنوية الوسيطة. تتعاقب الألوان على الأعمدة والأقواس بشكل يذكّر بالشرائط البيضاء والسوداء المميزة لكثير من مباني جنوة الدينية، في إحالة واضحة إلى التقاليد المحلية.",
+      "مصادرات نابليون واللوحة التي نجت: خلال الحقبة النابليونية فقد المجمع عدداً من ممتلكاته. لكن لوحة استشهاد القديس سباستيان الشهيرة لفيلippino Lippi نجت؛ وكانت مرتبطة بسان تيودورو القديمة وهي محفوظة اليوم في Musei di Strada Nuova.",
+      "العواصف البحرية العنيفة التي هددتها: كان موقع الكنيسة القديمة قريباً جداً من الساحل، لذلك تعرضت مراراً للأمواج العاتية. وعلى مر القرون ألحقت المياه والملوحة أضراراً بالبناء أكثر من مرة، ما جعل الحفاظ عليه أكثر صعوبة.",
+      "حي الصيادين: قبل التصنيع كان سان تيودورو قرية بحرية على أطراف المدينة. شكّل الصيادون وأصحاب القوارب والعاملون المرتبطون بالبحر جزءاً كبيراً من السكان، وكانت الكنيسة المركز الديني والاجتماعي الأساسي للمجتمع المحلي.",
+      "ثلاث عشرة كنيسة جانبية مليئة بالكنوز: تضم الرعية الجديدة عدداً كبيراً من الكنائس الجانبية، وقد زُين كثير منها برخام ومذابح وأعمال فنية أُنقذت من سان تيودورو القديمة. وهكذا بقي جزء من الذاكرة الفنية للمبنى المهدوم حاضراً في الكنيسة الحديثة."
+    ],
+    "ru": [
+      "Базилика, выросшая у скал: Старая Сан-Теодоро стояла в посёлке Фассоло почти у самой воды. Одна сторона здания была обращена прямо к морю, поэтому церковь служила заметным ориентиром для моряков и рыбаков, подходивших к генуэзскому порту.",
+      "Снесена ради современного порта: В 1870 году древнюю церковь разобрали во время масштабной перестройки портового фронта. Расширение складов и новой инфраструктуры потребовало освободить участок, и исчезло здание, веками формировавшее прибрежный пейзаж.",
+      "Редкий неоготический храм Генуи: После сноса приход восстановили выше по склону и открыли в 1876 году. Новое здание выполнили в неоготическом стиле — довольно необычном для Генуи, где преобладают романские, ренессансные и барочные памятники.",
+      "Полосатые колонны внутри: Интерьер новой церкви намеренно отсылает к средневековой генуэзской традиции. На колоннах и арках чередуются светлые и тёмные полосы, напоминающие характерные чёрно-белые фасады многих местных храмов.",
+      "Наполеоновские конфискации и спасённая картина: В наполеоновскую эпоху комплекс лишился ряда ценностей. Зато уцелело знаменитое «Мученичество святого Себастьяна» Филиппино Липпи, связанное со старой Сан-Теодоро и сегодня хранящееся в Musei di Strada Nuova.",
+      "Штормы, постоянно угрожавшие храму: Старая церковь стояла совсем рядом с берегом и часто страдала от сильных волн. Вода и морская соль неоднократно повреждали её конструкции, и с веками сохранять древнее здание становилось всё труднее.",
+      "Рыбацкий район: До индустриализации Сан-Теодоро был морским посёлком на окраине города. Рыбаки, лодочники и другие работники моря составляли значительную часть жителей, а церковь была главным религиозным и общественным центром местного сообщества.",
+      "Тринадцать капелл с сокровищами: В новой приходской церкви устроено множество боковых капелл. Для их оформления использовали мрамор, алтари и произведения, спасённые из старой Сан-Теодоро, благодаря чему часть художественной памяти снесённого храма сохранилась."
+    ],
+    "zh": [
+      "建在海边岩石上的教堂：旧圣特奥多罗教堂位于 Fassolo 聚落，离海岸非常近。建筑一侧直接面向大海，因此长期成为靠近热那亚港的水手和渔民辨认方向的重要地标。",
+      "为现代港口让路而被拆除：1870年，旧教堂在港区大规模改造中被拆除。仓库和新基础设施的扩张要求腾出土地，一座数百年来构成海岸景观的重要建筑由此消失。",
+      "热那亚少见的新哥特式教堂：旧教堂拆除后，堂区在更高处重建，并于1876年启用。新建筑采用新哥特式风格，这在以罗曼式、文艺复兴和巴洛克建筑见长的热那亚并不常见。",
+      "内部的黑白相间元素：新教堂的内部有意借鉴热那亚中世纪建筑传统。柱子和拱券采用明暗相间的处理，让人想起城市许多宗教建筑典型的黑白条纹，与本地风格形成鲜明联系。",
+      "拿破仑时期的掠夺与幸存画作：拿破仑时代，建筑群失去了一些财物。不过菲利皮诺·利皮的名作《圣塞巴斯蒂安殉道》得以保存。它原与旧圣特奥多罗有关，如今收藏于 Strada Nuova 博物馆群。",
+      "不断威胁教堂的猛烈风暴：旧教堂紧贴海岸，因此经常遭受巨浪冲击。几个世纪里，海水和盐分多次损害建筑结构，使这座古老教堂的保存变得越来越困难。",
+      "渔民的街区：工业化以前，圣特奥多罗是城市边缘的海滨聚落。渔民、船工和其他海上从业者构成当地人口的重要部分，而教堂则是社区最主要的宗教与社会中心。",
+      "十三座珍宝丰富的小堂：新堂区拥有多座侧 chapel，其中不少使用了从旧圣特奥多罗抢救出来的大理石、祭坛和艺术品。借此，被拆教堂的一部分艺术记忆得以在现代建筑中延续。"
+    ],
+    "lij": [
+      "A baxilica nasciua in sci scoggi: A vegia San Teodoro a l'ea into borgo de Fassolo, proprio vixin a-a costa. Un lato da gésa o guardava direttamente o mâ e a serviva da riferimento pe marinæ e pescouei che se avvicinavan a-o porto.",
+      "Abbattua pe fâ spaçio a-o porto moderno: Into 1870 a vegia gésa a l'é stæta demolîa inte grande trasformaçioin do fronte portuale. Magazzen e infrastruttue neuve han ciammou spaçio, cancellando un edificio che pe secoli o l'aveiva marcou o paesaggio costê.",
+      "Un caso neogotico raro a Zena: Dòppo a demolision, a parrocchia a l'é stæta reconstruta ciù in erto e inaugurâ into 1876. O neuvo edificio o l'à piggiou un stile neogotico, assai raro a Zena tra romanico, Rinascimento e barocco.",
+      "E colonne a strisce drento: L'interno da neuva gésa o ripiggia appòsta motivi medievali zeneixi. Pilastri e archi han alternanse chiare e scue che ricorddan e fasce gianche e neigre tipiche de tante gésge da çittæ.",
+      "E razzie napoleoniche e o quadro sarvou: Inte l'epoca napoleonica o complesso o l'à perso diversi beni. O Martirio de San Sebastiano de Filippino Lippi, invece, o s'é sarvou e ancheu o se conserva inti Musei di Strada Nuova.",
+      "E marezæ violente che a minacciavan: A vegia gésa a l'ea viciniscima a-a costa e a soffriva spesso e marezæ. Ægua e salsedine han danneggiou ciù votte e struttue, rendendo sempre ciù difficile conservâ l'edificio antigo.",
+      "O sestiere di pescouei: Primma de l'industrializaçion, San Teodoro o l'ea un borgo de mâ ai bordi da çittæ. Pescouei, barcaioli e travaggiouei do mâ eran tanta parte da popolaçion, e a gésa o centro religioso e sociale prinçipâ.",
+      "Tredici cappelle pinne de tesori: A neuva parrocchia a gh'à tante cappelle laterali, arredæ anche con marmo, artâ e òpere recuperæ da-a vegia San Teodoro. Coscì unna parte da memoria artistica da gésa demolîa a l'é restâ viva."
+    ]
+  };
+
+  root.church["Basilica di San Siro"] = {
+    "it": [
+      "Il miracolo del Basilisco nel pozzo: La leggenda racconta che un basilisco infestasse un pozzo vicino alla chiesa con il suo fiato velenoso. Il vescovo Siro avrebbe ordinato alla creatura di gettarsi in mare, liberando la città. Il cosiddetto Pozzo di San Siro è ancora ricordato nel quartiere.",
+      "Nata fuori dalle mura per \"comodità\": La prima basilica sorse fuori dalla cinta romana, in una zona utilizzata come cimitero cristiano lungo un'importante via di transito. Lo spazio disponibile e la funzione funeraria resero l'area adatta alla costruzione di uno dei primi grandi edifici religiosi genovesi.",
+      "Il crollo disastroso del campanile: All'inizio del Novecento il vecchio campanile medievale mostrò seri problemi di stabilità. Per evitare un crollo sulle case circostanti venne in parte demolito; la torre visibile oggi è più bassa e deriva da successive ricostruzioni e interventi di sicurezza.",
+      "Il battesimo di Giuseppe Mazzini: La basilica custodisce il fonte battesimale in cui ricevette il sacramento Giuseppe Mazzini, nato poco distante, in Via Lomellini. Il dettaglio lega uno dei luoghi religiosi più antichi della città alla biografia di uno dei protagonisti del Risorgimento italiano.",
+      "I maestri del Barocco uniti in un solo tempio: L'interno riunisce opere di alcuni dei maggiori artisti attivi nella Genova barocca. Giovanni Battista Carlone decorò volte e cupola, mentre l'altare maggiore conserva importanti sculture legate a Pierre Puget, creando un vero concentrato di arte seicentesca.",
+      "Il primo \"Parlamento\" della Repubblica: Prima della costruzione del Palazzo Ducale, San Siro fu anche un luogo di riunione civica. Assemblee di cittadini e nobili si tenevano qui per discutere decisioni politiche, guerre, alleanze e questioni commerciali importanti per la Repubblica di Genova.",
+      "L'incendio devastante dei falegnami: Nel 1580 un grave incendio, partito dalle botteghe artigiane della zona, raggiunse la chiesa e distrusse molte strutture lignee e decorazioni più antiche. La ricostruzione successiva contribuì alla trasformazione dell'edificio nelle forme barocche che caratterizzano l'interno attuale.",
+      "Un altare finanziato dal monopolio del corallo: La potente famiglia Lomellini contribuì alla decorazione di diverse cappelle della basilica. Le grandi ricchezze provenienti dai commerci mediterranei, compreso il corallo di Tabarca, permisero di finanziare altari, marmi e opere destinate a celebrare il prestigio familiare.",
+      "Le reliquie dei primi Vescovi di Genova: La basilica conserva reliquie legate ai primi vescovi e santi della tradizione genovese, tra cui San Siro. Questa presenza rafforza il ruolo del tempio come uno dei principali luoghi di memoria delle origini cristiane della città."
+    ],
+    "en": [
+      "The miracle of the basilisk in the well: Legend says a basilisk poisoned a well near the church with its breath. Bishop Syrus ordered the creature to throw itself into the sea, freeing the city. The so-called Well of San Siro is still remembered in the district.",
+      "Founded outside the walls for practical reasons: The first basilica rose beyond the Roman walls in an area used as a Christian cemetery along an important route. The available space and funerary function made it suitable for one of Genoa's earliest major religious buildings.",
+      "The disastrous collapse risk of the bell tower: In the early 20th century the medieval bell tower showed serious structural problems. To prevent it falling onto nearby houses, part was demolished; today's tower is lower and results from later rebuilding and safety interventions.",
+      "Giuseppe Mazzini's baptism: The basilica preserves the font where Giuseppe Mazzini, born nearby in Via Lomellini, was baptised. The detail connects one of Genoa's oldest religious places with the life of a central figure of the Italian Risorgimento.",
+      "Baroque masters gathered in one church: The interior brings together work by major artists of Baroque Genoa. Giovanni Battista Carlone decorated the vaults and dome, while the high altar includes important sculpture associated with Pierre Puget, creating a remarkable concentration of 17th-century art.",
+      "The Republic's first parliament: Before Palazzo Ducale was built, San Siro also served as a civic meeting place. Assemblies of citizens and nobles gathered here to discuss political decisions, wars, alliances and major commercial matters affecting the Republic of Genoa.",
+      "The devastating carpenters' fire: In 1580 a major blaze starting in nearby workshops reached the church and destroyed wooden structures and older decoration. The reconstruction that followed helped transform the building into the Baroque form that still characterises its interior.",
+      "An altar financed by the coral monopoly: The powerful Lomellini family helped decorate several chapels. Wealth from Mediterranean trade, including Tabarka coral, funded altars, marble and artworks designed to celebrate the family's social and political prestige.",
+      "Relics of Genoa's earliest bishops: The basilica preserves relics connected with the first bishops and saints of Genoese tradition, including Saint Syrus. Their presence reinforces the church's role as one of the city's principal places of memory for its Christian origins."
+    ],
+    "es": [
+      "El milagro del basilisco en el pozo: La leyenda cuenta que un basilisco envenenaba con su aliento un pozo cercano a la iglesia. El obispo Siro habría ordenado a la criatura arrojarse al mar, liberando la ciudad. El llamado Pozo de San Siro aún se recuerda en el barrio.",
+      "Nacida fuera de las murallas por razones prácticas: La primera basílica se levantó fuera de la muralla romana, en un cementerio cristiano junto a una importante vía de paso. El espacio disponible y la función funeraria hicieron adecuada la zona para uno de los primeros grandes templos genoveses.",
+      "El peligroso campanario medieval: A comienzos del siglo XX el viejo campanario mostró graves problemas de estabilidad. Para evitar que cayera sobre las casas cercanas fue parcialmente demolido; la torre actual es más baja y procede de reconstrucciones e intervenciones posteriores de seguridad.",
+      "El bautismo de Giuseppe Mazzini: La basílica conserva la pila donde fue bautizado Giuseppe Mazzini, nacido muy cerca, en Via Lomellini. El detalle vincula uno de los lugares religiosos más antiguos de la ciudad con la biografía de un protagonista del Risorgimento italiano.",
+      "Los maestros del Barroco reunidos en un solo templo: El interior reúne obras de grandes artistas de la Génova barroca. Giovanni Battista Carlone decoró bóvedas y cúpula, mientras el altar mayor conserva importantes esculturas ligadas a Pierre Puget, formando un verdadero concentrado de arte del siglo XVII.",
+      "El primer 'Parlamento' de la República: Antes de la construcción del Palazzo Ducale, San Siro también fue lugar de reunión cívica. Asambleas de ciudadanos y nobles se celebraban aquí para debatir decisiones políticas, guerras, alianzas y grandes cuestiones comerciales de la República de Génova.",
+      "El devastador incendio de los carpinteros: En 1580 un grave incendio iniciado en talleres artesanos llegó a la iglesia y destruyó estructuras de madera y decoraciones antiguas. La reconstrucción posterior contribuyó a transformar el edificio en las formas barrocas que caracterizan el interior actual.",
+      "Un altar financiado por el monopolio del coral: La poderosa familia Lomellini colaboró en la decoración de varias capillas. Las grandes riquezas procedentes del comercio mediterráneo, incluido el coral de Tabarca, financiaron altares, mármoles y obras destinadas a celebrar el prestigio familiar.",
+      "Las reliquias de los primeros obispos de Génova: La basílica conserva reliquias ligadas a los primeros obispos y santos de la tradición genovesa, entre ellos San Siro. Esta presencia refuerza su papel como uno de los principales lugares de memoria de los orígenes cristianos de la ciudad."
+    ],
+    "fr": [
+      "Le miracle du basilic dans le puits : La légende raconte qu'un basilic empoisonnait de son souffle un puits proche de l'église. L'évêque Siro lui aurait ordonné de se jeter à la mer, libérant la ville. Le « puits de San Siro » reste encore présent dans la mémoire du quartier.",
+      "Née hors des murs pour des raisons pratiques : La première basilique s'éleva hors de l'enceinte romaine, dans une zone de cimetière chrétien le long d'un important axe de passage. L'espace disponible et la fonction funéraire convenaient à l'un des premiers grands édifices religieux génois.",
+      "Le campanile menacé d'effondrement : Au début du XXe siècle, l'ancien clocher médiéval montra de graves problèmes de stabilité. Pour éviter sa chute sur les maisons voisines, il fut en partie démoli ; la tour actuelle est plus basse et résulte de reconstructions et sécurisations ultérieures.",
+      "Le baptême de Giuseppe Mazzini : La basilique conserve les fonts où fut baptisé Giuseppe Mazzini, né tout près, Via Lomellini. Ce détail relie l'un des plus anciens lieux religieux de Gênes à la biographie d'une figure majeure du Risorgimento italien.",
+      "Les maîtres du baroque réunis dans un même temple : L'intérieur rassemble des œuvres de grands artistes de la Gênes baroque. Giovanni Battista Carlone décora voûtes et coupole, tandis que le maître-autel conserve d'importantes sculptures liées à Pierre Puget, concentrant l'art du XVIIe siècle.",
+      "Le premier 'Parlement' de la République : Avant la construction du Palazzo Ducale, San Siro servit aussi de lieu de réunion civique. Des assemblées de citoyens et de nobles s'y réunissaient pour discuter décisions politiques, guerres, alliances et grandes questions commerciales de la République.",
+      "L'incendie dévastateur des menuisiers : En 1580, un grave incendie parti d'ateliers voisins atteignit l'église et détruisit des structures en bois et des décors plus anciens. La reconstruction qui suivit contribua à donner au bâtiment les formes baroques visibles aujourd'hui.",
+      "Un autel financé par le monopole du corail : La puissante famille Lomellini participa à la décoration de plusieurs chapelles. Les richesses tirées du commerce méditerranéen, dont le corail de Tabarka, financèrent autels, marbres et œuvres destinées à célébrer le prestige familial.",
+      "Les reliques des premiers évêques de Gênes : La basilique conserve des reliques liées aux premiers évêques et saints de la tradition génoise, dont San Siro. Leur présence renforce le rôle du temple comme l'un des principaux lieux de mémoire des origines chrétiennes de la ville."
+    ],
+    "ar": [
+      "معجزة البازيليسك في البئر: تروي الأسطورة أن مخلوقاً من نوع البازيليسك كان يسمم بئراً قرب الكنيسة بأنفاسه. فأمره الأسقف سيرو أن يرمي نفسه في البحر، فنجت المدينة. وما زال ما يسمى بئر سان سيرو حاضراً في ذاكرة الحي.",
+      "نشأت خارج الأسوار لأسباب عملية: قامت البازيليك الأولى خارج السور الروماني، في منطقة استُخدمت مقبرة مسيحية على طريق مهم. وفّر المكان الواسع والوظيفة الجنائزية ظروفاً مناسبة لإنشاء أحد أقدم المباني الدينية الكبرى في جنوة.",
+      "خطر انهيار برج الأجراس: في مطلع القرن العشرين ظهرت على برج الأجراس الوسيط مشكلات خطيرة في الثبات. ولمنع سقوطه على المنازل المجاورة هُدم جزء منه؛ أما البرج الحالي فأقصر وينتج عن أعمال إعادة بناء وتأمين لاحقة.",
+      "معمودية جوزيبي مازيني: تحتفظ البازيليك بجرن المعمودية الذي تعمّد فيه جوزيبي مازيني، المولود في Via Lomellini القريبة. ويربط هذا التفصيل بين أحد أقدم الأماكن الدينية في المدينة وسيرة أحد أبرز رموز توحيد إيطاليا.",
+      "أساتذة الباروك في معبد واحد: يجمع الداخل أعمالاً لعدد من أهم فناني جنوة الباروكية. زيّن Giovanni Battista Carlone الأقبية والقبة، بينما يضم المذبح الرئيسي منحوتات مهمة مرتبطة بـ Pierre Puget، في تركيز لافت لفنون القرن السابع عشر.",
+      "أول 'برلمان' للجمهورية: قبل بناء Palazzo Ducale كانت سان سيرو أيضاً مكاناً للاجتماعات المدنية. كان المواطنون والنبلاء يجتمعون فيها لمناقشة قرارات سياسية وحروب وتحالفات ومسائل تجارية كبرى تخص جمهورية جنوة.",
+      "حريق النجارين المدمر: عام 1580 اندلع حريق كبير في ورش حرفية مجاورة ووصل إلى الكنيسة، فدمّر هياكل خشبية وزخارف أقدم. وأسهمت إعادة البناء اللاحقة في تحويل المبنى إلى الأشكال الباروكية التي تميز داخله اليوم.",
+      "مذبح موّلته تجارة المرجان: ساهمت عائلة Lomellini القوية في زخرفة عدد من الكنائس الجانبية. وقد سمحت الثروات الناتجة عن تجارة المتوسط، ومنها مرجان Tabarka، بتمويل المذابح والرخام والأعمال الفنية التي أبرزت مكانة العائلة.",
+      "ذخائر أوائل أساقفة جنوة: تحتفظ البازيليك بذخائر مرتبطة بأوائل أساقفة وقديسي التقليد الجنوي، ومنهم سان سيرو. ويعزز ذلك دور الكنيسة كأحد أهم أماكن الذاكرة المرتبطة بالبدايات المسيحية للمدينة."
+    ],
+    "ru": [
+      "Чудо с василиском в колодце: Легенда рассказывает о василиске, отравлявшем своим дыханием колодец возле церкви. Епископ Сиро велел чудовищу броситься в море и тем спас город. Так называемый колодец Сан-Сиро до сих пор помнят в этом квартале.",
+      "Построена за стенами по практическим причинам: Первая базилика появилась вне римской стены, на христианском кладбище у важной дороги. Пространство и погребальная функция сделали участок подходящим для одного из первых крупных религиозных зданий Генуи.",
+      "Опасный средневековый колоколенный башенный корпус: В начале XX века старая колокольня показала серьёзные проблемы устойчивости. Чтобы она не обрушилась на соседние дома, часть разобрали; нынешняя башня ниже и сформировалась после последующих реконструкций и укреплений.",
+      "Крещение Джузеппе Мадзини: В базилике сохранилась купель, где крестили Джузеппе Мадзини, родившегося неподалёку на Via Lomellini. Это связывает один из древнейших храмов города с биографией одного из главных деятелей итальянского Рисорджименто.",
+      "Мастера барокко в одном храме: Интерьер объединяет произведения ведущих художников барочной Генуи. Джованни Баттиста Карлоне расписал своды и купол, а главный алтарь хранит важные скульптуры, связанные с Пьером Пюже, создавая насыщенный ансамбль XVII века.",
+      "Первый парламент Республики: До строительства Palazzo Ducale Сан-Сиро служила и местом гражданских собраний. Здесь граждане и знать обсуждали политические решения, войны, союзы и важные торговые вопросы Генуэзской республики.",
+      "Разрушительный пожар плотников: В 1580 году сильный пожар, начавшийся в ремесленных мастерских, перекинулся на церковь и уничтожил деревянные конструкции и старые украшения. Последующая перестройка во многом сформировала нынешний барочный интерьер.",
+      "Алтарь на деньги от торговли кораллом: Богатая семья Ломеллини участвовала в украшении нескольких капелл. Доходы от средиземноморской торговли, включая коралл Табарки, позволяли оплачивать алтари, мрамор и произведения, прославлявшие престиж рода.",
+      "Реликвии первых епископов Генуи: Базилика хранит реликвии, связанные с первыми епископами и святыми генуэзской традиции, включая святого Сиро. Это делает храм одним из главных мест памяти о раннехристианских истоках города."
+    ],
+    "zh": [
+      "井中蛇怪的奇迹：传说一只 basilisk 以毒气污染教堂附近的水井。主教 Siro 命令这只怪物投入大海，从而解救了城市。所谓“圣西罗井”至今仍是街区历史记忆的一部分。",
+      "为了便利而建在城墙外：最初的 basilica 建在罗马城墙之外，那里是一处位于重要通道旁的基督教墓地。较宽敞的空间和殡葬功能，使这里适合兴建热那亚最早的大型宗教建筑之一。",
+      "险些倒塌的中世纪钟楼：20世纪初，旧钟楼出现严重结构问题。为了防止它倒向周围住宅，人们拆除了部分结构。今天看到的塔楼更低，是后来重建和安全加固后的结果。",
+      "朱塞佩·马志尼的洗礼：教堂保存着朱塞佩·马志尼受洗的洗礼池。他出生在不远处的 Via Lomellini。这个细节把热那亚最古老的宗教地点之一与意大利复兴运动的重要人物联系起来。",
+      "巴洛克大师齐聚一堂：内部汇集了热那亚巴洛克时期多位重要艺术家的作品。Giovanni Battista Carlone 装饰了拱顶和穹顶，主祭坛则保存着与 Pierre Puget 相关的重要雕塑，形成浓缩的17世纪艺术空间。",
+      "共和国最早的'议会'：在 Palazzo Ducale 建成之前，圣西罗也承担市民集会功能。公民和贵族曾在这里讨论政治决策、战争、联盟以及与热那亚共和国有关的重要商业事务。",
+      "木匠作坊引发的大火：1580年，一场从附近手工作坊燃起的大火蔓延到教堂，毁坏了大量木结构和更早的装饰。之后的重建推动建筑转变为今天内部所见的巴洛克面貌。",
+      "由珊瑚贸易财富资助的祭坛：强大的 Lomellini 家族参与了多座小堂的装饰。来自地中海贸易，包括 Tabarka 珊瑚的巨额财富，被用于修建祭坛、铺设大理石和购置艺术品，以展示家族声望。",
+      "热那亚早期主教的圣髑：教堂保存着与热那亚早期主教和圣人有关的圣髑，其中包括圣 Siro。它们进一步强化了这里作为城市基督教起源重要记忆场所的地位。"
+    ],
+    "lij": [
+      "O miracolo do basilisco into pozzo: A legenda a conta che un basilisco o infestava un pozzo vixin a-a gésa co-o seu fiò velenoso. O vescovo Siro o ghe l'avieiva ordenou de buttase in mâ, liberando a çittæ. O Pozzo de San Siro o resta inte memoria do quartê.",
+      "Nasciua fò d'e mûe pe comoditæ: A primma baxilica a l'é nasciua fò da cinta romana, inte unna zona de çimiteio cristian in sciô passaggio de unna stradda importante. O spaçio e a funçion funeraria rendeivan o pòsto adatto a un di primmi grandi edifici religioxi zeneixi.",
+      "O campanin che o rischiava de croâ: A l'iniçio do Növeçento o vegio campanin medievale o mostrava problemi seri de stabilitæ. Pe evitâ che o cascasse in sci-e case, unna parte a l'é stæta demolîa; a torre d'ancheu a l'é ciù bassa e fruto de lavori successivi.",
+      "O battesimo de Giuseppe Mazzini: A baxilica a conserva o fonte dove o l'é stæto battezzou Giuseppe Mazzini, nasciuo lì vixin in Via Lomellini. O dettaggio o liga un di ciù antighi luoghi religioxi da çittæ a-a vitta de un protagonista do Risorgimento.",
+      "I maestri do barocco tutti inte unna gésa: L'interno o mette assieme òpere de grandi artisti da Zena barocca. Giovanni Battista Carlone o l'à decorou volte e cupola, mentre l'artâ maggiore o conserva scultue ligæ a Pierre Puget.",
+      "O primmo 'Parlamento' da Repubbrica: Primma do Palazzo Ducale, San Siro a serviva anche pe-e riunion civiche. Cittadin e nobili se trovavan lì pe discutte politiçia, guære, alleanse e question de commercio importanti pe-a Repubbrica de Zena.",
+      "L'incendio devastante di falegnami: Into 1580 un grande incendio partio da-e botteghe artigianne o l'é arrivou a-a gésa e o l'à destruto struttue de legno e decoraçioin vegie. A reconstruxion a l'à poi portou verso e forme barocche d'ancheu.",
+      "Un artâ pagou co-o corallo: A potente famiggia Lomellini a l'à contribuo a decorâ tante cappelle. E ricchesse do commercio mediterraneo, compreso o corallo de Tabarca, han pagou artâ, marmo e òpere pensæ pe celebrâ o prestixio da casâ.",
+      "E reliquie di primmi vescovi de Zena: A baxilica a conserva reliquie ligæ a-i primmi vescovi e santi da tradiçion zeneize, tra cui San Siro. Sta presenza a rende o tempio un di luoghi prinçipâ da memoria de l'origine cristiana da çittæ."
+    ]
+  };
+  root.church["San Filippo Neri"] = {
+    "it": [
+      "Un'acustica da teatro d'opera: La chiesa e il vicino oratorio sono celebri per la qualità dell'acustica. Nel Settecento vi si eseguivano oratori musicali e composizioni sacre che attiravano pubblico e nobiltà, trasformando il complesso in uno dei principali luoghi musicali della Genova barocca.",
+      "L'oratorio barocco intatto del Piemonte: Accanto alla chiesa si trova un ricco oratorio barocco, conservato in condizioni notevoli. Tra le opere più importanti spicca una statua dell'Immacolata Concezione legata alla grande tradizione scultorea del Seicento e alla presenza di artisti come Pierre Puget.",
+      "Costruita sopra un intero quartiere medievale: Per realizzare il grande complesso filippino tra Seicento e Settecento fu necessario acquistare e demolire case, botteghe e passaggi preesistenti. La costruzione modificò profondamente il tessuto medievale di Via Lomellini, creando un nuovo fronte monumentale nel cuore del quartiere.",
+      "I sotterranei usati come rifugio antiaereo: Sotto il pavimento si trovano cripte e ambienti sotterranei. Durante i bombardamenti della Seconda Guerra Mondiale questi spazi, protetti dalle robuste murature del complesso, furono utilizzati anche come rifugi dalla popolazione del quartiere durante gli allarmi aerei.",
+      "Il miracolo della fontana della gioventù: Nei cortili del complesso si trova una storica fontana attorno alla quale nacquero credenze popolari. Gli abitanti della Maddalena attribuivano alla sua acqua proprietà benefiche e la ricordavano scherzosamente come una fontana capace di “allungare la vita”.",
+      "Gli affreschi dipinti \"in gara\": La grande decorazione della volta fu affidata al bolognese Marcantonio Franceschini. La scelta di un artista forestiero, secondo la tradizione, alimentò rivalità con i pittori locali e contribuì a trasformare il cantiere in una sorta di competizione artistica tra scuole diverse.",
+      "L'organo monumentale sopravvissuto: Sulla cantoria si conserva un importante organo storico, più volte restaurato nel corso del tempo. Lo strumento è legato alla lunga tradizione musicale dei Filippini e testimonia l'importanza che la musica sacra ebbe nella vita del complesso.",
+      "La statua del Santo \"sorridente\": San Filippo Neri è ricordato come il “santo della gioia”. Anche le immagini a lui dedicate nel complesso tendono a evitare pose troppo severe, privilegiando espressioni più umane e accoglienti, coerenti con il suo modo diretto di rivolgersi ai giovani."
+    ],
+    "en": [
+      "Opera-house acoustics: The church and nearby oratory are famous for their excellent acoustics. In the 18th century, musical oratorios and sacred compositions attracted audiences and nobility, turning the complex into one of the main musical venues of Baroque Genoa.",
+      "A remarkably intact Baroque oratory: Beside the church stands a richly decorated Baroque oratory preserved in excellent condition. Among its most important works is a statue of the Immaculate Conception linked to the great 17th-century sculptural tradition and artists such as Pierre Puget.",
+      "Built over an entire medieval neighbourhood: Creating the large Filippini complex between the 17th and 18th centuries required buying and demolishing houses, workshops and existing passageways. The project deeply altered medieval Via Lomellini and created a new monumental frontage in the heart of the district.",
+      "Underground rooms used as air-raid shelters: Beneath the floor are crypts and underground spaces. During Second World War bombing, these rooms, protected by the complex's thick masonry, were also used by local residents as shelters during air-raid alarms.",
+      "The fountain of youth legend: A historic fountain in the courtyards inspired local beliefs. Residents of the Maddalena district credited its water with beneficial properties and jokingly remembered it as a fountain capable of 'extending life'.",
+      "Frescoes painted in competition: The great vault decoration was entrusted to the Bolognese artist Marcantonio Franceschini. According to tradition, choosing an outsider fuelled rivalry with local painters and helped turn the worksite into a kind of artistic contest between different schools.",
+      "The surviving monumental organ: An important historic pipe organ stands on the gallery and has been restored several times. The instrument is tied to the Filippini's long musical tradition and shows how central sacred music was to the life of the complex.",
+      "The 'smiling' saint: Saint Philip Neri is remembered as the 'saint of joy'. Images of him in the complex often avoid severe poses, favouring warmer, more human expressions consistent with his direct and welcoming way of speaking to young people."
+    ],
+    "es": [
+      "Una acústica de teatro de ópera: La iglesia y el oratorio vecino son famosos por su excelente acústica. En el siglo XVIII se interpretaban oratorios musicales y composiciones sacras que atraían a público y nobleza, convirtiendo el conjunto en uno de los principales espacios musicales de la Génova barroca.",
+      "Un oratorio barroco notablemente intacto: Junto a la iglesia se conserva un rico oratorio barroco. Entre sus obras más importantes destaca una estatua de la Inmaculada Concepción vinculada a la gran tradición escultórica del siglo XVII y a artistas como Pierre Puget.",
+      "Construida sobre todo un barrio medieval: Para levantar el gran complejo filipino entre los siglos XVII y XVIII fue necesario comprar y demoler casas, talleres y pasos existentes. La obra transformó profundamente el tejido medieval de Via Lomellini, creando un nuevo frente monumental.",
+      "Los subterráneos usados como refugios antiaéreos: Bajo el suelo hay criptas y espacios subterráneos. Durante los bombardeos de la Segunda Guerra Mundial, protegidos por los gruesos muros del complejo, también sirvieron como refugio para los vecinos durante las alarmas aéreas.",
+      "El milagro de la fuente de la juventud: En los patios hay una antigua fuente rodeada de creencias populares. Los habitantes de la Maddalena atribuían propiedades beneficiosas a su agua y la recordaban en tono de broma como una fuente capaz de 'alargar la vida'.",
+      "Los frescos pintados 'en competición': La gran decoración de la bóveda fue confiada al boloñés Marcantonio Franceschini. Según la tradición, elegir a un artista forastero alimentó rivalidades con pintores locales y convirtió el taller en una especie de competición entre escuelas diferentes.",
+      "El órgano monumental superviviente: En la tribuna se conserva un importante órgano histórico, restaurado varias veces. El instrumento está ligado a la larga tradición musical de los Filipinos y demuestra la importancia que tuvo la música sacra en la vida del complejo.",
+      "La estatua del santo 'sonriente': San Felipe Neri es recordado como el 'santo de la alegría'. Sus imágenes en el complejo evitan a menudo poses demasiado severas y prefieren expresiones más humanas y acogedoras, coherentes con su trato directo con los jóvenes."
+    ],
+    "fr": [
+      "Une acoustique de théâtre d'opéra : L'église et l'oratoire voisin sont célèbres pour leur excellente acoustique. Au XVIIIe siècle, on y exécutait oratorios et compositions sacrées attirant public et noblesse, faisant du complexe l'un des principaux lieux musicaux de la Gênes baroque.",
+      "Un oratoire baroque remarquablement intact : À côté de l'église se trouve un riche oratoire baroque très bien conservé. Parmi ses œuvres majeures figure une statue de l'Immaculée Conception liée à la grande tradition sculpturale du XVIIe siècle et à des artistes comme Pierre Puget.",
+      "Construite sur tout un quartier médiéval : La création du vaste complexe des Philippins aux XVIIe et XVIIIe siècles imposa d'acheter et démolir maisons, boutiques et passages existants. Le chantier transforma profondément la Via Lomellini médiévale et créa un nouveau front monumental.",
+      "Les souterrains utilisés comme abris antiaériens : Sous le sol se trouvent cryptes et salles souterraines. Durant les bombardements de la Seconde Guerre mondiale, protégés par les murs épais du complexe, ces espaces servirent aussi d'abris aux habitants du quartier pendant les alertes.",
+      "Le miracle de la fontaine de jouvence : Une ancienne fontaine dans les cours donna naissance à des croyances populaires. Les habitants de la Maddalena attribuaient à son eau des vertus bénéfiques et la surnommaient avec humour la fontaine capable de 'prolonger la vie'.",
+      "Des fresques peintes 'en compétition' : La grande décoration de la voûte fut confiée au Bolonais Marcantonio Franceschini. Selon la tradition, le choix d'un artiste étranger à Gênes alimenta les rivalités avec les peintres locaux et transforma le chantier en sorte de concours artistique.",
+      "L'orgue monumental préservé : La tribune conserve un important orgue historique, plusieurs fois restauré. L'instrument est lié à la longue tradition musicale des Philippins et témoigne du rôle central que la musique sacrée joua dans la vie du complexe.",
+      "Le saint 'souriant' : Saint Philippe Néri est connu comme le 'saint de la joie'. Les images qui lui sont consacrées évitent souvent les poses trop sévères et privilégient des expressions plus humaines et accueillantes, fidèles à sa manière directe de s'adresser aux jeunes."
+    ],
+    "ar": [
+      "صوتيات تشبه دار الأوبرا: تشتهر الكنيسة والمصلى المجاور بجودة الصوت. في القرن الثامن عشر كانت تُقدَّم فيهما أوراتوريات موسيقية ومؤلفات دينية تجذب الجمهور والنبلاء، ما جعل المجمع من أهم أماكن الموسيقى في جنوة الباروكية.",
+      "مصلى باروكي محفوظ بصورة رائعة: بجانب الكنيسة يوجد مصلى باروكي غني ما زال محفوظاً بحالة ممتازة. ومن أبرز أعماله تمثال للحبل بلا دنس يرتبط بالتقاليد النحتية الكبرى في القرن السابع عشر وبفنانين مثل Pierre Puget.",
+      "بُني فوق حي كامل من العصور الوسطى: لإنشاء مجمع الفلبينيين الكبير بين القرنين السابع عشر والثامن عشر كان لا بد من شراء وهدم منازل وورش وممرات قائمة. غيّر المشروع بعمق النسيج الوسيط في Via Lomellini وأنشأ واجهة عمرانية جديدة.",
+      "الأقبية كملاجئ من الغارات: تحت الأرض توجد سراديب وغرف سفلية. أثناء قصف الحرب العالمية الثانية استخدم سكان الحي هذه المساحات، المحمية بجدران المجمع السميكة، كملاجئ خلال إنذارات الغارات الجوية.",
+      "أسطورة نافورة الشباب: توجد في ساحات المجمع نافورة قديمة نشأت حولها معتقدات شعبية. كان سكان حي Maddalena ينسبون إلى مياهها فوائد خاصة ويصفونها مازحين بأنها نافورة تستطيع 'إطالة العمر'.",
+      "جداريات رُسمت في أجواء منافسة: أُسندت زخرفة القبو الكبرى إلى الفنان Marcantonio Franceschini من بولونيا. وتقول التقاليد إن اختيار فنان من خارج جنوة أثار منافسة مع الرسامين المحليين وحوّل الورشة إلى نوع من التحدي الفني بين مدارس مختلفة.",
+      "الأرغن التاريخي الباقي: ما زال في الشرفة أرغن مهم خضع للترميم أكثر من مرة. يرتبط هذا instrument بالتقليد الموسيقي الطويل لدى الفلبينيين ويشهد على المكانة الكبيرة التي احتلتها الموسيقى الدينية في حياة المجمع.",
+      "تمثال القديس 'المبتسم': يُعرف القديس فيليب نيري بأنه 'قديس الفرح'. لذلك تتجنب صوره في المجمع الوضعيات الصارمة غالباً، وتفضّل تعابير أكثر إنسانية ووداً تتوافق مع طريقته المباشرة في مخاطبة الشباب."
+    ],
+    "ru": [
+      "Акустика как в оперном театре: Церковь и соседний ораторий славятся качеством звука. В XVIII веке здесь исполняли музыкальные оратории и духовные произведения, привлекавшие публику и знать, и комплекс стал одним из главных музыкальных мест барочной Генуи.",
+      "Редко сохранившийся барочный ораторий: Рядом с церковью находится богато украшенный ораторий, дошедший до нас в замечательном состоянии. Среди его главных произведений — статуя Непорочного Зачатия, связанная с великой скульптурной традицией XVII века и мастерами вроде Пьера Пюже.",
+      "Построена поверх целого средневекового квартала: Для создания большого комплекса филиппинцев в XVII–XVIII веках пришлось выкупить и снести дома, лавки и проходы. Стройка глубоко изменила средневековую Via Lomellini и создала новый монументальный фронт.",
+      "Подземелья как бомбоубежища: Под полом находятся крипты и подземные помещения. Во время бомбардировок Второй мировой войны эти пространства, защищённые мощными стенами комплекса, использовали жители квартала как укрытия во время воздушных тревог.",
+      "Легенда о фонтане молодости: Во дворах комплекса находится старинный фонтан, вокруг которого сложились народные поверья. Жители Маддалены приписывали его воде полезные свойства и шутливо называли фонтаном, способным 'продлевать жизнь'.",
+      "Фрески, написанные 'на соревновании': Роспись свода поручили болонцу Маркантонио Франческини. По преданию, выбор приезжего мастера усилил соперничество с местными художниками и превратил работу в своеобразное соревнование разных живописных школ.",
+      "Сохранившийся монументальный орган: На хорах стоит важный исторический орган, неоднократно реставрировавшийся. Он связан с давней музыкальной традицией филиппинцев и показывает, насколько значимой была духовная музыка в жизни комплекса.",
+      "'Улыбающийся' святой: Филипп Нери известен как 'святой радости'. Его изображения здесь часто избегают чрезмерно строгих поз и предпочитают более тёплые и человечные выражения, соответствующие его непосредственному общению с молодёжью."
+    ],
+    "zh": [
+      "像歌剧院一样的声学效果：教堂和邻近的小礼拜堂以优良声学闻名。18世纪，这里经常演出宗教清唱剧和圣乐作品，吸引公众与贵族，使建筑群成为巴洛克时期热那亚重要的音乐场所之一。",
+      "保存完好的巴洛克小礼拜堂：教堂旁有一座装饰华丽、保存状况出色的巴洛克 oratory。重要作品之一是无原罪圣母像，与17世纪伟大的雕塑传统以及 Pierre Puget 等艺术家的影响有关。",
+      "建在整片中世纪街区之上：17至18世纪修建大型菲利比会建筑群时，需要购置并拆除原有住宅、商铺和通道。这项工程深刻改变了 Via Lomellini 的中世纪肌理，并在街区中心形成新的纪念性立面。",
+      "地下空间曾作防空洞：地板下分布着墓室和地下房间。第二次世界大战轰炸期间，这些空间受到建筑厚重墙体保护，也被当地居民在空袭警报时当作避难所。",
+      "青春之泉的传说：建筑群庭院中有一座古老喷泉，周围形成了民间信仰。Maddalena 居民认为泉水有益健康，并幽默地把它称作能够“延长寿命”的泉水。",
+      "在竞争中完成的壁画：宏大的拱顶装饰交给了来自博洛尼亚的 Marcantonio Franceschini。传统认为，选择外地艺术家激起了与本地画家的竞争，使工地仿佛成为不同艺术流派之间的一场较量。",
+      "幸存的纪念性管风琴：唱经楼上保存着一架重要历史管风琴，历经多次修复。它与菲利比会悠久的音乐传统密切相关，也说明宗教音乐在这座建筑群生活中曾占据重要地位。",
+      "“微笑”的圣人：圣菲利普·内里常被称为“喜乐之圣”。建筑群中的相关形象也往往避免过于严肃的姿态，更强调亲切、有人情味的表情，与他直接面对年轻人的方式相呼应。"
+    ],
+    "lij": [
+      "Un'acustica da teatro d'opera: A gésa e l'oratorio vixin son famoxi pe l'acustica. Into Setteçento ghe se sonavan oratori e muxica sacra che portavan pubbrico e nobiltæ, rendendo o complesso un di prinçipâ luoghi musicali da Zena barocca.",
+      "L'oratorio barocco ben conservou: Vixin a-a gésa gh'é un ricco oratorio barocco restou in condizioni notevoli. Tra e òpere ciù importanti gh'é unna statoa de l'Immacolata, ligâ a-a grande scultura do Seiçento e a nommi comme Pierre Puget.",
+      "Construta in sciô quartê medievale: Pe fâ o grande complesso filippin tra Seiçento e Setteçento l'é stæto necessario comprâ e demolî case, botteghe e passaggi. O cantiere o l'à cambiou profondamente a vegia Via Lomellini e o l'à creou un neuvo fronte monumentale.",
+      "I sotterranei comme rifugi antiaerei: Sotta o pavimento gh'é cripte e locali sotterranei. Durante i bombardamenti da Seconda Guæra Mondiâ, protezui da-e mænn-e spesse, son stæti adêuviæ anche da-a gente do quartê comme rifugio durante e allarme.",
+      "O miracolo da fontann-a da zoventù: Inti cortî do complesso gh'é unna fontann-a antiga che a l'à fæto nasce credense popolari. A gente da Maddalena a ghe dava proprietæ benefiche e a-a ciamava pe scherzo a fontann-a che a 'allonga a vitta'.",
+      "I affreschi dipinti 'in gara': A grande decoraçion da volta a l'é stæta affidâ a Marcantonio Franceschini de Bologna. Segondo a tradiçion, a çernia de un artista forestê a l'à alimentou rivalitæ co-i pittori locali e unna specie de competiçion tra scoe diverse.",
+      "L'òrgan monumentale sarvou: In sciâ cantoria se conserva un importante òrgan storico, restaurou ciù votte. O strumento o l'é ligou a-a longa tradiçion musicale di Filippin e o mostra quanto a muxica sacra a fisse importante into complesso.",
+      "A statoa do santo 'sorridente': San Filippo Neri o l'é ricordou comme o 'santo da allegria'. Anche e seu immagini evitavan pose tròppo severe e preferivan esprescioin ciù umann-e e accoglienti, comme o seu mòddo de parlâ a-i zoveni."
+    ]
+  };
+
+  root.church["San Luca"] = {
+    "it": [
+      "La \"Chiesa privata\" della dinastia Spinola: Fondata nel 1188 da Oberto Spinola, San Luca fu per secoli una chiesa gentilizia legata alla famiglia. Gli Spinola ne finanziavano le opere, controllavano molte scelte amministrative e utilizzavano il tempio anche come luogo di sepoltura e rappresentanza dinastica.",
+      "Il \"Casana\" e il miracolo economico della bacheca: La piazza attorno a San Luca era un centro di affari e credito degli Spinola. Secondo la tradizione, sulla facciata venivano esposti anche avvisi riguardanti debitori e commercianti insolventi, una sorta di registro pubblico ante litteram dei cattivi pagatori.",
+      "La statua d'argento salvata dai pirati e dalle guerre: Una preziosa statua argentea dell'Immacolata fu più volte nascosta nei palazzi degli Spinola durante periodi di guerra e occupazione. La famiglia cercava così di proteggerla dal rischio di requisizione o fusione da parte di eserciti in cerca di metalli preziosi.",
+      "Filippo Parodi e il Cristo deposto da record: Tra le opere più note della chiesa figura un intenso Cristo deposto in legno, attribuito alla grande tradizione scultorea di Filippo Parodi. Il realismo anatomico e l'espressività del gruppo ne fanno una delle presenze artistiche più sorprendenti dell'interno.",
+      "Il pittore che lavorò \"in clausura\": Domenico Piola e Anton Maria Haffner decorarono volte e pareti con un complesso ciclo pittorico. Una tradizione racconta che, per lavorare senza interruzioni e rispettare tempi molto stretti, gli artisti trascorressero lunghi periodi chiusi nel cantiere sopra i ponteggi.",
+      "Un campanile incastrato nei tetti: Il campanile di San Luca è difficile da individuare dalla piazza perché la densità del centro storico lo ha quasi inglobato nei palazzi circostanti. La torre appare stretta tra muri e finestre private, esempio perfetto dell'urbanistica compressa dei caruggi.",
+      "La pala d'altare del Grechetto: La chiesa conserva una Natività di Giovanni Benedetto Castiglione, detto il Grechetto. L'artista era celebre per l'uso di animali, dettagli naturalistici e scene movimentate, elementi che introdusse anche nei soggetti religiosi rendendo immediatamente riconoscibile il proprio stile.",
+      "Il restauro \"lampo\" dopo il bombardamento del 1684: Nel bombardamento francese del 1684 l'area di San Luca subì gravi danni. Gli Spinola investirono rapidamente grandi somme nella ricostruzione, permettendo alla chiesa di essere restaurata in tempi relativamente brevi e di tornare presto a svolgere la propria funzione."
+    ],
+    "en": [
+      "The Spinola dynasty's private church: Founded in 1188 by Oberto Spinola, San Luca remained for centuries a family church tied to the dynasty. The Spinola financed its works, controlled many administrative choices and used the church for burials and dynastic representation.",
+      "The Casana and the public debtor board: The square around San Luca was a centre of Spinola business and credit. Tradition says notices naming debtors and insolvent merchants were displayed on the façade, a kind of early public register of bad payers.",
+      "The silver statue hidden from war and raiders: A precious silver statue of the Immaculate Conception was repeatedly hidden in Spinola palaces during wars and occupations. The family sought to protect it from confiscation or melting by armies searching for valuable metal.",
+      "Filippo Parodi and the remarkable Deposition: Among the church's best-known works is an intense wooden Deposition linked to the sculptural tradition of Filippo Parodi. Its anatomical realism and expressive power make the group one of the most striking artistic presences inside.",
+      "The painter who worked in seclusion: Domenico Piola and Anton Maria Haffner decorated vaults and walls with an elaborate cycle. Tradition says that to work without interruption and meet tight deadlines, the artists spent long periods effectively shut inside the worksite on the scaffolding.",
+      "A bell tower trapped among rooftops: San Luca's bell tower is difficult to spot from the square because the dense historic centre has almost swallowed it into surrounding buildings. The tower appears squeezed between walls and private windows, a perfect example of Genoa's compressed urban fabric.",
+      "Grechetto's altarpiece: The church preserves a Nativity by Giovanni Benedetto Castiglione, known as Il Grechetto. Famous for animals, natural details and lively scenes, he introduced these elements even into sacred subjects, making his style immediately recognisable.",
+      "A rapid restoration after the 1684 bombardment: The French bombardment of 1684 seriously damaged the San Luca area. The Spinola quickly invested large sums in rebuilding, allowing the church to be restored relatively fast and to resume its function soon afterwards."
+    ],
+    "es": [
+      "La iglesia privada de la dinastía Spinola: Fundada en 1188 por Oberto Spinola, San Luca fue durante siglos una iglesia gentilicia vinculada a la familia. Los Spinola financiaban las obras, controlaban decisiones administrativas y utilizaban el templo como lugar de sepultura y representación dinástica.",
+      "El Casana y el tablón de deudores: La plaza alrededor de San Luca era un centro de negocios y crédito de los Spinola. Según la tradición, en la fachada se exponían avisos sobre deudores y comerciantes insolventes, una especie de registro público primitivo de malos pagadores.",
+      "La estatua de plata salvada de guerras y saqueos: Una valiosa estatua argéntea de la Inmaculada fue escondida varias veces en palacios Spinola durante guerras y ocupaciones. La familia intentaba protegerla de requisiciones o de ser fundida por ejércitos en busca de metales preciosos.",
+      "Filippo Parodi y el impresionante Cristo depuesto: Entre las obras más conocidas destaca un intenso Cristo depuesto de madera vinculado a la gran tradición escultórica de Filippo Parodi. Su realismo anatómico y expresividad lo convierten en una de las presencias artísticas más sorprendentes del interior.",
+      "El pintor que trabajó 'en clausura': Domenico Piola y Anton Maria Haffner decoraron bóvedas y muros con un complejo ciclo. La tradición cuenta que, para trabajar sin interrupciones y cumplir plazos muy ajustados, pasaban largos periodos prácticamente encerrados en el taller sobre los andamios.",
+      "Un campanario encajado entre tejados: El campanario de San Luca es difícil de ver desde la plaza porque la densidad del centro histórico casi lo ha absorbido entre los edificios. La torre aparece apretada entre muros y ventanas privadas, perfecto ejemplo del urbanismo comprimido de los caruggi.",
+      "El retablo del Grechetto: La iglesia conserva una Natividad de Giovanni Benedetto Castiglione, llamado Il Grechetto. Famoso por animales, detalles naturalistas y escenas dinámicas, introdujo estos elementos también en temas religiosos, haciendo su estilo inmediatamente reconocible.",
+      "La restauración rápida tras el bombardeo de 1684: El bombardeo francés de 1684 dañó gravemente la zona de San Luca. Los Spinola invirtieron rápidamente grandes sumas en la reconstrucción, permitiendo restaurar la iglesia en un plazo relativamente breve y devolverla pronto a su función."
+    ],
+    "fr": [
+      "L'église privée de la dynastie Spinola : Fondée en 1188 par Oberto Spinola, San Luca resta pendant des siècles une église familiale. Les Spinola finançaient les travaux, contrôlaient de nombreux choix administratifs et utilisaient le temple pour les sépultures et la représentation dynastique.",
+      "Le Casana et le tableau des débiteurs : La place autour de San Luca était un centre d'affaires et de crédit des Spinola. Selon la tradition, la façade affichait aussi des avis sur débiteurs et marchands insolvables, sorte d'ancêtre public du registre des mauvais payeurs.",
+      "La statue d'argent cachée pendant guerres et pillages : Une précieuse statue de l'Immaculée Conception fut plusieurs fois dissimulée dans les palais Spinola pendant les conflits et occupations. La famille cherchait ainsi à éviter sa confiscation ou sa fonte par des armées en quête de métaux précieux.",
+      "Filippo Parodi et le saisissant Christ déposé : Parmi les œuvres les plus connues figure un intense Christ déposé en bois lié à la grande tradition sculpturale de Filippo Parodi. Son réalisme anatomique et son expressivité en font l'une des présences artistiques les plus fortes de l'intérieur.",
+      "Le peintre qui travailla 'en clôture' : Domenico Piola et Anton Maria Haffner décorèrent voûtes et murs d'un cycle complexe. La tradition raconte que, pour travailler sans interruption et respecter des délais serrés, ils passaient de longues périodes presque enfermés sur les échafaudages.",
+      "Un clocher coincé entre les toits : Le clocher de San Luca est difficile à repérer depuis la place, car la densité du centre historique l'a presque absorbé dans les immeubles. La tour semble serrée entre murs et fenêtres privées, parfait exemple de l'urbanisme compact des caruggi.",
+      "Le retable du Grechetto : L'église conserve une Nativité de Giovanni Benedetto Castiglione, dit Il Grechetto. Célèbre pour ses animaux, détails naturalistes et scènes animées, il introduisit ces éléments jusque dans les sujets religieux, donnant à son style une identité immédiatement reconnaissable.",
+      "La restauration rapide après le bombardement de 1684 : Le bombardement français de 1684 endommagea fortement le quartier de San Luca. Les Spinola investirent rapidement d'importantes sommes dans la reconstruction, permettant à l'église d'être restaurée assez vite et de reprendre rapidement sa fonction."
+    ],
+    "ar": [
+      "الكنيسة الخاصة لأسرة Spinola: أسسها Oberto Spinola عام 1188، وظلت سان لوكا قروناً كنيسة عائلية مرتبطة بالسلالة. موّلت الأسرة أعمالها وتحكمت في كثير من قراراتها الإدارية واستخدمت المعبد أيضاً للدفن والتمثيل العائلي.",
+      "Casana ولوحة المدينين: كانت الساحة حول سان لوكا مركزاً لأعمال وائتمان Spinola. وتقول التقاليد إن الواجهة كانت تعرض إشعارات عن المدينين والتجار المتعثرين، في ما يشبه سجلاً عاماً مبكراً لمن لا يسددون ديونهم.",
+      "التمثال الفضي المخفي من الحروب: أُخفي تمثال فضي ثمين للحبل بلا دنس مرات عدة في قصور Spinola خلال الحروب والاحتلالات، لحمايته من المصادرة أو الصهر على يد جيوش تبحث عن المعادن الثمينة.",
+      "Filippo Parodi والمسيح المنزَّل المدهش: من أشهر أعمال الكنيسة مجموعة خشبية قوية للمسيح المنزَّل ترتبط بتقاليد النحت الكبرى لـ Filippo Parodi. الواقعية التشريحية والقوة التعبيرية تجعلها من أبرز الأعمال داخل الكنيسة.",
+      "الرسام الذي عمل في عزلة: زيّن Domenico Piola وAnton Maria Haffner الأقبية والجدران بدورة فنية معقدة. وتروي التقاليد أنهما قضيا فترات طويلة شبه مغلقين في الورشة فوق السقالات كي يعملا بلا انقطاع ويلتزما بالمواعيد الضيقة.",
+      "برج أجراس عالق بين الأسطح: يصعب رؤية برج سان لوكا من الساحة لأن كثافة المركز التاريخي كادت تبتلعه بين المباني المحيطة. يبدو البرج مضغوطاً بين الجدران والنوافذ الخاصة، مثالاً مثالياً على عمران caruggi المكتظ.",
+      "لوحة المذبح للـ Grechetto: تحتفظ الكنيسة بلوحة للميلاد رسمها Giovanni Benedetto Castiglione المعروف بـ Il Grechetto. اشتهر بالحيوانات والتفاصيل الطبيعية والمشاهد الحيوية، وأدخل هذه العناصر حتى في الموضوعات الدينية، ما جعل أسلوبه سهل التمييز.",
+      "ترميم سريع بعد قصف 1684: ألحق القصف الفرنسي عام 1684 أضراراً كبيرة بمنطقة سان لوكا. استثمرت أسرة Spinola سريعاً مبالغ كبيرة في إعادة البناء، ما سمح بإصلاح الكنيسة خلال وقت قصير نسبياً واستئناف نشاطها بسرعة."
+    ],
+    "ru": [
+      "Частная церковь династии Спинола: Основанная в 1188 году Оберто Спинолой, Сан-Лука веками оставалась семейным храмом рода. Спинола финансировали работы, влияли на управление и использовали церковь как место погребения и династического представительства.",
+      "Casana и доска должников: Площадь вокруг Сан-Лука была центром деловых и кредитных операций Спинола. По преданию, на фасаде вывешивали объявления о должниках и неплатёжеспособных торговцах — своего рода ранний публичный список плохих плательщиков.",
+      "Серебряная статуя, спасённая от войн: Драгоценную серебряную статую Непорочного Зачатия неоднократно прятали в дворцах Спинола во время войн и оккупаций, чтобы защитить от конфискации или переплавки армиями, охотившимися за ценным металлом.",
+      "Филиппо Пароди и выразительное Снятие с креста: Среди известных произведений — деревянный Христос после снятия с креста, связанный с большой скульптурной традицией Филиппо Пароди. Анатомический реализм и драматизм делают группу одной из самых впечатляющих работ интерьера.",
+      "Художники, работавшие 'в затворе': Доменико Пиола и Антон Мария Хаффнер расписали своды и стены сложным циклом. По легенде, чтобы не отвлекаться и уложиться в сроки, они подолгу фактически жили в закрытом строительном пространстве на лесах.",
+      "Колокольня, зажатая между крышами: Башню Сан-Лука трудно заметить с площади, потому что плотная застройка исторического центра почти поглотила её. Она выглядит зажатой между стенами и частными окнами — типичный пример тесной городской структуры каруджи.",
+      "Алтарная картина Грекетто: Церковь хранит «Рождество» Джованни Бенедетто Кастильоне, прозванного Грекетто. Художник любил животных, природные детали и динамичные сцены и вводил их даже в религиозные сюжеты, делая свой стиль легко узнаваемым.",
+      "Быстрая реставрация после бомбардировки 1684 года: Французский обстрел 1684 года сильно повредил район Сан-Лука. Спинола быстро вложили большие средства в восстановление, и церковь сравнительно скоро вернулась к нормальной жизни и богослужению."
+    ],
+    "zh": [
+      "Spinola 家族的“私人教堂”：圣卢卡由 Oberto Spinola 于1188年创建，几个世纪里一直是与家族紧密相连的贵族教堂。Spinola 家族资助工程、参与管理，并把这里用作家族墓葬和彰显身份的场所。",
+      "Casana 与公开的欠债名单：圣卢卡周边广场曾是 Spinola 家族商业与信贷活动中心。传统认为，教堂立面还会张贴有关欠债者和无力偿债商人的公告，像是一种早期公开的“失信名单”。",
+      "躲过战争的银质圣像：一尊珍贵的无原罪圣母银像曾在战争和占领时期多次被藏进 Spinola 家族宫殿，以免被军队征用或熔化成贵金属。",
+      "Filippo Parodi 与震撼的木雕基督：教堂著名作品之一是一组表现基督被放下十字架的木雕，与 Filippo Parodi 的雕塑传统有关。精准的人体刻画和强烈表现力使它成为内部最引人注目的艺术品之一。",
+      "几乎“闭关”工作的画家：Domenico Piola 与 Anton Maria Haffner 为拱顶和墙面创作复杂装饰。传说为了不受打扰并赶上紧张工期，两位艺术家曾长时间几乎封闭在脚手架上的工地里工作。",
+      "夹在屋顶间的钟楼：从广场很难看到圣卢卡钟楼，因为老城密集建筑几乎把它吞没。塔身被墙体和私人窗户紧紧包围，是热那亚 caruggi 压缩式城市格局的典型写照。",
+      "Grechetto 的祭坛画：教堂保存着 Giovanni Benedetto Castiglione，即 Il Grechetto 的《耶稣诞生》。他以动物、自然细节和动态场景著称，即使宗教题材中也使用这些元素，使风格非常容易辨认。",
+      "1684年轰炸后的快速修复：1684年法国轰炸严重破坏了圣卢卡一带。Spinola 家族迅速投入大笔资金重建，使教堂在相对较短时间内完成修复并恢复原有功能。"
+    ],
+    "lij": [
+      "A 'gésa privâ' di Spinola: Fondâ into 1188 da Oberto Spinola, San Luca a l'é stæta pe secoli unna gésa gentilizia da famiggia. I Spinola pagavan i travaggi, decideivan tanto da gestioin e a adêuviavan anche pe sepoltue e rappresentansa dinastica.",
+      "O Casana e a bacheca di debitoî: A ciassa intorno a San Luca a l'ea un centro d'affæ e credito di Spinola. A tradiçion a conta che in sciâ façciata se metteivan avvisi in sci debitoî e mercanti insolventi, comme un registro pubblico di cattivi pagouei.",
+      "A statoa d'argento sarvâ da guære e razzie: Una statoa d'argento de l'Immacolata a l'é stæta ciù votte ascosa inti palassi Spinola durante guære e ocupaçioin, pe evitâ che i eserciti a requisissan ò a fondissan pe-o metallo preçioso.",
+      "Filippo Parodi e o Cristo deposto: Tra e òpere ciù note gh'é un Cristo deposto de legno ligou a-a grande tradiçion scultorea de Filippo Parodi. O realismo do corpo e a fòrsa espressiva rendan o gruppo un di ciù sorprendenti drento a gésa.",
+      "O pittô che o travaggiava 'in clausura': Domenico Piola e Anton Maria Haffner han decorou volte e mænn-e con un ciclo complesso. A tradiçion a conta che, pe no esse interrompui e rispettâ i tempi, i stavan pe longhi periodi serræ into cantiere in sci ponteggi.",
+      "Un campanin incastrou inti tetti: O campanin de San Luca o l'é difficile da vedde da ciassa perché o centro storico o l'à quasi inghiottio tra i palassi. A torre a pâ strenzua tra mænn-e e barconæ privæ, esempio perfetto di caroggi compressi.",
+      "A pala do Grechetto: A gésa a conserva unna Nativitæ de Giovanni Benedetto Castiglione, o Grechetto. O l'ea famoxo pe animali, detaggi naturali e scene mosse, elementi che o metteiva anche inti soggetti religioxi, rendendo o stile subito riconoscibile.",
+      "O restauro veloce dòppo o bombardamento do 1684: O bombardamento françeize do 1684 o l'à danneggiou forte a zona de San Luca. I Spinola han investio subito tanti dinæ inta reconstruxion e a gésa a l'é stæta restaurâ in tempi relativamente brevi."
+    ]
+  };
+  root.church["San Marcellino"] = {
+    "it": [
+      "Fondata dal clero di Milano in \"esilio\": La tradizione fa risalire le origini della chiesa al VI secolo, quando membri del clero milanese avrebbero trovato rifugio a Genova durante l'invasione longobarda. Il racconto collega così San Marcellino a uno dei più antichi flussi religiosi tra Milano e la Liguria.",
+      "La cappella privata del futuro Papa: Nel Quattrocento la chiesa divenne legata alla famiglia Cybo. Giovanni Battista Cybo ne promosse un importante restauro prima di essere eletto papa nel 1484 con il nome di Innocenzo VIII, lasciando al complesso un legame diretto con la storia pontificia.",
+      "Una nascita parallela ai cavalieri delle Crociate: Come altri edifici religiosi della zona di Prè, San Marcellino fu legata all'accoglienza dei viaggiatori. Nel Medioevo serviva anche pellegrini e uomini in attesa di imbarcarsi dal porto verso il Mediterraneo orientale e i luoghi delle Crociate.",
+      "La culla dell'opera sociale per i più fragili: Nel 1945 la vecchia chiesa divenne un punto di riferimento per l'assistenza ai poveri e agli sfollati. Da questa esperienza nacque l'Associazione San Marcellino, ancora oggi legata all'accoglienza e al sostegno delle persone senza dimora.",
+      "Un monumento del Razionalismo italiano: La nuova San Marcellino, costruita sulle alture di San Teodoro negli anni Trenta, fu progettata da Luigi Carlo Daneri. La sua forma cilindrica e il linguaggio essenziale ne fanno uno degli esempi più riconoscibili di architettura religiosa razionalista a Genova.",
+      "Il tocco ingegneristico di Pier Luigi Nervi: Alla struttura della nuova chiesa contribuì anche Pier Luigi Nervi, uno dei grandi protagonisti dell'ingegneria italiana del Novecento. Il suo intervento è legato soprattutto alla soluzione della grande copertura in cemento armato che domina lo spazio interno.",
+      "La facciata in pietra di Finale: Il rivestimento esterno della chiesa moderna utilizza pietra chiara proveniente dalla Riviera di Ponente. Questo materiale, accostato alle geometrie razionaliste dell'edificio, produce un forte contrasto tra tradizione ligure, modernità costruttiva e linguaggio architettonico del Novecento.",
+      "Il campanile arrivato vent'anni dopo: La chiesa moderna fu completata negli anni Trenta, ma il campanile venne terminato soltanto nel 1953. La torre riprende le geometrie essenziali del progetto originario e dimostra come il complesso sia stato completato in fasi successive."
+    ],
+    "en": [
+      "Founded by Milanese clergy in exile: Tradition places the church's origins in the 6th century, when members of Milan's clergy supposedly found refuge in Genoa during the Lombard invasion. The story links San Marcellino to one of the earliest religious connections between Milan and Liguria.",
+      "The future Pope's private chapel: In the 15th century the church became linked to the Cybo family. Giovanni Battista Cybo promoted a major restoration before becoming Pope Innocent VIII in 1484, giving the complex a direct connection with papal history.",
+      "A parallel story to the Crusader routes: Like other religious buildings in the Prè district, San Marcellino was connected with hospitality for travellers. In the Middle Ages it also served pilgrims and men waiting to sail from Genoa toward the eastern Mediterranean and Crusader destinations.",
+      "The birthplace of social work for the most vulnerable: In 1945 the old church became a reference point for helping the poor and displaced. From this experience grew the San Marcellino Association, still active today in welcoming and supporting people experiencing homelessness.",
+      "A monument of Italian Rationalism: The new San Marcellino, built on the heights of San Teodoro in the 1930s, was designed by Luigi Carlo Daneri. Its cylindrical form and austere language make it one of Genoa's most recognisable examples of Rationalist religious architecture.",
+      "Pier Luigi Nervi's engineering touch: Pier Luigi Nervi, one of the great Italian engineers of the 20th century, also contributed to the new church. His role is especially connected with the large reinforced-concrete roof structure dominating the interior.",
+      "The Finale stone façade: The modern church is clad in pale stone from the western Ligurian Riviera. Combined with the building's Rationalist geometry, the material creates a strong contrast between regional tradition, modern construction and 20th-century architectural language.",
+      "The bell tower that arrived twenty years later: The modern church was completed in the 1930s, but the bell tower was not finished until 1953. Its essential geometry follows the original design and shows how the complex was completed in successive phases."
+    ],
+    "es": [
+      "Fundada por el clero de Milán en 'exilio': La tradición sitúa los orígenes de la iglesia en el siglo VI, cuando miembros del clero milanés habrían buscado refugio en Génova durante la invasión lombarda. El relato vincula San Marcellino con antiguas relaciones religiosas entre Milán y Liguria.",
+      "La capilla privada del futuro Papa: En el siglo XV la iglesia quedó vinculada a la familia Cybo. Giovanni Battista Cybo promovió una importante restauración antes de ser elegido papa en 1484 con el nombre de Inocencio VIII, creando un vínculo directo con la historia pontificia.",
+      "Una historia paralela a las rutas de las Cruzadas: Como otros edificios religiosos de Prè, San Marcellino estuvo relacionada con la acogida de viajeros. En la Edad Media atendía también a peregrinos y hombres que esperaban embarcar hacia el Mediterráneo oriental y los lugares de las Cruzadas.",
+      "La cuna de la obra social para los más vulnerables: En 1945 la antigua iglesia se convirtió en punto de referencia para ayudar a pobres y desplazados. De esta experiencia nació la Asociación San Marcellino, todavía activa en la acogida y apoyo a personas sin hogar.",
+      "Un monumento del Racionalismo italiano: La nueva San Marcellino, construida en las alturas de San Teodoro en los años treinta, fue diseñada por Luigi Carlo Daneri. Su forma cilíndrica y lenguaje esencial la convierten en uno de los ejemplos más reconocibles de arquitectura religiosa racionalista en Génova.",
+      "El toque ingenieril de Pier Luigi Nervi: Pier Luigi Nervi, uno de los grandes ingenieros italianos del siglo XX, también participó en la nueva iglesia. Su intervención se relaciona sobre todo con la gran cubierta de hormigón armado que domina el espacio interior.",
+      "La fachada de piedra de Finale: El revestimiento exterior utiliza piedra clara procedente de la Riviera de Poniente. Combinada con las geometrías racionalistas, crea un fuerte contraste entre tradición ligur, modernidad constructiva y lenguaje arquitectónico del siglo XX.",
+      "El campanario que llegó veinte años después: La iglesia moderna se completó en los años treinta, pero el campanario no terminó hasta 1953. La torre retoma las geometrías esenciales del proyecto original y muestra cómo el complejo fue completado por fases."
+    ],
+    "fr": [
+      "Fondée par le clergé milanais en 'exil' : La tradition fait remonter les origines de l'église au VIe siècle, lorsque des membres du clergé de Milan auraient trouvé refuge à Gênes pendant l'invasion lombarde. Le récit relie San Marcellino aux anciens échanges religieux entre Milan et la Ligurie.",
+      "La chapelle privée du futur pape : Au XVe siècle, l'église fut liée à la famille Cybo. Giovanni Battista Cybo en favorisa une importante restauration avant d'être élu pape en 1484 sous le nom d'Innocent VIII, donnant au complexe un lien direct avec l'histoire pontificale.",
+      "Une histoire parallèle aux routes des Croisades : Comme d'autres édifices religieux de Prè, San Marcellino était liée à l'accueil des voyageurs. Au Moyen Âge, elle servait aussi pèlerins et hommes attendant de s'embarquer vers la Méditerranée orientale et les lieux des Croisades.",
+      "Le berceau d'une œuvre sociale pour les plus fragiles : En 1945, l'ancienne église devint un point de référence pour l'aide aux pauvres et aux déplacés. De cette expérience naquit l'Association San Marcellino, toujours engagée dans l'accueil et le soutien des personnes sans domicile.",
+      "Un monument du Rationalisme italien : La nouvelle San Marcellino, construite sur les hauteurs de San Teodoro dans les années 1930, fut conçue par Luigi Carlo Daneri. Sa forme cylindrique et son langage essentiel en font un exemple marquant d'architecture religieuse rationaliste à Gênes.",
+      "La touche d'ingénierie de Pier Luigi Nervi : Pier Luigi Nervi, l'un des grands ingénieurs italiens du XXe siècle, contribua également à la nouvelle église. Son intervention est surtout liée à la grande couverture en béton armé qui domine l'espace intérieur.",
+      "La façade en pierre de Finale : Le revêtement extérieur utilise une pierre claire de la Riviera ligure occidentale. Associée aux géométries rationalistes, elle crée un contraste fort entre tradition ligure, modernité constructive et langage architectural du XXe siècle.",
+      "Le clocher arrivé vingt ans plus tard : L'église moderne fut achevée dans les années 1930, mais le clocher ne le fut qu'en 1953. La tour reprend les géométries essentielles du projet d'origine et montre que le complexe fut terminé par étapes successives."
+    ],
+    "ar": [
+      "أسسها رجال دين من ميلانو في 'المنفى': ترد أصول الكنيسة في التقليد إلى القرن السادس، عندما لجأ بعض رجال الدين من ميلانو إلى جنوة أثناء الغزو اللومباردي. ويربط هذا السرد سان مارسيلينو بأقدم الروابط الدينية بين ميلانو وليغوريا.",
+      "المصلى الخاص للبابا المستقبلي: في القرن الخامس عشر ارتبطت الكنيسة بعائلة Cybo. أشرف Giovanni Battista Cybo على ترميم مهم قبل انتخابه بابا عام 1484 باسم Innocent VIII، فترك للمجمع صلة مباشرة بالتاريخ البابوي.",
+      "قصة موازية لطرق الحملات الصليبية: مثل مبان دينية أخرى في Prè، ارتبطت سان مارسيلينو باستقبال المسافرين. وفي العصور الوسطى خدمت أيضاً الحجاج والرجال المنتظرين الإبحار نحو شرق المتوسط ومواقع الحملات الصليبية.",
+      "مهد العمل الاجتماعي للفئات الأضعف: عام 1945 أصبحت الكنيسة القديمة مركزاً لمساعدة الفقراء والمهجرين. ومن هذه التجربة نشأت جمعية San Marcellino التي ما زالت اليوم مرتبطة باستقبال ودعم الأشخاص بلا مأوى.",
+      "معلم من العقلانية الإيطالية: صمم Luigi Carlo Daneri كنيسة San Marcellino الجديدة على مرتفعات San Teodoro في ثلاثينيات القرن العشرين. شكلها الأسطواني ولغتها البسيطة يجعلانها من أبرز أمثلة العمارة الدينية العقلانية في جنوة.",
+      "لمسة Pier Luigi Nervi الهندسية: شارك Pier Luigi Nervi، أحد كبار مهندسي إيطاليا في القرن العشرين، في هيكل الكنيسة الجديدة. ويرتبط دوره خصوصاً بالحل الإنشائي للغطاء الكبير من الخرسانة المسلحة الذي يهيمن على الداخل.",
+      "واجهة من حجر Finale: كُسيت الكنيسة الحديثة بحجر فاتح من ريفييرا ليغوريا الغربية. وبجوار الهندسة العقلانية للمبنى يصنع هذا الحجر تبايناً واضحاً بين التقاليد المحلية والحداثة الإنشائية ولغة القرن العشرين المعمارية.",
+      "برج الأجراس الذي جاء بعد عشرين عاماً: اكتملت الكنيسة الحديثة في الثلاثينيات، لكن برج الأجراس لم يكتمل إلا عام 1953. تعيد التور ترديد الأشكال الأساسية للمشروع الأصلي وتكشف أن المجمع اكتمل على مراحل."
+    ],
+    "ru": [
+      "Основана миланским духовенством 'в изгнании': Традиция относит происхождение церкви к VI веку, когда часть миланского духовенства якобы укрылась в Генуе во время вторжения лангобардов. Так Сан-Марчеллино связывается с ранними религиозными контактами Милана и Лигурии.",
+      "Частная капелла будущего папы: В XV веке церковь оказалась связана с семьёй Чибо. Джованни Баттиста Чибо инициировал важную реставрацию, а в 1484 году стал папой Иннокентием VIII, оставив комплексу прямую связь с папской историей.",
+      "Параллельная история крестоносных маршрутов: Как и другие религиозные здания Прэ, Сан-Марчеллино была связана с приёмом путешественников. В Средние века здесь помогали паломникам и людям, ожидавшим отплытия в восточное Средиземноморье и к местам Крестовых походов.",
+      "Колыбель социальной помощи самым уязвимым: В 1945 году старая церковь стала центром помощи бедным и перемещённым людям. Из этого опыта выросла Ассоциация San Marcellino, и сегодня работающая с людьми без жилья.",
+      "Памятник итальянского рационализма: Новая Сан-Марчеллино на высотах Сан-Теодоро была построена в 1930-е годы по проекту Луиджи Карло Данери. Цилиндрическая форма и строгий язык делают её узнаваемым примером рационалистической религиозной архитектуры Генуи.",
+      "Инженерный почерк Пьера Луиджи Нерви: В создании новой церкви участвовал Пьер Луиджи Нерви, один из крупнейших итальянских инженеров XX века. Особенно его вклад связывают с большой железобетонной кровлей, доминирующей над внутренним пространством.",
+      "Фасад из камня Финале: Современная церковь облицована светлым камнем с западной Лигурийской Ривьеры. В сочетании с рационалистической геометрией он создаёт контраст между местной традицией, современными технологиями и архитектурным языком XX века.",
+      "Колокольня, появившаяся двадцать лет спустя: Церковь завершили в 1930-е годы, но колокольню закончили только в 1953-м. Башня повторяет основные геометрические мотивы первоначального проекта и показывает, что комплекс достраивался поэтапно."
+    ],
+    "zh": [
+      "由“流亡”的米兰神职人员创建：传统把教堂起源追溯到6世纪，当时一些米兰神职人员据说在伦巴第人入侵期间逃到热那亚避难。这个故事让圣马尔切利诺与米兰和利古里亚之间最早的宗教往来联系起来。",
+      "未来教皇的私人小堂：15世纪，教堂与 Cybo 家族关系密切。Giovanni Battista Cybo 在1484年当选教皇 Innocent VIII 前推动了重要修复，使建筑群直接与教廷历史相连。",
+      "与十字军路线平行的故事：和 Prè 地区其他宗教建筑一样，圣马尔切利诺也承担接待旅行者的功能。中世纪时，这里还服务准备从热那亚港前往东地中海和十字军相关地区的朝圣者与旅人。",
+      "为弱势群体提供帮助的起点：1945年，旧教堂成为救助穷人和战争流离失所者的重要地点。由此发展出的 San Marcellino 协会至今仍从事无家可归者的接待和支持工作。",
+      "意大利理性主义建筑代表：新的 San Marcellino 教堂在20世纪30年代建于 San Teodoro 高处，由 Luigi Carlo Daneri 设计。圆柱形体量和简洁语言使它成为热那亚最容易辨认的理性主义宗教建筑之一。",
+      "Pier Luigi Nervi 的工程设计：20世纪意大利重要工程师 Pier Luigi Nervi 也参与了新教堂结构设计。他的贡献尤其与覆盖内部空间的大型钢筋混凝土屋盖解决方案有关。",
+      "Finale 石材立面：现代教堂外墙采用来自利古里亚西部海岸的浅色石材。它与建筑的理性主义几何结合，在地方传统、现代建造和20世纪建筑语言之间形成强烈对比。",
+      "晚了二十年的钟楼：现代教堂在20世纪30年代完成，但钟楼直到1953年才建成。塔楼延续原方案的简洁几何，也说明整个建筑群是在不同阶段逐步完成的。"
+    ],
+    "lij": [
+      "Fondâ da-o clero de Milan 'in exilio': A tradiçion a fa remontâ a gésa a-o VI secolo, quande parte do clero milaneize o saieiva vegnûo a Zena pe scappâ da l'invasion longobarda. Coscì San Marcellino a se liga a antighi contatti tra Milan e Liguria.",
+      "A cappella privâ do futuro Papa: Into Quattroçento a gésa a s'é ligâ a-a famiggia Cybo. Giovanni Battista Cybo o promosse un restauro importante primma de vegnî Papa Innocenzo VIII into 1484, lasciando un legamme diretto co-a stöia pontificia.",
+      "Una stöia parallela a-e Croxiæ: Comme atri edifici religioxi de Prè, San Marcellino a l'ea ligâ a l'accoglienza di viaggiouei. Into Medioevo a serviva anche pellegrin e gente in aspetta de imbarcase verso o Mediterraneo orientale e i luoghi de Croxiæ.",
+      "A culla de l'opera sociale pe-i ciù fragili: Into 1945 a vegia gésa a l'é diventâ un punto d'agiutto pe pövei e sfollæ. Da sta esperienza a l'é nasciua l'Associaçion San Marcellino, ancora ancheu impegnâ co-e persoñe sensa casa.",
+      "Un monumento do Razionalismo italian: A neuva San Marcellino, construta in sci alture de San Teodoro inti anni Trenta, a l'é stæta progettâ da Luigi Carlo Daneri. A forma çilindrica e o linguaggio essenziale a-a rendan un esempio forte de architettua razionalista.",
+      "O tòcco ingegneristico de Pier Luigi Nervi: Anche Pier Luigi Nervi o l'à contribuo a-a struttura da neuva gésa. O seu intervento o l'é ligou soprattutto a-a grande cobertura de cemento armou che a domina o spaçio interno.",
+      "A façciata in pria de Finale: O rivestimento esterno da gésa moderna o l'adêuva pria ciaea da-a Riviera de Ponente. Inscémme ae geometrie razionaliste a crea un contrasto forte tra tradiçion ligure, modernitæ costrutiva e Novecento.",
+      "O campanin arrivou vinti anni dòppo: A gésa moderna a l'é stæta completâ inti anni Trenta, ma o campanin solo into 1953. A torre a ripiggia e geometrie essenziali do progetto originâ e a mostra che o complesso o l'é stæto finio a faxe."
+    ]
+  };
+
+  root.church["San Matteo"] = {
+    "it": [
+      "Dedicata a San Matteo perché faceva lo stesso \"lavoro\" dei Doria: Prima di diventare apostolo, Matteo era un esattore delle tasse. Secondo la tradizione, proprio questa professione spinse i Doria a sceglierlo come patrono, riconoscendo nel santo un curioso parallelo con le proprie attività finanziarie e politiche.",
+      "La leggenda della colonna insanguinata di Branca Doria: Una colonna della chiesa mostra una macchia rossastra che la tradizione lega a Branca Doria, personaggio ricordato anche da Dante. La leggenda racconta che avrebbe toccato la pietra con le mani ancora sporche di sangue dopo un delitto familiare.",
+      "Il furto misterioso della spada d'onore: Nella cripta riposa Andrea Doria. Accanto alla sua memoria era conservata una preziosa spada d'onore donata da Papa Paolo III. L'arma fu però rubata in epoca moderna e non è mai stata recuperata, alimentando un piccolo mistero cittadino.",
+      "Un mosaico di iscrizioni di vittorie navali sulla facciata: Tra le fasce bianche e nere della facciata compaiono epigrafi che celebrano imprese militari della famiglia Doria. Sono una sorta di bollettino di gloria scolpito nella pietra, pensato per ricordare pubblicamente vittorie e prestigio del casato.",
+      "La tomba di Lamba Doria incastonata all'esterno: Sulla facciata è murato il sarcofago di Lamba Doria, protagonista della vittoria genovese di Curzola del 1298 contro Venezia. In quella battaglia venne catturato anche Marco Polo, che durante la prigionia genovese avrebbe dettato il suo celebre racconto di viaggio.",
+      "Il chiostro medievale diventato la casa degli architetti: Accanto alla chiesa si apre un elegante chiostro gotico con colonnine binate e pozzo centrale. In epoca contemporanea questo spazio ha assunto una funzione completamente nuova, diventando sede dell'Ordine degli Architetti di Genova e luogo di incontri professionali.",
+      "Un sarcofago romano \"riciclato\" come decorazione: Sopra il portale è inserito un antico sarcofago romano decorato con scene classiche. Nel Medioevo venne riutilizzato come elemento funerario e ornamentale, esempio della frequente pratica genovese di incorporare reperti antichi negli edifici religiosi successivi.",
+      "Un organo che possono suonare solo in due: La chiesa conserva un prezioso organo storico del Settecento. Una tradizione locale racconta che, per proteggerne la delicatezza e il valore, solo pochissimi organisti autorizzati possano suonarlo, trasformando lo strumento in una presenza quasi esclusiva e rituale."
+    ],
+    "en": [
+      "Dedicated to Saint Matthew because he had the Doria's 'job': Before becoming an apostle, Matthew was a tax collector. Tradition says this profession helped inspire the Doria to choose him as patron, seeing an amusing parallel with their own financial and political activities.",
+      "The legend of Branca Doria's bloodstained column: One church column bears a reddish mark that tradition links to Branca Doria, also remembered by Dante. Legend claims he touched the stone with blood still on his hands after a family murder.",
+      "The mysterious theft of the sword of honour: Andrea Doria rests in the crypt. A precious ceremonial sword given by Pope Paul III was once associated with his memory, but the weapon was stolen in modern times and never recovered, creating a small Genoese mystery.",
+      "A façade covered with inscriptions of naval victories: Among the black-and-white bands are inscriptions celebrating military achievements of the Doria family. They form a kind of stone bulletin of glory, designed to publicly preserve memories of victories and dynastic prestige.",
+      "Lamba Doria's tomb built into the exterior: The façade contains the sarcophagus of Lamba Doria, hero of Genoa's 1298 victory over Venice at Curzola. Marco Polo was also captured in that battle and is traditionally said to have dictated his famous travel account while imprisoned in Genoa.",
+      "The medieval cloister that became the architects' home: Beside the church is an elegant Gothic cloister with paired columns and a central well. In modern times it gained an entirely new role as the headquarters of Genoa's Order of Architects and a venue for professional meetings.",
+      "A Roman sarcophagus recycled as decoration: An ancient Roman sarcophagus decorated with classical scenes is set above the portal. In the Middle Ages it was reused as a funerary and ornamental element, illustrating Genoa's frequent practice of incorporating ancient remains into later religious buildings.",
+      "An organ that only a few may play: The church preserves a valuable 18th-century historic organ. Local tradition says that, to protect its delicacy and importance, only a very small number of authorised organists may play it, giving the instrument an almost ritual exclusivity."
+    ],
+    "es": [
+      "Dedicada a San Mateo porque tenía el mismo 'trabajo' que los Doria: Antes de ser apóstol, Mateo era recaudador de impuestos. Según la tradición, esta profesión llevó a los Doria a elegirlo como patrono, viendo un curioso paralelismo con sus actividades financieras y políticas.",
+      "La leyenda de la columna ensangrentada de Branca Doria: Una columna muestra una mancha rojiza que la tradición relaciona con Branca Doria, personaje recordado también por Dante. La leyenda afirma que tocó la piedra con las manos aún manchadas de sangre tras un crimen familiar.",
+      "El misterioso robo de la espada de honor: Andrea Doria descansa en la cripta. Una valiosa espada ceremonial regalada por el papa Paulo III estuvo ligada a su memoria, pero fue robada en época moderna y nunca recuperada, alimentando un pequeño misterio genovés.",
+      "Un mosaico de inscripciones de victorias navales: Entre las franjas blancas y negras de la fachada aparecen epígrafes que celebran hazañas militares de los Doria. Son una especie de boletín de gloria esculpido en piedra para recordar públicamente victorias y prestigio familiar.",
+      "La tumba de Lamba Doria incrustada en el exterior: La fachada contiene el sarcófago de Lamba Doria, protagonista de la victoria genovesa de Curzola en 1298 contra Venecia. En aquella batalla también fue capturado Marco Polo, quien durante su prisión genovesa habría dictado su famoso relato de viajes.",
+      "El claustro medieval convertido en casa de arquitectos: Junto a la iglesia se abre un elegante claustro gótico con columnas pareadas y pozo central. En época contemporánea pasó a ser sede del Colegio de Arquitectos de Génova y espacio para encuentros profesionales.",
+      "Un sarcófago romano 'reciclado' como decoración: Sobre el portal se inserta un antiguo sarcófago romano decorado con escenas clásicas. En la Edad Media fue reutilizado como elemento funerario y ornamental, ejemplo de la costumbre genovesa de incorporar restos antiguos a edificios religiosos posteriores.",
+      "Un órgano que solo unos pocos pueden tocar: La iglesia conserva un valioso órgano histórico del siglo XVIII. Una tradición local afirma que, para proteger su delicadeza y valor, únicamente un número muy reducido de organistas autorizados puede tocarlo."
+    ],
+    "fr": [
+      "Dédiée à saint Matthieu parce qu'il avait le même 'métier' que les Doria : Avant de devenir apôtre, Matthieu était collecteur d'impôts. La tradition dit que cette profession poussa les Doria à le choisir comme patron, voyant un parallèle amusant avec leurs propres activités financières et politiques.",
+      "La légende de la colonne ensanglantée de Branca Doria : Une colonne porte une tache rougeâtre que la tradition relie à Branca Doria, personnage également cité par Dante. La légende raconte qu'il aurait touché la pierre avec les mains encore tachées de sang après un meurtre familial.",
+      "Le mystérieux vol de l'épée d'honneur : Andrea Doria repose dans la crypte. Une précieuse épée cérémonielle offerte par le pape Paul III était associée à sa mémoire, mais elle fut volée à l'époque moderne et jamais retrouvée, nourrissant un petit mystère génois.",
+      "Une mosaïque d'inscriptions de victoires navales : Entre les bandes blanches et noires de la façade apparaissent des épigraphes célébrant les exploits militaires des Doria. Elles forment une sorte de bulletin de gloire sculpté dans la pierre pour afficher victoires et prestige dynastique.",
+      "La tombe de Lamba Doria encastrée à l'extérieur : La façade contient le sarcophage de Lamba Doria, acteur de la victoire génoise de Curzola en 1298 contre Venise. Marco Polo fut également capturé lors de cette bataille et aurait dicté son célèbre récit pendant sa captivité à Gênes.",
+      "Le cloître médiéval devenu maison des architectes : À côté de l'église s'ouvre un élégant cloître gothique avec colonnettes jumelées et puits central. À l'époque contemporaine, il est devenu le siège de l'Ordre des Architectes de Gênes et un lieu de rencontres professionnelles.",
+      "Un sarcophage romain 'recyclé' comme décor : Au-dessus du portail est intégré un ancien sarcophage romain orné de scènes classiques. Au Moyen Âge, il fut réutilisé comme élément funéraire et décoratif, exemple de l'habitude génoise d'incorporer des vestiges antiques dans des édifices plus récents.",
+      "Un orgue que seuls quelques-uns peuvent jouer : L'église conserve un précieux orgue historique du XVIIIe siècle. Une tradition locale affirme que, pour préserver sa délicatesse et sa valeur, seuls quelques organistes autorisés peuvent le jouer, lui donnant un caractère presque rituel."
+    ],
+    "ar": [
+      "مكرسة للقديس متى لأنه كان يمارس 'عمل' Doria نفسه: قبل أن يصبح رسولاً كان متى جابياً للضرائب. وتقول التقاليد إن هذه المهنة دفعت عائلة Doria إلى اختياره شفيعاً، لرؤيتهم تشابهاً طريفاً مع نشاطاتهم المالية والسياسية.",
+      "أسطورة عمود Branca Doria الملطخ بالدم: يظهر على أحد أعمدة الكنيسة أثر أحمر تربطه التقاليد بـ Branca Doria، الذي ذكره دانتي أيضاً. وتقول الأسطورة إنه لمس الحجر ويداه ما تزالان ملطختين بالدم بعد جريمة داخل العائلة.",
+      "السرقة الغامضة لسيف الشرف: يرقد Andrea Doria في السرداب. وكان هناك سيف احتفالي ثمين أهداه البابا Paul III مرتبطاً بذكراه، لكنه سُرق في العصر الحديث ولم يُعثر عليه، فصار جزءاً من لغز محلي صغير.",
+      "واجهة مليئة بنقوش الانتصارات البحرية: بين الشرائط البيضاء والسوداء تظهر كتابات تخلّد مآثر عسكرية لعائلة Doria. إنها أشبه بنشرة مجد محفورة في الحجر لتعلن على الملأ الانتصارات ومكانة الأسرة.",
+      "قبر Lamba Doria في الواجهة الخارجية: يضم الجدار الخارجي تابوت Lamba Doria، أحد أبطال انتصار جنوة على البندقية في Curzola عام 1298. وفي المعركة نفسها أُسر Marco Polo، ويُقال إنه أملى رواية رحلاته الشهيرة أثناء سجنه في جنوة.",
+      "الدير الوسيط الذي أصبح بيت المعماريين: بجانب الكنيسة يوجد رواق قوطي أنيق بأعمدة مزدوجة وبئر مركزي. وفي العصر الحديث اكتسب وظيفة جديدة تماماً، فأصبح مقراً لنقابة معماريي جنوة ومكاناً للقاءات المهنية.",
+      "تابوت روماني 'معاد الاستخدام' للزينة: فوق البوابة يوجد تابوت روماني قديم مزخرف بمشاهد كلاسيكية. أعيد استخدامه في العصور الوسطى كعنصر جنائزي وزخرفي، في مثال على إدماج الآثار القديمة في مبان دينية أحدث.",
+      "أرغن لا يعزف عليه إلا قليلون: تحتفظ الكنيسة بأرغن تاريخي ثمين من القرن الثامن عشر. وتقول رواية محلية إن عدداً قليلاً جداً من العازفين المصرح لهم يمكنهم استخدامه لحماية دقته وقيمته."
+    ],
+    "ru": [
+      "Посвящена Матфею, потому что он занимался тем же 'делом', что и Дориа: До апостольства Матфей был сборщиком налогов. По традиции, именно эта профессия побудила Дориа выбрать его покровителем, увидев любопытную параллель со своими финансовыми и политическими делами.",
+      "Легенда о кровавой колонне Бранка Дориа: На одной колонне заметно красноватое пятно, которое предание связывает с Бранка Дориа, упомянутым и Данте. Легенда говорит, что он коснулся камня руками, ещё испачканными кровью после семейного убийства.",
+      "Таинственная кража почётного меча: В крипте покоится Андреа Дориа. С его памятью был связан драгоценный церемониальный меч, подаренный папой Павлом III. В новое время его украли, и он так и не был найден, породив небольшой городской детектив.",
+      "Мозаика надписей о морских победах: Между чёрно-белыми полосами фасада видны эпиграфы, прославляющие военные достижения Дориа. Это своеобразный каменный бюллетень славы, призванный публично сохранять память о победах и престиже рода.",
+      "Гробница Ламба Дориа на фасаде: В наружную стену встроен саркофаг Ламба Дориа, героя генуэзской победы над Венецией при Курцоле в 1298 году. В той же битве пленили Марко Поло, который, по преданию, продиктовал свой знаменитый рассказ в генуэзской тюрьме.",
+      "Средневековый клуатр как дом архитекторов: Рядом с церковью находится изящный готический дворик с парными колоннами и центральным колодцем. В наше время он получил новую функцию, став штаб-квартирой Ордена архитекторов Генуи и местом профессиональных встреч.",
+      "Римский саркофаг, использованный как декор: Над порталом встроен древнеримский саркофаг с классическими сценами. В Средние века его повторно использовали как погребальный и декоративный элемент — типичный пример включения античных находок в более поздние генуэзские храмы.",
+      "Орган, на котором могут играть лишь немногие: В церкви хранится ценный исторический орган XVIII века. Местное предание говорит, что ради его сохранности и ценности к инструменту допускают только очень небольшое число авторизованных органистов."
+    ],
+    "zh": [
+      "献给圣玛窦，因为他的“工作”与 Doria 相似：玛窦成为使徒前是一名税吏。传统认为，正是这一职业让 Doria 家族选择他为主保圣人，并从中看到了与自身金融和政治活动之间有趣的对应。",
+      "Branca Doria“血染石柱”的传说：教堂一根柱子上有一处红色斑痕，传统把它与但丁笔下也出现过的 Branca Doria 联系起来。传说他在一次家族谋杀后，双手仍沾着血便触摸了这块石头。",
+      "失踪的荣誉之剑：Andrea Doria 安葬在地下墓室。与他相关的一把珍贵礼仪剑由教皇 Paul III 赠予，但在近代被盗，从此未再找到，成为热那亚的一桩小谜案。",
+      "立面上的海战胜利铭文：黑白相间的立面条带之间刻有歌颂 Doria 家族军事功绩的铭文。它们仿佛刻在石头上的“荣耀公告”，用来公开保存家族胜利和声望的记忆。",
+      "嵌在外墙上的 Lamba Doria 墓：立面中嵌有 Lamba Doria 的石棺，他是1298年 Curzola 海战中热那亚击败威尼斯的重要人物。Marco Polo 也在那场战役中被俘，据说后来在热那亚囚禁期间口述了著名旅行记。",
+      "中世纪回廊成为建筑师之家：教堂旁有一座优雅的哥特式回廊，设有双柱和中央水井。现代时期，它获得完全不同的功能，成为热那亚建筑师协会所在地和专业交流场所。",
+      "被“再利用”的罗马石棺：门户上方嵌有一具装饰古典场景的古罗马石棺。中世纪时它被再次用作墓葬和装饰构件，体现热那亚常把古代遗物纳入后世宗教建筑的做法。",
+      "只有极少数人能演奏的管风琴：教堂保存着一架珍贵的18世纪历史管风琴。当地传统认为，为保护其脆弱结构和价值，只有很少数获准的管风琴师可以演奏。"
+    ],
+    "lij": [
+      "Dedicâ a San Matteo perché o faceiva o mæximo 'mestiê' di Doria: Primma de vegnî apostolo, Matteo o l'ea un esattô de tasse. A tradiçion a conta che proprio sto mestiê o l'à fæto çerne da-i Doria comme patron, pe-o parallelo co-i seu affæ finanxiæ e politici.",
+      "A legenda da colonna insanguinâ de Branca Doria: Una colonna da gésa a mostra unna maccia rossoa che a tradiçion a liga a Branca Doria, ricordou anche da Dante. A legenda a conta che o l'avieiva toccou a pria con e man ancora sporche de sangue.",
+      "O furto misterioso da spada d'onô: Andrea Doria o ripòsa inta cripta. A-a seu memoria a l'ea ligâ unna spada preçioza donâ da Papa Paolo III, ma in epoca moderna a l'é stæta robâ e mai ciù trovâ.",
+      "Un mosaico de scrite de vittöie navali: Tra e fasce gianche e neigre da façciata gh'é epigrafi che celebran imprese militari di Doria. Son comme un bollettin de gloria scolpio inta pria, pensou pe ricordâ vittöie e prestixio da casâ.",
+      "A tomba de Lamba Doria in sciâ façciata: In sciâ façciata gh'é o sarcofago de Lamba Doria, protagonista da vittöia de Curzola do 1298 contra Venezia. In quella battaggia o l'é stæto ciappou anche Marco Polo, che a Zena o l'avieiva dettou o seu racconto de viaggi.",
+      "O chiostro medievale diventou a casa di architetti: Vixin a-a gésa gh'é un elegante chiostro gotico con colonne doppie e pozzo centrale. Ancheu o l'à unna funçion tutta neuva: o l'é sede de l'Ordine di Architetti de Zena e luogo d'incontri professionali.",
+      "Un sarcofago roman 'reciclou' comme decoraçion: In sciô portâ gh'é inserio un antigo sarcofago roman con scene classiche. Into Medioevo o l'é stæto adêuviou torna comme elemento funerario e decorativo, comme spesso succedeiva a Zena con reperti antighi.",
+      "Un òrgan che peu sonâ solo poca gente: A gésa a conserva un preçiozo òrgan do Setteçento. Una tradiçion locale a conta che, pe protezze a delicatezza e o valore, solo pochiscimi organisti autorizzæ o pòssan sonâ."
+    ]
+  };
 })();
