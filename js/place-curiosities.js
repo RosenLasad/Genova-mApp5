@@ -5,16 +5,17 @@
 
   var LANGS=['it','en','es','fr','ar','ru','zh','lij'];
   var UI={
-    it:{button:'Curiosità',title:'Curiosità',close:'Chiudi',premiumTitle:'Curiosità Premium',premiumMessage:'Le Curiosità sono disponibili con Genova mApp Premium. Passa a Premium per scoprire storie, dettagli e approfondimenti su questo luogo.'},
-    en:{button:'Curiosities',title:'Curiosities',close:'Close',premiumTitle:'Premium Curiosities',premiumMessage:'Curiosities are available with Genova mApp Premium. Upgrade to Premium to discover stories, details and extra insights about this place.'},
-    es:{button:'Curiosidades',title:'Curiosidades',close:'Cerrar',premiumTitle:'Curiosidades Premium',premiumMessage:'Las Curiosidades están disponibles con Genova mApp Premium. Pásate a Premium para descubrir historias, detalles y contenidos extra sobre este lugar.'},
-    fr:{button:'Curiosités',title:'Curiosités',close:'Fermer',premiumTitle:'Curiosités Premium',premiumMessage:'Les Curiosités sont disponibles avec Genova mApp Premium. Passez à Premium pour découvrir des histoires, des détails et des contenus supplémentaires sur ce lieu.'},
-    ar:{button:'معلومات طريفة',title:'معلومات طريفة',close:'إغلاق',premiumTitle:'معلومات Premium',premiumMessage:'تتوفر المعلومات والقصص الإضافية مع Genova mApp Premium. اشترك في Premium لاكتشاف تفاصيل وحكايات إضافية عن هذا المكان.'},
-    ru:{button:'Интересные факты',title:'Интересные факты',close:'Закрыть',premiumTitle:'Факты Premium',premiumMessage:'Интересные факты доступны в Genova mApp Premium. Перейдите на Premium, чтобы открыть истории, детали и дополнительные материалы об этом месте.'},
-    zh:{button:'趣闻',title:'趣闻',close:'关闭',premiumTitle:'Premium 趣闻',premiumMessage:'“趣闻”内容仅向 Genova mApp Premium 用户开放。升级到 Premium，即可查看这个地点的故事、细节和更多深度内容。'},
-    lij:{button:'Curioxitæ',title:'Curioxitæ',close:'Særa',premiumTitle:'Curioxitæ Premium',premiumMessage:'E Curioxitæ en disponibili con Genova mApp Premium. Passa a Premium pe descrovî stöie, detaggi e approfondimenti in sce sto pòsto.'}
+    it:{button:'Curiosità',title:'Curiosità',close:'Chiudi',prev:'Pagina precedente',next:'Pagina successiva',premiumTitle:'Curiosità Premium',premiumMessage:'Le Curiosità sono disponibili con Genova mApp Premium. Passa a Premium per scoprire storie, dettagli e approfondimenti su questo luogo.'},
+    en:{button:'Curiosities',title:'Curiosities',close:'Close',prev:'Previous page',next:'Next page',premiumTitle:'Premium Curiosities',premiumMessage:'Curiosities are available with Genova mApp Premium. Upgrade to Premium to discover stories, details and extra insights about this place.'},
+    es:{button:'Curiosidades',title:'Curiosidades',close:'Cerrar',prev:'Página anterior',next:'Página siguiente',premiumTitle:'Curiosidades Premium',premiumMessage:'Las Curiosidades están disponibles con Genova mApp Premium. Pásate a Premium para descubrir historias, detalles y contenidos extra sobre este lugar.'},
+    fr:{button:'Curiosités',title:'Curiosités',close:'Fermer',prev:'Page précédente',next:'Page suivante',premiumTitle:'Curiosités Premium',premiumMessage:'Les Curiosités sont disponibles avec Genova mApp Premium. Passez à Premium pour découvrir des histoires, des détails et des contenus supplémentaires sur ce lieu.'},
+    ar:{button:'معلومات طريفة',title:'معلومات طريفة',close:'إغلاق',prev:'الصفحة السابقة',next:'الصفحة التالية',premiumTitle:'معلومات Premium',premiumMessage:'تتوفر المعلومات والقصص الإضافية مع Genova mApp Premium. اشترك في Premium لاكتشاف تفاصيل وحكايات إضافية عن هذا المكان.'},
+    ru:{button:'Интересные факты',title:'Интересные факты',close:'Закрыть',prev:'Предыдущая страница',next:'Следующая страница',premiumTitle:'Факты Premium',premiumMessage:'Интересные факты доступны в Genova mApp Premium. Перейдите на Premium, чтобы открыть истории, детали и дополнительные материалы об этом месте.'},
+    zh:{button:'趣闻',title:'趣闻',close:'关闭',prev:'上一页',next:'下一页',premiumTitle:'Premium 趣闻',premiumMessage:'“趣闻”内容仅向 Genova mApp Premium 用户开放。升级到 Premium，即可查看这个地点的故事、细节和更多深度内容。'},
+    lij:{button:'Curioxitæ',title:'Curioxitæ',close:'Særa',prev:'Pagina precedente',next:'Pagina seguente',premiumTitle:'Curioxitæ Premium',premiumMessage:'E Curioxitæ en disponibili con Genova mApp Premium. Passa a Premium pe descrovî stöie, detaggi e approfondimenti in sce sto pòsto.'}
   };
-  var active={type:null,name:null};
+  var PAGE_SIZE=5;
+  var active={type:null,name:null,page:0};
 
   function lang(){
     var raw='it';
@@ -56,9 +57,12 @@
     modal.innerHTML='<section class="gm-curiosities-dialog" role="dialog" aria-modal="true" aria-labelledby="gm-curiosities-heading">'+
       '<header class="gm-curiosities-head"><div><span class="gm-curiosities-kicker"></span><h2 id="gm-curiosities-heading"></h2></div><button type="button" class="gm-curiosities-close" aria-label="">×</button></header>'+
       '<div class="gm-curiosities-list"></div>'+
+      '<nav class="gm-curiosities-pagination" aria-label=""><button type="button" class="gm-curiosities-page-btn gm-curiosities-prev" aria-label="">‹</button><span class="gm-curiosities-page-indicator" aria-live="polite"></span><button type="button" class="gm-curiosities-page-btn gm-curiosities-next" aria-label="">›</button></nav>'+
       '</section>';
     document.body.appendChild(modal);
     modal.querySelector('.gm-curiosities-close').addEventListener('click',close);
+    modal.querySelector('.gm-curiosities-prev').addEventListener('click',function(){if(active.page>0){active.page--;renderOpen();}});
+    modal.querySelector('.gm-curiosities-next').addEventListener('click',function(){active.page++;renderOpen();});
     modal.addEventListener('click',function(e){if(e.target===modal)close();});
     return modal;
   }
@@ -76,14 +80,26 @@
     modal.querySelector('.gm-curiosities-kicker').textContent=copy.title;
     modal.querySelector('#gm-curiosities-heading').textContent=active.name;
     var closeBtn=modal.querySelector('.gm-curiosities-close');closeBtn.setAttribute('aria-label',copy.close);closeBtn.title=copy.close;
+    var pageCount=Math.max(1,Math.ceil(items.length/PAGE_SIZE));
+    active.page=Math.max(0,Math.min(active.page,pageCount-1));
+    var start=active.page*PAGE_SIZE,end=Math.min(start+PAGE_SIZE,items.length);
     var list=modal.querySelector('.gm-curiosities-list');list.innerHTML='';
-    items.forEach(function(raw,index){
+    items.slice(start,end).forEach(function(raw,index){
       var item=splitItem(raw),article=document.createElement('article');article.className='gm-curiosity-card';
-      var num=document.createElement('span');num.className='gm-curiosity-number';num.textContent=String(index+1);article.appendChild(num);
+      var num=document.createElement('span');num.className='gm-curiosity-number';num.textContent=String(start+index+1);article.appendChild(num);
       var body=document.createElement('div');body.className='gm-curiosity-copy';
       if(item.title){var h=document.createElement('h3');h.textContent=item.title;body.appendChild(h);}
       var p=document.createElement('p');p.textContent=item.text;body.appendChild(p);article.appendChild(body);list.appendChild(article);
     });
+    var pager=modal.querySelector('.gm-curiosities-pagination');
+    var prev=modal.querySelector('.gm-curiosities-prev'),next=modal.querySelector('.gm-curiosities-next');
+    var indicator=modal.querySelector('.gm-curiosities-page-indicator');
+    pager.hidden=pageCount<=1;
+    pager.setAttribute('aria-label',copy.title);
+    prev.disabled=active.page<=0;next.disabled=active.page>=pageCount-1;
+    prev.setAttribute('aria-label',copy.prev);prev.title=copy.prev;
+    next.setAttribute('aria-label',copy.next);next.title=copy.next;
+    indicator.textContent=String(active.page+1)+' / '+String(pageCount);
   }
   function open(type,name){
     var d=dataFor(type,name);if(!d)return false;
@@ -94,7 +110,7 @@
       }else{window.alert(copy.premiumMessage);}
       return false;
     }
-    active={type:type,name:name};
+    active={type:type,name:name,page:0};
     var modal=ensureModal();renderOpen();modal.hidden=false;document.documentElement.classList.add('gm-curiosities-open');
     window.setTimeout(function(){var b=modal.querySelector('.gm-curiosities-close');if(b)b.focus();},0);
     return true;
