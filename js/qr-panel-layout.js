@@ -13,6 +13,67 @@
 
   if (!panel) return;
 
+  /* Contatore discreto dei filmati "Ieri" (es. 2/3), sovrapposto
+   * nell'angolo alto destro del riquadro media. Il contatore originale
+   * continua a gestire lo stato; questo badge ne riflette il valore solo
+   * quando Ieri e' attivo e sono disponibili almeno due filmati. */
+  function ensurePastCounterBadge() {
+    var media = panel.querySelector('.media');
+    if (!media) return null;
+    var badge = media.querySelector('.qr-past-counter-badge');
+    if (!badge) {
+      badge = document.createElement('span');
+      badge.className = 'qr-past-counter-badge';
+      badge.setAttribute('aria-hidden', 'true');
+      media.appendChild(badge);
+    }
+    return badge;
+  }
+
+  function syncPastCounterBadge() {
+    var badge = ensurePastCounterBadge();
+    if (!badge) return;
+    var pastButton = document.getElementById('btn-past');
+    var counter = document.getElementById('counter');
+    var text = counter ? String(counter.textContent || '').trim() : '';
+    var match = text.match(/^(\d+)\s*\/\s*(\d+)$/);
+    var total = match ? parseInt(match[2], 10) : 0;
+    var show = !!(
+      panel.classList.contains('qr-point-panel') &&
+      pastButton && pastButton.classList.contains('active') &&
+      match && total > 1
+    );
+    badge.textContent = show ? (match[1] + '/' + match[2]) : '';
+    badge.classList.toggle('is-visible', show);
+  }
+
+  function installPastCounterBadge() {
+    ensurePastCounterBadge();
+    ['btn-today', 'btn-past', 'btn-sfx', 'prev', 'next'].forEach(function (id) {
+      var control = document.getElementById(id);
+      if (!control || control.__qrPastCounterBound) return;
+      control.__qrPastCounterBound = true;
+      control.addEventListener('click', function () {
+        window.setTimeout(syncPastCounterBadge, 0);
+      });
+    });
+    var counter = document.getElementById('counter');
+    if (counter && !counter.__qrPastCounterObserved) {
+      counter.__qrPastCounterObserved = true;
+      try {
+        new MutationObserver(syncPastCounterBadge).observe(counter, {
+          childList: true,
+          characterData: true,
+          subtree: true,
+          attributes: true
+        });
+      } catch (_) {}
+    }
+    syncPastCounterBadge();
+  }
+
+  installPastCounterBadge();
+
   function clearPublicCompareBlockers() {
     try {
       if (typeof window.__gmClearMediaPreview === "function") {
@@ -1263,6 +1324,7 @@
       prepareCompareForPoint(point, parent, media, qrid);
       try { if (typeof window.__qrVrPrepare === "function") window.__qrVrPrepare(point, parent, media, qrid); } catch (_) {}
       ensureMediaModeGroups(panel.querySelector(".swap"));
+      syncPastCounterBadge();
 
       focusQrPoint(point, function () {
         preparePanel(point, parent);
@@ -1271,6 +1333,7 @@
         prepareAudioGuideForPoint(point, media);
         prepareMiniDocForPoint(point, media);
         ensureMediaModeGroups(panel.querySelector(".swap"));
+        syncPastCounterBadge();
         panel.style.visibility = previousVisibility;
         panel.style.pointerEvents = previousPointerEvents;
       });

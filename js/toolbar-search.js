@@ -89,12 +89,37 @@
       button.classList.toggle('active', buttonIndex === index);
     });
   }
+  function ensureQrMarkersVisible(){
+    try{
+      if(typeof window.__ensureQrOn === 'function') window.__ensureQrOn();
+    }catch(_){}
+
+    // __ensureQrOn viene creato dal pannello QR: se quel pannello non e' mai
+    // stato aperto, la ricerca toolbar deve poter accendere i marker comunque.
+    try{
+      var map = window.map || window.__map || window.__LEAFLET_MAP__;
+      var group = window.QR_ALL;
+      var visible = !!(map && group && typeof map.hasLayer === 'function' && map.hasLayer(group));
+      if(!visible && typeof window.__qrToggleAll === 'function') window.__qrToggleAll(true);
+    }catch(_){}
+
+    try{
+      var chk = document.getElementById('chk-qr-all');
+      if(chk) chk.checked = true;
+      var btn = document.getElementById('btn-qr-removed');
+      if(btn){
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-pressed','true');
+      }
+    }catch(_){}
+  }
+
   function openResult(item){
     if(item.kind === 'place'){
       try{ item.target.click(); }catch(_){}
       return;
     }
-    try{ if(window.__ensureQrOn) window.__ensureQrOn(); }catch(_){}
+    ensureQrMarkersVisible();
     try{
       var map3d = window.__gmMap3D;
       if(map3d && map3d.focus) map3d.focus([item.lat, item.lng], 17, {minZoom:true});

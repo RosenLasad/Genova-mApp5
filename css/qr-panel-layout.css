@@ -640,3 +640,51 @@
     bottom: 6px;
   }
 }
+
+/* Contatore dei video Ieri: compare solo quando il punto QR ha piu' di un
+ * filmato storico, senza alterare altezza o layout del riquadro media. */
+#panel.qr-point-panel .media {
+  position: relative;
+}
+
+#panel.qr-point-panel .qr-past-counter-badge {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  z-index: 18;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  min-height: 25px;
+  box-sizing: border-box;
+  padding: 3px 8px;
+  border: 1px solid rgba(255, 255, 255, .34);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, .58);
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .02em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .28);
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#panel.qr-point-panel .qr-past-counter-badge.is-visible {
+  display: inline-flex;
+}
+
+@media (max-width: 480px) {
+  #panel.qr-point-panel .qr-past-counter-badge {
+    top: 7px;
+    right: 8px;
+    min-width: 34px;
+    min-height: 23px;
+    padding: 3px 7px;
+    font-size: .73rem;
+  }
+}
+
