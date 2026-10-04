@@ -50,6 +50,24 @@ window.__QR_VR_POINTS = window.__QR_VR_POINTS || {
     audio: true
   },
 
+  // Via XX settembre
+  "viasettembre/viaxx_alta": {
+    src: "qr_azzurri/qr_azzurri_via_settembre/vr/viaxx_alta_vr.mp4",
+    type: "video",
+    projection: "flatvr",
+    angle: 180,
+    verticalAngle: 59,
+    fov: 43,
+    yaw: -6,
+    pitch: -8,
+    minYaw: -96,
+    maxYaw: 84,
+    minPitch: -40,
+    maxPitch: 40,
+    loop: true,
+    audio: true
+  },
+
   // Piazza Raibetta
   "pcaricamento/piazza_raibetta": {
     src: "qr_azzurri/qr_azzurri_caricamento/vr/raibetta_vr.mp4",
