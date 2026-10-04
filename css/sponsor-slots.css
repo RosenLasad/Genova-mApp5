@@ -1,0 +1,98 @@
+/* Genova mApp - popup per gli spazi Sponsor disponibili. */
+#sponsor-strip .sp.sp-available{
+  border:0;
+  font:inherit;
+  cursor:pointer;
+}
+
+.sponsor-slot-hidden{ display:none !important; }
+
+#sponsor-slot-overlay{
+  position:fixed;
+  inset:0;
+  z-index:10050;
+  background:rgba(15,23,42,.45);
+  backdrop-filter:blur(2px);
+}
+
+#sponsor-slot-panel{
+  position:fixed;
+  z-index:10051;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:min(420px, calc(100vw - 36px));
+  box-sizing:border-box;
+  padding:24px 22px 20px;
+  border-radius:18px;
+  background:#fff;
+  color:#172033;
+  box-shadow:0 22px 70px rgba(15,23,42,.28);
+  text-align:center;
+}
+
+#sponsor-slot-panel .sponsor-slot-close{
+  position:absolute;
+  right:12px;
+  top:10px;
+  border:0;
+  background:transparent;
+  color:#475569;
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+  padding:4px 7px;
+}
+
+#sponsor-slot-panel .sponsor-slot-icon{
+  font-size:30px;
+  line-height:1;
+  margin:2px 0 10px;
+}
+
+#sponsor-slot-panel h3{
+  margin:0;
+  font-size:20px;
+  line-height:1.25;
+}
+
+#sponsor-slot-panel .sponsor-slot-category{
+  margin:6px 0 0;
+  font-size:13px;
+  font-weight:700;
+  color:#64748b;
+}
+
+#sponsor-slot-panel .sponsor-slot-body{
+  margin:15px 0 18px;
+  font-size:14px;
+  line-height:1.5;
+  color:#334155;
+}
+
+#sponsor-slot-panel .sponsor-slot-contact{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:9px 18px;
+  border:0;
+  border-radius:11px;
+  background:#17365d;
+  color:#fff;
+  font:inherit;
+  font-weight:700;
+  cursor:pointer;
+}
+
+#sponsor-slot-panel .sponsor-slot-contact:hover,
+#sponsor-slot-panel .sponsor-slot-contact:focus-visible{
+  filter:brightness(1.08);
+}
+
+@media (max-width:560px){
+  #sponsor-slot-panel{
+    width:calc(100vw - 28px);
+    padding:23px 18px 18px;
+  }
+}
