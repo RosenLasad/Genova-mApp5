@@ -33,7 +33,7 @@
   var TXT = {
     it: {
       title: 'Taccuino', subtitle: 'Il tuo viaggio a Genova', close: 'Chiudi', back: 'Indietro',
-      tabFavorites: 'Preferiti', tabRoutes: 'Percorsi', tabNotes: 'Note',
+      tabFavorites: 'Preferiti', tabRoutes: 'Percorsi', tabNotes: 'Note', search: 'Cerca',
       favoritesTitle: 'I tuoi luoghi preferiti', favoritesHelp: 'Tocca un luogo per aprire la sua pagina.',
       sortBy: 'Ordina i preferiti', sortAlphabetical: 'Alfabetico', sortCategory: 'Per categoria',
       otherCategory: 'Altri luoghi',
@@ -51,6 +51,7 @@
       date: 'Data', routeColor: 'Colore', save: 'Aggiorna percorso', saveNew: 'Salva percorso',
       saveAsNew: 'Salva come nuovo', showMap: 'Mostra sulla mappa', hideMap: 'Nascondi dalla mappa',
       copy: 'Copia elenco', addFromFavorites: 'Aggiungi dai Preferiti', routeStops: 'Tappe del percorso',
+      saveRouteFirstTitle: 'Salva prima il percorso', saveRouteFirstMessage: 'Per aggiungere luoghi dai Preferiti, assegna un nome al nuovo percorso e salvalo.',
       emptyRoute: 'Il percorso non contiene ancora tappe.', time: 'Ora', note: 'Nota',
       up: 'Sposta su', down: 'Sposta giù', remove: 'Rimuovi', unnamed: 'Percorso senza nome',
       savedOk: 'Percorso salvato.', copied: 'Percorso copiato negli appunti.',
@@ -66,7 +67,7 @@
     },
     en: {
       title: 'Notebook', subtitle: 'Your journey through Genoa', close: 'Close', back: 'Back',
-      tabFavorites: 'Favourites', tabRoutes: 'Routes', tabNotes: 'Notes',
+      tabFavorites: 'Favourites', tabRoutes: 'Routes', tabNotes: 'Notes', search: 'Search',
       favoritesTitle: 'Your favourite places', favoritesHelp: 'Tap a place to open its page.',
       sortBy: 'Sort favourites', sortAlphabetical: 'Alphabetical', sortCategory: 'By category',
       otherCategory: 'Other places',
@@ -84,6 +85,7 @@
       date: 'Date', routeColor: 'Colour', save: 'Update route', saveNew: 'Save route',
       saveAsNew: 'Save as new', showMap: 'Show on map', hideMap: 'Hide from map',
       copy: 'Copy list', addFromFavorites: 'Add from Favourites', routeStops: 'Route stops',
+      saveRouteFirstTitle: 'Save the route first', saveRouteFirstMessage: 'To add places from Favourites, give the new route a name and save it first.',
       emptyRoute: 'This route does not contain any stops yet.', time: 'Time', note: 'Note',
       up: 'Move up', down: 'Move down', remove: 'Remove', unnamed: 'Unnamed route',
       savedOk: 'Route saved.', copied: 'Route copied to clipboard.',
@@ -99,7 +101,7 @@
     },
     es: {
       title: 'Cuaderno', subtitle: 'Tu viaje por Génova', close: 'Cerrar', back: 'Atrás',
-      tabFavorites: 'Favoritos', tabRoutes: 'Rutas', tabNotes: 'Notas',
+      tabFavorites: 'Favoritos', tabRoutes: 'Rutas', tabNotes: 'Notas', search: 'Buscar',
       favoritesTitle: 'Tus lugares favoritos', favoritesHelp: 'Toca un lugar para abrir su página.',
       sortBy: 'Ordenar favoritos', sortAlphabetical: 'Alfabético', sortCategory: 'Por categoría',
       otherCategory: 'Otros lugares',
@@ -117,6 +119,7 @@
       date: 'Fecha', routeColor: 'Color', save: 'Actualizar ruta', saveNew: 'Guardar ruta',
       saveAsNew: 'Guardar como nueva', showMap: 'Mostrar en el mapa', hideMap: 'Ocultar del mapa',
       copy: 'Copiar lista', addFromFavorites: 'Añadir desde Favoritos', routeStops: 'Etapas de la ruta',
+      saveRouteFirstTitle: 'Guarda primero la ruta', saveRouteFirstMessage: 'Para añadir lugares desde Favoritos, asigna un nombre a la nueva ruta y guárdala primero.',
       emptyRoute: 'La ruta todavía no contiene etapas.', time: 'Hora', note: 'Nota',
       up: 'Subir', down: 'Bajar', remove: 'Quitar', unnamed: 'Ruta sin nombre',
       savedOk: 'Ruta guardada.', copied: 'Ruta copiada al portapapeles.',
@@ -132,7 +135,7 @@
     },
     fr: {
       title: 'Carnet', subtitle: 'Votre voyage à Gênes', close: 'Fermer', back: 'Retour',
-      tabFavorites: 'Favoris', tabRoutes: 'Parcours', tabNotes: 'Notes',
+      tabFavorites: 'Favoris', tabRoutes: 'Parcours', tabNotes: 'Notes', search: 'Rechercher',
       favoritesTitle: 'Vos lieux favoris', favoritesHelp: 'Touchez un lieu pour ouvrir sa page.',
       sortBy: 'Trier les favoris', sortAlphabetical: 'Alphabétique', sortCategory: 'Par catégorie',
       otherCategory: 'Autres lieux',
@@ -150,6 +153,7 @@
       date: 'Date', routeColor: 'Couleur', save: 'Mettre à jour le parcours', saveNew: 'Enregistrer le parcours',
       saveAsNew: 'Enregistrer comme nouveau', showMap: 'Afficher sur la carte', hideMap: 'Masquer de la carte',
       copy: 'Copier la liste', addFromFavorites: 'Ajouter depuis les Favoris', routeStops: 'Étapes du parcours',
+      saveRouteFirstTitle: 'Enregistrez d’abord le parcours', saveRouteFirstMessage: 'Pour ajouter des lieux depuis les Favoris, donnez un nom au nouveau parcours et enregistrez-le d’abord.',
       emptyRoute: 'Ce parcours ne contient encore aucune étape.', time: 'Heure', note: 'Note',
       up: 'Monter', down: 'Descendre', remove: 'Retirer', unnamed: 'Parcours sans nom',
       savedOk: 'Parcours enregistré.', copied: 'Parcours copié dans le presse-papiers.',
@@ -165,7 +169,7 @@
     },
     ar: {
       title: 'دفتر الرحلة', subtitle: 'رحلتك في جنوة', close: 'إغلاق', back: 'رجوع',
-      tabFavorites: 'المفضلة', tabRoutes: 'المسارات', tabNotes: 'الملاحظات',
+      tabFavorites: 'المفضلة', tabRoutes: 'المسارات', tabNotes: 'الملاحظات', search: 'بحث',
       favoritesTitle: 'أماكنك المفضلة', favoritesHelp: 'المس مكاناً لفتح صفحته.',
       sortBy: 'ترتيب المفضلة', sortAlphabetical: 'أبجدياً', sortCategory: 'حسب الفئة',
       otherCategory: 'أماكن أخرى',
@@ -183,6 +187,7 @@
       date: 'التاريخ', routeColor: 'اللون', save: 'تحديث المسار', saveNew: 'حفظ المسار',
       saveAsNew: 'حفظ كمسار جديد', showMap: 'إظهار على الخريطة', hideMap: 'إخفاء من الخريطة',
       copy: 'نسخ القائمة', addFromFavorites: 'إضافة من المفضلة', routeStops: 'محطات المسار',
+      saveRouteFirstTitle: 'احفظ المسار أولاً', saveRouteFirstMessage: 'لإضافة أماكن من المفضلة، امنح المسار الجديد اسماً ثم احفظه أولاً.',
       emptyRoute: 'لا يحتوي المسار على محطات بعد.', time: 'الوقت', note: 'ملاحظة',
       up: 'نقل إلى أعلى', down: 'نقل إلى أسفل', remove: 'إزالة', unnamed: 'مسار بلا اسم',
       savedOk: 'تم حفظ المسار.', copied: 'تم نسخ المسار إلى الحافظة.',
@@ -198,7 +203,7 @@
     },
     ru: {
       title: 'Блокнот', subtitle: 'Ваше путешествие по Генуе', close: 'Закрыть', back: 'Назад',
-      tabFavorites: 'Избранное', tabRoutes: 'Маршруты', tabNotes: 'Заметки',
+      tabFavorites: 'Избранное', tabRoutes: 'Маршруты', tabNotes: 'Заметки', search: 'Поиск',
       favoritesTitle: 'Ваши любимые места', favoritesHelp: 'Нажмите на место, чтобы открыть его страницу.',
       sortBy: 'Сортировать избранное', sortAlphabetical: 'По алфавиту', sortCategory: 'По категориям',
       otherCategory: 'Другие места',
@@ -216,6 +221,7 @@
       date: 'Дата', routeColor: 'Цвет', save: 'Обновить маршрут', saveNew: 'Сохранить маршрут',
       saveAsNew: 'Сохранить как новый', showMap: 'Показать на карте', hideMap: 'Скрыть с карты',
       copy: 'Копировать список', addFromFavorites: 'Добавить из Избранного', routeStops: 'Остановки маршрута',
+      saveRouteFirstTitle: 'Сначала сохраните маршрут', saveRouteFirstMessage: 'Чтобы добавлять места из Избранного, задайте новому маршруту название и сначала сохраните его.',
       emptyRoute: 'В этом маршруте пока нет остановок.', time: 'Время', note: 'Заметка',
       up: 'Переместить вверх', down: 'Переместить вниз', remove: 'Убрать', unnamed: 'Маршрут без названия',
       savedOk: 'Маршрут сохранён.', copied: 'Маршрут скопирован в буфер обмена.',
@@ -231,7 +237,7 @@
     },
     zh: {
       title: '旅行手册', subtitle: '您的热那亚之旅', close: '关闭', back: '返回',
-      tabFavorites: '收藏', tabRoutes: '路线', tabNotes: '笔记',
+      tabFavorites: '收藏', tabRoutes: '路线', tabNotes: '笔记', search: '搜索',
       favoritesTitle: '您收藏的地点', favoritesHelp: '点击地点即可打开其页面。',
       sortBy: '收藏排序', sortAlphabetical: '按字母', sortCategory: '按类别',
       otherCategory: '其他地点',
@@ -249,6 +255,7 @@
       date: '日期', routeColor: '颜色', save: '更新路线', saveNew: '保存路线',
       saveAsNew: '另存为新路线', showMap: '在地图上显示', hideMap: '从地图隐藏',
       copy: '复制列表', addFromFavorites: '从收藏添加', routeStops: '路线站点',
+      saveRouteFirstTitle: '请先保存路线', saveRouteFirstMessage: '要从收藏中添加地点，请先为新路线命名并保存。',
       emptyRoute: '此路线尚无站点。', time: '时间', note: '备注',
       up: '上移', down: '下移', remove: '移除', unnamed: '未命名路线',
       savedOk: '路线已保存。', copied: '路线已复制到剪贴板。',
@@ -264,7 +271,7 @@
     },
     lij: {
       title: 'Taccuin', subtitle: 'O teu viaggio a Zêna', close: 'Særa', back: 'Inderê',
-      tabFavorites: 'Preferii', tabRoutes: 'Percorsi', tabNotes: 'Nòtte',
+      tabFavorites: 'Preferii', tabRoutes: 'Percorsi', tabNotes: 'Nòtte', search: 'Çerca',
       favoritesTitle: 'I teu pòsti preferii', favoritesHelp: 'Tocca un pòsto pe arvî a seu pagina.',
       sortBy: 'Ordina i preferii', sortAlphabetical: 'Arfabetico', sortCategory: 'Pe categoria',
       otherCategory: 'Âtri pòsti',
@@ -282,6 +289,7 @@
       date: 'Dæta', routeColor: 'Cô', save: 'Agiorna o percorso', saveNew: 'Sarva o percorso',
       saveAsNew: 'Sarva comme neuvo', showMap: 'Fâ védde in sciâ mappa', hideMap: 'Ascondi da-a mappa',
       copy: 'Còpia a lista', addFromFavorites: 'Azonzi da-i Preferii', routeStops: 'Tappe do percorso',
+      saveRouteFirstTitle: 'Sarva primma o percorso', saveRouteFirstMessage: 'Pe azonze di pòsti da-i Preferii, dagghe un nomme a-o neuvo percorso e sarvalo primma.',
       emptyRoute: 'O percorso o no gh’à ancon de tappe.', time: 'Ôa', note: 'Nòtta',
       up: 'Mescia in sciù', down: 'Mescia in zu', remove: 'Leva', unnamed: 'Percorso sensa nomme',
       savedOk: 'Percorso sarvou.', copied: 'Percorso copiou inti aponti.',
@@ -888,7 +896,7 @@
   }
 
   function renderFavorites(){
-    setPageHeader(t('favoritesTitle'), t('favoritesHelp'), '', false);
+    setPageHeader(t('favoritesTitle'), t('favoritesHelp'), '<button type="button" class="taccuino-head-action" data-taccuino-action="openToolbarSearch">⌕ '+esc(t('search'))+'</button>', false);
     var body = pageBody();
     if(!body) return;
     if(!state.favCache.length){
@@ -1139,6 +1147,32 @@
       '</article>';
   }
 
+  function openToolbarSearch(){
+    closePanel();
+    window.setTimeout(function(){
+      var header = document.querySelector('#app > header') || document.querySelector('header');
+      var input = document.getElementById('tb-search-input');
+      if(!input) return;
+      try{
+        if(window.matchMedia && window.matchMedia('(max-width: 768px)').matches && header){
+          header.classList.add('tb-search-open');
+        }
+      }catch(_e){}
+      try{ input.focus({ preventScroll: true }); }catch(_e){ try{ input.focus(); }catch(_e2){} }
+      try{ input.select(); }catch(_e){}
+    }, 40);
+  }
+
+  function showSaveRouteFirstNotice(){
+    var message = t('saveRouteFirstTitle') + '\n\n' + t('saveRouteFirstMessage');
+    setStatus(t('saveRouteFirstMessage'));
+    try{ window.alert(message); }catch(_e){}
+    window.setTimeout(function(){
+      var name = document.querySelector('[data-route-name]');
+      try{ if(name) name.focus({ preventScroll: true }); }catch(_e){ try{ if(name) name.focus(); }catch(_e2){} }
+    }, 0);
+  }
+
   function bindPanelEvents(root){
     root.addEventListener('click', function(event){
       if(event.target === root){ closePanel(); return; }
@@ -1160,6 +1194,7 @@
       else if(action === 'openFavorite') navigate('favoriteDetail', { favoriteKey: actionElement.getAttribute('data-fav-key') || '' });
       else if(action === 'removeFavorite') removeFavoriteFromNotebook(actionElement.getAttribute('data-fav-key') || '');
       else if(action === 'undoRemoveFavorite') undoFavoriteRemoval();
+      else if(action === 'openToolbarSearch') openToolbarSearch();
       else if(action === 'favoriteGps') centerFavourite(actionElement.getAttribute('data-fav-key') || state.selectedFavKey);
       else if(action === 'addSelectedFavorite') addSelectedFavorite();
       else if(action === 'newRoute') newRoute();
@@ -1172,9 +1207,14 @@
       else if(action === 'toggleCurrentMap') toggleCurrentRouteMap();
       else if(action === 'copyRoute') copyRoute();
       else if(action === 'goFavorites'){
-        // Conserva anche le modifiche ai campi del percorso prima di lasciare
-        // la pagina per scegliere una nuova tappa dai Preferiti.
+        // Un nuovo percorso deve esistere davvero prima di poter ricevere
+        // tappe dai Preferiti: senza id le aggiunte resterebbero soltanto
+        // nella bozza e non comparirebbero poi tra i percorsi salvati.
         syncRouteInputs();
+        if(!state.route || !state.route.id){
+          showSaveRouteFirstNotice();
+          return;
+        }
         saveDraft();
         switchTab('favorites');
       }
