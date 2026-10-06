@@ -80,7 +80,7 @@
     }
     .danger { border-color:#6b3d3d !important; }
   </style>
-<link rel="stylesheet" href="style.css?v=20260921-question-layout1">
+<link rel="stylesheet" href="style.css?v=20261006-fullscreen1">
 </head>
 <body>
   <header class="top">
@@ -102,8 +102,15 @@
 
     <div class="homeHeaderTitle" aria-hidden="true">Prepara la sfida</div>
 
-    <!-- Destra: impostazioni e guida -->
+    <!-- Destra: schermo intero + impostazioni e guida -->
     <div class="top-actions">
+      <button id="btnFullscreen" class="fullscreenIconBtn" type="button"
+              title="Schermo intero" aria-label="Attiva schermo intero" aria-pressed="false">
+        <svg class="fullscreenEnterIcon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 3H3v5"></path><path d="M16 3h5v5"></path>
+          <path d="M3 16v5h5"></path><path d="M21 16v5h-5"></path>
+        </svg>
+      </button>
       <button id="btnSettings" class="settingsIconBtn" type="button"
               title="Impostazioni e guida" aria-label="Apri impostazioni e guida" aria-haspopup="dialog" aria-controls="overlaySettings">
         <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
@@ -259,14 +266,6 @@
     <!-- DOMANDA -->
     <section id="screenQ" class="card hidden" aria-live="polite">
 
-<details id="hudPlayersWrap" class="hudPlayersWrap">
-  <summary id="hudPlayersSummary" class="hudPlayersSummary">
-    Giocatori
-  </summary>
-
-  <div id="hudPlayersQ" class="hudPlayers"></div>
-</details>
-
       <div class="qhead">
         <div>
           <div class="inline qMetaRow">
@@ -292,10 +291,16 @@
       <div id="choices" class="choices"></div>
 
       <div id="feedback" class="feedback hidden"></div>
+
+      <details id="hudPlayersWrap" class="hudPlayersWrap matchPlayersStatus">
+        <summary id="hudPlayersSummary" class="hudPlayersSummary">Giocatori</summary>
+        <div id="hudPlayersQ" class="hudPlayers"></div>
+      </details>
+
       <div class="row questionActions">
         <button id="btnBack" class="ghost" type="button">Torna alle categorie</button>
         <div class="questionActionsRight">
-          <button id="btnPause" class="ghost" type="button">Pausa</button>
+          <button id="btnPause" class="ghost pauseCta" type="button"><span aria-hidden="true">⏸</span> Pausa</button>
           <button id="btnNext" class="primary hidden" type="button">Continua</button>
         </div>
       </div>
@@ -376,9 +381,9 @@
 
   <!-- OVERLAY: menu pausa -->
   <div id="overlayPause" class="overlay hidden" role="dialog" aria-modal="true">
-    <div class="modal">
+    <div class="modal pauseModal">
       <h2>Menu partita</h2>
-      <p class="muted">La partita è in pausa. Il timer è fermo, miracolo della tecnologia.</p>
+      <p class="muted pauseLead">La partita è in pausa.</p>
       <div class="row">
         <button id="btnResume" class="primary" type="button">Riprendi</button>
         <button id="btnRestart" class="ghost" type="button">Ricomincia partita</button>
@@ -431,6 +436,6 @@
   <script src="questions/level_3/dialetto-cultura_3.js"></script>
 
   <script>window.QUIZ_QUESTIONS = window.QUIZ_LEVELS[1];</script>
-  <script src="games.js?v=20260921-question-layout1"></script>
+  <script src="games.js?v=20261006-fullscreen1"></script>
 </body>
 </html>

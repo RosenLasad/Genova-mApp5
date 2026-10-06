@@ -240,6 +240,7 @@ const screenWin = $("#screenWin");
 
 // Top / settings buttons
 const btnSettings = $("#btnSettings");
+const btnFullscreen = $("#btnFullscreen");
 const btnSettingsClose = $("#btnSettingsClose");
 const overlaySettings = $("#overlaySettings");
 const settingsGameActions = $("#settingsGameActions");
@@ -333,6 +334,44 @@ function setTopButtons(inGame) {
   btnTopMenu.classList.toggle("hidden", !inGame);
   btnResetTop.classList.toggle("hidden", !inGame);
   if (settingsGameActions) settingsGameActions.classList.toggle("hidden", !inGame);
+}
+
+function isFullscreenActive() {
+  return Boolean(document.fullscreenElement || document.webkitFullscreenElement);
+}
+
+function updateFullscreenButton() {
+  if (!btnFullscreen) return;
+  const active = isFullscreenActive();
+  btnFullscreen.classList.toggle("is-active", active);
+  btnFullscreen.setAttribute("aria-pressed", active ? "true" : "false");
+  btnFullscreen.setAttribute("aria-label", active ? "Esci da schermo intero" : "Attiva schermo intero");
+  btnFullscreen.title = active ? "Esci da schermo intero" : "Schermo intero";
+}
+
+async function toggleFullscreen() {
+  try {
+    if (isFullscreenActive()) {
+      if (document.exitFullscreen) {
+        await document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    } else {
+      const target = document.documentElement;
+      if (target.requestFullscreen) {
+        await target.requestFullscreen();
+      } else if (target.webkitRequestFullscreen) {
+        target.webkitRequestFullscreen();
+      } else {
+        alert("La modalita schermo intero non e disponibile in questo browser.");
+      }
+    }
+  } catch (err) {
+    console.warn("Impossibile cambiare modalita schermo intero:", err);
+  } finally {
+    updateFullscreenButton();
+  }
 }
 
 function openSettingsPanel() {
@@ -1294,7 +1333,12 @@ btnRestartSame.addEventListener("click", () => {
   restartSameMatch();
 });
 
-// Impostazioni / guida
+// Schermo intero + impostazioni / guida
+btnFullscreen?.addEventListener("click", toggleFullscreen);
+document.addEventListener("fullscreenchange", updateFullscreenButton);
+document.addEventListener("webkitfullscreenchange", updateFullscreenButton);
+updateFullscreenButton();
+
 btnSettings?.addEventListener("click", openSettingsPanel);
 btnSettingsClose?.addEventListener("click", () => closeSettingsPanel());
 overlaySettings?.addEventListener("click", (event) => {

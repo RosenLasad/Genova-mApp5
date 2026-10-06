@@ -2772,3 +2772,399 @@ body.azena-home .mainCard{
     width: calc(100% - 28px);
   }
 }
+
+
+/* =========================================================
+   A Zena - Partita: HUD informativo, stato giocatori e pausa
+   Revisione 06.10.2026
+   ========================================================= */
+
+/* La testata della domanda diventa una barra informativa compatta:
+   categoria, livello, giocatore e timer restano su una sola riga. */
+#screenQ .qhead{
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) auto;
+  align-items:center;
+  gap:10px;
+  padding:8px 10px;
+  margin-bottom:18px;
+  border-top:1px solid rgba(235,223,202,.12);
+  border-bottom:1px solid rgba(235,223,202,.12);
+  background:rgba(18,17,15,.24);
+}
+
+#screenQ .qhead > div:first-child{
+  min-width:0;
+}
+
+#screenQ .qMetaRow{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  flex-wrap:nowrap;
+  gap:0 !important;
+  min-width:0;
+  overflow:hidden;
+}
+
+/* Le informazioni non sembrano piu pulsanti: niente capsule, solo testo
+   con piccoli separatori grafici. */
+#screenQ .qMetaRow .pill{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 1 auto;
+  min-width:0;
+  min-height:0;
+  margin:0;
+  padding:3px 10px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  font-size:13px;
+  line-height:1.2;
+  font-weight:800;
+  color:var(--az-text);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+#screenQ .qMetaRow .pill + .pill::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:22%;
+  bottom:22%;
+  width:1px;
+  background:rgba(235,223,202,.20);
+}
+
+#screenQ #qCat{
+  color:#e8c78f;
+}
+
+#screenQ #qDifficulty{
+  color:#c9d4df;
+}
+
+#screenQ #qPlayer{
+  color:#aeb9c8;
+}
+
+#screenQ .qprog{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  min-width:max-content;
+}
+
+#screenQ #timerBox{
+  min-height:30px;
+  height:30px;
+  margin:0;
+  padding:0 9px;
+  border-color:rgba(208,166,79,.30);
+  background:rgba(208,166,79,.08);
+  color:#f0ddbc;
+  box-shadow:none;
+}
+
+/* Stato/risultati giocatori: ora sotto la domanda e prima dei comandi. */
+#screenQ .matchPlayersStatus{
+  margin:14px 0 0;
+  border-color:rgba(235,223,202,.15);
+  background:rgba(18,17,15,.30);
+}
+
+#screenQ .matchPlayersStatus .hudPlayersSummary{
+  min-height:38px;
+  padding:8px 12px;
+  font-size:13px;
+  font-weight:750;
+  color:#d8d1c6;
+}
+
+#screenQ .matchPlayersStatus .hudPlayersSummary::after{
+  font-size:12px;
+}
+
+#screenQ .matchPlayersStatus .hudPlayers{
+  padding:8px 10px 10px;
+}
+
+/* Il pulsante pausa e volutamente piu visibile delle azioni secondarie. */
+#screenQ #btnPause.pauseCta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  min-width:108px;
+  border-color:rgba(208,166,79,.52);
+  background:rgba(208,166,79,.11);
+  color:#f0ddbc;
+  font-weight:800;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+}
+
+#screenQ #btnPause.pauseCta:hover{
+  border-color:rgba(208,166,79,.78);
+  background:rgba(208,166,79,.17);
+}
+
+/* Menu pausa: piu stretto, ordinato e con titoli centrati. */
+#overlayPause .pauseModal{
+  width:min(390px, calc(100% - 42px));
+  padding:20px;
+}
+
+#overlayPause .pauseModal > h2,
+#overlayPause .pauseLead{
+  text-align:center;
+}
+
+#overlayPause .pauseModal > h2{
+  margin-bottom:6px;
+}
+
+#overlayPause .pauseLead{
+  margin:0 0 16px;
+}
+
+#overlayPause .pauseModal .row{
+  margin-top:10px;
+}
+
+#overlayPause .pauseModal .row > button{
+  min-height:42px;
+}
+
+@media (max-width:620px){
+  #screenQ .qhead{
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:6px;
+    padding:7px 5px;
+    margin-bottom:16px;
+  }
+
+  #screenQ .qMetaRow .pill{
+    padding:3px 6px;
+    font-size:11px;
+  }
+
+  #screenQ #timerBox{
+    height:28px;
+    min-height:28px;
+    padding-inline:7px;
+    gap:5px;
+    font-size:12px;
+  }
+
+  #screenQ .matchPlayersStatus{
+    margin-top:12px;
+  }
+
+  #screenQ #btnPause.pauseCta{
+    min-width:98px;
+    padding-inline:12px;
+  }
+
+  #overlayPause .pauseModal{
+    width:min(360px, calc(100% - 52px));
+    padding:18px 16px;
+  }
+}
+
+@media (max-width:390px){
+  #screenQ .qMetaRow .pill{
+    padding-inline:4px;
+    font-size:10px;
+  }
+
+  #screenQ #timerBox{
+    padding-inline:6px;
+    font-size:11px;
+  }
+
+  #screenQ #btnPause.pauseCta{
+    min-width:92px;
+  }
+
+  #overlayPause .pauseModal{
+    width:calc(100% - 44px);
+  }
+}
+
+
+/* =========================================================
+   A Zena - Colore categoria sul pannello domanda + Full screen
+   Revisione 06.10.2026
+   ========================================================= */
+
+/* Il pannello della domanda prende una velatura del colore della categoria.
+   Il secondo strato scuro mantiene leggibili domanda, risposte e HUD. */
+body.azena-play[data-azena-cat="storia"] #screenQ{
+  background:linear-gradient(180deg, rgba(200,103,91,.30), rgba(31,29,27,.79));
+  border-color:rgba(200,103,91,.42);
+}
+body.azena-play[data-azena-cat="geografia"] #screenQ{
+  background:linear-gradient(180deg, rgba(79,156,149,.30), rgba(31,29,27,.79));
+  border-color:rgba(79,156,149,.42);
+}
+body.azena-play[data-azena-cat="musica"] #screenQ{
+  background:linear-gradient(180deg, rgba(154,111,174,.30), rgba(31,29,27,.79));
+  border-color:rgba(154,111,174,.42);
+}
+body.azena-play[data-azena-cat="arte"] #screenQ{
+  background:linear-gradient(180deg, rgba(208,154,75,.30), rgba(31,29,27,.79));
+  border-color:rgba(208,154,75,.42);
+}
+body.azena-play[data-azena-cat="spettacolo"] #screenQ{
+  background:linear-gradient(180deg, rgba(197,111,134,.30), rgba(31,29,27,.79));
+  border-color:rgba(197,111,134,.42);
+}
+body.azena-play[data-azena-cat="scienza"] #screenQ{
+  background:linear-gradient(180deg, rgba(120,149,111,.30), rgba(31,29,27,.79));
+  border-color:rgba(120,149,111,.42);
+}
+body.azena-play[data-azena-cat="sport"] #screenQ{
+  background:linear-gradient(180deg, rgba(209,173,79,.30), rgba(31,29,27,.79));
+  border-color:rgba(209,173,79,.42);
+}
+body.azena-play[data-azena-cat="cucina"] #screenQ{
+  background:linear-gradient(180deg, rgba(208,123,77,.30), rgba(31,29,27,.79));
+  border-color:rgba(208,123,77,.42);
+}
+body.azena-play[data-azena-cat="dialetto"] #screenQ{
+  background:linear-gradient(180deg, rgba(124,141,152,.30), rgba(31,29,27,.79));
+  border-color:rgba(124,141,152,.42);
+}
+
+/* Bottone Full screen: stessa famiglia grafica di Impostazioni. */
+.fullscreenIconBtn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px !important;
+  min-width:44px;
+  height:44px;
+  padding:0;
+  border-radius:12px;
+  border:1px solid var(--az-border);
+  background:rgba(24,22,20,.42);
+  color:var(--az-text);
+  cursor:pointer;
+  transition:border-color .15s ease, background .15s ease, transform .15s ease;
+}
+.fullscreenIconBtn svg{
+  width:22px;
+  height:22px;
+  display:block;
+}
+.fullscreenIconBtn:hover,
+.fullscreenIconBtn:focus-visible,
+.fullscreenIconBtn.is-active{
+  border-color:var(--az-border-strong);
+  background:rgba(209,161,94,.12);
+}
+.fullscreenIconBtn:active{ transform:scale(.97); }
+
+/* Home: Impostazioni grande sopra, Full screen piu compatto sotto. */
+body.azena-home .top-actions{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:7px;
+  transform:translateY(8px);
+  z-index:4;
+}
+body.azena-home .top-actions #btnSettings{ order:1; }
+body.azena-home .top-actions #btnFullscreen{ order:2; }
+body.azena-home .fullscreenIconBtn{
+  width:40px !important;
+  min-width:40px;
+  height:40px;
+  border-radius:12px;
+  transform:none;
+  background:rgba(19,19,18,.72);
+  border-color:rgba(235,223,202,.18);
+  box-shadow:0 5px 12px rgba(0,0,0,.15);
+}
+body.azena-home .fullscreenIconBtn svg{
+  width:20px;
+  height:20px;
+}
+/* Evita di sommare due translate sul bottone Impostazioni gia sagomato. */
+body.azena-home .top-actions .settingsIconBtn{
+  transform:none !important;
+}
+
+/* Partita: Full screen subito a sinistra di Impostazioni, su una riga. */
+body.azena-play .top-actions{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  gap:8px;
+}
+body.azena-play .top-actions #btnFullscreen{ order:1; }
+body.azena-play .top-actions #btnSettings{ order:2; }
+
+@media (max-width:520px){
+  body.azena-home .top-actions{
+    flex-direction:column;
+    gap:6px;
+    transform:translateY(8px);
+  }
+  body.azena-home .fullscreenIconBtn{
+    width:38px !important;
+    min-width:38px;
+    height:38px;
+  }
+  body.azena-play .top-actions{
+    flex-direction:row;
+    gap:6px;
+  }
+  body.azena-play .fullscreenIconBtn,
+  body.azena-play .settingsIconBtn{
+    width:42px !important;
+    min-width:42px;
+    height:42px;
+  }
+}
+
+/* =========================================================
+   A Zena - Home logo refinement 2026-10-06
+   Logo piu grande e centrato nella toolbar con Full screen.
+   ========================================================= */
+
+body.azena-home .top .gameLogo{
+  top:50%;
+  transform:translate(-50%, -50%);
+  height:78px;
+  max-width:min(360px, 48vw);
+}
+
+@media (max-width:700px){
+  body.azena-home .top .gameLogo{
+    top:50%;
+    height:82px;
+    max-width:52vw;
+  }
+}
+
+@media (max-width:520px){
+  body.azena-home .top .gameLogo{
+    top:50%;
+    height:86px;
+    max-width:56vw;
+  }
+}
+
+@media (max-width:380px){
+  body.azena-home .top .gameLogo{
+    height:76px;
+    max-width:52vw;
+  }
+}
