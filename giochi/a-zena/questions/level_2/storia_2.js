@@ -1,10 +1,19 @@
 // storia_2.js
-// Domande della categoria: storia.
-// Livello di difficolta: 2.
-// File predisposto: aggiungi qui le future domande di questo livello.
-// Mantieni lo stesso formato usato nei file di level_1.
+// Domande della categoria: Storia.
+// Livello: Zeneize (medio).
+// Riorganizzato il 06.10.2026.
 
 window.QUIZ_QUESTIONS = window.QUIZ_QUESTIONS || [];
 window.QUIZ_QUESTIONS.push(
-  // Aggiungi qui le domande del livello 2.
+  {
+    "category": "storia",
+    "question": "Quale zona genovese vide sorgere i primi insediamenti?",
+    "choices": [
+      "Quartiere del Molo",
+      "Quartiere Castelletto",
+      "Quartiere Sarzano"
+    ],
+    "answer": 2,
+    "explain": "I primi insediamenti cominciarono nel V secolo a.C. sul colle di Sarzano."
+  }
 );

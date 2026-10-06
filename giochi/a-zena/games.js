@@ -252,7 +252,8 @@ const playerCountSel = $("#playerCount");
 const playerNamesBox = $("#playerNames");
 const oneCatOptions = $("#oneCatOptions");
 const singleCategorySel = $("#singleCategory");
-const categoryButtons = Array.from(document.querySelectorAll(".categoryChip"));
+const categoryButtons = Array.from(document.querySelectorAll(".categoryChip[data-category]"));
+const allCategoriesButton = document.querySelector(".allCategoriesChip");
 const levelAvailability = $("#levelAvailability");
 const timerSecondsSel = $("#timerSeconds");
 const timerEnabledChk = $("#timerEnabled");
@@ -463,9 +464,15 @@ function readDifficultyFromMenu() {
 
 function syncSelectedCategoryChip() {
   const mode = document.querySelector('input[name="modeCats"]:checked')?.value || "all";
+  if (allCategoriesButton) allCategoriesButton.classList.toggle("selected", mode === "all");
   categoryButtons.forEach(btn => {
     btn.classList.toggle("selected", mode === "one" && btn.dataset.category === singleCategorySel.value);
   });
+}
+
+function setCategoryMode(mode) {
+  const target = document.querySelector(`input[name="modeCats"][value="${mode}"]`);
+  if (target) target.checked = true;
 }
 
 function updateSetupAvailability() {
@@ -480,22 +487,29 @@ function updateSetupAvailability() {
   }
 
   if (oneCatOptions) {
-    oneCatOptions.classList.toggle("is-disabled", mode !== "one");
-    oneCatOptions.setAttribute("aria-disabled", mode === "one" ? "false" : "true");
+    oneCatOptions.classList.remove("is-disabled");
+    oneCatOptions.setAttribute("aria-disabled", "false");
   }
 
   categoryButtons.forEach(btn => {
     const catId = btn.dataset.category;
     const count = counts[catId] || 0;
     btn.dataset.count = String(count);
-    btn.disabled = mode !== "one" || count === 0;
+    btn.disabled = count === 0;
     btn.classList.toggle("unavailable", count === 0);
     btn.title = count > 0 ? `${count} domande disponibili` : "Nessuna domanda disponibile in questo livello";
   });
-  syncSelectedCategoryChip();
 
   const total = questionsForLevel(level).length;
   const missing = CATEGORIES.filter(c => counts[c.id] === 0);
+
+  if (allCategoriesButton) {
+    allCategoriesButton.disabled = false;
+    allCategoriesButton.title = missing.length > 0
+      ? `Mancano ancora ${missing.length} categorie in questo livello`
+      : "Gioca con tutte le categorie";
+  }
+  syncSelectedCategoryChip();
   let canStart = total > 0;
   let notice = "";
 
@@ -556,11 +570,18 @@ function initMainMenu() {
     r.addEventListener("change", updateSetupAvailability);
   });
 
+  if (allCategoriesButton) {
+    allCategoriesButton.addEventListener("click", () => {
+      setCategoryMode("all");
+      updateSetupAvailability();
+    });
+  }
+
   categoryButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       if (btn.disabled) return;
+      setCategoryMode("one");
       singleCategorySel.value = btn.dataset.category || CATEGORIES[0].id;
-      syncSelectedCategoryChip();
       updateSetupAvailability();
     });
   });
