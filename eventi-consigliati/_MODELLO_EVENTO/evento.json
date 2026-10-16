@@ -1,16 +1,26 @@
 {
   "id": "nome-evento-2027",
-  "titolo": "Titolo evento",
-  "categoria": "Mercati e fiere",
-  "descrizione": "Tre giornate dedicate ai produttori e alle eccellenze liguri, con degustazioni, incontri e proiezioni del documentario Storie di Genova.",
-  "dettagli": "Proiezione di Storie di Genova alle 20:30. Per informazioni e aggiornamenti consulta la pagina ufficiale.",
+  "titolo": {
+    "it": "Titolo evento"
+  },
+  "categoria": {
+    "it": "Mercati e fiere"
+  },
+  "descrizione": {
+    "it": "Tre giornate dedicate ai produttori e alle eccellenze liguri, con degustazioni, incontri e proiezioni del documentario Storie di Genova."
+  },
+  "dettagli": {
+    "it": "Proiezione di Storie di Genova alle 20:30. Per informazioni e aggiornamenti consulta la pagina ufficiale."
+  },
   "dataInizio": "2027-05-20",
   "oraInizio": "16:00",
   "dataFine": "2027-05-22",
   "oraFine": "22:00",
   "giorniAnticipo": 30,
   "fusoOrario": "Europe/Rome",
-  "indirizzo": "Mercato di Corso Sardegna, Corso Sardegna 165, Genova",
+  "indirizzo": {
+    "it": "Mercato di Corso Sardegna, Corso Sardegna 165, Genova"
+  },
   "lat": null,
   "lng": null,
   "linkUfficiale": "https://example.org",

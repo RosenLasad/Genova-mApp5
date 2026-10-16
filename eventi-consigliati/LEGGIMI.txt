@@ -15,3 +15,7 @@ Il link rimane valido dopo la scadenza, quando si apre la scheda con indicazione
 NON modificare eventi.js e eventi.css per inserire nuovi eventi.
 
 Nota: nessuna ricerca a pagamento viene consumata. Le icone utilizzano sempre i percorsi relativi alla propria cartella.
+
+TRADUZIONI (8 lingue): in evento.json i campi titolo, categoria, descrizione, dettagli e indirizzo possono contenere un oggetto con chiavi it, en, es, fr, ar, ru, zh, lij. Se una traduzione manca, viene mostrata la versione italiana.
+CONDIVISIONE: il pulsante Condividi usa il menu nativo dello smartphone se disponibile; altrimenti copia il collegamento evento.
+IMMAGINI: la copertina nella New Home viene ritagliata in un riquadro orizzontale compatto; scegliere immagini con il soggetto al centro.
