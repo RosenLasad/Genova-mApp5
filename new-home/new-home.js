@@ -3178,6 +3178,9 @@
       }
     }catch(_){}
 
+    if(!hasQrDeepLink){
+      try{ hasQrDeepLink = !!String(new URL(window.location.href).searchParams.get('evento') || '').trim(); }catch(_){}
+    }
     if(!hasQrDeepLink) open(document.getElementById('title-btn'));
   }
 

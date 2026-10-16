@@ -1,0 +1,17 @@
+EVENTI CONSIGLIATI - GUIDA RAPIDA
+
+1. Duplica _MODELLO_EVENTO in eventi/nome-evento/.
+2. Modifica evento.json; id deve essere UNICO, senza spazi e non cambiare dopo la pubblicazione del QR.
+3. Metti nella stessa cartella copertina e icona personalizzata. Puoi utilizzare JPG/PNG/SVG: aggiorna i nomi nei campi copertina e iconaMappa.
+   Suggerimento: copertina 800x450 JPG; icona 64x76 PNG con trasparenza.
+4. In eventi.json aggiungi nella lista il nome della nuova cartella.
+5. Pubblica nuovamente il sito su Netlify.
+
+I campi dataInizio/oraInizio, dataFine/oraFine sono interpretati nel fuso Europe/Rome.
+La scheda compare da giorniAnticipo (30 per impostazione predefinita) giorni prima dell'inizio e sparisce dopo la fine; anche il marker segue le stesse regole.
+visibile=false nasconde scheda e marker; il link diretto rimane consultabile come scheda non pubblicata/conclusa.
+Link QR: https://genovamapp.com/?evento=ID
+Il link rimane valido dopo la scadenza, quando si apre la scheda con indicazione evento concluso.
+NON modificare eventi.js e eventi.css per inserire nuovi eventi.
+
+Nota: nessuna ricerca a pagamento viene consumata. Le icone utilizzano sempre i percorsi relativi alla propria cartella.

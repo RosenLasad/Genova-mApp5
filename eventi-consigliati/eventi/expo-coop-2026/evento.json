@@ -1,0 +1,20 @@
+{
+  "id": "expo-coop-2026",
+  "titolo": "Expo dei produttori liguri 2026",
+  "categoria": "Mercati e fiere",
+  "descrizione": "Tre giornate dedicate ai produttori e alle eccellenze liguri, con degustazioni, incontri e proiezioni del documentario Storie di Genova.",
+  "dettagli": "Proiezione di Storie di Genova alle 20:30. Per informazioni e aggiornamenti consulta la pagina ufficiale.",
+  "dataInizio": "2026-10-16",
+  "oraInizio": "16:00",
+  "dataFine": "2026-10-18",
+  "oraFine": "22:00",
+  "giorniAnticipo": 30,
+  "fusoOrario": "Europe/Rome",
+  "indirizzo": "Mercato di Corso Sardegna, Corso Sardegna 165, Genova",
+  "lat": 44.4092124,
+  "lng": 8.954445,
+  "linkUfficiale": "https://www.coop.it/cooperative/coop-liguria/expo-produttori-liguri-2026",
+  "copertina": "copertina.svg",
+  "iconaMappa": "icona-mappa.svg",
+  "visibile": true
+}
