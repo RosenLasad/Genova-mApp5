@@ -1,0 +1,28 @@
+/* Genova mApp - compatibility with device dark-mode heuristics.
+   The application UI defines its own palette. Keep system dark mode from
+   recoloring light-surface widgets; explicit dark components opt in below. */
+:root { color-scheme: only light; }
+
+/* Fixed-color map images, QR badges and icons must retain their artwork.
+   Do not apply global inversion or brightness filters here: QR visit halos
+   intentionally use their own CSS filters in qr-visit-map.css. */
+#map .leaflet-marker-icon,
+#map .leaflet-marker-shadow,
+#map .leaflet-tile,
+#map .leaflet-overlay-pane img,
+#map .leaflet-marker-pane svg,
+#map .leaflet-marker-pane img {
+  color-scheme: only light;
+}
+
+/* Leaflet's standard controls and popup surfaces are light UI regardless of
+   the phone's system theme. Custom app panels keep their existing CSS. */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip,
+.leaflet-control-zoom,
+.leaflet-control-attribution {
+  color-scheme: only light;
+}
+
+/* Login is deliberately dark blue in both phone system modes. */
+.gcl-dialog { color-scheme: dark; }

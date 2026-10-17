@@ -1,0 +1,58 @@
+/* Genova mApp - Fase 3: pannelli e comandi, mobile 2026-10-18.
+   Progressive sizing only; no changes to app font-size preferences or theme. */
+@media (max-width: 480px) {
+  /* Modal panels: keep content reachable when device text is enlarged. */
+  #settings-modal-overlay { padding: max(8px, env(safe-area-inset-top, 0px)) 8px max(8px, env(safe-area-inset-bottom, 0px)); }
+  #settings-modal-overlay > #settings-dropdown {
+    width:100% !important;
+    max-height:calc(100dvh - 24px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) !important;
+    overscroll-behavior:contain;
+  }
+  #settings-modal-overlay #settings-dropdown .settings-row { min-width:0; overflow-wrap:anywhere; }
+  .auth-account-dialog, .auth-account-dialog.is-authenticated {
+    box-sizing:border-box;
+    max-width:calc(100vw - 16px);
+    max-height:calc(100dvh - 16px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+    overflow-y:auto;
+    overscroll-behavior:contain;
+  }
+  .auth-account-dialog :is(button, input, select),
+  #settings-modal-overlay :is(button, input, select) { max-width:100%; }
+  .auth-dashboard-grid > *, .auth-account-dashboard > * { min-width:0; overflow-wrap:anywhere; }
+  /* Abbonamento: stay within the viewport, scrolling content rather than the page. */
+  .sub-modal { padding:8px; box-sizing:border-box; }
+  .sub-modal-inner { box-sizing:border-box; width:min(420px,100%); max-width:100%; max-height:calc(100dvh - 16px); overflow-y:auto; overscroll-behavior:contain; }
+  .sub-modal-header > * { min-width:0; }
+  .sub-modal-body, .sub-modal-body * { overflow-wrap:anywhere; }
+  .sub-v2-tier-grid, .sub-v2-promo-row { min-width:0; max-width:100%; }
+  .sub-v2-promo-input { min-width:0; max-width:100%; box-sizing:border-box; }
+  /* Favorites panel used as an auxiliary map menu. */
+  #fav-menu { box-sizing:border-box; max-width:calc(100vw - 16px); max-height:min(65dvh,520px); overflow-x:hidden; overflow-y:auto; }
+  #fav-menu .fav-item, #fav-menu .fav-acc-head { min-width:0; }
+  #fav-menu .fav-name { min-width:0; overflow-wrap:anywhere; }
+  /* New Home: allow long translations and large device text to wrap. */
+  .gm-new-home-topbar > *, .gm-new-home-heading { min-width:0; }
+  .gm-new-home-card, .gm-new-home-card *, .gm-new-home-events-panel, .gm-new-home-events-panel * { min-width:0; }
+  .gm-new-home-card :is(h2,h3,p,strong), .gm-new-home-events-panel :is(h2,h3,p,strong) { overflow-wrap:anywhere; }
+  .gm-new-home-scroll { overscroll-behavior:contain; }
+}
+@media (max-width: 380px) {
+  /* Notebook keeps full-height layout but wastes less space at the sides. */
+  #fav-notes-panel { padding:max(40px,env(safe-area-inset-top,0px)) 9px max(10px,env(safe-area-inset-bottom,0px)) !important; }
+  #fav-notes-panel .taccuino-cover-head { padding-right:9px; }
+  #fav-notes-panel .taccuino-tabs { padding-left:14px; padding-right:7px; }
+  #fav-notes-panel .taccuino-tabs button { white-space:normal; overflow-wrap:anywhere; height:auto; min-height:40px; }
+  #fav-notes-panel .taccuino-page-head { padding-left:23px; }
+  #fav-notes-panel .taccuino-page-body { padding-left:23px; }
+  #fav-notes-panel .taccuino-page-actions { min-width:0; flex-wrap:wrap; }
+  .gm-new-home-overlay { padding-inline:4px; }
+  .gm-new-home-topbar { gap:4px; padding-inline:5px; }
+  .gm-new-home-heading { max-width:none; }
+  .gm-new-home-scroll { padding:9px; }
+  .gm-new-home-game-card { grid-template-columns:56px minmax(0,1fr); }
+  .gm-new-home-game-icon { width:56px; height:56px; }
+  #settings-modal-overlay #settings-dropdown .settings-row { padding:10px 8px; }
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  #settings-modal-overlay > #settings-dropdown, .auth-account-dialog, .sub-modal-inner { max-height:calc(100dvh - 14px) !important; overflow-y:auto; }
+}

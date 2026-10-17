@@ -1,0 +1,64 @@
+/* Genova mApp - Fase 1: popup Leaflet per viewport ridotte.
+   Solo presentazione: nessuna alterazione di testi, marker o handler. */
+@media (max-width: 600px), (max-height: 560px) {
+  .leaflet-popup-content-wrapper { box-sizing: border-box; }
+  .leaflet-popup-content { box-sizing: border-box; overflow-wrap: anywhere; }
+  .leaflet-popup-content img,
+  .leaflet-popup-content video,
+  .leaflet-popup-content iframe { max-width: 100%; }
+  .leaflet-popup-content img { height: auto; }
+  /* Non applicare altezza auto alle fotografie ritagliate dei componenti dedicati. */
+  .gm-place-media img,
+  .gm-wall-popup-media img { height: 100%; }
+  .leaflet-popup-content button,
+  .leaflet-popup-content a { overflow-wrap: anywhere; }
+  .leaflet-popup:not(.gm-place-popup-wrap):not(.gm-wall-popup-wrap) .leaflet-popup-content {
+    max-height: min(68dvh, 520px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+  .gm-place-popup,
+  .gm-wall-popup { max-height: min(65dvh, 510px); }
+  .gm-place-popup .gm-place-title,
+  .gm-wall-popup .gm-wall-popup-title { overflow-wrap: anywhere; }
+  .gm-place-popup .gm-place-footer,
+  .gm-place-popup .gm-place-actions,
+  .gm-wall-popup .gm-wall-popup-actions { flex-wrap: wrap; }
+}
+@media (max-width: 390px) {
+  .leaflet-popup.gm-place-popup-wrap,
+  .leaflet-popup.gm-place-popup-wrap .leaflet-popup-content-wrapper,
+  .leaflet-popup.gm-place-popup-wrap .leaflet-popup-content,
+  .leaflet-popup.mura-popup.gm-wall-popup-wrap,
+  .leaflet-popup.mura-popup.gm-wall-popup-wrap .leaflet-popup-content-wrapper {
+    width: min(318px, calc(100vw - 50px)) !important;
+    max-width: min(318px, calc(100vw - 50px)) !important;
+  }
+  .gm-place-header { padding: 10px 12px 8px; }
+  .gm-place-info-panel { margin-inline: 10px; }
+  .gm-place-footer { padding-left: 10px; }
+  .gm-place-media { aspect-ratio: 16 / 7.5; }
+  .gm-wall-popup-header { padding: 11px 42px 9px 12px !important; }
+  .gm-wall-popup-body { padding: 9px 10px 11px !important; }
+  .gm-wall-popup-media img { height: 130px !important; }
+}
+@media (max-width: 350px) {
+  .gm-place-category,
+  .gm-wall-popup-category { max-width: 100%; white-space: normal; line-height: 1.25 !important; }
+  .gm-place-meta-row { grid-template-columns: 1fr; gap: 2px; }
+  .gm-place-meta-label,
+  .gm-place-meta-value { min-width: 0; }
+  .gm-place-popup[dir="rtl"] .gm-place-meta-row { grid-template-columns: 1fr; }
+  .gm-place-popup[dir="rtl"] .gm-place-meta-label,
+  .gm-place-popup[dir="rtl"] .gm-place-meta-value { grid-column: 1; grid-row: auto; }
+}
+@media (max-height: 540px) and (orientation: landscape) {
+  .gm-place-popup,
+  .gm-wall-popup,
+  .leaflet-popup:not(.gm-place-popup-wrap):not(.gm-wall-popup-wrap) .leaflet-popup-content {
+    max-height: 48dvh;
+  }
+  .gm-place-media { aspect-ratio: 16 / 6; }
+}
