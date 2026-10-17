@@ -120,7 +120,23 @@
   #quick-toggles .qt-btn .qt-icon img,
   #quick-toggles .qt-pill-qr img { max-width:26px; max-height:26px; }
 
-  /* Colonna sinistra: conservare gli allineamenti gestiti dagli script. */
-  #gmec-map-toggle { width:44px; height:44px; }
-  #gm-griff-mini { width:40px; height:40px; }
+  /* Colonna sinistra compatta: stessi ingombri visivi dei controlli destri.
+     Il Taccuino resta una linguetta laterale, non un pulsante circolare. */
+  #gmec-map-toggle {
+    box-sizing:border-box; width:36px !important; height:36px !important;
+    min-width:36px !important; min-height:36px !important;
+  }
+  #map > #ui-taccuino-button.ui-taccuino-edge {
+    width:38px !important; height:46px !important;
+    min-width:38px !important; min-height:46px !important;
+    padding:3px 3px 3px 2px !important;
+    border-radius:0 11px 11px 0 !important;
+  }
+  #map > #ui-taccuino-button.ui-taccuino-edge img.taccuino-toolbar-icon {
+    width:33px !important; height:33px !important;
+  }
+  #gm-griff-mini {
+    box-sizing:border-box; width:36px !important; height:36px !important;
+    min-width:36px !important; min-height:36px !important;
+  }
 }
