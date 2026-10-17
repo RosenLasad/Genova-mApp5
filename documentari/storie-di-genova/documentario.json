@@ -1,0 +1,98 @@
+{
+  "id": "storie-di-genova",
+  "title": "Storie di Genova",
+  "youtubeId": "3Tst7AahvLs",
+  "regista": "Alessandro Bellagamba",
+  "descrizione": {
+    "it": "Storie di Genova è un viaggio nel passato della città, tra il XIX secolo e i primi decenni del XX secolo. Attraverso oltre 1.400 fotografie e immagini d’epoca, restaurate e animate, il documentario riporta in vita luoghi, persone e atmosfere della Genova di un tempo, mostrando come la città sia cambiata nel corso degli anni.",
+    "en": "Storie di Genova takes us into the city’s past, from the 19th century to the early decades of the 20th. Through more than 1,400 restored and animated historical photographs and images, the documentary brings back the places, people and atmosphere of old Genoa, revealing how the city changed over time.",
+    "es": "Storie di Genova nos lleva al pasado de la ciudad, desde el siglo XIX hasta las primeras décadas del XX. Con más de 1.400 fotografías e imágenes históricas restauradas y animadas, el documental devuelve la vida a los lugares, las personas y los ambientes de la antigua Génova y muestra cómo cambió la ciudad.",
+    "fr": "Storie di Genova nous plonge dans le passé de la ville, du XIXe siècle aux premières décennies du XXe. À travers plus de 1 400 photographies et images d’époque restaurées et animées, le documentaire fait revivre les lieux, les habitants et l’atmosphère de l’ancienne Gênes, en montrant ses transformations.",
+    "ar": "يأخذنا فيلم Storie di Genova في رحلة إلى ماضي المدينة، من القرن التاسع عشر إلى العقود الأولى من القرن العشرين. ومن خلال أكثر من 1400 صورة فوتوغرافية وصورة تاريخية جرى ترميمها وتحريكها، يعيد الفيلم إحياء الأماكن والناس وأجواء جنوة القديمة، ويكشف كيف تغيرت المدينة عبر الزمن.",
+    "ru": "«Storie di Genova» — путешествие в прошлое города с XIX века до первых десятилетий XX века. Более 1400 отреставрированных и анимированных исторических фотографий и изображений оживляют улицы, людей и атмосферу старой Генуи, показывая, как менялся город.",
+    "zh": "《Storie di Genova》带领观众回到19世纪至20世纪初的热那亚。纪录片通过1400多张经过修复并制作成动态影像的历史照片与图片，重现昔日城市的街景、人物和氛围，展现热那亚历经的变迁。",
+    "lij": "Storie di Genova o l’é un viægio into passòu da Zena, da-o secolo XIX fin a-i primmi decenni do XX. Con ciù de 1.400 fotografie e immàgini d’epoca restauræ e animæ, o documentäio o fâ tornâ vive i léughi, a gente e l’atmosfera da Zena de ’na vòtta, fâve vedde comme a çittæ a l’é cangiâ."
+  },
+  "etichette": {
+    "kind": {
+      "it": "Documentario",
+      "en": "Documentary",
+      "es": "Documental",
+      "fr": "Documentaire",
+      "ar": "فيلم وثائقي",
+      "ru": "Документальный фильм",
+      "zh": "纪录片",
+      "lij": "Documentäio"
+    },
+    "about": {
+      "it": "Il documentario",
+      "en": "The documentary",
+      "es": "El documental",
+      "fr": "Le documentaire",
+      "ar": "عن الفيلم",
+      "ru": "О фильме",
+      "zh": "纪录片简介",
+      "lij": "O documentäio"
+    },
+    "director": {
+      "it": "Regia",
+      "en": "Directed by",
+      "es": "Dirección",
+      "fr": "Réalisation",
+      "ar": "إخراج",
+      "ru": "Режиссёр",
+      "zh": "导演",
+      "lij": "Regia"
+    },
+    "discover": {
+      "it": "Scopri i luoghi del documentario",
+      "en": "Explore the documentary’s locations",
+      "es": "Descubre los lugares del documental",
+      "fr": "Découvrez les lieux du documentaire",
+      "ar": "اكتشف أماكن الفيلم",
+      "ru": "Откройте места из фильма",
+      "zh": "探索纪录片中的地点",
+      "lij": "Scòvri i léughi do documentäio"
+    },
+    "qrText": {
+      "it": "Molte delle immagini e delle storie raccontate nel documentario sono disponibili anche nei punti QR di Genova mApp.",
+      "en": "Many of the images and stories featured in the documentary can also be found at Genova mApp QR points.",
+      "es": "Muchas imágenes e historias del documental también están disponibles en los puntos QR de Genova mApp.",
+      "fr": "De nombreuses images et histoires du documentaire sont aussi disponibles dans les points QR de Genova mApp.",
+      "ar": "تتوفر أيضًا صور وقصص عديدة من الفيلم عبر نقاط QR في Genova mApp.",
+      "ru": "Многие фотографии и истории из фильма доступны также в QR-точках Genova mApp.",
+      "zh": "纪录片中的许多图片和故事也可以通过 Genova mApp 的二维码地点查看。",
+      "lij": "Un sacco de immàgini e stöie do documentäio en disponibili ascì inti punti QR de Genova mApp."
+    },
+    "showMap": {
+      "it": "Mostra i luoghi sulla mappa",
+      "en": "Show locations on the map",
+      "es": "Mostrar lugares en el mapa",
+      "fr": "Voir les lieux sur la carte",
+      "ar": "اعرض الأماكن على الخريطة",
+      "ru": "Показать места на карте",
+      "zh": "在地图上显示地点",
+      "lij": "Fanni vedde i léughi in sciâ mappa"
+    },
+    "close": {
+      "it": "Chiudi",
+      "en": "Close",
+      "es": "Cerrar",
+      "fr": "Fermer",
+      "ar": "إغلاق",
+      "ru": "Закрыть",
+      "zh": "关闭",
+      "lij": "Særa"
+    },
+    "trailer": {
+      "it": "Trailer",
+      "en": "Trailer",
+      "es": "Tráiler",
+      "fr": "Bande-annonce",
+      "ar": "الإعلان التشويقي",
+      "ru": "Трейлер",
+      "zh": "预告片",
+      "lij": "Trailer"
+    }
+  }
+}
