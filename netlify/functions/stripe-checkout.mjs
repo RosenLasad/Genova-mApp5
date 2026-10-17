@@ -19,8 +19,8 @@ const PRICE_ID_ENV = {
 };
 
 const EXPECTED_PRICE = {
-  monthly: { amount: 69, interval: "month" },
-  yearly: { amount: 499, interval: "year" },
+  monthly: { amount: 89, interval: "month" },
+  yearly: { amount: 599, interval: "year" },
 };
 
 function stripeClient() {
