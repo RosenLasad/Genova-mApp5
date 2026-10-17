@@ -275,6 +275,7 @@
     }
     if(!navigator.onLine){setNotice(copy().unavailable);return;}
     syncWidgetLanguage();closeModal();
+    if(window.GMCustomLogin&&(mode==='login'||mode==='signup')){window.GMCustomLogin.open(mode);return;}
     try{identity.open(mode);patchNamePlaceholder();}catch(_e){openModal();setNotice(copy().unavailable);}
   }
 
