@@ -88,7 +88,26 @@
   .gm-new-home-game-icon { width:48px; height:48px; border-radius:12px; }
 
   /* Colonna destra: dimensioni reali (non transform:scale). */
-  #quick-toggles { width:36px !important; right:max(5px, env(safe-area-inset-right)) !important; gap:2px !important; }
+  #quick-toggles {
+    box-sizing:content-box; width:36px !important;
+    right:max(10px, env(safe-area-inset-right, 0px)) !important;
+    padding:0 !important; gap:5px !important;
+  }
+  /* Main column buttons use .qt-pill, not .qt-btn (which belongs to flyout menus). */
+  #quick-toggles > .qt-item.qt-cat.qt-pill {
+    box-sizing:border-box; width:36px !important; height:36px !important;
+    min-width:36px !important; min-height:36px !important;
+    padding:0 !important; flex:0 0 36px;
+  }
+  #quick-toggles > .qt-pill .qt-icon,
+  #quick-toggles > .qt-pill .qt-icon img,
+  #quick-toggles > .qt-pill .qt-icon svg {
+    width:23px !important; height:23px !important;
+    max-width:23px !important; max-height:23px !important;
+  }
+  #quick-toggles > #qt-cat-food-btn .qt-icon svg {width:25px !important;height:25px !important;}
+  /* Routes submenu should open alongside the new 36px column. */
+  #quick-toggles #qt-cat-routes {right:calc(36px + 8px) !important;}
   #quick-toggles .qt-btn,
   #quick-toggles .qt-pill-favorites,
   #quick-toggles .qt-pill-qr {
