@@ -20,7 +20,14 @@
   function updatePopup(root){
     try{
       var map=window.map||window.MAP||window.leafletMap;
-      if(map&&map._popup&&typeof map._popup.update==='function'&&map._popup.getElement&&map._popup.getElement()&&map._popup.getElement().contains(root))map._popup.update();
+      if(map&&map._popup&&map._popup.getElement&&map._popup.getElement()&&map._popup.getElement().contains(root)){
+        var popup=map._popup;
+        /* NON chiamare popup.update(): Leaflet ricrea il contenuto HTML e
+           annulla lo stato espanso appena impostato dal pulsante. */
+        if(typeof popup._updateLayout==='function')popup._updateLayout();
+        if(typeof popup._updatePosition==='function')popup._updatePosition();
+        if(typeof popup._adjustPan==='function')popup._adjustPan();
+      }
     }catch(e){}
   }
   function setup(node){
