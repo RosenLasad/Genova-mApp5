@@ -62,3 +62,46 @@
 #map.leaflet-container > .gm-popup-front-pane {
   z-index: 11000 !important;
 }
+
+/* Fase 4 - UI compatta sui telefoni stretti (<=360px).
+   Ridimensiona i soli controlli visivi, senza trasformare le colonne
+   e senza alterare il popup pane separato. */
+@media (max-width: 360px) {
+  /* Il pulsante resta accessibile con il suo aria-label originale. */
+  .gm-new-home-topbar { grid-template-columns: 38px minmax(0,1fr) 38px; }
+  #gm-new-home-close { width:38px; min-width:38px; height:38px; min-height:38px; padding:0; gap:0; border-radius:11px; }
+  #gm-new-home-close > span { display:none; }
+  #gm-new-home-close svg { width:20px; height:20px; }
+  #gm-new-home-back { width:38px; height:38px; }
+  .gm-new-home-heading { max-width:100%; }
+
+  /* Categoria Patrimonio: icone, colonne e padding piu equilibrati. */
+  .gm-new-home-category.has-map-icon { grid-template-columns:52px minmax(0,1fr); min-height:74px; }
+  .gm-new-home-category-map { padding:6px; }
+  .gm-new-home-category-map img { width:34px; height:34px; }
+  .gm-new-home-category-open { padding:10px 10px; gap:6px; }
+  .gm-new-home-category { min-height:74px; padding:10px; gap:8px; }
+  .gm-new-home-card .gm-new-home-icon { width:38px; height:38px; top:11px; right:11px; border-radius:11px; }
+  .gm-new-home-card .gm-new-home-icon svg { width:23px; height:23px; }
+  .gm-new-home-card .gm-new-home-icon img { width:26px; height:26px; }
+  .gm-new-home-game-card { grid-template-columns:48px minmax(0,1fr) auto; gap:8px; }
+  .gm-new-home-game-icon { width:48px; height:48px; border-radius:12px; }
+
+  /* Colonna destra: dimensioni reali (non transform:scale). */
+  #quick-toggles { width:36px !important; right:max(5px, env(safe-area-inset-right)) !important; gap:2px !important; }
+  #quick-toggles .qt-btn,
+  #quick-toggles .qt-pill-favorites,
+  #quick-toggles .qt-pill-qr {
+    width:36px !important; height:36px !important;
+    min-width:36px !important; min-height:36px !important;
+  }
+  #quick-toggles .qt-btn svg { width:19px !important; height:19px !important; }
+  #quick-toggles .qt-pill-favorites .qt-icon,
+  #quick-toggles .qt-pill-favorites svg { width:21px !important; height:21px !important; }
+  #quick-toggles .qt-btn .qt-icon img,
+  #quick-toggles .qt-pill-qr img { max-width:26px; max-height:26px; }
+
+  /* Colonna sinistra: conservare gli allineamenti gestiti dagli script. */
+  #gmec-map-toggle { width:44px; height:44px; }
+  #gm-griff-mini { width:40px; height:40px; }
+}
