@@ -56,3 +56,12 @@
 @media (max-height: 520px) and (orientation: landscape) {
   #settings-modal-overlay > #settings-dropdown, .auth-account-dialog, .sub-modal-inner { max-height:calc(100dvh - 14px) !important; overflow-y:auto; }
 }
+
+/* Popup Leaflet above the lateral map commands while a point popup is open.
+   Leaflet map-pane is transformed (a stacking context): raising only
+   .leaflet-popup-pane cannot overtake sibling controls attached to #map.
+   Raise its containing pane temporarily instead, preserving normal controls
+   when the popup closes. */
+#map.leaflet-container:has(.leaflet-popup-pane .leaflet-popup) > .leaflet-map-pane {
+  z-index: 11000 !important;
+}
