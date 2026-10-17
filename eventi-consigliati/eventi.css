@@ -3,8 +3,8 @@
 .gmec-card>img{display:block;width:100%;height:clamp(90px,19vw,150px);max-height:150px;aspect-ratio:auto;object-fit:cover;object-position:center}
 
 /* Comando Eventi consigliati sulla mappa (indipendente dagli altri layer). */
-#gmec-map-toggle{position:fixed;z-index:1501;display:flex;align-items:center;justify-content:center;width:46px;height:46px;padding:8px;border:2px solid #e5c384;border-radius:50%;background:#fff9ea;color:#71522a;box-shadow:0 3px 12px #0004;cursor:pointer;touch-action:manipulation}
-#gmec-map-toggle svg{width:28px;height:28px}
-#gmec-map-toggle.gmec-on{background:#24677b;border-color:#d7bb75;color:white;box-shadow:0 0 0 3px #24677b33,0 3px 12px #0004}
+#gmec-map-toggle{position:fixed;z-index:1501;display:flex;align-items:center;justify-content:center;width:52px;height:52px;padding:0;border:0;border-radius:50%;background:transparent;box-shadow:0 3px 12px #0004;cursor:pointer;touch-action:manipulation;overflow:visible}
+#gmec-map-toggle img{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none}
+#gmec-map-toggle.gmec-on{box-shadow:0 0 0 3px #24677b55,0 4px 14px #0005}
 #gmec-map-toggle:focus-visible{outline:3px solid #2587c3;outline-offset:2px}
 #gmec-map-notice{position:fixed;z-index:210100;left:50%;top:50%;transform:translate(-50%,-50%);width:max-content;max-width:min(85vw,370px);padding:16px 22px;text-align:center;border-radius:13px;background:rgba(29,47,60,.95);color:#fff;font:600 15px/1.5 system-ui,sans-serif;box-shadow:0 8px 30px #0005;pointer-events:none}

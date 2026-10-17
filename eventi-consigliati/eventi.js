@@ -40,7 +40,7 @@ function refresh(){refreshMarkers();paint();updateButton();}
 function ensureButton(){
  if(button&&button.isConnected)return button;
  button=document.createElement('button');button.type='button';button.id='gmec-map-toggle';
- button.setAttribute('aria-pressed','false');button.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M7.5 3v4M16.5 3v4M3.5 10h17"/><path d="m12 12.4 1.2 2.3 2.6.4-1.9 1.8.4 2.5-2.3-1.2-2.3 1.2.4-2.5-1.9-1.8 2.6-.4z"/></svg>';
+ button.setAttribute('aria-pressed','false');button.innerHTML='<img src="'+BASE+'icone/bottone-eventi-consigliati.png" alt="" aria-hidden="true">';
  button.addEventListener('click',function(){if(!events.some(active)){notice();return;}markersVisible=!markersVisible;refreshMarkers();updateButton();});
  document.body.appendChild(button);updateButton();return button;
 }
