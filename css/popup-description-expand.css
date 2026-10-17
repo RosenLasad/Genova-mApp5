@@ -42,3 +42,14 @@
 }
 .gm-desc-toggle:focus-visible { outline:2px solid #22638a; outline-offset:2px; }
 .gm-desc-preview[dir="rtl"] .gm-desc-toggle { right:0; }
+
+/* In stato espanso elimina esplicitamente il clamp multi-linea. */
+.gm-desc-preview.is-expanded > .gm-desc-text {
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  -webkit-box-orient: initial !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+.gm-desc-preview:not(.has-overflow) > .gm-desc-toggle { display: none !important; }
