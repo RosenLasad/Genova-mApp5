@@ -1,5 +1,5 @@
 import crypto from "node:crypto";
-import { json } from "./_shared/billing-store.mjs";
+import { authenticatedUser, isAdminUser, json } from "./_shared/billing-store.mjs";
 import { romeDayKey, visitorStore } from "./_shared/visitor-store.mjs";
 
 function cleanVisitorId(value) {
@@ -16,6 +16,15 @@ function visitorHash(visitorId) {
 export default async (request) => {
   try {
     if (request.method !== "POST") return json({ error: "method_not_allowed" }, 405);
+
+    // Signed-in visits must be validated on the server. Admin visits are
+    // excluded before writing either the visitor record or a daily record.
+    const authHeader = request.headers.get("authorization") || "";
+    if (authHeader) {
+      const user = await authenticatedUser(request).catch(() => null);
+      if (!user?.id) return json({ error: "invalid_authentication" }, 401);
+      if (isAdminUser(user)) return json({ ok: true, excluded: "admin" });
+    }
 
     let payload = {};
     try {

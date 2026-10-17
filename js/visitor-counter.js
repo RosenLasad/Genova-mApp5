@@ -38,7 +38,30 @@
     }catch(_e){return '';}
   }
 
+  function adminState(){
+    try{
+      var state=window.GenovaAccount&&window.GenovaAccount.getState&&window.GenovaAccount.getState();
+      return !!(state&&((state.record&&state.record.isAdmin===true)||(state.subscription&&state.subscription.adminOverride===true)));
+    }catch(_e){return false;}
+  }
+
+  async function visitorAuthorization(){
+    if(adminState())return {admin:true};
+    try{
+      var auth=window.GenovaAuth;
+      if(!auth||typeof auth.getUser!=='function'||!auth.getUser())return {admin:false,authorization:''};
+      if(typeof auth.token!=='function')return {skip:true};
+      var token=await auth.token();
+      if(!token)return {skip:true};
+      return {admin:false,authorization:'Bearer '+token};
+    }catch(_e){return {skip:true};}
+  }
+
   async function ping(){
+    // Give the account manager time to restore the Admin session on page load.
+    // Do not mark the day as visited if an authenticated check cannot complete.
+    var identity=await visitorAuthorization();
+    if(identity.admin||identity.skip)return;
     var id=visitorId();
     if(!id)return;
     var today=romeDay();
@@ -46,17 +69,18 @@
     try{
       var response=await fetch('/.netlify/functions/visitor-hit',{
         method:'POST',
-        headers:{'content-type':'application/json'},
+        headers:Object.assign({'content-type':'application/json'},identity.authorization?{'authorization':identity.authorization}:{}),
         body:JSON.stringify({visitorId:id}),
         cache:'no-store',
         keepalive:true
       });
       if(!response.ok)return;
       var result={};try{result=await response.json();}catch(_e){}
+      if(result.excluded==='admin')return;
       try{localStorage.setItem(LAST_DAY_KEY,String(result.day||today));}catch(_e){}
     }catch(_e){/* Il conteggio non deve mai interferire con l'uso dell'app. */}
   }
 
-  function boot(){window.setTimeout(ping,350);}
+  function boot(){window.setTimeout(ping,2500);}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();
