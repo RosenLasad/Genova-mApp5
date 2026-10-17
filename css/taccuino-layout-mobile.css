@@ -1,0 +1,39 @@
+/* Genova mApp - Taccuino: cornice compatta e mappa sempre accessibile.
+   Da caricare dopo taccuino.css e mobile-controls.css. */
+@media (max-width: 760px) {
+  #fav-notes-panel {
+    /* La fascia sopra mostra la toolbar, quella sotto resta tappabile. */
+    padding:
+      max(76px, calc(env(safe-area-inset-top, 0px) + 56px))
+      max(15px, env(safe-area-inset-right, 0px))
+      max(66px, calc(env(safe-area-inset-bottom, 0px) + 48px))
+      max(15px, env(safe-area-inset-left, 0px)) !important;
+    background: rgba(20,16,13,.30) !important;
+    backdrop-filter: blur(1px);
+  }
+  #fav-notes-panel .taccuino-card {
+    width:100%; height:100%; min-width:0; min-height:0;
+    max-width:100%; max-height:100%;
+    border:1px solid #1d110c;
+    border-radius:17px 13px 15px 17px;
+  }
+  #fav-notes-panel .taccuino-card::before { border-radius:12px; }
+  /* Il contenuto rimane scrollabile all'interno della scheda. */
+  #fav-notes-panel .taccuino-paper,
+  #fav-notes-panel .taccuino-page-body { min-height:0; }
+}
+@media (max-width: 380px) and (orientation:portrait) {
+  #fav-notes-panel {
+    padding-right:max(13px, env(safe-area-inset-right, 0px)) !important;
+    padding-left:max(13px, env(safe-area-inset-left, 0px)) !important;
+  }
+}
+@media (max-width: 760px) and (max-height: 500px) and (orientation:landscape) {
+  #fav-notes-panel {
+    padding:
+      max(14px, env(safe-area-inset-top, 0px))
+      max(18px, env(safe-area-inset-right, 0px))
+      max(18px, env(safe-area-inset-bottom, 0px))
+      max(18px, env(safe-area-inset-left, 0px)) !important;
+  }
+}
