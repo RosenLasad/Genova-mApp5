@@ -355,7 +355,7 @@
     refs.visitors=document.createElement('button');
     refs.visitors.type='button';
     refs.visitors.className='settings-v2-action settings-v2-visitors';
-    refs.visitors.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();if(window.GenovaVisitorsAdmin&&typeof window.GenovaVisitorsAdmin.refresh==='function')window.GenovaVisitorsAdmin.refresh(true);});
+    refs.visitors.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();if(window.GMStatisticheVisitatori&&typeof window.GMStatisticheVisitatori.open==='function')window.GMStatisticheVisitatori.open();});
     refs.admin.list.appendChild(refs.visitors);
     if(window.GenovaVisitorsAdmin&&typeof window.GenovaVisitorsAdmin.attach==='function')window.GenovaVisitorsAdmin.attach(refs.visitors);
 

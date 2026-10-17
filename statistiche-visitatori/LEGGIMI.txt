@@ -1,0 +1,20 @@
+STATISTICHE VISITATORI - Genova mApp
+
+Apri Impostazioni > Amministrazione > Visitatori (solo Admin).
+
+Fonte: Netlify Blobs genova-mapp-visitors-v1. Nessun nuovo identificativo viene registrato.
+
+Definizioni:
+- Unico: identificativo anonimo/browser distinto, NON una persona certa.
+- Nuovo: il primo accesso rilevato cade nel periodo.
+- Di ritorno: presente nel periodo ma registrato per la prima volta prima.
+- Il grafico mostra distinti giornalieri (7 giorni/mese) o mensili (anno/dall'inizio). La somma delle colonne non e' il totale unico del periodo.
+- Un accesso giornaliero viene inviato una volta per browser; la navigazione ripetuta non viene conteggiata.
+- Tutte le date vengono interpretate nel fuso Europe/Rome.
+- Storico: dipende da quanto era gia' salvato nel relativo store; non si possono recuperare visite non registrate in passato.
+- Elenco anonimo ordinato per ultimo accesso, 50 record per pagina. Codice abbreviato da hash SHA-256.
+- Il server verifica login e privilegi Admin prima di leggere i dati.
+
+FILE DA CARICARE: index.html, js/settings-v2.js, netlify/functions/visitors-admin.mjs e cartella statistiche-visitatori.
+
+NOTA PRESTAZIONI: per generare gli intervalli la funzione analizza le chiavi e i record correnti dello store. Con decine di migliaia di visitatori, sara' opportuno passare a contatori aggregati incrementali per evitare tempi di elaborazione elevati. Il limite di sicurezza attuale e' 50.000 chiavi per tipo; oltre questo limite appare un errore anziche' mostrare dati parziali.
