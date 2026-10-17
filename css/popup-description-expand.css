@@ -1,0 +1,44 @@
+/* Anteprima automatica delle descrizioni dei popup Leaflet. */
+.gm-desc-preview { position:relative; min-width:0; margin-bottom:9px; }
+.gm-desc-preview > .gm-desc-text { margin-bottom:0 !important; }
+.gm-desc-preview.is-collapsed > .gm-desc-text {
+  display:-webkit-box !important;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:5;
+  line-clamp:5;
+  overflow:hidden !important;
+  max-height:calc(var(--gm-desc-line-height, 20px) * 5);
+}
+.gm-desc-toggle {
+  display:none;
+  position:absolute;
+  right:0;
+  bottom:0;
+  z-index:2;
+  min-width:37px;
+  min-height:28px;
+  padding:0 3px 0 17px;
+  align-items:flex-end;
+  justify-content:flex-end;
+  border:0;
+  border-radius:0 0 4px 0;
+  background:linear-gradient(90deg,rgba(255,255,255,0), #fff 34%, #fff 100%);
+  color:#22638a;
+  font-size:20px;
+  line-height:1;
+  font-weight:800;
+  cursor:pointer;
+  touch-action:manipulation;
+}
+.gm-desc-preview.has-overflow .gm-desc-toggle { display:flex; }
+.gm-desc-preview.is-expanded .gm-desc-toggle {
+  position:relative;
+  display:flex;
+  margin:3px 0 0 auto;
+  padding:2px 6px;
+  min-width:40px;
+  min-height:28px;
+  background:transparent;
+}
+.gm-desc-toggle:focus-visible { outline:2px solid #22638a; outline-offset:2px; }
+.gm-desc-preview[dir="rtl"] .gm-desc-toggle { right:0; }
