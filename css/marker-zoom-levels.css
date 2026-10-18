@@ -1,0 +1,26 @@
+/* Genova mApp: marker dei luoghi in tre livelli, senza cambiare le coordinate Leaflet. */
+#map .leaflet-marker-icon.gm-zoom-place { --gm-zoom-color:#597487; }
+/* I colori sono quelli delle categorie gia' usate dall'app. */
+#map .gm-zoom-place.chiese-marker {--gm-zoom-color:#7d5263}
+#map .gm-zoom-place.museum-ico {--gm-zoom-color:#a65b43}
+#map .gm-zoom-place.palazzi-marker {--gm-zoom-color:#b57945}
+#map .gm-zoom-place.forti-marker {--gm-zoom-color:#8f4038}
+#map .gm-zoom-place.doc-ico {--gm-zoom-color:#6d518d}
+#map .gm-zoom-place.locali-marker {--gm-zoom-color:#9c5a37}
+#map .gm-zoom-place.parks-marker {--gm-zoom-color:#3e8560}
+#map .gm-zoom-place.cinema-marker {--gm-zoom-color:#714e83}
+#map .gm-zoom-place.teatri-marker {--gm-zoom-color:#714e83}
+#map .gm-zoom-place.sport-marker {--gm-zoom-color:#39788c}
+#map .gm-zoom-place.mostre-marker {--gm-zoom-color:#9b663d}
+/* Riduce soltanto la grafica interna: non cambia l'ancoraggio del marker o del popup. */
+#map.gm-zoom-medium .gm-zoom-place > * {transform:scale(.72);transform-origin:50% 50%;}
+/* A distanza l'icona si trasforma in un pallino, centrato sull'ancora originale. */
+#map.gm-zoom-far .gm-zoom-place > * {visibility:hidden !important;}
+#map.gm-zoom-far .gm-zoom-place::after {
+ content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+ width:11px;height:11px;box-sizing:border-box;border-radius:50%;
+ background:var(--gm-zoom-color);border:1.5px solid white;
+ box-shadow:0 0 0 1px rgba(31,42,50,.6),0 1px 3px rgba(0,0,0,.3);
+ pointer-events:none;
+}
+/* Area di tocco invariata: Leaflet continua a ricevere i clic nel marker originale. */
