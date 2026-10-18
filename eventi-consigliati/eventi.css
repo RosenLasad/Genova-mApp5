@@ -8,3 +8,12 @@
 #gmec-map-toggle.gmec-on{box-shadow:0 0 0 3px #24677b55,0 4px 14px #0005}
 #gmec-map-toggle:focus-visible{outline:3px solid #2587c3;outline-offset:2px}
 #gmec-map-notice{position:fixed;z-index:210100;left:50%;top:50%;transform:translate(-50%,-50%);width:max-content;max-width:min(85vw,370px);padding:16px 22px;text-align:center;border-radius:13px;background:rgba(29,47,60,.95);color:#fff;font:600 15px/1.5 system-ui,sans-serif;box-shadow:0 8px 30px #0005;pointer-events:none}
+
+/* Comando generale Eventi consigliati nella New Home (non sulla mappa). */
+.gmec-heading-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.gmec-heading-row h3{margin:0;min-width:0;flex:1 1 auto}
+.gmec-heading-row .gmec-show-all{appearance:none;border:1px solid #a17a3b;border-radius:9px;background:#f3dfb6;color:#5b3d19;font:600 .83rem/1.25 inherit;font-family:inherit;padding:9px 11px;min-height:38px;max-width:100%;white-space:normal;cursor:pointer}
+.gmec-heading-row .gmec-show-all[aria-pressed="true"]{background:#285d71;color:white;border-color:#285d71}
+.gmec-heading-row .gmec-show-all:disabled{opacity:.55;cursor:not-allowed}
+.gmec-heading-row .gmec-show-all:focus-visible{outline:3px solid #2383ad;outline-offset:2px}
+@media(max-width:360px){.gmec-heading-row{gap:6px}.gmec-heading-row h3{font-size:.98rem}.gmec-heading-row .gmec-show-all{font-size:.75rem;padding:7px 8px}}

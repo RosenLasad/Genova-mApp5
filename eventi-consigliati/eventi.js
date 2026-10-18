@@ -1,7 +1,7 @@
 (function(){
 'use strict';
 if(window.GMEventiConsigliati) return;
-var BASE='/eventi-consigliati/', events=[], markers={}, mapRef=null, initialized=false, markersVisible=false, button=null, toastTimer=null;
+var BASE='/eventi-consigliati/', events=[], markers={}, mapRef=null, initialized=false, markersVisible=false, toastTimer=null;
 function safe(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
 function validId(v){return /^[a-z0-9][a-z0-9-]*$/.test(v||'');}
 function path(e,prop){var f=e[prop];return typeof f==='string'&&/^[\w.-]+\.(svg|png|jpg|jpeg|webp)$/i.test(f)?BASE+'eventi/'+encodeURIComponent(e.id)+'/'+encodeURIComponent(f):'';}
@@ -14,14 +14,14 @@ function active(e){if(e.visibile===false)return false;var a=dateAt(e,'Inizio'),b
 function expired(e){return Date.now()>dateAt(e,'Fine');}
 function eventUrl(e){return location.origin+'/?evento='+encodeURIComponent(e.id);}
 var UI={
- it:{heading:'Eventi consigliati',none:'Nessun evento consigliato in questo periodo.',show:'Mostra sulla mappa',recommended:'Evento consigliato',ended:'Evento concluso',dates:'Date',place:'Luogo',official:'Sito ufficiale',share:'Condividi',until:'fino alle',event:'Evento',shareTitle:'Condividi evento',copy:'Copia link',copied:'Link copiato',fallback:'Copia questo collegamento:',mapToggle:'Mostra o nascondi Eventi consigliati',noMapEvents:'Non ci sono eventi consigliati in programma o in corso.'},
- en:{heading:'Recommended events',none:'No recommended events at the moment.',show:'Show on map',recommended:'Recommended event',ended:'Event ended',dates:'Dates',place:'Location',official:'Official website',share:'Share',until:'until',event:'Event',shareTitle:'Share event',copy:'Copy link',copied:'Link copied',fallback:'Copy this link:',mapToggle:'Show or hide recommended events',noMapEvents:'There are no upcoming or ongoing recommended events.'},
- es:{heading:'Eventos recomendados',none:'No hay eventos recomendados en este período.',show:'Mostrar en el mapa',recommended:'Evento recomendado',ended:'Evento finalizado',dates:'Fechas',place:'Lugar',official:'Sitio oficial',share:'Compartir',until:'hasta las',event:'Evento',shareTitle:'Compartir evento',copy:'Copiar enlace',copied:'Enlace copiado',fallback:'Copia este enlace:',mapToggle:'Mostrar u ocultar eventos recomendados',noMapEvents:'No hay eventos recomendados programados ni en curso.'},
- fr:{heading:'Événements conseillés',none:'Aucun événement conseillé pour le moment.',show:'Voir sur la carte',recommended:'Événement conseillé',ended:'Événement terminé',dates:'Dates',place:'Lieu',official:'Site officiel',share:'Partager',until:'jusqu’à',event:'Événement',shareTitle:'Partager l’événement',copy:'Copier le lien',copied:'Lien copié',fallback:'Copiez ce lien :',mapToggle:'Afficher ou masquer les événements conseillés',noMapEvents:'Aucun événement conseillé prévu ou en cours.'},
- ar:{heading:'فعاليات مقترحة',none:'لا توجد فعاليات مقترحة خلال هذه الفترة.',show:'عرض على الخريطة',recommended:'فعالية مقترحة',ended:'انتهت الفعالية',dates:'التواريخ',place:'المكان',official:'الموقع الرسمي',share:'مشاركة',until:'حتى الساعة',event:'فعالية',shareTitle:'مشاركة الفعالية',copy:'نسخ الرابط',copied:'تم نسخ الرابط',fallback:'انسخ هذا الرابط:',mapToggle:'إظهار أو إخفاء الفعاليات المقترحة',noMapEvents:'لا توجد فعاليات مقترحة قادمة أو جارية.'},
- ru:{heading:'Рекомендуемые события',none:'Сейчас нет рекомендуемых событий.',show:'Показать на карте',recommended:'Рекомендуемое событие',ended:'Событие завершилось',dates:'Даты',place:'Место',official:'Официальный сайт',share:'Поделиться',until:'до',event:'Событие',shareTitle:'Поделиться событием',copy:'Копировать ссылку',copied:'Ссылка скопирована',fallback:'Скопируйте ссылку:',mapToggle:'Показать или скрыть рекомендуемые события',noMapEvents:'Нет предстоящих или текущих рекомендуемых событий.'},
- zh:{heading:'推荐活动',none:'目前没有推荐活动。',show:'在地图上查看',recommended:'推荐活动',ended:'活动已结束',dates:'日期',place:'地点',official:'官方网站',share:'分享',until:'截至',event:'活动',shareTitle:'分享活动',copy:'复制链接',copied:'链接已复制',fallback:'复制此链接：',mapToggle:'显示或隐藏推荐活动',noMapEvents:'目前没有即将举行或正在进行的推荐活动。'},
- lij:{heading:'Eventi consegiæ',none:'Nisciun evento consegiou inte sto periodo.',show:'Fanni vedde in sciâ mappa',recommended:'Evento consegiou',ended:'Evento finîo',dates:'Dæte',place:'Lêugo',official:'Scito ofiçiâ',share:'Condividdi',until:'fin a-e',event:'Evento',shareTitle:'Condividdi l’evento',copy:'Còpia o link',copied:'Link copiou',fallback:'Còpia sto link:',mapToggle:'Fanni vedde o ascòndi i eventi consegiæ',noMapEvents:'No gh’é eventi consegiæ in programma ò in corso.'}
+ it:{heading:'Eventi consigliati',none:'Nessun evento consigliato in questo periodo.',show:'Mostra sulla mappa',recommended:'Evento consigliato',ended:'Evento concluso',dates:'Date',place:'Luogo',official:'Sito ufficiale',share:'Condividi',until:'fino alle',event:'Evento',shareTitle:'Condividi evento',copy:'Copia link',copied:'Link copiato',fallback:'Copia questo collegamento:',mapToggle:'Mostra tutti sulla mappa',hideMap:'Nascondi dalla mappa',noMapEvents:'Non ci sono eventi consigliati in programma o in corso.'},
+ en:{heading:'Recommended events',none:'No recommended events at the moment.',show:'Show on map',recommended:'Recommended event',ended:'Event ended',dates:'Dates',place:'Location',official:'Official website',share:'Share',until:'until',event:'Event',shareTitle:'Share event',copy:'Copy link',copied:'Link copied',fallback:'Copy this link:',mapToggle:'Show all on map',hideMap:'Hide from map',noMapEvents:'There are no upcoming or ongoing recommended events.'},
+ es:{heading:'Eventos recomendados',none:'No hay eventos recomendados en este período.',show:'Mostrar en el mapa',recommended:'Evento recomendado',ended:'Evento finalizado',dates:'Fechas',place:'Lugar',official:'Sitio oficial',share:'Compartir',until:'hasta las',event:'Evento',shareTitle:'Compartir evento',copy:'Copiar enlace',copied:'Enlace copiado',fallback:'Copia este enlace:',mapToggle:'Mostrar todos en el mapa',hideMap:'Ocultar del mapa',noMapEvents:'No hay eventos recomendados programados ni en curso.'},
+ fr:{heading:'Événements conseillés',none:'Aucun événement conseillé pour le moment.',show:'Voir sur la carte',recommended:'Événement conseillé',ended:'Événement terminé',dates:'Dates',place:'Lieu',official:'Site officiel',share:'Partager',until:'jusqu’à',event:'Événement',shareTitle:'Partager l’événement',copy:'Copier le lien',copied:'Lien copié',fallback:'Copiez ce lien :',mapToggle:'Tout afficher sur la carte',hideMap:'Masquer de la carte',noMapEvents:'Aucun événement conseillé prévu ou en cours.'},
+ ar:{heading:'فعاليات مقترحة',none:'لا توجد فعاليات مقترحة خلال هذه الفترة.',show:'عرض على الخريطة',recommended:'فعالية مقترحة',ended:'انتهت الفعالية',dates:'التواريخ',place:'المكان',official:'الموقع الرسمي',share:'مشاركة',until:'حتى الساعة',event:'فعالية',shareTitle:'مشاركة الفعالية',copy:'نسخ الرابط',copied:'تم نسخ الرابط',fallback:'انسخ هذا الرابط:',mapToggle:'عرض الكل على الخريطة',hideMap:'إخفاء من الخريطة',noMapEvents:'لا توجد فعاليات مقترحة قادمة أو جارية.'},
+ ru:{heading:'Рекомендуемые события',none:'Сейчас нет рекомендуемых событий.',show:'Показать на карте',recommended:'Рекомендуемое событие',ended:'Событие завершилось',dates:'Даты',place:'Место',official:'Официальный сайт',share:'Поделиться',until:'до',event:'Событие',shareTitle:'Поделиться событием',copy:'Копировать ссылку',copied:'Ссылка скопирована',fallback:'Скопируйте ссылку:',mapToggle:'Показать все на карте',hideMap:'Скрыть с карты',noMapEvents:'Нет предстоящих или текущих рекомендуемых событий.'},
+ zh:{heading:'推荐活动',none:'目前没有推荐活动。',show:'在地图上查看',recommended:'推荐活动',ended:'活动已结束',dates:'日期',place:'地点',official:'官方网站',share:'分享',until:'截至',event:'活动',shareTitle:'分享活动',copy:'复制链接',copied:'链接已复制',fallback:'复制此链接：',mapToggle:'在地图上显示全部',hideMap:'从地图隐藏',noMapEvents:'目前没有即将举行或正在进行的推荐活动。'},
+ lij:{heading:'Eventi consegiæ',none:'Nisciun evento consegiou inte sto periodo.',show:'Fanni vedde in sciâ mappa',recommended:'Evento consegiou',ended:'Evento finîo',dates:'Dæte',place:'Lêugo',official:'Scito ofiçiâ',share:'Condividdi',until:'fin a-e',event:'Evento',shareTitle:'Condividdi l’evento',copy:'Còpia o link',copied:'Link copiou',fallback:'Còpia sto link:',mapToggle:'Fanni vedde tutti in sciâ mappa',hideMap:'Ascòndili da-a mappa',noMapEvents:'No gh’é eventi consegiæ in programma ò in corso.'}
 };
 function language(){var v='it';try{v=localStorage.getItem('lang')||document.documentElement.lang||'it';}catch(_){v=document.documentElement.lang||'it';}v=String(v).toLowerCase().split('-')[0];return UI[v]?v:'it';}
 function ui(key){return (UI[language()]||UI.it)[key]||UI.it[key];}
@@ -35,32 +35,36 @@ async function shareEvent(e){var url=eventUrl(e),title=tr(e.titolo)||ui('shareTi
 function getMap(){var m=window.map||window.__LEAFLET_MAP__||window.__map;return m&&typeof m.addLayer==='function'&&typeof m.setView==='function'?m:null;}
 function refreshMarkers(){var m=getMap();if(!m||!window.L)return;mapRef=m;events.forEach(function(e){var show=markersVisible&&active(e)&&Number.isFinite(+e.lat)&&Number.isFinite(+e.lng);if(show&&!markers[e.id]){var opts={title:e.titolo};var img=path(e,'iconaMappa');if(img)opts.icon=L.icon({iconUrl:img,iconSize:[44,52],iconAnchor:[22,51],popupAnchor:[0,-49]});markers[e.id]=L.marker([+e.lat,+e.lng],opts).bindPopup(popup(e,false),{maxWidth:340}).addTo(m);}else if(!show&&markers[e.id]){m.removeLayer(markers[e.id]);delete markers[e.id];}});}
 function show(e){var m=getMap();if(!m||!window.L)return false;if(active(e)){markersVisible=true;refreshMarkers();updateButton();}try{window.gmCloseNewHome&&window.gmCloseNewHome();}catch(_){} m.setView([+e.lat,+e.lng],Math.max(16,m.getZoom()),{animate:true});if(markers[e.id]){markers[e.id].openPopup();}else{L.popup({maxWidth:340}).setLatLng([+e.lat,+e.lng]).setContent(popup(e,expired(e))).openOn(m);}return true;}
-function paint(){var pane=document.querySelector('.gm-new-home-events-panel');if(!pane){return;}if(!pane.querySelector('.gmec-recommended')){var section=document.createElement('section');section.className='gmec-recommended';pane.insertBefore(section,pane.firstChild);}var host=pane.querySelector('.gmec-recommended');var current=events.filter(active);var key=language()+'|'+current.map(function(e){return e.id;}).join('|');if(host.dataset.current===key)return;host.dataset.current=key;host.innerHTML='<h3>★ '+safe(ui('heading'))+'</h3>'+(current.length?current.map(card).join(''):'<p class="gmec-empty">'+safe(ui('none'))+'</p>');}
-function refresh(){refreshMarkers();paint();updateButton();}
-function ensureButton(){
- if(button&&button.isConnected)return button;
- button=document.createElement('button');button.type='button';button.id='gmec-map-toggle';
- button.setAttribute('aria-pressed','false');button.innerHTML='<img src="'+BASE+'icone/bottone-eventi-consigliati.png" alt="" aria-hidden="true">';
- button.addEventListener('click',function(){if(!events.some(active)){notice();return;}markersVisible=!markersVisible;refreshMarkers();updateButton();});
- document.body.appendChild(button);updateButton();return button;
+function paint(){
+ var pane=document.querySelector('.gm-new-home-events-panel');if(!pane)return;
+ var host=pane.querySelector('.gmec-recommended');
+ if(!host){host=document.createElement('section');host.className='gmec-recommended';pane.insertBefore(host,pane.firstChild);}
+ var current=events.filter(active),key=language()+'|'+current.map(function(e){return e.id;}).join('|');
+ if(host.dataset.current!==key){
+  host.dataset.current=key;
+  host.innerHTML='<div class="gmec-heading-row"><h3>★ '+safe(ui('heading'))+'</h3><button type="button" class="gmec-show-all" data-gmec-all-map></button></div>'+(current.length?current.map(card).join(''):'<p class="gmec-empty">'+safe(ui('none'))+'</p>');
+ }
+ updateButton();
 }
-function updateButton(){if(!button)return;var msg=ui('mapToggle');button.setAttribute('aria-label',msg);button.title=msg;button.setAttribute('aria-pressed',String(markersVisible));button.classList.toggle('gmec-on',markersVisible);positionButton();}
-function positionButton(){
- if(!button)return;
- // Ordine della colonna: Eventi consigliati, Taccuino, Grifoncino.
- // Il Taccuino e' l'ancora della colonna; il Grifoncino conserva il suo posizionamento.
- var anchor=document.querySelector('#map > #ui-taccuino-button.ui-taccuino-edge:not([hidden])');
- var r=anchor?anchor.getBoundingClientRect():null;
- var w=button.offsetWidth||52,h=button.offsetHeight||52;
- var left=r&&r.width?r.left+(r.width-w)/2:6;
- var top=r&&r.height?r.top-h-10:Math.round(window.innerHeight*.5-h-45);
- button.style.left=Math.max(4,Math.min(window.innerWidth-w-4,Math.round(left)))+'px';
- button.style.top=Math.max(4,Math.min(window.innerHeight-h-4,Math.round(top)))+'px';
+function updateButton(){
+ document.querySelectorAll('[data-gmec-all-map]').forEach(function(btn){
+  var label=ui(markersVisible?'hideMap':'mapToggle');if(btn.textContent!==label)btn.textContent=label;
+  btn.setAttribute('aria-pressed',String(markersVisible));
+  btn.disabled=!events.some(active)&&!markersVisible;
+  btn.title=btn.textContent;
+ });
+}
+function refresh(){refreshMarkers();paint();}
+function toggleRecommended(){
+ if(!markersVisible&&!events.some(active)){notice();return;}
+ markersVisible=!markersVisible;
+ refreshMarkers();updateButton();
+ try{window.gmCloseNewHome&&window.gmCloseNewHome();}catch(_){}
 }
 function notice(){var old=document.getElementById('gmec-map-notice');if(old)old.remove();var el=document.createElement('div');el.id='gmec-map-notice';el.setAttribute('role','status');el.textContent=ui('noMapEvents');document.body.appendChild(el);clearTimeout(toastTimer);toastTimer=setTimeout(function(){el.remove();},3500);}
 function deepLink(){var id=new URL(location.href).searchParams.get('evento');if(!validId(id))return;var e=events.find(function(x){return x.id===id;});if(!e)return;var count=0;var timer=setInterval(function(){count++;if(show(e)||count>=35)clearInterval(timer);},250);}
-document.addEventListener('click',function(ev){var doc=ev.target.closest('[data-gmec-documentario]');if(doc){ev.preventDefault();ev.stopPropagation();if(window.GMDocumentario)window.GMDocumentario.open();return;}var open=ev.target.closest('[data-gmec-open]');if(open){var e=events.find(function(x){return x.id===open.getAttribute('data-gmec-open');});if(e)show(e);}var share=ev.target.closest('[data-gmec-share]');if(share){var selected=events.find(function(x){return x.id===share.getAttribute('data-gmec-share');});if(selected)shareEvent(selected);}});
-async function boot(){if(initialized)return;initialized=true;try{var r=await fetch(BASE+'eventi.json',{cache:'no-store'});if(!r.ok)throw Error('Indice eventi non disponibile');var index=await r.json();var names=(index.eventi||[]).filter(validId);var got=await Promise.all(names.map(async function(id){try{var rr=await fetch(BASE+'eventi/'+id+'/evento.json',{cache:'no-store'});if(!rr.ok)return null;var e=await rr.json();if(e.id!==id||!Number.isFinite(+e.lat)||!Number.isFinite(+e.lng))return null;return e;}catch(_){return null;}}));events=got.filter(Boolean);ensureButton();refresh();deepLink();new MutationObserver(function(){paint();}).observe(document.body,{childList:true,subtree:true});setInterval(refresh,30000);setInterval(positionButton,650);window.addEventListener('resize',positionButton);window.addEventListener('pageshow',refresh);document.addEventListener('app:set-lang',function(){setTimeout(function(){paint();updatePopups();},30);});document.addEventListener('i18n:changed',function(){setTimeout(function(){paint();updatePopups();},30);});document.addEventListener('visibilitychange',function(){if(!document.hidden)refresh();});}catch(err){console.warn('[Eventi consigliati]',err);}}
-window.GMEventiConsigliati={refresh:refresh,toggle:function(){ensureButton();button.click();},open:function(id){var e=events.find(function(x){return x.id===id;});return e?show(e):false;}};
+document.addEventListener('click',function(ev){var all=ev.target.closest('[data-gmec-all-map]');if(all){ev.preventDefault();toggleRecommended();return;}var doc=ev.target.closest('[data-gmec-documentario]');if(doc){ev.preventDefault();ev.stopPropagation();if(window.GMDocumentario)window.GMDocumentario.open();return;}var open=ev.target.closest('[data-gmec-open]');if(open){var e=events.find(function(x){return x.id===open.getAttribute('data-gmec-open');});if(e)show(e);}var share=ev.target.closest('[data-gmec-share]');if(share){var selected=events.find(function(x){return x.id===share.getAttribute('data-gmec-share');});if(selected)shareEvent(selected);}});
+async function boot(){if(initialized)return;initialized=true;try{var r=await fetch(BASE+'eventi.json',{cache:'no-store'});if(!r.ok)throw Error('Indice eventi non disponibile');var index=await r.json();var names=(index.eventi||[]).filter(validId);var got=await Promise.all(names.map(async function(id){try{var rr=await fetch(BASE+'eventi/'+id+'/evento.json',{cache:'no-store'});if(!rr.ok)return null;var e=await rr.json();if(e.id!==id||!Number.isFinite(+e.lat)||!Number.isFinite(+e.lng))return null;return e;}catch(_){return null;}}));events=got.filter(Boolean);refresh();deepLink();new MutationObserver(function(){paint();}).observe(document.body,{childList:true,subtree:true});setInterval(refresh,30000);window.addEventListener('pageshow',refresh);document.addEventListener('app:set-lang',function(){setTimeout(function(){paint();updatePopups();},30);});document.addEventListener('i18n:changed',function(){setTimeout(function(){paint();updatePopups();},30);});document.addEventListener('visibilitychange',function(){if(!document.hidden)refresh();});}catch(err){console.warn('[Eventi consigliati]',err);}}
+window.GMEventiConsigliati={refresh:refresh,toggle:toggleRecommended,open:function(id){var e=events.find(function(x){return x.id===id;});return e?show(e):false;}};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();
