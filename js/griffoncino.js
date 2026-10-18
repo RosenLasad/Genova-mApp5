@@ -121,7 +121,21 @@
     var hideBtn=assistant.querySelector('[data-hide-griff]');if(hideBtn)hideBtn.textContent=tr('hide_griffin');
     renderNode(currentNode||'welcome',false); if(!bubbleVisible)assistant.classList.add('is-bubble-hidden');
   }
-  function positionMini(){if(!mini)return;var anchor=document.querySelector('#map > #ui-taccuino-button.ui-taccuino-edge:not([hidden])');var size=Math.round(mini.getBoundingClientRect().width)||46;if(anchor){var r=anchor.getBoundingClientRect();mini.style.left=Math.max(4,Math.min(window.innerWidth-size-4,Math.round(r.left+(r.width-size)/2)))+'px';mini.style.top=Math.max(4,Math.min(window.innerHeight-size-4,Math.round(r.bottom+8)))+'px';mini.style.right='auto';mini.style.bottom='auto';return;}var map=document.getElementById('map');if(map){var mr=map.getBoundingClientRect();mini.style.left=Math.max(4,Math.round(mr.left+2))+'px';mini.style.top=Math.max(4,Math.min(window.innerHeight-size-4,Math.round(mr.top+mr.height*.5+38)))+'px';mini.style.right='auto';mini.style.bottom='auto';return;}mini.style.left='8px';mini.style.top='55%';mini.style.right='auto';mini.style.bottom='auto';}
+  function positionMini(){
+    if(!mini)return;
+    // Il Taccuino ora e' accanto al pulsante Lingue: non e' piu' un
+    // riferimento per il Grifoncino, che rimane sul bordo sinistro della mappa.
+    var size=Math.round(mini.getBoundingClientRect().width)||46;
+    var map=document.getElementById('map');
+    if(map){
+      var mr=map.getBoundingClientRect();
+      mini.style.left=Math.max(4,Math.round(mr.left+2))+'px';
+      mini.style.top=Math.max(4,Math.min(window.innerHeight-size-4,Math.round(mr.top+mr.height*.5+38)))+'px';
+      mini.style.right='auto';mini.style.bottom='auto';return;
+    }
+    mini.style.left='8px';mini.style.top='55%';mini.style.right='auto';mini.style.bottom='auto';
+  }
+
   function build(){if(document.getElementById('gm-griff-assistant'))return;assistant=document.createElement('section');assistant.id='gm-griff-assistant';assistant.setAttribute('aria-label',tr('assistant_label'));assistant.innerHTML='<div class="gm-griff-bubble" role="dialog" aria-label="'+tr('message_label')+'"><p class="gm-griff-text"></p><div class="gm-griff-actions"></div><div class="gm-griff-nav" hidden><button type="button" data-nav="back">← '+tr('back')+'</button><button type="button" data-nav="home">⌂ '+tr('home')+'</button></div><div class="gm-griff-hide-row"><button type="button" class="gm-griff-hide" data-hide-griff="1">'+tr('hide_griffin')+'</button></div></div><div class="gm-griff-character-wrap"><button class="gm-griff-character-btn" type="button" aria-label="'+tr('options_label')+'" title="'+tr('options_label')+'"><div class="gm-griffin" data-state="idle">'+SVG+'</div></button></div>';document.body.appendChild(assistant);
     mini=document.createElement('button');mini.id='gm-griff-mini';mini.type='button';mini.setAttribute('aria-label',tr('open_label'));mini.setAttribute('aria-hidden','true');mini.innerHTML='<img class="gm-griff-mini-image" src="assets/griffoncino-icon-classica.png" alt="" aria-hidden="true">';document.body.appendChild(mini);
     griffin=assistant.querySelector('.gm-griffin');bubble=assistant.querySelector('.gm-griff-bubble');textEl=assistant.querySelector('.gm-griff-text');actionsEl=assistant.querySelector('.gm-griff-actions');

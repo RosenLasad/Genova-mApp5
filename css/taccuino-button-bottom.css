@@ -1,0 +1,39 @@
+/* Genova mApp - Taccuino accanto al selettore lingua.
+   Caricare DOPO ui-layout-v2.css e mobile-controls.css. */
+#map > #ui-taccuino-button.ui-taccuino-edge {
+  position: fixed !important;
+  left: calc(max(10px, env(safe-area-inset-left, 0px)) + 48px) !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: max(8px, env(safe-area-inset-bottom, 0px)) !important;
+  width: 42px !important;
+  height: 44px !important;
+  min-width: 42px !important;
+  min-height: 44px !important;
+  padding: 3px !important;
+  border-left: 1px solid rgba(255,255,255,.42) !important;
+  border-radius: 11px !important;
+  transform: none !important;
+  z-index: 8002 !important;
+}
+#map > #ui-taccuino-button.ui-taccuino-edge img.taccuino-toolbar-icon {
+  width: 36px !important;
+  height: 36px !important;
+}
+#map > #ui-taccuino-button.ui-taccuino-edge:hover,
+#map > #ui-taccuino-button.ui-taccuino-edge:focus-visible {
+  transform: translateY(-2px) !important;
+}
+@media (max-width: 360px) {
+  #map > #ui-taccuino-button.ui-taccuino-edge {
+    width: 36px !important;
+    height: 40px !important;
+    min-width: 36px !important;
+    min-height: 40px !important;
+    padding: 3px !important;
+  }
+  #map > #ui-taccuino-button.ui-taccuino-edge img.taccuino-toolbar-icon {
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
