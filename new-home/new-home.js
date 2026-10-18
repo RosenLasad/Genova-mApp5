@@ -836,14 +836,11 @@
         '</article>';
     }).join('');
     scroll.innerHTML = ''+
-      '<div class="gm-new-home-intro">'+
-      '  <h3>Che cosa vuoi scoprire?</h3>'+
-      '</div>'+
       '<div class="gm-new-home-global-search">'+
       '  <label class="gm-new-home-global-search-box" for="gm-new-home-global-search-input">'+
       '    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></svg>'+
       '    <span class="sr-only">Cerca in Genova mApp</span>'+
-      '    <input type="search" id="gm-new-home-global-search-input" autocomplete="off" spellcheck="false" placeholder="Cerca luoghi, trasporti, percorsi e contenuti">'+
+      '    <input type="search" id="gm-new-home-global-search-input" autocomplete="off" spellcheck="false" placeholder="Cerca cosa vuoi scoprire">'+
       '  </label>'+
       '  <div class="gm-new-home-global-search-results" hidden>'+
       '    <div class="gm-new-home-global-search-summary" aria-live="polite"><span>Risultati</span><strong>0</strong></div>'+

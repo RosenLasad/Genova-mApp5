@@ -11,7 +11,7 @@
     ['Esplora','Explore','Explora','Explorer','استكشف','Обзор','探索','Esplòra'],
     ['Che cosa vuoi scoprire?','What would you like to discover?','¿Qué quieres descubrir?','Que souhaitez-vous découvrir ?','ماذا تريد أن تكتشف؟','Что вы хотите открыть для себя?','您想探索什么？','Cöse ti veu descovrî?'],
     ['Cerca in Genova mApp','Search Genova mApp','Buscar en Genova mApp','Rechercher dans Genova mApp','ابحث في Genova mApp','Поиск в Genova mApp','搜索 Genova mApp','Çerca in Genova mApp'],
-    ['Cerca luoghi, trasporti, percorsi e contenuti','Search places, transport, routes and content','Busca lugares, transportes, rutas y contenidos','Recherchez des lieux, transports, itinéraires et contenus','ابحث عن أماكن ووسائل نقل ومسارات ومحتوى','Ищите места, транспорт, маршруты и материалы','搜索地点、交通、路线和内容','Çerca leughi, trasporti, percorsi e contegnui'],
+    ['Cerca cosa vuoi scoprire','Search what you want to discover','Busca lo que quieras descubrir','Recherchez ce que vous souhaitez découvrir','ابحث عمّا تريد اكتشافه','Ищите то, что хотите открыть для себя','搜索你想探索的内容','Çerca quello che ti veu descovrî'],
     ['Risultati','Results','Resultados','Résultats','النتائج','Результаты','结果','Risultati'],
     ['Scrivi almeno 2 caratteri','Type at least 2 characters','Escribe al menos 2 caracteres','Saisissez au moins 2 caractères','اكتب حرفين على الأقل','Введите не менее 2 символов','请至少输入2个字符','Scrivi almeno 2 caratteri'],
     ['Ricerca globale','Global search','Búsqueda global','Recherche globale','البحث الشامل','Глобальный поиск','全局搜索','Riçerca globale'],
