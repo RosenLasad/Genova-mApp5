@@ -68,6 +68,25 @@ window.__QR_VR_POINTS = window.__QR_VR_POINTS || {
     audio: true
   },
 
+// Piazza de Ferrari
+  "piazza_de_ferrari/palazzo_della_regione": {
+    src: "qr_azzurri/qr_azzurri_piazza_de_ferrari/vr/piazza_de_ferrari_vr.mp4",
+    type: "video",
+    projection: "flatvr",
+    angle: 120,
+    verticalAngle: 52,
+    fov: 35,
+    yaw: 0,
+    pitch: -3,
+    minYaw: -60,
+    maxYaw: 60,
+    minPitch: -40,
+    maxPitch: 40,
+    loop: true,
+    audio: true
+  },
+
+
   // Piazza Raibetta
   "pcaricamento/piazza_raibetta": {
     src: "qr_azzurri/qr_azzurri_caricamento/vr/raibetta_vr.mp4",
