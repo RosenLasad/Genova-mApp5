@@ -1,3 +1,4 @@
+
 (function(){
   const list = window.GM_SPONSORS || [];
   const track = document.getElementById('sponsor-track');
