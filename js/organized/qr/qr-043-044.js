@@ -1,0 +1,95 @@
+
+(function(){
+  function releaseVideo(video){
+    if(!video) return;
+    try{ video.pause(); }catch(e){}
+    try{
+      video.removeAttribute('src');
+      video.load();
+    }catch(e){}
+  }
+
+  function defineClose(){
+    if (window.__qrClosePanel) return;
+    window.__qrClosePanel = function(){
+      var panel = document.getElementById('panel');
+      if(!panel) return;
+      // Stop the active QR videos and release their network/buffer resources.
+      var vidToday = document.getElementById('media-video-today');
+      var vidPast  = document.getElementById('media-video');
+      releaseVideo(vidToday);
+      releaseVideo(vidPast);
+      panel.classList.remove('open');
+    };
+  }
+  function bind(){
+    defineClose();
+    // Close on map click
+    if (window.map && map.on){
+      map.on('click', function(){ window.__qrClosePanel && window.__qrClosePanel(); });
+    } else {
+      window.addEventListener('load', function(){
+        if (window.map && map.on){
+          map.on('click', function(){ window.__qrClosePanel && window.__qrClosePanel(); });
+        }
+      });
+    }
+    // Close on clicks outside the panel (toolbar, checkboxes, icons, etc.)
+    document.addEventListener('click', function(e){
+      var panel = document.getElementById('panel');
+      if(!panel) return;
+      if (panel.contains(e.target)) return; // ignore clicks inside the panel
+      // The VR viewer lives outside #panel. Its controls must not be treated as
+      // an outside click, otherwise the QR panel closes before VR can handle it.
+      var t = e.target;
+      if (t && t.closest && t.closest('#qr-vr-overlay')) return;
+      // Do not close when clicking a marker icon: that opens the panel
+      if (t && t.closest && (t.closest('.leaflet-marker-icon') || t.closest('.leaflet-tooltip'))) return;
+      window.__qrClosePanel && window.__qrClosePanel();
+    }, true);
+    // Close on ESC
+    document.addEventListener('keydown', function(e){
+      if (e.key !== 'Escape') return;
+      // When VR is open, ESC belongs to the VR layer: closing the QR panel here
+      // would also destroy the popup that must remain visible underneath.
+      var vr = document.getElementById('qr-vr-overlay');
+      if (vr && !vr.hidden) return;
+      window.__qrClosePanel && window.__qrClosePanel();
+    });
+  }
+  if (document.readyState === 'complete'){ bind(); } else { window.addEventListener('load', bind); }
+})();
+
+;
+
+(function(){
+  function whenReady(fn){
+    if (document.readyState === 'complete') fn();
+    else window.addEventListener('load', fn);
+  }
+  whenReady(function(){
+    var chk = document.getElementById('chk-qr-piazza-de-ferrari');
+    if(!chk) return;
+    function nuke(){
+      try{
+        if (window.QR && QR['piazza_de_ferrari']) {
+          try{ map.removeLayer(QR['piazza_de_ferrari']); }catch(e){}
+          try{ QR['piazza_de_ferrari'] = null; }catch(e){}
+        }
+      }catch(e){}
+    }
+    // Run on change, and also shortly after (in case legacy handler runs later)
+    chk.addEventListener('change', function(){
+      setTimeout(nuke, 0);
+      setTimeout(nuke, 50);
+      setTimeout(nuke, 150);
+    });
+    // Also heal after zooms or layer changes
+    if (window.map && map.on){
+      map.on('zoomend layeradd layerremove', function(){ setTimeout(nuke, 0); });
+    }
+    // One initial cleanup
+    setTimeout(nuke, 200);
+  });
+})();
+
