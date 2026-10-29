@@ -1,0 +1,26 @@
+/* Only the itinerary P/F/S markers: no changes to original map markers or popups. */
+.gm-route-stage{background:none!important;border:0!important;}
+.gm-route-tag{
+  --gm-route-color:#1414b8;
+  position:relative;
+  box-sizing:border-box;
+  display:block;
+  width:23px;
+  height:23px;
+  border-radius:50%;
+  border:2px solid #fff;
+  background:var(--gm-route-color);
+  box-shadow:0 1px 5px rgba(0,0,0,.55);
+  cursor:pointer;
+}
+.gm-route-tag::after{
+  content:'';
+  position:absolute;
+  inset:7px;
+  border-radius:50%;
+  background:rgba(255,255,255,.92);
+}
+/* Classes kept for semantic clarity / future tweaks; actual colors come from the inline CSS variable. */
+.gm-route-tag-p{}
+.gm-route-tag-f{}
+.gm-route-tag-s{}

@@ -2050,6 +2050,7 @@
       '<header class="gm-new-home-wall-hero"><span class="gm-new-home-wall-period">'+escapeHtml(translated(aqueduct.notes, language) || aqueduct.note)+'</span><h3>'+escapeHtml(displayName)+'</h3><p>'+escapeHtml(translated(aqueduct.description, language))+'</p></header>'+ 
       '<div class="gm-new-home-wall-actions"><button type="button" class="gm-new-home-wall-show">'+escapeHtml(ui('show'))+'</button></div>'+ 
       '<section class="gm-new-home-wall-points"><div class="gm-new-home-wall-points-head"><h4>'+escapeHtml(ui('points'))+'</h4><span>'+points.length+' '+escapeHtml(countLabel)+'</span></div>'+ 
+        (route.routeKey === 'cs-giornata-marinaio' ? '<p style="margin:8px 0 12px;font-size:.9em;opacity:.85">P · Principali (19) &nbsp; F · Facoltative (9) &nbsp; S · Soste (2). I collegamenti sulla mappa indicano la direzione dei luoghi; non sono indicazioni pedonali.</p>' : '')+
         (points.length ? '<ul>'+pointRows+'</ul>' : '<div class="gm-new-home-empty">'+escapeHtml(ui('empty'))+'</div>')+
       '</section></article>';
     scroll.querySelector('.gm-new-home-wall-show').addEventListener('click', function(){
@@ -2086,6 +2087,9 @@
   }
 
   function getRoutePoints(route){
+    if(route.routeKey === 'cs-giornata-marinaio' && window.GMMarinaio && window.GMMarinaio.points){
+      return window.GMMarinaio.points;
+    }
     var points = window.ROUTE_FAVS && window.ROUTE_FAVS[route.routeKey];
     return Array.isArray(points) ? points : [];
   }
@@ -2124,6 +2128,11 @@
 
   function openRoutePoint(route, point){
     toggleOriginalControl(route.control, true);
+    if(route.routeKey === 'cs-giornata-marinaio' && window.GMMarinaio && window.GMMarinaio.openPoint){
+      close();
+      setTimeout(function(){ window.GMMarinaio.openPoint(point); }, 100);
+      return;
+    }
     var target = findRoutePointTarget(point);
     close();
     setTimeout(function(){
@@ -2151,7 +2160,7 @@
     overlay.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
     var rows = points.map(function(point, index){
       return '<li><button type="button" class="gm-new-home-wall-point" data-route-point="'+index+'">'+
-        '<span><strong>'+escapeHtml(point.name)+'</strong><small>'+escapeHtml(point.label || ui('point'))+'</small></span><span aria-hidden="true">›</span>'+
+        '<span><strong>'+escapeHtml(point.name)+'</strong><small>'+escapeHtml(point.level ? (point.level+' · '+(point.level === 'P' ? 'Principale' : point.level === 'F' ? 'Facoltativa' : 'Sosta')+' · '+point.category) : (point.label || ui('point')))+'</small></span><span aria-hidden="true">›</span>'+
       '</button></li>';
     }).join('');
     var meta = [translated(window.I18N_CATS && window.I18N_CATS[route.groupName], language) || route.groupName, info.duration || ''].filter(Boolean).join(' · ');

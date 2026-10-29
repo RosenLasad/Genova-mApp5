@@ -2150,6 +2150,11 @@ function normLabel(lbl){
 }
 
 function showRouteStars(rid){
+  // This itinerary uses the shared P/F/S points layer; do not create old blue dots.
+  if(rid === 'cs-giornata-marinaio'){
+    if(__routeMarkers[rid]) hideRouteStars(rid);
+    return;
+  }
   if (__routeMarkers[rid]) return;
   var list = (window.ROUTE_FAVS && window.ROUTE_FAVS[rid]) || [];
   if (!list.length) return;
