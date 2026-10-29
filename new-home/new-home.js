@@ -3062,6 +3062,7 @@
   }
 
   function open(opener){
+    if(typeof window.GMCloseMapPopup === 'function') window.GMCloseMapPopup();
     if(opener && opener.nodeType === 1) lastOpener = opener;
     else if(document.activeElement && document.activeElement.nodeType === 1) lastOpener = document.activeElement;
     closeSettings();
@@ -3077,6 +3078,7 @@
   }
 
   function openGuide(opener){
+    if(typeof window.GMCloseMapPopup === 'function') window.GMCloseMapPopup();
     var guideSection = SECTIONS.find(function(item){ return item.key === 'guide'; });
     if(!guideSection) return false;
     if(opener && opener.nodeType === 1) lastOpener = opener;
