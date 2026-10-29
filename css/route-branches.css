@@ -24,3 +24,8 @@
 .gm-route-tag-p{}
 .gm-route-tag-f{}
 .gm-route-tag-s{}
+
+/* QR: original eye artwork, nearly full-size on a mobile-friendly 27px marker. */
+.gm-route-tag.gm-route-qr{width:27px;height:27px;display:flex;align-items:center;justify-content:center;overflow:visible;}
+.gm-route-tag.gm-route-qr::after{display:none;}
+.gm-route-tag.gm-route-qr img{display:block;width:25px;height:25px;max-width:none;object-fit:contain;pointer-events:none;filter:drop-shadow(0 0 1px #fff);}

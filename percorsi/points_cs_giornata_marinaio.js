@@ -18,6 +18,19 @@
         "progress": 0
     },
     {
+        "name": "Piazza Dante",
+        "level": "P",
+        "category": "QR",
+        "branch": false,
+        "qrGroup": "piazza_dante",
+        "qrPoint": "piazza_dante",
+        "qrType": "parent",
+        "lat": 44.405401869668395,
+        "lng": 8.935780907388263,
+        "distance": 95,
+        "progress": 3
+    },
+    {
         "name": "Porta Soprana",
         "level": "P",
         "category": "Mura (barbarossa)",
@@ -27,8 +40,34 @@
         "progress": 6
     },
     {
+        "name": "Piazza de Ferrari",
+        "level": "P",
+        "category": "QR",
+        "branch": false,
+        "qrGroup": "piazza_de_ferrari",
+        "qrPoint": "piazza_de_ferrari",
+        "qrType": "child",
+        "lat": 44.407406861533175,
+        "lng": 8.93377961521803,
+        "distance": 211,
+        "progress": 16
+    },
+    {
+        "name": "Piazza Matteotti",
+        "level": "P",
+        "category": "QR",
+        "branch": false,
+        "qrGroup": "piazza_de_ferrari",
+        "qrPoint": "piazza_matteotti",
+        "qrType": "child",
+        "lat": 44.40697661301905,
+        "lng": 8.932735558901697,
+        "distance": 207,
+        "progress": 21
+    },
+    {
         "name": "Giardini Baltimora",
-        "level": "F",
+        "level": "P",
         "category": "Parchi/Piazze",
         "lat": 44.40384738359577,
         "lng": 8.934371365786234,
@@ -91,12 +130,38 @@
     },
     {
         "name": "Sarzano/Sant'Agostino",
-        "level": "S",
+        "level": "P",
         "category": "Trasporti",
         "lat": 44.40417,
         "lng": 8.93167,
         "distance": 23,
         "progress": 371
+    },
+    {
+        "name": "Piazzetta",
+        "level": "P",
+        "category": "QR",
+        "branch": false,
+        "qrGroup": "castello",
+        "qrPoint": "piazzetta",
+        "qrType": "child",
+        "lat": 44.40287052449395,
+        "lng": 8.932006353117693,
+        "distance": 105,
+        "progress": 404
+    },
+    {
+        "name": "Scoglio Campana",
+        "level": "P",
+        "category": "QR",
+        "branch": false,
+        "qrGroup": "castello",
+        "qrPoint": "campana",
+        "qrType": "parent",
+        "lat": 44.40338522320385,
+        "lng": 8.931322940778454,
+        "distance": 53,
+        "progress": 431
     },
     {
         "name": "Porta al Castrum",
@@ -115,6 +180,19 @@
         "lng": 8.930863684152776,
         "distance": 28,
         "progress": 499
+    },
+    {
+        "name": "Mura delle Grazie",
+        "level": "P",
+        "category": "QR",
+        "branch": false,
+        "qrGroup": "castello",
+        "qrPoint": "mura_grazie",
+        "qrType": "parent",
+        "lat": 44.40382060888646,
+        "lng": 8.930566983445246,
+        "distance": 2,
+        "progress": 539
     },
     {
         "name": "Porta del Castrum",
@@ -234,6 +312,19 @@
         "progress": 1195
     },
     {
+        "name": "Piazza Cavour",
+        "level": "P",
+        "category": "QR",
+        "branch": false,
+        "qrGroup": "molo",
+        "qrPoint": "cavour",
+        "qrType": "parent",
+        "lat": 44.40643883494313,
+        "lng": 8.927690363115637,
+        "distance": 38,
+        "progress": 1301
+    },
+    {
         "name": "San Marco al Molo",
         "level": "P",
         "category": "Chiese",
@@ -261,6 +352,19 @@
         "progress": 1465
     },
     {
+        "name": "San Marco al Molo",
+        "level": "P",
+        "category": "QR",
+        "branch": false,
+        "qrGroup": "molo",
+        "qrPoint": "san_marco",
+        "qrType": "parent",
+        "lat": 44.407861182464906,
+        "lng": 8.925929425416395,
+        "distance": 34,
+        "progress": 1466
+    },
+    {
         "name": "Porta Siberia",
         "level": "P",
         "category": "Mura (rinascimento)",
@@ -277,6 +381,19 @@
         "lng": 8.924392109439044,
         "distance": 24,
         "progress": 1674
+    },
+    {
+        "name": "Porta Siberia",
+        "level": "P",
+        "category": "QR",
+        "branch": false,
+        "qrGroup": "molo",
+        "qrPoint": "siberia",
+        "qrType": "parent",
+        "lat": 44.408279620719604,
+        "lng": 8.923917198032887,
+        "distance": 4,
+        "progress": 1719
     }
 ]
  };

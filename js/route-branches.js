@@ -68,17 +68,21 @@
   points.forEach(function(pt){
    var join=closest(route.polyline,pt),style=styles[pt.level];
    if(!join||!style)return;
-   if(pt.distance>12){
+   // QR markers are associated media, not walking detours.
+   // A per-point flag may override the default for any category.
+   var hasBranch=(typeof pt.branch==='boolean')?pt.branch:(pt.category!=='QR');
+   if(hasBranch && pt.distance>12){
     L.polyline([join,[pt.lat,pt.lng]],{
      color:style.color,weight:style.weight,opacity:0.86,dashArray:style.dashArray,
      interactive:false,className:'gm-route-branch gm-route-'+pt.level.toLowerCase()
     }).addTo(overlay);
    }
    // Small itinerary marker linked to the original point, not a new information popup.
+   var isQR=pt.category==='QR';
    var icon=L.divIcon({
     className:'gm-route-stage',
-    html:'<span class="gm-route-tag gm-route-tag-'+pt.level.toLowerCase()+'" style="--gm-route-color:'+style.color+'"></span>',
-    iconSize:[22,22],iconAnchor:[11,11]
+    html:'<span class="gm-route-tag gm-route-tag-'+pt.level.toLowerCase()+(isQR?' gm-route-qr':'')+'" style="--gm-route-color:'+style.color+'">'+(isQR?'<img src="qr_azzurri/marker-azzurro-qr-notch-24.svg" alt="" draggable="false">':'')+'</span>',
+    iconSize:[isQR?27:22,isQR?27:22],iconAnchor:[isQR?13.5:11,isQR?13.5:11]
    });
    var marker=L.marker([pt.lat,pt.lng],{icon:icon,zIndexOffset:1800,keyboard:true,title:pt.name});
    marker.on('click',function(){openPoint(pt);});
@@ -136,10 +140,36 @@
    try{btn.click();}catch(_){}
   }
  }
+ function openQrPoint(pt,map){
+  var sources=window.__QR_SOURCES||[];
+  var src=null;
+  for(var i=0;i<sources.length;i++){
+   if(sources[i]&&sources[i].parent&&String(sources[i].parent.id)===String(pt.qrGroup)){
+    src=sources[i];break;
+   }
+  }
+  if(!src||typeof window.__qrOpenChildPanel!=='function')return false;
+  try{map.setView([pt.lat,pt.lng],Math.max(17,map.getZoom()),{animate:true});}catch(_){}
+  var kids=src.children||[];
+  var child=null;
+  for(var k=0;k<kids.length;k++){
+   if(String(kids[k].id)===String(pt.qrPoint)){child=kids[k];break;}
+  }
+  // A QR group itself has a group popup; independent secondary QR points
+  // keep their own media and description.
+  if(pt.qrType==='parent'&&!child){
+   window.__qrOpenChildPanel(src.parent.label,'Zooma per vedere i punti di '+src.parent.label+'.',{oggi:null,ieri:[]});
+   return true;
+  }
+  if(!child)return false;
+  window.__qrOpenChildPanel(child.label,child.descr||'',child.media||{oggi:null,ieri:[]},String(pt.qrGroup)+'/'+String(child.id));
+  return true;
+ }
  function openPoint(pt){
   var map=window.map||window.__map||window.__LEAFLET_MAP__;
   if(!map||!pt)return false;
   var token=++activeOpenRequest;
+  if(pt.category==='QR')return openQrPoint(pt,map);
   // Mura: the existing search adapter activates the correct historical layer
   // and opens the marker's original popup. Match primarily by its coordinates.
   if(pt.category.indexOf('Mura')===0&&window.GMWallSearch){
