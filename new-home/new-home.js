@@ -1270,6 +1270,11 @@
             addGlobalSearchEntry(entries, seen, {kind:category.type === 'history-walls' ? 'wall' : 'aqueduct', name:item.name, note:item.note, section:section, category:category, item:item, id:item.wallKey || item.aqueductKey});
           });
         }
+        if(category.type === 'history-walls' && window.GMWallSearch){
+          window.GMWallSearch.entries().forEach(function(point){
+            addGlobalSearchEntry(entries, seen, {kind:'wall-node', name:point.title, note:point.subtitle, section:section, category:category, id:point.id, wallPoint:point});
+          });
+        }
         if(category.type === 'recommended-routes'){
           getRouteGroups().forEach(function(group){
             group.items.forEach(function(route){
@@ -1322,6 +1327,11 @@
 
   function openGlobalSearchEntry(entry){
     if(!entry) return;
+    if(entry.kind === 'wall-node' && entry.wallPoint && window.GMWallSearch){
+      close(false);
+      setTimeout(function(){ window.GMWallSearch.open(entry.wallPoint); }, 90);
+      return;
+    }
     if(entry.kind === 'place' && entry.target && entry.target.click){
       close();
       setTimeout(function(){ entry.target.click(); }, 50);

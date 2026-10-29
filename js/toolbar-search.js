@@ -115,6 +115,7 @@
   }
 
   function openResult(item){
+    if(item.kind === 'wall-node'){ if(window.GMWallSearch) window.GMWallSearch.open(item); return; }
     if(item.kind === 'place'){
       try{ item.target.click(); }catch(_){}
       return;
@@ -131,7 +132,7 @@
   function render(value){
     var query = normalize(value);
     if(!query){ closeResults(); return; }
-    shown = gatherQr().concat(gatherPlaces()).filter(function(item){
+    shown = gatherQr().concat(gatherPlaces(), window.GMWallSearch ? window.GMWallSearch.entries() : []).filter(function(item){
       return normalize(item.title).indexOf(query) !== -1 || normalize(item.subtitle).indexOf(query) !== -1;
     }).slice(0, 8);
     if(!shown.length){ closeResults(); return; }
