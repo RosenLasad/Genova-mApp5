@@ -10,7 +10,7 @@
       code:'guest',
       eventSearchesPer24h:0,
       gps:true,
-      nearby:false,
+      nearby:true,
       notes:true,
       cloudSync:false,
       favoritePoints:0,

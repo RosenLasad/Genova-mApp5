@@ -168,34 +168,13 @@
 
   function T(){ return TEXT[currentLang()] || TEXT.it; }
 
-  var NEARBY_ACCESS_TEXT = {
-    it:{title:'Scopri cosa c’è vicino a te',message:'Crea gratuitamente un account Genova mApp per utilizzare Raggio / Vicino a me.'},
-    en:{title:'Discover what is near you',message:'Create a free Genova mApp account to use Radius / Near me.'},
-    es:{title:'Descubre qué hay cerca de ti',message:'Crea gratuitamente una cuenta Genova mApp para usar Radio / Cerca de mí.'},
-    fr:{title:'Découvrez ce qui se trouve près de vous',message:'Créez gratuitement un compte Genova mApp pour utiliser Rayon / À proximité.'},
-    ar:{title:'اكتشف ما هو قريب منك',message:'أنشئ حساب Genova mApp مجاناً لاستخدام النطاق / بالقرب مني.'},
-    ru:{title:'Узнайте, что находится рядом',message:'Создайте бесплатный аккаунт Genova mApp, чтобы использовать Радиус / Рядом со мной.'},
-    zh:{title:'发现你附近的地点',message:'免费创建 Genova mApp 账户，即可使用半径 / 附近功能。'},
-    lij:{title:'Descovri quello ch’o l’é vixin a ti',message:'Crea gratis un account Genova mApp pe adêuviâ Raggio / A-o me vexin.'}
-  };
+  // Vicino a me è pubblico: il permesso di posizione resta gestito dal GPS.
   function nearbyAllowed(){
     try{if(window.GenovaEntitlements)return window.GenovaEntitlements.allows('nearby');}catch(_e){}
-    try{var st=window.GenovaAccount&&window.GenovaAccount.getState?window.GenovaAccount.getState():null;return !!(st&&st.user);}catch(_e){return false;}
+    // Mantiene l'accesso pubblico anche durante il caricamento degli altri moduli.
+    return true;
   }
-  function nearbyAccessCopy(){ return NEARBY_ACCESS_TEXT[currentLang()] || NEARBY_ACCESS_TEXT.it; }
-  function nearbyAccessMessage(){ return nearbyAccessCopy().message; }
-  function requestNearbyAccess(){
-    if(nearbyAllowed()) return true;
-    var copy=nearbyAccessCopy();
-    try{
-      if(window.GenovaAccessNotice&&typeof window.GenovaAccessNotice.show==='function'){
-        return window.GenovaAccessNotice.show({mode:'login',title:copy.title,message:copy.message});
-      }
-    }catch(_e){}
-    try{window.alert(copy.message);}catch(_e){}
-    try{if(window.GenovaAuth&&typeof window.GenovaAuth.open==='function')window.GenovaAuth.open('login');}catch(_e){}
-    return false;
-  }
+  function requestNearbyAccess(){ return nearbyAllowed(); }
 
   function mapInstance(){
     var m = window.map || window.__map || window.__LEAFLET_MAP__;
@@ -700,7 +679,7 @@
   function applyTexts(){
     var txt=T(), button=document.getElementById('btn-nearby'), panel=document.getElementById('gm-nearby-panel');
     if(button){
-      var actionLabel = nearbyAllowed() ? (gpsIsActive()?txt.button:txt.gpsFirst) : nearbyAccessMessage();
+      var actionLabel = nearbyAllowed() ? (gpsIsActive()?txt.button:txt.gpsFirst) : txt.button;
       button.setAttribute('title', actionLabel);
       button.setAttribute('aria-label', actionLabel);
     }
@@ -755,12 +734,11 @@
   function syncGpsState(){
     var button=ensureButton(); if(!button) return;
     var on=gpsIsActive(), allowed=nearbyAllowed();
-    // Il Visitatore può premere il pulsante per ricevere il messaggio di accesso,
-    // ma non può aprire o attivare la funzione.
-    button.disabled=allowed ? !on : false;
+    // Tutti i visitatori possono usare il raggio dopo aver attivato il GPS.
+    button.disabled=!allowed || !on;
     button.classList.toggle('gps-ready',on && allowed);
     button.classList.toggle('account-required',!allowed);
-    if(!allowed && nearbyActive) deactivateNearby(nearbyAccessMessage());
+    if(!allowed && nearbyActive) deactivateNearby();
     else if(!on && nearbyActive) deactivateNearby(T().gpsOff);
     if(!allowed && panelIsOpen()) closePanel();
     else if(!on && panelIsOpen()) updateStatus(null,T().gpsOff);
