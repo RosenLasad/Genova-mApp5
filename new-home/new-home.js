@@ -3199,7 +3199,9 @@
     if(!hasQrDeepLink){
       try{ hasQrDeepLink = !!String(new URL(window.location.href).searchParams.get('evento') || '').trim(); }catch(_){}
     }
-    if(!hasQrDeepLink) open(document.getElementById('title-btn'));
+    var hasNearbyDeepLink = false;
+    try{ hasNearbyDeepLink = new URL(window.location.href).searchParams.get('vicinoame') === '1'; }catch(_){}
+    if(!hasQrDeepLink && !hasNearbyDeepLink) open(document.getElementById('title-btn'));
   }
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, {once:true});

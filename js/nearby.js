@@ -17,9 +17,20 @@
   var markerByKey = Object.create(null);
   var gpsObserver = null;
   var positionRaf = 0;
+  // I link a luoghi/eventi hanno precedenza in caso di parametri combinati.
+  function isNearbyDeepLink(){
+    try{
+      var url=new URL(window.location.href);
+      return url.searchParams.get('vicinoame')==='1' &&
+        !String(url.searchParams.get('qr')||'').trim() &&
+        !String(url.searchParams.get('evento')||'').trim() && !/^#qr=/.test(url.hash);
+    }catch(_e){ return false; }
+  }
+  var nearbyDeepLink = isNearbyDeepLink();
 
   var TEXT = {
     it:{
+      startGps:'Attiva GPS',
       button:'Vicino a me', gpsFirst:'Attiva prima il GPS', title:'Vicino a me',
       intro:'Mostra sulla mappa i luoghi delle categorie selezionate che si trovano entro 300 metri dalla tua posizione.',
       radius:'Raggio', categories:'Categorie', all:'Tutte', none:'Nessuna', circle:'Mostra il cerchio dei 300 m',
@@ -34,6 +45,7 @@
       bus:'Bus', metro:'Metropolitana', trains:'Treni', funi:'Funicolari e ascensori', sea:'Navi e battelli', air:'Aereo'
     },
     en:{
+      startGps:'Turn on GPS',
       button:'Near me', gpsFirst:'Turn on GPS first', title:'Near me',
       intro:'Show places from the selected categories that are within 300 metres of your current position.',
       radius:'Radius', categories:'Categories', all:'All', none:'None', circle:'Show the 300 m circle',
@@ -47,6 +59,7 @@
       bus:'Bus', metro:'Metro', trains:'Trains', funi:'Funiculars and lifts', sea:'Boats and ferries', air:'Airport'
     },
     es:{
+      startGps:'Activar GPS',
       button:'Cerca de mí', gpsFirst:'Activa primero el GPS', title:'Cerca de mí',
       intro:'Muestra en el mapa los lugares de las categorías seleccionadas que estén a menos de 300 metros de tu posición.',
       radius:'Radio', categories:'Categorías', all:'Todas', none:'Ninguna', circle:'Mostrar el círculo de 300 m',
@@ -60,6 +73,7 @@
       bus:'Autobús', metro:'Metro', trains:'Trenes', funi:'Funiculares y ascensores', sea:'Barcos y ferris', air:'Aeropuerto'
     },
     fr:{
+      startGps:'Activer le GPS',
       button:'Autour de moi', gpsFirst:'Activez d’abord le GPS', title:'Autour de moi',
       intro:'Affiche sur la carte les lieux des catégories sélectionnées situés à moins de 300 mètres de votre position.',
       radius:'Rayon', categories:'Catégories', all:'Toutes', none:'Aucune', circle:'Afficher le cercle de 300 m',
@@ -73,6 +87,7 @@
       bus:'Bus', metro:'Métro', trains:'Trains', funi:'Funiculaires et ascenseurs', sea:'Bateaux et ferries', air:'Aéroport'
     },
     ar:{
+      startGps:'تفعيل GPS',
       button:'بالقرب مني', gpsFirst:'فعّل GPS أولاً', title:'بالقرب مني',
       intro:'يعرض على الخريطة الأماكن من الفئات المحددة الواقعة ضمن 300 متر من موقعك الحالي.',
       radius:'النطاق', categories:'الفئات', all:'الكل', none:'لا شيء', circle:'إظهار دائرة 300 م',
@@ -86,6 +101,7 @@
       bus:'الحافلات', metro:'المترو', trains:'القطارات', funi:'القطارات المعلقة والمصاعد', sea:'القوارب والعبّارات', air:'المطار'
     },
     ru:{
+      startGps:'Включить GPS',
       button:'Рядом со мной', gpsFirst:'Сначала включите GPS', title:'Рядом со мной',
       intro:'Показывает на карте места выбранных категорий в радиусе 300 метров от вашего местоположения.',
       radius:'Радиус', categories:'Категории', all:'Все', none:'Ничего', circle:'Показывать круг 300 м',
@@ -99,6 +115,7 @@
       bus:'Автобусы', metro:'Метро', trains:'Поезда', funi:'Фуникулёры и лифты', sea:'Катера и паромы', air:'Аэропорт'
     },
     zh:{
+      startGps:'开启 GPS',
       button:'附近', gpsFirst:'请先开启 GPS', title:'附近',
       intro:'在地图上显示距您当前位置 300 米以内、属于所选类别的地点。',
       radius:'半径', categories:'类别', all:'全选', none:'全不选', circle:'显示 300 米范围圈',
@@ -112,6 +129,7 @@
       bus:'公交', metro:'地铁', trains:'火车', funi:'缆车与电梯', sea:'船舶与渡轮', air:'机场'
     },
     lij:{
+      startGps:'Attiva GPS',
       button:'A-o me vexin', gpsFirst:'Ativa primma o GPS', title:'A-o me vexin',
       intro:'Mostra in sciâ mappa i leughi de categorie çernue che son drento 300 metri da-a teu posiçion.',
       radius:'Raggio', categories:'Categorie', all:'Tutte', none:'Nisciunn-a', circle:'Mostra o çercio de 300 m',
@@ -597,11 +615,11 @@
     if(b) b.setAttribute('aria-expanded','false');
   }
 
-  function openPanel(){
+  function openPanel(options){
     var p=document.getElementById('gm-nearby-panel'); var b=document.getElementById('btn-nearby');
     if(!p || !b) return;
     if(!requestNearbyAccess()) return;
-    if(b.disabled) return;
+    if(b.disabled && !(options && options.allowGpsOff && nearbyDeepLink)) return;
     applyTexts();
     p.classList.add('open'); p.setAttribute('aria-hidden','false'); b.setAttribute('aria-expanded','true');
     positionControls();
@@ -623,6 +641,14 @@
       '<span class="gm-nearby-cat-label" data-nearby-label="'+key+'"></span></label>';
   }
 
+  function startGpsFromPanel(){
+      var gps=gpsButton();
+      if(!mapInstance() || !gps || gps.disabled || gpsIsActive()) return;
+      // Eseguito nel gesto dell'utente: il browser può chiedere il permesso GPS.
+      gps.click();
+      syncGpsState();
+  }
+
   function buildPanel(){
     if(document.getElementById('gm-nearby-panel')) return;
     var panel=document.createElement('section');
@@ -637,7 +663,7 @@
       '<div class="gm-nearby-groups">'+groups+'</div>'+ 
       '<label class="gm-nearby-circle-option"><input id="gm-nearby-circle" type="checkbox"'+(settings.showCircle?' checked':'')+'><span data-nearby-text="circle"></span></label>'+ 
       '<div id="gm-nearby-status" class="gm-nearby-status" role="status" aria-live="polite"></div>'+ 
-      '<div class="gm-nearby-actions"><button type="button" id="gm-nearby-main"></button></div>';
+      '<div class="gm-nearby-actions"><button type="button" id="gm-nearby-start-gps" hidden style="width:100%;margin-bottom:8px;padding:10px;border-radius:10px;border:1px solid #38bdf8;background:#0c4a6e;color:#fff;font:inherit;cursor:pointer"></button><button type="button" id="gm-nearby-main"></button></div>';
     document.body.appendChild(panel);
 
     panel.querySelector('.gm-nearby-close').addEventListener('click', closePanel);
@@ -653,6 +679,7 @@
     panel.querySelector('#gm-nearby-circle').addEventListener('change', function(){
       settings.showCircle=!!this.checked; saveSettings(); syncRadius();
     });
+    panel.querySelector('#gm-nearby-start-gps').addEventListener('click', startGpsFromPanel);
     panel.querySelector('#gm-nearby-main').addEventListener('click', function(){
       if(nearbyActive){ deactivateNearby(); closePanel(); }
       else if(activateNearby()){ closePanel(); }
@@ -671,6 +698,13 @@
   function syncMainAction(){
     var button=document.getElementById('gm-nearby-main'); if(!button) return;
     var txt=T();
+    var startGps=document.getElementById('gm-nearby-start-gps');
+    if(startGps){
+      startGps.textContent=txt.startGps;
+      startGps.hidden=!nearbyDeepLink || gpsIsActive();
+      var gps=gpsButton();
+      startGps.disabled=!mapInstance() || !gps || gps.disabled;
+    }
     button.textContent = nearbyActive ? txt.deactivate : txt.activate;
     button.classList.toggle('is-stop',nearbyActive);
     button.disabled = !nearbyAllowed() || (!nearbyActive && (!gpsIsActive() || selectedCount()===0));
@@ -779,10 +813,12 @@
 
   function boot(){
     buildPanel(); ensureButton(); bindGpsObserver(); bindMap(); syncGpsState(); applyTexts(); positionControls();
+    if(nearbyDeepLink) openPanel({allowGpsOff:true});
     var tries=0, iv=setInterval(function(){
       bindMap();
       if(!document.getElementById('btn-nearby')) ensureButton();
-      if(++tries>30 || (mapInstance() && gpsButton())) clearInterval(iv);
+      if(nearbyDeepLink) syncGpsState();
+      if(++tries>120 || (mapInstance() && gpsButton())) clearInterval(iv);
     },250);
   }
 
