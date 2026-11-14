@@ -64,13 +64,18 @@
     busy=true;
     try{
       var result=await api();
-      var value={total:Number(result.total)||0,today:Number(result.today)||0,day:String(result.day||''),generatedAt:Number(result.generatedAt)||Date.now(),fetchedAt:Date.now()};
-      writeCache(value);showData(value);
+      acceptStats(result);
     }catch(_e){if(!cached)showError();}
     finally{busy=false;}
   }
 
+  function acceptStats(result){
+    if(!isAdmin())return;
+    var value={total:Number(result.total)||0,today:Number(result.today)||0,day:String(result.day||result.todayDate||''),generatedAt:Number(result.generatedAt)||Date.now(),fetchedAt:Date.now()};
+    writeCache(value);showData(value);
+  }
+
   function attach(element){row=element||row;ensureRow();var cached=readCache();if(cached)showData(cached);}
 
-  window.GenovaVisitorsAdmin={attach:attach,refresh:refresh,isAdmin:isAdmin};
+  window.GenovaVisitorsAdmin={attach:attach,refresh:refresh,isAdmin:isAdmin,acceptStats:acceptStats};
 })();

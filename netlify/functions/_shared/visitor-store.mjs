@@ -1,4 +1,23 @@
 import { getStore } from "@netlify/blobs";
+import crypto from "node:crypto";
+
+export function cleanVisitorId(value) {
+  const id = String(value || '').trim();
+  return id.length >= 16 && id.length <= 100 && /^[A-Za-z0-9._:-]+$/.test(id) ? id : '';
+}
+
+export function visitorHash(id) {
+  return crypto.createHash('sha256').update(id, 'utf8').digest('hex');
+}
+
+export async function listVisitorKeys(store, prefix) {
+  const keys = [];
+  for await (const page of store.list({ prefix, paginate: true })) {
+    keys.push(...(page.blobs || []).map(b => b.key));
+    if (keys.length > 50000) throw new Error('analytics_limit_reached');
+  }
+  return keys;
+}
 
 export const VISITOR_STORE_NAME = "genova-mapp-visitors-v1";
 

@@ -1,20 +1,125 @@
-STATISTICHE VISITATORI - Genova mApp
+GENOVA mApp — STATISTICHE VISITATORI
+Aggiornamento incrementale del 14 novembre 2026
 
-Apri Impostazioni > Amministrazione > Visitatori (solo Admin).
+INSTALLAZIONE
+Estrai lo ZIP nella cartella principale del progetto Genova mApp, mantenendo i
+percorsi e sostituendo i file omonimi. Pubblica nuovamente il progetto su Netlify
+con il normale procedimento che distribuisce anche le funzioni server.
+Non basta caricare soltanto i file HTML/JS/CSS del pannello.
+Non sono necessarie nuove variabili di ambiente o dipendenze.
 
-Fonte: Netlify Blobs genova-mapp-visitors-v1. Nessun nuovo identificativo viene registrato.
+Il pacchetto contiene solo questi 11 file:
+- index.html
+- js/visitor-counter.js
+- js/visitors-admin.js
+- statistiche-visitatori/statistiche.js
+- statistiche-visitatori/statistiche.css
+- statistiche-visitatori/LEGGIMI.txt
+- netlify/functions/visitors-admin.mjs
+- netlify/functions/visitor-device.mjs (NUOVO)
+- netlify/functions/visitor-hit.mjs
+- netlify/functions/subscribers-admin.mjs
+- netlify/functions/_shared/visitor-store.mjs
 
-Definizioni:
-- Unico: identificativo anonimo/browser distinto, NON una persona certa.
-- Nuovo: il primo accesso rilevato cade nel periodo.
-- Di ritorno: presente nel periodo ma registrato per la prima volta prima.
-- Il grafico mostra distinti giornalieri (7 giorni/mese) o mensili (anno/dall'inizio). La somma delle colonne non e' il totale unico del periodo.
-- Un accesso giornaliero viene inviato una volta per browser; la navigazione ripetuta non viene conteggiata.
-- Tutte le date vengono interpretate nel fuso Europe/Rome.
-- Storico: dipende da quanto era gia' salvato nel relativo store; non si possono recuperare visite non registrate in passato.
-- Elenco anonimo ordinato per ultimo accesso, 50 record per pagina. Codice abbreviato da hash SHA-256.
-- Il server verifica login e privilegi Admin prima di leggere i dati.
+I video e tutti gli altri file del progetto non fanno parte del pacchetto.
+Lo storico viene letto dagli stessi archivi già utilizzati dall'app.
 
-FILE DA CARICARE: index.html, js/settings-v2.js, netlify/functions/visitors-admin.mjs e cartella statistiche-visitatori.
+COME USARLO
+Apri Impostazioni > Amministrazione > Visitatori, con l'account admin.
+Il pannello è più ampio su PC; i quattro indicatori occupano una riga su PC e
+due righe compatte su smartphone. Il grafico ha valori sopra le colonne,
+giorni/mesi a zero ed etichette leggibili, con scorrimento orizzontale.
 
-NOTA PRESTAZIONI: per generare gli intervalli la funzione analizza le chiavi e i record correnti dello store. Con decine di migliaia di visitatori, sara' opportuno passare a contatori aggregati incrementali per evitare tempi di elaborazione elevati. Il limite di sicurezza attuale e' 50.000 chiavi per tipo; oltre questo limite appare un errore anziche' mostrare dati parziali.
+Sotto il grafico trovi il codice di QUESTO BROWSER, riconosciuto automaticamente
+quando il salvataggio locale è disponibile. Se la lettura non riesce puoi
+riprovare con Riconosci. Il codice viene evidenziato anche nell'elenco quando
+presente nel periodo scelto. Ripeti su PC, telefono e altri browser che usi.
+Un codice senza presenze registrate può comunque essere escluso preventivamente.
+
+Puoi escludere questo browser o uno dei codici elencati. L'esclusione:
+- ricalcola totali, nuovi, già presenti e grafico, anche per lo storico;
+- impedisce ulteriori registrazioni da quel codice anche senza login;
+- conserva tutte le rilevazioni già presenti;
+- è reversibile con Riammetti;
+- non riconosce altri codici generati dopo cancellazione dati o cambio browser.
+Le visite durante l'esclusione non vengono salvate e non sono recuperabili.
+Attiva Mostra anche gli esclusi per consultare e riammettere i codici esclusi
+che hanno presenze storiche nel periodo selezionato.
+Gli accessi riconosciuti come admin continuano a essere esclusi a prescindere.
+
+LE DUE SCHEDE
+1. Browser visitatori
+Mostra codice abbreviato, prima/ultima rilevazione, giorni nel periodo e totali,
+Nuovo nel periodo oppure Già presente, Rilevato in più giorni, Questo browser
+e l'eventuale esclusione. La lista è ordinata per ultima rilevazione e paginata
+in gruppi di 50. Le esclusioni non cancellano né modificano questi dati.
+
+2. Iscritti e abbonati
+Usa lo stesso archivio della sezione amministrativa Iscritti e abbonati.
+Mostra email, creazione del profilo, stato Gratuito/Premium/Premium scaduto/Admin
+e, dove disponibile, origine Stripe/Coupon e scadenza. Ricerca per email e
+filtro per stato restano attivi durante gli aggiornamenti automatici.
+L'elenco è indipendente dal periodo scelto per le visite.
+La data è la creazione del profilo nell'app: non è necessariamente la data di
+registrazione presso il servizio di autenticazione. Gli account senza un
+profilo salvato dall'app non sono ricostruiti da questo elenco.
+I browser non vengono collegati alle email e i due totali non vanno sommati.
+L'elenco degli iscritti include gli account admin, segnalati come tali.
+
+AGGIORNAMENTO
+All'apertura, con Aggiorna e ogni 60 secondi mentre il pannello è aperto e la
+pagina è visibile. L'aggiornamento riprende tornando alla pagina. Alla chiusura
+o al cambio di sessione il timer viene fermato e i dati del pannello rimossi.
+La voce Visitatori nelle Impostazioni riceve lo stesso riepilogo aggiornato.
+Se una lettura fallisce, il pannello lo segnala e conserva gli ultimi dati
+caricati con successo: la data di aggiornamento permette di valutarne l'età.
+
+DEFINIZIONI
+- Unico: codice/browser distinto, NON una persona identificata con certezza.
+- Nuovo: prima rilevazione nel periodo scelto.
+- Già presente: prima rilevazione precedente al periodo e presenza nel periodo.
+- Rilevato in più giorni: almeno due giorni distinti di presenza nello storico.
+  Anche un browser nuovo nel periodo può avere già più giorni di presenza.
+- Una presenza al giorno per browser, secondo Europe/Rome. Non è un conteggio
+  di sessioni, aperture o pagine. Ultima rilevazione non equivale all'ultima
+  visita effettiva: dopo la prima registrazione giornaliera non arrivano ping.
+- L'elenco comprende browser anonimi e usati da utenti con account.
+- La somma delle colonne giornaliere/mensili può superare gli unici nel periodo.
+- Totali storici: codici registrati dall'avvio della raccolta, esclusi quelli
+  marcati come esclusi. Non si possono recuperare visite mai registrate.
+- Ogni browser può rappresentare più persone; una persona può usare più browser.
+
+VERIFICHE ESEGUITE
+Controlli di sintassi sui file JS/MJS modificati.
+Test server con archivi simulati: autorizzazione admin; conteggi giornalieri;
+nuovi/già presenti; giornate senza visite; periodi; riconoscimento browser;
+esclusione storica, blocco di nuove registrazioni e ripristino; paginazione;
+lettura di 1.006 profili; gestione degli errori di archivio.
+Test del front-end in ambiente DOM simulato: schede, valori del grafico,
+riconoscimento, ricerca/filtri, rendering sicuro delle email, aggiornamento
+automatico, esclusioni, conservazione dei dati dopo errori e chiusura/logout.
+Test del contatore client: esclusione admin, identità stabile, deduplicazione
+giornaliera, gestione di autenticazione e salvataggio locale non disponibili.
+Non sono stati letti o modificati dati reali online.
+La verifica visiva desktop/smartphone in un browser reale non è stata eseguibile
+nell'ambiente di lavoro. Dopo la pubblicazione controlla la resa su PC e telefono.
+
+CONTROLLO DOPO LA PUBBLICAZIONE
+1. Apri Visitatori come admin: verifica i quattro indicatori e il grafico numerato.
+2. Cambia periodo e controlla anche le colonne a zero.
+3. Verifica il codice di Questo browser e la sua evidenziazione, se presente.
+4. Escludilo: gli indicatori devono ricalcolarsi. Con Mostra anche gli esclusi
+   puoi rivedere il codice nello storico. Premi Riammetti per ripristinare.
+5. Apri Iscritti e abbonati: controlla ricerca, filtro e aggiornamento automatico.
+6. Ripeti i controlli sul telefono e verifica il layout e lo scorrimento.
+
+NOTE TECNICHE
+Le letture e le modifiche amministrative sono protette anche sul server.
+Le esclusioni usano chiavi excluded-<hash> nello stesso archivio visitatori,
+con impostazione esplicita dello stato: nessuna cancellazione dello storico.
+Non vengono raccolti IP, posizione, browser fingerprint o nuovi dati personali.
+Il codice preesistente del browser viene confrontato con il relativo hash.
+La lettura completa usa l'iteratore paginato di Netlify Blobs e un limite di
+50.000 chiavi per tipo / profili. Oltre il limite viene segnalato un errore,
+anziché mostrare totali parziali. Per archivi molto più grandi occorrerà
+rivedere l'aggregazione per contenere tempi e costi di lettura.

@@ -81,6 +81,13 @@
     }catch(_e){/* Il conteggio non deve mai interferire con l'uso dell'app. */}
   }
 
+  window.GenovaVisitorBrowser = {
+    getId: visitorId,
+    refresh: function(){
+      try{localStorage.removeItem(LAST_DAY_KEY);}catch(_e){}
+      return ping();
+    }
+  };
   function boot(){window.setTimeout(ping,2500);}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();

@@ -1,17 +1,5 @@
-import crypto from "node:crypto";
 import { authenticatedUser, isAdminUser, json } from "./_shared/billing-store.mjs";
-import { romeDayKey, visitorStore } from "./_shared/visitor-store.mjs";
-
-function cleanVisitorId(value) {
-  const id = String(value || "").trim();
-  if (id.length < 16 || id.length > 100) return "";
-  if (!/^[A-Za-z0-9._:-]+$/.test(id)) return "";
-  return id;
-}
-
-function visitorHash(visitorId) {
-  return crypto.createHash("sha256").update(visitorId, "utf8").digest("hex");
-}
+import { cleanVisitorId, visitorHash, romeDayKey, visitorStore } from "./_shared/visitor-store.mjs";
 
 export default async (request) => {
   try {
@@ -40,10 +28,14 @@ export default async (request) => {
     const day = romeDayKey(new Date(now));
     const hash = visitorHash(visitorId);
     const store = visitorStore();
+    // The exclusion is server-side and applies even when this browser is logged out.
+    if (await store.get(`excluded-${hash}`, { type: 'json' })) {
+      return json({ ok: true, day, excluded: 'browser' });
+    }
     const visitorKey = `visitor-${hash}`;
     const dayKey = `day-${day}-${hash}`;
 
-    const previous = await store.get(visitorKey, { type: "json" }).catch(() => null);
+    const previous = await store.get(visitorKey, { type: "json" });
     await Promise.all([
       store.setJSON(visitorKey, {
         version: 1,

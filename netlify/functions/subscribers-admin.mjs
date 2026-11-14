@@ -63,7 +63,7 @@ async function getRecordsInChunks(store, entries, size = 40) {
         return await store.get(entry.key, { type: "json" });
       } catch (error) {
         console.error("Genova mApp subscribers admin read:", entry.key, error);
-        return null;
+        throw error;
       }
     }));
     records.push(...chunk.filter(Boolean));
@@ -101,8 +101,12 @@ export default async (request) => {
     if (!isAdminUser(user)) return json({ error: "forbidden" }, 403);
 
     const store = userStore();
-    const listed = await store.list({ prefix: "user-" });
-    const records = await getRecordsInChunks(store, listed?.blobs || []);
+    const entries = [];
+    for await (const page of store.list({ prefix: 'user-', paginate: true })) {
+      entries.push(...(page.blobs || []));
+      if (entries.length > 50000) throw new Error('subscribers_limit_reached');
+    }
+    const records = await getRecordsInChunks(store, entries);
     const users = records
       .map((record) => classifyRecord(record))
       .filter((item) => item.email)
