@@ -7,6 +7,7 @@
 <meta charset="utf-8"/>
 <meta name="color-scheme" content="light">
 <title>Genova mApp</title>
+<script src="js/map-controls-size.js?v=20261115-labels-2"></script>
 <link rel="stylesheet" href="welcome/welcome.css?v=20261115-griffin-position-5">
 <script src="welcome/welcome.js?v=20261115-griffin-click-4"></script>
 <!-- Leaflet CSS -->
@@ -562,6 +563,15 @@
       <button type="button" data-text-size="medium" aria-pressed="true">Medio</button>
       <button type="button" data-text-size="large" aria-pressed="false">Grande</button>
     </div>
+  </div>
+  <div class="settings-map-controls-size" role="group" aria-labelledby="settings-map-controls-label" aria-describedby="settings-map-controls-help">
+    <div class="settings-map-controls-label" id="settings-map-controls-label">Dimensione comandi della mappa</div>
+    <div class="settings-map-controls-options">
+      <button type="button" data-map-control-size="current" aria-pressed="false">Grande</button>
+      <button type="button" data-map-control-size="compact" aria-pressed="true">Normale</button>
+      <button type="button" data-map-control-size="very-compact" aria-pressed="false">Piccola</button>
+    </div>
+    <p class="settings-map-controls-help" id="settings-map-controls-help">Regola pulsanti, icone e spazi dei comandi mappa. La dimensione del testo resta separata.</p>
   </div>
     </div>
   </div>
@@ -1406,7 +1416,7 @@
 
 <script src="js/organized/historic/historic-206-206.js?v=20261028-fase2a"></script>
 <script src="js/organized/map/map-208-208.js?v=20261028-fase2a"></script>
-<script src="js/joystick.js?v=20260913-1"></script>
+<script src="js/joystick.js?v=20261115-controls-1"></script>
 <script src="js/organized/qr/qr-210-211.js?v=20261028-fase2a"></script>
 <!-- Mini-pannello verticale per TRASPORTI -->
 <script src="js/organized/ui/ui-212-212.js?v=20261028-fase2a"></script>
@@ -1507,7 +1517,7 @@
 <script src="js/billing.js?v=20260923-1"></script>
 <script src="js/subscription-v2.js?v=20261109-nearby-guest-1"></script>
 <script src="js/account-dashboard.js?v=20260924-1"></script>
-<script src="js/text-size.js?v=20260930-2"></script>
+<script src="js/text-size.js?v=20261115-controls-1"></script>
 <script src="js/ui-layout-v2.js?v=20260930-2"></script>
 <script src="js/coupon-admin.js?v=20260923-1"></script>
 <script src="js/subscribers-admin.js?v=20260923-2"></script>
@@ -1515,7 +1525,7 @@
 <script src="js/visitors-admin.js?v=20261114-1"></script>
 <link rel="stylesheet" href="statistiche-visitatori/statistiche.css?v=20261114-1">
 <script src="statistiche-visitatori/statistiche.js?v=20261114-1"></script>
-<script src="js/settings-v2.js?v=20261017-2"></script>
+<script src="js/settings-v2.js?v=20261115-controls-1"></script>
 <script src="js/popup-focus.js?v=20260920-1"></script>
 <script src="js/popup-layer-front.js?v=20261018-1"></script>
 <script src="js/popup-description-expand.js?v=20261018-3"></script>
@@ -1526,5 +1536,6 @@
 <script src="js/right-rail-collapse.js?v=20261018-1"></script>
 
 <link rel="stylesheet" href="css/taccuino-button-bottom.css?v=20261018-1">
+<link rel="stylesheet" href="css/map-controls-size.css?v=20261115-1">
 </body>
 </html>

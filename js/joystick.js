@@ -14,7 +14,13 @@
   function recalcRadius(){
     if(!joy) return;
     const r = Math.max(joy.offsetWidth, joy.offsetHeight) / 2;
-    radius = Math.max(16, r - 10);
+    const compact = document.documentElement.getAttribute('data-map-controls-size');
+    if(compact === 'compact' || compact === 'very-compact'){
+      radius = Math.max(12, r - (thumb ? thumb.offsetWidth / 2 : 10) - 2);
+      dead = Math.min(10, radius * .4);
+    }else{
+      radius = Math.max(16, r - 10);dead = 10;
+    }
   }
 
   function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
@@ -95,6 +101,7 @@
     joy.addEventListener('pointerup', endDrag);
     joy.addEventListener('pointercancel', endDrag);
     window.addEventListener('resize', recalcRadius, {passive:true});
+    document.addEventListener('genova:map-controls-size-changed', function(){endDrag({});recalcRadius();});
 
     // Accessibility: stop map drag on joystick interaction start
     joy.addEventListener('mousedown', function(e){ e.stopPropagation(); }, true);

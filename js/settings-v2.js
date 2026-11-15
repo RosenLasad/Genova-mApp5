@@ -332,6 +332,7 @@
     refs.guide=document.getElementById('settings-help-action');
     refs.contact=panel.querySelector('.settings-row[data-action="contact"]');
     refs.textSize=panel.querySelector('.settings-text-size');
+    refs.mapControlsSize=panel.querySelector('.settings-map-controls-size');
     refs.head=panel.querySelector('.settings-modal-head');
 
     refs.body=el('div','settings-v2-body');
@@ -345,6 +346,7 @@
     if(refs.guide)refs.help.list.appendChild(refs.guide);
     if(refs.contact)refs.help.list.appendChild(refs.contact);
     if(refs.textSize)refs.display.list.appendChild(refs.textSize);
+    if(refs.mapControlsSize)refs.display.list.appendChild(refs.mapControlsSize);
 
     refs.reset=document.createElement('button');
     refs.reset.type='button';
@@ -550,7 +552,7 @@
       'genova_favstars_v1':1,'genova_favstars_visible_v1':1,
       'genova_taccuino_routes_v1':1,'genova_taccuino_draft_v1':1,'genova_taccuino_notes_v1':1,'genova_taccuino_last_note_v1':1,'genova_taccuino_favorites_sort_v1':1,
       'genova_routes_selected_v1':1,'gm-qr-visited-v1':1,'gm-qr-points-visible':1,'genova_mapp_nearby_v1':1,
-      'walls_visible':1,'acq_visibility':1,'legend_blue':1,'legend_orange':1,'help_seen':1,'genova_text_size_v1':1
+      'walls_visible':1,'acq_visibility':1,'legend_blue':1,'legend_orange':1,'help_seen':1,'genova_text_size_v1':1,'genova_map_controls_size_v1':1
     };
     try{
       var keys=[];for(var i=0;i<localStorage.length;i++)keys.push(localStorage.key(i));

@@ -1,0 +1,88 @@
+GENOVA mApp — DIMENSIONE COMANDI MAPPA
+Aggiornamento incrementale del 15 novembre 2026.
+Da applicare alla versione con il pannello Benvenuto già funzionante.
+
+INSTALLAZIONE
+Estrai il contenuto nella cartella principale del progetto, mantenendo tutti i
+percorsi e sostituendo gli omonimi; poi ripubblica su Netlify come al solito.
+Il pacchetto contiene solo i sette file nuovi o aggiornati:
+- index.html
+- css/map-controls-size.css (nuovo)
+- js/map-controls-size.js (nuovo)
+- js/settings-v2.js
+- js/text-size.js
+- js/joystick.js
+- aggiornamenti/comandi_mappa_compatti_20261115.txt (questo documento)
+Non occorrono nuove dipendenze, immagini, variabili o funzioni server.
+Non sostituire il progetto completo con questo solo pacchetto incrementale.
+
+COME USARLO
+Apri Impostazioni > Aspetto > Dimensione comandi della mappa.
+- Attuale: mantiene il dimensionamento preesistente dei comandi.
+- Compatta: riduzione indicativa del 12% di pulsanti, icone e spazi.
+- Molto compatta: riduzione indicativa del 24%.
+Alcuni elementi hanno limiti minimi, quindi la riduzione non è identica per tutti.
+La scelta agisce subito, viene salvata localmente sul dispositivo/browser e
+rimane attiva alla riapertura e ruotando lo schermo. Puoi sempre tornare ad Attuale.
+È disponibile nelle otto lingue dell'app. Ripristina app reimposta anche questa
+preferenza ad Attuale. La preferenza non viene sincronizzata sull'account.
+
+AMBITO
+- Toolbar: Account/Login, abbonamento, installazione, impostazioni e ricerca;
+  spazi e margine del pulsante centrale Genova mApp, senza scalare il marchio SVG.
+- Colonna destra: pulsanti principali, icone, X marker e freccia di chiusura.
+- Menu laterali: larghezza, righe, icone e spazi, con limite al viewport e scroll.
+- In basso: Lingue, Taccuino, Mostra QR, GPS e Scanner QR.
+- Navigazione: +/-, casetta, 3D e joystick con relativo pomello.
+- Bottone del Grifoncino minimizzato.
+- Menu Lingue e Mostra QR: spazi/controlli più compatti e limiti al viewport.
+Il contenuto del Taccuino rimane indipendente.
+
+TESTO E CONTENUTI
+La scelta non riduce il font dei contenuti. La regolazione Dimensione testo
+rimane separata ed è stata estesa anche alle etichette dei menu laterali.
+Con testo grande le righe possono quindi crescere e andare a capo: la priorità
+è mantenere le voci leggibili e raggiungibili, anche attraverso lo scorrimento.
+Il joystick conserva un minimo di 48px, gli altri pulsanti gestiti un minimo
+di 24px per lato; i simboli possono essere più piccoli della loro area attiva.
+Non vengono ingrandite aree trasparenti sopra a comandi vicini.
+Restano esclusi marker dei luoghi, Benvenuto, Grifoncino illustrato e animato,
+new home, guida, schede dei luoghi e altri pannelli di contenuto.
+
+GEOMETRIA
+Si riducono dimensioni reali e spazi, senza applicare transform:scale ai gruppi.
+In modalità compatta la colonna e i menu laterali vengono posizionati in base
+allo spazio effettivo. Se la colonna non entra in uno schermo basso può scorrere.
+I menu vengono contenuti nel viewport e consentono di raggiungere tutte le voci.
+Tornando ad Attuale si rimuovono gli adattamenti e si ripristinano gli stili inline
+precedenti. Il joystick ricalcola il raggio e interrompe eventuali trascinamenti
+quando si cambia profilo. Nessuna modifica allo zoom geografico o ai marker.
+
+VERIFICHE ESEGUITE
+- Sintassi JavaScript dei file modificati e struttura del gruppo Impostazioni.
+- Test di esecuzione del gestore con DOM e geometrie simulate:
+  375x667, 320x568, 667x375, 1280x800; tre dimensioni testo e due profili compatti,
+  più passaggio ad Attuale con ripristino degli stili.
+- Limiti dei menu, scroll, aggiornamenti ripetuti senza riduzioni cumulative,
+  menu QR, traduzioni, reset, storage non disponibile, valori non validi e
+  sincronizzazione della preferenza tra schede dello stesso browser.
+- Script reale del joystick eseguito con geometrie simulate: raggio di movimento
+  e ritorno al centro corretti nei diversi profili, comportamento originale
+  ripristinato in Attuale.
+- Test funzionali precedenti del Benvenuto e della procedura di installazione.
+- Controllo che i nuovi selettori non interessino marker o Benvenuto.
+Non sono state fatte operazioni sui dati reali online.
+La verifica grafica in un browser reale non è eseguibile in questo ambiente:
+le prove geometriche simulate non sostituiscono il controllo sul sito pubblicato.
+
+CONTROLLO DOPO LA PUBBLICAZIONE
+1. Verifica che la nuova scelta compaia nella sezione Aspetto.
+2. Prova Attuale > Compatta > Molto compatta > Attuale, lasciando le Impostazioni
+   aperte: i comandi esterni devono cambiare subito e tornare alle dimensioni iniziali.
+3. Su 375x667 apri tutti i menu laterali e prova anche i pulsanti inferiori.
+4. Prova testo Grande insieme a Molto compatta: le voci devono andare a capo e
+   restare raggiungibili. Controlla sia telefono verticale sia orizzontale.
+5. Prova zoom, joystick e, se usata, modalità 3D con rotazione/inclinazione.
+6. Controlla bandiera, Taccuino e riapertura del Grifoncino dall'icona minimizzata.
+7. Ricarica e verifica che la scelta resti salvata.
+Se desideri annullare subito la compattazione, seleziona Attuale.
