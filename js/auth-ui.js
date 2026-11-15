@@ -6,6 +6,13 @@
 
   var identity = null;
   var currentUser = null;
+  var authReady = false, resolveAuthReady;
+  var authReadyPromise = new Promise(function(resolve){resolveAuthReady=resolve;});
+  function markAuthReady(){
+    if(authReady)return;
+    authReady=true;
+    resolveAuthReady(currentUser);
+  }
   var lastFocused = null;
   var AVATAR_KEY = 'genova_account_avatar_v1';
   var BOUND_KEY = 'genova_sync_account_v1';
@@ -271,9 +278,9 @@
   }
   function openIdentity(mode){
     if(!identity||typeof identity.open!=='function'){
-      setNotice(copy().unavailable);return;
+      openModal();setNotice(copy().unavailable);return;
     }
-    if(!navigator.onLine){setNotice(copy().unavailable);return;}
+    if(!navigator.onLine){openModal();setNotice(copy().unavailable);return;}
     syncWidgetLanguage();closeModal();
     if(window.GMCustomLogin&&(mode==='login'||mode==='signup')){window.GMCustomLogin.open(mode);return;}
     try{identity.open(mode);patchNamePlaceholder();}catch(_e){openModal();setNotice(copy().unavailable);}
@@ -282,13 +289,14 @@
   function bindIdentity(){
     identity=window.netlifyIdentity||null;
     if(!identity)return false;
-    identity.on('init',function(user){currentUser=user||null;updateButton();renderModal();announceAuth();});
+    identity.on('init',function(user){currentUser=user||null;markAuthReady();updateButton();renderModal();announceAuth();});
     identity.on('login',function(user){currentUser=user||null;updateButton();renderModal();announceAuth();try{identity.close();}catch(_e){}});
     identity.on('logout',function(){currentUser=null;updateButton();renderModal();announceAuth();});
     identity.on('error',function(){if(!document.getElementById('auth-account-modal').hidden)setNotice(copy().unavailable);});
     identity.on('open',patchNamePlaceholder);
     syncWidgetLanguage();
     try{currentUser=typeof identity.currentUser==='function'?identity.currentUser():null;}catch(_e){currentUser=null;}
+    markAuthReady();
     updateButton();renderModal();
     announceAuth();
     return true;
@@ -329,11 +337,13 @@
     window.addEventListener('storage',function(event){if(event.key===AVATAR_KEY||event.key===BOUND_KEY)updateAvatarUI();});
     if(!bindIdentity()){
       var tries=0;
-      (function retry(){if(bindIdentity())return;if(++tries<30)window.setTimeout(retry,150);})();
+      (function retry(){if(bindIdentity())return;if(++tries<30)window.setTimeout(retry,150);else markAuthReady();})();
     }
   }
 
   window.GenovaAuth={
+    isReady:function(){return authReady;},
+    whenReady:function(){return authReadyPromise;},
     getUser:function(){return currentUser;},
     getAvatar:function(){return storedAvatarId();},
     setAvatar:function(id){selectAvatar(id);},

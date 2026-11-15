@@ -136,7 +136,12 @@
     mini.style.left='8px';mini.style.top='55%';mini.style.right='auto';mini.style.bottom='auto';
   }
 
-  function build(){if(document.getElementById('gm-griff-assistant'))return;assistant=document.createElement('section');assistant.id='gm-griff-assistant';assistant.setAttribute('aria-label',tr('assistant_label'));assistant.innerHTML='<div class="gm-griff-bubble" role="dialog" aria-label="'+tr('message_label')+'"><p class="gm-griff-text"></p><div class="gm-griff-actions"></div><div class="gm-griff-nav" hidden><button type="button" data-nav="back">← '+tr('back')+'</button><button type="button" data-nav="home">⌂ '+tr('home')+'</button></div><div class="gm-griff-hide-row"><button type="button" class="gm-griff-hide" data-hide-griff="1">'+tr('hide_griffin')+'</button></div></div><div class="gm-griff-character-wrap"><button class="gm-griff-character-btn" type="button" aria-label="'+tr('options_label')+'" title="'+tr('options_label')+'"><div class="gm-griffin" data-state="idle">'+SVG+'</div></button></div>';document.body.appendChild(assistant);
+  function build(){
+    if(window.GMWelcome&&window.GMWelcome.isBlocking()){
+      document.addEventListener('gm:welcome-closed',build,{once:true});
+      return;
+    }
+    if(document.getElementById('gm-griff-assistant'))return;assistant=document.createElement('section');assistant.id='gm-griff-assistant';assistant.setAttribute('aria-label',tr('assistant_label'));assistant.innerHTML='<div class="gm-griff-bubble" role="dialog" aria-label="'+tr('message_label')+'"><p class="gm-griff-text"></p><div class="gm-griff-actions"></div><div class="gm-griff-nav" hidden><button type="button" data-nav="back">← '+tr('back')+'</button><button type="button" data-nav="home">⌂ '+tr('home')+'</button></div><div class="gm-griff-hide-row"><button type="button" class="gm-griff-hide" data-hide-griff="1">'+tr('hide_griffin')+'</button></div></div><div class="gm-griff-character-wrap"><button class="gm-griff-character-btn" type="button" aria-label="'+tr('options_label')+'" title="'+tr('options_label')+'"><div class="gm-griffin" data-state="idle">'+SVG+'</div></button></div>';document.body.appendChild(assistant);
     mini=document.createElement('button');mini.id='gm-griff-mini';mini.type='button';mini.setAttribute('aria-label',tr('open_label'));mini.setAttribute('aria-hidden','true');mini.innerHTML='<img class="gm-griff-mini-image" src="assets/griffoncino-icon-classica.png" alt="" aria-hidden="true">';document.body.appendChild(mini);
     griffin=assistant.querySelector('.gm-griffin');bubble=assistant.querySelector('.gm-griff-bubble');textEl=assistant.querySelector('.gm-griff-text');actionsEl=assistant.querySelector('.gm-griff-actions');
     var characterBtn=assistant.querySelector('.gm-griff-character-btn');

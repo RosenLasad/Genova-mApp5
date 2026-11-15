@@ -3184,24 +3184,9 @@
     try{ if(window.visualViewport) window.visualViewport.addEventListener('resize', schedulePositionUpdate, {passive:true}); }catch(_){}
     window.addEventListener('popstate', handleHistoryBack);
 
-    // Apertura iniziale della New Home: se l'app nasce da un deep link QR,
-    // lasciamo subito libera la mappa per mostrare il relativo pannello Oggi/Ieri.
-    // I vecchi link #qr=... restano coperti per compatibilita.
-    var hasQrDeepLink = false;
-    try{
-      var startupUrl = new URL(window.location.href);
-      hasQrDeepLink = !!String(startupUrl.searchParams.get('qr') || '').trim();
-      if(!hasQrDeepLink){
-        hasQrDeepLink = /^#qr=/.test(String(startupUrl.hash || ''));
-      }
-    }catch(_){}
+    // L'apertura iniziale è gestita dal pannello welcome/welcome.js.
+    // La New Home resta disponibile dai suoi pulsanti e dalle API pubbliche.
 
-    if(!hasQrDeepLink){
-      try{ hasQrDeepLink = !!String(new URL(window.location.href).searchParams.get('evento') || '').trim(); }catch(_){}
-    }
-    var hasNearbyDeepLink = false;
-    try{ hasNearbyDeepLink = new URL(window.location.href).searchParams.get('vicinoame') === '1'; }catch(_){}
-    if(!hasQrDeepLink && !hasNearbyDeepLink) open(document.getElementById('title-btn'));
   }
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, {once:true});
