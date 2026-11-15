@@ -1,113 +1,63 @@
-GENOVA mApp — BENVENUTO BLU PORTO
-Aggiornamento incrementale del 15 novembre 2026
-Base: Genova mApp v1.4.1.zip fornito dall'utente.
+GENOVA mApp — INSTALLA APP NEL BENVENUTO BLU PORTO
+Aggiornamento incrementale del 15 novembre 2026.
+Da applicare dopo il precedente aggiornamento del pannello Blu Porto.
 
 INSTALLAZIONE
-Estrai il contenuto dello ZIP nella cartella principale del progetto, cioè dove
-si trova index.html, mantenendo i percorsi e sostituendo gli omonimi.
-Pubblica il progetto con il tuo normale procedimento su Netlify.
-Non devi sostituire l'intera cartella del progetto con questo pacchetto:
-è un aggiornamento incrementale, con solo 8 file nuovi o modificati.
-
-CONTENUTO DEL PACCHETTO
+Estrai i file nella cartella principale del progetto, mantenendo i percorsi e
+sostituendo gli omonimi. Ripubblica il progetto su Netlify come al solito.
+Questo ZIP contiene solo i cinque file modificati:
 - index.html
-- new-home/new-home.js
-- js/auth-ui.js
-- js/griffoncino.js
-- welcome/welcome.js (nuovo)
-- welcome/welcome.css (nuovo)
-- welcome/images/grifoncino-blu-porto.png (nuovo, sfondo trasparente)
-- welcome/LEGGIMI.txt (nuovo)
+- js/pwa-install.js
+- welcome/welcome.js
+- welcome/welcome.css
+- welcome/LEGGIMI.txt
+Non occorrono nuove immagini, dipendenze, variabili o funzioni server.
+Tutti gli altri file già presenti, compreso il Grifoncino, restano necessari.
 
-Non occorrono nuove dipendenze, variabili di ambiente o funzioni server.
-L'aggiornamento delle Statistiche Visitatori già incluso nella v1.4.1 è preservato.
-Il pacchetto non contiene video o altri file non interessati dalla modifica.
-I riferimenti ai file modificati hanno una nuova versione per il caricamento.
+MODIFICA
+Aggiunto il pulsante Installa app in basso a sinistra, nello spazio delle onde.
+Ha un'icona di smartphone con freccia verso il basso, bordo azzurro sottile,
+sfondo blu e scritta discreta, tradotta nelle otto lingue dell'app.
+La Lanterna rimane a destra. Il pulsante è posizionato sopra la fascia delle
+onde: non aggiunge righe e non cambia larghezza o altezza del pannello.
+L'area di tocco è più grande del disegno del pulsante.
 
-COMPORTAMENTO ALL'AVVIO
-All'apertura o aggiornamento normale dell'app appare il nuovo benvenuto,
-centrato sopra la mappa reale, leggermente oscurata e sfocata.
-La New Home non si apre più automaticamente.
-Il pannello viene mostrato nuovamente a ogni caricamento normale della pagina.
-Non è stato aggiunto un salvataggio permanente "non mostrare più".
-Il titolo dell'app e i pulsanti già presenti continuano ad aprire il menu.
+FUNZIONAMENTO
+Il pulsante chiude il benvenuto e apre il pannello di installazione già usato
+dall'app. Dopo Annulla/Ho capito si torna alla mappa.
+Si conserva la procedura esistente:
+- installazione tramite il prompt del browser quando disponibile;
+- istruzioni per iPhone/iPad;
+- istruzioni manuali per gli altri casi.
+Nessuna installazione parte automaticamente: viene sempre usata la conferma
+della procedura esistente. L'icona nella barra dell'app resta disponibile.
 
-STILE E ADATTAMENTO AGLI SCHERMI
-PC: Grifoncino completo a sinistra, testo e due pulsanti principali a destra,
-comandi secondari in una riga inferiore, onde e Lanterna decorative.
-Telefono fino a 600px: proposta 1 confermata dall'utente, con piccolo ritratto
-del Grifoncino accanto al titolo, due pulsanti principali larghi e tre comandi
-compatti sotto. Il ritratto usa l'immagine trasparente con un ritaglio CSS,
-senza aggiungere una grande immagine in una riga separata sopra al titolo.
-Sono previste regole anche per larghezze fino a 360px e orientamento orizzontale
-con poca altezza. Se lo spazio non basta, il pannello può scorrere internamente.
-Testi e pulsanti sono elementi dell'app, non parte di un'immagine del pannello.
+VISIBILITÀ
+Il nuovo pulsante e quello nella barra vengono nascosti quando l'app è aperta
+in modalità standalone o quando il browser segnala appinstalled nella sessione.
+Anche un cambiamento della modalità di visualizzazione aggiorna la visibilità.
+Non viene salvato un flag permanente nel browser: potrebbe restare erroneamente
+attivo dopo una disinstallazione. Aprendo un normale tab del browser non è
+sempre possibile sapere se l'app è già installata in un altro contesto: in tal
+caso il pulsante può rimanere visibile e apre le istruzioni.
 
-PULSANTI
-- Esplora la mappa: chiude il benvenuto e lascia usare la mappa.
-- Menu principale: apre la New Home esistente.
-- Accedi / Iscriviti: apre il login esistente, dal quale si può anche registrarsi.
-  Appare solo quando la sessione è stata ripristinata e l'utente non è loggato.
-- Guida: apre direttamente la guida integrata nella New Home.
-- Lingua: apre un elenco verticale delle otto lingue dell'app.
-  La scelta aggiorna subito anche il pannello, che rimane aperto.
-- X: chiude il benvenuto e lascia usare la mappa.
-Il ripristino della sessione avviene tramite l'interfaccia Account già presente.
-Se una sessione esiste, il saluto diventa Bentornato e l'accesso viene nascosto.
-Durante il ripristino non compare per un istante il pulsante di accesso da ospite.
-L'app resta utilizzabile anche quando Identity non è disponibile o si è offline;
-il login segnala la necessità della connessione nel suo pannello esistente.
+VERIFICHE
+Sintassi JavaScript e test locali con DOM/browser simulati:
+- pulsante e traduzioni;
+- collegamento alla vera procedura PWA già presente nel progetto;
+- istruzioni manuali e iOS;
+- prompt nativo simulato, conferma e annullamento;
+- ripristino dello sfondo e gestione del focus;
+- app già in modalità standalone;
+- evento di installazione e cambiamenti della modalità di visualizzazione;
+- nessuna regressione nei comandi del benvenuto, lingue, sessione e link diretti.
+Il browser grafico locale non è avviabile in questo ambiente: la verifica
+visiva e un'installazione effettiva vanno controllate sul sito pubblicato.
 
-GRIFONCINO ANIMATO
-La sua inizializzazione aspetta la chiusura del nuovo benvenuto.
-Dopo la chiusura riprende il comportamento abituale, rispettando la preferenza
-già salvata per Grifoncino aperto oppure minimizzato.
-L'illustrazione del benvenuto è fissa e indipendente dall'assistente animato.
-
-COLLEGAMENTI DIRETTI
-Il benvenuto non viene mostrato quando si entra tramite:
-- parametro qr o vecchio hash #qr=;
-- parametro evento;
-- vicinoame=1;
-- parametri doc o id;
-- un hash di destinazione, inclusi quelli usati per autenticazione o recupero;
-- parametri confirmation_token, recovery_token o invite_token.
-In questi casi si lascia funzionare il percorso specifico già presente nell'app.
-I parametri di campagna, come utm_source, non sopprimono il benvenuto.
-
-LINGUE E ACCESSIBILITÀ
-Italiano, inglese, spagnolo, francese, arabo, russo, cinese e genovese.
-Il pannello arabo dispone i contenuti da destra a sinistra.
-Pulsanti accessibili da tastiera, focus confinato nel dialogo e sfondo non
-interattivo mentre il benvenuto è aperto. Esc chiude prima l'elenco delle lingue,
-se aperto, e poi il benvenuto. Le frecce su/giù navigano l'elenco delle lingue.
-La chiusura ripristina lo stato interattivo precedente degli elementi sullo sfondo.
-
-VERIFICHE ESEGUITE
-- Sintassi di tutti i file JavaScript modificati.
-- Esecuzione del nuovo pannello in un ambiente DOM simulato: apertura,
-  cinque destinazioni, scelta delle otto lingue, arabo RTL, tastiera/focus,
-  sessioni iniziali e ritardate, assenza di login transitorio per utenti loggati,
-  chiusura, ripristino dello sfondo, collegamenti diretti, salvataggio locale
-  non disponibile e gestione di comandi non ancora pronti.
-- Interfaccia reale auth-ui.js con Identity simulato: sessione ripristinata,
-  readiness, eventi, login esistente e messaggio offline.
-- Script reale del Grifoncino: attesa del benvenuto prima di inizializzare.
-- Collegamenti e versioni dei file in index.html, apertura iniziale della
-  New Home rimossa, regole responsive e limiti di altezza del pannello.
-- Immagine PNG con canale trasparente e dimensioni corrette.
-Non sono stati usati account reali o modificati dati online.
-La verifica visiva in un browser reale non è stata eseguibile nell'ambiente:
-le anteprime sono riferimenti estetici, non screenshot della versione integrata.
-
-CONTROLLO SUL SITO DOPO LA PUBBLICAZIONE
-1. Apri o aggiorna l'indirizzo normale: compare il benvenuto sopra la mappa,
-   senza la New Home aperta e senza l'assistente animato sopra al pannello.
-2. Prova Mappa, Menu principale, Guida e X.
-3. Da ospite prova Accedi / Iscriviti, e chiudi il login senza inviare dati.
-4. Con una sessione già attiva verifica Bentornato e l'assenza di Accedi.
-5. Cambia lingua dal pannello: l'elenco è verticale e le etichette cambiano
-   immediatamente; verifica anche un testo lungo e l'arabo.
-6. Ripeti su telefono verticale stretto e in orizzontale. Tutti i pulsanti
-   devono essere leggibili e raggiungibili; su schermi molto bassi puoi scorrere.
-7. Apri un QR e il link Vicino a me: il benvenuto non deve interromperli.
+CONTROLLO DOPO LA PUBBLICAZIONE
+1. Apri il sito nel browser: verifica Installa app a sinistra delle onde.
+2. Controlla posizione e leggibilità anche su telefono verticale stretto.
+3. Premi Installa app: deve aprirsi il pannello di installazione consueto.
+4. Annulla/chiudi e verifica di poter usare la mappa.
+5. Cambia lingua nel benvenuto: anche Installa app deve tradursi.
+6. Apri l'app installata dalla sua icona: il pulsante non deve apparire.

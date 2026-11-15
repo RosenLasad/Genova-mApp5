@@ -5,6 +5,7 @@
   window.__GENOVA_PWA_INSTALL__ = true;
 
   var deferredPrompt = null;
+  var installedThisSession = false;
   var lastFocused = null;
   var currentMode = 'ready';
 
@@ -108,6 +109,8 @@
     return window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
   }
 
+  function isInstalled(){return installedThisSession || isStandalone();}
+
   function createButton(){
     var existing = document.getElementById('pwa-install-button');
     if(existing) return existing;
@@ -141,11 +144,17 @@
 
   function updateButton(){
     var button = document.getElementById('pwa-install-button');
-    if(!button) return;
-    var text = copy().label;
-    button.setAttribute('aria-label', text);
-    button.setAttribute('title', text);
-    button.hidden = isStandalone();
+    if(button){
+      var text = copy().label;
+      button.setAttribute('aria-label', text);
+      button.setAttribute('title', text);
+      button.hidden = isInstalled();
+      if(button.hidden&&document.activeElement===button){
+        var mapTitle=document.getElementById('title-btn');
+        if(mapTitle)mapTitle.focus({preventScroll:true});
+      }
+    }
+    window.dispatchEvent(new CustomEvent('gm:pwa-install-state',{detail:{installed:isInstalled()}}));
   }
 
   function renderModal(mode){
@@ -177,7 +186,7 @@
   }
 
   function openModal(){
-    if(isStandalone()) return;
+    if(isInstalled()) return;
     var modal = document.getElementById('pwa-install-modal');
     if(!modal) return;
     lastFocused = document.activeElement;
@@ -236,10 +245,13 @@
   });
 
   window.addEventListener('appinstalled', function(){
+    installedThisSession = true;
     deferredPrompt = null;
     closeModal();
     updateButton();
   });
+
+  window.GMPWAInstall={open:openModal,isInstalled:isInstalled};
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, {once:true});
   else boot();

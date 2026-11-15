@@ -22,8 +22,8 @@ html.gm-welcome-pending #gm-griff-assistant,html.gm-welcome-pending #gm-griff-mi
 #gm-welcome-overlay .gm-welcome-button:hover{background-color:#ffffff12;border-color:#def7ff}
 #gm-welcome-overlay .gm-welcome-button.is-primary{color:#00263c;background:linear-gradient(100deg,#00e3e6,#00cddc);border-color:#6ef4ee;box-shadow:inset 0 1px 1px #b4ffff66}
 #gm-welcome-overlay .gm-welcome-button.is-primary:hover{background:#25e7e7}
-#gm-welcome-overlay .gm-welcome-sea{grid-area:sea;height:29px;color:#3b9cd0;pointer-events:none;overflow:hidden}
-#gm-welcome-overlay .gm-welcome-sea svg{display:block;width:100%;height:100%}
+#gm-welcome-overlay .gm-welcome-sea{position:relative;grid-area:sea;height:29px;color:#3b9cd0;overflow:visible}
+#gm-welcome-overlay .gm-welcome-sea>svg{pointer-events:none;display:block;width:100%;height:100%}
 #gm-welcome-overlay .gm-welcome-tools{grid-area:tools;display:grid;grid-template-columns:1.1fr .8fr 1.4fr;align-items:stretch}
 #gm-welcome-overlay .gm-welcome-tools.is-authenticated{grid-template-columns:1fr 1.4fr}
 #gm-welcome-overlay .gm-welcome-tools .gm-welcome-button{font-size:17px;border:0;border-radius:6px;min-height:45px;padding:7px 10px;gap:9px}
@@ -67,3 +67,11 @@ html.gm-welcome-pending #gm-griff-assistant,html.gm-welcome-pending #gm-griff-mi
 @media(max-width:360px){#gm-welcome-overlay .gm-welcome-card{padding-inline:11px;grid-template-columns:74px minmax(0,1fr);column-gap:7px}#gm-welcome-title{font-size:20px!important}#gm-welcome-overlay .gm-welcome-visual{height:99px}#gm-welcome-overlay .gm-welcome-character{width:115px}#gm-welcome-overlay .gm-welcome-main .gm-welcome-button{font-size:17px}#gm-welcome-overlay .gm-welcome-tools .gm-welcome-button{font-size:11px}}
 @media(max-height:470px) and (min-width:601px){#gm-welcome-overlay .gm-welcome-card{padding:16px 21px 12px;grid-template-columns:155px minmax(0,1fr);row-gap:6px}#gm-welcome-overlay .gm-welcome-visual{height:210px}#gm-welcome-title{font-size:25px!important}#gm-welcome-subtitle{font-size:13px!important}#gm-welcome-overlay .gm-welcome-main .gm-welcome-button{min-height:43px;font-size:19px;padding:7px}#gm-welcome-overlay .gm-welcome-sea{height:19px}#gm-welcome-overlay .gm-welcome-tools .gm-welcome-button{min-height:38px;font-size:14px}}
 @media(prefers-reduced-motion:reduce){#gm-welcome-overlay *{transition:none!important;scroll-behavior:auto!important}}
+
+/* Installazione nello spazio delle onde: nessuna nuova riga o altezza del pannello. */
+#gm-welcome-overlay .gm-welcome-install{position:absolute;z-index:1;inset-inline-start:0;top:50%;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;gap:6px;height:27px;max-width:72%;padding:3px 9px;border:1px solid #70bbd9;border-radius:15px;background:#092c49;color:#d8f4ff;font:12px/1.1 system-ui,sans-serif;cursor:pointer;white-space:nowrap}
+#gm-welcome-overlay .gm-welcome-install::after{content:'';position:absolute;inset:-7px -2px;border-radius:15px}
+#gm-welcome-overlay .gm-welcome-install svg{display:block;width:17px;height:19px;flex-shrink:0}
+#gm-welcome-overlay .gm-welcome-install:hover{background:#17445f;border-color:#b5e9ff;color:#fff}
+@media(max-width:600px){#gm-welcome-overlay .gm-welcome-install{height:25px;font-size:11px;padding:2px 8px;gap:5px}#gm-welcome-overlay .gm-welcome-install::after{inset:-8px -2px}#gm-welcome-overlay .gm-welcome-install svg{width:16px;height:17px}}
+@media(max-height:470px) and (min-width:601px){#gm-welcome-overlay .gm-welcome-install{height:23px;font-size:11px}#gm-welcome-overlay .gm-welcome-install::after{inset:-3px -2px}}
