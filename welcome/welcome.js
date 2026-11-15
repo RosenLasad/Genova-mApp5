@@ -191,6 +191,7 @@
     document.body.appendChild(root);backgroundInert();
     document.documentElement.classList.add('gm-welcome-open');
     root.addEventListener('click',function(event){
+      if(event.target===root){event.preventDefault();event.stopPropagation();close(true);return;}
       var lang=event.target.closest('[data-welcome-lang]');
       if(lang){
         if(typeof window.setLang!=='function'){announce(copy().unavailable);return;}
