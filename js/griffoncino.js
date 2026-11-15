@@ -76,7 +76,7 @@
     if(dragMoved){suppressCharacterClick=true;setTimeout(function(){suppressCharacterClick=false;},120);}
   }
   function minimize(persist){if(!assistant)return;assistant.classList.add('is-minimized');mini.classList.add('is-visible');mini.setAttribute('aria-hidden','false');clearTimers();positionMini();setTimeout(positionMini,80);setTimeout(positionMini,300);if(persist!==false)saveDisplay('minimized',authUser());}
-  function restore(persist){if(!assistant)return;assistant.classList.remove('is-minimized');mini.classList.remove('is-visible');mini.setAttribute('aria-hidden','true');setBubbleVisible(true);requestAnimationFrame(restoreSavedPosition);if(persist!==false)saveDisplay('open',authUser());}
+  function restore(persist){if(!assistant){if(window.GMWelcome&&window.GMWelcome.isBlocking())return;build();}if(!assistant)return;assistant.classList.remove('is-minimized');mini.classList.remove('is-visible');mini.setAttribute('aria-hidden','true');setBubbleVisible(true);requestAnimationFrame(restoreSavedPosition);if(persist!==false)saveDisplay('open',authUser());}
   function applySavedDisplay(user){if(savedDisplay(user)==='minimized')minimize(false);else restore(false);}
   function tr(key){var i18n=window.GMGriffoncinoI18N;return i18n&&typeof i18n.t==='function'?i18n.t(key):key;}
   function renderOptions(opts){
