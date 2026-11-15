@@ -44,26 +44,51 @@
     var edge=v.top+v.height-8;
     ['ui-zoom-anchor','gm-3d-toggle','ui-map-controls'].forEach(function(id){var el=document.getElementById(id);if(visible(el))edge=Math.min(edge,el.getBoundingClientRect().top-8);});
     var minimum=mapTop+7,room=Math.max(32,edge-minimum);
-    var desired=mapTop+Math.min(50,Math.max(8,room*.08));
+    // Centre the whole column in the visible map, then avoid the bottom controls.
     var total=rail.scrollHeight||rail.getBoundingClientRect().height;
+    var desired=mapTop+(v.top+v.height-mapTop-total)/2;
     var top=Math.max(minimum,Math.min(desired,edge-total));
     var available=Math.max(32,edge-top);
-    style(rail,'top',Math.round(top)+'px');style(rail,'--gm-rail-room',Math.floor(available)+'px');
+    style(rail,'--gm-rail-top',Math.round(top)+'px');style(rail,'--gm-rail-room',Math.floor(available)+'px');
     var scroll=total>available+1;
     if(rail.classList.contains('gm-control-rail-scroll')!==scroll)rail.classList.toggle('gm-control-rail-scroll',scroll);
   }
+  function mapTopFor(v){
+    var map=document.getElementById('map'),header=document.querySelector('#app > header');
+    var top=Math.max(v.top+6,map?map.getBoundingClientRect().top:v.top,header?header.getBoundingClientRect().bottom:v.top);
+    return Math.ceil(Math.min(top,v.top+Math.max(6,v.height-80)));
+  }
   function fitPanel(panel,anchor,v,mapTop){
-    if(!visible(panel))return;
+    if(!panel||!visible(panel))return;
     var rail=document.getElementById('quick-toggles');
-    var r=anchor?anchor.getBoundingClientRect():rail.getBoundingClientRect();
+    if(!anchor&&!rail)return;
+    var r=(anchor||rail).getBoundingClientRect();
     var leftEdge=v.left+6,rightEdge=Math.max(leftEdge+32,r.left-7);
     var width=Math.max(32,Math.min(rightEdge-leftEdge,v.width-12));
-    var maxHeight=Math.max(32,v.top+v.height-8-mapTop);
-    style(panel,'--gm-flyout-room',Math.floor(width)+'px');style(panel,'--gm-flyout-height',Math.floor(maxHeight)+'px');
-    var box=panel.getBoundingClientRect();
-    var left=Math.max(leftEdge,Math.min(rightEdge-box.width,v.left+v.width-box.width-6));
-    var top=Math.max(Math.ceil(mapTop),Math.min(Math.round(r.top+(r.height-box.height)/2),Math.floor(v.top+v.height-box.height-8)));
-    style(panel,'left',Math.round(left)+'px');style(panel,'top',Math.round(top)+'px');style(panel,'right','auto');style(panel,'transform','none');
+    var bottom=v.top+v.height-8;
+    // Keep the top beside its button. On low screens reserve a usable scrollable area.
+    var minimumHeight=Math.min(140,Math.max(32,bottom-mapTop));
+    var top=Math.ceil(Math.max(mapTop,Math.min(r.top,bottom-minimumHeight)));
+    var maxHeight=Math.max(32,Math.floor(bottom-top));
+    // Explicit inline geometry also wins over category-specific legacy CSS.
+    style(panel,'position','fixed');style(panel,'transform','none');
+    style(panel,'top','var(--gm-flyout-top,0px)');style(panel,'left','var(--gm-flyout-left,0px)');
+    style(panel,'right','auto');style(panel,'bottom','auto');
+    style(panel,'--gm-flyout-room',Math.floor(width)+'px');
+    style(panel,'--gm-flyout-height',maxHeight+'px');
+    // Measure the real origin: transformed/scrolling ancestors may contain fixed elements.
+    // Dedicated variables cannot be overwritten by the old dock-relative offsets.
+    style(panel,'--gm-flyout-left','0px');style(panel,'--gm-flyout-top','0px');
+    var origin=panel.getBoundingClientRect();
+    var left=Math.max(leftEdge,Math.min(rightEdge-origin.width,v.left+v.width-origin.width-6));
+    style(panel,'--gm-flyout-left',(left-origin.left)+'px');
+    style(panel,'--gm-flyout-top',(top-origin.top)+'px');
+  }
+  function positionPanel(panel,anchor){
+    if(!booted||!panel)return;
+    var v=viewport(),top=mapTopFor(v);
+    if(current!=='current')fitRail(v,top);
+    fitPanel(panel,anchor,v,top);
   }
   function fitQrMenu(v,mapTop){
     var panel=document.getElementById('qr-menu');if(!visible(panel))return;
@@ -75,19 +100,16 @@
     if(r.top<mapTop||r.bottom>v.top+v.height-6){style(panel,'position','fixed');style(panel,'top',Math.round(Math.max(mapTop,Math.min(r.top,v.top+v.height-r.height-6)))+'px');style(panel,'bottom','auto');style(panel,'transform','none');}
   }
   function fit(){
-    queued=false;if(current==='current')return;
-    var v=viewport(),map=document.getElementById('map'),header=document.querySelector('#app > header');
-    var mapTop=Math.max(v.top+6,map?map.getBoundingClientRect().top:v.top,header?header.getBoundingClientRect().bottom:v.top);
-    // Leave a little map space even on unusually low browser windows.
-    mapTop=Math.ceil(Math.min(mapTop,v.top+Math.max(6,v.height-80)));
-    fitRail(v,mapTop);
+    queued=false;
+    var v=viewport(),mapTop=mapTopFor(v);
+    if(current!=='current')fitRail(v,mapTop);
     var rail=document.getElementById('quick-toggles');
     if(rail)rail.querySelectorAll('.qt-cat-panel').forEach(function(panel){
-      var id=panel.id+'-btn';fitPanel(panel,document.getElementById(id),v,mapTop);
+      var anchor=rail.querySelector('[aria-controls="'+panel.id+'"]')||document.getElementById(panel.id+'-btn');
+      fitPanel(panel,anchor,v,mapTop);
     });
-    fitQrMenu(v,mapTop);
+    if(current!=='current')fitQrMenu(v,mapTop);
     if(window.repositionMenuUp)window.repositionMenuUp();
-    // Detached nodes must not accumulate in the style-restore registry.
     saved.forEach(function(_props,node){if(!node.isConnected)saved.delete(node);});
   }
   function schedule(){if(!booted||queued)return;queued=true;window.requestAnimationFrame(fit);}
@@ -113,6 +135,7 @@
     document.addEventListener('genova:text-size-changed',schedule);
     window.addEventListener('resize',schedule,{passive:true});
     window.addEventListener('orientationchange',schedule,{passive:true});
+    document.addEventListener('scroll',function(e){if(e.target&&e.target.closest&&e.target.closest('#quick-toggles'))schedule();},true);
     window.addEventListener('genova:preferences-reset',function(){setSize('compact',false);});
     window.addEventListener('storage',function(e){if(e.key===KEY||e.key===null)setSize(read(),false);});
     if(window.visualViewport){window.visualViewport.addEventListener('resize',schedule);window.visualViewport.addEventListener('scroll',schedule);}
@@ -123,6 +146,7 @@
     setSize(current,false);
   }
   document.documentElement.setAttribute('data-map-controls-size',current);
-  window.GenovaMapControlsSize={get:function(){return current;},set:function(size){setSize(size,true);}};
+  document.documentElement.setAttribute('data-map-flyouts','anchored');
+  window.GenovaMapControlsSize={positionPanel:positionPanel,get:function(){return current;},set:function(size){setSize(size,true);}};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();

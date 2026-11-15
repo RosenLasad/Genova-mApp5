@@ -121,6 +121,10 @@
 
   function positionRoutesPanel(){
     if(panel.hasAttribute('hidden')) return;
+    if(window.GenovaMapControlsSize&&window.GenovaMapControlsSize.positionPanel){
+      window.GenovaMapControlsSize.positionPanel(panel,mainButton);
+      return;
+    }
     var viewportHeight = window.innerHeight || document.documentElement.clientHeight || 700;
     var topLimit = 8;
     var bottomLimit = viewportHeight - 10;

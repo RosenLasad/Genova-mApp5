@@ -56,6 +56,10 @@
     align(btn, panel);
     btn.setAttribute('aria-expanded','true');
     panel.removeAttribute('hidden');
+    // Position before focusing: focusing a still-unpositioned menu can scroll to the toolbar.
+    if(window.GenovaMapControlsSize&&window.GenovaMapControlsSize.positionPanel){
+      window.GenovaMapControlsSize.positionPanel(panel,btn);
+    }
 
     var f = panel.querySelector('.qt-btn,button,[href],input,select,textarea');
     if(f && f.focus){ try{ f.focus(); }catch(_){ } }

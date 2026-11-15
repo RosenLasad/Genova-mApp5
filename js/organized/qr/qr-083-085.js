@@ -210,6 +210,8 @@ function docIcon(){
 /* Position quick toggles under the toolbar (preview-only, no behavior yet) */
 (function(){
   function placeDock(){
+    // Compact profiles own their viewport-based rail geometry.
+    if(window.GenovaMapControlsSize && window.GenovaMapControlsSize.get()!=='current') return true;
     var mapEl = document.getElementById('map');
     var dock = document.getElementById('quick-toggles');
     if(!mapEl || !dock) return false;

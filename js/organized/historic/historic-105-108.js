@@ -25,6 +25,8 @@ return guess || null;
   }
 
   function positionDock(){
+    // Compact profiles own their viewport-based rail geometry.
+    if(window.GenovaMapControlsSize && window.GenovaMapControlsSize.get()!=='current') return true;
     var dock = document.getElementById('quick-toggles');
     if (!dock) return;
     var home = getHomeEl();
