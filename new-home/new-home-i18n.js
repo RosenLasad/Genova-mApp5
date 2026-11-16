@@ -3,6 +3,7 @@
   'use strict';
   var languages = ['it','en','es','fr','ar','ru','zh','lij'];
   var rows = [
+    ['Il documentario di Alessandro Bellagamba · Guarda su TV, PC o telefono','The documentary by Alessandro Bellagamba · Watch on TV, computer or phone','El documental de Alessandro Bellagamba · Véalo en TV, ordenador o teléfono','Le documentaire d’Alessandro Bellagamba · Sur TV, ordinateur ou téléphone','فيلم أليساندرو بيلاغامبا الوثائقي · شاهده على التلفاز أو الكمبيوتر أو الهاتف','Документальный фильм Алессандро Беллагамбы · На ТВ, компьютере или телефоне','Alessandro Bellagamba 的纪录片 · 在电视、电脑或手机上观看','O documentaio de Alessandro Bellagamba · Amîalo in TV, sciô PC ò sciô telefono'],
     ['Benvenuto','Welcome','Bienvenido','Bienvenue','مرحباً','Добро пожаловать','欢迎','Benvegnûo'],
     ['MAPPA','MAP','MAPA','CARTE','الخريطة','КАРТА','地图','MAPPA'],
     ['Vai alla mappa','Go to the map','Ir al mapa','Voir la carte','انتقل إلى الخريطة','Перейти к карте','前往地图','Vanni a-a mappa'],

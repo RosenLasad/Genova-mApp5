@@ -156,6 +156,7 @@
       description:'Punti QR, documentari, audioguide e contenuti video dedicati alla città.',
       categories:[
         {title:'Punti QR', note:'Guarda com’erano i luoghi di Genova', type:'qr', mapIcon:'toolbar/qr.svg', mapToggle:'#btn-qr-removed'},
+        {title:'Storie di Genova', note:'Il documentario di Alessandro Bellagamba · Guarda su TV, PC o telefono', href:'/storiedigenova', icon:'storiedigenova/icona-documentario.svg'},
         {title:'MiniDoc', note:'Brevi documentari dedicati a quartieri e luoghi', type:'minidoc', mapIcon:'icons/passato/minidoc.svg', mapToggle:'.qt-doc-all'},
         {title:'Audioguide', note:'Ascolta storie e approfondimenti', disabled:true, comingSoon:true},
         {title:'Videoguide', note:'Percorsi raccontati attraverso le immagini', disabled:true, comingSoon:true}
@@ -1029,6 +1030,12 @@
           '  <span><strong>'+escapeHtml(category.title)+'</strong><small>'+escapeHtml(category.note)+'</small></span>'+
           '  <span class="gm-new-home-category-status">'+escapeHtml(category.comingSoon ? 'In arrivo' : '')+'</span>'+
           '</div>';
+      }
+      if(category.href){
+        return '<a class="gm-new-home-category gm-new-home-documentary" href="'+escapeHtml(category.href)+'">'+
+          '<img class="gm-new-home-documentary-icon" src="'+escapeHtml(category.icon)+'" alt="" aria-hidden="true">'+
+          '<span><strong>'+escapeHtml(category.title)+'</strong><small>'+escapeHtml(category.note)+'</small></span>'+
+          '<span class="gm-new-home-category-arrow" aria-hidden="true">›</span></a>';
       }
       if(category.mapIcon && category.mapToggle){
         var sourceToggle = findMapToggle(category);
@@ -2888,6 +2895,7 @@
   }
 
   function openCategory(section, category){
+    if(category.href){ window.location.assign(category.href); return; }
     applyTheme(section);
     currentCategory = category;
     if(category.action){ runExistingAction(category.action); return; }

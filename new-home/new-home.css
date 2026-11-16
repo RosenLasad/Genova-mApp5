@@ -1894,3 +1894,8 @@ button.gm-new-home-layer-copy:hover strong{ color:var(--gm-theme-dark); text-dec
   .gm-new-home-global-search-box{ min-height:46px; padding:0 12px; border-radius:13px; }
   .gm-new-home-global-search-list{ max-height:min(34vh,290px); }
 }
+
+/* Sala documentario: collegamento diretto, senza attivazione sulla mappa. */
+.gm-new-home-documentary{color:inherit;text-decoration:none;gap:14px;}
+.gm-new-home-documentary-icon{width:52px;height:52px;flex:0 0 52px;object-fit:contain;}
+.gm-new-home-documentary > span:not(.gm-new-home-category-arrow){flex:1;min-width:0;}

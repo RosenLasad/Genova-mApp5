@@ -10,3 +10,17 @@
   [headers.values]
     Cache-Control = "no-store"
     X-Content-Type-Options = "nosniff"
+
+# Pagina autonoma del documentario, sullo stesso dominio e account della mappa.
+[[redirects]]
+  from = "/storiedigenova"
+  to = "/storiedigenova/index.html"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/storiedigenova*"
+  [headers.values]
+    Cache-Control = "no-store"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Content-Type-Options = "nosniff"

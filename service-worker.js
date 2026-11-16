@@ -1,5 +1,5 @@
 // service-worker.js
-const CACHE_NAME = "genova-mapp-2026-09-01-clean-basemap-30";
+const CACHE_NAME = "genova-mapp-2026-11-17-documentario-31";
 const OFFLINE_URL = "/";
 
 self.addEventListener("install", event => {
@@ -56,19 +56,36 @@ self.addEventListener("fetch", event => {
   // NON cacheare i video (sennò ti riempi la cache e poi piangi)
   if (url.pathname.match(/\.(mp4|webm|mov)$/i)) return;
 
-  // Navigazioni (HTML): network-first con fallback alla home
+  // La sala del documentario richiede rete: non memorizzare pagina o risorse
+  // nella cache della mappa, né mostrare la mappa al posto della sala offline.
+  if (url.pathname === "/storiedigenova" || url.pathname.startsWith("/storiedigenova/")) {
+    if (req.mode === "navigate") {
+      event.respondWith(fetch(req).catch(() => new Response(
+        '<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Storie di Genova · Connessione richiesta</title><body style="font:20px/1.6 system-ui;padding:8vw;background:#10292e;color:#f3ead8"><h1>Collegati a Internet</h1><p>Per accedere al documentario e collegare la TV serve una connessione. Ricarica la pagina quando sei online.</p><a style="color:#e9bf73" href="/">Torna a Genova mApp</a></body></html>',
+        {status:503, headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}}
+      )));
+    }
+    return;
+  }
+
+  // Ogni altra pagina HTML ha la propria copia offline. Solo la vera Home
+  // aggiorna la voce "/": giochi e altre pagine non possono sostituirla.
   if (req.mode === "navigate") {
-    event.respondWith(
-      fetch(req)
-        .then(response => {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(OFFLINE_URL, copy));
-          return response;
-        })
-        .catch(() =>
-          caches.match(OFFLINE_URL).then(resp => resp || Response.error())
-        )
-    );
+    const navigationKey = url.pathname === "/" || url.pathname === "/index.html"
+      ? OFFLINE_URL : url.pathname;
+    event.respondWith((async () => {
+      try {
+        const response = await fetch(req);
+        if (response.ok && response.type !== "opaque") {
+          const cache = await caches.open(CACHE_NAME);
+          await cache.put(navigationKey, response.clone());
+        }
+        return response;
+      } catch (_) {
+        const cache = await caches.open(CACHE_NAME);
+        return (await cache.match(navigationKey)) || Response.error();
+      }
+    })());
     return;
   }
 
