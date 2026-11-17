@@ -7,6 +7,27 @@ var session=null,viewing='direct',view='home',checked='',approved=false;
 var pollTimer=null,clockTimer=null,generation=0,creating=false,initialized=false;
 var entitlement=null,catalog=null,accessLoading=false,buying=false,accessVersion=0,lastUserId='';
 var pendingReceipt='',checkoutRequest=null;
+var resumeStorage;try{resumeStorage=window.localStorage;}catch(_){}
+var bookmarks=window.StorieResume.create({storage:resumeStorage}),tracker=null,playbackVersion=0,playingRequest=false,streamPromise=null;
+function progressKey(){return viewing==='tv'?session?.progressKey:entitlement?.progressKey;}
+function renderResume(){
+ var point=bookmarks.read(progressKey());
+ el('play').textContent=point?'▶ Riprendi da '+StorieResume.format(point.position):'▶ Riproduci il documentario';
+ el('restart').hidden=!point;el('restart').disabled=el('play').disabled;
+ el('resume-note').hidden=!point;
+ el('resume-note').textContent=point?'Hai interrotto a '+StorieResume.format(point.position)+'. Il punto è ricordato per questo account su questo browser.':'';
+}
+function loadStream(){
+ if(window.Stream)return Promise.resolve(window.Stream);
+ if(streamPromise)return streamPromise;
+ streamPromise=new Promise(function(resolve){
+  var script=document.createElement('script'),timer,finished=false;
+  function done(){if(finished)return;finished=true;clearTimeout(timer);resolve(window.Stream||null);}
+  script.src='https://embed.cloudflarestream.com/embed/sdk.latest.js';script.async=true;script.onload=done;script.onerror=done;
+  timer=setTimeout(done,8000);document.head.appendChild(script);
+ });
+ return streamPromise;
+}
 function el(id){return document.getElementById(id);}
 function user(){return window.GenovaAuth?window.GenovaAuth.getUser():null;}
 function show(id){view=id;ids.forEach(function(x){el(x).hidden=x!==id;});el('error').hidden=true;var first=el(id).querySelector('button:not([hidden]),input');if(first&&first.getClientRects().length&&!first.disabled)first.focus();}
@@ -16,7 +37,7 @@ function stop(){generation++;clearTimeout(pollTimer);clearInterval(clockTimer);}
 function format(code){return code.slice(0,5)+' '+code.slice(5);}
 function save(){try{if(session)sessionStorage.setItem(SESSION_KEY,JSON.stringify(session));else sessionStorage.removeItem(SESSION_KEY);}catch(_){}}
 function clearReturn(){try{sessionStorage.removeItem('gm-storie-auth-return');localStorage.removeItem('gm-storie-auth-return');}catch(_){}}
-function hidePlayer(){el('player-wrap').replaceChildren();}
+function hidePlayer(){playbackVersion++;if(tracker){tracker.detach();tracker=null;}el('player-wrap').replaceChildren();}
 function setRoute(query){history.replaceState(null,'',BASE+(query?'?'+query:''));}
 function receipt(){
  if(pendingReceipt)return pendingReceipt;
@@ -55,6 +76,7 @@ function renderAccess(){
  document.querySelectorAll('[data-check-access]').forEach(function(button){button.disabled=accessLoading||buying;});
  el('approve').disabled=approved||accessLoading||!owned||!state.ready;
  if(viewing==='direct'&&view==='ready')el('play').disabled=!owned||!state.ready;
+ if(view==='ready')renderResume();
  var modes=[];if(state.testMode)modes.push('MODALITÀ DI PROVA — i pagamenti non addebitano importi reali.');
  if(entitlement?.preview)modes.push('Anteprima amministratore: nessun acquisto registrato.');
  el('mode-notice').textContent=modes.join(' ');el('mode-notice').hidden=!modes.length;
@@ -100,7 +122,7 @@ async function poll(ticket,version){
  if(version!==generation||session!==ticket)return;
  try{
   var result=await api('status',{code:ticket.code,secret:ticket.secret});if(version!==generation||session!==ticket)return;
-  if(result.approved){stop();ticket.until=result.until;save();ready('tv');return;}el('waiting').textContent='In attesa dell’autorizzazione…';
+  if(result.approved){stop();ticket.until=result.until;ticket.progressKey=result.progressKey;save();ready('tv');return;}el('waiting').textContent='In attesa dell’autorizzazione…';
  }catch(error){
   if(version!==generation||session!==ticket)return;
   if([401,403,404,410].indexOf(error.status)>=0){stop();session=null;save();show('pair');el('waiting').textContent='Collega nuovamente la TV con un nuovo QR.';fail(error);return;}
@@ -144,20 +166,39 @@ el('approve').onclick=async function(){
  catch(error){if(error.status===401)openLogin('login');if(error.status===402)await checkAccess(false);fail(error);}
  finally{renderAccess();}
 };
-el('play').onclick=async function(){
- this.disabled=true;el('error').hidden=true;
+async function playDocumentary(restart){
+ if(playingRequest)return;playingRequest=true;
+ hidePlayer();var version=playbackVersion,mode=viewing,accountId=user()?.id,ticket=session;
+ el('play').disabled=true;el('restart').disabled=true;el('error').hidden=true;
  try{
-  var result=viewing==='tv'&&session?await api('tv-playback',{code:session.code,secret:session.secret}):await api('playback',{},true);
+  var sdk=loadStream();
+  var result=mode==='tv'&&ticket?await api('tv-playback',{code:ticket.code,secret:ticket.secret}):await api('playback',{},true);
+  if(version!==playbackVersion||(mode==='direct'&&user()?.id!==accountId))return;
   var target=new URL(result.url);
   if(result.provider!=='cloudflare'||target.protocol!=='https:'||!/^customer-[a-z0-9-]+\.cloudflarestream\.com$/i.test(target.hostname)||result.until<=Date.now())throw new Error('Sorgente video non disponibile.');
-  show('watch');hidePlayer();var frame=document.createElement('iframe');frame.title='Storie di Genova — documentario';frame.src=target.href;
+  var key=result.progressKey,point=bookmarks.read(key),startTime=restart?0:Math.floor(point?.position||0);
+  target.searchParams.set('startTime',String(startTime));
+  if(mode==='tv'&&ticket){ticket.progressKey=key;save();}else if(entitlement)entitlement.progressKey=key;
+  show('watch');var frame=document.createElement('iframe');frame.title='Storie di Genova — documentario';frame.src=target.href;
   frame.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';frame.allowFullscreen=true;frame.referrerPolicy='strict-origin-when-cross-origin';el('player-wrap').appendChild(frame);frame.focus();
+  if(restart&&point)bookmarks.write(key,0,point.duration,false);
+  el('resume-status').textContent=startTime?'Ripresa da '+StorieResume.format(startTime)+'. Usa Play nel video se necessario.':'Il punto di visione viene ricordato automaticamente in questo browser.';
+  var stream=await sdk;
+  if(version!==playbackVersion)return;
+  if(stream){
+   tracker=bookmarks.attach({player:stream(frame),key:key,startTime:startTime,onSave:function(state){
+    el('resume-status').textContent=!state.persistent?'Il browser non consente il salvataggio: il punto resterà disponibile solo finché questa pagina rimane aperta.':state.ended?'Visione completata. La prossima volta il film partirà dall’inizio.':'Punto di visione ricordato su questo browser: '+StorieResume.format(state.position)+'.';
+   }});
+  }else el('resume-status').textContent='Puoi vedere il film, ma il salvataggio del punto non è disponibile in questo momento. Ricarica la pagina per riprovare.';
  }catch(error){
+  if(version!==playbackVersion)return;
   if(error.status===401&&viewing==='direct'){show('direct-login');openLogin('login');}
   if(error.status===402&&viewing==='direct'){show('purchase');await checkAccess(true);}
   fail(error);
- }finally{this.disabled=false;}
-};
+ }finally{playingRequest=false;el('play').disabled=false;el('restart').disabled=false;if(view==='ready')renderAccess();}
+}
+el('play').onclick=function(){playDocumentary(false);};
+el('restart').onclick=function(){playDocumentary(true);};
 el('close-player').onclick=function(){hidePlayer();ready(viewing);};
 el('disconnect').onclick=async function(){this.disabled=true;try{if(session)await api('revoke',{code:session.code,secret:session.secret});session=null;save();home();}catch(error){fail(error);}finally{this.disabled=false;}};
 document.querySelectorAll('[data-home]').forEach(function(button){button.onclick=home;});
@@ -172,7 +213,8 @@ document.addEventListener('keydown',function(event){
  var items=Array.from(document.querySelectorAll('header button,header a,main button,main input,footer button,footer a')).filter(function(node){return node.getClientRects().length&&!node.disabled;}),index=items.indexOf(document.activeElement),step=event.key==='ArrowDown'||event.key==='ArrowRight'?1:-1;
  if(index>=0){event.preventDefault();items[(index+step+items.length)%items.length].focus();}
 });
-window.addEventListener('pagehide',stop);
+window.addEventListener('pagehide',function(){stop();if(tracker)tracker.flush();});
+document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden'&&tracker)tracker.flush();});
 window.addEventListener('pageshow',function(event){if(event.persisted){buying=false;updateAuth();if(view==='pair'&&session){stop();renderPair();poll(session,generation);}else if(user())checkAccess(view==='purchase');}});
 async function boot(){
  var params=new URLSearchParams(location.search),candidate=params.get('session_id');

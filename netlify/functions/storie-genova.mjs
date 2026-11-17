@@ -1,4 +1,5 @@
 import Stripe from 'stripe';
+import {progressKey} from './_shared/storie-progress-key.mjs';
 import {getDeployStore} from '@netlify/blobs';
 import {authenticatedUser,deletedUserStore,isAdminUser} from './_shared/billing-store.mjs';
 import {createHandler} from './_shared/storie-genova-service.mjs';
@@ -17,5 +18,6 @@ export default createHandler({
  },
  videoFactory:()=>cloudflareMovie({env}),
  salesEnabled:()=>env('STORIE_SALES_ENABLED')==='true',
+ progressKeyFactory:(userId,testMode)=>progressKey(userId,env('CF_STREAM_VIDEO_ID'),testMode),
 });
 export const config={rateLimit:{action:'rate_limit',aggregateBy:['ip','domain'],windowSize:60,windowLimit:90}};

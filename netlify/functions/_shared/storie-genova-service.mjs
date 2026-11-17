@@ -7,7 +7,7 @@ const hash=value=>createHash('sha256').update(value).digest('hex');
 const normalize=value=>typeof value==='string'?value.toUpperCase().replace(/[\s-]/g,''):'';
 const json=(value,status=200)=>Response.json(value,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer'}});
 
-export function createHandler({storeFactory,authenticate,isDeleted,paymentsFactory,videoFactory,salesEnabled,now=Date.now}) {
+export function createHandler({storeFactory,authenticate,isDeleted,paymentsFactory,videoFactory,salesEnabled,progressKeyFactory=()=>'',now=Date.now}) {
  return async request=>{
   if(request.method!=='POST')return json({error:'Metodo non consentito.'},405);
   if(request.headers.get('origin')!==new URL(request.url).origin)return json({error:'Origine della richiesta non consentita.'},403);
@@ -37,7 +37,7 @@ export function createHandler({storeFactory,authenticate,isDeleted,paymentsFacto
     if(action==='access'){
      const owned=await payments.purchase(user,body.receiptSession);
      const available=await availability();
-     return json({...available,owned:owned.owned,...(owned.receiptSession?{receiptSession:owned.receiptSession}:{}),preview:owned.preview||false,testMode:payments.testMode,purchasable:available.ready&&salesEnabled(),price:MOVIE_PRICE,currency:MOVIE_CURRENCY});
+     return json({...available,progressKey:owned.owned?progressKeyFactory(user.id,payments.testMode):'',owned:owned.owned,...(owned.receiptSession?{receiptSession:owned.receiptSession}:{}),preview:owned.preview||false,testMode:payments.testMode,purchasable:available.ready&&salesEnabled(),price:MOVIE_PRICE,currency:MOVIE_CURRENCY});
     }
     if(action==='checkout'){
      if(!salesEnabled())throw problem('sales_disabled','Gli acquisti non sono ancora attivi. Riprova più tardi.');
@@ -48,7 +48,7 @@ export function createHandler({storeFactory,authenticate,isDeleted,paymentsFacto
     if(action==='playback'){
      const owned=await payments.purchase(user,body.receiptSession);
      if(!owned.owned)throw problem('purchase_required','Acquista il documentario per avviare la visione.',402);
-     return json({...await videoFactory().playback(origin),preview:owned.preview||false,testMode:payments.testMode});
+     return json({...await videoFactory().playback(origin),preview:owned.preview||false,testMode:payments.testMode,progressKey:progressKeyFactory(user.id,payments.testMode)});
     }
    }
    const store=storeFactory();
@@ -90,9 +90,9 @@ export function createHandler({storeFactory,authenticate,isDeleted,paymentsFacto
      payments=paymentsFactory();
      const owned=grant.preview?payments.previewUser({id:grant.userId,email:grant.email}):await payments.verifyIntent(grant.paymentIntentId,grant.userId);
      if(!owned)throw problem('purchase_required','L’acquisto non risulta disponibile. Verificalo dal tuo account sul telefono.',402);
-     return json({...await videoFactory().playback(origin),preview:grant.preview||false,testMode:payments.testMode});
+     return json({...await videoFactory().playback(origin),preview:grant.preview||false,testMode:payments.testMode,progressKey:progressKeyFactory(grant.userId,payments.testMode)});
     }
-    return json({approved:true,until:grant.until});
+    return json({approved:true,until:grant.until,progressKey:progressKeyFactory(grant.userId,paymentsFactory().testMode)});
    }
    if(session.expires<=now())throw problem('expired','Sessione scaduta. Collega nuovamente la TV.',410);
    if(action==='tv-playback')throw problem('not_authorized','Autorizza prima la TV dal telefono.',403);
