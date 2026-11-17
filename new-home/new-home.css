@@ -1896,6 +1896,35 @@ button.gm-new-home-layer-copy:hover strong{ color:var(--gm-theme-dark); text-dec
 }
 
 /* Sala documentario: collegamento diretto, senza attivazione sulla mappa. */
-.gm-new-home-documentary{color:inherit;text-decoration:none;gap:14px;}
-.gm-new-home-documentary-icon{width:52px;height:52px;flex:0 0 52px;object-fit:contain;}
-.gm-new-home-documentary > span:not(.gm-new-home-category-arrow){flex:1;min-width:0;}
+/* Documentario: tre colonne come le voci Multimedia con icona. */
+.gm-new-home-category.gm-new-home-documentary{
+  grid-template-columns:68px minmax(0,1fr) auto;
+  gap:12px;
+  min-width:0;
+  color:inherit;
+  text-decoration:none;
+}
+.gm-new-home-documentary-icon{
+  display:block;
+  width:68px;
+  height:68px;
+  max-width:100%;
+  object-fit:contain;
+}
+.gm-new-home-documentary > span:not(.gm-new-home-category-arrow){
+  min-width:0;
+  overflow-wrap:anywhere;
+}
+.gm-new-home-documentary small{ display:block; }
+.gm-new-home-documentary > .gm-new-home-category-arrow{ justify-self:end; }
+.gm-new-home-documentary:focus-visible{
+  outline:3px solid var(--gm-theme-accent);
+  outline-offset:3px;
+}
+@media (max-width:360px){
+  .gm-new-home-category.gm-new-home-documentary{
+    grid-template-columns:52px minmax(0,1fr) auto;
+    gap:8px;
+  }
+  .gm-new-home-documentary-icon{ width:52px; height:52px; }
+}
