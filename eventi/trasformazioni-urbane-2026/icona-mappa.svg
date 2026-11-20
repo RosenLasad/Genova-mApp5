@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="76" viewBox="0 0 64 76" role="img" aria-labelledby="title">
+  <title id="title">Trasformazioni urbane</title>
+  <path d="M32 3C15.5 3 4 15.2 4 31c0 17.8 18.4 34.5 28 42 9.6-7.5 28-24.2 28-42C60 15.2 48.5 3 32 3Z" fill="#213a45" stroke="#f8f3de" stroke-width="3"/>
+  <circle cx="32" cy="31" r="21" fill="#101e28" stroke="#a5d0bf" stroke-width="1.35"/>
+  <g transform="translate(9 8) scale(.71875)" color="#a5d0bf"><path d="M12 44V30l10-8 10 8v14m0-1V20h12v23m-8-26h14m-2 3 4 5m-36 8h3m6 0h3m9-6h3m-3 7h3M9 49h46" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

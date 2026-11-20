@@ -1,0 +1,117 @@
+{
+  "id": "trasformazioni-urbane-2026",
+  "titolo": {
+    "it": "Grande Mostra diffusa Trasformazioni Urbane",
+    "en": "Urban Transformations: a citywide exhibition",
+    "es": "Transformaciones urbanas: exposición en varias sedes",
+    "fr": "Transformations urbaines : une exposition dans la ville",
+    "ar": "التحولات الحضرية: معرض في عدة مواقع",
+    "ru": "«Городские преобразования»: выставка на нескольких площадках",
+    "zh": "城市变迁：热那亚多馆联展",
+    "lij": "Grande Mostra difuza Trasformaçioin Urbane"
+  },
+  "categoria": {
+    "it": "Mostra",
+    "en": "Exhibition",
+    "es": "Exposición",
+    "fr": "Exposition",
+    "ar": "معرض",
+    "ru": "Выставка",
+    "zh": "展览",
+    "lij": "Mostra"
+  },
+  "descrizione": {
+    "it": "Una mostra in più sedi racconta come Genova è cambiata attraverso fotografie, progetti, opere e documenti. Al Galata il tema è il rapporto tra città e porto. A Villa Croce il percorso ripercorre un secolo di Grande Genova, dal 1926 a oggi.",
+    "en": "A citywide exhibition looks at how Genoa has changed through photographs, plans, art and documents. The Galata explores the ties between city and port, while Villa Croce traces a century of Greater Genoa from 1926 to today.",
+    "es": "Una exposición en varias sedes recorre la evolución de Génova a través de fotografías, proyectos, obras y documentos. El Galata aborda la relación entre la ciudad y el puerto. Villa Croce repasa un siglo de la Gran Génova, desde 1926 hasta hoy.",
+    "fr": "Une exposition en plusieurs lieux retrace les mutations de Gênes à travers des photographies, des projets, des œuvres et des documents. Le Galata explore les liens entre la ville et le port. Villa Croce revient sur un siècle de Grande Gênes, de 1926 à aujourd’hui.",
+    "ar": "يروي هذا المعرض، الموزع على عدة مواقع، قصة تغير جنوة من خلال صور ومخططات وأعمال ووثائق. يتناول متحف غالاتا علاقة المدينة بمينائها، فيما تستعرض فيلا كروتشي قرناً من تاريخ جنوة الكبرى منذ عام 1926.",
+    "ru": "Фотографии, проекты, произведения искусства и документы рассказывают, как менялась Генуя. Музей Галата показывает связь города и порта, а Вилла Кроче прослеживает историю Большой Генуи с 1926 года до наших дней.",
+    "zh": "联展通过照片、设计图、艺术品和文献讲述热那亚的变迁。加拉塔海事博物馆聚焦城市与港口的关系，克罗切别墅回顾自1926年以来大热那亚的百年历程。",
+    "lij": "Fotografie, progetti, euvie e documenti contan comme Zena a l’é cangiâ. A-o Galata se parla do legamme tra çittæ e pòrto. A Villa Croce se conta un secolo de Grande Zena, da-o 1926 a ancheu."
+  },
+  "dettagli": {
+    "it": "«Genova, la città e il porto» al Galata dal 26 novembre e «Cent’anni di Grande Genova» a Villa Croce dal 27 novembre. Entrambe le sezioni terminano il 4 aprile 2027. Il sito dei Musei di Genova elenca anche le altre sedi.",
+    "en": "The city and port section opens at the Galata on 26 November. A century of Greater Genoa opens at Villa Croce on 27 November. Both close on 4 April 2027. See the Genoa Museums website for the other venues.",
+    "es": "La sección sobre la ciudad y el puerto abre en el Galata el 26 de noviembre. La muestra sobre el centenario de la Gran Génova abre en Villa Croce el 27 de noviembre. Ambas cierran el 4 de abril de 2027. Consulta las demás sedes en el sitio de los Museos de Génova.",
+    "fr": "La section sur la ville et le port ouvre au Galata le 26 novembre. Celle sur le centenaire de la Grande Gênes ouvre à Villa Croce le 27 novembre. Les deux se terminent le 4 avril 2027. Les autres lieux figurent sur le site des Musées de Gênes.",
+    "ar": "يفتتح قسم المدينة والميناء في غالاتا يوم 26 نوفمبر، وقسم مئوية جنوة الكبرى في فيلا كروتشي يوم 27 نوفمبر. ويختتم القسمان يوم 4 أبريل 2027. يعرض موقع متاحف جنوة بقية المواقع.",
+    "ru": "Раздел о городе и порте открывается в Галате 26 ноября, выставка о столетии Большой Генуи на Вилле Кроче — 27 ноября. Обе работают до 4 апреля 2027 года. Другие площадки перечислены на сайте музеев Генуи.",
+    "zh": "加拉塔的城市与港口单元于11月26日开放；克罗切别墅的大热那亚百年单元于11月27日开放。两处均展至2027年4月4日。其他展馆请见热那亚博物馆官网。",
+    "lij": "A seçion in sciâ çittæ e o pòrto a l’arve a-o Galata o 26 de novembre. Quella in sciô çentennäio de Grande Zena a l’arve a Villa Croce o 27. Tutt’e doe finiscian o 4 d’arvî do 2027. Pe-e âtre sedi, vëddi o scito di Muzei de Zena."
+  },
+  "dataInizio": "2026-11-26",
+  "dataFine": "2027-05-16",
+  "giorniAnticipo": 30,
+  "fusoOrario": "Europe/Rome",
+  "indirizzo": {
+    "it": "Galata Museo del Mare · Villa Croce",
+    "en": "Galata Museo del Mare · Villa Croce",
+    "es": "Galata Museo del Mare · Villa Croce",
+    "fr": "Galata Museo del Mare · Villa Croce",
+    "ar": "Galata Museo del Mare · Villa Croce",
+    "ru": "Galata Museo del Mare · Villa Croce",
+    "zh": "Galata Museo del Mare · Villa Croce",
+    "lij": "Galata Museo del Mare · Villa Croce"
+  },
+  "lat": 44.41422,
+  "lng": 8.92342,
+  "linkUfficiale": "https://www.museidigenova.it/it/grande-mostra-diffusa-trasformazioni-urbane",
+  "copertina": "copertina.svg",
+  "iconaMappa": "icona-mappa.svg",
+  "visibile": true,
+  "sedi": [
+    {
+      "id": "galata-museo-del-mare",
+      "nome": {
+        "it": "Galata Museo del Mare",
+        "en": "Galata Museo del Mare",
+        "es": "Galata Museo del Mare",
+        "fr": "Galata Museo del Mare",
+        "ar": "Galata Museo del Mare",
+        "ru": "Galata Museo del Mare",
+        "zh": "Galata Museo del Mare",
+        "lij": "Galata Museo del Mare"
+      },
+      "indirizzo": {
+        "it": "Galata Museo del Mare, Calata De Mari 1, Genova",
+        "en": "Galata Museo del Mare, Calata De Mari 1, Genoa",
+        "es": "Galata Museo del Mare, Calata De Mari 1, Génova",
+        "fr": "Galata Museo del Mare, Calata De Mari 1, Gênes",
+        "ar": "Galata Museo del Mare, Calata De Mari 1, جنوة",
+        "ru": "Galata Museo del Mare, Calata De Mari 1, Генуя",
+        "zh": "Galata Museo del Mare, Calata De Mari 1, 热那亚",
+        "lij": "Galata Museo del Mare, Calata De Mari 1, Zena"
+      },
+      "lat": 44.41422,
+      "lng": 8.92342,
+      "dataFine": "2027-04-04"
+    },
+    {
+      "id": "villa-croce",
+      "nome": {
+        "it": "Villa Croce",
+        "en": "Villa Croce",
+        "es": "Villa Croce",
+        "fr": "Villa Croce",
+        "ar": "Villa Croce",
+        "ru": "Villa Croce",
+        "zh": "Villa Croce",
+        "lij": "Villa Croce"
+      },
+      "indirizzo": {
+        "it": "Villa Croce, Via Jacopo Ruffini 3, Genova",
+        "en": "Villa Croce, Via Jacopo Ruffini 3, Genoa",
+        "es": "Villa Croce, Via Jacopo Ruffini 3, Génova",
+        "fr": "Villa Croce, Via Jacopo Ruffini 3, Gênes",
+        "ar": "Villa Croce, Via Jacopo Ruffini 3, جنوة",
+        "ru": "Villa Croce, Via Jacopo Ruffini 3, Генуя",
+        "zh": "Villa Croce, Via Jacopo Ruffini 3, 热那亚",
+        "lij": "Villa Croce, Via Jacopo Ruffini 3, Zena"
+      },
+      "lat": 44.398285,
+      "lng": 8.938159,
+      "dataFine": "2027-04-04"
+    }
+  ]
+}

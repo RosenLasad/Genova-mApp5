@@ -1,0 +1,115 @@
+{
+  "id": "genova-heritage-week-2026",
+  "titolo": {
+    "it": "Genova Heritage Week 2026",
+    "en": "Genova Heritage Week 2026",
+    "es": "Genova Heritage Week 2026",
+    "fr": "Genova Heritage Week 2026",
+    "ar": "Genova Heritage Week 2026",
+    "ru": "Genova Heritage Week 2026",
+    "zh": "Genova Heritage Week 2026",
+    "lij": "Genova Heritage Week 2026"
+  },
+  "categoria": {
+    "it": "Patrimonio culturale",
+    "en": "Cultural heritage",
+    "es": "Patrimonio cultural",
+    "fr": "Patrimoine culturel",
+    "ar": "تراث ثقافي",
+    "ru": "Культурное наследие",
+    "zh": "文化遗产",
+    "lij": "Patrimonio corturâle"
+  },
+  "descrizione": {
+    "it": "Cinque giorni di incontri e visite per i vent’anni delle Strade Nuove e dei Palazzi dei Rolli nel Patrimonio Mondiale UNESCO. La rassegna esplora come si protegge e si vive il patrimonio del centro storico.",
+    "en": "Five days of talks and visits mark 20 years since the Strade Nuove and Palazzi dei Rolli became a UNESCO World Heritage Site. The programme explores how Genoa’s historic centre is lived in and looked after.",
+    "es": "Cinco días de encuentros y visitas celebran los veinte años de las Strade Nuove y los Palazzi dei Rolli como Patrimonio Mundial de la UNESCO. El programa explora cómo se vive y se protege el centro histórico de Génova.",
+    "fr": "Cinq jours de rencontres et de visites célèbrent les vingt ans de l’inscription des Strade Nuove et des Palazzi dei Rolli au patrimoine mondial de l’UNESCO. Le programme explore la vie et la préservation du centre historique.",
+    "ar": "خمسة أيام من اللقاءات والزيارات بمناسبة مرور عشرين عاماً على إدراج شوارع سترادي نووفي وقصور الرولي ضمن قائمة اليونسكو للتراث العالمي. يتناول البرنامج سبل الحفاظ على المركز التاريخي لجنوة والحياة فيه.",
+    "ru": "Пять дней встреч и экскурсий посвящены 20-летию включения улиц Страде Нуове и дворцов Ролли в Список всемирного наследия ЮНЕСКО. Программа рассказывает о жизни и сохранении исторического центра Генуи.",
+    "zh": "为庆祝新街与罗利宫殿群列入联合国教科文组织世界遗产名录20周年，热那亚举行为期五天的讲座和参观活动，探讨老城区的保护与日常生活。",
+    "lij": "Çinque giorni de incontri e vixite pe-i vint’anni de Strade Neuve e di palazzi di Rolli into Patrimonio Mondiâ de l’UNESCO. O programma o conta comme se vive e se conserva o çentro stöico."
+  },
+  "dettagli": {
+    "it": "All’Archivio di Stato l’incontro inaugurale del 23 novembre comincia alle 16:30. Il 24 novembre a Palazzo Ducale, nella Sala del Maggior Consiglio, conferenza internazionale dalle 15:30 alle 18:30. Per il programma completo e le prenotazioni consulta il sito ufficiale.",
+    "en": "The opening event at the State Archives begins at 16:30 on 23 November. Palazzo Ducale hosts the international conference in the Sala del Maggior Consiglio on 24 November, 15:30–18:30. See the official site for the full programme and reservations.",
+    "es": "El encuentro inaugural empieza el 23 de noviembre a las 16:30 en el Archivo Estatal. El 24 de noviembre, conferencia internacional en la Sala del Maggior Consiglio del Palazzo Ducale, de 15:30 a 18:30. Consulta el sitio oficial para ver el programa y reservar.",
+    "fr": "La rencontre inaugurale débute le 23 novembre à 16 h 30 aux Archives d’État. Le 24 novembre, conférence internationale de 15 h 30 à 18 h 30 dans la Sala del Maggior Consiglio du Palazzo Ducale. Programme complet et réservations sur le site officiel.",
+    "ar": "يبدأ اللقاء الافتتاحي في أرشيف الدولة يوم 23 نوفمبر الساعة 16:30. ويقام المؤتمر الدولي يوم 24 نوفمبر من 15:30 إلى 18:30 في قاعة المجلس الكبير في قصر الدوق. راجع الموقع الرسمي للبرنامج الكامل والحجز.",
+    "ru": "Открытие в Государственном архиве состоится 23 ноября в 16:30. Международная конференция пройдёт 24 ноября с 15:30 до 18:30 в зале Большого совета Палаццо Дукале. Полная программа и бронирование на официальном сайте.",
+    "zh": "11月23日16:30在国家档案馆举行开幕活动。11月24日15:30至18:30在总督宫大议会厅举行国际会议。完整日程和预约方式请见官网。",
+    "lij": "L’incontro d’avertua a l’Archivio de Stato o comensa o 23 de novembre a-e 16:30. O 24 de novembre, a Paxo, conferensa internaçionâ da-e 15:30 a-e 18:30 inte a Sala do Maggior Consiglio. Pe programma e prenotaçioin, vëddi o scito ofiçiâ."
+  },
+  "dataInizio": "2026-11-23",
+  "dataFine": "2026-11-27",
+  "giorniAnticipo": 30,
+  "fusoOrario": "Europe/Rome",
+  "indirizzo": {
+    "it": "Palazzo Ducale · Archivio di Stato di Genova",
+    "en": "Palazzo Ducale · Genoa State Archives",
+    "es": "Palazzo Ducale · Archivo Estatal de Génova",
+    "fr": "Palazzo Ducale · Archives d’État de Gênes",
+    "ar": "Palazzo Ducale · أرشيف الدولة في جنوة",
+    "ru": "Palazzo Ducale · Государственный архив Генуи",
+    "zh": "Palazzo Ducale · 热那亚国家档案馆",
+    "lij": "Palazzo Ducale · Archivio de Stato de Zena"
+  },
+  "lat": 44.40714,
+  "lng": 8.93274,
+  "linkUfficiale": "https://smart.comune.genova.it/articoli-comunicati-stampa/genova-heritage-week-una-settimana-di-eventi-concludere-le-celebrazioni",
+  "copertina": "copertina.svg",
+  "iconaMappa": "icona-mappa.svg",
+  "visibile": true,
+  "sedi": [
+    {
+      "id": "palazzo-ducale",
+      "nome": {
+        "it": "Palazzo Ducale",
+        "en": "Palazzo Ducale",
+        "es": "Palazzo Ducale",
+        "fr": "Palazzo Ducale",
+        "ar": "Palazzo Ducale",
+        "ru": "Palazzo Ducale",
+        "zh": "Palazzo Ducale",
+        "lij": "Palazzo Ducale"
+      },
+      "indirizzo": {
+        "it": "Palazzo Ducale, Piazza Giacomo Matteotti 9, Genova",
+        "en": "Palazzo Ducale, Piazza Giacomo Matteotti 9, Genoa",
+        "es": "Palazzo Ducale, Piazza Giacomo Matteotti 9, Génova",
+        "fr": "Palazzo Ducale, Piazza Giacomo Matteotti 9, Gênes",
+        "ar": "Palazzo Ducale, Piazza Giacomo Matteotti 9, جنوة",
+        "ru": "Palazzo Ducale, Piazza Giacomo Matteotti 9, Генуя",
+        "zh": "Palazzo Ducale, Piazza Giacomo Matteotti 9, 热那亚",
+        "lij": "Palazzo Ducale, Piazza Giacomo Matteotti 9, Zena"
+      },
+      "lat": 44.40714,
+      "lng": 8.93274
+    },
+    {
+      "id": "archivio-di-stato",
+      "nome": {
+        "it": "Archivio di Stato di Genova",
+        "en": "Genoa State Archives",
+        "es": "Archivo Estatal de Génova",
+        "fr": "Archives d’État de Gênes",
+        "ar": "أرشيف الدولة في جنوة",
+        "ru": "Государственный архив Генуи",
+        "zh": "热那亚国家档案馆",
+        "lij": "Archivio de Stato de Zena"
+      },
+      "indirizzo": {
+        "it": "Archivio di Stato di Genova, Piazza Santa Maria in Via Lata 7, Genova",
+        "en": "Genoa State Archives, Piazza Santa Maria in Via Lata 7, Genoa",
+        "es": "Archivo Estatal de Génova, Piazza Santa Maria in Via Lata 7, Génova",
+        "fr": "Archives d’État de Gênes, Piazza Santa Maria in Via Lata 7, Gênes",
+        "ar": "أرشيف الدولة في جنوة, Piazza Santa Maria in Via Lata 7, جنوة",
+        "ru": "Государственный архив Генуи, Piazza Santa Maria in Via Lata 7, Генуя",
+        "zh": "热那亚国家档案馆, Piazza Santa Maria in Via Lata 7, 热那亚",
+        "lij": "Archivio de Stato de Zena, Piazza Santa Maria in Via Lata 7, Zena"
+      },
+      "lat": 44.4036,
+      "lng": 8.9364
+    }
+  ]
+}

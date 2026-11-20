@@ -1,0 +1,63 @@
+{
+  "id": "giorgio-bergami-2026",
+  "titolo": {
+    "it": "Giorgio Bergami e la città in trasformazione",
+    "en": "Giorgio Bergami and the changing city",
+    "es": "Giorgio Bergami y la ciudad en transformación",
+    "fr": "Giorgio Bergami et la ville en mutation",
+    "ar": "جورجيو بيرغامي والمدينة المتغيرة",
+    "ru": "Джорджо Бергами и меняющийся город",
+    "zh": "乔尔焦·贝尔加米与变迁中的城市",
+    "lij": "Giorgio Bergami e a çittæ che cangia"
+  },
+  "categoria": {
+    "it": "Mostra",
+    "en": "Exhibition",
+    "es": "Exposición",
+    "fr": "Exposition",
+    "ar": "معرض",
+    "ru": "Выставка",
+    "zh": "展览",
+    "lij": "Mostra"
+  },
+  "descrizione": {
+    "it": "I reportage di Giorgio Bergami raccontano la Genova del dopoguerra attraverso i suoi quartieri, i volti della vita quotidiana e gli avvenimenti che hanno cambiato la città. La mostra riunisce fotografie del suo archivio al Palazzo della Meridiana.",
+    "en": "Giorgio Bergami’s photo essays follow post-war Genoa through its neighbourhoods, faces from everyday life and events that reshaped the city. The exhibition brings together photographs from his archive at Palazzo della Meridiana.",
+    "es": "Los reportajes de Giorgio Bergami retratan la Génova de posguerra a través de sus barrios, los rostros de la vida cotidiana y los acontecimientos que cambiaron la ciudad. La exposición reúne fotografías de su archivo en el Palazzo della Meridiana.",
+    "fr": "Les reportages de Giorgio Bergami racontent la Gênes de l’après-guerre à travers ses quartiers, les visages du quotidien et les événements qui ont transformé la ville. L’exposition réunit des photographies de ses archives au Palazzo della Meridiana.",
+    "ar": "توثق تقارير جورجيو بيرغامي المصورة جنوة ما بعد الحرب من خلال أحيائها ووجوه الحياة اليومية والأحداث التي غيرت المدينة. يجمع المعرض صوراً من أرشيفه في قصر ميريديانا.",
+    "ru": "Фоторепортажи Джорджо Бергами рассказывают о послевоенной Генуе через её районы, лица горожан и события, изменившие город. В Палаццо делла Меридиана представлены фотографии из его архива.",
+    "zh": "乔尔焦·贝尔加米的摄影报道记录了战后热那亚的街区、日常生活中的面孔，以及改变城市的重要事件。展览在梅里迪亚纳宫呈现其档案中的摄影作品。",
+    "lij": "I reportage de Giorgio Bergami contan a Zena do doppoguæra, co-i seu quartê, e facce de tutti i giorni e i fæti ch’an cangiou a çittæ. A mostra a mette inseme e fotografie do seu archivio a-o Palazzo della Meridiana."
+  },
+  "dettagli": {
+    "it": "Ingresso a pagamento. Lunedì e da mercoledì a venerdì 10–18. Sabato, domenica e festivi 10–19. Martedì chiuso. Chiusura straordinaria il 25 novembre. Verifica aggiornamenti e biglietti sul sito del palazzo.",
+    "en": "Tickets required. Monday and Wednesday to Friday 10:00–18:00. Saturday, Sunday and public holidays 10:00–19:00. Closed on Tuesdays and exceptionally on 25 November. See the venue website for tickets and updates.",
+    "es": "Entrada de pago. Lunes y de miércoles a viernes, de 10:00 a 18:00. Sábados, domingos y festivos, de 10:00 a 19:00. Cerrado los martes y excepcionalmente el 25 de noviembre. Consulta la web del palacio para entradas y novedades.",
+    "fr": "Entrée payante. Lundi et du mercredi au vendredi de 10 h à 18 h. Samedi, dimanche et jours fériés de 10 h à 19 h. Fermé le mardi et exceptionnellement le 25 novembre. Billets et mises à jour sur le site du palais.",
+    "ar": "الدخول بتذكرة. الاثنين ومن الأربعاء إلى الجمعة من 10:00 إلى 18:00. السبت والأحد والعطلات من 10:00 إلى 19:00. مغلق أيام الثلاثاء واستثنائياً في 25 نوفمبر. راجع موقع القصر للتذاكر والتحديثات.",
+    "ru": "Вход платный. Понедельник и среда–пятница 10:00–18:00. Суббота, воскресенье и праздники 10:00–19:00. Закрыто по вторникам и 25 ноября. Билеты и обновления на сайте дворца.",
+    "zh": "需购票。周一及周三至周五10:00–18:00；周六、周日及节假日10:00–19:00。周二闭馆，11月25日临时闭馆。购票和最新消息请见宫殿官网。",
+    "lij": "Intrâ a pagamento. Lunedì e da mercoilì a venerdì da-e 10 a-e 18. Sabbo, domenega e festivi da-e 10 a-e 19. Serròu o martedì e, pe ecceçion, o 25 de novembre. Pe bigetti e agiornamenti, vëddi o scito do palazzo."
+  },
+  "dataInizio": "2026-10-14",
+  "dataFine": "2027-01-31",
+  "giorniAnticipo": 30,
+  "fusoOrario": "Europe/Rome",
+  "indirizzo": {
+    "it": "Palazzo della Meridiana, Salita San Francesco 4, Genova",
+    "en": "Palazzo della Meridiana, Salita San Francesco 4, Genoa",
+    "es": "Palazzo della Meridiana, Salita San Francesco 4, Génova",
+    "fr": "Palazzo della Meridiana, Salita San Francesco 4, Gênes",
+    "ar": "Palazzo della Meridiana, Salita San Francesco 4, جنوة",
+    "ru": "Palazzo della Meridiana, Salita San Francesco 4, Генуя",
+    "zh": "Palazzo della Meridiana, Salita San Francesco 4, 热那亚",
+    "lij": "Palazzo della Meridiana, Salita San Francesco 4, Zena"
+  },
+  "lat": 44.41175,
+  "lng": 8.93165,
+  "linkUfficiale": "https://www.palazzodellameridiana.it/giorgio-bergami-mostra-fotografica/",
+  "copertina": "copertina.svg",
+  "iconaMappa": "icona-mappa.svg",
+  "visibile": true
+}
