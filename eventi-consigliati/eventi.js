@@ -27,7 +27,19 @@ function language(){var v='it';try{v=localStorage.getItem('lang')||document.docu
 function ui(key){return (UI[language()]||UI.it)[key]||UI.it[key];}
 function tr(v){if(v&&typeof v==='object'&&!Array.isArray(v)){var l=language();return v[l]||v.it||v.en||'';}return v||'';}
 function docDescription(e,field){var raw=String(tr(e[field])||'');if(e.id!=='expo-coop-2026')return safe(raw);var titles=['Storie di Genova','Stories of Genoa','Historias de Génova','Histoires de Gênes','حكايات جنوة','Истории Генуи','热那亚的故事','Stöie de Zena'];var found=titles.find(function(x){return raw.indexOf(x)>=0;});if(!found)return safe(raw);var i=raw.indexOf(found);return safe(raw.slice(0,i))+'<button type="button" class="gmec-doc-link" data-gmec-documentario="storie-di-genova">'+safe(found)+'</button>'+safe(raw.slice(i+found.length));}
-function card(e){return '<article class="gmec-card">'+(path(e,'copertina')?'<img src="'+safe(path(e,'copertina'))+'" alt="" loading="lazy">':'')+'<div class="gmec-card-body"><span class="gmec-tag">'+safe(tr(e.categoria)||ui('event'))+'</span><h4>'+safe(tr(e.titolo))+'</h4><p>'+safe(e.dataInizio===e.dataFine?e.dataInizio+(e.oraInizio?' · '+e.oraInizio:''):e.dataInizio+' – '+e.dataFine)+' · '+safe(tr(e.indirizzo))+'</p><p>'+docDescription(e,'descrizione')+'</p><button type="button" data-gmec-open="'+safe(e.id)+'">'+safe(ui('show'))+'</button></div></article>';}
+function card(e,openId){
+ var cover=path(e,'copertina');
+ var dates=e.dataInizio===e.dataFine?e.dataInizio+(e.oraInizio?' · '+e.oraInizio:''):e.dataInizio+' – '+e.dataFine;
+ return '<details class="gmec-card" name="gmec-recommended-events" data-gmec-id="'+safe(e.id)+'" dir="'+(language()==='ar'?'rtl':'ltr')+'"'+(e.id===openId?' open':'')+'>'+
+  '<summary class="gmec-summary">'+
+  '<span class="gmec-summary-content"><span class="gmec-tag">'+safe(tr(e.categoria)||ui('event'))+'</span>'+
+  '<span class="gmec-card-title">'+safe(tr(e.titolo))+'</span>'+
+  '<span class="gmec-card-meta"><bdi dir="ltr">'+safe(dates)+'</bdi> · '+safe(tr(e.indirizzo))+'</span></span>'+
+  '<span class="gmec-card-chevron" aria-hidden="true"></span></summary>'+
+  '<div class="gmec-card-details">'+(cover?'<img class="gmec-card-image" src="'+safe(cover)+'" alt="" loading="lazy">':'')+
+  '<div class="gmec-card-body"><p>'+docDescription(e,'descrizione')+'</p>'+
+  '<button type="button" data-gmec-open="'+safe(e.id)+'">'+safe(ui('show'))+'</button></div></div></details>';
+}
 function sites(e){
  var extra=Array.isArray(e.sedi)?e.sedi.filter(function(site){return site&&validId(site.id)&&Number.isFinite(site.lat)&&Number.isFinite(site.lng);}):[];
  return extra.length?extra:[e];
@@ -117,8 +129,10 @@ function paint(){
  if(!host){host=document.createElement('section');host.className='gmec-recommended';pane.insertBefore(host,pane.firstChild);}
  var current=events.filter(active),key=language()+'|'+current.map(function(e){return e.id;}).join('|');
  if(host.dataset.current!==key){
+  var open=host.querySelector('.gmec-card[open]');
+  var openId=open&&open.getAttribute('data-gmec-id');
   host.dataset.current=key;
-  host.innerHTML='<div class="gmec-heading-row"><h3>★ '+safe(ui('heading'))+'</h3><button type="button" class="gmec-show-all" data-gmec-all-map></button></div>'+(current.length?current.map(card).join(''):'<p class="gmec-empty">'+safe(ui('none'))+'</p>');
+  host.innerHTML='<div class="gmec-heading-row"><h3>★ '+safe(ui('heading'))+'</h3><button type="button" class="gmec-show-all" data-gmec-all-map></button></div>'+(current.length?current.map(function(e){return card(e,openId);}).join(''):'<p class="gmec-empty">'+safe(ui('none'))+'</p>');
  }
  updateButton();
 }
@@ -139,6 +153,13 @@ function toggleRecommended(){
 }
 function notice(){var old=document.getElementById('gmec-map-notice');if(old)old.remove();var el=document.createElement('div');el.id='gmec-map-notice';el.setAttribute('role','status');el.textContent=ui('noMapEvents');document.body.appendChild(el);clearTimeout(toastTimer);toastTimer=setTimeout(function(){el.remove();},3500);}
 function deepLink(){var id=new URL(location.href).searchParams.get('evento');if(!validId(id))return;var e=events.find(function(x){return x.id===id;});if(!e)return;var count=0;var timer=setInterval(function(){count++;if(show(e)||count>=35)clearInterval(timer);},250);}
+document.addEventListener('toggle',function(ev){
+ var card=ev.target;
+ if(!card.open||!card.matches('details.gmec-card'))return;
+ card.closest('.gmec-recommended').querySelectorAll('details.gmec-card[open]').forEach(function(other){
+  if(other!==card)other.open=false;
+ });
+},true);
 document.addEventListener('click',function(ev){var all=ev.target.closest('[data-gmec-all-map]');if(all){ev.preventDefault();toggleRecommended();return;}var doc=ev.target.closest('[data-gmec-documentario]');if(doc){ev.preventDefault();ev.stopPropagation();if(window.GMDocumentario)window.GMDocumentario.open();return;}var venue=ev.target.closest('[data-gmec-venue]');if(venue){var event=events.find(function(x){return x.id===venue.getAttribute('data-gmec-venue-event');});if(event)show(event,venue.getAttribute('data-gmec-venue'));return;}var open=ev.target.closest('[data-gmec-open]');if(open){var e=events.find(function(x){return x.id===open.getAttribute('data-gmec-open');});if(e)show(e);}var share=ev.target.closest('[data-gmec-share]');if(share){var selected=events.find(function(x){return x.id===share.getAttribute('data-gmec-share');});if(selected)shareEvent(selected);}});
 async function boot(){if(initialized)return;initialized=true;try{var r=await fetch(BASE+'eventi.json',{cache:'no-store'});if(!r.ok)throw Error('Indice eventi non disponibile');var index=await r.json();var names=(index.eventi||[]).filter(validId);var got=await Promise.all(names.map(async function(id){try{var rr=await fetch(BASE+'eventi/'+id+'/evento.json',{cache:'no-store'});if(!rr.ok)return null;var e=await rr.json();if(e.id!==id||!Number.isFinite(+e.lat)||!Number.isFinite(+e.lng))return null;return e;}catch(_){return null;}}));events=got.filter(Boolean);refresh();deepLink();new MutationObserver(function(){paint();}).observe(document.body,{childList:true,subtree:true});setInterval(refresh,30000);window.addEventListener('pageshow',refresh);document.addEventListener('app:set-lang',function(){setTimeout(function(){paint();updatePopups();},30);});document.addEventListener('i18n:changed',function(){setTimeout(function(){paint();updatePopups();},30);});document.addEventListener('visibilitychange',function(){if(!document.hidden)refresh();});}catch(err){console.warn('[Eventi consigliati]',err);}}
 window.GMEventiConsigliati={refresh:refresh,toggle:toggleRecommended,open:function(id){var e=events.find(function(x){return x.id===id;});return e?show(e):false;}};
