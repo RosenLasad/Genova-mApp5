@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="76" viewBox="0 0 64 76" role="img" aria-labelledby="title">
+  <title id="title">Confeugo</title>
+  <path d="M32 3C15.5 3 4 15.2 4 31c0 17.8 18.4 34.5 28 42 9.6-7.5 28-24.2 28-42C60 15.2 48.5 3 32 3Z" fill="#512b33" stroke="#fff0d9" stroke-width="3"/>
+  <circle cx="32" cy="31" r="21" fill="#251522" stroke="#f4b472" stroke-width="1.35"/>
+  <g transform="translate(9 8) scale(.71875)" color="#f4b472"><path d="M32 10c3 12 14 15 14 27a14 14 0 0 1-28 0c0-5 3-10 6-13 0 5 3 7 4 8-1-9 4-15 4-22Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M32 35c4 4 6 7 6 10a6 6 0 0 1-12 0c0-3 2-6 6-10Z" fill="currentColor"/></g>
+</svg>

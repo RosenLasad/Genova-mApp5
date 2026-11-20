@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="76" viewBox="0 0 64 76" role="img" aria-labelledby="title">
+  <title id="title">Mercatino di San Nicola</title>
+  <path d="M32 3C15.5 3 4 15.2 4 31c0 17.8 18.4 34.5 28 42 9.6-7.5 28-24.2 28-42C60 15.2 48.5 3 32 3Z" fill="#2d5144" stroke="#fff6e5" stroke-width="3"/>
+  <circle cx="32" cy="31" r="21" fill="#142e28" stroke="#e4bd79" stroke-width="1.35"/>
+  <g transform="translate(9 8) scale(.71875)" color="#e4bd79"><path d="M14 25h36v9H14zm3 9h30v16H17zm15-9v25m0-25c-17 0-18-15-7-10 4 2 7 10 7 10Zm0 0c17 0 18-15 7-10-4 2-7 10-7 10Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

@@ -1,0 +1,63 @@
+{
+  "id": "mercatino-san-nicola-2026",
+  "titolo": {
+    "it": "Mercatino di San Nicola",
+    "en": "San Nicola Christmas Market",
+    "es": "Mercado navideño de San Nicola",
+    "fr": "Marché de Noël de San Nicola",
+    "ar": "سوق سان نيكولا لعيد الميلاد",
+    "ru": "Рождественская ярмарка Сан-Никола",
+    "zh": "圣尼古拉圣诞市集",
+    "lij": "Mercatin de San Nicolò"
+  },
+  "categoria": {
+    "it": "Mercatino natalizio",
+    "en": "Christmas market",
+    "es": "Mercado navideño",
+    "fr": "Marché de Noël",
+    "ar": "سوق عيد الميلاد",
+    "ru": "Рождественская ярмарка",
+    "zh": "圣诞市集",
+    "lij": "Mercatin de Denâ"
+  },
+  "descrizione": {
+    "it": "Il mercatino solidale di piazza Piccapietra riunisce artigiani e associazioni. Tra i banchi si trovano regali fatti a mano e prodotti locali, con iniziative che sostengono progetti di solidarietà.",
+    "en": "The charity market in Piazza Piccapietra brings together craftspeople and local associations. Stalls offer handmade gifts and local products, with initiatives that support charitable projects.",
+    "es": "El mercado solidario de Piazza Piccapietra reúne a artesanos y asociaciones. Sus puestos ofrecen regalos hechos a mano y productos locales, con iniciativas a favor de proyectos solidarios.",
+    "fr": "Le marché solidaire de Piazza Piccapietra réunit des artisans et des associations. On y trouve des cadeaux faits à la main et des produits locaux, avec des initiatives au profit de projets solidaires.",
+    "ar": "يجمع السوق الخيري في ساحة بيكابيترا حرفيين وجمعيات محلية. وتعرض الأكشاك هدايا مصنوعة يدوياً ومنتجات محلية، إلى جانب مبادرات تدعم مشاريع خيرية.",
+    "ru": "Благотворительная ярмарка на площади Пиккапьетра собирает мастеров и общественные организации. Здесь можно найти подарки ручной работы и местные продукты, а также поддержать благотворительные проекты.",
+    "zh": "皮卡彼得拉广场的公益市集汇集手工艺人和当地协会。摊位出售手作礼品与本地特产，并有支持公益项目的活动。",
+    "lij": "O mercatin solidâle de ciassa Piccapietra o mette inseme artixàn e associaçioin. In sci banchi gh’é regalli fæti a man e prodûti do pòsto, con iniziative in agiutto di progetti de solidarietæ."
+  },
+  "dettagli": {
+    "it": "Per gli orari di apertura e gli appuntamenti consulta la pagina del mercatino.",
+    "en": "See the market page for opening hours and special events.",
+    "es": "Consulta la página del mercado para ver los horarios y las actividades.",
+    "fr": "Consultez la page du marché pour les horaires et les animations.",
+    "ar": "راجع صفحة السوق لمعرفة ساعات العمل والفعاليات.",
+    "ru": "Часы работы и программа мероприятий указаны на странице ярмарки.",
+    "zh": "开放时间和活动安排请见市集页面。",
+    "lij": "Pe-i oräi e i apontamenti, vëddi a pagina do mercatin."
+  },
+  "dataInizio": "2026-11-28",
+  "dataFine": "2026-12-23",
+  "giorniAnticipo": 30,
+  "fusoOrario": "Europe/Rome",
+  "indirizzo": {
+    "it": "Piazza Piccapietra, Genova",
+    "en": "Piazza Piccapietra, Genoa",
+    "es": "Piazza Piccapietra, Génova",
+    "fr": "Piazza Piccapietra, Gênes",
+    "ar": "Piazza Piccapietra, جنوة",
+    "ru": "Piazza Piccapietra, Генуя",
+    "zh": "Piazza Piccapietra, 热那亚",
+    "lij": "Piazza Piccapietra, Zena"
+  },
+  "lat": 44.4082,
+  "lng": 8.9364,
+  "linkUfficiale": "https://lamialiguria.it/eventi/mercatino-di-san-nicola-regali-e-solidarieta-a-genova/",
+  "copertina": "copertina.svg",
+  "iconaMappa": "icona-mappa.svg",
+  "visibile": true
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="76" viewBox="0 0 64 76" role="img" aria-labelledby="title">
+  <title id="title">Giorgio Bergami e la città in trasformazione</title>
+  <path d="M32 3C15.5 3 4 15.2 4 31c0 17.8 18.4 34.5 28 42 9.6-7.5 28-24.2 28-42C60 15.2 48.5 3 32 3Z" fill="#3b3731" stroke="#fff3e1" stroke-width="3"/>
+  <circle cx="32" cy="31" r="21" fill="#1d1b1c" stroke="#e0b992" stroke-width="1.35"/>
+  <g transform="translate(9 8) scale(.71875)" color="#e0b992"><path d="M13 24h10l4-6h10l4 6h10v23H13Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><circle cx="32" cy="35" r="7" fill="none" stroke="currentColor" stroke-width="3"/><path d="M44 29h3" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></g>
+</svg>

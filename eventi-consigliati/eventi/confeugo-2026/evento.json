@@ -1,0 +1,63 @@
+{
+  "id": "confeugo-2026",
+  "titolo": {
+    "it": "Confeugo",
+    "en": "Confeugo: Genoa’s traditional bonfire",
+    "es": "Confeugo: la hoguera tradicional de Génova",
+    "fr": "Confeugo : le feu traditionnel de Gênes",
+    "ar": "كونفيوغو: شعلة جنوة التقليدية",
+    "ru": "Конфеуго: традиционный костёр Генуи",
+    "zh": "Confeugo：热那亚传统篝火仪式",
+    "lij": "O Confeugo"
+  },
+  "categoria": {
+    "it": "Tradizione genovese",
+    "en": "Genoese tradition",
+    "es": "Tradición genovesa",
+    "fr": "Tradition génoise",
+    "ar": "تقليد جنوي",
+    "ru": "Генуэзская традиция",
+    "zh": "热那亚传统",
+    "lij": "Tradiçion zeneize"
+  },
+  "descrizione": {
+    "it": "Il Confeugo rinnova un’antica usanza della Genova medievale: l’offerta di un tronco d’alloro alla massima autorità cittadina. L’accensione del fuoco è un augurio per la città e per il nuovo anno.",
+    "en": "The Confeugo revives a medieval Genoese custom: offering a laurel log to the city’s highest official. Lighting the fire is a way of wishing the city well for the new year.",
+    "es": "El Confeugo revive una antigua costumbre de la Génova medieval: ofrecer un tronco de laurel a la máxima autoridad de la ciudad. El fuego simboliza los buenos deseos para Génova en el nuevo año.",
+    "fr": "Le Confeugo perpétue une coutume de la Gênes médiévale : offrir un tronc de laurier à la plus haute autorité de la ville. Le feu exprime des vœux de prospérité pour la nouvelle année.",
+    "ar": "يحيي الكونفيوغو عادة من جنوة في العصور الوسطى، وهي تقديم جذع غار لأعلى مسؤول في المدينة. ويرمز إشعال النار إلى التمنيات للمدينة بعام جديد مزدهر.",
+    "ru": "Конфеуго возрождает средневековый генуэзский обычай: главе города подносят лавровое полено. Зажигание костра символизирует пожелание благополучия городу в новом году.",
+    "zh": "Confeugo延续热那亚中世纪向城市最高长官献上月桂木的习俗。点燃篝火是为城市祈愿来年安顺的方式。",
+    "lij": "O Confeugo o rinnêuva unna tradiçion da Zena medievale: l’offerta de un tronco d’êufo a-a ciù âta outoritæ da çittæ. L’açende o feugo o l’é un agüio pe Zena e pe l’anno neuvo."
+  },
+  "dettagli": {
+    "it": "A Compagna annuncia l’appuntamento di sabato 19 dicembre a Palazzo Ducale. Per orari e percorso del corteo consulta gli aggiornamenti degli organizzatori.",
+    "en": "A Compagna lists the event for Saturday 19 December at Palazzo Ducale. Check the organisers’ updates for times and the procession route.",
+    "es": "A Compagna anuncia la cita del sábado 19 de diciembre en el Palazzo Ducale. Consulta las novedades de la organización para saber los horarios y el recorrido del desfile.",
+    "fr": "A Compagna annonce le rendez-vous du samedi 19 décembre au Palazzo Ducale. Consultez les informations des organisateurs pour les horaires et l’itinéraire du cortège.",
+    "ar": "أعلنت جمعية A Compagna إقامة الفعالية يوم السبت 19 ديسمبر في قصر الدوق. راجع تحديثات المنظمين لمعرفة المواعيد ومسار الموكب.",
+    "ru": "Ассоциация A Compagna объявила о мероприятии в Палаццо Дукале в субботу 19 декабря. Время и маршрут шествия уточняйте у организаторов.",
+    "zh": "A Compagna协会公布活动定于12月19日星期六在总督宫举行。具体时间和游行路线请关注主办方更新。",
+    "lij": "A Compagna a mette in calendario sabbo 19 de dexembre a Paxo. Pe-i oräi e o percorso do cortèo, vëddi i agiornamenti de chi o organizza."
+  },
+  "dataInizio": "2026-12-19",
+  "dataFine": "2026-12-19",
+  "giorniAnticipo": 14,
+  "fusoOrario": "Europe/Rome",
+  "indirizzo": {
+    "it": "Palazzo Ducale, Piazza Giacomo Matteotti 9, Genova",
+    "en": "Palazzo Ducale, Piazza Giacomo Matteotti 9, Genoa",
+    "es": "Palazzo Ducale, Piazza Giacomo Matteotti 9, Génova",
+    "fr": "Palazzo Ducale, Piazza Giacomo Matteotti 9, Gênes",
+    "ar": "Palazzo Ducale, Piazza Giacomo Matteotti 9, جنوة",
+    "ru": "Palazzo Ducale, Piazza Giacomo Matteotti 9, Генуя",
+    "zh": "Palazzo Ducale, Piazza Giacomo Matteotti 9, 热那亚",
+    "lij": "Palazzo Ducale, Piazza Giacomo Matteotti 9, Zena"
+  },
+  "lat": 44.40714,
+  "lng": 8.93274,
+  "linkUfficiale": "https://www.acompagna.org/wit/chisiamo/iniziative/martedi/2026-2027/index.htm",
+  "copertina": "copertina.svg",
+  "iconaMappa": "icona-mappa.svg",
+  "visibile": true
+}
