@@ -15,9 +15,7 @@
         media: {
           oggi: "qr_azzurri/qr_azzurri_castello/qr_azzurri_castello_via_fieschi/qr_azzurri_castello_via_fieschi_oggi.mp4",
           ieri: [
-            "qr_azzurri/qr_azzurri_castello/qr_azzurri_castello_via_fieschi/qr_azzurri_castello_via_fieschi_ieri_1.mp4",
-            "qr_azzurri/qr_azzurri_castello/qr_azzurri_castello_via_fieschi/qr_azzurri_castello_via_fieschi_ieri_2.mp4",
-            "qr_azzurri/qr_azzurri_castello/qr_azzurri_castello_via_fieschi/qr_azzurri_castello_via_fieschi_ieri_3.mp4"
+            "qr_azzurri/qr_azzurri_castello/qr_azzurri_castello_via_fieschi/qr_azzurri_castello_via_fieschi_ieri_1.mp4"
           ]
         }
       },
