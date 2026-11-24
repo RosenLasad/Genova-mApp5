@@ -12,7 +12,12 @@ function dateAt(e,which){var d=e['data'+which],t=e['ora'+which]||(which==='Fine'
  for(var i=0;i<3;i++){var fmt=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});var a={};fmt.formatToParts(new Date(utc)).forEach(function(z){a[z.type]=z.value;});var shown=Date.UTC(+a.year,+a.month-1,+a.day,+a.hour,+a.minute);utc+=Date.UTC(parts[0],parts[1]-1,parts[2],tt[0],tt[1])-shown;}return utc;}
 function active(e){if(e.visibile===false)return false;var a=dateAt(e,'Inizio'),b=dateAt(e,'Fine');if(!Number.isFinite(a)||!Number.isFinite(b)||b<a)return false;var days=Number.isFinite(Number(e.giorniAnticipo))?Math.max(0,Number(e.giorniAnticipo)):30;return Date.now()>=a-days*86400000 && Date.now()<=b;}
 function expired(e){return Date.now()>dateAt(e,'Fine');}
-function eventUrl(e){return location.origin+'/?evento='+encodeURIComponent(e.id);}
+function eventUrl(e,siteId){
+ var url=new URL('/',location.origin);
+ url.searchParams.set('evento',e.id);
+ if(siteId)url.searchParams.set('sede',siteId);
+ return url.href;
+}
 var UI={
  it:{heading:'Eventi consigliati',none:'Nessun evento consigliato in questo periodo.',show:'Mostra sulla mappa',recommended:'Evento consigliato',ended:'Evento concluso',dates:'Date',place:'Luogo',official:'Sito ufficiale',share:'Condividi',until:'fino alle',event:'Evento',shareTitle:'Condividi evento',copy:'Copia link',copied:'Link copiato',fallback:'Copia questo collegamento:',mapToggle:'Mostra tutti sulla mappa',hideMap:'Nascondi dalla mappa',noMapEvents:'Non ci sono eventi consigliati in programma o in corso.'},
  en:{heading:'Recommended events',none:'No recommended events at the moment.',show:'Show on map',recommended:'Recommended event',ended:'Event ended',dates:'Dates',place:'Location',official:'Official website',share:'Share',until:'until',event:'Event',shareTitle:'Share event',copy:'Copy link',copied:'Link copied',fallback:'Copy this link:',mapToggle:'Show all on map',hideMap:'Hide from map',noMapEvents:'There are no upcoming or ongoing recommended events.'},
@@ -70,7 +75,7 @@ function popup(e,archived,site){
   '<p><strong>'+safe(ui('dates'))+':</strong> '+safe(dateLabel(e))+'</p>'+
   '<p><strong>'+safe(ui('place'))+':</strong> '+safe(tr(site.indirizzo))+'</p>'+alternatives+
   (e.linkUfficiale?'<a href="'+safe(e.linkUfficiale)+'" target="_blank" rel="noopener noreferrer">'+safe(ui('official'))+' ↗</a>':'')+
-  '<button type="button" data-gmec-share="'+safe(e.id)+'">'+safe(ui('share'))+'</button></div></div>';
+  '<button type="button" data-gmec-share="'+safe(e.id)+'" data-gmec-share-site="'+safe(site===e?'':site.id)+'">'+safe(ui('share'))+'</button></div></div>';
 }
 function updatePopups(){
  Object.values(markers).forEach(function(entry){
@@ -83,7 +88,7 @@ function updatePopups(){
  }
 }
 
-async function shareEvent(e){var url=eventUrl(e),title=tr(e.titolo)||ui('shareTitle');if(navigator.share){try{await navigator.share({title:title,text:title,url:url});return;}catch(err){if(err&&err.name==='AbortError')return;}}
+async function shareEvent(e,siteId){var url=eventUrl(e,siteId),title=tr(e.titolo)||ui('shareTitle');if(navigator.share){try{await navigator.share({title:title,text:title,url:url});return;}catch(err){if(err&&err.name==='AbortError')return;}}
  try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(url);alert(ui('copied'));return;}}catch(_){}prompt(ui('fallback'),url);}
 function getMap(){var m=window.map||window.__LEAFLET_MAP__||window.__map;return m&&typeof m.addLayer==='function'&&typeof m.setView==='function'?m:null;}
 function refreshMarkers(){
@@ -105,14 +110,14 @@ function refreshMarkers(){
   });
  });
 }
-function show(e,siteId){
+function show(e,siteId,options){
  var m=getMap();if(!m||!window.L)return false;
  var locations=sites(e);
  var site=locations.find(function(item){return item.id===siteId;})||
   locations.find(function(item){return siteActive(e,item);})||locations[0];
  if(locations.some(function(item){return siteActive(e,item);})){markersVisible=true;refreshMarkers();updateButton();}
  try{window.gmCloseNewHome&&window.gmCloseNewHome();}catch(_){}
- m.setView([+site.lat,+site.lng],Math.max(16,m.getZoom()),{animate:true});
+ m.setView([+site.lat,+site.lng],Math.max(16,m.getZoom()),options||{animate:true});
  var entry=markers[markerKey(e,site)];
  if(entry){
   standalonePopup=null;
@@ -155,7 +160,19 @@ function toggleRecommended(closeHome){
  if(closeHome!==false){try{window.gmCloseNewHome&&window.gmCloseNewHome();}catch(_){}}
 }
 function notice(){var old=document.getElementById('gmec-map-notice');if(old)old.remove();var el=document.createElement('div');el.id='gmec-map-notice';el.setAttribute('role','status');el.textContent=ui('noMapEvents');document.body.appendChild(el);clearTimeout(toastTimer);toastTimer=setTimeout(function(){el.remove();},3500);}
-function deepLink(){var id=new URL(location.href).searchParams.get('evento');if(!validId(id))return;var e=events.find(function(x){return x.id===id;});if(!e)return;var count=0;var timer=setInterval(function(){count++;if(show(e)||count>=35)clearInterval(timer);},250);}
+function deepLink(){
+ var params=new URL(location.href).searchParams;
+ var id=params.get('evento'),siteId=params.get('sede');
+ if(!validId(id))return;
+ var event=events.find(function(item){return item.id===id;});
+ if(!event)return;
+ function openDestination(){return show(event,siteId,{animate:false});}
+ if(openDestination())return;
+ var attempts=0;
+ var timer=setInterval(function(){
+  if(openDestination()||++attempts>=35)clearInterval(timer);
+ },250);
+}
 document.addEventListener('toggle',function(ev){
  var card=ev.target;
  if(!card.open||!card.matches('details.gmec-card'))return;
@@ -163,7 +180,7 @@ document.addEventListener('toggle',function(ev){
   if(other!==card)other.open=false;
  });
 },true);
-document.addEventListener('click',function(ev){var all=ev.target.closest('[data-gmec-all-map]');if(all){ev.preventDefault();toggleRecommended();return;}var doc=ev.target.closest('[data-gmec-documentario]');if(doc){ev.preventDefault();ev.stopPropagation();if(window.GMDocumentario)window.GMDocumentario.open();return;}var venue=ev.target.closest('[data-gmec-venue]');if(venue){var event=events.find(function(x){return x.id===venue.getAttribute('data-gmec-venue-event');});if(event)show(event,venue.getAttribute('data-gmec-venue'));return;}var open=ev.target.closest('[data-gmec-open]');if(open){var e=events.find(function(x){return x.id===open.getAttribute('data-gmec-open');});if(e)show(e);}var share=ev.target.closest('[data-gmec-share]');if(share){var selected=events.find(function(x){return x.id===share.getAttribute('data-gmec-share');});if(selected)shareEvent(selected);}});
+document.addEventListener('click',function(ev){var all=ev.target.closest('[data-gmec-all-map]');if(all){ev.preventDefault();toggleRecommended();return;}var doc=ev.target.closest('[data-gmec-documentario]');if(doc){ev.preventDefault();ev.stopPropagation();if(window.GMDocumentario)window.GMDocumentario.open();return;}var venue=ev.target.closest('[data-gmec-venue]');if(venue){var event=events.find(function(x){return x.id===venue.getAttribute('data-gmec-venue-event');});if(event)show(event,venue.getAttribute('data-gmec-venue'));return;}var open=ev.target.closest('[data-gmec-open]');if(open){var e=events.find(function(x){return x.id===open.getAttribute('data-gmec-open');});if(e)show(e);}var share=ev.target.closest('[data-gmec-share]');if(share){var selected=events.find(function(x){return x.id===share.getAttribute('data-gmec-share');});if(selected)shareEvent(selected,share.getAttribute('data-gmec-share-site'));}});
 async function boot(){if(initialized)return;initialized=true;try{var r=await fetch(BASE+'eventi.json',{cache:'no-store'});if(!r.ok)throw Error('Indice eventi non disponibile');var index=await r.json();var names=(index.eventi||[]).filter(validId);var got=await Promise.all(names.map(async function(id){try{var rr=await fetch(BASE+'eventi/'+id+'/evento.json',{cache:'no-store'});if(!rr.ok)return null;var e=await rr.json();if(e.id!==id||!Number.isFinite(+e.lat)||!Number.isFinite(+e.lng))return null;return e;}catch(_){return null;}}));events=got.filter(Boolean);refresh();deepLink();new MutationObserver(function(){paint();}).observe(document.body,{childList:true,subtree:true});setInterval(refresh,30000);window.addEventListener('pageshow',refresh);document.addEventListener('app:set-lang',function(){setTimeout(function(){paint();updatePopups();},30);});document.addEventListener('i18n:changed',function(){setTimeout(function(){paint();updatePopups();},30);});document.addEventListener('visibilitychange',function(){if(!document.hidden)refresh();});}catch(err){console.warn('[Eventi consigliati]',err);}}
 window.GMEventiConsigliati={refresh:refresh,toggle:toggleRecommended,open:function(id){var e=events.find(function(x){return x.id===id;});return e?show(e):false;}};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();

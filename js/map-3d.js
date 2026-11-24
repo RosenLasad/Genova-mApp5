@@ -898,6 +898,13 @@
     map3d = new window.maptilersdk.Map(options);
     var instance = map3d;
     mouseChord = installMouseChord(instance);
+    instance.on('moveend', function(){
+      if(!active || !ready || map3d !== instance) return;
+      var center = instance.getCenter();
+      document.dispatchEvent(new CustomEvent('app:map-3d-view', {
+        detail:{lat:center.lat, lng:center.lng, zoom:instance.getZoom()+1}
+      }));
+    });
     instance.on('error', function(event){
       if(map3d !== instance) return;
       var error = event && event.error || {};
