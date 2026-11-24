@@ -63,19 +63,20 @@
     var btn = q('btn-past');
     return !!(btn && btn.classList && btn.classList.contains('active'));
   }
-  function hasMultiple(){
-    var c = q('counter'); if(!c) return false;
-    var m = (c.textContent||'').match(/\d+\s*\/\s*(\d+)/);
-    return !!(m && parseInt(m[1],10) > 1);
-  }
   function toggleHotBtns(){
     ensureHotBtns();
     var media = qs('#panel .media'); if(!media) return;
     var left = qs('.qr-hot-left', media), right = qs('.qr-hot-right', media);
     if(!left || !right) return;
-    var show = isPastActive() && hasMultiple();
-    left.style.display = show ? 'flex' : 'none';
-    right.style.display = show ? 'flex' : 'none';
+    var counter = q('counter');
+    var position = counter && (counter.textContent || '').trim().match(/^(\d+)\s*\/\s*(\d+)$/);
+    var current = position ? Number(position[1]) : 0;
+    var total = position ? Number(position[2]) : 0;
+    var show = isPastActive() && current >= 1 && current <= total;
+    var leftDisplay = show && current > 1 ? 'flex' : 'none';
+    var rightDisplay = show && current < total ? 'flex' : 'none';
+    if(left.style.display !== leftDisplay) left.style.display = leftDisplay;
+    if(right.style.display !== rightDisplay) right.style.display = rightDisplay;
   }
 
   // observer to keep in sync
