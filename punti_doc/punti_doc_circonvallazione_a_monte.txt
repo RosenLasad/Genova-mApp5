@@ -5,6 +5,6 @@
     44.41444082733196,
     8.933274701938227
   ],
-  "youtube": "https://youtu.be/rRmjwFAd3wI",
+  "provider": "cloudflare",
   "info": "Mini Documentario sul quartiere di Castelletto"
 }

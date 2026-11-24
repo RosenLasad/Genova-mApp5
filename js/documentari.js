@@ -141,18 +141,16 @@ function getDocYoutubeMap(doc){
   return null;
 }
 
+function docVideoLanguage(doc, selected){
+  var pref = '';
+  try{ pref = localStorage.getItem('doc_lang_' + (doc.id||'')) || ''; }catch(_){}
+  return (selected || pref || currentLangDoc() || 'it').toLowerCase();
+}
+
 function pickDocYoutubeUrl(doc){
-  // Se c’è una mappa per lingua, scegli in base a:
-  // - preferenza salvata per quel doc (se l’utente clicca una lingua)
-  // - lingua corrente dell’app
-  // - fallback it/en/qualunque cosa
   var m = getDocYoutubeMap(doc);
   if(m){
-    var pref = '';
-    try{ pref = localStorage.getItem('doc_lang_' + (doc.id||'')) || ''; }catch(_){}
-    var lang = (pref || currentLangDoc() || 'it').toLowerCase();
-
-    return m[lang] || m.it || m.en || (function(){
+    return m[docVideoLanguage(doc)] || m.it || m.en || (function(){
       for(var k in m){ if(m[k]) return m[k]; }
       return '';
     })();
@@ -340,51 +338,45 @@ var DOC_FLAG = {
     playPreview();
   }
 
-  function makePopupHTML(doc){
-  var cloudflare = isStreamMiniDoc(doc);
-var ytUrl = cloudflare ? null : pickDocYoutubeUrl(doc);
-var vid   = getYoutubeId(ytUrl);
-  var title = pickTextDoc(doc.name) || doc.id || 'Documentario';
-  var info  = pickTextDoc(doc.info) || '';
-  var desc = getDocDesc(doc);
+  function makePopupHTML(doc, selectedLanguage){
+    var stream = isStreamMiniDoc(doc);
+    var mixed = stream && doc.id === 'san-teodoro';
+    var languages = !stream || mixed ? getDocYoutubeMap(doc) : null;
+    var lang = docVideoLanguage(doc, selectedLanguage);
+    var foreign = mixed && lang !== 'it' && languages && getYoutubeId(languages[lang]);
+    var vid = stream ? foreign : getYoutubeId(pickDocYoutubeUrl(doc));
+    var title = pickTextDoc(doc.name) || doc.id || 'Documentario';
+    var h = '<div class="doc-card" data-id="' + escapeAttr(doc.id || '') + '">';
+    h += '<div class="doc-card__head"><div class="doc-card__title">' + escapeHtml(title) + '</div>';
+    h += '<span class="doc-card__badge">Premium</span></div>';
 
+    if(languages && Object.keys(languages).length){
+      h += '<div class="doc-lang" aria-label="Lingua video">';
+      var codes = Object.keys(languages);
+      if(mixed) codes = ['it'].concat(codes.filter(function(code){return code !== 'it';}));
+      codes.forEach(function(code){
+        var italianStream = mixed && code === 'it';
+        var youtubeId = italianStream ? null : getYoutubeId(languages[code]);
+        if(!italianStream && !youtubeId) return;
+        var label = DOC_FLAG[code] || code.toUpperCase();
+        h += '<button type="button" class="doc-lang-btn" data-lang="' + escapeAttr(code) +
+          '" title="' + escapeAttr(code.toUpperCase()) + '">' + escapeHtml(label) + '</button>';
+      });
+      h += '</div>';
+    }
 
-  var h  = '<div class="doc-card" data-id="' + escapeAttr(doc.id||'') + '">';
-      h +=   '<div class="doc-card__head">';
-      h +=     '<div class="doc-card__title">' + escapeHtml(title) + '</div>';
-      h +=     '<span class="doc-card__badge">Premium</span>';
-      h +=   '</div>';
-
-var ymap = cloudflare ? null : getDocYoutubeMap(doc);
-if(ymap){
-  h += '<div class="doc-lang" aria-label="Lingua video">';
-  Object.keys(ymap).forEach(function(code){
-    var url = ymap[code];
-    var id  = getYoutubeId(url);
-    if(!id) return;
-    var label = (DOC_FLAG[code] || String(code||'').toUpperCase());
-h += '<button type="button" class="doc-lang-btn" data-lang="' + escapeAttr(code) +
-     '" data-ytid="' + escapeAttr(id) + '" title="' + escapeAttr(code.toUpperCase()) + '">' +
-     escapeHtml(label) + '</button>';
-  });
-  h += '</div>';
-}
-
-
-        if(cloudflare){
-          h += '<div class="doc-card__media"><button type="button" class="doc-btn doc-stream-trigger">Riproduci MiniDoc</button>';
-          h += '<div role="status" aria-live="polite"></div>';
-        }else if(vid){
-          h +=     '<button type="button" class="doc-thumb" data-ytid="' + vid + '" aria-label="Riproduci video">';
-          var thumb = doc.thumbnail || ('https://img.youtube.com/vi/' + vid + '/hqdefault.jpg');
-          h +=       '<img alt="Anteprima video" src="' + escapeAttr(thumb) + '">';
-          h +=     '</button>';
-        }
-        h +=   '</div>';
-        h +=   '<div class="doc-card__desc">' + escapeHtml(desc) + '</div>';
-        h +=   '<div class="doc-card__foot"><button type="button" class="doc-btn doc-close">Chiudi</button></div>';
-        h += '</div>';
-    return h;
+    h += '<div class="doc-card__media">';
+    if(stream && !foreign){
+      h += '<button type="button" class="doc-btn doc-stream-trigger">Riproduci MiniDoc</button>';
+      h += '<div role="status" aria-live="polite"></div>';
+    }else if(vid){
+      var thumb = doc.thumbnail || ('https://img.youtube.com/vi/' + vid + '/hqdefault.jpg');
+      h += '<button type="button" class="doc-thumb" data-ytid="' + escapeAttr(vid) +
+        '" aria-label="Riproduci video"><img alt="Anteprima video" src="' + escapeAttr(thumb) + '"></button>';
+    }
+    h += '</div><div class="doc-card__desc">' + escapeHtml(getDocDesc(doc)) + '</div>';
+    h += '<div class="doc-card__foot"><button type="button" class="doc-btn doc-close">Chiudi</button></div>';
+    return h + '</div>';
   }
   function escapeHtml(s){ return String(s||'').replace(/[&<>]/g, function(c){ return ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]); }); }
   function escapeAttr(s){ return String(s||'').replace(/"/g, '&quot;'); }
@@ -527,108 +519,53 @@ h += '<button type="button" class="doc-lang-btn" data-lang="' + escapeAttr(code)
         var m = L.marker(d.coords, { icon: docIcon() });
         var html = makePopupHTML(d);
         m.bindPopup(html, { maxWidth: 360, className: 'doc-pop' });
-        m.on('popupopen', function(ev){
-          try{
-            ev.popup.setContent(makePopupHTML(d));
-            var el = ev.popup.getElement(); if(!el) return;
-            var trigger = el.querySelector('.doc-thumb');
-if(trigger){
-  trigger.addEventListener('click', function(e){
-    e.preventDefault(); e.stopPropagation();
-    var vid = trigger.getAttribute('data-ytid')||'';
-    mountInlinePlayer(el, vid);
-  }, {once:true});
-}
+        function renderDocPopup(popup, language){
+          if(!popup) return null;
+          popup.setContent(makePopupHTML(d, language));
+          var el = popup.getElement();
+          if(!el) return null;
+          var trigger = el.querySelector('.doc-thumb');
+          if(trigger){
+            trigger.addEventListener('click', function(event){
+              event.preventDefault();
+              event.stopPropagation();
+              mountInlinePlayer(el, trigger.getAttribute('data-ytid'));
+            }, {once:true});
+          }
+          el.querySelectorAll('.doc-lang-btn').forEach(function(button){
+            button.addEventListener('click', function(event){
+              event.preventDefault();
+              event.stopPropagation();
+              var language = button.getAttribute('data-lang');
+              try{ localStorage.setItem('doc_lang_' + d.id, language); }catch(_){}
+              var refreshed = renderDocPopup(popup, language);
+              if(!refreshed) return;
+              var stream = refreshed.querySelector('.doc-stream-trigger');
+              var thumb = refreshed.querySelector('.doc-thumb');
+              if(stream) playStreamMiniDoc(stream);
+              else if(thumb) mountInlinePlayer(refreshed, thumb.getAttribute('data-ytid'));
+            });
+          });
+          var close = el.querySelector('.doc-close');
+          if(close) close.addEventListener('click', function(){ map.closePopup(popup); });
+          return el;
+        }
 
-// ✅ BOTTONI LINGUA: sempre, fuori dall'else
-var langBtns = el.querySelectorAll('.doc-lang-btn');
-if(langBtns && langBtns.length){
-  langBtns.forEach(function(btn){
-    btn.addEventListener('click', function(e){
-      e.preventDefault(); e.stopPropagation();
-      var vid  = btn.getAttribute('data-ytid') || '';
-      var lang = btn.getAttribute('data-lang') || '';
-      try{ localStorage.setItem('doc_lang_' + (d.id||''), lang); }catch(_){}
-      try{ destroyInlinePlayer(el); }catch(_){}
-      mountInlinePlayer(el, vid);
-    });
-  });
-}
-
-// ✅ mount immediato SOLO se NON c'è la thumb
-if(!trigger){
-  var vidHolder = el.querySelector('[data-ytid]');
-  if(vidHolder){
-    mountInlinePlayer(el, vidHolder.getAttribute('data-ytid'));
-  }
-}
-
-            var btnClose = el.querySelector('.doc-close');
-            if(btnClose){ btnClose.addEventListener('click', function(){ try{ ev.popup._close(); }catch(_){ try{ map.closePopup(ev.popup); }catch(__){} } }); }
-          }catch(_){}
-        });
-
-// Aggiorna il popup dei Documentari al cambio lingua (senza doverlo chiudere/riaprire)
-function refreshDocPopup(){
-  try{
-    if(!(m.isPopupOpen && m.isPopupOpen())) return;
-
-    // rigenera HTML nella lingua corrente
-    m.setPopupContent(makePopupHTML(d));
-
-    // dopo il rerender, ri-aggancia i listener interni (thumb + close)
-    var pop = (m.getPopup && m.getPopup()) || null;
-    var el  = (pop && pop.getElement && pop.getElement()) || null;
-    if(!el) return;
-
-    var trigger = el.querySelector('.doc-thumb');
-    if(trigger){
-      trigger.addEventListener('click', function(e){
-        e.preventDefault(); e.stopPropagation();
-        var vid = trigger.getAttribute('data-ytid') || '';
-        mountInlinePlayer(el, vid);
-      }, { once:true });
-    }
-
-var langBtns = el.querySelectorAll('.doc-lang-btn');
-if(langBtns && langBtns.length){
-  langBtns.forEach(function(btn){
-    btn.addEventListener('click', function(e){
-      e.preventDefault(); e.stopPropagation();
-      var vid = btn.getAttribute('data-ytid') || '';
-      var lang = btn.getAttribute('data-lang') || '';
-      try{ localStorage.setItem('doc_lang_' + (d.id||''), lang); }catch(_){}
-      try{ destroyInlinePlayer(el); }catch(_){}
-      mountInlinePlayer(el, vid);
-    });
-  });
-}
-
-
-    var btnClose = el.querySelector('.doc-close');
-    if(btnClose){
-      btnClose.addEventListener('click', function(){
-        try{ pop && pop._close && pop._close(); }
-        catch(_){ try{ map && map.closePopup && map.closePopup(pop); }catch(__){} }
-      });
-    }
-  }catch(_){}
-}
-
-try{
-  document.addEventListener('app:set-lang', refreshDocPopup);
-  if(isStreamMiniDoc(d)){
-    document.addEventListener('genova:auth-changed', function(event){
-      var pop = m.getPopup();
-      var el = m.isPopupOpen() && pop && pop.getElement();
-      var media = el && el.querySelector('.doc-card__media');
-      var account = event.detail && event.detail.user && event.detail.user.id || '';
-      if(media && media.dataset.streamAccount !== undefined &&
-         media.dataset.streamAccount !== account) refreshDocPopup();
-    });
-  }
-}catch(_){}
-
+        m.on('popupopen', function(event){ renderDocPopup(event.popup); });
+        function refreshDocPopup(){
+          if(m.isPopupOpen()) renderDocPopup(m.getPopup());
+        }
+        document.addEventListener('app:set-lang', refreshDocPopup);
+        if(isStreamMiniDoc(d)){
+          document.addEventListener('genova:auth-changed', function(event){
+            var pop = m.getPopup();
+            var el = m.isPopupOpen() && pop && pop.getElement();
+            var media = el && el.querySelector('.doc-card__media');
+            var account = event.detail && event.detail.user && event.detail.user.id || '';
+            if(media && media.dataset.streamAccount !== undefined &&
+               media.dataset.streamAccount !== account) refreshDocPopup();
+          });
+        }
 
         m.on('popupclose', function(ev){ try{ var el = ev.popup && ev.popup.getElement ? ev.popup.getElement() : null; if(el) destroyInlinePlayer(el); }catch(_){ } });
         m.on('click', function(){
@@ -852,7 +789,7 @@ DOCS.forEach(function(d){
     }).then(function(arr){
       DOCS = arr.filter(Boolean);
       // Fallback se non carica nulla (es. test locale con file://)
-      if(!DOCS.length) { try { DOCS = [{"id": "piazza-de-ferrari", "name": "Piazza de Ferrari", "coords": [44.40712720909712, 8.933972142472864], "youtube": "https://youtu.be/nANDItOIOlc", "info": "Mini documentario su Piazza de Ferrari e la sua storia.", "thumbnail": null}, {"id": "san-teodoro", "name": "San Teodoro", "coords": [44.41412203482928, 8.914105475915406], "youtube": "https://youtu.be/32TzhHyY5Qk", "info": "Mini documentario su San Teodoro.", "thumbnail": null}, {"id": "seno-di-giano", "name": "Seno di Giano", "coords": [44.40336915941983, 8.932371887002882], "youtube": "https://youtu.be/5mKCW0Mf5YA", "info": "Mini documentario sul Seno di Giano.", "thumbnail": null}, {"id": "viaxxsettembre", "name": "Via XX settembre", "coords": [44.405826120223495, 8.939989775240152], "youtube": "https://youtu.be/Fdfh4CsqiDw", "info": "Mini documentario su Via XX settembre.", "thumbnail": null}, {"id": "cimitero-staglieno", "name": "Cimitero Staglieno", "coords": [44.42869083288194, 8.950933965139109], "youtube": "https://youtu.be/tMayj8iEwmM", "info": "Mini Documentario sul Cimitero di Staglieno"}, {"id": "borgo-incrociati", "name": "Borgo Incrociati", "coords": [44.40851090999621, 8.950047849156162], "provider": "cloudflare", "info": "Mini Documentario su Borgo Incrociati"}, {"id": "fronti-basse", "name": "Fronti Basse", "coords": [44.40461961095648, 8.944204246412001], "youtube": "https://youtu.be/LUs7BOEziHI", "info": "Mini Documentario sulle Fronti Basse"}, {"id": "esposizione-universale-1914", "name": "Esposizione Universale", "coords": [44.40256920446371, 8.944976783036836], "youtube": "https://youtu.be/SXQFzLKUe8Y", "info": "Mini Documentario sull'Esposizione Universale del 1914"}, {"id": "stazione-brignole", "name": "Stazione Brignole", "coords": [44.40696316399487, 8.946721693490986], "youtube": "https://youtu.be/bRuiyCnLXKo", "info": "Mini Documentario sulla Stazione Brignole"}, {"id": "stazione-principe", "name": "Stazione Principe", "coords": [44.41736033780297, 8.921595766503463], "youtube": "https://youtu.be/jS6xNTdNwXc", "info": "Mini Documentario sulla Stazione P.Principe"}, {"id": "borgo-ponticello", "name": "Borgo Ponticello", "coords": [44.40598608933367, 8.936089317920874], "youtube": "https://youtu.be/QbrJlLfxRTo", "info": "Mini Documentario sul borgo di Ponticello"}, {"id": "borgo-piccapietra", "name": "Borgo Piccapietra", "coords": [44.40798507535832, 8.936440370414537], "youtube": "https://youtu.be/tf4A2yn1BWg", "info": "Mini Documentario sul borgo di Piccapietra"}, {"id": "parco-acquasola", "name": "Parco Acquasola", "coords": [44.408290447740896, 8.940179083362601], "youtube": "https://youtu.be/0eobd_4FQrU", "info": "Mini Documentario sul Parco dell'Acquasola"}, {"id": "circonvallazione-a-monte", "name": "Circonvallazione a monte", "coords": [44.41444082733196, 8.933274701938227], "youtube": "https://youtu.be/rRmjwFAd3wI", "info": "Mini Documentario sul quartiere di Castelletto"}, {"id": "corso-italia", "name": "Corso Italia", "coords": [44.39204349657359, 8.95452415798286], "youtube": "https://youtu.be/QP_5tV5ScsQ", "info": "Mini Documentario sulla nascita di Corso Italia"}]; } catch(_ ) {} }
+      if(!DOCS.length) { try { DOCS = [{"id": "piazza-de-ferrari", "name": "Piazza de Ferrari", "coords": [44.40712720909712, 8.933972142472864], "provider": "cloudflare", "info": "Mini documentario su Piazza de Ferrari e la sua storia.", "thumbnail": null}, {"id": "san-teodoro", "name": "San Teodoro", "coords": [44.41412203482928, 8.914105475915406], "provider": "cloudflare", "info": "Mini documentario su San Teodoro.", "thumbnail": null}, {"id": "seno-di-giano", "name": "Seno di Giano", "coords": [44.40336915941983, 8.932371887002882], "provider": "cloudflare", "info": "Mini documentario sul Seno di Giano.", "thumbnail": null}, {"id": "viaxxsettembre", "name": "Via XX settembre", "coords": [44.405826120223495, 8.939989775240152], "provider": "cloudflare", "info": "Mini documentario su Via XX settembre.", "thumbnail": null}, {"id": "cimitero-staglieno", "name": "Cimitero Staglieno", "coords": [44.42869083288194, 8.950933965139109], "provider": "cloudflare", "info": "Mini Documentario sul Cimitero di Staglieno"}, {"id": "borgo-incrociati", "name": "Borgo Incrociati", "coords": [44.40851090999621, 8.950047849156162], "provider": "cloudflare", "info": "Mini Documentario su Borgo Incrociati"}, {"id": "fronti-basse", "name": "Fronti Basse", "coords": [44.40461961095648, 8.944204246412001], "provider": "cloudflare", "info": "Mini Documentario sulle Fronti Basse"}, {"id": "esposizione-universale-1914", "name": "Esposizione Universale", "coords": [44.40256920446371, 8.944976783036836], "provider": "cloudflare", "info": "Mini Documentario sull'Esposizione Universale del 1914"}, {"id": "stazione-brignole", "name": "Stazione Brignole", "coords": [44.40696316399487, 8.946721693490986], "provider": "cloudflare", "info": "Mini Documentario sulla Stazione Brignole"}, {"id": "stazione-principe", "name": "Stazione Principe", "coords": [44.41736033780297, 8.921595766503463], "provider": "cloudflare", "info": "Mini Documentario sulla Stazione P.Principe"}, {"id": "borgo-ponticello", "name": "Borgo Ponticello", "coords": [44.40598608933367, 8.936089317920874], "provider": "cloudflare", "info": "Mini Documentario sul borgo di Ponticello"}, {"id": "borgo-piccapietra", "name": "Borgo Piccapietra", "coords": [44.40798507535832, 8.936440370414537], "provider": "cloudflare", "info": "Mini Documentario sul borgo di Piccapietra"}, {"id": "parco-acquasola", "name": "Parco Acquasola", "coords": [44.408290447740896, 8.940179083362601], "provider": "cloudflare", "info": "Mini Documentario sul Parco dell'Acquasola"}, {"id": "circonvallazione-a-monte", "name": "Circonvallazione a monte", "coords": [44.41444082733196, 8.933274701938227], "provider": "cloudflare", "info": "Mini Documentario sul quartiere di Castelletto"}, {"id": "corso-italia", "name": "Corso Italia", "coords": [44.39204349657359, 8.95452415798286], "provider": "cloudflare", "info": "Mini Documentario sulla nascita di Corso Italia"}]; } catch(_ ) {} }
       // Espone l'elenco corrente dei MiniDoc agli strumenti esterni (es. "Vicino a me")
       // senza duplicare i dati in altri file.
       try{
@@ -889,7 +826,7 @@ DOCS.forEach(function(d){
       var el = ev.target && ev.target.closest ? ev.target.closest('.doc-thumb') : null;
       if(!el) return;
       ev.preventDefault(); ev.stopPropagation();
-      var container = el.closest('.doc-popup') || document.querySelector('.leaflet-popup-content');
+      var container = el.closest('.doc-card__media');
       var vid = el.getAttribute('data-ytid') || '';
       // mountInlinePlayer is defined inside buildMarkers closure; if not available here, reconstruct minimal mount
       try{

@@ -5,6 +5,6 @@
     44.40798507535832,
     8.936440370414537
   ],
-  "youtube": "https://youtu.be/tf4A2yn1BWg",
+  "provider": "cloudflare",
   "info": "Mini Documentario sul borgo di Piccapietra"
 }

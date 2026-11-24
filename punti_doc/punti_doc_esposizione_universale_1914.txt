@@ -5,6 +5,6 @@
     44.40256920446371,
     8.944976783036836
   ],
-  "youtube": "https://youtu.be/SXQFzLKUe8Y",
+  "provider": "cloudflare",
   "info": "Mini Documentario sull'Esposizione Universale del 1914"
 }

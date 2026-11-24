@@ -5,6 +5,6 @@
     44.40598608933367,
     8.936089317920874
   ],
-  "youtube": "https://youtu.be/QbrJlLfxRTo",
+  "provider": "cloudflare",
   "info": "Mini Documentario sul borgo di Ponticello"
 }

@@ -5,6 +5,6 @@
     44.408290447740896,
     8.940179083362601
   ],
-  "youtube": "https://youtu.be/0eobd_4FQrU",
+  "provider": "cloudflare",
   "info": "Mini Documentario sul Parco dell'Acquasola"
 }

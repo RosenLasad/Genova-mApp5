@@ -5,6 +5,6 @@
     44.40696316399487,
     8.946721693490986
   ],
-  "youtube": "https://youtu.be/bRuiyCnLXKo",
+  "provider": "cloudflare",
   "info": "Mini Documentario sulla Stazione Brignole"
 }

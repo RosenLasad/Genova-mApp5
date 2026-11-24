@@ -5,6 +5,6 @@
     44.41736033780297,
     8.921595766503463
   ],
-  "youtube": "https://youtu.be/jS6xNTdNwXc",
+  "provider": "cloudflare",
   "info": "Mini Documentario sulla Stazione P.Principe"
 }
