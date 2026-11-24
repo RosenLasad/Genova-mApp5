@@ -40,10 +40,22 @@
   display: block !important;
 }
 
-/* il bottone "clear" resta più piccolo */
-#quick-toggles .qt-btn.qt-clear svg{
-  width: 18px !important;
-  height: 18px !important;
+#quick-toggles > .qt-btn.qt-clear{
+  --gm-clear-size: max(24px, calc(var(--gm-rail-b, 45px) * var(--gm-control-scale, 1) * .9));
+  box-sizing: border-box;
+  width: var(--gm-clear-size) !important;
+  height: var(--gm-clear-size) !important;
+  min-width: var(--gm-clear-size) !important;
+  min-height: var(--gm-clear-size) !important;
+  flex: 0 0 var(--gm-clear-size);
+  border-radius: 50% !important;
+  padding: 0 !important;
+  background: #e5e7eb !important;
+  color: #0f172a !important;
+}
+#quick-toggles > .qt-btn.qt-clear svg{
+  width: calc(22px * var(--gm-control-scale, 1)) !important;
+  height: calc(22px * var(--gm-control-scale, 1)) !important;
 }
 
 /* stato ON (senza badge): solo bordo/ombra/saturazione */
@@ -409,6 +421,7 @@
   color:#fff !important;
 }
 #quick-toggles #qt-cat-luoghi .qt-btn > svg{ display:none !important; }
+#quick-toggles #qt-cat-luoghi .qt-eventi{ background:#9b580e !important; }
 #quick-toggles #qt-cat-luoghi .qt-parchi{ background:#8a9a32 !important; }
 #quick-toggles #qt-cat-luoghi .qt-sport{ background:#c9791a !important; }
 #quick-toggles #qt-cat-luoghi .qt-cinema{ background:#a97716 !important; }

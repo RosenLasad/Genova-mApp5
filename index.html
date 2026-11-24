@@ -17,7 +17,7 @@
 <link href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" rel="stylesheet"/>
 <link href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" rel="stylesheet"/>
 
-<link rel="stylesheet" href="css/quick-toggles.css?v=20260816-6">
+<link rel="stylesheet" href="css/quick-toggles.css?v=20261124-map-events-1">
 <link rel="stylesheet" href="css/flag-menu.css">
 <link rel="stylesheet" href="css/fav-menu.css">
 <link rel="stylesheet" href="css/btn-scan.css">
@@ -52,7 +52,7 @@
 <link rel="stylesheet" href="css/train-line.css?v=20260808-1">
 <script src="js/transport-place-texts.js?v=20260807-1"></script>
 <script src="js/transport-toggle-labels.js?v=20260812-1"></script>
-<script src="js/entertainment-toggle-labels.js?v=20260812-1"></script>
+<script src="js/entertainment-toggle-labels.js?v=20261124-map-events-1"></script>
 <script src="js/past-toggle-labels.js?v=20260812-1"></script>
 <script src="js/cinema-place-texts.js?v=20260808-1"></script>
 <script src="js/theater-place-texts.js?v=20260810-1"></script>
@@ -753,7 +753,11 @@
 </div>
 </div>
 <div aria-label="Intrattenimento" class="qt-cat-panel" hidden="" id="qt-cat-luoghi" role="group">
-<div class="qt-cat-items" role="toolbar"><button aria-label="Parchi e piazze" class="qt-btn qt-parchi" title="Parchi e piazze" type="button">
+<div class="qt-cat-items" role="toolbar">
+<button aria-label="Eventi" aria-pressed="false" class="qt-btn qt-eventi" id="qt-eventi-consigliati" title="Eventi" type="button">
+<img alt="" aria-hidden="true" class="qt-entertainment-icon" src="icons/intrattenimento/eventi.svg"/><span class="qt-entertainment-label">Eventi</span>
+</button>
+<button aria-label="Parchi e piazze" class="qt-btn qt-parchi" title="Parchi e piazze" type="button">
 <svg aria-hidden="true" height="25" viewbox="0 0 24 24" width="25">
 <rect class="sq" height="20" rx="6" width="20" x="2" y="2"></rect>
 <g class="glyph" transform="translate(4,4)">
@@ -851,11 +855,8 @@
 <div class="qt-routes-content" id="qt-routes-content"></div>
 </div>
 <button aria-label="Disattiva tutti i Marker" class="qt-btn qt-clear" title="Disattiva tutti i Marker" type="button">
-<svg aria-hidden="true" height="18" viewbox="0 0 24 24" width="18">
-<rect class="sq" height="20" rx="6" width="20" x="2" y="2"></rect>
-<g class="glyph" transform="translate(4,4)">
-<path d="M4,4 L12,12 M12,4 L4,12" stroke="#0f172a" stroke-linecap="round" stroke-width="2"></path>
-</g>
+<svg aria-hidden="true" height="22" viewBox="0 0 24 24" width="22">
+<path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"/>
 </svg>
 </button>
 <button id="gm-right-rail-toggle" type="button" aria-controls="quick-toggles" aria-expanded="true" aria-label="Nascondi i comandi laterali" title="Nascondi i comandi laterali">
@@ -1486,7 +1487,7 @@
 <script src="js/organized/routes/routes-239-258.js?v=20261028-fase2a"></script>
 <script src="js/organized/contacts/contacts-259-260.js?v=20261028-fase2a"></script>
 
-<script src="js/organized/misc/misc-261-262.js?v=20261028-fase2a"></script>
+<script src="js/organized/misc/misc-261-262.js?v=20261124-map-events-1"></script>
 
 <script src="js/wall-search.js?v=20261029-1"></script>
 <script src="js/toolbar-search.js?v=20261029-1"></script>
@@ -1501,7 +1502,7 @@
 <link rel="stylesheet" href="eventi-consigliati/eventi.css?v=20261018-2">
 <link rel="stylesheet" href="documentari/storie-di-genova/documentario.css?v=20261017-1">
 <script src="documentari/storie-di-genova/documentario.js?v=20261017-1" defer></script>
-<script src="eventi-consigliati/eventi.js?v=20261018-2" defer></script>
+<script src="eventi-consigliati/eventi.js?v=20261124-map-events-1" defer></script>
 <script src="js/griffoncino-dialogues.js?v=20260930-1"></script>
 <script src="js/griffoncino-profile.js?v=20260927-1"></script>
 <script src="js/griffoncino-actions.js?v=20260927-4"></script>
@@ -1533,10 +1534,10 @@
 <script src="js/map-3d.js?v=20260913-2"></script>
 <script src="js/nearby.js?v=20261109-nearby-link-1"></script>
 <script src="js/marker-zoom-levels.js?v=20261018-1"></script>
-<link rel="stylesheet" href="css/right-rail-collapse.css?v=20261018-1">
+<link rel="stylesheet" href="css/right-rail-collapse.css?v=20261124-map-events-1">
 <script src="js/right-rail-collapse.js?v=20261018-1"></script>
 
 <link rel="stylesheet" href="css/taccuino-button-bottom.css?v=20261018-1">
-<link rel="stylesheet" href="css/map-controls-size.css?v=20261115-settings-buttons-5">
+<link rel="stylesheet" href="css/map-controls-size.css?v=20261124-map-events-1">
 </body>
 </html>

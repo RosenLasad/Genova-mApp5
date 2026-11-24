@@ -7,6 +7,8 @@
   var EXCLUDE = new Set(['qt-clear']);
 
   function btnKey(btn){
+    // La visibilità degli Eventi è condivisa con la New Home e vale per la visita corrente.
+    if(btn.id === 'qt-eventi-consigliati') return null;
     // usa la prima classe "qt-xxx" (escludendo qt-btn)
     var cls = Array.from(btn.classList).filter(function(c){
       return c.indexOf('qt-') === 0 && c !== 'qt-btn' && !EXCLUDE.has(c);

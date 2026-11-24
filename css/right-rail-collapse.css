@@ -10,10 +10,18 @@
 #quick-toggles > #gm-right-rail-toggle svg {display:block; transition:transform .18s ease;}
 #quick-toggles.gm-right-rail-collapsed > #gm-right-rail-toggle svg {transform:rotate(180deg);}
 #quick-toggles > #gm-right-rail-toggle:focus-visible {outline:3px solid #e7c36d;outline-offset:3px;}
-/* Le dimensioni restano stabili: la freccia rimane sotto la X anche da chiuso. */
-#quick-toggles.gm-right-rail-collapsed {pointer-events:none !important;}
-#quick-toggles.gm-right-rail-collapsed > :not(#gm-right-rail-toggle) {
-  opacity:0 !important; visibility:hidden !important; pointer-events:none !important;
+/* Quando è chiusa, centra la sola freccia rispetto alla mappa. */
+#map > #quick-toggles#quick-toggles.gm-right-rail-collapsed {
+  position:absolute !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  padding:0 !important;
+  max-height:none !important;
+  overflow:visible !important;
+  pointer-events:none !important;
+}
+#map > #quick-toggles.gm-right-rail-collapsed > :not(#gm-right-rail-toggle) {
+  display:none !important;
 }
 #quick-toggles.gm-right-rail-collapsed > #gm-right-rail-toggle {pointer-events:auto !important;}
 @media (max-width:360px) {

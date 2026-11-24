@@ -1,16 +1,16 @@
 (function(){
   'use strict';
   var TEXT = {
-    it:{main:'Intrattenimento',parks:'Parchi e piazze',sport:'Sport',cinema:'Cinema',theater:'Teatri',exhibitions:'Mostre'},
-    en:{main:'Entertainment',parks:'Parks and squares',sport:'Sports',cinema:'Cinema',theater:'Theatres',exhibitions:'Exhibitions'},
-    es:{main:'Entretenimiento',parks:'Parques y plazas',sport:'Deporte',cinema:'Cine',theater:'Teatros',exhibitions:'Exposiciones'},
-    fr:{main:'Divertissement',parks:'Parcs et places',sport:'Sport',cinema:'Cinéma',theater:'Théâtres',exhibitions:'Expositions'},
-    ar:{main:'الترفيه',parks:'الحدائق والساحات',sport:'الرياضة',cinema:'السينما',theater:'المسارح',exhibitions:'المعارض'},
-    ru:{main:'Развлечения',parks:'Парки и площади',sport:'Спорт',cinema:'Кинотеатры',theater:'Театры',exhibitions:'Выставки'},
-    zh:{main:'娱乐',parks:'公园与广场',sport:'体育',cinema:'电影院',theater:'剧院',exhibitions:'展览'},
-    lij:{main:'Divertimento',parks:'Parchi e ciàsse',sport:'Sport',cinema:'Çinemma',theater:'Teatri',exhibitions:'Mostre'}
+    it:{events:'Eventi',main:'Intrattenimento',parks:'Parchi e piazze',sport:'Sport',cinema:'Cinema',theater:'Teatri',exhibitions:'Mostre'},
+    en:{events:'Events',main:'Entertainment',parks:'Parks and squares',sport:'Sports',cinema:'Cinema',theater:'Theatres',exhibitions:'Exhibitions'},
+    es:{events:'Eventos',main:'Entretenimiento',parks:'Parques y plazas',sport:'Deporte',cinema:'Cine',theater:'Teatros',exhibitions:'Exposiciones'},
+    fr:{events:'Événements',main:'Divertissement',parks:'Parcs et places',sport:'Sport',cinema:'Cinéma',theater:'Théâtres',exhibitions:'Expositions'},
+    ar:{events:'فعاليات',main:'الترفيه',parks:'الحدائق والساحات',sport:'الرياضة',cinema:'السينما',theater:'المسارح',exhibitions:'المعارض'},
+    ru:{events:'События',main:'Развлечения',parks:'Парки и площади',sport:'Спорт',cinema:'Кинотеатры',theater:'Театры',exhibitions:'Выставки'},
+    zh:{events:'活动',main:'娱乐',parks:'公园与广场',sport:'体育',cinema:'电影院',theater:'剧院',exhibitions:'展览'},
+    lij:{events:'Eventi',main:'Divertimento',parks:'Parchi e ciàsse',sport:'Sport',cinema:'Çinemma',theater:'Teatri',exhibitions:'Mostre'}
   };
-  var SELECTORS = {parks:'.qt-parchi',sport:'.qt-sport',cinema:'.qt-cinema',theater:'.qt-teatri',exhibitions:'.qt-mostre'};
+  var SELECTORS = {events:'.qt-eventi',parks:'.qt-parchi',sport:'.qt-sport',cinema:'.qt-cinema',theater:'.qt-teatri',exhibitions:'.qt-mostre'};
   function language(){
     var raw='';
     try{ raw=localStorage.getItem('lang')||document.documentElement.lang||'it'; }catch(_){ raw=document.documentElement.lang||'it'; }

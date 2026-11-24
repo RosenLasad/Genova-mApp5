@@ -123,8 +123,10 @@ function show(e,siteId){
  }
  return true;
 }
+var mapToggle=document.getElementById('qt-eventi-consigliati');
+if(mapToggle)mapToggle.addEventListener('click',function(){toggleRecommended(false);});
 function paint(){
- var pane=document.querySelector('.gm-new-home-events-panel');if(!pane)return;
+ var pane=document.querySelector('.gm-new-home-events-panel');if(!pane){updateButton();return;}
  var host=pane.querySelector('.gmec-recommended');
  if(!host){host=document.createElement('section');host.className='gmec-recommended';pane.insertBefore(host,pane.firstChild);}
  var current=events.filter(active),key=language()+'|'+current.map(function(e){return e.id;}).join('|');
@@ -137,6 +139,7 @@ function paint(){
  updateButton();
 }
 function updateButton(){
+ if(mapToggle)mapToggle.setAttribute('aria-pressed',String(markersVisible));
  document.querySelectorAll('[data-gmec-all-map]').forEach(function(btn){
   var label=ui(markersVisible?'hideMap':'mapToggle');if(btn.textContent!==label)btn.textContent=label;
   btn.setAttribute('aria-pressed',String(markersVisible));
@@ -145,11 +148,11 @@ function updateButton(){
  });
 }
 function refresh(){refreshMarkers();paint();}
-function toggleRecommended(){
+function toggleRecommended(closeHome){
  if(!markersVisible&&!hasMapEvents()){notice();return;}
  markersVisible=!markersVisible;
  refreshMarkers();updateButton();
- try{window.gmCloseNewHome&&window.gmCloseNewHome();}catch(_){}
+ if(closeHome!==false){try{window.gmCloseNewHome&&window.gmCloseNewHome();}catch(_){}}
 }
 function notice(){var old=document.getElementById('gmec-map-notice');if(old)old.remove();var el=document.createElement('div');el.id='gmec-map-notice';el.setAttribute('role','status');el.textContent=ui('noMapEvents');document.body.appendChild(el);clearTimeout(toastTimer);toastTimer=setTimeout(function(){el.remove();},3500);}
 function deepLink(){var id=new URL(location.href).searchParams.get('evento');if(!validId(id))return;var e=events.find(function(x){return x.id===id;});if(!e)return;var count=0;var timer=setInterval(function(){count++;if(show(e)||count>=35)clearInterval(timer);},250);}
