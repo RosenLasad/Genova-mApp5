@@ -1,5 +1,5 @@
 import { authenticatedUser, isDeletedUser, json, readUserRecord } from './_shared/billing-store.mjs';
-import { cloudflareMovie, cloudflareStreamHost } from './_shared/storie-cloudflare.mjs';
+import { cloudflareMovie } from './_shared/storie-cloudflare.mjs';
 
 const VIDEOS = new Map([
   ['borgo-incrociati', {
@@ -27,9 +27,8 @@ export default async function minidocPlayback(request) {
       }
     }
 
-    const url = new URL(`https://${cloudflareStreamHost(env)}/${video.preview}/iframe`);
-    url.searchParams.set('controls', 'false');
-    return json({provider:'cloudflare', mode:'preview', url:url.href});
+    const playback = await cloudflareMovie({env, videoId:video.preview, preview:true}).playback(page.origin);
+    return json({...playback, mode:'preview'});
   } catch (error) {
     console.warn('MiniDoc playback:', error?.code || error?.name || 'unavailable');
     return json({error:'minidoc_unavailable'}, 503);

@@ -242,65 +242,69 @@ var DOC_FLAG = {
     return streamSdk;
   }
 
-  function bindStreamMiniDoc(container, doc){
-    var media = container.querySelector('.doc-card__media');
-    var trigger = media && media.querySelector('.doc-stream-trigger');
-    if(!trigger) return;
+  async function playStreamMiniDoc(trigger){
+    var card = trigger.closest('.doc-card[data-id]');
+    var media = trigger.closest('.doc-card__media');
+    if(!card || !media || trigger.disabled) return;
     var status = media.querySelector('[role="status"]');
+    var title = card.querySelector('.doc-card__title').textContent;
+    trigger.disabled = true;
+    status.textContent = 'Caricamento del video…';
+    try{
+      var auth = window.GenovaAuth;
+      if(auth && !auth.isReady()) await auth.whenReady();
+      var user = auth && auth.getUser();
+      var account = user && user.id || '';
+      media.dataset.streamAccount = account;
+      var headers = {};
+      if(user) headers.Authorization = 'Bearer ' + await auth.token();
 
-    trigger.addEventListener('click', async function(event){
-      event.preventDefault();
-      event.stopPropagation();
-      trigger.disabled = true;
-      status.textContent = 'Caricamento del video…';
-      try{
-        var auth = window.GenovaAuth;
-        if(auth && !auth.isReady()) await auth.whenReady();
-        var user = auth && auth.getUser();
-        var account = user && user.id || '';
-        media.dataset.streamAccount = account;
-        var headers = {};
-        if(user) headers.Authorization = 'Bearer ' + await auth.token();
-
-        var endpoint = '/.netlify/functions/minidoc-playback?id=' + encodeURIComponent(doc.id);
-        var response = await fetch(endpoint, {method:'POST', headers:headers, cache:'no-store'});
-        if(!response.ok) throw new Error('minidoc_unavailable');
-        var result = await response.json();
-        var url = new URL(result.url);
-        var preview = result.mode === 'preview';
-        if(result.provider !== 'cloudflare' || (!preview && result.mode !== 'full') ||
-           url.protocol !== 'https:' || !/^customer-[a-z0-9-]+\.cloudflarestream\.com$/i.test(url.hostname) ||
-           url.username || url.password || url.port || !/^\/[a-z0-9_.-]+\/iframe$/i.test(url.pathname)){
-          throw new Error('minidoc_source_invalid');
-        }
-        var stream = preview ? await loadMiniDocStreamSdk() : null;
-        var currentUser = auth && auth.getUser();
-        if(!trigger.isConnected || (currentUser && currentUser.id || '') !== account) return;
-
-        var frame = document.createElement('iframe');
-        frame.className = 'doc-yt-embed';
-        frame.title = (preview ? 'Anteprima — ' : '') + pickTextDoc(doc.name);
-        frame.allow = preview ? 'autoplay; encrypted-media' : 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-        frame.allowFullscreen = !preview;
-        frame.referrerPolicy = 'strict-origin-when-cross-origin';
-        frame.src = url.href;
-        trigger.after(frame);
-        try{
-          if(preview) bindMiniDocPreview(media, frame, stream);
-        }catch(error){
-          frame.remove();
-          throw error;
-        }
-        trigger.remove();
-        status.textContent = '';
-      }catch(_){
-        if(trigger.isConnected){
-          status.textContent = 'Video non disponibile. Riprova tra poco.';
-          trigger.disabled = false;
-        }
+      var endpoint = '/.netlify/functions/minidoc-playback?id=' + encodeURIComponent(card.dataset.id);
+      var response = await fetch(endpoint, {method:'POST', headers:headers, cache:'no-store'});
+      if(!response.ok) throw new Error('minidoc_unavailable');
+      var result = await response.json();
+      var url = new URL(result.url);
+      var preview = result.mode === 'preview';
+      if(result.provider !== 'cloudflare' || (!preview && result.mode !== 'full') ||
+         url.protocol !== 'https:' || !/^customer-[a-z0-9-]+\.cloudflarestream\.com$/i.test(url.hostname) ||
+         url.username || url.password || url.port || !/^\/[a-z0-9_.-]+\/iframe$/i.test(url.pathname)){
+        throw new Error('minidoc_source_invalid');
       }
-    });
+      var stream = preview ? await loadMiniDocStreamSdk() : null;
+      var currentUser = auth && auth.getUser();
+      if(!trigger.isConnected || (currentUser && currentUser.id || '') !== account) return;
+
+      var frame = document.createElement('iframe');
+      frame.className = 'doc-yt-embed';
+      frame.title = (preview ? 'Anteprima — ' : '') + title;
+      frame.allow = preview ? 'autoplay; encrypted-media' : 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      frame.allowFullscreen = !preview;
+      frame.referrerPolicy = 'strict-origin-when-cross-origin';
+      frame.src = url.href;
+      trigger.after(frame);
+      try{
+        if(preview) bindMiniDocPreview(media, frame, stream);
+      }catch(error){
+        frame.remove();
+        throw error;
+      }
+      trigger.remove();
+      status.textContent = '';
+    }catch(_){
+      if(trigger.isConnected){
+        status.textContent = 'Video non disponibile. Riprova tra poco.';
+        trigger.disabled = false;
+      }
+    }
   }
+
+  document.addEventListener('click', function(event){
+    var trigger = event.target.closest && event.target.closest('.doc-stream-trigger');
+    if(!trigger) return;
+    event.preventDefault();
+    event.stopPropagation();
+    playStreamMiniDoc(trigger);
+  }, true);
 
   function bindMiniDocPreview(media, frame, stream){
     var player = stream(frame);
@@ -527,7 +531,6 @@ h += '<button type="button" class="doc-lang-btn" data-lang="' + escapeAttr(code)
           try{
             ev.popup.setContent(makePopupHTML(d));
             var el = ev.popup.getElement(); if(!el) return;
-            if(isStreamMiniDoc(d)) bindStreamMiniDoc(el, d);
             var trigger = el.querySelector('.doc-thumb');
 if(trigger){
   trigger.addEventListener('click', function(e){
@@ -578,7 +581,6 @@ function refreshDocPopup(){
     var el  = (pop && pop.getElement && pop.getElement()) || null;
     if(!el) return;
 
-    if(isStreamMiniDoc(d)) bindStreamMiniDoc(el, d);
     var trigger = el.querySelector('.doc-thumb');
     if(trigger){
       trigger.addEventListener('click', function(e){
