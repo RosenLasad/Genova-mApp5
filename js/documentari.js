@@ -209,8 +209,136 @@ var DOC_FLAG = {
 
 
 
+  function isStreamMiniDoc(doc){
+    return doc.id === 'borgo-incrociati' || doc.provider === 'cloudflare';
+  }
+
+  var streamSdk;
+  function loadMiniDocStreamSdk(){
+    if(typeof window.Stream === 'function') return Promise.resolve(window.Stream);
+    if(!streamSdk){
+      streamSdk = new Promise(function(resolve, reject){
+        var script = document.createElement('script');
+        function failed(){
+          clearTimeout(timer);
+          script.remove();
+          reject(new Error('stream_sdk_unavailable'));
+        }
+        var timer = setTimeout(failed, 8000);
+        script.src = 'https://embed.cloudflarestream.com/embed/sdk.latest.js';
+        script.async = true;
+        script.onload = function(){
+          clearTimeout(timer);
+          if(typeof window.Stream === 'function') resolve(window.Stream);
+          else failed();
+        };
+        script.onerror = failed;
+        document.head.appendChild(script);
+      }).catch(function(error){
+        streamSdk = null;
+        throw error;
+      });
+    }
+    return streamSdk;
+  }
+
+  function bindStreamMiniDoc(container, doc){
+    var media = container.querySelector('.doc-card__media');
+    var trigger = media && media.querySelector('.doc-stream-trigger');
+    if(!trigger) return;
+    var status = media.querySelector('[role="status"]');
+
+    trigger.addEventListener('click', async function(event){
+      event.preventDefault();
+      event.stopPropagation();
+      trigger.disabled = true;
+      status.textContent = 'Caricamento del video…';
+      try{
+        var auth = window.GenovaAuth;
+        if(auth && !auth.isReady()) await auth.whenReady();
+        var user = auth && auth.getUser();
+        var account = user && user.id || '';
+        media.dataset.streamAccount = account;
+        var headers = {};
+        if(user) headers.Authorization = 'Bearer ' + await auth.token();
+
+        var endpoint = '/.netlify/functions/minidoc-playback?id=' + encodeURIComponent(doc.id);
+        var response = await fetch(endpoint, {method:'POST', headers:headers, cache:'no-store'});
+        if(!response.ok) throw new Error('minidoc_unavailable');
+        var result = await response.json();
+        var url = new URL(result.url);
+        var preview = result.mode === 'preview';
+        if(result.provider !== 'cloudflare' || (!preview && result.mode !== 'full') ||
+           url.protocol !== 'https:' || !/^customer-[a-z0-9-]+\.cloudflarestream\.com$/i.test(url.hostname) ||
+           url.username || url.password || url.port || !/^\/[a-z0-9_.-]+\/iframe$/i.test(url.pathname)){
+          throw new Error('minidoc_source_invalid');
+        }
+        var stream = preview ? await loadMiniDocStreamSdk() : null;
+        var currentUser = auth && auth.getUser();
+        if(!trigger.isConnected || (currentUser && currentUser.id || '') !== account) return;
+
+        var frame = document.createElement('iframe');
+        frame.className = 'doc-yt-embed';
+        frame.title = (preview ? 'Anteprima — ' : '') + pickTextDoc(doc.name);
+        frame.allow = preview ? 'autoplay; encrypted-media' : 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        frame.allowFullscreen = !preview;
+        frame.referrerPolicy = 'strict-origin-when-cross-origin';
+        frame.src = url.href;
+        trigger.after(frame);
+        try{
+          if(preview) bindMiniDocPreview(media, frame, stream);
+        }catch(error){
+          frame.remove();
+          throw error;
+        }
+        trigger.remove();
+        status.textContent = '';
+      }catch(_){
+        if(trigger.isConnected){
+          status.textContent = 'Video non disponibile. Riprova tra poco.';
+          trigger.disabled = false;
+        }
+      }
+    });
+  }
+
+  function bindMiniDocPreview(media, frame, stream){
+    var player = stream(frame);
+    player.controls = false;
+    var play = document.createElement('button');
+    play.type = 'button';
+    play.className = 'doc-btn';
+    play.textContent = 'Riproduci anteprima';
+    player.addEventListener('play', function(){ play.textContent = 'Pausa'; });
+    player.addEventListener('pause', function(){ play.textContent = 'Riprendi anteprima'; });
+    player.addEventListener('ended', function(){ play.textContent = 'Rivedi anteprima'; });
+    function playPreview(){
+      Promise.resolve(player.play()).catch(function(){ play.textContent = 'Riproduci anteprima'; });
+    }
+    play.addEventListener('click', function(){
+      if(player.paused || player.ended) playPreview();
+      else player.pause();
+    });
+    var notice = document.createElement('div');
+    notice.className = 'doc-paywall';
+    var label = document.createElement('span');
+    label.textContent = 'Anteprima · 10 secondi';
+    var subscribe = document.createElement('button');
+    subscribe.type = 'button';
+    subscribe.className = 'doc-btn';
+    subscribe.textContent = 'Abbonati';
+    subscribe.addEventListener('click', function(){
+      player.pause();
+      if(window.GenovaSubscription) window.GenovaSubscription.open();
+    });
+    notice.append(label, subscribe);
+    media.append(play, notice);
+    playPreview();
+  }
+
   function makePopupHTML(doc){
-var ytUrl = pickDocYoutubeUrl(doc);
+  var cloudflare = isStreamMiniDoc(doc);
+var ytUrl = cloudflare ? null : pickDocYoutubeUrl(doc);
 var vid   = getYoutubeId(ytUrl);
   var title = pickTextDoc(doc.name) || doc.id || 'Documentario';
   var info  = pickTextDoc(doc.info) || '';
@@ -223,7 +351,7 @@ var vid   = getYoutubeId(ytUrl);
       h +=     '<span class="doc-card__badge">Premium</span>';
       h +=   '</div>';
 
-var ymap = getDocYoutubeMap(doc);
+var ymap = cloudflare ? null : getDocYoutubeMap(doc);
 if(ymap){
   h += '<div class="doc-lang" aria-label="Lingua video">';
   Object.keys(ymap).forEach(function(code){
@@ -239,7 +367,10 @@ h += '<button type="button" class="doc-lang-btn" data-lang="' + escapeAttr(code)
 }
 
 
-        if(vid){
+        if(cloudflare){
+          h += '<div class="doc-card__media"><button type="button" class="doc-btn doc-stream-trigger">Riproduci MiniDoc</button>';
+          h += '<div role="status" aria-live="polite"></div>';
+        }else if(vid){
           h +=     '<button type="button" class="doc-thumb" data-ytid="' + vid + '" aria-label="Riproduci video">';
           var thumb = doc.thumbnail || ('https://img.youtube.com/vi/' + vid + '/hqdefault.jpg');
           h +=       '<img alt="Anteprima video" src="' + escapeAttr(thumb) + '">';
@@ -381,7 +512,7 @@ h += '<button type="button" class="doc-lang-btn" data-lang="' + escapeAttr(code)
         var media = container.querySelector('.doc-card__media');
         if(!media) return;
         var iframe = media.querySelector('.doc-yt-embed');
-        if(iframe){ iframe.src=''; iframe.remove(); }
+        if(iframe) iframe.remove();
         var pw = container.querySelector('.doc-paywall'); if(pw) pw.remove();
       }catch(_){}
     }
@@ -396,6 +527,7 @@ h += '<button type="button" class="doc-lang-btn" data-lang="' + escapeAttr(code)
           try{
             ev.popup.setContent(makePopupHTML(d));
             var el = ev.popup.getElement(); if(!el) return;
+            if(isStreamMiniDoc(d)) bindStreamMiniDoc(el, d);
             var trigger = el.querySelector('.doc-thumb');
 if(trigger){
   trigger.addEventListener('click', function(e){
@@ -446,6 +578,7 @@ function refreshDocPopup(){
     var el  = (pop && pop.getElement && pop.getElement()) || null;
     if(!el) return;
 
+    if(isStreamMiniDoc(d)) bindStreamMiniDoc(el, d);
     var trigger = el.querySelector('.doc-thumb');
     if(trigger){
       trigger.addEventListener('click', function(e){
@@ -482,6 +615,16 @@ if(langBtns && langBtns.length){
 
 try{
   document.addEventListener('app:set-lang', refreshDocPopup);
+  if(isStreamMiniDoc(d)){
+    document.addEventListener('genova:auth-changed', function(event){
+      var pop = m.getPopup();
+      var el = m.isPopupOpen() && pop && pop.getElement();
+      var media = el && el.querySelector('.doc-card__media');
+      var account = event.detail && event.detail.user && event.detail.user.id || '';
+      if(media && media.dataset.streamAccount !== undefined &&
+         media.dataset.streamAccount !== account) refreshDocPopup();
+    });
+  }
 }catch(_){}
 
 
@@ -707,7 +850,7 @@ DOCS.forEach(function(d){
     }).then(function(arr){
       DOCS = arr.filter(Boolean);
       // Fallback se non carica nulla (es. test locale con file://)
-      if(!DOCS.length) { try { DOCS = [{"id": "piazza-de-ferrari", "name": "Piazza de Ferrari", "coords": [44.40712720909712, 8.933972142472864], "youtube": "https://youtu.be/nANDItOIOlc", "info": "Mini documentario su Piazza de Ferrari e la sua storia.", "thumbnail": null}, {"id": "san-teodoro", "name": "San Teodoro", "coords": [44.41412203482928, 8.914105475915406], "youtube": "https://youtu.be/32TzhHyY5Qk", "info": "Mini documentario su San Teodoro.", "thumbnail": null}, {"id": "seno-di-giano", "name": "Seno di Giano", "coords": [44.40336915941983, 8.932371887002882], "youtube": "https://youtu.be/5mKCW0Mf5YA", "info": "Mini documentario sul Seno di Giano.", "thumbnail": null}, {"id": "viaxxsettembre", "name": "Via XX settembre", "coords": [44.405826120223495, 8.939989775240152], "youtube": "https://youtu.be/Fdfh4CsqiDw", "info": "Mini documentario su Via XX settembre.", "thumbnail": null}, {"id": "cimitero-staglieno", "name": "Cimitero Staglieno", "coords": [44.42869083288194, 8.950933965139109], "youtube": "https://youtu.be/tMayj8iEwmM", "info": "Mini Documentario sul Cimitero di Staglieno"}, {"id": "borgo-incrociati", "name": "Borgo Incrociati", "coords": [44.40851090999621, 8.950047849156162], "youtube": "https://youtu.be/LjfVjhjDvSI", "info": "Mini Documentario su Borgo Incrociati"}, {"id": "fronti-basse", "name": "Fronti Basse", "coords": [44.40461961095648, 8.944204246412001], "youtube": "https://youtu.be/LUs7BOEziHI", "info": "Mini Documentario sulle Fronti Basse"}, {"id": "esposizione-universale-1914", "name": "Esposizione Universale", "coords": [44.40256920446371, 8.944976783036836], "youtube": "https://youtu.be/SXQFzLKUe8Y", "info": "Mini Documentario sull'Esposizione Universale del 1914"}, {"id": "stazione-brignole", "name": "Stazione Brignole", "coords": [44.40696316399487, 8.946721693490986], "youtube": "https://youtu.be/bRuiyCnLXKo", "info": "Mini Documentario sulla Stazione Brignole"}, {"id": "stazione-principe", "name": "Stazione Principe", "coords": [44.41736033780297, 8.921595766503463], "youtube": "https://youtu.be/jS6xNTdNwXc", "info": "Mini Documentario sulla Stazione P.Principe"}, {"id": "borgo-ponticello", "name": "Borgo Ponticello", "coords": [44.40598608933367, 8.936089317920874], "youtube": "https://youtu.be/QbrJlLfxRTo", "info": "Mini Documentario sul borgo di Ponticello"}, {"id": "borgo-piccapietra", "name": "Borgo Piccapietra", "coords": [44.40798507535832, 8.936440370414537], "youtube": "https://youtu.be/tf4A2yn1BWg", "info": "Mini Documentario sul borgo di Piccapietra"}, {"id": "parco-acquasola", "name": "Parco Acquasola", "coords": [44.408290447740896, 8.940179083362601], "youtube": "https://youtu.be/0eobd_4FQrU", "info": "Mini Documentario sul Parco dell'Acquasola"}, {"id": "circonvallazione-a-monte", "name": "Circonvallazione a monte", "coords": [44.41444082733196, 8.933274701938227], "youtube": "https://youtu.be/rRmjwFAd3wI", "info": "Mini Documentario sul quartiere di Castelletto"}, {"id": "corso-italia", "name": "Corso Italia", "coords": [44.39204349657359, 8.95452415798286], "youtube": "https://youtu.be/QP_5tV5ScsQ", "info": "Mini Documentario sulla nascita di Corso Italia"}]; } catch(_ ) {} }
+      if(!DOCS.length) { try { DOCS = [{"id": "piazza-de-ferrari", "name": "Piazza de Ferrari", "coords": [44.40712720909712, 8.933972142472864], "youtube": "https://youtu.be/nANDItOIOlc", "info": "Mini documentario su Piazza de Ferrari e la sua storia.", "thumbnail": null}, {"id": "san-teodoro", "name": "San Teodoro", "coords": [44.41412203482928, 8.914105475915406], "youtube": "https://youtu.be/32TzhHyY5Qk", "info": "Mini documentario su San Teodoro.", "thumbnail": null}, {"id": "seno-di-giano", "name": "Seno di Giano", "coords": [44.40336915941983, 8.932371887002882], "youtube": "https://youtu.be/5mKCW0Mf5YA", "info": "Mini documentario sul Seno di Giano.", "thumbnail": null}, {"id": "viaxxsettembre", "name": "Via XX settembre", "coords": [44.405826120223495, 8.939989775240152], "youtube": "https://youtu.be/Fdfh4CsqiDw", "info": "Mini documentario su Via XX settembre.", "thumbnail": null}, {"id": "cimitero-staglieno", "name": "Cimitero Staglieno", "coords": [44.42869083288194, 8.950933965139109], "youtube": "https://youtu.be/tMayj8iEwmM", "info": "Mini Documentario sul Cimitero di Staglieno"}, {"id": "borgo-incrociati", "name": "Borgo Incrociati", "coords": [44.40851090999621, 8.950047849156162], "provider": "cloudflare", "info": "Mini Documentario su Borgo Incrociati"}, {"id": "fronti-basse", "name": "Fronti Basse", "coords": [44.40461961095648, 8.944204246412001], "youtube": "https://youtu.be/LUs7BOEziHI", "info": "Mini Documentario sulle Fronti Basse"}, {"id": "esposizione-universale-1914", "name": "Esposizione Universale", "coords": [44.40256920446371, 8.944976783036836], "youtube": "https://youtu.be/SXQFzLKUe8Y", "info": "Mini Documentario sull'Esposizione Universale del 1914"}, {"id": "stazione-brignole", "name": "Stazione Brignole", "coords": [44.40696316399487, 8.946721693490986], "youtube": "https://youtu.be/bRuiyCnLXKo", "info": "Mini Documentario sulla Stazione Brignole"}, {"id": "stazione-principe", "name": "Stazione Principe", "coords": [44.41736033780297, 8.921595766503463], "youtube": "https://youtu.be/jS6xNTdNwXc", "info": "Mini Documentario sulla Stazione P.Principe"}, {"id": "borgo-ponticello", "name": "Borgo Ponticello", "coords": [44.40598608933367, 8.936089317920874], "youtube": "https://youtu.be/QbrJlLfxRTo", "info": "Mini Documentario sul borgo di Ponticello"}, {"id": "borgo-piccapietra", "name": "Borgo Piccapietra", "coords": [44.40798507535832, 8.936440370414537], "youtube": "https://youtu.be/tf4A2yn1BWg", "info": "Mini Documentario sul borgo di Piccapietra"}, {"id": "parco-acquasola", "name": "Parco Acquasola", "coords": [44.408290447740896, 8.940179083362601], "youtube": "https://youtu.be/0eobd_4FQrU", "info": "Mini Documentario sul Parco dell'Acquasola"}, {"id": "circonvallazione-a-monte", "name": "Circonvallazione a monte", "coords": [44.41444082733196, 8.933274701938227], "youtube": "https://youtu.be/rRmjwFAd3wI", "info": "Mini Documentario sul quartiere di Castelletto"}, {"id": "corso-italia", "name": "Corso Italia", "coords": [44.39204349657359, 8.95452415798286], "youtube": "https://youtu.be/QP_5tV5ScsQ", "info": "Mini Documentario sulla nascita di Corso Italia"}]; } catch(_ ) {} }
       // Espone l'elenco corrente dei MiniDoc agli strumenti esterni (es. "Vicino a me")
       // senza duplicare i dati in altri file.
       try{

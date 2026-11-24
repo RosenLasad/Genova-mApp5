@@ -5,6 +5,6 @@
     44.40851090999621,
     8.950047849156162
   ],
-  "youtube": "https://youtu.be/LjfVjhjDvSI",
+  "provider": "cloudflare",
   "info": "Mini Documentario su Borgo Incrociati"
 }

@@ -1,13 +1,21 @@
 import {problem} from './storie-stripe.mjs';
 
-export function cloudflareMovie({env, fetcher = fetch, now = Date.now}) {
+export function cloudflareStreamHost(env) {
+  const host = (env('CF_STREAM_HOST') || '').trim().replace(/^https:\/\//,'').replace(/\/$/,'');
+  if (!/^customer-[a-z0-9-]+\.cloudflarestream\.com$/i.test(host)) {
+    throw problem('cloudflare_configuration','Il servizio video è in preparazione.');
+  }
+  return host;
+}
+
+export function cloudflareMovie({env, videoId, fetcher = fetch, now = Date.now}) {
   function settings() {
     const account = (env('CF_STREAM_ACCOUNT_ID') || '').trim();
-    const video = (env('CF_STREAM_VIDEO_ID') || '').trim();
-    const host = (env('CF_STREAM_HOST') || '').trim().replace(/^https:\/\//,'').replace(/\/$/,'');
+    const video = (videoId || env('CF_STREAM_VIDEO_ID') || '').trim();
+    const host = cloudflareStreamHost(env);
     const apiToken = (env('CF_STREAM_API_TOKEN') || '').trim();
     if (!/^[a-f0-9]{32}$/i.test(account) || !/^[a-f0-9]{32}$/i.test(video) ||
-        !/^customer-[a-z0-9-]+\.cloudflarestream\.com$/i.test(host) || !apiToken) {
+        !apiToken) {
       throw problem('cloudflare_configuration','La sala è in preparazione. Riprova più tardi.');
     }
     return {account,video,host,apiToken};
