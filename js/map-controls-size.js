@@ -5,21 +5,21 @@
   var KEY='genova_map_controls_size_v1',SCALES={current:1,compact:.88,'very-compact':.76};
   var current=read(),queued=false,booted=false,saved=new Map(),observer=null;
   var COPY={
-    it:['Dimensione comandi della mappa','Grande','Normale','Piccola','Regola pulsanti, icone e spazi dei comandi mappa. La dimensione del testo resta separata.'],
-    en:['Map control size','Large','Normal','Small','Adjusts map buttons, icons and spacing. Text size is a separate setting.'],
-    es:['Tamaño de los controles del mapa','Grande','Normal','Pequeña','Ajusta botones, iconos y espacios del mapa. El tamaño del texto se ajusta por separado.'],
-    fr:['Taille des commandes de la carte','Grande','Normale','Petite','Règle les boutons, les icônes et les espacements. La taille du texte se règle séparément.'],
-    ar:['حجم أزرار الخريطة','كبير','عادي','صغير','يضبط أزرار الخريطة والأيقونات والمسافات. يُضبط حجم النص بشكل منفصل.'],
-    ru:['Размер кнопок карты','Большой','Обычный','Маленький','Настраивает кнопки, значки и интервалы на карте. Размер текста настраивается отдельно.'],
-    zh:['地图控件大小','大','标准','小','调整地图按钮、图标和间距。文字大小单独设置。'],
-    lij:['Dimenscion di comandi da mappa','Grande','Normale','Piccin','O regola bottoni, icone e spaçi da mappa. A dimenscion do testo a resta separâ.']
+    it:['Dimensione comandi della mappa','Grande','Normale','Piccola'],
+    en:['Map control size','Large','Normal','Small'],
+    es:['Tamaño de los controles del mapa','Grande','Normal','Pequeña'],
+    fr:['Taille des commandes de la carte','Grande','Normale','Petite'],
+    ar:['حجم أزرار الخريطة','كبير','عادي','صغير'],
+    ru:['Размер кнопок карты','Большой','Обычный','Маленький'],
+    zh:['地图控件大小','大','标准','小'],
+    lij:['Dimenscion di comandi da mappa','Grande','Normale','Piccin']
   };
   function read(){try{var x=localStorage.getItem(KEY);return Object.prototype.hasOwnProperty.call(SCALES,x)?x:'compact';}catch(_e){return 'compact';}}
   function lang(){var x=document.documentElement.lang||'it';try{x=localStorage.getItem('lang')||x;}catch(_e){}return String(x).toLowerCase().split(/[-_]/)[0];}
   function render(){
     var text=COPY[lang()]||COPY.it;
-    var label=document.getElementById('settings-map-controls-label'),help=document.getElementById('settings-map-controls-help');
-    if(label)label.textContent=text[0];if(help)help.textContent=text[4];
+    var label=document.getElementById('settings-map-controls-label');
+    if(label)label.textContent=text[0];
     document.querySelectorAll('[data-map-control-size]').forEach(function(button){
       var size=button.getAttribute('data-map-control-size');
       button.textContent=text[['current','compact','very-compact'].indexOf(size)+1];

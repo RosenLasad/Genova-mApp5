@@ -72,7 +72,6 @@ html[data-map-controls-size]:not([data-map-controls-size="current"]) #qr-menu :i
 /* Il selettore nelle Impostazioni non viene ridotto insieme ai comandi mappa. */
 .settings-map-controls-size{padding:11px 12px;border-top:1px solid rgba(148,163,184,.14)}
 .settings-map-controls-label{font:700 13px/1.3 system-ui,sans-serif;color:inherit;margin-bottom:8px}
-.settings-map-controls-help{margin:8px 0 0;font:12px/1.35 system-ui,sans-serif;opacity:.78}
 /* Righe Percorsi: testo completo e spazi più contenuti, interruttori utilizzabili. */
 html[data-map-controls-size]:not([data-map-controls-size="current"]) #quick-toggles#quick-toggles #qt-cat-routes .qt-route-row{min-height:calc(47px * var(--gm-control-scale))!important;padding:calc(4px * var(--gm-control-scale))!important;gap:calc(7px * var(--gm-control-scale))!important}
 html[data-map-controls-size]:not([data-map-controls-size="current"]) #quick-toggles#quick-toggles #qt-cat-routes .qt-route-name{display:block!important;overflow:visible!important;-webkit-line-clamp:unset!important;line-clamp:unset!important;white-space:normal!important}

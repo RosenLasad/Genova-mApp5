@@ -10,6 +10,28 @@
   box-shadow:0 24px 70px rgba(0,0,0,.48),0 0 0 1px rgba(255,255,255,.025) inset !important;
 }
 
+@media (min-width:769px) and (any-pointer:fine){
+  #settings-modal-overlay > #settings-dropdown.settings-v2-ready{
+    display:flex !important;
+    flex-direction:column;
+    max-height:calc(100dvh - 28px) !important;
+    overflow:hidden !important;
+    border-color:rgba(148,191,229,.56) !important;
+    box-shadow:0 24px 70px rgba(0,0,0,.56),0 0 0 1px rgba(2,6,23,.72) !important;
+  }
+  #settings-dropdown.settings-v2-ready > .settings-modal-head{
+    flex-shrink:0;
+  }
+  #settings-dropdown.settings-v2-ready > .settings-v2-body{
+    min-height:0;
+    grid-auto-rows:max-content;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    scrollbar-width:thin;
+    scrollbar-color:#64748b transparent;
+  }
+}
+
 #settings-modal-overlay #settings-dropdown.settings-v2-ready .settings-row{
   padding:8px 11px !important;
   font-size:14px !important;
