@@ -1,4 +1,4 @@
-import { authenticatedUser, isDeletedUser, json, readUserRecord } from './_shared/billing-store.mjs';
+import { authenticatedUser, isAdminUser, isDeletedUser, json, readUserRecord } from './_shared/billing-store.mjs';
 import { cloudflareMovie } from './_shared/storie-cloudflare.mjs';
 
 const VIDEOS = new Map([
@@ -18,10 +18,11 @@ export default async function minidocPlayback(request) {
     const env = key => Netlify.env.get(key);
     const user = await authenticatedUser(request);
     if (user?.id && !(await isDeletedUser(user.id))) {
-      const record = await readUserRecord(user.id);
-      const subscription = record?.subscription;
-      if (subscription?.status === 'active' && subscription.simulated === false &&
-          (!subscription.currentPeriodEnd || Number(subscription.currentPeriodEnd) > Date.now())) {
+      const admin = isAdminUser(user);
+      const subscription = admin ? null : (await readUserRecord(user.id))?.subscription;
+      const active = subscription?.status === 'active' && subscription.simulated === false &&
+        (!subscription.currentPeriodEnd || Number(subscription.currentPeriodEnd) > Date.now());
+      if (admin || active) {
         const playback = await cloudflareMovie({env, videoId:video.full}).playback(page.origin);
         return json({...playback, mode:'full'});
       }
