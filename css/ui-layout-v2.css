@@ -41,9 +41,9 @@
   min-width:40px !important;
   min-height:40px !important;
   padding:0 !important;
-  border:1px solid rgba(255,255,255,.55) !important;
+  border:1px solid var(--gm-palette-border, rgba(255,255,255,.55)) !important;
   border-radius:9999px !important;
-  background:rgba(11,18,34,.92) !important;
+  background:var(--gm-palette-control, rgba(11,18,34,.92)) !important;
   color:#e5e7eb !important;
   box-shadow:0 3px 12px rgba(0,0,0,.28);
   cursor:pointer;
@@ -60,8 +60,8 @@
 
 #app > header #tb-search-btn:hover,
 #app > header #tb-search-btn:focus-visible{
-  background:rgba(22,32,52,.98) !important;
-  border-color:rgba(255,255,255,.8) !important;
+  background:var(--gm-palette-hover, rgba(22,32,52,.98)) !important;
+  border-color:var(--gm-palette-accent, rgba(255,255,255,.8)) !important;
 }
 
 #app > header #tb-search{
@@ -83,7 +83,7 @@
   -webkit-appearance:none !important;
   appearance:none !important;
   height:40px !important;
-  background:rgba(11,18,34,.96) !important;
+  background:var(--gm-palette-control, rgba(11,18,34,.96)) !important;
   color:#e5e7eb !important;
   -webkit-text-fill-color:#e5e7eb !important;
   caret-color:#e5e7eb !important;
@@ -349,8 +349,8 @@ body > #flag-switcher .flag-ico svg{
 #bottom-bar #map-qr-fab,
 #bottom-bar #btn-home{
   color:#f1f5f9 !important;
-  background:rgba(11,18,34,.92) !important;
-  border:1px solid rgba(226,232,240,.4) !important;
+  background:var(--gm-palette-control, rgba(11,18,34,.92)) !important;
+  border:1px solid var(--gm-palette-border, rgba(226,232,240,.4)) !important;
   border-radius:9999px !important;
   box-shadow:0 5px 15px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.08) !important;
   backdrop-filter:blur(8px);
@@ -370,8 +370,8 @@ body > #flag-switcher .flag-ico svg{
 #bottom-bar #btn-gps:focus-visible,
 #bottom-bar #map-qr-fab:focus-visible,
 #bottom-bar #btn-home:focus-visible{
-  background:rgba(24,36,58,.98) !important;
-  border-color:rgba(255,255,255,.72) !important;
+  background:var(--gm-palette-hover, rgba(24,36,58,.98)) !important;
+  border-color:var(--gm-palette-accent, rgba(255,255,255,.72)) !important;
   box-shadow:0 6px 18px rgba(0,0,0,.38), 0 0 0 2px rgba(96,165,250,.16) !important;
 }
 
@@ -474,8 +474,8 @@ body > #flag-switcher .flag-ico svg{
 #flag-menu{
   gap:7px !important;
   padding:8px !important;
-  background:rgba(11,18,34,.94) !important;
-  border:1px solid rgba(226,232,240,.22) !important;
+  background:var(--gm-palette-control, rgba(11,18,34,.94)) !important;
+  border:1px solid var(--gm-palette-border, rgba(226,232,240,.22)) !important;
   border-radius:12px !important;
   box-shadow:0 12px 28px rgba(0,0,0,.42) !important;
   backdrop-filter:blur(9px);
@@ -500,16 +500,16 @@ body > #flag-switcher .flag-ico svg{
 /* Joystick e Zoom nella stessa famiglia visiva dei pulsanti. */
 #ui-map-controls .joystick{
   color:rgba(226,232,240,.78) !important;
-  background:rgba(11,18,34,.82) !important;
-  border:1px solid rgba(226,232,240,.38) !important;
+  background:var(--gm-palette-control, rgba(11,18,34,.82)) !important;
+  border:1px solid var(--gm-palette-border, rgba(226,232,240,.38)) !important;
   box-shadow:0 7px 20px rgba(0,0,0,.36), inset 0 1px 0 rgba(255,255,255,.08) !important;
   backdrop-filter:blur(7px);
   -webkit-backdrop-filter:blur(7px);
 }
 
 #ui-map-controls .joystick .thumb{
-  background:#3b82f6 !important;
-  border:2px solid rgba(219,234,254,.9) !important;
+  background:var(--gm-palette-selected, #3b82f6) !important;
+  border:2px solid var(--gm-palette-accent, rgba(219,234,254,.9)) !important;
   box-shadow:0 3px 9px rgba(0,0,0,.4), 0 0 0 3px rgba(59,130,246,.16) !important;
 }
 
@@ -521,14 +521,14 @@ body > #flag-switcher .flag-ico svg{
 
 #ui-zoom-anchor .leaflet-control-zoom{
   overflow:hidden;
-  border:1px solid rgba(226,232,240,.38) !important;
+  border:1px solid var(--gm-palette-border, rgba(226,232,240,.38)) !important;
   border-radius:9px !important;
   box-shadow:0 6px 16px rgba(0,0,0,.34) !important;
 }
 
 #ui-zoom-anchor .leaflet-control-zoom a{
   color:#f1f5f9 !important;
-  background:rgba(11,18,34,.92) !important;
+  background:var(--gm-palette-control, rgba(11,18,34,.92)) !important;
   border:0 !important;
 }
 
@@ -538,7 +538,7 @@ body > #flag-switcher .flag-ico svg{
 
 #ui-zoom-anchor .leaflet-control-zoom a:hover,
 #ui-zoom-anchor .leaflet-control-zoom a:focus-visible{
-  background:rgba(24,36,58,.98) !important;
+  background:var(--gm-palette-hover, rgba(24,36,58,.98)) !important;
 }
 
 /* Centratura tipografica indipendente dalla baseline usata da Leaflet. */
@@ -594,7 +594,7 @@ html body #ui-map-controls #ui-zoom-anchor .leaflet-control-zoom > a > span{
 #bottom-bar #map-qr-fab:not(.active):not([aria-expanded="true"]):hover,
 #bottom-bar #btn-home:hover{
   filter:brightness(1.12) saturate(1.05);
-  border-color:rgba(255,255,255,.8) !important;
+  border-color:var(--gm-palette-accent, rgba(255,255,255,.8)) !important;
 }
 
 @media (max-width:768px){
@@ -771,15 +771,15 @@ html body #ui-map-controls #btn-home{
   display:grid !important;
   place-items:center;
   color:#f1f5f9 !important;
-  background:rgba(11,18,34,.92) !important;
-  border:1px solid rgba(226,232,240,.38) !important;
+  background:var(--gm-palette-control, rgba(11,18,34,.92)) !important;
+  border:1px solid var(--gm-palette-border, rgba(226,232,240,.38)) !important;
   border-radius:9px !important;
   box-shadow:0 6px 16px rgba(0,0,0,.34) !important;
   pointer-events:auto;
 }
 #ui-map-controls #btn-home [data-ui-icon],
 #ui-map-controls #btn-home svg{ width:22px !important; height:22px !important; }
-html body #ui-map-controls #btn-home:hover{ background:rgba(24,36,58,.98) !important; }
+html body #ui-map-controls #btn-home:hover{ background:var(--gm-palette-hover, rgba(24,36,58,.98)) !important; }
 html body #ui-map-controls #btn-home:focus-visible{ outline:3px solid #60a5fa; outline-offset:2px; }
 /* In modalita 3D lo stesso pulsante diventa il selettore Rotazione del joystick. */
 html.gm-map-3d-active body #ui-map-controls #btn-home[data-ui-map-mode="rotate"]{
@@ -1104,8 +1104,8 @@ html.gm-map-3d-active #map > #ui-taccuino-button.ui-taccuino-edge{
   margin:0 !important;
   padding:0 !important;
   color:#e5e7eb !important;
-  background:rgba(11,18,34,.92) !important;
-  border:1px solid rgba(255,255,255,.55) !important;
+  background:var(--gm-palette-control, rgba(11,18,34,.92)) !important;
+  border:1px solid var(--gm-palette-border, rgba(255,255,255,.55)) !important;
   border-radius:9999px !important;
   box-shadow:0 3px 12px rgba(0,0,0,.28) !important;
   cursor:pointer !important;
@@ -1122,14 +1122,14 @@ html.gm-map-3d-active #map > #ui-taccuino-button.ui-taccuino-edge{
 
 #app > header .toolbar-right #btn-settings:hover,
 #app > header .toolbar-right #btn-settings:focus-visible{
-  background:rgba(22,32,52,.98) !important;
-  border-color:rgba(255,255,255,.8) !important;
+  background:var(--gm-palette-hover, rgba(22,32,52,.98)) !important;
+  border-color:var(--gm-palette-accent, rgba(255,255,255,.8)) !important;
 }
 
 #app > header .toolbar-right .settings-wrapper.open #btn-settings{
-  color:#ddd6fe !important;
-  background:rgba(76,59,101,.98) !important;
-  border-color:rgba(196,181,253,.82) !important;
+  color:var(--gm-palette-accent, #ddd6fe) !important;
+  background:var(--gm-palette-selected, rgba(76,59,101,.98)) !important;
+  border-color:var(--gm-palette-accent, rgba(196,181,253,.82)) !important;
   box-shadow:0 4px 14px rgba(0,0,0,.32), 0 0 0 2px rgba(167,139,250,.16) !important;
 }
 
@@ -1331,7 +1331,7 @@ html body #help-legend{
   padding:10px !important;
   border:1px solid rgba(255,255,255,.20) !important;
   border-radius:18px !important;
-  background:rgba(15,23,42,.985) !important;
+  background:var(--gm-palette-panel, rgba(15,23,42,.985)) !important;
   box-shadow:0 22px 70px rgba(0,0,0,.48), 0 0 0 1px rgba(148,163,184,.05) !important;
   z-index:1 !important;
   pointer-events:auto !important;

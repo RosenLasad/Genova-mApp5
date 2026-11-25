@@ -1,0 +1,39 @@
+/* Colori delle superfici comuni. I componenti usano il colore originale come fallback. */
+:root[data-app-palette="burgundy"] {
+  --gm-palette-toolbar: #351520;
+  --gm-palette-panel: #401a27;
+  --gm-palette-panel-deep: #270e17;
+  --gm-palette-panel-card: rgba(54, 22, 33, .94);
+  --gm-palette-menu: #542334;
+  --gm-palette-control: rgba(65, 25, 39, .94);
+  --gm-palette-hover: #652d41;
+  --gm-palette-selected: #743449;
+  --gm-palette-border: #b49462;
+  --gm-palette-accent: #f2d59b;
+  --gm-palette-tint: rgba(232, 191, 116, .15);
+}
+
+.settings-app-palette .settings-text-size-options {
+  flex-wrap: wrap;
+}
+
+.settings-app-palette button::before {
+  content: "";
+  display: inline-block;
+  inline-size: .85em;
+  block-size: .85em;
+  margin-inline-end: .45em;
+  border: 1px solid #e1c38c;
+  border-radius: 50%;
+  background: #142f46;
+  vertical-align: -.1em;
+}
+
+.settings-app-palette [data-app-palette-choice="burgundy"]::before {
+  background: #743449;
+}
+
+.settings-app-palette button:focus-visible {
+  outline: 2px solid var(--gm-palette-accent, #93c5fd);
+  outline-offset: 2px;
+}

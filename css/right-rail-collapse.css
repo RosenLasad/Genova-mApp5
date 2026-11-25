@@ -2,8 +2,8 @@
 #quick-toggles > #gm-right-rail-toggle {
   box-sizing:border-box; flex:0 0 38px; width:38px; height:38px;
   min-width:38px; min-height:38px; padding:0; display:grid; place-items:center;
-  border:1px solid rgba(255,255,255,.65); border-radius:12px;
-  color:#f2d48e; background:#142f46; cursor:pointer;
+  border:1px solid var(--gm-palette-border, rgba(255,255,255,.65)); border-radius:12px;
+  color:#f2d48e; background:var(--gm-palette-menu, #142f46); cursor:pointer;
   box-shadow:0 3px 10px rgba(0,0,0,.28);
   pointer-events:auto; visibility:visible; opacity:1;
 }

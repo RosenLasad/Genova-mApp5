@@ -5,6 +5,17 @@
   window.__GENOVA_SETTINGS_V2__ = true;
 
   var APP_VERSION = '1.3.5';
+  var PALETTE_KEY = 'genova_app_palette_v1';
+  var PALETTE_LABELS = {
+    it: ['Colori dell’app', 'Blu porto', 'Rosso borgogna'],
+    en: ['App colours', 'Harbour blue', 'Burgundy red'],
+    es: ['Colores de la app', 'Azul puerto', 'Rojo borgoña'],
+    fr: ['Couleurs de l’application', 'Bleu port', 'Rouge bordeaux'],
+    ar: ['ألوان التطبيق', 'أزرق الميناء', 'أحمر عنابي'],
+    ru: ['Цвета приложения', 'Портовый синий', 'Бордовый'],
+    zh: ['应用配色', '港湾蓝', '勃艮第红'],
+    lij: ['Coî de l’app', 'Bleu do porto', 'Rosso borgogna']
+  };
 
   var I18N = {
     it:{
@@ -319,6 +330,28 @@
 
   var refs={};
 
+  function renderPalette(){
+    if(!refs.paletteLabel)return;
+    var labels = PALETTE_LABELS[lang()] || PALETTE_LABELS.it;
+    var selected = document.documentElement.dataset.appPalette || 'port-blue';
+    refs.paletteLabel.textContent = labels[0];
+    refs.paletteChoices.forEach(function(button, index){
+      button.textContent = labels[index + 1];
+      button.setAttribute('aria-pressed', String(button.dataset.appPaletteChoice === selected));
+    });
+  }
+
+  function setPalette(palette){
+    var root = document.documentElement;
+    if(palette === 'burgundy') root.dataset.appPalette = palette;
+    else delete root.dataset.appPalette;
+    try{
+      if(palette === 'burgundy') localStorage.setItem(PALETTE_KEY, palette);
+      else localStorage.removeItem(PALETTE_KEY);
+    }catch(_e){}
+    renderPalette();
+  }
+
   function buildSettings(){
     var panel=document.getElementById('settings-dropdown');
     if(!panel || panel.__settingsV2Built) return;
@@ -345,6 +378,18 @@
     if(refs.welcome)refs.help.list.appendChild(refs.welcome);
     if(refs.guide)refs.help.list.appendChild(refs.guide);
     if(refs.contact)refs.help.list.appendChild(refs.contact);
+    var palette = panel.querySelector('.settings-app-palette');
+    if(palette){
+      refs.paletteLabel = palette.querySelector('#settings-app-palette-label');
+      refs.paletteChoices = palette.querySelectorAll('[data-app-palette-choice]');
+      refs.paletteChoices.forEach(function(button){
+        button.addEventListener('click', function(event){
+          event.stopPropagation();
+          setPalette(button.dataset.appPaletteChoice);
+        });
+      });
+      refs.display.list.appendChild(palette);
+    }
     if(refs.textSize)refs.display.list.appendChild(refs.textSize);
     if(refs.mapControlsSize)refs.display.list.appendChild(refs.mapControlsSize);
 
@@ -500,6 +545,7 @@
     var d=t();
     refs.help.heading.textContent=d.sections.help;
     refs.display.heading.textContent=d.sections.display;
+    renderPalette();
     refs.data.heading.textContent=d.sections.data;
     refs.admin.heading.textContent='Amministrazione';
     refs.admin.section.hidden=!isAdmin();
@@ -561,6 +607,7 @@
         if(exact[key] || /^doc_(?:item|lang)_/.test(key))localStorage.removeItem(key);
       });
     }catch(_e){}
+    setPalette('port-blue');
     try{if(typeof window.__setGenovaTextSize==='function')window.__setGenovaTextSize('medium');else localStorage.setItem('genova_text_size_v1','medium');}catch(_e){}
   }
 
@@ -583,6 +630,12 @@
 
   function boot(){
     buildSettings();
+    window.addEventListener('storage',function(event){
+      if(event.storageArea!==localStorage || (event.key!==PALETTE_KEY && event.key!==null))return;
+      if(event.newValue==='burgundy')document.documentElement.dataset.appPalette='burgundy';
+      else delete document.documentElement.dataset.appPalette;
+      renderPalette();
+    });
     document.addEventListener('app:set-lang',function(){window.setTimeout(render,0);});
     window.addEventListener('i18n:changed',function(){window.setTimeout(render,0);});
     document.addEventListener('genova:subscription-changed',function(){window.setTimeout(render,0);});

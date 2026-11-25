@@ -8,8 +8,16 @@
 <meta charset="utf-8"/>
 <meta name="color-scheme" content="light">
 <title>Genova mApp</title>
+<script>
+try {
+  if (localStorage.getItem('genova_app_palette_v1') === 'burgundy') {
+    document.documentElement.dataset.appPalette = 'burgundy';
+  }
+} catch (_) {}
+</script>
+<link rel="stylesheet" href="css/app-palette.css?v=20261125-1">
 <script src="js/map-controls-size.js?v=20261124-settings-panel-1"></script>
-<link rel="stylesheet" href="welcome/welcome.css?v=20261115-griffin-position-5">
+<link rel="stylesheet" href="welcome/welcome.css?v=20261125-palette-1">
 <script src="welcome/welcome.js?v=20261115-outside-close-5"></script>
 <!-- Leaflet CSS -->
 <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
@@ -23,8 +31,8 @@
 <link rel="stylesheet" href="css/btn-scan.css">
 <link rel="stylesheet" href="css/flag-switcher.css">
 
-<link rel="stylesheet" href="css/inline.bundle.css?v=20260930-4">
-<link rel="stylesheet" href="css/minidoc-popup.css?v=20261125-6">
+<link rel="stylesheet" href="css/inline.bundle.css?v=20261125-palette-1">
+<link rel="stylesheet" href="css/minidoc-popup.css?v=20261125-palette-1">
 <link rel="stylesheet" href="css/contact-v39.css?v=20260917-1">
 <link rel="stylesheet" href="css/sponsor-slots.css?v=20261005-2">
 <link rel="stylesheet" href="css/taccuino.css?v=20260924-5">
@@ -35,10 +43,10 @@
 <link rel="stylesheet" href="qr_azzurri/vr/qr-vr-viewer.css?v=20260929-5">
 <link rel="stylesheet" href="css/qr-visit-map.css?v=20260920-3">
 <link rel="stylesheet" href="css/nearby.css?v=20260916-1">
-<link rel="stylesheet" href="css/ui-layout-v2.css?v=20260930-2">
+<link rel="stylesheet" href="css/ui-layout-v2.css?v=20261125-palette-1">
 <link rel="stylesheet" href="css/map-3d.css?v=20260911-9">
-<link rel="stylesheet" href="css/text-size.css?v=20260809-1">
-<link rel="stylesheet" href="css/settings-v2.css?v=20261124-settings-panel-1">
+<link rel="stylesheet" href="css/text-size.css?v=20261125-palette-1">
+<link rel="stylesheet" href="css/settings-v2.css?v=20261125-palette-1">
 <link rel="stylesheet" href="css/pwa-install.css?v=20260807-1">
 <link rel="stylesheet" href="css/auth-ui.css?v=20260917-2">
 <link rel="stylesheet" href="css/account-sync.css?v=20260924-2">
@@ -558,6 +566,13 @@
   <button class="settings-row" type="button" id="welcome-open-btn" role="menuitem">Benvenuto</button>
   <button class="settings-row" type="button" id="settings-help-action" role="menuitem" aria-controls="gm-new-home">Guida e istruzioni</button>
   <button class="settings-row" type="button" data-action="contact" data-settings-i18n="contact" role="menuitem">Contattaci</button>
+  <div class="settings-app-palette" role="group" aria-labelledby="settings-app-palette-label">
+    <div class="settings-text-size-label" id="settings-app-palette-label">Colori dell’app</div>
+    <div class="settings-text-size-options">
+      <button type="button" data-app-palette-choice="port-blue" aria-pressed="true">Blu porto</button>
+      <button type="button" data-app-palette-choice="burgundy" aria-pressed="false">Rosso borgogna</button>
+    </div>
+  </div>
   <div class="settings-text-size" role="group" aria-labelledby="settings-text-size-label">
     <div class="settings-text-size-label" id="settings-text-size-label">Dimensione testo</div>
     <div class="settings-text-size-options">
@@ -1527,14 +1542,14 @@
 <script src="js/visitors-admin.js?v=20261114-1"></script>
 <link rel="stylesheet" href="statistiche-visitatori/statistiche.css?v=20261114-1">
 <script src="statistiche-visitatori/statistiche.js?v=20261114-1"></script>
-<script src="js/settings-v2.js?v=20261115-controls-1"></script>
+<script src="js/settings-v2.js?v=20261125-palette-1"></script>
 <script src="js/popup-focus.js?v=20260920-1"></script>
 <script src="js/popup-layer-front.js?v=20261018-1"></script>
 <script src="js/popup-description-expand.js?v=20261018-3"></script>
 <script src="js/map-3d.js?v=20261124-map-view-1"></script>
 <script src="js/nearby.js?v=20261109-nearby-link-1"></script>
 <script src="js/marker-zoom-levels.js?v=20261018-1"></script>
-<link rel="stylesheet" href="css/right-rail-collapse.css?v=20261124-map-events-1">
+<link rel="stylesheet" href="css/right-rail-collapse.css?v=20261125-palette-1">
 <script src="js/right-rail-collapse.js?v=20261018-1"></script>
 
 <link rel="stylesheet" href="css/taccuino-button-bottom.css?v=20261018-1">

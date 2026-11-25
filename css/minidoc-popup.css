@@ -35,7 +35,7 @@
   padding: .5rem .75rem;
   border: 1px solid #fff4;
   border-radius: .55rem;
-  background: #1e293b;
+  background: var(--gm-palette-menu, #1e293b);
   color: #fff;
   cursor: pointer;
   list-style: none;
@@ -67,7 +67,7 @@
   overflow-y: auto;
   border: 1px solid #fff4;
   border-radius: .55rem;
-  background: #1e293b;
+  background: var(--gm-palette-menu, #1e293b);
   box-shadow: 0 8px 20px #0008;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .doc-card .doc-lang-btn:hover {
-  background: #334155;
+  background: var(--gm-palette-hover, #334155);
 }
 
 .doc-card .doc-lang-btn[aria-pressed="true"] {
