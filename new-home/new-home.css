@@ -90,8 +90,8 @@ html.gm-new-home-open body{ overflow: hidden; }
   gap: 10px;
   padding: 9px 12px;
   color: #fff;
-  background: linear-gradient(135deg, #091426, var(--gm-nh-navy) 58%, #17344c);
-  border-bottom: 2px solid var(--gm-theme-accent);
+  background: linear-gradient(135deg, var(--gm-palette-panel-deep, #091426), var(--gm-palette-panel, var(--gm-nh-navy)) 58%, var(--gm-palette-toolbar, #17344c));
+  border-bottom: 2px solid var(--gm-palette-border, var(--gm-theme-accent));
   box-shadow: 0 5px 18px rgba(4,11,22,.18);
 }
 
@@ -99,7 +99,7 @@ html.gm-new-home-open body{ overflow: hidden; }
 .gm-new-home-eyebrow{
   display: block;
   margin-bottom: 1px;
-  color: color-mix(in srgb, var(--gm-theme-accent) 72%, #fff);
+  color: var(--gm-palette-accent, color-mix(in srgb, var(--gm-theme-accent) 72%, #fff));
   font-size: .68rem;
   font-weight: 800;
   letter-spacing: .12em;
@@ -126,13 +126,13 @@ html.gm-new-home-open body{ overflow: hidden; }
   place-items: center;
   padding: 0;
   color: #fff;
-  background: rgba(255,255,255,.09);
-  border: 1px solid rgba(255,255,255,.3);
+  background: var(--gm-palette-control, rgba(255,255,255,.09));
+  border: 1px solid var(--gm-palette-border, rgba(255,255,255,.3));
   border-radius: 13px;
   cursor: pointer;
   transition: background .16s ease, transform .16s ease;
 }
-.gm-new-home-navbtn:hover{ background: rgba(255,255,255,.18); }
+.gm-new-home-navbtn:hover{ background: var(--gm-palette-hover, rgba(255,255,255,.18)); }
 .gm-new-home-navbtn:active{ transform: scale(.96); }
 .gm-new-home-navbtn[hidden]{ visibility: hidden; display: grid !important; }
 .gm-new-home-navbtn svg{ width: 21px; height: 21px; }
@@ -145,13 +145,13 @@ html.gm-new-home-open body{ overflow: hidden; }
   justify-content:center;
   gap:6px;
   padding:0 10px;
-  background:#21658a;
-  border-color:#83c5e5;
+  background:var(--gm-palette-control, #21658a);
+  border-color:var(--gm-palette-border, #83c5e5);
   font:800 12px/1 ui-sans-serif, system-ui, sans-serif;
   letter-spacing:.04em;
 }
-#gm-new-home-close:hover{ background:#287aa4; }
-#gm-new-home-close:focus-visible{ outline:3px solid #b7e6ff; outline-offset:2px; }
+#gm-new-home-close:hover{ background:var(--gm-palette-hover, #287aa4); }
+#gm-new-home-close:focus-visible{ outline:3px solid var(--gm-palette-accent, #b7e6ff); outline-offset:2px; }
 #gm-new-home-close svg{ flex-shrink:0; width:19px; height:19px; }
 
 .gm-new-home-scroll{

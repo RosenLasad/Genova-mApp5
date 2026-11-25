@@ -5,18 +5,18 @@
 .auth-account-dashboard[hidden],.auth-account-danger[hidden]{display:none!important}
 .auth-dashboard-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
 .auth-dashboard-card{
-  min-width:0;display:grid;align-content:start;gap:4px;padding:12px 13px;border:1px solid rgba(147,197,253,.16);border-radius:12px;
-  background:linear-gradient(155deg,rgba(30,58,95,.28),rgba(17,28,46,.38));box-shadow:inset 0 1px 0 rgba(255,255,255,.025)
+  min-width:0;display:grid;align-content:start;gap:4px;padding:12px 13px;border:1px solid var(--gm-palette-border, rgba(147,197,253,.16));border-radius:12px;
+  background:linear-gradient(155deg,var(--gm-palette-panel, rgba(30,58,95,.28)),var(--gm-palette-panel-deep, rgba(17,28,46,.38)));box-shadow:inset 0 1px 0 rgba(255,255,255,.025)
 }
-.auth-dashboard-label{color:#9fb4c9;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.035em}
+.auth-dashboard-label{color:var(--gm-palette-accent, #9fb4c9);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.035em}
 .auth-dashboard-card>strong{color:#f8fafc;font-size:1.08rem;line-height:1.25}
-.auth-dashboard-card>small{min-height:1em;color:#bfdbfe;font-size:.7rem}
+.auth-dashboard-card>small{min-height:1em;color:var(--gm-palette-accent, #bfdbfe);font-size:.7rem}
 .auth-dashboard-sync-card{align-content:start}
 .auth-dashboard-sync-card .auth-sync-panel{grid-template-columns:1fr;margin:1px 0 0;padding:0;border:0}
 .auth-dashboard-sync-card .auth-sync-panel span{color:#f8fafc;font-size:.82rem;font-weight:700}
-.auth-dashboard-sync-card .auth-sync-panel button{width:100%;margin-top:3px}
+.auth-dashboard-sync-card .auth-sync-panel button{width:100%;margin-top:3px;background:var(--gm-palette-control, #193b65);border-color:var(--gm-palette-border, #6093c6)}
 .auth-dashboard-subscription{
-  min-height:42px;padding:9px 14px;border:1px solid #93c5fd;border-radius:10px;color:#eff6ff;background:linear-gradient(180deg,#2563a9,#1e477b);
+  min-height:42px;padding:9px 14px;border:1px solid var(--gm-palette-border, #93c5fd);border-radius:10px;color:#eff6ff;background:linear-gradient(180deg,var(--gm-palette-toolbar, #2563a9),var(--gm-palette-panel, #1e477b));
   font:800 .88rem/1.2 Arial,sans-serif;cursor:pointer
 }
 .auth-dashboard-subscription.is-premium{color:#fff7d6;border-color:#e7bd54;background:linear-gradient(180deg,#8a6418,#62440f)}
@@ -36,7 +36,7 @@
 .auth-delete-confirm .auth-delete-premium{color:#fde68a}
 .auth-delete-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:2px}
 .auth-delete-actions button{min-height:38px;padding:7px 9px;border-radius:9px;font:800 .76rem/1.2 Arial,sans-serif;cursor:pointer}
-#auth-delete-cancel{color:#e5edf5;background:#243247;border:1px solid #64748b}
+#auth-delete-cancel{color:#e5edf5;background:var(--gm-palette-control, #243247);border:1px solid var(--gm-palette-border, #64748b)}
 #auth-delete-confirm-button{color:#fff1f2;background:linear-gradient(180deg,#9f2835,#711d27);border:1px solid #f87171}
 .auth-delete-actions button:disabled{opacity:.55;cursor:wait}
 .auth-delete-actions button:focus-visible{outline:2px solid #f8fafc;outline-offset:2px}
