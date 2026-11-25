@@ -30,7 +30,7 @@ function ensureGpsLayers(){
     });
 }
   if(!gpsAccuracy){
-    gpsAccuracy = L.circle([0,0], { radius: 0, weight: 1, color:'#22c55e', opacity:.6, fillOpacity: .22 });
+    gpsAccuracy = L.circle([0,0], { radius: 0, weight: 1, color:'#22c55e', opacity:.6, fillOpacity: .22, className:'gm-gps-accuracy' });
   }
 }
 function setGpsOn(on){
