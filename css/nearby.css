@@ -20,7 +20,7 @@
   transition:filter .15s ease, opacity .15s ease, transform .15s ease, box-shadow .15s ease;
   touch-action:manipulation;
 }
-#btn-nearby.gm-nearby-button svg{width:62%;height:62%;display:block;}
+#btn-nearby.gm-nearby-button svg{width:100%;height:100%;display:block;}
 #btn-nearby.gm-nearby-button:hover:not(:disabled){filter:brightness(1.13);}
 #btn-nearby.gm-nearby-button:active:not(:disabled){transform:translateX(-50%) scale(.94);}
 #btn-nearby.gm-nearby-button:focus-visible{outline:3px solid rgba(56,189,248,.85);outline-offset:2px;}
