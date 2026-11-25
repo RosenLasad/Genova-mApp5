@@ -201,8 +201,14 @@ function getDocDesc(doc){
   return '';
 }
 
-var DOC_FLAG = {
-  it:'🇮🇹', en:'🇬🇧', es:'🇪🇸', fr:'🇫🇷', ar:'🇸🇦', ru:'🇷🇺', zh:'🇨🇳', lij:'🏴'
+var DOC_LANGUAGE_NAMES = {
+  it:'Italiano', en:'English', es:'Español', fr:'Français',
+  ar:'العربية', ru:'Русский', zh:'中文', lij:'Ligure'
+};
+
+var DOC_LANGUAGE_LABELS = {
+  it:'Lingua', en:'Language', es:'Idioma', fr:'Langue',
+  ar:'اللغة', ru:'Язык', zh:'语言', lij:'Lengua'
 };
 
 
@@ -314,12 +320,13 @@ var DOC_FLAG = {
     var play = document.createElement('button');
     play.type = 'button';
     play.className = 'doc-btn';
-    play.textContent = 'Riproduci anteprima';
-    player.addEventListener('play', function(){ play.textContent = 'Pausa'; });
-    player.addEventListener('pause', function(){ play.textContent = 'Riprendi anteprima'; });
-    player.addEventListener('ended', function(){ play.textContent = 'Rivedi anteprima'; });
+    var labels = docPlaybackLabels(media.lang);
+    play.textContent = labels.play;
+    player.addEventListener('play', function(){ play.textContent = labels.pause; });
+    player.addEventListener('pause', function(){ play.textContent = labels.play; });
+    player.addEventListener('ended', function(){ play.textContent = labels.play; });
     function playPreview(){
-      Promise.resolve(player.play()).catch(function(){ play.textContent = 'Riproduci anteprima'; });
+      Promise.resolve(player.play()).catch(function(){ play.textContent = labels.play; });
     }
     play.addEventListener('click', function(){
       if(player.paused || player.ended) playPreview();
@@ -342,6 +349,29 @@ var DOC_FLAG = {
     playPreview();
   }
 
+  var DOC_PLAYBACK_LABELS = {
+    it: {play:'Riproduci', pause:'Pausa'},
+    en: {play:'Play', pause:'Pause'},
+    es: {play:'Reproducir', pause:'Pausar'},
+    fr: {play:'Lire', pause:'Mettre en pause'},
+    ar: {play:'تشغيل', pause:'إيقاف مؤقت'},
+    ru: {play:'Воспроизвести', pause:'Пауза'},
+    zh: {play:'播放', pause:'暂停'},
+    lij: {play:'Reproduxi', pause:'Pösa'}
+  };
+
+  function docPlaybackLabels(language){
+    return DOC_PLAYBACK_LABELS[language || currentLangDoc()] || DOC_PLAYBACK_LABELS.it;
+  }
+
+  function makeDocPoster(doc, classes, attrs, language){
+    var label = docPlaybackLabels(language).play;
+    var image = doc.thumbnail ? '<img src="' + escapeAttr(doc.thumbnail) + '" alt="">' : '';
+    return '<button type="button" class="doc-poster ' + classes + '"' + attrs + '>' + image +
+      '<span class="doc-poster__play"><span aria-hidden="true">▶</span>' +
+      escapeHtml(label) + '</span></button>';
+  }
+
   function makePopupHTML(doc, selectedLanguage){
     var stream = isStreamMiniDoc(doc);
     var mixed = stream && doc.id === 'san-teodoro';
@@ -350,13 +380,23 @@ var DOC_FLAG = {
     var youtubeVariant = mixed && !SAN_TEODORO_STREAM_LANGS.includes(lang) &&
       languages && getYoutubeId(languages[lang]);
     var vid = stream ? youtubeVariant : getYoutubeId(pickDocYoutubeUrl(doc));
+    var mediaLanguage = mixed
+      ? (youtubeVariant || SAN_TEODORO_STREAM_LANGS.includes(lang) ? lang : 'it')
+      : currentLangDoc();
     var title = pickTextDoc(doc.name) || doc.id || 'Documentario';
     var h = '<div class="doc-card" data-id="' + escapeAttr(doc.id || '') + '">';
     h += '<div class="doc-card__head"><div class="doc-card__title">' + escapeHtml(title) + '</div>';
     h += '<span class="doc-card__badge">Premium</span></div>';
 
     if(mixed || (languages && Object.keys(languages).length)){
-      h += '<div class="doc-lang" aria-label="Lingua video">';
+      var selected = mixed ? mediaLanguage : lang;
+      var menuLabel = DOC_LANGUAGE_LABELS[currentLangDoc()] || DOC_LANGUAGE_LABELS.it;
+      var selectedName = DOC_LANGUAGE_NAMES[selected] || selected.toUpperCase();
+      h += '<details class="doc-lang"><summary class="doc-lang-toggle">' +
+        escapeHtml(menuLabel) + '<span aria-hidden="true"> · </span>' +
+        '<bdi class="doc-lang-current" lang="' + escapeAttr(selected) + '">' + escapeHtml(selectedName) +
+        '</bdi><span class="doc-lang-chevron" aria-hidden="true">▾</span></summary>';
+      h += '<div class="doc-lang-options">';
       var codes = Object.keys(languages || {});
       if(mixed) codes = SAN_TEODORO_STREAM_LANGS.concat(codes.filter(function(code){
         return !SAN_TEODORO_STREAM_LANGS.includes(code);
@@ -364,24 +404,22 @@ var DOC_FLAG = {
       codes.forEach(function(code){
         var streamVersion = mixed && SAN_TEODORO_STREAM_LANGS.includes(code);
         if(!streamVersion && !getYoutubeId(languages[code])) return;
-        var label = DOC_FLAG[code] || code.toUpperCase();
-        h += '<button type="button" class="doc-lang-btn" data-lang="' + escapeAttr(code) +
-          '" title="' + escapeAttr(code.toUpperCase()) + '">' + escapeHtml(label) + '</button>';
+        var label = DOC_LANGUAGE_NAMES[code] || code.toUpperCase();
+        h += '<button type="button" class="doc-lang-btn" data-doc-lang="' + escapeAttr(code) +
+          '" aria-pressed="' + String(code === selected) + '">' +
+          '<bdi lang="' + escapeAttr(code) + '">' + escapeHtml(label) + '</bdi>' +
+          '<span class="doc-lang-check" aria-hidden="true">✓</span></button>';
       });
-      h += '</div>';
+      h += '</div></details>';
     }
 
-    h += '<div class="doc-card__media">';
+    h += '<div class="doc-card__media" lang="' + escapeAttr(mediaLanguage) + '">';
     if(stream && !youtubeVariant){
-      var videoLang = mixed && SAN_TEODORO_STREAM_LANGS.includes(lang)
-        ? ' data-video-lang="' + lang + '"'
-        : '';
-      h += '<button type="button" class="doc-btn doc-stream-trigger"' + videoLang + '>Riproduci MiniDoc</button>';
+      var videoLang = mixed ? ' data-video-lang="' + mediaLanguage + '"' : '';
+      h += makeDocPoster(doc, 'doc-stream-trigger', videoLang, mediaLanguage);
       h += '<div role="status" aria-live="polite"></div>';
     }else if(vid){
-      var thumb = doc.thumbnail || ('https://img.youtube.com/vi/' + vid + '/hqdefault.jpg');
-      h += '<button type="button" class="doc-thumb" data-ytid="' + escapeAttr(vid) +
-        '" aria-label="Riproduci video"><img alt="Anteprima video" src="' + escapeAttr(thumb) + '"></button>';
+      h += makeDocPoster(doc, 'doc-thumb', ' data-ytid="' + escapeAttr(vid) + '"', mediaLanguage);
     }
     h += '</div><div class="doc-card__desc">' + escapeHtml(getDocDesc(doc)) + '</div>';
     h += '<div class="doc-card__foot"><button type="button" class="doc-btn doc-close">Chiudi</button></div>';
@@ -474,44 +512,88 @@ var DOC_FLAG = {
     }catch(_e){}
   }
 
+  function mountInlinePlayer(container, vid){
+    try{
+      if(!vid) return;
+      var media = container.querySelector('.doc-card__media'); if(!media) return;
+      // Avoid double mount
+      if(media.querySelector('.doc-yt-embed')) return;
+      var iframe = document.createElement('iframe');
+      iframe.className = 'doc-yt-embed';
+      iframe.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+      iframe.setAttribute('allowfullscreen','');
+      iframe.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+      var isSub = !!(window.isSubscribed);
+      var url = 'https://www.youtube-nocookie.com/embed/' + vid + '?autoplay=1&playsinline=1&rel=0&modestbranding=1';
+      if(!isSub){ url += '&end=10'; }
+      iframe.src = url;
+      var trigger = media.querySelector('.doc-thumb');
+      if(trigger){ trigger.replaceWith(iframe); } else { media.appendChild(iframe); }
+      // Soft paywall message for non-subscribed
+      if(!isSub){
+        setTimeout(function(){
+          try{
+            // If still not subscribed and iframe exists, show paywall
+            if(!window.isSubscribed && media.querySelector('.doc-yt-embed')){
+              var pw = document.createElement('div'); pw.className = 'doc-paywall';
+              var msg = document.createElement('div'); msg.className = 'doc-pay-msg';
+              msg.textContent = 'Anteprima 10s. Abbonati per vedere tutto.';
+              var btn = document.createElement('button'); btn.className='doc-btn'; btn.textContent='Abbonati';
+              btn.addEventListener('click', function(){ try{ document.getElementById('btn-subscribe').click(); }catch(_){ alert('Apri abbonamento dalla barra.'); } });
+              pw.appendChild(msg); pw.appendChild(btn);
+              media.parentNode.insertBefore(pw, media.nextSibling);
+            }
+          }catch(_){}
+        }, 11000);
+      }
+    }catch(_){}
+  }
+
+  // Il contenuto dei popup Leaflet può essere ricreato dopo l'apertura.
+  document.addEventListener('click', function(event){
+    var button = event.target.closest && event.target.closest('.doc-lang-btn[data-doc-lang]');
+    if(!button) return;
+    var card = button.closest('.doc-card[data-id]');
+    if(!card) return;
+    var doc = DOCS.find(function(item){return item.id === card.dataset.id;});
+    var media = card.querySelector('.doc-card__media');
+    if(!doc || !media) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+    var menu = button.closest('.doc-lang');
+    var toggle = menu.querySelector('.doc-lang-toggle');
+    menu.open = false;
+    toggle.focus({preventScroll:true});
+    if(button.getAttribute('aria-pressed') === 'true') return;
+
+    var language = button.getAttribute('data-doc-lang');
+    try{ localStorage.setItem('doc_lang_' + doc.id, language); }catch(_){}
+    var template = document.createElement('template');
+    template.innerHTML = makePopupHTML(doc, language);
+    var nextMedia = template.content.querySelector('.doc-card__media');
+    if(!nextMedia) return;
+
+    var playerOpen = !!media.querySelector('.doc-yt-embed');
+    var paywall = card.querySelector('.doc-paywall');
+    if(paywall) paywall.remove();
+    media.replaceWith(nextMedia);
+    var current = toggle.querySelector('.doc-lang-current');
+    current.textContent = DOC_LANGUAGE_NAMES[language] || language.toUpperCase();
+    current.lang = language;
+    menu.querySelectorAll('.doc-lang-btn[data-doc-lang]').forEach(function(option){
+      option.setAttribute('aria-pressed', String(option === button));
+    });
+
+    if(!playerOpen) return;
+    var stream = nextMedia.querySelector('.doc-stream-trigger');
+    var thumb = nextMedia.querySelector('.doc-thumb');
+    if(stream) playStreamMiniDoc(stream);
+    else if(thumb) mountInlinePlayer(card, thumb.getAttribute('data-ytid'));
+  }, true);
+
   function buildMarkers(){
     var g = ensureGroupDoc(); if(!g) return;
-    function mountInlinePlayer(container, vid){
-      try{
-        if(!vid) return;
-        var media = container.querySelector('.doc-card__media'); if(!media) return;
-        // Avoid double mount
-        if(media.querySelector('.doc-yt-embed')) return;
-        var iframe = document.createElement('iframe');
-        iframe.className = 'doc-yt-embed';
-        iframe.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-        iframe.setAttribute('allowfullscreen','');
-        iframe.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
-        var isSub = !!(window.isSubscribed);
-        var url = 'https://www.youtube-nocookie.com/embed/' + vid + '?autoplay=1&playsinline=1&rel=0&modestbranding=1';
-        if(!isSub){ url += '&end=10'; }
-        iframe.src = url;
-        var trigger = media.querySelector('.doc-thumb');
-        if(trigger){ trigger.replaceWith(iframe); } else { media.appendChild(iframe); }
-        // Soft paywall message for non-subscribed
-        if(!isSub){
-          setTimeout(function(){
-            try{
-              // If still not subscribed and iframe exists, show paywall
-              if(!window.isSubscribed && media.querySelector('.doc-yt-embed')){
-                var pw = document.createElement('div'); pw.className = 'doc-paywall';
-                var msg = document.createElement('div'); msg.className = 'doc-pay-msg';
-                msg.textContent = 'Anteprima 10s. Abbonati per vedere tutto.';
-                var btn = document.createElement('button'); btn.className='doc-btn'; btn.textContent='Abbonati';
-                btn.addEventListener('click', function(){ try{ document.getElementById('btn-subscribe').click(); }catch(_){ alert('Apri abbonamento dalla barra.'); } });
-                pw.appendChild(msg); pw.appendChild(btn);
-                media.parentNode.insertBefore(pw, media.nextSibling);
-              }
-            }catch(_){}
-          }, 11000);
-        }
-      }catch(_){}
-    }
     function destroyInlinePlayer(container){
       try{
         var media = container.querySelector('.doc-card__media');
@@ -527,7 +609,7 @@ var DOC_FLAG = {
       try{
         var m = L.marker(d.coords, { icon: docIcon() });
         var html = makePopupHTML(d);
-        m.bindPopup(html, { maxWidth: 360, className: 'doc-pop' });
+        m.bindPopup(html, { maxWidth: 520, className: 'doc-pop' });
         function renderDocPopup(popup, language){
           if(!popup) return null;
           popup.setContent(makePopupHTML(d, language));
@@ -541,20 +623,6 @@ var DOC_FLAG = {
               mountInlinePlayer(el, trigger.getAttribute('data-ytid'));
             }, {once:true});
           }
-          el.querySelectorAll('.doc-lang-btn').forEach(function(button){
-            button.addEventListener('click', function(event){
-              event.preventDefault();
-              event.stopPropagation();
-              var language = button.getAttribute('data-lang');
-              try{ localStorage.setItem('doc_lang_' + d.id, language); }catch(_){}
-              var refreshed = renderDocPopup(popup, language);
-              if(!refreshed) return;
-              var stream = refreshed.querySelector('.doc-stream-trigger');
-              var thumb = refreshed.querySelector('.doc-thumb');
-              if(stream) playStreamMiniDoc(stream);
-              else if(thumb) mountInlinePlayer(refreshed, thumb.getAttribute('data-ytid'));
-            });
-          });
           var close = el.querySelector('.doc-close');
           if(close) close.addEventListener('click', function(){ map.closePopup(popup); });
           return el;
