@@ -1200,6 +1200,10 @@ html.gm-map-3d-active #map > #ui-taccuino-button.ui-taccuino-edge{
   pointer-events:none !important;
 }
 
+#btn-qr-removed.is-active .qr-visibility-slash{
+  display:none;
+}
+
 #bottom-bar #btn-qr-removed:hover,
 #bottom-bar #btn-qr-removed:focus-visible{
   filter:brightness(1.12) saturate(1.05) !important;

@@ -51,7 +51,17 @@ function createQrBtn(){
     btn.id = 'btn-qr-removed';
     btn.type = 'button';
     btn.className = 'qt-item qt-cat qt-pill qt-pill-qr';
-    btn.innerHTML = '<span aria-hidden="true" class="qt-icon"><img alt="" draggable="false" height="32" src="toolbar/qr.svg" width="32"/></span><span class="sr-only">QR</span>';
+    btn.innerHTML =
+      '<span aria-hidden="true" class="qt-icon"><svg viewBox="0 0 24 24" focusable="false">' +
+        '<path fill="#f5f8fa" d="M1 12c2.4-4 6.7-6.7 11-6.7s8.6 2.7 11 6.7c-2.4 4-6.7 6.7-11 6.7S3.4 16 1 12Z"/>' +
+        '<circle cx="12" cy="12" r="5.3" fill="#004aad"/>' +
+        '<circle cx="12" cy="12" r="2.8" fill="#172334"/>' +
+        '<circle cx="13.6" cy="10.3" r="1.2" fill="#f5f8fa"/>' +
+        '<g class="qr-visibility-slash" fill="none" stroke-linecap="round">' +
+          '<path d="M4 4l16 16" stroke="#172334" stroke-width="4"/>' +
+          '<path d="M4 4l16 16" stroke="#f5f8fa" stroke-width="1.8"/>' +
+        '</g>' +
+      '</svg></span><span class="sr-only">QR</span>';
 
     btn.addEventListener('click', function(ev){
       ev.preventDefault();
