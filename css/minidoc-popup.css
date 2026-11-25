@@ -166,7 +166,47 @@
 
 .doc-card__desc {
   margin-top: .65rem;
+  max-height: 7.5em;
+  padding-inline-end: .4rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
   line-height: 1.5;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+}
+
+.doc-card .doc-card__foot {
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+  padding: .1rem .1rem .25rem;
+}
+
+.doc-card .doc-share {
+  min-height: 36px;
+  padding-inline: .8rem;
+  border-color: #e9bf73;
+  background: #3d3427;
+  color: #fff;
+}
+
+.doc-card .doc-share:hover {
+  background: #53432a;
+}
+
+.doc-card .doc-share:focus-visible,
+.doc-card__desc:focus-visible {
+  outline: 2px solid #e9bf73;
+  outline-offset: -2px;
+}
+
+.doc-share-status {
+  color: #f1d39f;
+  font-size: .8rem;
+}
+
+.doc-share-status:empty {
+  display: none;
 }
 
 @media (max-width: 768px) {

@@ -372,6 +372,57 @@ var DOC_LANGUAGE_LABELS = {
       escapeHtml(label) + '</span></button>';
   }
 
+  var DOC_SHARE_LABELS = {
+    it: {share:'Condividi', copied:'Link copiato.', copy:'Copia il link del MiniDoc'},
+    en: {share:'Share', copied:'Link copied.', copy:'Copy the MiniDoc link'},
+    es: {share:'Compartir', copied:'Enlace copiado.', copy:'Copia el enlace del MiniDoc'},
+    fr: {share:'Partager', copied:'Lien copié.', copy:'Copiez le lien du MiniDoc'},
+    ar: {share:'مشاركة', copied:'تم نسخ الرابط.', copy:'انسخ رابط الفيلم الوثائقي القصير'},
+    ru: {share:'Поделиться', copied:'Ссылка скопирована.', copy:'Скопируйте ссылку на мини-документальный фильм'},
+    zh: {share:'分享', copied:'链接已复制。', copy:'复制微纪录片链接'},
+    lij: {share:'Condividdi', copied:'Ligammo copiòu.', copy:'Còpia o ligammo do MiniDoc'}
+  };
+
+  function docShareLabels(){
+    return DOC_SHARE_LABELS[currentLangDoc()] || DOC_SHARE_LABELS.it;
+  }
+
+  async function shareMiniDoc(card){
+    var labels = docShareLabels();
+    var title = card.querySelector('.doc-card__title').textContent;
+    var url = new URL(location.href);
+    url.search = '';
+    url.hash = '';
+    url.searchParams.set('doc', card.dataset.id);
+
+    if(typeof navigator.share === 'function'){
+      try{
+        await navigator.share({title:title + ' · Genova mApp', url:url.href});
+        return;
+      }catch(error){
+        if(error.name === 'AbortError') return;
+      }
+    }
+    try{
+      if(navigator.clipboard && typeof navigator.clipboard.writeText === 'function'){
+        await navigator.clipboard.writeText(url.href);
+        var status = card.querySelector('.doc-share-status');
+        if(status) status.textContent = labels.copied;
+        return;
+      }
+    }catch(_){}
+    window.prompt(labels.copy, url.href);
+  }
+
+  document.addEventListener('click', function(event){
+    var button = event.target.closest && event.target.closest('.doc-share');
+    var card = button && button.closest('.doc-card[data-id]');
+    if(!card) return;
+    event.preventDefault();
+    event.stopPropagation();
+    shareMiniDoc(card);
+  }, true);
+
   function makePopupHTML(doc, selectedLanguage){
     var stream = isStreamMiniDoc(doc);
     var mixed = stream && doc.id === 'san-teodoro';
@@ -421,8 +472,12 @@ var DOC_LANGUAGE_LABELS = {
     }else if(vid){
       h += makeDocPoster(doc, 'doc-thumb', ' data-ytid="' + escapeAttr(vid) + '"', mediaLanguage);
     }
-    h += '</div><div class="doc-card__desc">' + escapeHtml(getDocDesc(doc)) + '</div>';
-    h += '<div class="doc-card__foot"><button type="button" class="doc-btn doc-close">Chiudi</button></div>';
+    h += '</div>';
+    var description = getDocDesc(doc);
+    if(description) h += '<div class="doc-card__desc" tabindex="0">' + escapeHtml(description) + '</div>';
+    h += '<div class="doc-card__foot"><span class="doc-share-status" role="status"></span>' +
+      '<button type="button" class="doc-btn doc-share">' + escapeHtml(docShareLabels().share) + '</button>' +
+      '<button type="button" class="doc-btn doc-close">Chiudi</button></div>';
     return h + '</div>';
   }
   function escapeHtml(s){ return String(s||'').replace(/[&<>]/g, function(c){ return ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]); }); }
