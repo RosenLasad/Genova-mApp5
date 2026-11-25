@@ -735,14 +735,16 @@
     var groups=GROUPS.map(function(group){
       return '<fieldset class="gm-nearby-group"><legend data-nearby-group="'+group.key+'"></legend><div class="gm-nearby-grid">'+group.items.map(categoryRow).join('')+'</div></fieldset>';
     }).join('');
+    var radii=[DEFAULT_RADIUS,WIDE_RADIUS].map(function(meters){
+      return '<label><input name="gm-nearby-radius" type="radio" value="'+meters+'"><span data-nearby-distance="'+meters+'"></span></label>';
+    }).join('');
     panel.innerHTML =
-      '<div class="gm-nearby-head"><div><h3 id="gm-nearby-title"></h3><span class="gm-nearby-radius"><span data-nearby-text="radius"></span> <span data-nearby-current-radius></span></span></div><button type="button" class="gm-nearby-close" aria-label="">×</button></div>'+ 
+      '<div class="gm-nearby-head"><h3 id="gm-nearby-title"></h3>'+
+        '<fieldset class="gm-nearby-ranges"><legend data-nearby-text="radius"></legend>'+radii+'</fieldset>'+
+        '<button type="button" class="gm-nearby-close" aria-label="">×</button></div>'+
       '<p class="gm-nearby-intro"></p>'+ 
       '<div class="gm-nearby-toolbar"><strong data-nearby-text="categories"></strong><span><button type="button" data-nearby-select="all"></button><button type="button" data-nearby-select="none"></button></span></div>'+ 
       '<div class="gm-nearby-groups">'+groups+'</div>'+ 
-      '<fieldset class="gm-nearby-ranges"><legend data-nearby-text="radius"></legend>'+[DEFAULT_RADIUS,WIDE_RADIUS].map(function(meters){
-        return '<label><input name="gm-nearby-radius" type="radio" value="'+meters+'"><span data-nearby-distance="'+meters+'"></span></label>';
-      }).join('')+'</fieldset>'+
       '<label class="gm-nearby-circle-option"><input id="gm-nearby-circle" type="checkbox"'+(settings.showCircle?' checked':'')+'><span data-nearby-text="circle"></span></label>'+ 
       '<div id="gm-nearby-status" class="gm-nearby-status" role="status" aria-live="polite"></div>'+ 
       '<div class="gm-nearby-actions"><button type="button" id="gm-nearby-start-gps" hidden></button><button type="button" id="gm-nearby-main"></button></div>';
@@ -807,7 +809,6 @@
     var title=panel.querySelector('#gm-nearby-title'); if(title) title.textContent=txt.title;
     panel.querySelectorAll('[data-nearby-text]').forEach(function(el){ var k=el.getAttribute('data-nearby-text'); if(txt[k]) el.textContent=txt[k]; });
     panel.querySelector('.gm-nearby-intro').textContent=txt.intro.replace('{radius}',radiusLabel(radiusMeters));
-    panel.querySelector('[data-nearby-current-radius]').textContent=radiusLabel(radiusMeters);
     panel.querySelectorAll('[data-nearby-distance]').forEach(function(label){
       label.textContent=radiusLabel(Number(label.getAttribute('data-nearby-distance')));
     });
