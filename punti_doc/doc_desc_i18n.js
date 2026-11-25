@@ -2,155 +2,155 @@
 (function(){
   window.DOC_DESC_I18N = window.DOC_DESC_I18N || {};
   Object.assign(window.DOC_DESC_I18N, {
-  "seno-di-giano": {
-    "it": "Documentario sul Seno di Giano.",
-    "en": "Documentary about Seno di Giano.",
-    "es": "Documental sobre el Seno di Giano.",
-    "fr": "Documentaire sur le Seno di Giano.",
-    "ar": "فيلم وثائقي عن سينو دي جيانو.",
-    "ru": "Документальный фильм о Сено-ди-Джано.",
-    "zh": "关于Seno di Giano的纪录片。",
-    "lij": "Documentario in sce Seno de Giano."
-  },
-  "san-teodoro": {
-    "it": "Documentario sul quartiere di San Teodoro.",
-    "en": "Documentary about the San Teodoro district.",
-    "es": "Documental sobre el barrio de San Teodoro.",
-    "fr": "Documentaire sur le quartier de San Teodoro.",
-    "ar": "فيلم وثائقي عن حي سان تيودورو.",
-    "ru": "Документальный фильм о районе Сан-Теодоро.",
-    "zh": "关于San Teodoro街区的纪录片。",
-    "lij": "Documentario in sce-o quarté de San Teodoro."
-  },
-  "viaxxsettembre": {
-    "it": "Documentario sulla nascita di Via XX settembre.",
-    "en": "Documentary about the creation of Via XX Settembre.",
-    "es": "Documental sobre el nacimiento de Via XX Settembre.",
-    "fr": "Documentaire sur la naissance de la Via XX Settembre.",
-    "ar": "فيلم وثائقي عن نشأة شارع فيا XX ستمبر.",
-    "ru": "Документальный фильм о появлении улицы Виа XX Сеттембре.",
-    "zh": "关于Via XX Settembre诞生的纪录片。",
-    "lij": "Documentario in sciâ næscita de Via XX Settembre."
-  },
-  "piazza-de-ferrari": {
-    "it": "Documentario sulla nascita di Piazza de Ferrari.",
-    "en": "Documentary about the creation of Piazza De Ferrari.",
-    "es": "Documental sobre el nacimiento de Piazza De Ferrari.",
-    "fr": "Documentaire sur la naissance de la Piazza De Ferrari.",
-    "ar": "فيلم وثائقي عن نشأة ساحة بياتسا دي فيراري.",
-    "ru": "Документальный фильм о появлении площади Пьяцца Де Феррари.",
-    "zh": "关于Piazza De Ferrari诞生的纪录片。",
-    "lij": "Documentario in sciâ næscita de Piazza De Ferrari."
-  },
-  "cimitero-staglieno": {
-    "it": "Mini Documentario sul Cimitero di Staglieno",
-    "en": "Mini documentary about Staglieno Cemetery",
-    "es": "Mini documental sobre el Cementerio de Staglieno",
-    "fr": "Mini-documentaire sur le cimetière de Staglieno",
-    "ar": "فيلم وثائقي قصير عن مقبرة ستاليينو",
-    "ru": "Мини-документальный фильм о кладбище Стальено",
-    "zh": "关于斯塔列诺公墓的迷你纪录片",
-    "lij": "Mini Documentario in sciô Cimitêio de Staggen"
-  },
-  "borgo-incrociati": {
-    "it": "Mini Documentario su Borgo Incrociati",
-    "en": "Mini documentary about Borgo Incrociati",
-    "es": "Mini documental sobre Borgo Incrociati",
-    "fr": "Mini-documentaire sur Borgo Incrociati",
-    "ar": "فيلم وثائقي قصير عن بورغو إنكروتشياتي",
-    "ru": "Мини-документальный фильм о Борго Инкрочати",
-    "zh": "关于Borgo Incrociati的迷你纪录片",
-    "lij": "Mini Documentario in sce Borgo Incroxiæ"
-  },
-  "fronti-basse": {
-    "it": "Mini Documentario sulle Fronti Basse",
-    "en": "Mini documentary about the Fronti Basse",
-    "es": "Mini documental sobre las Fronti Basse",
-    "fr": "Mini-documentaire sur les Fronti Basse",
-    "ar": "فيلم وثائقي قصير عن تحصينات فرونتي باسّي",
-    "ru": "Мини-документальный фильм о Fronti Basse",
-    "zh": "关于Fronti Basse的迷你纪录片",
-    "lij": "Mini Documentario in sce-e Fronti Basse"
-  },
-  "esposizione-universale-1914": {
-    "it": "Mini Documentario sull'Esposizione Universale del 1914",
-    "en": "Mini documentary about the 1914 Universal Exhibition",
-    "es": "Mini documental sobre la Exposición Universal de 1914",
-    "fr": "Mini-documentaire sur l'Exposition universelle de 1914",
-    "ar": "فيلم وثائقي قصير عن المعرض العالمي لعام 1914",
-    "ru": "Мини-документальный фильм о Всемирной выставке 1914 года",
-    "zh": "关于1914年世界博览会的迷你纪录片",
-    "lij": "Mini Documentario in sce l'Expoziçion Universale do 1914"
-  },
-  "stazione-brignole": {
-    "it": "Mini Documentario sulla Stazione Brignole",
-    "en": "Mini documentary about Brignole railway station",
-    "es": "Mini documental sobre la estación de Brignole",
-    "fr": "Mini-documentaire sur la gare de Brignole",
-    "ar": "فيلم وثائقي قصير عن محطة برينيولي",
-    "ru": "Мини-документальный фильм о вокзале Бриньоле",
-    "zh": "关于布里尼奥莱火车站的迷你纪录片",
-    "lij": "Mini Documentario in sciâ Staçion Brignole"
-  },
-  "stazione-principe": {
-    "it": "Mini Documentario sulla Stazione P.Principe",
-    "en": "Mini documentary about Genova Piazza Principe station",
-    "es": "Mini documental sobre la estación Genova Piazza Principe",
-    "fr": "Mini-documentaire sur la gare Genova Piazza Principe",
-    "ar": "فيلم وثائقي قصير عن محطة جنوة بيازا برينتشيبي",
-    "ru": "Мини-документальный фильм о вокзале Генуя Пьяцца Принчипе",
-    "zh": "关于热那亚王子广场火车站的迷你纪录片",
-    "lij": "Mini Documentario in sciâ Staçion de Prinçipe"
-  },
-  "borgo-ponticello": {
-    "it": "Mini Documentario sul borgo di Ponticello",
-    "en": "Mini documentary about the old Borgo Ponticello",
-    "es": "Mini documental sobre el antiguo Borgo Ponticello",
-    "fr": "Mini-documentaire sur le ancien Borgo Ponticello",
-    "ar": "فيلم وثائقي قصير عن حي بورغو بونتيتشيلّو",
-    "ru": "Мини-документальный фильм о Борго Понтичелло",
-    "zh": "关于Borgo Ponticello的迷你纪录片",
-    "lij": "Mini Documentario in sce-o borgo de Ponticello"
-  },
-  "borgo-piccapietra": {
-    "it": "Mini Documentario sul borgo di Piccapietra",
-    "en": "Mini documentary about the old Borgo Piccapietra",
-    "es": "Mini documental sobre el antiguo Borgo Piccapietra",
-    "fr": "Mini-documentaire sur le ancien Borgo Piccapietra",
-    "ar": "فيلم وثائقي قصير عن حي بورغو بيكّابييترا",
-    "ru": "Мини-документальный фильм о Борго Пиккапьетра",
-    "zh": "关于Borgo Piccapietra的迷你纪录片",
-    "lij": "Mini Documentario in sce-o borgo de Piccapietra"
-  },
-  "parco-acquasola": {
-    "it": "Mini Documentario sul Parco dell'Acquasola",
-    "en": "Mini documentary about Acquasola Park",
-    "es": "Mini documental sobre el Parque de Acquasola",
-    "fr": "Mini-documentaire sur le parc de l'Acquasola",
-    "ar": "فيلم وثائقي قصير عن منتزه أكواسولا",
-    "ru": "Мини-документальный фильм о парке Аккуасола",
-    "zh": "关于Acquasola公园的迷你纪录片",
-    "lij": "Mini Documentario in sciô Parco de l'Acquasöa"
-  },
-  "circonvallazione-a-monte": {
-    "it": "Mini Documentario sul quartiere di Castelletto",
-    "en": "Mini documentary about the Castelletto district",
-    "es": "Mini documental sobre el barrio de Castelletto",
-    "fr": "Mini-documentaire sur le quartier de Castelletto",
-    "ar": "فيلم وثائقي قصير عن حي كاستيليتّو",
-    "ru": "Мини-документальный фильм о районе Кастеллетто",
-    "zh": "关于Castelletto街区的迷你纪录片",
-    "lij": "Mini Documentario in sce-o quartê de Castelletto"
-  },
-  "corso-italia": {
-    "it": "Mini Documentario sulla nascita di Corso Italia",
-    "en": "Mini documentary about the creation of Corso Italia",
-    "es": "Mini documental sobre el nacimiento de Corso Italia",
-    "fr": "Mini-documentaire sur la naissance de Corso Italia",
-    "ar": "فيلم وثائقي قصير عن نشأة كورسو إيطاليا",
-    "ru": "Мини-документальный фильм о создании Корсо Италия",
-    "zh": "关于Corso Italia诞生的迷你纪录片",
-    "lij": "Mini Documentario in sciâ næscita de Corso Italia"
-  }
-});
+    "piazza-de-ferrari": {
+      "it": "Per immaginare la vecchia piazza San Domenico, basta guardare verso il Carlo Felice. Prima del teatro, lì sorgevano una chiesa e un convento. Attorno, le case medievali addossate alle mura del Barbarossa lasciavano alla piazza uno spazio ben più piccolo di quello attuale.\n\nIntitolata a De Ferrari nel 1875, la piazza si allargò con l’apertura di via XX Settembre. Tram, banche e Borsa ne fecero il fulcro della città moderna. La grande fontana fu inaugurata nel 1936.",
+      "en": "To picture the old Piazza San Domenico, look towards the Carlo Felice. Before the theatre, a church and convent stood there. Medieval houses built against Barbarossa’s walls made the square much smaller than it is today.\n\nRenamed after De Ferrari in 1875, the square grew when Via XX Settembre opened. Trams, banks and the stock exchange made it the centre of the modern city. The large fountain was inaugurated in 1936.",
+      "es": "Para imaginar la antigua plaza de San Domenico, basta con mirar hacia el Carlo Felice. Antes del teatro había allí una iglesia y un convento. Las casas medievales adosadas a las murallas de Barbarroja dejaban un espacio mucho menor que el actual.\n\nRebautizada en honor a De Ferrari en 1875, la plaza se amplió con la apertura de Via XX Settembre. Los tranvías, los bancos y la Bolsa la convirtieron en el centro de la ciudad moderna. La gran fuente se inauguró en 1936.",
+      "fr": "Pour imaginer l’ancienne place San Domenico, il suffit de regarder vers le Carlo Felice. Avant le théâtre, une église et un couvent occupaient cet emplacement. Les maisons médiévales adossées aux remparts de Barberousse laissaient à la place bien moins d’espace qu’aujourd’hui.\n\nRebaptisée en l’honneur de De Ferrari en 1875, elle s’agrandit avec l’ouverture de la via XX Settembre. Tramways, banques et Bourse en firent le cœur de la ville moderne. La grande fontaine fut inaugurée en 1936.",
+      "ar": "لتخيّل ساحة سان دومينيكو القديمة، يكفي أن تنظر نحو كارلو فيليتشي. قبل المسرح، كانت هناك كنيسة ودير، وكانت البيوت الوسيطة الملاصقة لأسوار بربروسا تجعل الساحة أضيق بكثير مما هي عليه اليوم.\n\nحملت الساحة اسم دي فيراري عام 1875، واتسعت مع افتتاح شارع فيا XX ستمبر. وجعلتها عربات الترام والمصارف والبورصة قلب المدينة الحديثة. وافتُتحت نافورتها الكبيرة عام 1936.",
+      "ru": "Чтобы представить старую площадь Сан-Доменико, достаточно взглянуть на театр Карло-Феличе. До театра здесь стояли церковь и монастырь. Средневековые дома, примыкавшие к стенам Барбароссы, оставляли для площади гораздо меньше места, чем сегодня.\n\nВ 1875 году площадь назвали в честь Де Феррари. Она расширилась с открытием улицы Виа XX Сеттембре, а трамваи, банки и биржа сделали её центром современного города. Большой фонтан открыли в 1936 году.",
+      "zh": "想象昔日的圣多明我广场，只要望向卡洛·费利切剧院。剧院建成前，这里是一座教堂和一所修道院。依着巴巴罗萨城墙而建的中世纪房屋，让当时的广场比今天小得多。\n\n广场于1875年以德·费拉里命名，随着九月二十日大街开通而扩建。电车、银行和证券交易所使它成为现代城市的中心。大喷泉于1936年启用。",
+      "lij": "Pe imaginâ a vegia ciassa San Domenico, basta amiâ verso o Carlo Felice. Primma do teatro, chi gh’ea ’na gexa e un convento. E câ medievali apoggiæ a-e miage do Barbarossa lasciavan a-a ciassa meno spacio de òua.\n\nIntitolâ a De Ferrari do 1875, a ciassa a s’alargò co-a avertua de Via XX Settembre. I tram, e banche e a Borsa a fêan diventâ o centro da çittæ moderna. A gran fontann-a a l’é stæta inaugurâ do 1936."
+    },
+    "san-teodoro": {
+      "it": "Dove oggi passa via Milano, la chiesa più antica di San Teodoro sorgeva sulla scogliera. Attorno a quel tratto del golfo si sviluppò un borgo di pescatori, a cui dal Cinquecento si aggiunsero ville e giardini delle famiglie borghesi genovesi.\n\nNell’Ottocento il porto cambiò la linea di costa. I nuovi magazzini e la terrazza panoramica presero il posto della scogliera e la vecchia chiesa fu demolita nel 1870. Le sue opere furono trasferite nella nuova chiesa neogotica, accanto a via Venezia.",
+      "en": "Where Via Milano runs today, San Teodoro’s oldest church stood on the rocky shore. A fishing village grew around this stretch of the gulf. From the sixteenth century, Genoese bourgeois families added villas and gardens.\n\nIn the nineteenth century, the port reshaped the coastline. Warehouses and a viewing terrace took the place of the rocks, and the old church was demolished in 1870. Its artworks were moved to the new neo-Gothic church beside Via Venezia.",
+      "es": "Donde hoy pasa Via Milano, la iglesia más antigua de San Teodoro se alzaba sobre la costa rocosa. En ese tramo del golfo creció un pueblo de pescadores al que, desde el siglo XVI, se sumaron las villas y jardines de familias burguesas genovesas.\n\nEn el siglo XIX el puerto modificó el litoral. Los almacenes y una terraza panorámica ocuparon el lugar de las rocas y la antigua iglesia fue demolida en 1870. Sus obras se trasladaron a la nueva iglesia neogótica, junto a Via Venezia.",
+      "fr": "Là où passe aujourd’hui la via Milano, la plus ancienne église de San Teodoro se dressait sur la côte rocheuse. Un village de pêcheurs grandit sur cette partie du golfe. À partir du XVIe siècle, des familles de la bourgeoisie génoise y firent construire villas et jardins.\n\nAu XIXe siècle, le port redessina le littoral. Des entrepôts et une terrasse panoramique remplacèrent les rochers, et l’ancienne église fut démolie en 1870. Ses œuvres furent transférées dans la nouvelle église néogothique, près de la via Venezia.",
+      "ar": "حيث يمرّ شارع فيا ميلانو اليوم، كانت أقدم كنائس سان تيودورو قائمة على الساحل الصخري. نشأت قرية لصيادي السمك في هذا الجزء من الخليج، ومن القرن السادس عشر أضافت إليها العائلات البرجوازية الجنوية قصورها وحدائقها.\n\nفي القرن التاسع عشر غيّر الميناء خط الساحل. وحلّت المخازن والشرفة المطلة على البحر محل الصخور، وهُدمت الكنيسة القديمة عام 1870. ونُقلت أعمالها الفنية إلى الكنيسة الجديدة المبنية على الطراز القوطي الجديد قرب فيا فينيتسيا.",
+      "ru": "Там, где сегодня проходит Виа Милано, на скалистом берегу стояла старейшая церковь Сан-Теодоро. На этом участке залива выросла рыбацкая деревня, а с XVI века здесь появились виллы и сады генуэзской буржуазии.\n\nВ XIX веке порт изменил береговую линию. Скалы уступили место складам и смотровой террасе, а в 1870 году старую церковь снесли. Её произведения искусства перенесли в новую неоготическую церковь у Виа Венеция.",
+      "zh": "今天的米兰大街一带，圣泰奥多罗最古老的教堂曾立在海边的岩石上。这段海湾原有一个渔村，从16世纪起，热那亚的市民阶层在此修建别墅和花园。\n\n19世纪，港口建设改变了海岸线。仓库和观景平台取代了岩岸，旧教堂于1870年拆除。教堂里的艺术品被迁往威尼斯大街旁的新哥特式教堂。",
+      "lij": "Donde ancheu passa via Milano, a gexa ciù vegia de San Teodoro a s’arsava in sciâ scheuggêa. In quello tocco de gorfo o crexé un borgo de pescæi, e da-o Cinquecento gh’arrivòn e ville e i giardin de famigge borghesi zeneixi.\n\nInte l’Euttecento o porto o cangiò a linia da cösta. I magaçen e o terraço panoramic piggiòn o posto di scheuggi e a vegia gexa a l’é stæta derruâ do 1870. E seu òpere son stæte portæ inta neuva gexa neogotica, arente a via Venezia."
+    },
+    "seno-di-giano": {
+      "it": "Tra Sarzano e Carignano, il rivo Torbido sboccava in mare e formava una piccola spiaggia. Era l’approdo dei pescatori e dei primi abitanti di Sarzano. In quel tratto di costa si apriva il Seno di Giano.\n\nNel Cinquecento, con il prolungamento delle mura delle Grazie, la spiaggia fu interrata. Dal 1874 i lavori del porto cambiarono ancora la forma dell’insenatura, aprendo spazio al molo Giano e a due grandi bacini di carenaggio.",
+      "en": "Between Sarzano and Carignano, the Rivo Torbido flowed into the sea and formed a small beach. Fishermen and the first inhabitants of Sarzano came ashore there, in the inlet known as Seno di Giano.\n\nIn the sixteenth century, the beach was filled in as the Grazie walls were extended. From 1874, port works reshaped the inlet again to make room for Molo Giano and two large dry docks.",
+      "es": "Entre Sarzano y Carignano, el Rivo Torbido desembocaba en el mar y formaba una pequeña playa. Allí desembarcaban los pescadores y los primeros habitantes de Sarzano, en la ensenada conocida como Seno di Giano.\n\nEn el siglo XVI, la playa se rellenó al prolongarse las murallas delle Grazie. Desde 1874, las obras del puerto volvieron a cambiar la forma de la ensenada para dar cabida al muelle Giano y a dos grandes diques secos.",
+      "fr": "Entre Sarzano et Carignano, le Rivo Torbido se jetait dans la mer et formait une petite plage. Les pêcheurs et les premiers habitants de Sarzano y accostaient, dans l’anse du Seno di Giano.\n\nAu XVIe siècle, la plage fut remblayée lors du prolongement des remparts des Grazie. À partir de 1874, les travaux portuaires remodelèrent encore l’anse pour faire place au môle Giano et à deux grandes formes de radoub.",
+      "ar": "بين سارزانو وكارينيانو، كان جدول ريفو توربيدو يصبّ في البحر ويشكّل شاطئًا صغيرًا. وكان الصيادون وأوائل سكان سارزانو ينزلون إلى البرّ هناك، في الخليج الصغير المعروف باسم سينو دي جيانو.\n\nفي القرن السادس عشر رُدم الشاطئ مع تمديد أسوار ديلي غراتسيه. ومنذ عام 1874 أعادت أعمال الميناء تشكيل الخليج لإفساح المجال لرصيف جيانو وحوضين جافين كبيرين لصيانة السفن.",
+      "ru": "Между Сарцано и Кариньяно ручей Риво-Торбидо впадал в море, образуя небольшой пляж. Здесь, в бухте Сено-ди-Джано, приставали к берегу рыбаки и первые жители Сарцано.\n\nВ XVI веке при продлении стен делле-Грацие пляж засыпали. С 1874 года портовые работы вновь изменили очертания бухты, освободив место для мола Джано и двух больших сухих доков.",
+      "zh": "在萨尔扎诺与卡里尼亚诺之间，里沃·托尔比多溪汇入大海，形成了一片小沙滩。渔民和萨尔扎诺最早的居民就在这处名叫塞诺·迪·贾诺的小海湾登岸。\n\n16世纪，格拉齐耶城墙延伸时，沙滩被填平。自1874年起，港口工程再次改变海湾的形状，为贾诺码头和两座大型干船坞腾出空间。",
+      "lij": "Tra Sarzan e Carignan, o rivo Torbido o sbertava in mâ e o formava ’na spiaggetta. Lì sbarcavan i pescæi e i primmi abitanti de Sarzan, inte l’insenatua do Seno de Giano.\n\nInto Cinquecento, co-o prolóngamento de miage de Graçie, a spiaggia a l’é stæta interrâ. Da-o 1874 i travaggi do porto an cangiòu torna a forma de l’insenatua pe fâ spacio a-o Molo Giano e a doî gran baxin de carenaggio."
+    },
+    "viaxxsettembre": {
+      "it": "Sotto il Ponte Monumentale passavano i tram. Poco più in là, il Mercato Orientale prendeva forma in un ex convento, dando un riparo ai banchi dei contadini. Erano due dei cambiamenti che accompagnarono la nascita di via XX Settembre.\n\nInaugurata nel 1896 sul percorso di via Giulia e via della Pace, la strada collegò il centro alla spianata del Bisagno. Sotto i nuovi portici aprirono negozi e caffè, mentre i palazzi cambiavano il volto di uno degli assi principali della città.",
+      "en": "Trams ran beneath the Ponte Monumentale. Nearby, the Mercato Orientale took shape in a former convent, providing shelter for farmers’ stalls. Both were part of the changes that gave rise to Via XX Settembre.\n\nOpened in 1896 along the route of Via Giulia and Via della Pace, the street linked the city centre to the open ground by the Bisagno. Shops and cafés opened beneath the new arcades as buildings transformed one of Genoa’s main streets.",
+      "es": "Los tranvías pasaban bajo el Ponte Monumentale. Cerca de allí, el Mercato Orientale tomaba forma en un antiguo convento y daba cobijo a los puestos de los agricultores. Ambos cambios acompañaron el nacimiento de Via XX Settembre.\n\nInaugurada en 1896 sobre el trazado de Via Giulia y Via della Pace, la calle unió el centro con la explanada del Bisagno. Bajo los nuevos soportales abrieron tiendas y cafés, mientras los edificios cambiaban el aspecto de una de las principales vías de Génova.",
+      "fr": "Les tramways passaient sous le Ponte Monumentale. Tout près, le Mercato Orientale prenait forme dans un ancien couvent, offrant un abri aux étals des paysans. Ces deux changements accompagnèrent la naissance de la via XX Settembre.\n\nInaugurée en 1896 sur le tracé des rues Giulia et della Pace, elle relia le centre à l’esplanade du Bisagno. Boutiques et cafés ouvrirent sous les nouvelles arcades, tandis que les immeubles transformaient l’un des axes principaux de Gênes.",
+      "ar": "كانت عربات الترام تمرّ تحت جسر بونتي مونومنتالي. وعلى مقربة منه، نشأ سوق ميركاتو أورينتالي في دير سابق، فوفّر مكانًا مسقوفًا لبسطات المزارعين. وكان هذان من التغييرات التي صاحبت نشأة شارع فيا XX ستمبر.\n\nافتُتح الشارع عام 1896 على مسار شارعي فيا جوليا وفيا ديلا باتشي، وربط المركز بالساحة المفتوحة قرب بيسانيو. وافتُتحت المتاجر والمقاهي تحت أروقته الجديدة، بينما غيّرت المباني ملامح أحد أهم شوارع جنوة.",
+      "ru": "Под мостом Понте-Монументале ходили трамваи. Неподалёку в бывшем монастыре разместился рынок Меркато-Ориентале, где крестьянские прилавки обрели крышу. Так менялся город с появлением Виа XX Сеттембре.\n\nУлицу открыли в 1896 году по трассе Виа Джулиа и Виа делла Паче, соединив центр с площадкой у Бизаньо. Под новыми аркадами открылись магазины и кафе, а здания изменили облик одной из главных улиц Генуи.",
+      "zh": "电车曾从纪念桥下驶过。不远处，东方市场在一座旧修道院里逐渐成形，农民的摊位从此有了遮风避雨的地方。这两项变化与九月二十日大街的诞生相伴。\n\n大街于1896年沿朱利亚街和和平街的原有路线开通，将市中心与比萨尼奥河畔的开阔地连在一起。商店和咖啡馆在新拱廊下开张，两旁的建筑也改变了这条热那亚主干道的面貌。",
+      "lij": "Sotta o Ponte Monumentale passavan i tram. Poco ciù là, o Mercou Orientale o nasceiva inte un vegio convento e o dava un reparo a-i banchi di contadin. Ean doî di cangiamenti che accompagnòn a næscita de Via XX Settembre.\n\nInaugurâ do 1896 in sciô percorso de via Giulia e via da Paxe, a stradda a ligò o centro a-a spianâ do Bezagno. Sotta i neuvi portixi avrîan botteghe e cafè, mentre i palazzi cangiavan a faccia de ’na de stradde prinçipæ da çittæ."
+    },
+    "cimitero-staglieno": {
+      "it": "Tra il Bisagno e le colline, i viali di Staglieno disegnano un cimitero in cui l’ordine neoclassico convive con il paesaggio dei giardini romantici. La scelta di costruirlo fuori dal centro seguiva le disposizioni napoleoniche sulle sepolture.\n\nInaugurato nel 1851, Staglieno si arricchì delle tombe monumentali commissionate dalle famiglie genovesi. Cappelle e sculture raccontano, una dopo l’altra, come la città volle ricordare i suoi morti.",
+      "en": "Between the Bisagno and the hills, Staglieno’s avenues trace a cemetery that combines neoclassical order with the landscape of Romantic gardens. The decision to build it outside the city centre followed Napoleonic burial regulations.\n\nOpened in 1851, Staglieno acquired monumental tombs commissioned by Genoese families. Its chapels and sculptures tell, one after another, how the city chose to remember its dead.",
+      "es": "Entre el Bisagno y las colinas, las avenidas de Staglieno dibujan un cementerio donde el orden neoclásico convive con el paisaje de los jardines románticos. La decisión de construirlo fuera del centro respondía a las disposiciones napoleónicas sobre los enterramientos.\n\nInaugurado en 1851, Staglieno se enriqueció con las tumbas monumentales encargadas por familias genovesas. Capillas y esculturas cuentan, una tras otra, cómo quiso la ciudad recordar a sus muertos.",
+      "fr": "Entre le Bisagno et les collines, les allées de Staglieno dessinent un cimetière où l’ordre néoclassique côtoie le paysage des jardins romantiques. Le choix de le construire hors du centre suivait les dispositions napoléoniennes sur les inhumations.\n\nInauguré en 1851, Staglieno s’enrichit des tombeaux monumentaux commandés par des familles génoises. Chapelles et sculptures racontent, l’une après l’autre, comment la ville a choisi de se souvenir de ses morts.",
+      "ar": "بين بيسانيو والتلال، ترسم ممرّات ستاليينو مقبرة تجمع بين النظام الكلاسيكي الجديد ومشهد الحدائق الرومانسية. وجاء اختيار موقعها خارج وسط المدينة اتباعًا للقواعد النابليونية الخاصة بالدفن.\n\nافتُتحت ستاليينو عام 1851، وأُضيفت إليها أضرحة فخمة كلّفت بها عائلات جنوية. وتروي المصليات والمنحوتات، واحدًا تلو الآخر، كيف اختارت المدينة أن تخلّد ذكرى موتاها.",
+      "ru": "Между Бизаньо и холмами аллеи Стальено образуют кладбище, где неоклассический порядок сочетается с пейзажем романтических садов. Его построили за пределами центра города в соответствии с наполеоновскими правилами погребения.\n\nСтальено открыли в 1851 году, и со временем здесь появились монументальные гробницы по заказу генуэзских семей. Часовни и скульптуры одна за другой рассказывают, как город решил увековечить память об умерших.",
+      "zh": "在比萨尼奥河与山丘之间，斯塔列诺公墓的林荫道将新古典主义的秩序与浪漫主义园林的风景结合在一起。公墓建在市中心以外，遵循的是拿破仑时代的安葬规定。\n\n公墓于1851年启用，后来陆续增添了热那亚家族委托建造的纪念性墓葬。一路上的小礼拜堂与雕塑，讲述着这座城市如何纪念逝者。",
+      "lij": "Tra o Bezagno e e colinn-e, i viali de Staglieno dissegnan un çimiterio donde l’ordine neoclassico o vive con o paezaggio di giardin romantici. A scelta de fâlo feua da-o centro a seguiva e disposiçioin napoleoniche in sciæ sepoltue.\n\nInauguròu do 1851, Staglieno o s’arichì de tombe monumentali commissionæ da-e famigge zeneixi. Cappelle e scultue contan, unn-a apreuvo l’atra, comme a çittæ a l’à vosciuo aregordâ i seu mòrti."
+    },
+    "borgo-incrociati": {
+      "it": "Per entrare a Genova da levante, pellegrini e mercanti attraversavano il Bisagno sul ponte di Sant’Agata, lungo quasi 300 metri e sostenuto da 28 arcate.\n\nSulla riva verso la città, dal XIII secolo si sviluppò Borgo Incrociati. Il borgo prese il nome dai frati Crociferi, che nel loro ospedale offrivano ai viandanti un pasto e un luogo dove riposare prima di proseguire verso Porta Romana.",
+      "en": "To enter Genoa from the east, pilgrims and merchants crossed the Bisagno on the Sant’Agata Bridge, nearly 300 metres long and supported by 28 arches.\n\nOn the city side, Borgo Incrociati grew from the thirteenth century. It took its name from the Crociferi friars, whose hospital offered travellers a meal and a place to rest before they continued to Porta Romana.",
+      "es": "Para entrar en Génova desde el este, peregrinos y mercaderes cruzaban el Bisagno por el puente de Sant’Agata, de casi 300 metros de largo y sostenido por 28 arcos.\n\nEn la orilla del lado de la ciudad, Borgo Incrociati creció desde el siglo XIII. Tomó su nombre de los frailes Crociferi, que en su hospital ofrecían a los viajeros comida y un lugar donde descansar antes de seguir hasta Porta Romana.",
+      "fr": "Pour entrer dans Gênes par l’est, pèlerins et marchands franchissaient le Bisagno par le pont de Sant’Agata, long de près de 300 mètres et soutenu par 28 arches.\n\nSur la rive côté ville, Borgo Incrociati se développa à partir du XIIIe siècle. Il prit le nom des frères Crociferi, qui offraient aux voyageurs un repas et un lieu de repos dans leur hôpital avant de poursuivre vers la Porta Romana.",
+      "ar": "لدخول جنوة من الشرق، كان الحجاج والتجّار يعبرون بيسانيو فوق جسر سانت أغاتا، الذي بلغ طوله نحو 300 متر واستند إلى 28 قوسًا.\n\nعلى الضفة المحاذية للمدينة، نشأ بورغو إنكروتشاتي منذ القرن الثالث عشر. واستمدّ اسمه من رهبان كروتشيفيري الذين كانوا يقدّمون للمسافرين في مستشفاهم وجبةً ومكانًا للراحة قبل متابعة الطريق نحو بورتا رومانا.",
+      "ru": "Чтобы попасть в Геную с востока, паломники и торговцы пересекали Бизаньо по мосту Сант-Агата. Он тянулся почти на 300 метров и опирался на 28 арок.\n\nНа городском берегу с XIII века росло селение Борго-Инкрочати. Оно получило имя от братьев-крочифери, которые в своём госпитале кормили путников и давали им отдохнуть перед дорогой к воротам Порта-Романа.",
+      "zh": "从东面进入热那亚的朝圣者和商人，曾从圣阿加塔桥跨过比萨尼奥河。这座桥长近300米，由28道拱支撑。\n\n靠近城里的一岸，自13世纪起发展出因克罗恰蒂村。村名来自十字修士团的修士，他们在自己的济养院为旅人提供饭食和歇脚之处，旅人随后再走向罗马门。",
+      "lij": "Pe intrâ a Zena da levante, pelegrin e mercanti passavan o Bezagno in sciô ponte de Sant’Agata, longo squæxi 300 metri e tegnuo da 28 archi.\n\nIn sciâ riva da parte da çittæ, da-o XIII secolo o crexé Borgo Incrociati. O borgo o piggiò o nomme da-i fræ Crociferi, che inte l’ospedale offrivan a-i viandanti da mangiâ e un pòsto pe reposâse primma de proseguî verso Pòrta Romann-a."
+    },
+    "fronti-basse": {
+      "it": "Sul Bisagno, i bastioni delle Fronti Basse facevano anche da argine. Ponte Pila attraversava il torrente e portava a Porta Pila, il principale ingresso da levante, dove oggi comincia via XX Settembre.\n\nAlla fine dell’Ottocento le mura e i bastioni furono demoliti per aprire la città verso i nuovi quartieri. Porta Pila fu smontata e spostata. Sulla spianata si allestì l’esposizione del 1892, prima che l’area diventasse Piazza d’Armi.",
+      "en": "On the Bisagno, the Fronti Basse bastions also served as flood embankments. Ponte Pila crossed the stream and led to Porta Pila, the main entrance from the east, where Via XX Settembre begins today.\n\nIn the late nineteenth century, the walls and bastions were demolished to open the city towards the new districts. Porta Pila was dismantled and moved. The cleared ground hosted the 1892 exhibition before becoming Piazza d’Armi.",
+      "es": "Junto al Bisagno, los bastiones de Fronti Basse también servían de dique. Ponte Pila cruzaba el torrente y llevaba a Porta Pila, la entrada principal desde el este, donde hoy empieza Via XX Settembre.\n\nA finales del siglo XIX se derribaron murallas y bastiones para abrir la ciudad hacia los nuevos barrios. Porta Pila se desmontó y trasladó. La explanada acogió la exposición de 1892 antes de convertirse en Piazza d’Armi.",
+      "fr": "Sur le Bisagno, les bastions des Fronti Basse servaient aussi de digue. Le Ponte Pila franchissait le torrent et menait à la Porta Pila, principale entrée par l’est, là où commence aujourd’hui la via XX Settembre.\n\nÀ la fin du XIXe siècle, remparts et bastions furent démolis pour ouvrir la ville vers les nouveaux quartiers. La Porta Pila fut démontée et déplacée. L’esplanade accueillit l’exposition de 1892 avant de devenir la Piazza d’Armi.",
+      "ar": "على ضفاف بيسانيو، كانت حصون فرونتي باسي تؤدي أيضًا دور السدود الواقية. وكان جسر بونتي بيلا يعبر المجرى إلى بورتا بيلا، المدخل الرئيسي من الشرق، حيث يبدأ اليوم شارع فيا XX ستمبر.\n\nفي أواخر القرن التاسع عشر هُدمت الأسوار والحصون لفتح المدينة على الأحياء الجديدة. وفُكّكت بوابة بورتا بيلا ونُقلت. واستضافت الساحة الناتجة معرض عام 1892 قبل أن تصبح ساحة بياцца دارمي.",
+      "ru": "Бастионы Фронти-Бассе у Бизаньо служили также защитными насыпями. Мост Понте-Пила вёл через поток к воротам Порта-Пила, главному восточному входу в город, там, где сегодня начинается Виа XX Сеттембре.\n\nВ конце XIX века стены и бастионы снесли, чтобы открыть путь к новым кварталам. Ворота разобрали и перенесли. На освободившемся месте устроили выставку 1892 года, после чего оно стало площадью Пьяцца-д’Арми.",
+      "zh": "在比萨尼奥河畔，弗龙蒂巴塞的棱堡还起着堤坝的作用。皮拉桥跨过河流，通向东面的主要城门皮拉门，也就是今天九月二十日大街的起点。\n\n19世纪末，城墙和棱堡被拆除，以便城市向新区拓展。皮拉门被拆卸迁移。腾出的空地先举办了1892年展览，随后成为练兵场。",
+      "lij": "In sciô Bezagno i bastioin de Fronti Basse servivan anche da arzene. Ponte Pila o passava o torrente e o portava a Pòrta Pila, l’intrâ prinçipâ da levante, donde ancheu a comensa Via XX Settembre.\n\nA-a fin de l’Euttecento e miage e i bastioin son stæti derruæ pe arvî a çittæ verso i neuvi quartê. Pòrta Pila a l’é stæta smontâ e spostâ. In sciâ spianâ gh’é stæta l’esposiçion do 1892, primma che a diventasse Ciassa d’Armi."
+    },
+    "esposizione-universale-1914": {
+      "it": "Nel 1914 una monorotaia passava sul mare, davanti alle mura, e collegava piazza di Francia al molo Giano. Si chiamava Telfer ed era una delle attrazioni dell’Esposizione internazionale dell’Igiene, della Marina e delle Colonie.\n\nEntrando da via XX Settembre si passava sotto la facciata di ispirazione assiro-babilonese disegnata da Gino Coppedè. Tra padiglioni, giardini e fontane, il percorso comprendeva la ricostruzione di un arsenale navale e una copia della Torre di Galata.",
+      "en": "In 1914, a monorail ran over the sea in front of the walls, linking Piazza di Francia to Molo Giano. Called the Telfer, it was one of the attractions of the International Exhibition of Hygiene, the Navy and the Colonies.\n\nVisitors entering from Via XX Settembre passed through the Assyrian-Babylonian-inspired façade designed by Gino Coppedè. Among pavilions, gardens and fountains were a reconstructed naval arsenal and a replica of the Galata Tower.",
+      "es": "En 1914, un monorraíl pasaba sobre el mar frente a las murallas y unía Piazza di Francia con el muelle Giano. Se llamaba Telfer y era una de las atracciones de la Exposición Internacional de Higiene, Marina y Colonias.\n\nQuienes entraban por Via XX Settembre atravesaban la fachada de inspiración asirio-babilónica diseñada por Gino Coppedè. Entre pabellones, jardines y fuentes, el recorrido incluía un arsenal naval reconstruido y una réplica de la torre de Gálata.",
+      "fr": "En 1914, un monorail passait au-dessus de la mer, devant les remparts, reliant la piazza di Francia au môle Giano. Baptisé Telfer, il comptait parmi les attractions de l’Exposition internationale de l’hygiène, de la marine et des colonies.\n\nEn entrant par la via XX Settembre, on franchissait la façade d’inspiration assyro-babylonienne dessinée par Gino Coppedè. Entre pavillons, jardins et fontaines, le parcours comprenait un arsenal naval reconstitué et une réplique de la tour de Galata.",
+      "ar": "عام 1914، كان قطار أحادي السكة يمرّ فوق البحر أمام الأسوار، رابطًا ساحة بياцца دي فرانشا برصيف جيانو. وكان يُسمّى تيلفر، وهو من أبرز معالم المعرض الدولي للصحة والبحرية والمستعمرات.\n\nكان الداخل من شارع فيا XX ستمبر يمرّ عبر واجهة مستوحاة من العمارة الآشورية والبابلية صمّمها جينو كوبّيدي. وضمّ المسار بين الأجنحة والحدائق والنوافير ترسانة بحرية أعيد بناؤها ونسخة من برج غلطة.",
+      "ru": "В 1914 году монорельс проходил над морем вдоль стен, соединяя площадь Пьяцца-ди-Франча с молом Джано. «Тельфер» был одной из достопримечательностей Международной выставки гигиены, флота и колоний.\n\nВход с Виа XX Сеттембре проходил через фасад в духе ассиро-вавилонской архитектуры, спроектированный Джино Коппеде. Среди павильонов, садов и фонтанов можно было увидеть воссозданный военно-морской арсенал и копию Галатской башни.",
+      "zh": "1914年，一条单轨铁路从城墙前的海面上经过，将法国广场和贾诺码头连在一起。它叫特尔费尔，是国际卫生、海军与殖民地博览会的亮点之一。\n\n游客从九月二十日大街入场，要穿过吉诺·科佩代设计的亚述—巴比伦风格立面。展馆、花园和喷泉之间，还设有复建的海军兵工厂与加拉塔塔的复制品。",
+      "lij": "Do 1914 ’na monorotaia a passava in sciô mâ, davanti a-e miage, e a ligava ciassa de Fransa a-o Molo Giano. A se ciamava Telfer e a l’ea unn-a de atraçioin de l’Esposiçion Internaçionâ de l’Igiene, da Marina e de Colonie.\n\nIntrando da Via XX Settembre se passava sotta a façiata d’inspiraçion assiro-babiloneise dissegnâ da Gino Coppedè. Tra padiggioin, giardin e fontann-e, gh’ea un arsenale navale arecostruîo e ’na còpia da Torre de Galata."
+    },
+    "stazione-brignole": {
+      "it": "Prima della stazione di oggi, nel 1868 era stato aperto un piccolo scalo vicino a piazza Brignole. Quando le esposizioni richiamarono più visitatori verso il Bisagno, emerse la necessità di una stazione più grande.\n\nI lavori cominciarono nel 1902 e si conclusero nel 1905. Il nuovo edificio si chiamava Stazione orientale e davanti gli furono ridisegnati i giardini per far passare i tram. Prese il nome di Brignole quando il vecchio scalo cadde in disuso.",
+      "en": "Before today’s station, a small rail stop opened near Piazza Brignole in 1868. As exhibitions brought more visitors to the Bisagno area, a larger station was needed.\n\nWork began in 1902 and ended in 1905. The new building was called Stazione Orientale, and the gardens in front were redesigned to make way for the trams. It took the name Brignole when the old station fell out of use.",
+      "es": "Antes de la estación actual, en 1868 se abrió una pequeña estación cerca de Piazza Brignole. Cuando las exposiciones atrajeron a más visitantes a la zona del Bisagno, hizo falta una estación mayor.\n\nLas obras comenzaron en 1902 y terminaron en 1905. El nuevo edificio se llamó Stazione Orientale y los jardines de enfrente se rediseñaron para el paso de los tranvías. Tomó el nombre de Brignole cuando la antigua estación quedó en desuso.",
+      "fr": "Avant la gare actuelle, un petit arrêt ferroviaire avait ouvert en 1868 près de la piazza Brignole. Lorsque les expositions attirèrent davantage de visiteurs vers le Bisagno, une gare plus grande devint nécessaire.\n\nCommencés en 1902, les travaux s’achevèrent en 1905. Le nouveau bâtiment s’appelait Stazione Orientale et les jardins devant la gare furent redessinés pour laisser passer les tramways. Elle prit le nom de Brignole lorsque l’ancienne gare cessa d’être utilisée.",
+      "ar": "قبل المحطة الحالية، افتُتحت محطة صغيرة قرب ساحة برينيولي عام 1868. وعندما جذبت المعارض أعدادًا أكبر من الزوّار إلى منطقة بيسانيو، ظهرت الحاجة إلى محطة أوسع.\n\nبدأت الأعمال عام 1902 وانتهت عام 1905. وسُمّيت المحطة الجديدة «المحطة الشرقية»، وأُعيد تصميم الحدائق أمامها لتمرّ عربات الترام. وحملت اسم برينيولي عندما خرجت المحطة القديمة من الخدمة.",
+      "ru": "До нынешнего вокзала рядом с площадью Бриньоле в 1868 году открылась небольшая станция. Когда выставки стали привлекать больше посетителей к Бизаньо, понадобился более просторный вокзал.\n\nРаботы начались в 1902-м и завершились в 1905 году. Новый вокзал назвали Восточным, а сады перед ним перепланировали для движения трамваев. Он получил имя Бриньоле, когда старая станция вышла из употребления.",
+      "zh": "在现有车站建成前，布里尼奥莱广场附近于1868年开设了一座小站。后来，展览为比萨尼奥河一带带来越来越多的访客，当地需要一座更大的车站。\n\n工程始于1902年，1905年完工。新站起初叫东站，站前花园也重新规划，让电车可以通过。旧站停用后，新站沿用了布里尼奥莱这个名字。",
+      "lij": "Primma da staçion d’ancheu, do 1868 gh’aveivan averto un piccolo scalo arente a ciassa Brignole. Quande e esposiçioin portòn ciù gente verso o Bezagno, ghe vose ’na staçion ciù grande.\n\nI travaggi comensòn do 1902 e son finii do 1905. O neuvo edificio o se ciamava Staçion Orientale e i giardin davanti son stæti aredissegnæ pe fâ passâ i tram. O piggiò o nomme de Brignole quande o vegio scalo o no l’é ciù stæto uzòu."
+    },
+    "stazione-principe": {
+      "it": "Per portare i passeggeri della ferrovia Torino–Genova a piazza Acquaverde, i binari dovevano attraversare il colle dietro la Villa del Principe. Il cantiere trasformò il quartiere di San Tommaso e il rio Lagaccio fu interrato.\n\nLa stazione Principe fu completata nel 1860. Chi saliva da via Doria raggiungeva la piazza passando sotto un arco monumentale, pensato come ingresso alla nuova stazione.",
+      "en": "To bring passengers on the Turin–Genoa railway to Piazza Acquaverde, the tracks had to cross the hill behind the Villa del Principe. Construction transformed the San Tommaso district and the Rio Lagaccio was buried.\n\nPrincipe station was completed in 1860. People walking up Via Doria entered the square beneath a monumental arch designed as the gateway to the new station.",
+      "es": "Para llevar a los pasajeros del ferrocarril Turín–Génova a Piazza Acquaverde, las vías debían atravesar la colina detrás de la Villa del Principe. Las obras transformaron el barrio de San Tommaso y se soterró el arroyo Lagaccio.\n\nLa estación Principe se terminó en 1860. Quienes subían por Via Doria llegaban a la plaza bajo un arco monumental concebido como entrada a la nueva estación.",
+      "fr": "Pour conduire les voyageurs du chemin de fer Turin–Gênes jusqu’à la piazza Acquaverde, les voies devaient traverser la colline derrière la Villa del Principe. Le chantier transforma le quartier de San Tommaso et le rio Lagaccio fut recouvert.\n\nLa gare Principe fut achevée en 1860. En remontant la via Doria, on débouchait sur la place sous un arc monumental, conçu comme l’entrée de la nouvelle gare.",
+      "ar": "لإيصال ركّاب خط تورينو–جنوة إلى ساحة أكوافِردي، كان لا بدّ من أن تعبر السكك التلّ خلف فيلا ديل برينتشيبِه. وغيّرت الأعمال حيّ سان توماسو، وطُمر مجرى ريو لاغاتشو.\n\nاكتملت محطة برينتشيبِه عام 1860. وكان الصاعد من شارع فيا دوريا يبلغ الساحة تحت قوس ضخم صُمّم ليكون مدخلًا إلى المحطة الجديدة.",
+      "ru": "Чтобы доставлять пассажиров железной дороги Турин–Генуя к площади Аккуаверде, пути проложили через холм за Виллой-дель-Принчипе. Стройка преобразила квартал Сан-Томмазо, а ручей Лагаччо засыпали.\n\nВокзал Принчипе достроили в 1860 году. Те, кто поднимался по Виа Дориа, выходили на площадь под монументальной аркой, задуманной как вход к новому вокзалу.",
+      "zh": "为了让都灵—热那亚铁路的乘客抵达阿夸韦尔德广场，铁轨必须穿过王子别墅后方的山丘。工程改变了圣托马索街区的面貌，拉加乔溪也被填埋。\n\n王子广场火车站于1860年完工。从多里亚街向上走，人们会穿过一座宏伟的拱门进入广场。这座拱门是为新车站设计的入口。",
+      "lij": "Pe portâ i passeggê da ferrovia Turin–Zena in ciassa Acquaverde, i binai doveivan traversâ a colinn-a derê a Villa do Prinçipe. O cantiê o cangiò o quarté de San Tommaso e o rivo Lagaccio o l’é stæto interròu.\n\nA staçion Prinçipe a l’é stæta finia do 1860. Chi montava da via Doria o arrivava in ciassa passando sotta un arco monumentale, pensòu comme intrâ da neuva staçion."
+    },
+    "borgo-ponticello": {
+      "it": "Dove oggi si apre piazza Dante, il mercato di Borgo Ponticello si teneva tra botteghe e vicoli. Al centro della piazza c’era il Barchile, la fontana seicentesca. Il nome del borgo veniva da un piccolo ponte sul rivo Torbido.\n\nL’apertura di via Dante e, più tardi, il cantiere della nuova piazza portarono alla demolizione di molti edifici. Tra le tracce risparmiate dai lavori ci sono la Casa di Colombo, il chiostro di Sant’Andrea e Porta Soprana.",
+      "en": "Where Piazza Dante opens out today, Borgo Ponticello’s market once filled a square surrounded by shops and alleys. In the middle stood the Barchile, a seventeenth-century fountain. The neighbourhood took its name from a small bridge over the Rivo Torbido.\n\nThe opening of Via Dante and the later construction of the new square led to the demolition of many buildings. The House of Columbus, the Sant’Andrea cloister and Porta Soprana were among the landmarks spared.",
+      "es": "Donde hoy se abre Piazza Dante, el mercado de Borgo Ponticello se celebraba entre tiendas y callejones. En el centro estaba el Barchile, una fuente del siglo XVII. El barrio tomó su nombre de un pequeño puente sobre el Rivo Torbido.\n\nLa apertura de Via Dante y las posteriores obras de la nueva plaza llevaron a la demolición de muchos edificios. Entre los vestigios que se salvaron figuran la Casa de Colón, el claustro de Sant’Andrea y Porta Soprana.",
+      "fr": "Là où s’ouvre aujourd’hui la piazza Dante, le marché de Borgo Ponticello se tenait entre boutiques et ruelles. Au centre se trouvait le Barchile, une fontaine du XVIIe siècle. Le quartier devait son nom à un petit pont sur le Rivo Torbido.\n\nL’ouverture de la via Dante, puis le chantier de la nouvelle place, entraînèrent la démolition de nombreux bâtiments. La maison de Christophe Colomb, le cloître de Sant’Andrea et la Porta Soprana comptent parmi les vestiges épargnés.",
+      "ar": "حيث تنفتح اليوم ساحة دانتي، كان سوق بورغو بونتيتشيلّو يُقام وسط الدكاكين والأزقّة. وفي الوسط كانت نافورة باركيلي، التي تعود إلى القرن السابع عشر. وأخذ الحيّ اسمه من جسر صغير فوق جدول ريفو توربيدو.\n\nأدّى افتتاح شارع فيا دانتي، ثم بناء الساحة الجديدة، إلى هدم كثير من المباني. وبقيت من معالم المنطقة دار كولومبوس ورواق دير سانت أندريا وبوابة بورتا سوبرانا.",
+      "ru": "Там, где сегодня раскинулась площадь Данте, прежде работал рынок Борго-Понтичелло среди лавок и переулков. В центре стоял Баркиле, фонтан XVII века. Название кварталу дал небольшой мост через ручей Риво-Торбидо.\n\nОткрытие улицы Виа Данте, а затем устройство новой площади привели к сносу многих зданий. Среди уцелевших памятников — дом Колумба, клуатр Сант-Андреа и ворота Порта-Сопрана.",
+      "zh": "今天的但丁广场一带，过去是小桥村的集市，周围都是店铺和小巷。广场中央曾有一座17世纪的喷泉，名叫巴尔基莱。村名则来自里沃·托尔比多溪上的一座小桥。\n\n但丁街开通以及之后新广场的建设，让许多旧建筑被拆除。保留下来的地标包括哥伦布故居、圣安德烈回廊和索普拉纳城门。",
+      "lij": "Donde ancheu s’arve ciassa Dante, o mercato de Borgo Ponticello o se faxeiva tra botteghe e caruggi. In mezo a-a ciassa gh’ea o Barchile, a fontann-a do Seicento. O nomme do borgo o vegniva da un pontetto in sciô rivo Torbido.\n\nL’avertua de via Dante e, ciù tardi, o cantiê da neuva ciassa an portòu a-a derruiçion de tanti edifici. Tra quello ch’é restòu gh’é a Câ de Colombo, o ciostro de Sant’Andrea e Pòrta Soprann-a."
+    },
+    "borgo-piccapietra": {
+      "it": "Nel sestiere di Portoria, attorno all’antica Porta Aurea, c’era un intreccio di vicoli e botteghe di scalpellini e muratori. A poca distanza sorgeva il Pammatone, per secoli il principale ospedale della città.\n\nNell’Ottocento, l’apertura di via Roma e la costruzione di Galleria Mazzini trasformarono una parte di Piccapietra. Sotto la volta di ferro e vetro, la galleria divenne un luogo di ritrovo della borghesia genovese.",
+      "en": "In the Portoria district, a network of alleys and stonemasons’ and builders’ workshops surrounded the old Porta Aurea. Nearby stood Pammatone, Genoa’s main hospital for centuries.\n\nIn the nineteenth century, the opening of Via Roma and the construction of Galleria Mazzini transformed part of Piccapietra. Beneath its iron-and-glass roof, the gallery became a meeting place for Genoa’s bourgeoisie.",
+      "es": "En el barrio de Portoria, alrededor de la antigua Porta Aurea, se entrelazaban callejones y talleres de canteros y albañiles. Cerca estaba el Pammatone, durante siglos el principal hospital de la ciudad.\n\nEn el siglo XIX, la apertura de Via Roma y la construcción de Galleria Mazzini transformaron parte de Piccapietra. Bajo su bóveda de hierro y cristal, la galería se convirtió en un lugar de encuentro de la burguesía genovesa.",
+      "fr": "Dans le quartier de Portoria, autour de l’ancienne Porta Aurea, s’entremêlaient ruelles et ateliers de tailleurs de pierre et de maçons. Tout près se trouvait le Pammatone, principal hôpital de la ville pendant des siècles.\n\nAu XIXe siècle, l’ouverture de la via Roma et la construction de la Galleria Mazzini transformèrent une partie de Piccapietra. Sous sa voûte de fer et de verre, la galerie devint un lieu de rendez-vous de la bourgeoisie génoise.",
+      "ar": "في حيّ بورتوريا، حول بوابة بورتا أوريا القديمة، تشابكت الأزقّة وورش نحّاتي الحجارة والبنّائين. وعلى مقربة منها كان مستشفى باماتوني، أهم مستشفيات المدينة على مدى قرون.\n\nفي القرن التاسع عشر غيّر افتتاح شارع فيا روما وبناء غاليريا ماتسيني جزءًا من بيكّابيترا. وتحت سقفها المقبّب من الحديد والزجاج، أصبحت الغاليريا ملتقى للبرجوازية الجنوية.",
+      "ru": "В квартале Портория вокруг старинных ворот Порта-Ауреа переплетались переулки, где работали каменотёсы и каменщики. Неподалёку находился Памматоне, веками служивший главным госпиталем города.\n\nВ XIX веке открытие Виа Рома и строительство Галереи Мадзини преобразили часть Пиккапьетры. Под железно-стеклянным сводом галерея стала местом встреч генуэзской буржуазии.",
+      "zh": "在波尔托里亚城区，古老的金门周围曾是一片交错的小巷，密布石匠和泥瓦匠的作坊。不远处是帕马托内医院，几个世纪里一直是热那亚的主要医院。\n\n19世纪，罗马街的开通与马志尼拱廊的建设改变了皮卡彼得拉的一部分。铁框玻璃穹顶下，拱廊成了热那亚市民阶层的聚会场所。",
+      "lij": "Inte o sestiê de Portoria, d’attorno a l’antiga Pòrta Aurea, gh’ea un intriggio de caruggi e botteghe de pica-preie e muratoî. Poco distante gh’ea o Pammatone, pe di secoli l’ospedale prinçipâ da çittæ.\n\nInte l’Euttecento, l’avertua de via Roma e a costruçion da Galleria Mazzini an cangiòu unn-a parte de Piccapietra. Sotta a vòtta de færo e vetro, a galleria a l’é diventâ un pòsto d’incontro da borghesia zeneize."
+    },
+    "parco-acquasola": {
+      "it": "I terrazzamenti dell’Acquasola nacquero anche dai detriti dei cantieri di Strada Nuova. Erano chiamati «Muggi», cioè mucchi. Su quell’area, a ridosso delle mura, Carlo Barabino progettò una passeggiata pubblica.\n\nIl parco fu completato nel 1830. I viali alberati, ispirati a quelli parigini, erano abbastanza ampi per le carrozze. Attorno alla grande fontana centrale si poteva passeggiare, assistere a eventi o partecipare ai giochi.",
+      "en": "The terraces of Acquasola were formed in part from rubble left by the works on Strada Nuova. They were known as “Muggi”, meaning heaps. On that ground beside the city walls, Carlo Barabino planned a public promenade.\n\nThe park was completed in 1830. Its tree-lined avenues, inspired by those of Paris, were wide enough for carriages. Around the large central fountain, people could stroll, watch events or join in games.",
+      "es": "Las terrazas de Acquasola se formaron en parte con escombros de las obras de Strada Nuova. Las llamaban «Muggi», es decir, montones. En ese terreno junto a las murallas, Carlo Barabino proyectó un paseo público.\n\nEl parque se terminó en 1830. Sus avenidas arboladas, inspiradas en las de París, eran lo bastante anchas para los carruajes. Alrededor de la gran fuente central se podía pasear, asistir a eventos o participar en juegos.",
+      "fr": "Les terrasses de l’Acquasola furent en partie formées avec les déblais des chantiers de la Strada Nuova. On les appelait « Muggi », autrement dit des tas. Sur ce terrain au pied des remparts, Carlo Barabino dessina une promenade publique.\n\nLe parc fut achevé en 1830. Ses allées arborées, inspirées de celles de Paris, étaient assez larges pour les voitures à cheval. Autour de la grande fontaine centrale, on pouvait flâner, assister à des événements ou participer à des jeux.",
+      "ar": "تشكّلت مصاطب أكواسولا جزئيًا من ركام أعمال بناء شارع سترادا نوفا. وكانت تُسمّى «مودجي»، أي الأكوام. وعلى هذه الأرض الملاصقة للأسوار صمّم كارلو بارابينو متنزّهًا عامًا.\n\nاكتمل المتنزّه عام 1830. وكانت ممرّاته المشجّرة، المستوحاة من ممرّات باريس، تتّسع للعربات التي تجرّها الخيول. وحول النافورة الكبيرة في الوسط، كان الناس يتنزّهون أو يحضرون الفعاليات أو يشاركون في الألعاب.",
+      "ru": "Террасы Аккуазолы частично сложились из обломков, оставшихся после строительства Страда-Нуова. Их называли «муджи», то есть груды. На этом участке у городских стен Карло Барабино спроектировал общественную прогулочную зону.\n\nПарк завершили в 1830 году. Его обсаженные деревьями аллеи, вдохновлённые парижскими, были достаточно широки для экипажей. Вокруг большого центрального фонтана можно было гулять, смотреть представления или участвовать в играх.",
+      "zh": "阿夸索拉的台地部分由新街工程留下的石土堆成，当地人称它们为“Muggi”，意为土堆。卡洛·巴拉比诺在这片紧邻城墙的土地上设计了一处公共散步场所。\n\n公园于1830年完工。受巴黎启发而建的林荫道足够宽，马车也能通过。人们可以在中央大喷泉周围散步、观看活动或参与游戏。",
+      "lij": "I terraçamenti de l’Acquasola son nasciui anche da-i detriti di cantiê de Stradda Neuva. Se ciamavan «Muggi», à dî de mucchi. In quell’area arente a-e miage, Carlo Barabino o progettò ’na passægiâ pùblica.\n\nO parco o l’é stæto finio do 1830. I viali co-i erboi, ispiræ a quelli de Parigi, ean larghi pe fâ passâ e carroççe. D’attorno a-a gran fontann-a se podeiva passægiâ, amiâ i spettacoli ò partecipâ a-i zeughi."
+    },
+    "circonvallazione-a-monte": {
+      "it": "Nel 1852 i cantieri di via Assarotti e via Caffaro aprirono due nuove salite dal centro verso Castelletto. Sulle alture, una strada panoramica lunga circa cinque chilometri avrebbe unito i nuovi insediamenti residenziali.\n\nPer costruire lungo il pendio servirono grandi muraglioni di sostegno. Tra i palazzi eclettici della nuova borghesia comparvero alberi e aiuole. La spianata di Castelletto, un tempo occupata dalla fortezza, divenne uno spazio pubblico.",
+      "en": "In 1852, work on Via Assarotti and Via Caffaro opened up two new routes uphill from the centre to Castelletto. A scenic road of about five kilometres would link the new residential areas on the heights.\n\nBuilding along the slope required large retaining walls. Trees and flowerbeds appeared among the eclectic buildings of the new bourgeoisie. The Castelletto esplanade, once occupied by a fortress, became a public space.",
+      "es": "En 1852, las obras de Via Assarotti y Via Caffaro abrieron dos nuevas subidas desde el centro hacia Castelletto. En las alturas, una vía panorámica de unos cinco kilómetros uniría las nuevas zonas residenciales.\n\nConstruir en la ladera exigió grandes muros de contención. Entre los edificios eclécticos de la nueva burguesía aparecieron árboles y parterres. La explanada de Castelletto, antes ocupada por una fortaleza, se convirtió en un espacio público.",
+      "fr": "En 1852, les chantiers des rues Assarotti et Caffaro ouvrirent deux nouvelles montées du centre vers Castelletto. Sur les hauteurs, une voie panoramique d’environ cinq kilomètres devait relier les nouveaux quartiers résidentiels.\n\nBâtir à flanc de colline exigea de grands murs de soutènement. Arbres et massifs apparurent entre les immeubles éclectiques de la nouvelle bourgeoisie. L’esplanade de Castelletto, autrefois occupée par une forteresse, devint un espace public.",
+      "ar": "عام 1852، فتحت أعمال شارعي فيا أسّاروتّي وفيا كافّارو طريقين صاعدين من وسط المدينة نحو كاستيلّيتّو. وعلى المرتفعات، خُطّط لطريق بانورامي بطول نحو خمسة كيلومترات لربط المناطق السكنية الجديدة.\n\nتطلّب البناء على المنحدر جدرانًا استنادية كبيرة. وزُرعت الأشجار وأحواض الزهور بين مباني البرجوازية الجديدة ذات الطرز المتنوّعة. وأصبحت ساحة كاستيلّيتّو المرتفعة، التي كانت تشغلها قلعة، فضاءً عامًا.",
+      "ru": "В 1852 году начались работы на улицах Виа Ассаротти и Виа Каффаро, открывшие два новых подъёма из центра в Кастеллетто. На возвышенности новые жилые районы должна была соединить панорамная дорога длиной около пяти километров.\n\nСтроительство на склоне потребовало больших подпорных стен. Между эклектичными зданиями новой буржуазии появились деревья и цветники. Эспланада Кастеллетто, где прежде стояла крепость, стала общественным пространством.",
+      "zh": "1852年，阿萨罗蒂街与卡法罗街的工程开辟了两条从市中心上行至卡斯泰莱托的新路。高处还规划了一条约五公里长的景观道路，连接新的住宅区。\n\n在坡地上施工需要修筑高大的挡土墙。新兴市民阶层的折衷主义建筑之间种起了树木，布置了花坛。卡斯泰莱托昔日堡垒所在的平台，也变成了公共空间。",
+      "lij": "Do 1852 i cantiê de via Assarotti e via Caffaro an averto doe neuve montæ da-o centro verso Castelletto. In sciæ altue, ’na stradda panoramica longa ciù ò meno çinque chilometri a l’avieiva ligòu i neuvi quartê residençiâ.\n\nPe costruî in pendeza ghe son vosciui di mægi de sostegno. Tra i palazzi eclettici da neuva borghesia son comparsciui erboi e aiêu. A spianâ de Castelletto, donde ’na vòtta gh’ea a fortezza, a l’é diventâ un spacio pùblico."
+    },
+    "corso-italia": {
+      "it": "Prima della passeggiata di Corso Italia, tra la Foce e Boccadasse si susseguivano insenature rocciose. I lavori iniziarono nel 1909 per collegare i due quartieri con una strada lungo il mare.\n\nGrandi muraglioni sostennero la nuova arteria e la passeggiata, sotto la quale sorsero gli stabilimenti balneari. A Punta Vagno, il tracciato passò nell’area della chiesa di San Nazaro e Celso, demolita per fare spazio alla strada.",
+      "en": "Before the Corso Italia promenade, rocky coves lined the coast between the Foce and Boccadasse. Work began in 1909 to link the two districts by a road along the sea.\n\nLarge retaining walls supported the new road and promenade, with bathing establishments built below. At Punta Vagno, the route passed through the site of the church of San Nazaro e Celso, demolished to make room for the road.",
+      "es": "Antes del paseo de Corso Italia, entre la Foce y Boccadasse se sucedían las calas rocosas. Las obras comenzaron en 1909 para unir los dos barrios con una vía junto al mar.\n\nGrandes muros de contención sostuvieron la nueva vía y el paseo, bajo el que se instalaron establecimientos de baño. En Punta Vagno, el trazado pasó por el solar de la iglesia de San Nazaro e Celso, demolida para abrir paso a la carretera.",
+      "fr": "Avant la promenade du Corso Italia, des criques rocheuses se succédaient entre la Foce et Boccadasse. Les travaux débutèrent en 1909 pour relier les deux quartiers par une route en bord de mer.\n\nDe grands murs de soutènement portèrent la nouvelle voie et la promenade, sous laquelle s’installèrent des établissements de bains. À Punta Vagno, le tracé passa par le site de l’église de San Nazaro e Celso, démolie pour faire place à la route.",
+      "ar": "قبل إنشاء ممشى كورسو إيطاليا، كانت الخلجان الصخرية تتعاقب على الساحل بين فوّتشيه وبوكّاداسّيه. وبدأت الأعمال عام 1909 لربط الحيّين بطريق بمحاذاة البحر.\n\nحملت جدران استنادية كبيرة الطريق الجديد والممشى، وأُقيمت منشآت الاستحمام البحري أسفل الممشى. وعند بونتا فانو مرّ الطريق في موقع كنيسة سان نازارو إي تشيلسو، التي هُدمت لإفساح المجال أمامه.",
+      "ru": "До появления набережной Корсо-Италия между Фоче и Боккадассе тянулась череда скалистых бухт. Работы начались в 1909 году, чтобы соединить два района дорогой вдоль моря.\n\nБольшие подпорные стены поддерживали новую дорогу и набережную, под которой появились купальни. На мысе Пунта-Ваньо дорогу проложили через место, где стояла церковь Сан-Надзаро-э-Чельсо, снесённая ради строительства.",
+      "zh": "在意大利大道的海滨步道建成前，福切与博卡达塞之间是一连串岩石小湾。工程于1909年动工，目的是沿海修路，连接两个街区。\n\n大型挡土墙支撑起新道路和步道，步道下方建起了海滨浴场。到了瓦尼奥角，道路经过圣纳扎罗与切尔索教堂的旧址，这座教堂为道路让路而拆除。",
+      "lij": "Primma da passægiâ de Corso Italia, tra a Foxe e Boccadâze gh’ea unn-a apreuvo l’atra de insenatue de scheuggi. I travaggi comensòn do 1909 pe ligâ i doî quartê con ’na stradda longo o mâ.\n\nDe gran miage an tegnuo a neuva stradda e a passægiâ, e sotta gh’an fæto i stabilimenti di bagni. A Punta Vagno l’itinerario passò donde gh’ea a gexa de San Nazaro e Celso, derruâ pe fâ pòsto a-a stradda."
+    }
+  });
 })();
