@@ -1,5 +1,5 @@
-/* Genova mApp - "Vicino a me" / raggio 300 m - fase 1.1
-   Mostra in un layer indipendente i punti selezionati entro 300 m dal GPS.
+/* Genova mApp - "Vicino a me"
+   Mostra i punti delle categorie selezionate entro 300 m o 1 km dal GPS.
    I marker usano le stesse icone delle categorie normali e restano cliccabili.
    Non modifica i normali toggle/layer della mappa. */
 (function(){
@@ -7,7 +7,10 @@
   if(window.__GENOVA_NEARBY_V1__) return;
   window.__GENOVA_NEARBY_V1__ = true;
 
-  var RADIUS_METERS = 300;
+  var DEFAULT_RADIUS = 300;
+  var WIDE_RADIUS = 1000;
+  var radiusMeters = DEFAULT_RADIUS;
+  var lastCount = null;
   var STORAGE_KEY = 'genova_mapp_nearby_v1';
   var nearbyActive = false;
   var welcomeRequest = null;
@@ -33,12 +36,12 @@
     it:{
       startGps:'Attiva GPS',
       button:'Vicino a me', gpsFirst:'Attiva prima il GPS', title:'Vicino a me',
-      intro:'Mostra sulla mappa i luoghi delle categorie selezionate che si trovano entro 300 metri dalla tua posizione.',
-      radius:'Raggio', categories:'Categorie', all:'Tutte', none:'Nessuna', circle:'Mostra il cerchio dei 300 m',
+      intro:'Mostra sulla mappa i luoghi delle categorie selezionate che si trovano entro {radius} dalla tua posizione.',
+      radius:'Raggio', categories:'Categorie', all:'Tutte', none:'Nessuna', circle:'Mostra il cerchio sulla mappa',
       activate:'Attiva', deactivate:'Disattiva', apply:'Aggiorna', close:'Chiudi',
       waiting:'In attesa della posizione GPS…', gpsOff:'Attiva il GPS per usare Vicino a me.',
-      selectOne:'Seleziona almeno una categoria.', found0:'Nessun luogo selezionato entro 300 m.',
-      found1:'1 luogo entro 300 m.', foundN:'{n} luoghi entro 300 m.',
+      selectOne:'Seleziona almeno una categoria.', found0:'Nessun luogo selezionato entro {radius}.',
+      found1:'1 luogo entro {radius}.', foundN:'{n} luoghi entro {radius}.',
       groupHistory:'Storia e cultura', groupFun:'Luoghi e attività', groupFood:'Mangiare e dormire', groupMove:'Trasporti',
       qr:'Punti QR', minidoc:'MiniDoc', forts:'Forti', museums:'Musei', churches:'Chiese', palaces:'Palazzi e ville',
       exhibitions:'Mostre', theatres:'Teatri', cinemas:'Cinema', parks:'Parchi e piazze', sport:'Sport',
@@ -48,11 +51,11 @@
     en:{
       startGps:'Turn on GPS',
       button:'Near me', gpsFirst:'Turn on GPS first', title:'Near me',
-      intro:'Show places from the selected categories that are within 300 metres of your current position.',
-      radius:'Radius', categories:'Categories', all:'All', none:'None', circle:'Show the 300 m circle',
+      intro:'Show places from the selected categories that are within {radius} of your current position.',
+      radius:'Radius', categories:'Categories', all:'All', none:'None', circle:'Show the circle on the map',
       activate:'Activate', deactivate:'Deactivate', apply:'Update', close:'Close',
       waiting:'Waiting for GPS position…', gpsOff:'Turn on GPS to use Near me.', selectOne:'Select at least one category.',
-      found0:'No selected places within 300 m.', found1:'1 place within 300 m.', foundN:'{n} places within 300 m.',
+      found0:'No selected places within {radius}.', found1:'1 place within {radius}.', foundN:'{n} places within {radius}.',
       groupHistory:'History and culture', groupFun:'Places and activities', groupFood:'Eat and stay', groupMove:'Transport',
       qr:'QR points', minidoc:'MiniDoc', forts:'Forts', museums:'Museums', churches:'Churches', palaces:'Palaces and villas',
       exhibitions:'Exhibitions', theatres:'Theatres', cinemas:'Cinemas', parks:'Parks and squares', sport:'Sport',
@@ -62,11 +65,11 @@
     es:{
       startGps:'Activar GPS',
       button:'Cerca de mí', gpsFirst:'Activa primero el GPS', title:'Cerca de mí',
-      intro:'Muestra en el mapa los lugares de las categorías seleccionadas que estén a menos de 300 metros de tu posición.',
-      radius:'Radio', categories:'Categorías', all:'Todas', none:'Ninguna', circle:'Mostrar el círculo de 300 m',
+      intro:'Muestra en el mapa los lugares de las categorías seleccionadas que estén a menos de {radius} de tu posición.',
+      radius:'Radio', categories:'Categorías', all:'Todas', none:'Ninguna', circle:'Mostrar el círculo en el mapa',
       activate:'Activar', deactivate:'Desactivar', apply:'Actualizar', close:'Cerrar', waiting:'Esperando la posición GPS…',
       gpsOff:'Activa el GPS para usar Cerca de mí.', selectOne:'Selecciona al menos una categoría.',
-      found0:'Ningún lugar seleccionado a menos de 300 m.', found1:'1 lugar a menos de 300 m.', foundN:'{n} lugares a menos de 300 m.',
+      found0:'Ningún lugar seleccionado a menos de {radius}.', found1:'1 lugar a menos de {radius}.', foundN:'{n} lugares a menos de {radius}.',
       groupHistory:'Historia y cultura', groupFun:'Lugares y actividades', groupFood:'Comer y dormir', groupMove:'Transportes',
       qr:'Puntos QR', minidoc:'MiniDoc', forts:'Fortalezas', museums:'Museos', churches:'Iglesias', palaces:'Palacios y villas',
       exhibitions:'Exposiciones', theatres:'Teatros', cinemas:'Cines', parks:'Parques y plazas', sport:'Deporte',
@@ -76,11 +79,11 @@
     fr:{
       startGps:'Activer le GPS',
       button:'Autour de moi', gpsFirst:'Activez d’abord le GPS', title:'Autour de moi',
-      intro:'Affiche sur la carte les lieux des catégories sélectionnées situés à moins de 300 mètres de votre position.',
-      radius:'Rayon', categories:'Catégories', all:'Toutes', none:'Aucune', circle:'Afficher le cercle de 300 m',
+      intro:'Affiche sur la carte les lieux des catégories sélectionnées situés à moins de {radius} de votre position.',
+      radius:'Rayon', categories:'Catégories', all:'Toutes', none:'Aucune', circle:'Afficher le cercle sur la carte',
       activate:'Activer', deactivate:'Désactiver', apply:'Actualiser', close:'Fermer', waiting:'En attente de la position GPS…',
       gpsOff:'Activez le GPS pour utiliser Autour de moi.', selectOne:'Sélectionnez au moins une catégorie.',
-      found0:'Aucun lieu sélectionné dans un rayon de 300 m.', found1:'1 lieu dans un rayon de 300 m.', foundN:'{n} lieux dans un rayon de 300 m.',
+      found0:'Aucun lieu sélectionné dans un rayon de {radius}.', found1:'1 lieu dans un rayon de {radius}.', foundN:'{n} lieux dans un rayon de {radius}.',
       groupHistory:'Histoire et culture', groupFun:'Lieux et activités', groupFood:'Manger et dormir', groupMove:'Transports',
       qr:'Points QR', minidoc:'MiniDoc', forts:'Forts', museums:'Musées', churches:'Églises', palaces:'Palais et villas',
       exhibitions:'Expositions', theatres:'Théâtres', cinemas:'Cinémas', parks:'Parcs et places', sport:'Sport',
@@ -90,11 +93,11 @@
     ar:{
       startGps:'تفعيل GPS',
       button:'بالقرب مني', gpsFirst:'فعّل GPS أولاً', title:'بالقرب مني',
-      intro:'يعرض على الخريطة الأماكن من الفئات المحددة الواقعة ضمن 300 متر من موقعك الحالي.',
-      radius:'النطاق', categories:'الفئات', all:'الكل', none:'لا شيء', circle:'إظهار دائرة 300 م',
+      intro:'يعرض على الخريطة الأماكن من الفئات المحددة الواقعة ضمن {radius} من موقعك الحالي.',
+      radius:'النطاق', categories:'الفئات', all:'الكل', none:'لا شيء', circle:'إظهار الدائرة على الخريطة',
       activate:'تفعيل', deactivate:'إيقاف', apply:'تحديث', close:'إغلاق', waiting:'بانتظار موقع GPS…',
       gpsOff:'فعّل GPS لاستخدام بالقرب مني.', selectOne:'اختر فئة واحدة على الأقل.',
-      found0:'لا توجد أماكن محددة ضمن 300 م.', found1:'مكان واحد ضمن 300 م.', foundN:'{n} أماكن ضمن 300 م.',
+      found0:'لا توجد أماكن محددة ضمن {radius}.', found1:'مكان واحد ضمن {radius}.', foundN:'{n} أماكن ضمن {radius}.',
       groupHistory:'التاريخ والثقافة', groupFun:'أماكن وأنشطة', groupFood:'الطعام والإقامة', groupMove:'النقل',
       qr:'نقاط QR', minidoc:'أفلام قصيرة', forts:'الحصون', museums:'المتاحف', churches:'الكنائس', palaces:'القصور والفلل',
       exhibitions:'المعارض', theatres:'المسارح', cinemas:'دور السينما', parks:'الحدائق والساحات', sport:'الرياضة',
@@ -104,11 +107,11 @@
     ru:{
       startGps:'Включить GPS',
       button:'Рядом со мной', gpsFirst:'Сначала включите GPS', title:'Рядом со мной',
-      intro:'Показывает на карте места выбранных категорий в радиусе 300 метров от вашего местоположения.',
-      radius:'Радиус', categories:'Категории', all:'Все', none:'Ничего', circle:'Показывать круг 300 м',
+      intro:'Показывает на карте места выбранных категорий в радиусе {radius} от вашего местоположения.',
+      radius:'Радиус', categories:'Категории', all:'Все', none:'Ничего', circle:'Показывать круг на карте',
       activate:'Включить', deactivate:'Выключить', apply:'Обновить', close:'Закрыть', waiting:'Ожидание позиции GPS…',
       gpsOff:'Включите GPS, чтобы использовать функцию «Рядом со мной».', selectOne:'Выберите хотя бы одну категорию.',
-      found0:'Нет выбранных мест в радиусе 300 м.', found1:'1 место в радиусе 300 м.', foundN:'{n} мест в радиусе 300 м.',
+      found0:'Нет выбранных мест в радиусе {radius}.', found1:'1 место в радиусе {radius}.', foundN:'{n} мест в радиусе {radius}.',
       groupHistory:'История и культура', groupFun:'Места и занятия', groupFood:'Еда и проживание', groupMove:'Транспорт',
       qr:'QR-точки', minidoc:'Мини-док', forts:'Форты', museums:'Музеи', churches:'Церкви', palaces:'Дворцы и виллы',
       exhibitions:'Выставки', theatres:'Театры', cinemas:'Кинотеатры', parks:'Парки и площади', sport:'Спорт',
@@ -118,11 +121,11 @@
     zh:{
       startGps:'开启 GPS',
       button:'附近', gpsFirst:'请先开启 GPS', title:'附近',
-      intro:'在地图上显示距您当前位置 300 米以内、属于所选类别的地点。',
-      radius:'半径', categories:'类别', all:'全选', none:'全不选', circle:'显示 300 米范围圈',
+      intro:'在地图上显示距您当前位置 {radius}以内、属于所选类别的地点。',
+      radius:'半径', categories:'类别', all:'全选', none:'全不选', circle:'在地图上显示范围圈',
       activate:'启用', deactivate:'关闭', apply:'更新', close:'关闭', waiting:'正在等待 GPS 位置…',
-      gpsOff:'请开启 GPS 后使用“附近”。', selectOne:'请至少选择一个类别。', found0:'300 米内没有所选地点。',
-      found1:'300 米内有 1 个地点。', foundN:'300 米内有 {n} 个地点。',
+      gpsOff:'请开启 GPS 后使用“附近”。', selectOne:'请至少选择一个类别。', found0:'{radius}内没有所选地点。',
+      found1:'{radius}内有 1 个地点。', foundN:'{radius}内有 {n} 个地点。',
       groupHistory:'历史与文化', groupFun:'地点与活动', groupFood:'餐饮与住宿', groupMove:'交通',
       qr:'QR 点位', minidoc:'迷你纪录片', forts:'堡垒', museums:'博物馆', churches:'教堂', palaces:'宫殿与别墅',
       exhibitions:'展览', theatres:'剧院', cinemas:'电影院', parks:'公园与广场', sport:'体育',
@@ -132,11 +135,11 @@
     lij:{
       startGps:'Attiva GPS',
       button:'A-o me vexin', gpsFirst:'Ativa primma o GPS', title:'A-o me vexin',
-      intro:'Mostra in sciâ mappa i leughi de categorie çernue che son drento 300 metri da-a teu posiçion.',
-      radius:'Raggio', categories:'Categorie', all:'Tutte', none:'Nisciunn-a', circle:'Mostra o çercio de 300 m',
+      intro:'Mostra in sciâ mappa i leughi de categorie çernue che son drento {radius} da-a teu posiçion.',
+      radius:'Raggio', categories:'Categorie', all:'Tutte', none:'Nisciunn-a', circle:'Mostra o çercio in sciâ mappa',
       activate:'Ativa', deactivate:'Disativa', apply:'Agiorna', close:'Særa', waiting:'Aspetto a posiçion GPS…',
       gpsOff:'Ativa o GPS pe deuvi A-o me vexin.', selectOne:'Çerni armanco unn-a categoria.',
-      found0:'Nisciun leugo çernuo drento 300 m.', found1:'1 leugo drento 300 m.', foundN:'{n} leughi drento 300 m.',
+      found0:'Nisciun leugo çernuo drento {radius}.', found1:'1 leugo drento {radius}.', foundN:'{n} leughi drento {radius}.',
       groupHistory:'Stöia e cultua', groupFun:'Leughi e attivitæ', groupFood:'Mangiâ e dormî', groupMove:'Trasporti',
       qr:'Ponti QR', minidoc:'MiniDoc', forts:'Forti', museums:'Muzei', churches:'Gexe', palaces:'Palaçi e ville',
       exhibitions:'Mostre', theatres:'Teatri', cinemas:'Cinema', parks:'Parchi e ciassæ', sport:'Sport',
@@ -194,6 +197,15 @@
     return true;
   }
   function requestNearbyAccess(){ return nearbyAllowed(); }
+
+  function radiusLabel(meters){
+    var wide=meters===WIDE_RADIUS;
+    var lang=currentLang();
+    if(lang==='ar') return wide?'1 كم':'300 م';
+    if(lang==='zh') return wide?'1 公里':'300 米';
+    if(lang==='ru') return wide?'1 км':'300 м';
+    return wide?'1 km':'300 m';
+  }
 
   function mapInstance(){
     var m = window.map || window.__map || window.__LEAFLET_MAP__;
@@ -516,15 +528,32 @@
     if(!nearbyActive || !lastPosition || !settings.showCircle || !map || !window.L){ removeRadius(); return; }
     if(!radiusCircle){
       radiusCircle = L.circle(lastPosition, {
-        pane:'gmNearbyRadiusPane', radius:RADIUS_METERS,
+        pane:'gmNearbyRadiusPane', radius:radiusMeters,
         color:'#38bdf8', weight:2, opacity:.9, dashArray:'7 7',
         fillColor:'#38bdf8', fillOpacity:.07, interactive:false
       }).addTo(map);
     }else{
       radiusCircle.setLatLng(lastPosition);
-      radiusCircle.setRadius(RADIUS_METERS);
+      radiusCircle.setRadius(radiusMeters);
       if(!map.hasLayer(radiusCircle)) radiusCircle.addTo(map);
     }
+  }
+
+  function frameRadius(){
+    var map=mapInstance();
+    if(!map || !lastPosition || !window.L) return;
+    var center=L.latLng(lastPosition.lat,lastPosition.lng);
+    map.fitBounds(center.toBounds(radiusMeters*2), {padding:[24,24], maxZoom:17});
+  }
+
+  function setRadius(meters){
+    if((meters!==DEFAULT_RADIUS && meters!==WIDE_RADIUS) || meters===radiusMeters) return;
+    radiusMeters=meters;
+    if(nearbyActive){
+      updateNearby();
+      frameRadius();
+    }
+    applyTexts();
   }
 
   function selectedCount(){
@@ -541,18 +570,20 @@
     return 12742000*Math.asin(Math.min(1,Math.sqrt(h)));
   }
 
-  function updateStatus(count, override){
+  function updateStatus(override){
     var el = document.getElementById('gm-nearby-status');
     if(!el) return;
     var txt = T();
     if(override){ el.textContent=override; return; }
     if(!gpsIsActive()){ el.textContent=txt.gpsOff; return; }
     if(nearbyActive && !lastPosition){ el.textContent=txt.waiting; return; }
-    if(typeof count === 'number'){
-      el.textContent = count === 0 ? txt.found0 : (count === 1 ? txt.found1 : txt.foundN.replace('{n}',String(count)));
+    if(nearbyActive && typeof lastCount === 'number'){
+      var count=lastCount;
+      var template=count===0?txt.found0:count===1?txt.found1:txt.foundN;
+      el.textContent=template.replace('{n}',String(count)).replace('{radius}',radiusLabel(radiusMeters));
       return;
     }
-    el.textContent = nearbyActive ? txt.waiting : txt.intro;
+    el.textContent = nearbyActive ? txt.waiting : txt.intro.replace('{radius}',radiusLabel(radiusMeters));
   }
 
   function updateNearby(){
@@ -566,7 +597,7 @@
       if(!settings.selected[category]) return;
       collectCategory(category).forEach(function(point){
         var distance = distanceMeters(lastPosition.lat,lastPosition.lng,point.lat,point.lng);
-        if(distance > RADIUS_METERS) return;
+        if(distance > radiusMeters) return;
         wanted[point.key] = point;
         count++;
         if(markerByKey[point.key]) return;
@@ -582,29 +613,32 @@
       delete markerByKey[key];
     });
     syncRadius();
-    updateStatus(count);
+    lastCount=count;
+    updateStatus();
   }
 
   function deactivateNearby(reason){
     nearbyActive = false;
+    lastCount=null;
     clearMarkers();
     removeRadius();
     var btn = document.getElementById('btn-nearby');
     if(btn){ btn.classList.remove('active'); btn.setAttribute('aria-pressed','false'); }
     syncMainAction();
-    if(reason) updateStatus(null, reason); else updateStatus();
+    if(reason) updateStatus(reason); else updateStatus();
   }
 
   function activateNearby(){
     if(!requestNearbyAccess()) return false;
     var txt=T();
-    if(!gpsIsActive()){ updateStatus(null,txt.gpsOff); return false; }
-    if(!selectedCount()){ updateStatus(null,txt.selectOne); return false; }
+    if(!gpsIsActive()){ updateStatus(txt.gpsOff); return false; }
+    if(!selectedCount()){ updateStatus(txt.selectOne); return false; }
     nearbyActive = true;
     var btn = document.getElementById('btn-nearby');
     if(btn){ btn.classList.add('active'); btn.setAttribute('aria-pressed','true'); }
     syncMainAction();
     updateNearby();
+    if(radiusMeters===WIDE_RADIUS) frameRadius();
     return true;
   }
 
@@ -630,6 +664,8 @@
       var map=mapInstance();
       map.setView([position.lat,position.lng],Math.max(map.getZoom(),17),{animate:true});
     }
+    radiusMeters=DEFAULT_RADIUS;
+    lastCount=null;
     syncGpsState();
     request.done(activateNearby() ? 'active' : 'categories');
   }
@@ -700,13 +736,16 @@
       return '<fieldset class="gm-nearby-group"><legend data-nearby-group="'+group.key+'"></legend><div class="gm-nearby-grid">'+group.items.map(categoryRow).join('')+'</div></fieldset>';
     }).join('');
     panel.innerHTML =
-      '<div class="gm-nearby-head"><div><h3 id="gm-nearby-title"></h3><span class="gm-nearby-radius"><span data-nearby-text="radius"></span> 300 m</span></div><button type="button" class="gm-nearby-close" aria-label="">×</button></div>'+ 
-      '<p class="gm-nearby-intro" data-nearby-text="intro"></p>'+ 
+      '<div class="gm-nearby-head"><div><h3 id="gm-nearby-title"></h3><span class="gm-nearby-radius"><span data-nearby-text="radius"></span> <span data-nearby-current-radius></span></span></div><button type="button" class="gm-nearby-close" aria-label="">×</button></div>'+ 
+      '<p class="gm-nearby-intro"></p>'+ 
       '<div class="gm-nearby-toolbar"><strong data-nearby-text="categories"></strong><span><button type="button" data-nearby-select="all"></button><button type="button" data-nearby-select="none"></button></span></div>'+ 
       '<div class="gm-nearby-groups">'+groups+'</div>'+ 
+      '<fieldset class="gm-nearby-ranges"><legend data-nearby-text="radius"></legend>'+[DEFAULT_RADIUS,WIDE_RADIUS].map(function(meters){
+        return '<label><input name="gm-nearby-radius" type="radio" value="'+meters+'"><span data-nearby-distance="'+meters+'"></span></label>';
+      }).join('')+'</fieldset>'+
       '<label class="gm-nearby-circle-option"><input id="gm-nearby-circle" type="checkbox"'+(settings.showCircle?' checked':'')+'><span data-nearby-text="circle"></span></label>'+ 
       '<div id="gm-nearby-status" class="gm-nearby-status" role="status" aria-live="polite"></div>'+ 
-      '<div class="gm-nearby-actions"><button type="button" id="gm-nearby-start-gps" hidden style="width:100%;margin-bottom:8px;padding:10px;border-radius:10px;border:1px solid #38bdf8;background:#0c4a6e;color:#fff;font:inherit;cursor:pointer"></button><button type="button" id="gm-nearby-main"></button></div>';
+      '<div class="gm-nearby-actions"><button type="button" id="gm-nearby-start-gps" hidden></button><button type="button" id="gm-nearby-main"></button></div>';
     document.body.appendChild(panel);
 
     panel.querySelector('.gm-nearby-close').addEventListener('click', closePanel);
@@ -718,6 +757,9 @@
         if(nearbyActive) updateNearby();
         syncMainAction();
       });
+    });
+    panel.querySelectorAll('input[name="gm-nearby-radius"]').forEach(function(input){
+      input.addEventListener('change',function(){ if(this.checked) setRadius(Number(this.value)); });
     });
     panel.querySelector('#gm-nearby-circle').addEventListener('change', function(){
       settings.showCircle=!!this.checked; saveSettings(); syncRadius();
@@ -764,6 +806,14 @@
     panel.setAttribute('dir',currentLang()==='ar'?'rtl':'ltr');
     var title=panel.querySelector('#gm-nearby-title'); if(title) title.textContent=txt.title;
     panel.querySelectorAll('[data-nearby-text]').forEach(function(el){ var k=el.getAttribute('data-nearby-text'); if(txt[k]) el.textContent=txt[k]; });
+    panel.querySelector('.gm-nearby-intro').textContent=txt.intro.replace('{radius}',radiusLabel(radiusMeters));
+    panel.querySelector('[data-nearby-current-radius]').textContent=radiusLabel(radiusMeters);
+    panel.querySelectorAll('[data-nearby-distance]').forEach(function(label){
+      label.textContent=radiusLabel(Number(label.getAttribute('data-nearby-distance')));
+    });
+    panel.querySelectorAll('input[name="gm-nearby-radius"]').forEach(function(input){
+      input.checked=Number(input.value)===radiusMeters;
+    });
     panel.querySelectorAll('[data-nearby-group]').forEach(function(el){ var k=el.getAttribute('data-nearby-group'); el.textContent=txt[k]||k; });
     panel.querySelectorAll('[data-nearby-label]').forEach(function(el){ var k=el.getAttribute('data-nearby-label'); el.textContent=txt[k]||k; });
     var all=panel.querySelector('[data-nearby-select="all"]'); if(all) all.textContent=txt.all;
@@ -819,7 +869,7 @@
     if(!allowed && nearbyActive) deactivateNearby();
     else if(!on && nearbyActive) deactivateNearby(T().gpsOff);
     if(!allowed && panelIsOpen()) closePanel();
-    else if(!on && panelIsOpen()) updateStatus(null,T().gpsOff);
+    else if(!on && panelIsOpen()) updateStatus(T().gpsOff);
     applyTexts(); positionControls();
   }
 
@@ -835,9 +885,13 @@
     var next={lat:Number(event.latlng.lat),lng:Number(event.latlng.lng)};
     if(!isFinite(next.lat)||!isFinite(next.lng)) return;
     if(lastPosition && distanceMeters(lastPosition.lat,lastPosition.lng,next.lat,next.lng)<8) return;
+    var firstPosition=!lastPosition;
     lastPosition=next; lastAccuracy=isFinite(acc)?acc:null;
     if(welcomeRequest) finishWelcomeStart(next);
-    else if(nearbyActive) updateNearby();
+    else if(nearbyActive){
+      updateNearby();
+      if(firstPosition && radiusMeters===WIDE_RADIUS) frameRadius();
+    }
   }
 
   function bindMap(){
@@ -900,6 +954,6 @@
     close:closePanel,
     activate:activateNearby,
     deactivate:deactivateNearby,
-    getState:function(){ return {active:nearbyActive,position:lastPosition,accuracy:lastAccuracy,radius:RADIUS_METERS,selected:Object.assign({},settings.selected)}; }
+    getState:function(){ return {active:nearbyActive,position:lastPosition,accuracy:lastAccuracy,radius:radiusMeters,selected:Object.assign({},settings.selected)}; }
   };
 })();
