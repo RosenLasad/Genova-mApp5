@@ -207,6 +207,8 @@ var DOC_FLAG = {
 
 
 
+  var SAN_TEODORO_STREAM_LANGS = ['it','en','es','fr','ar'];
+
   function isStreamMiniDoc(doc){
     return doc.id === 'borgo-incrociati' || doc.provider === 'cloudflare';
   }
@@ -257,7 +259,9 @@ var DOC_FLAG = {
       var headers = {};
       if(user) headers.Authorization = 'Bearer ' + await auth.token();
 
-      var endpoint = '/.netlify/functions/minidoc-playback?id=' + encodeURIComponent(card.dataset.id);
+      var query = new URLSearchParams({id:card.dataset.id});
+      if(trigger.dataset.videoLang) query.set('lang', trigger.dataset.videoLang);
+      var endpoint = '/.netlify/functions/minidoc-playback?' + query.toString();
       var response = await fetch(endpoint, {method:'POST', headers:headers, cache:'no-store'});
       if(!response.ok) throw new Error('minidoc_unavailable');
       var result = await response.json();
@@ -343,21 +347,23 @@ var DOC_FLAG = {
     var mixed = stream && doc.id === 'san-teodoro';
     var languages = !stream || mixed ? getDocYoutubeMap(doc) : null;
     var lang = docVideoLanguage(doc, selectedLanguage);
-    var foreign = mixed && lang !== 'it' && languages && getYoutubeId(languages[lang]);
-    var vid = stream ? foreign : getYoutubeId(pickDocYoutubeUrl(doc));
+    var youtubeVariant = mixed && !SAN_TEODORO_STREAM_LANGS.includes(lang) &&
+      languages && getYoutubeId(languages[lang]);
+    var vid = stream ? youtubeVariant : getYoutubeId(pickDocYoutubeUrl(doc));
     var title = pickTextDoc(doc.name) || doc.id || 'Documentario';
     var h = '<div class="doc-card" data-id="' + escapeAttr(doc.id || '') + '">';
     h += '<div class="doc-card__head"><div class="doc-card__title">' + escapeHtml(title) + '</div>';
     h += '<span class="doc-card__badge">Premium</span></div>';
 
-    if(languages && Object.keys(languages).length){
+    if(mixed || (languages && Object.keys(languages).length)){
       h += '<div class="doc-lang" aria-label="Lingua video">';
-      var codes = Object.keys(languages);
-      if(mixed) codes = ['it'].concat(codes.filter(function(code){return code !== 'it';}));
+      var codes = Object.keys(languages || {});
+      if(mixed) codes = SAN_TEODORO_STREAM_LANGS.concat(codes.filter(function(code){
+        return !SAN_TEODORO_STREAM_LANGS.includes(code);
+      }));
       codes.forEach(function(code){
-        var italianStream = mixed && code === 'it';
-        var youtubeId = italianStream ? null : getYoutubeId(languages[code]);
-        if(!italianStream && !youtubeId) return;
+        var streamVersion = mixed && SAN_TEODORO_STREAM_LANGS.includes(code);
+        if(!streamVersion && !getYoutubeId(languages[code])) return;
         var label = DOC_FLAG[code] || code.toUpperCase();
         h += '<button type="button" class="doc-lang-btn" data-lang="' + escapeAttr(code) +
           '" title="' + escapeAttr(code.toUpperCase()) + '">' + escapeHtml(label) + '</button>';
@@ -366,8 +372,11 @@ var DOC_FLAG = {
     }
 
     h += '<div class="doc-card__media">';
-    if(stream && !foreign){
-      h += '<button type="button" class="doc-btn doc-stream-trigger">Riproduci MiniDoc</button>';
+    if(stream && !youtubeVariant){
+      var videoLang = mixed && SAN_TEODORO_STREAM_LANGS.includes(lang)
+        ? ' data-video-lang="' + lang + '"'
+        : '';
+      h += '<button type="button" class="doc-btn doc-stream-trigger"' + videoLang + '>Riproduci MiniDoc</button>';
       h += '<div role="status" aria-live="polite"></div>';
     }else if(vid){
       var thumb = doc.thumbnail || ('https://img.youtube.com/vi/' + vid + '/hqdefault.jpg');

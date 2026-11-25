@@ -22,10 +22,21 @@ const VIDEOS = new Map([
   ['esposizione-universale-1914', {full:'2afb7fcf8b4a2af90457c72bdb4d75e7', preview:'fe689d5ad72520aae8f087498e9c5bdc'}],
 ]);
 
+const SAN_TEODORO_VERSIONS = new Map([
+  ['ar', {full:'fa425d91c89a82c4d704540c19a16981', preview:'3b363dd1a94ebcd47f546b4f3862b902'}],
+  ['fr', {full:'c0421496239237e8cf69f7ddc910d9e4', preview:'79a2e6b7a2c53bb08eff6679a2d3e7ef'}],
+  ['en', {full:'11efacbcdf569d0b93bec5dbd308e49d', preview:'30f9c707ecc3e2fe9b756b16413e84ae'}],
+  ['es', {full:'1cc4ebec5aac63521a74113c6ee3d13b', preview:'da75e1af5ad740c1e45f15ff18bc9c78'}],
+]);
+
 export default async function minidocPlayback(request) {
   if (request.method !== 'POST') return json({error:'method_not_allowed'}, 405);
   const page = new URL(request.url);
-  const video = VIDEOS.get(page.searchParams.get('id'));
+  const id = page.searchParams.get('id');
+  const language = page.searchParams.get('lang');
+  const video = id === 'san-teodoro' && language && language !== 'it'
+    ? SAN_TEODORO_VERSIONS.get(language)
+    : VIDEOS.get(id);
   if (!video) return json({error:'minidoc_not_found'}, 404);
 
   try {
