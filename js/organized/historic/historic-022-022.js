@@ -1480,24 +1480,23 @@ map.attributionControl.setPrefix(false);
 
 // --- GPS wiring ---
 var gpsBtn = document.getElementById('btn-gps');
+function startGps(){
+  if(gpsActive) return;
+  setGpsOn(true);
+  map.locate({ watch:true, enableHighAccuracy:true, maximumAge:10000, timeout:10000, setView:false });
+}
+function stopGps(){
+  setGpsOn(false);
+  try{ map.stopLocate(); }catch(e){}
+  try{ if(gpsMarker) map.removeLayer(gpsMarker); }catch(e){}
+  try{ if(gpsAccuracy) map.removeLayer(gpsAccuracy); }catch(e){}
+}
 if(gpsBtn){
   gpsBtn.addEventListener('click', function(){
-    if(!gpsActive){
-      // Start locating
-      ensureGpsLayers();
-      try{ gpsMarker.addTo(map); gpsAccuracy.addTo(map);}catch(e){}
-    
-
-      setGpsOn(true);
-      map.locate({ watch:true, enableHighAccuracy:true, maximumAge:10000, timeout:10000, setView:false });
-    } else {
-      // Stop locating
-      setGpsOn(false);
-      try{ map.stopLocate(); }catch(e){}
-      try{ if(gpsMarker) map.removeLayer(gpsMarker); }catch(e){}
-      try{ if(gpsAccuracy) map.removeLayer(gpsAccuracy); }catch(e){}
-    }
+    if(gpsActive) stopGps();
+    else startGps();
   });
+  window.GMMapGps = { start:startGps, stop:stopGps };
 }
 
 map.on('locationfound', function(e){
@@ -1527,10 +1526,7 @@ map.on('locationfound', function(e){
 });
 map.on('locationerror', function(err){
   showStatus('GPS non disponibile: ' + (err && err.message ? err.message : err));
-  setGpsOn(false);
-  try{ map.stopLocate(); }catch(e){}
-  try{ if(gpsMarker) map.removeLayer(gpsMarker); }catch(e){}
-  try{ if(gpsAccuracy) map.removeLayer(gpsAccuracy); }catch(e){}
+  stopGps();
 });
 
         // Cluster per i tre punti azzurri di San Teodoro

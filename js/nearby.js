@@ -10,6 +10,7 @@
   var RADIUS_METERS = 300;
   var STORAGE_KEY = 'genova_mapp_nearby_v1';
   var nearbyActive = false;
+  var welcomeRequest = null;
   var lastPosition = null;
   var lastAccuracy = null;
   var markerLayer = null;
@@ -607,6 +608,48 @@
     return true;
   }
 
+  function cancelWelcomeStart(){
+    if(!welcomeRequest) return;
+    var request=welcomeRequest;
+    welcomeRequest=null;
+    clearTimeout(request.timer);
+    if(request.startedGps && gpsIsActive()) window.GMMapGps.stop();
+  }
+
+  function finishWelcomeStart(position){
+    var request=welcomeRequest;
+    if(!request) return;
+    if(!position){
+      cancelWelcomeStart();
+      request.done('unavailable');
+      return;
+    }
+    welcomeRequest=null;
+    clearTimeout(request.timer);
+    if(!request.startedGps){
+      var map=mapInstance();
+      map.setView([position.lat,position.lng],Math.max(map.getZoom(),17),{animate:true});
+    }
+    syncGpsState();
+    request.done(activateNearby() ? 'active' : 'categories');
+  }
+
+  function startFromWelcome(done){
+    var gps=gpsButton(), map=mapInstance();
+    if(welcomeRequest || !nearbyAllowed() || !gps || gps.disabled || !map || !window.GMMapGps) return false;
+    var alreadyActive=gpsIsActive();
+    welcomeRequest={done:done, startedGps:!alreadyActive, timer:null};
+    bindMap();
+    if(alreadyActive && lastPosition) finishWelcomeStart(lastPosition);
+    else if(!alreadyActive){
+      lastPosition=null; lastAccuracy=null;
+      // Call Leaflet's existing geolocation request inside the Welcome click.
+      // This avoids also invoking the legacy navigation animation on the GPS button.
+      window.GMMapGps.start();
+    }
+    return true;
+  }
+
   function panelIsOpen(){ var p=document.getElementById('gm-nearby-panel'); return !!(p && p.classList.contains('open')); }
 
   function closePanel(){
@@ -768,6 +811,7 @@
   function syncGpsState(){
     var button=ensureButton(); if(!button) return;
     var on=gpsIsActive(), allowed=nearbyAllowed();
+    if(!on){ lastPosition=null; lastAccuracy=null; }
     // Tutti i visitatori possono usare il raggio dopo aver attivato il GPS.
     button.disabled=!allowed || !on;
     button.classList.toggle('gps-ready',on && allowed);
@@ -782,19 +826,28 @@
   function acceptLocation(event){
     if(!event || !event.latlng || !gpsIsActive()) return;
     var acc=Number(event.accuracy || 0);
-    if(isFinite(acc) && acc > 100) return;
+    if(isFinite(acc) && acc > 100){
+      if(welcomeRequest && !welcomeRequest.timer){
+        welcomeRequest.timer=setTimeout(function(){ finishWelcomeStart(null); },10000);
+      }
+      return;
+    }
     var next={lat:Number(event.latlng.lat),lng:Number(event.latlng.lng)};
     if(!isFinite(next.lat)||!isFinite(next.lng)) return;
     if(lastPosition && distanceMeters(lastPosition.lat,lastPosition.lng,next.lat,next.lng)<8) return;
     lastPosition=next; lastAccuracy=isFinite(acc)?acc:null;
-    if(nearbyActive) updateNearby();
+    if(welcomeRequest) finishWelcomeStart(next);
+    else if(nearbyActive) updateNearby();
   }
 
   function bindMap(){
     var map=mapInstance(); if(!map || map.__gmNearbyBound) return !!map;
     map.__gmNearbyBound=true;
     map.on('locationfound',acceptLocation);
-    map.on('locationerror',function(){ syncGpsState(); });
+    map.on('locationerror',function(){
+      finishWelcomeStart(null);
+      syncGpsState();
+    });
     return true;
   }
 
@@ -841,6 +894,8 @@
 
   window.__gmNearby={
     refresh:updateNearby,
+    startFromWelcome:startFromWelcome,
+    cancelWelcomeStart:cancelWelcomeStart,
     open:openPanel,
     close:closePanel,
     activate:activateNearby,
