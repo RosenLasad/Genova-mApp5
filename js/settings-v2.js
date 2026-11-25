@@ -7,14 +7,14 @@
   var APP_VERSION = '1.3.5';
   var PALETTE_KEY = 'genova_app_palette_v1';
   var PALETTE_LABELS = {
-    it: ['Colori dell’app', 'Blu porto', 'Rosso borgogna'],
-    en: ['App colours', 'Harbour blue', 'Burgundy red'],
-    es: ['Colores de la app', 'Azul puerto', 'Rojo borgoña'],
-    fr: ['Couleurs de l’application', 'Bleu port', 'Rouge bordeaux'],
-    ar: ['ألوان التطبيق', 'أزرق الميناء', 'أحمر عنابي'],
-    ru: ['Цвета приложения', 'Портовый синий', 'Бордовый'],
-    zh: ['应用配色', '港湾蓝', '勃艮第红'],
-    lij: ['Coî de l’app', 'Bleu do porto', 'Rosso borgogna']
+    it: ['Colori dell’app', 'Blu porto', 'Rosso San Giorgio'],
+    en: ['App colours', 'Harbour blue', 'St George Red'],
+    es: ['Colores de la app', 'Azul puerto', 'Rojo San Jorge'],
+    fr: ['Couleurs de l’application', 'Bleu port', 'Rouge Saint-Georges'],
+    ar: ['ألوان التطبيق', 'أزرق الميناء', 'أحمر القديس جورج'],
+    ru: ['Цвета приложения', 'Портовый синий', 'Красный Святого Георгия'],
+    zh: ['应用配色', '港湾蓝', '圣乔治红'],
+    lij: ['Coî de l’app', 'Bleu do porto', 'Rosso San Zòrzo']
   };
 
   var I18N = {

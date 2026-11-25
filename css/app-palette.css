@@ -1,13 +1,14 @@
 /* Colori delle superfici comuni. I componenti usano il colore originale come fallback. */
+/* Il valore burgundy conserva la preferenza già salvata per la palette rossa. */
 :root[data-app-palette="burgundy"] {
-  --gm-palette-toolbar: #351520;
-  --gm-palette-panel: #401a27;
-  --gm-palette-panel-deep: #270e17;
-  --gm-palette-panel-card: rgba(54, 22, 33, .94);
-  --gm-palette-menu: #542334;
-  --gm-palette-control: rgba(65, 25, 39, .94);
-  --gm-palette-hover: #652d41;
-  --gm-palette-selected: #743449;
+  --gm-palette-toolbar: #931010;
+  --gm-palette-panel: #6a0e0e;
+  --gm-palette-panel-deep: #510b0b;
+  --gm-palette-panel-card: var(--gm-palette-panel);
+  --gm-palette-menu: #761313;
+  --gm-palette-control: var(--gm-palette-toolbar);
+  --gm-palette-hover: #a72424;
+  --gm-palette-selected: var(--gm-palette-hover);
   --gm-palette-border: #b49462;
   --gm-palette-accent: #f2d59b;
   --gm-palette-tint: rgba(232, 191, 116, .15);
@@ -30,7 +31,7 @@
 }
 
 .settings-app-palette [data-app-palette-choice="burgundy"]::before {
-  background: #743449;
+  background: var(--gm-palette-toolbar, #931010);
 }
 
 .settings-app-palette button:focus-visible {
