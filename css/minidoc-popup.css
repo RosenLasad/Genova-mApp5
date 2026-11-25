@@ -21,6 +21,7 @@
 }
 
 .leaflet-popup.doc-pop .doc-card .doc-lang {
+  position: relative;
   display: block !important;
   margin: .35rem 0 .6rem;
 }
@@ -48,17 +49,26 @@
   transform: rotate(180deg);
 }
 
+.doc-lang:not([open]) > .doc-lang-options {
+  display: none;
+}
+
 .doc-lang-options {
+  position: absolute;
+  inset-block-start: calc(100% + .35rem);
+  inset-inline-start: 0;
+  z-index: 10;
+  box-sizing: border-box;
   display: grid;
+  width: min(100%, 14rem);
   gap: .25rem;
-  max-height: min(13rem, 36dvh);
-  margin-top: .35rem;
+  max-height: min(13rem, var(--doc-media-max-height), calc((100vw - 72px) * .5625));
   padding: .3rem;
   overflow-y: auto;
-  overscroll-behavior: contain;
   border: 1px solid #fff4;
   border-radius: .55rem;
   background: #1e293b;
+  box-shadow: 0 8px 20px #0008;
 }
 
 .doc-card .doc-lang-btn {
