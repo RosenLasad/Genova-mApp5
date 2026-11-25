@@ -366,7 +366,7 @@ var DOC_LANGUAGE_LABELS = {
 
   function makeDocPoster(doc, classes, attrs, language){
     var label = docPlaybackLabels(language).play;
-    var image = doc.thumbnail ? '<img src="' + escapeAttr(doc.thumbnail) + '" alt="">' : '';
+    var image = doc.thumbnail ? '<img src="' + escapeAttr(doc.thumbnail) + '" alt="" width="1040" height="585" decoding="async">' : '';
     return '<button type="button" class="doc-poster ' + classes + '"' + attrs + '>' + image +
       '<span class="doc-poster__play"><span aria-hidden="true">▶</span>' +
       escapeHtml(label) + '</span></button>';
@@ -521,7 +521,7 @@ var DOC_LANGUAGE_LABELS = {
     }).catch(function(){ return DEFAULT_FILES; });
   }
   function fetchDocFile(url){
-    return fetch(url, {cache:'no-store'}).then(function(r){
+    return fetch(url + '?v=20261125-minidoc-frames', {cache:'no-store'}).then(function(r){
       if(!r.ok) throw new Error('not ok');
       return r.text();
     }).then(function(txt){

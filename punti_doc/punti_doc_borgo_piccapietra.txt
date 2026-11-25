@@ -6,5 +6,6 @@
     8.936440370414537
   ],
   "provider": "cloudflare",
-  "info": "Mini Documentario sul borgo di Piccapietra"
+  "info": "Mini Documentario sul borgo di Piccapietra",
+  "thumbnail": "punti_doc/anteprime/borgo-piccapietra.webp"
 }

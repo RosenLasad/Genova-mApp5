@@ -6,5 +6,6 @@
     8.921595766503463
   ],
   "provider": "cloudflare",
-  "info": "Mini Documentario sulla Stazione P.Principe"
+  "info": "Mini Documentario sulla Stazione P.Principe",
+  "thumbnail": "punti_doc/anteprime/stazione-principe.webp"
 }

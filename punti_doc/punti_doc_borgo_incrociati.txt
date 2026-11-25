@@ -6,5 +6,6 @@
     8.950047849156162
   ],
   "provider": "cloudflare",
-  "info": "Mini Documentario su Borgo Incrociati"
+  "info": "Mini Documentario su Borgo Incrociati",
+  "thumbnail": "punti_doc/anteprime/borgo-incrociati.webp"
 }

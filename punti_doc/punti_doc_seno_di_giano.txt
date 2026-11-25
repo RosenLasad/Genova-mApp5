@@ -7,5 +7,5 @@
   ],
   "provider": "cloudflare",
   "info": "Mini documentario sul Seno di Giano.",
-  "thumbnail": null
+  "thumbnail": "punti_doc/anteprime/seno-di-giano.webp"
 }

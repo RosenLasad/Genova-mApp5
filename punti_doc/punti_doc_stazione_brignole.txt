@@ -6,5 +6,6 @@
     8.946721693490986
   ],
   "provider": "cloudflare",
-  "info": "Mini Documentario sulla Stazione Brignole"
+  "info": "Mini Documentario sulla Stazione Brignole",
+  "thumbnail": "punti_doc/anteprime/stazione-brignole.webp"
 }

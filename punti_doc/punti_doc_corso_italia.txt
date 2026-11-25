@@ -6,5 +6,6 @@
     8.95452415798286
   ],
   "provider": "cloudflare",
-  "info": "Mini Documentario sulla nascita di Corso Italia"
+  "info": "Mini Documentario sulla nascita di Corso Italia",
+  "thumbnail": "punti_doc/anteprime/corso-italia.webp"
 }

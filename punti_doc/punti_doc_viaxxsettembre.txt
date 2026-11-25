@@ -7,5 +7,5 @@
   ],
   "provider": "cloudflare",
   "info": "Mini documentario su Via XX settembre.",
-  "thumbnail": null
+  "thumbnail": "punti_doc/anteprime/viaxxsettembre.webp"
 }

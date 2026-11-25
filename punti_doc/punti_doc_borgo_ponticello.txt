@@ -6,5 +6,6 @@
     8.936089317920874
   ],
   "provider": "cloudflare",
-  "info": "Mini Documentario sul borgo di Ponticello"
+  "info": "Mini Documentario sul borgo di Ponticello",
+  "thumbnail": "punti_doc/anteprime/borgo-ponticello.webp"
 }

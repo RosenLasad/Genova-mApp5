@@ -7,5 +7,5 @@
   ],
   "provider": "cloudflare",
   "info": "Mini documentario su Piazza de Ferrari e la sua storia.",
-  "thumbnail": null
+  "thumbnail": "punti_doc/anteprime/piazza-de-ferrari.webp"
 }

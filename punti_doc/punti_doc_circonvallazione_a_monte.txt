@@ -6,5 +6,6 @@
     8.933274701938227
   ],
   "provider": "cloudflare",
-  "info": "Mini Documentario sul quartiere di Castelletto"
+  "info": "Mini Documentario sul quartiere di Castelletto",
+  "thumbnail": "punti_doc/anteprime/circonvallazione-a-monte.webp"
 }

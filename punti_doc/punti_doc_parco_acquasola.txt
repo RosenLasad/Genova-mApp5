@@ -6,5 +6,6 @@
     8.940179083362601
   ],
   "provider": "cloudflare",
-  "info": "Mini Documentario sul Parco dell'Acquasola"
+  "info": "Mini Documentario sul Parco dell'Acquasola",
+  "thumbnail": "punti_doc/anteprime/parco-acquasola.webp"
 }

@@ -6,5 +6,6 @@
     8.944976783036836
   ],
   "provider": "cloudflare",
-  "info": "Mini Documentario sull'Esposizione Universale del 1914"
+  "info": "Mini Documentario sull'Esposizione Universale del 1914",
+  "thumbnail": "punti_doc/anteprime/esposizione-universale-1914.webp"
 }

@@ -7,5 +7,5 @@
   ],
   "provider": "cloudflare",
   "info": "Mini documentario su San Teodoro.",
-  "thumbnail": null
+  "thumbnail": "punti_doc/anteprime/san-teodoro.webp"
 }
